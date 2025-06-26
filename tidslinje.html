@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historien om Eneo AI</title>
+    <meta name="description" content="Ta del av historien rörande utvecklingen av Eneo AI. Se milstolpar, innovationer och framtidsplaner för demokratisk AI i offentlig sektor.">
+    <link rel="icon" type="image/x-icon" href="public/favicon.ico">
+    
+    <!-- External Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/pages/timeline.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="public/images/Eneo-logo-svg.svg" alt="Eneo.ai">
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="nav">
+                    <a href="om-eneo.html">Om</a>
+                    <a href="ai-utveckling.html" class="active">Historik</a>
+                    <a href="samarbetsforum.html">Samarbete</a>
+                    <a href="docs.html">Docs</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="mobile-menu">
+                    <button class="mobile-menu-button" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu" id="mobile-menu-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="mobile-nav" id="mobile-nav">
+                <div class="container">
+                    <nav>
+                        <a href="index.html" onclick="closeMobileMenu()">Hem</a>
+                        <a href="om-eneo.html" onclick="closeMobileMenu()">Om Eneo</a>
+                        <a href="ai-utveckling.html" onclick="closeMobileMenu()" class="active">AI-utveckling</a>
+                        <a href="samarbetsforum.html" onclick="closeMobileMenu()">Samarbetsforum</a>
+                        <a href="kontakt.html" onclick="closeMobileMenu()">Kontakt</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <div class="page-hero-content">
+                    <h1>Eneos historia - En tidslinje</h1>
+                    <p>Grunden till det som idag är Eneo kommer från en hypotes om kommunsektorns behov av en öppen infrastruktur för AI, från det har det varit allt från en innovationsprocess där plattformens grund sattes till ett namnbyte av plattformen och en helt ny riktning.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Introduction Section -->
+        <section class="section">
+            <div class="container">
+                <div class="intro-content">
+                    <div class="intro-text">
+                        <h2>Från vision till verklighet</h2>
+                        <p>Eneo.ai:s utveckling har präglats av en tydlig vision om demokratisk och öppen AI för offentlig sektor. Vår resa har varit driven av principerna om transparens, jämlikhet och kollektivt ansvar.</p>
+                        
+                        <p>Utvecklingen av våra AI-produkter har skett i nära samarbete med offentliga organisationer för att säkerställa att lösningarna verkligen möter verkliga behov. Varje milstolpe har varit noggrant planerad för att bygga en robust och skalbar plattform som kan tjäna hela det offentliga Sverige.</p>
+                        
+                        <p>Tidslinjen nedan visar de sex viktigaste milstolparna i vår produktutveckling, från den första prototypen till den fullständiga plattform vi har idag och framtidsvisionen för Eneo.ai.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section class="section section-secondary">
+            <div class="container">
+                <div class="section-center">
+                    <h2>Utvecklingsresan</h2>
+                    <p>Avgörande milstolpar som format Eneo.ai</p>
+                </div>
+                
+                <div class="timeline-container">
+                    <div class="timeline-track"></div>
+                    
+                    <div class="timeline-item" data-phase="1">
+                        <div class="timeline-marker">
+                            <div class="timeline-icon">
+                                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">Q1 2023</div>
+                            <h3>Hypotesen</h3>
+                            <p>Allt började våren 2023 med en hypotes inom Sundsvalls kommun, en hypotes om hur generativ AI skulle kunna tillgängliggöras på ett långsiktigt hållbart sätt i Sveriges kommuner.</p>
+                            <a href="https://utveckling.sundsvall.se/initiativ/exempel-fran-vardagen/2023-05-22-infrastruktur-for-ai-inom-kommuner" target="_blank" class="timeline-link">
+                                <span>Ta del av hypotesen</span>
+                                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-phase="2">
+                        <div class="timeline-marker">
+                            <div class="timeline-icon">
+                                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">Q2 2023</div>
+                            <h3>Innovationsprocessen</h3>
+                            <p>Utifrån hypotesen startade vi en innovationsprocess, där vi avsåg att testa hypotesen tillsammans med näringslivet. En process som möjliggjordes genom vårt ramavtal rörande "Framåtlutad teknologi".</p>
+                            <a href="https://utveckling.sundsvall.se/inlagg/inlagg/2020-07-15-forutsattningar-for-att-nyttja-framatlutande-teknologier" target="_blank" class="timeline-link">
+                                <span>Framåtlutande teknologi</span>
+                                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-phase="3">
+                        <div class="timeline-marker">
+                            <div class="timeline-icon">
+                                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">Q1 2024</div>
+                            <h3>Intric blir till</h3>
+                            <p>Inom innovationsprocessen utvecklades plattformen Intric utifrån basen från ett mindre konsumentbaserat AI-verktyg som hette Instorage, ett lyckat arbete som resulterade i ett beslut om att skala upp plattformen som en ordinarie del i Sundsvalls kommuns och Ånge kommuns infrastruktur.</p>
+                            <a href="https://utveckling.sundsvall.se/inlagg/inlagg/2023-12-06-nu-skalar-vi-upp-en-oppen-ai" target="_blank" class="timeline-link">
+                                <span>Beslut om att skala</span>
+                                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-phase="4">
+                        <div class="timeline-marker">
+                            <div class="timeline-icon">
+                                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">Q3 2024</div>
+                            <h3>Plattformen goes enterprise</h3>
+                            <p>Efter att Intric började användas i produktion utvecklades flertal funktioner för att säkerställa dess stöd för en större organisation och inte enbart enskilda användare. Funktion för samarbete, styrning och kontroll kom till.</p>
+                            <a href="https://utveckling.sundsvall.se/inlagg/inlagg/2024-08-15-spaces---en-ny-samarbetsfunktion-i-ai-plattformen-intric" target="_blank" class="timeline-link">
+                                <span>Exempel - Samarbetsfunktion</span>
+                                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-phase="5">
+                        <div class="timeline-marker">
+                            <div class="timeline-icon">
+                                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">Q4 2024</div>
+                            <h3>Intric Community släpps som öppen källkod</h3>
+                            <p>I enlighet med våra grundprinciper om transparens och demokratisk AI släpps Intric Community som öppen källkod. Detta markerar ett viktigt steg mot att göra AI-teknologi tillgänglig för alla offentliga organisationer.</p>
+                            <a href="https://utveckling.sundsvall.se/inlagg/inlagg/2024-11-18-ai-plattformen-intric-slappt-som-oppen-kallkod" target="_blank" class="timeline-link">
+                                <span>Intric som öppen källkod</span>
+                                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-phase="6">
+                        <div class="timeline-marker">
+                            <div class="timeline-icon">
+                                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">Q1 2025</div>
+                            <h3>Eneo.ai bildas - En ny början</h3>
+                            <p>Eneo.ai bildas som en vidareutveckling av Intric Community, med fokus på att skapa en AI-plattform för hela det offentliga Sverige. Detta markerar början på nästa kapitel i vår utvecklingsresa mot demokratisk AI, utan beroende till enskilda leverantörer, istället kan vilken aktör som helst vara med och bidra samt leverera plattformen.</p>
+                            <a href="#" target="_blank" class="timeline-link">
+                                <span>Nyhet om Eneo AI</span>
+                                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Eneo AI Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-center">
+                    <h2>Varför skapades Eneo AI?</h2>
+                    <p>Bakgrunden till att Eneo AI skapades har att göra med flera utmaningar som fanns med Intric Community som inte linjerade med den ursrpunliga hypotesen och målbilden för en öppen plattform för generativ AI.</p>
+                </div>
+
+                <!-- Challenges with Intric -->
+                <div class="challenges-section">
+                    <h3>Utmaningar med Intric Community</h3>
+                    <div class="challenge-grid">
+                        <div class="challenge-card">
+                            <div class="challenge-icon warning">
+                                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L3 3m6.878 6.878L21 21" />
+                                </svg>
+                            </div>
+                            <h4>Begränsad konkurrens</h4>
+                            <p>Att källkoden kontrollerades av ett enda företag, vilket gjorde att det offentliga inte styrde utvecklingen och konkurrensmöjligheterna för andra företag begränsades.</p>
+                        </div>
+
+                        <div class="challenge-card">
+                            <div class="challenge-icon warning">
+                                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728L5.636 5.636m12.728 12.728L21 21m-3.636-3.636l-2.56-2.56 0 0-5.744-5.744 0 0L3 3" />
+                                </svg>
+                            </div>
+                            <h4>Begränsad öppenhet</h4>
+                            <p>Att delar av källkoden behölls stängd av företaget som kontrollerade källkoden och företaget avsåg även framåt behålla framtida utveckling av kod stängd.</p>
+                        </div>
+
+                        <div class="challenge-card">
+                            <div class="challenge-icon warning">
+                                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+                                </svg>
+                            </div>
+                            <h4>Varumärkesförvirring</h4>
+                            <p>Att företaget som kontrollerade källkoden bytte namn till samma namn som plattformen och därmed associerade företaget sig direkt till den öppna plattformen.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advantages with Eneo AI -->
+                <div class="advantages-section">
+                    <h3>Syftet med Eneo AI</h3>
+                    <div class="advantage-grid">
+                        <div class="advantage-card">
+                            <div class="advantage-icon success">
+                                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </svg>
+                            </div>
+                            <h4>Demokratisk kontroll</h4>
+                            <p>Att det offentliga sitter i förarsätet kring källkoden - att användande organistioner kan säkerställa att lösningen alltid sätter det offentliga, invånarna, företagarna först.</p>
+                        </div>
+
+                        <div class="advantage-card">
+                            <div class="advantage-icon success">
+                                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m13 0h-6m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                </svg>
+                            </div>
+                            <h4>Full transparens och öppenhet</h4>
+                            <p>Att vi säkerställer att all källkod finns tillgänglig för alla, full öppenhet och transparens.</p>
+                        </div>
+
+                        <div class="advantage-card">
+                            <div class="advantage-icon success">
+                                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                                </svg>
+                            </div>
+                            <h4>Ökad konkurrens</h4>
+                            <p>Att vem som helst kan delta och bidra till plattformen på lika villkor.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusions Section -->
+        <section class="section">
+            <div class="container">
+                <div class="conclusion-content">
+                    <h2>Nästa steg i utvecklingen</h2>
+                    <p>Med dessa milstolpar bakom oss fortsätter vi att utveckla Eneo.ai enligt våra grundprinciper om öppenhet, transparens och demokratisk AI. Vår vision är att skapa en plattform som verkligen tjänar hela det offentliga Sverige och bidrar till mer effektiva och tillgängliga offentliga tjänster för alla medborgare.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-logo">
+                <img src="public/images/Eneo-logo-svg.svg" alt="Eneo.ai">
+            </div>
+            
+            <div class="footer-section">
+                <div class="footer-contact-block">
+                    <h3>Kontakt</h3>
+                    <a href="mailto:digitalisering@sundsvall.se">digitalisering@sundsvall.se</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>Ett initiativ från Sundsvalls kommun och Ånge kommun för hela offentliga Sverige</p>
+        </div>
+    </div>
+</footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/timeline.js"></script>
+</body>
+</html>

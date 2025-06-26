@@ -1,0 +1,352 @@
+/* Layout Components - Header, Footer, Navigation */
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
+    z-index: var(--z-fixed);
+    height: var(--header-height);
+}
+
+.header-content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    min-width: 120px;
+    padding-left: 1.5rem;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-weight: var(--font-weight-bold);
+    font-size: 1.5rem;
+    color: var(--primary);
+    transition: opacity var(--transition-smooth);
+}
+
+.logo a:hover {
+    opacity: 0.8;
+}
+
+.logo img {
+    height: 2.5rem;
+    width: auto;
+    transition: opacity var(--transition-smooth);
+    object-fit: contain;
+    position: relative;
+    z-index: 51;
+    margin-top: 1rem;
+    transform: translateY(0.5rem);
+}
+
+/* Hide broken images */
+.logo img:not([src]), .logo img[src=""] {
+    display: none;
+}
+
+/* Desktop Navigation */
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+}
+
+.nav a {
+    position: relative;
+    color: var(--foreground);
+    text-decoration: none;
+    font-weight: var(--font-weight-medium);
+    font-size: 1rem;
+    padding: 1rem 1.25rem;
+    border-radius: 0.5rem;
+    transition: all var(--transition-smooth);
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    margin-top: 2.5rem;
+}
+
+.nav a:hover {
+    color: var(--primary);
+    background: rgba(0, 82, 147, 0.08);
+    transform: translateY(-1px);
+}
+
+.nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 1rem;
+    left: 1.25rem;
+    right: 1.25rem;
+    height: 2px;
+    background: var(--primary);
+    transform: scaleX(0);
+    transition: transform var(--transition-smooth);
+    border-radius: 1px;
+}
+
+.nav a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    display: none;
+    min-width: 60px;
+    justify-content: flex-end;
+}
+
+.mobile-menu-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: background-color var(--transition-smooth);
+}
+
+.mobile-menu-button:hover {
+    background: var(--muted);
+}
+
+.mobile-menu-button span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: var(--foreground);
+    border-radius: 1px;
+    margin: 2px 0;
+    transition: all var(--transition-smooth);
+}
+
+.mobile-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(16px);
+    border-top: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
+    z-index: 40;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all var(--transition-smooth);
+}
+
+.mobile-nav.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mobile-nav nav {
+    padding: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.mobile-nav a {
+    color: var(--foreground);
+    text-decoration: none;
+    font-weight: var(--font-weight-medium);
+    font-size: 1.125rem;
+    transition: all var(--transition-smooth);
+    padding: 0.875rem 1rem;
+    margin: 0 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.mobile-nav a:hover {
+    color: var(--primary);
+    background: rgba(0, 82, 147, 0.05);
+    transform: translateX(0.25rem);
+}
+
+/* Updated Footer Styles - Replace the existing footer styles in css/layout.css */
+
+/* Footer */
+.footer {
+    background: var(--background);
+    border-top: 1px solid var(--border);
+    padding: 4rem 0 2rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    align-items: center;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.footer-logo img {
+    height: 2.5rem;
+    width: auto;
+    object-fit: contain;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-contact-block {
+    text-align: left;
+}
+
+.footer-section h3 {
+    font-weight: var(--font-weight-medium);
+    margin-bottom: 1rem;
+    color: var(--foreground);
+}
+
+.footer-section a {
+    color: var(--muted-foreground);
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color var(--transition-smooth);
+}
+
+.footer-section a:hover {
+    color: var(--primary);
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--border);
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+}
+
+/* Responsive Footer */
+@media (max-width: 767px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .footer-logo {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 3rem 0 1.5rem;
+    }
+    
+    .footer-grid {
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Responsive Layout */
+@media (min-width: 768px) {
+    .header {
+        height: 5.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .nav {
+        display: flex;
+        gap: 3rem;
+    }
+
+    .header {
+        height: var(--header-height-large);
+    }
+
+    .nav a {
+        font-size: 1.0625rem;
+        padding: 1rem 1.25rem;
+    }
+}
+
+@media (max-width: 1023px) {
+    .nav {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: flex;
+    }
+
+    .header {
+        height: var(--header-height-mobile);
+    }
+
+    .logo {
+        flex: 1;
+        justify-content: center;
+        padding-left: 0;
+        padding-top: 0.5rem;
+    }
+
+    .logo img {
+        height: 3rem;
+        transform: translateY(-0.7rem);
+    }
+}
+
+@media (max-width: 767px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        text-align: center;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .footer-section {
+        margin-bottom: 1rem;
+    }
+}

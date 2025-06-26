@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Om Eneo - AI-plattformen för offentlig sektor</title>
+    <meta name="description" content="Lär dig mer om Eneo.ai AI-plattformen - funktioner, fördelar, integrationer och möjligheter för offentlig sektor. Utforska våra specialiserade webbappar och API:er.">
+    <link rel="icon" type="image/x-icon" href="public/favicon.ico">
+    
+    <!-- External Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/pages/om-eneo.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="public/images/Eneo-logo-svg.svg" alt="Eneo.ai">
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="nav">
+                    <a href="om-eneo.html" class="active">Om</a>
+                    <a href="tidslinje.html">Historik</a>
+                    <a href="samarbetsforum.html">Samarbete</a>
+                    <a href="docs.html">Docs</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="mobile-menu">
+                    <button class="mobile-menu-button" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu" id="mobile-menu-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="mobile-nav" id="mobile-nav">
+                <div class="container">
+                    <nav>
+                        <a href="index.html" onclick="closeMobileMenu()">Hem</a>
+                        <a href="om-eneo.html" onclick="closeMobileMenu()" class="active">Om Eneo</a>
+                        <a href="tidslinje.html" onclick="closeMobileMenu()">AI-utveckling</a>
+                        <a href="samarbetsforum.html" onclick="closeMobileMenu()">Samarbetsforum</a>
+                        <a href="kontakt.html" onclick="closeMobileMenu()">Kontakt</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <div class="page-hero-content">
+                    <h1>Om Eneo</h1>
+                    <p>Eneo är en öppen AI-plattform som revolutionerar hur offentliga organisationer använder generativ AI. Byggd med fokus på transparens, säkerhet och demokratisk kontroll, erbjuder Eneo kraftfulla verktyg för att förbättra offentliga tjänster och effektivisera administrativa processer.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Advantages Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-center">
+                    <h2>Fördelar med Eneo</h2>
+                    <p>Upptäck varför allt fler offentliga organisationer väljer Eneo som sin AI-plattform</p>
+                </div>
+                
+                <div class="advantages-grid">
+                    <div class="advantage-card">
+                        <div class="advantage-icon">
+                            <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                            </svg>
+                        </div>
+                        <h3>Kontroll över data</h3>
+                        <p>Din organisation har full kontroll för hur data används i era generativa AI-tjänster, exempelvis där er säkerhetspolicy kan styra åtkomst till AI-modeller.</p>
+                    </div>
+
+                    <div class="advantage-card">
+                        <div class="advantage-icon">
+                            <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <h3>Öppen källkod</h3>
+                        <p>All kod är transparent och granskningsbar. Ingen dolda funktioner eller algoritmer.</p>
+                    </div>
+
+                    <div class="advantage-card">
+                        <div class="advantage-icon">
+                            <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <h3>Transparens och öppenhet</h3>
+                        <p>Genom sin öppna källkod och sina inbyggda funktioner för öppenhet ger Eneo din organisation möjlighet att vara fullt transparent. Transparenta beslut, ingen svart låda. Din organisation sitter i förarsätet för öppenheten.</p>
+                    </div>
+
+                    <div class="advantage-card">
+                        <div class="advantage-icon">
+                            <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                        </div>
+                        <h3>Kollektiv utveckling och delning</h3>
+                        <p>Dela AI-lösningar och utveckla tillsammans med andra offentliga organisationer.</p>
+                    </div>
+
+                    <div class="advantage-card">
+                        <div class="advantage-icon">
+                            <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                        </div>
+                        <h3>Följ omvärldens utveckling</h3>
+                        <p>En teknikoberoende plattform som ger dig möjlighet att följa omvärldens utveckling inom AI.</p>
+                    </div>
+
+                    <div class="advantage-card">
+                        <div class="advantage-icon">
+                            <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                        </div>
+                        <h3>Använd er egen data</h3>
+                        <p>Använd din egen organisations data och regler för svar och beslut, inte den data som de stora företagsaktörerna använt för att träna sina AI-modeller.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Functions Section -->
+        <section class="section section-secondary">
+            <div class="container">
+                <div class="section-center">
+                    <h2>Funktioner i Eneo</h2>
+                    <p>Eneo innehåller en stor mängd funktioner som krävs i en offentlig organisation med sina unika behov och förutsättningar.</p>
+                </div>
+                
+                <div class="functions-grid">
+                    <div class="function-card">
+                        <div class="function-header">
+                            <div class="function-icon">
+                                <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                                </svg>
+                            </div>
+                            <h3>Assistenter</h3>
+                        </div>
+                        <p>Skapa specialiserade AI-assistenter för olika arbetsuppgifter och avdelningar.</p>
+                    </div>
+
+                    <div class="function-card">
+                        <div class="function-header">
+                            <div class="function-icon">
+                                <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                                </svg>
+                            </div>
+                            <h3>Delade arbetsytor</h3>
+                        </div>
+                        <p>Organisera ert AI-arbetet i projekt och team genom säkra arbetsytor med anpassade behörigheter och regler.</p>
+                    </div>
+
+                    <div class="function-card">
+                        <div class="function-header">
+                            <div class="function-icon">
+                                <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                </svg>
+                            </div>
+                            <h3>Lokalt kunskapsbibliotek</h3>
+                        </div>
+                        <p>Ladda upp och använda era dokument, er data och regler för AI att använda som kunskapskälla.</p>
+                    </div>
+
+                    <div class="function-card">
+                        <div class="function-header">
+                            <div class="function-icon">
+                                <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                                </svg>
+                            </div>
+                            <h3>Helt API-baserad</h3>
+                        </div>
+                        <p>Integrera med befintliga system, webbplatser och processer genom plattformens öppna API:er. All funktion i plattformen finns tillgänglig via API.</p>
+                    </div>
+
+                    <div class="function-card">
+                        <div class="function-header">
+                            <div class="function-icon">
+                                <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                </svg>
+                            </div>
+                            <h3>Statistik och analys</h3>
+                        </div>
+                        <p>Få insikter i er AI-användning genom att följa upp statistik, eller använd AI för att analysera prestandan i er AI.</p>
+                    </div>
+
+                    <div class="function-card">
+                        <div class="function-header">
+                            <div class="function-icon">
+                                <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </svg>
+                            </div>
+                            <h3>Användarhantering och inloggning</h3>
+                        </div>
+                        <p>Avancerad rollbaserad åtkomstkontroll och integration med befintliga identitetssystem för en automatiserad användarhantering. Använd Single-Sign-On för era användare eller logga in med era vanliga användarkonton.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Demo Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-center">
+                    <h2>Presentation av Eneo</h2>
+                    <p>Se Eneo i aktion - en genomgång av plattformens viktigaste funktioner</p>
+                </div>
+                
+                <div class="video-container">
+                    <div class="video-wrapper">
+                        <iframe 
+                            src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                            title="Eneo AI Platform Demo" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-description">
+                        <p>I denna 10-minuters demo får du se hur Eneo används i praktiken av Sundsvalls kommun. Vi visar hur man skapar AI-assistenter, arbetar med kunskapsbibliotek och samarbetar mellan olika avdelningar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Webapps Integration Section -->
+        <section class="section section-secondary">
+            <div class="container">
+                <div class="section-center">
+                    <h2>Exempel på integrerade webbappar</h2>
+                    <p>Eneo bygger helt på öppna API:er, vilket ger stora möjligheter att integrera AI-funktion i befintliga system och externa webbappar som är skräddarsydda för en viss målgrupp eller för ett visst moment. Här presenteras några exempel på webbappar från Sundsvall och Ånge kommun som nyttjar API:er i Eneo för att uppnå sin funktion.</p>
+                </div>
+                
+                <div class="webapps-grid">
+                    <div class="webapp-card">
+                        <div class="webapp-image">
+                            <img src="public/images/exempel-vux.png" alt="Document Analyzer webbapp interface" loading="lazy">
+                        </div>
+                        <div class="webapp-content">
+                            <h3>Chatassistent för Vuxenutbildning</h3>
+                            <p>En chatassistent som svarar på alla former av frågor om Vuxenutbildning i Sundsvalls kommun, den har läst in hela webbsidan för Vuxenutbildningen, flera dokument med information samt information om samtliga kurser som är tillgängliga för stunden.</p>
+                            <a href="https://sundsvall.se/vuxenutbildning" class="webapp-link">
+                                <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                                </svg>
+                                Testa assistenten
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="webapp-card">
+                        <div class="webapp-image">
+                            <img src="public/images/exempel-insats.png" alt="Meeting Assistant webbapp interface" loading="lazy">
+                        </div>
+                        <div class="webapp-content">
+                            <h3>Scenarioverktyget</h3>
+                            <p>Ett informations- och utbildningsverktyg som tar användaren genom ett scenario. Syftet är att få användaren att uppleva ett scenario som löpande anpassar sig utifrån de val användaren väljer.</p>
+                            <a href="#github-meeting-assistant" class="webapp-link">
+                                <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                                </svg>
+                                Läs mer om Scenarioverktyget
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="webapp-card">
+                        <div class="webapp-image">
+                            <img src="public/images/exempel-dokument.png" alt="Citizen Support webbapp interface" loading="lazy">
+                        </div>
+                        <div class="webapp-content">
+                            <h3>Dokumentskrivaren</h3>
+                            <p>En tjänst som använder generativ AI för att skriva olika typer av dokument inom Sundsvalls kommun, allt från utredningar till tjänsteskrivelser.</p>
+                            <a href="#github-citizen-support" class="webapp-link">
+                                <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                                </svg>
+                                Läs mer om Dokumentskrivaren på utveckling.sundsvall.se
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="webapp-card">
+                        <div class="webapp-image">
+                            <img src="public/images/exempel-wisser.png" alt="Policy Analyzer webbapp interface" loading="lazy">
+                        </div>
+                        <div class="webapp-content">
+                            <h3>Kunskapsstöd i kontaktcenter</h3>
+                            <p>En webblösning som har läst in sig på all relevant kunskap som finns tillgängligt internt och på sundsvall.se, syftet är att en medarbetare i ett kontaktcenter bara kan ställa frågan som invånaren eller företagaren ställer till AI och få direkt guidning om hur denne ska svara och stötta den som ringde in.</p>
+                            <a href="#github-policy-analyzer" class="webapp-link">
+                                <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                                </svg>
+                                Läs mer om kunskapsstöd
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="webapp-card">
+                        <div class="webapp-image">
+                            <img src="public/images/exempel-faktura.png" alt="Budget Optimizer webbapp interface" loading="lazy">
+                        </div>
+                        <div class="webapp-content">
+                            <h3>Personaliserad hjälp till invånare och företagare</h3>
+                            <p>En lösning för att tillfälligt använda AI med en invånarens, kunds eller företags personliga data för att kunna ge svar på frågor som rör indviduella ärenden.</p>
+                            <a href="#github-budget-optimizer" class="webapp-link">
+                                <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                                </svg>
+                                Läs mer om personlig hjälp med AI
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Documentation Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-center">
+                    <h2>Kom igång med Eneo</h2>
+                    <p>Hitta all information du behöver för att ta nästa steg och komma igång med Eneo, från dokumentation till källkod till hur din offentliga organisation kan kliva in i samarbetet kring Eneo.</p>
+                </div>
+                
+                <div class="documentation-grid">
+
+                    <div class="doc-card">
+                        <div class="doc-header">
+                            <div class="doc-icon">
+                                <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
+                            </div>
+                            <h3>Samarbete</h3>
+                        </div>
+                        <p>Det är genom samarbete och delande plattformen utvecklas och frodas.</p>
+                        <div class="doc-features">
+                            <span class="doc-tag">✓ Erfarenhetsutbyte</span>
+                            <span class="doc-tag">✓ Dela lösningar</span>
+                            <span class="doc-tag">✓ Användarförening</span>
+                        </div>
+                        <a href="samarbetsforum.html" class="doc-link btn btn-primary">Samarbete</a>
+                    </div>
+
+                    <div class="doc-card">
+                        <div class="doc-header">
+                            <div class="doc-icon">
+                                <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                </svg>
+                            </div>
+                            <h3>Dokumentation</h3>
+                        </div>
+                        <p>Omfattande guide för utvecklare, systemadministratörer, UX:are och IT-ansvariga som ska implementera Eneo.</p>
+                        <div class="doc-features">
+                            <span class="doc-tag">✓ API-dokumentation</span>
+                            <span class="doc-tag">✓ Installationsguide</span>
+                            <span class="doc-tag">✓ Designsystem</span>
+                        </div>
+                        <a href="docs.html" class="doc-link btn btn-primary">Dokumentation</a>
+                    </div>
+                    
+                    <div class="doc-card">
+                        <div class="doc-header">
+                            <div class="doc-icon">
+                                <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <h3>Källkod</h3>
+                        </div>
+                        <p>Komplett källkod för Eneo-plattformen. Använd, bidra och anpassa efter dina behov under AGPL-3.0 licensen.</p>
+                        <div class="doc-features">
+                            <span class="doc-tag">✓ Källkod</span>
+                            <span class="doc-tag">✓ Öppen utveckling</span>
+                        </div>
+                        <a href="https://github.com/eneo-ai/eneo" target="_blank" class="doc-link btn btn-primary">Källkod</a>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section cta-section">
+            <div class="container">
+                <div class="section-center">
+                    <h2>Redo att börja med Eneo?</h2>
+                    <p>Ta första steget mot en mer effektiv och transparent AI-driven organisation</p>
+                    
+                    <div class="cta-buttons">
+                        <a href="#kom-igang" class="btn btn-primary">Kom igång nu</a>
+                        <a href="kontakt.html" class="btn btn-outline">Kontakta oss</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-logo">
+                <img src="public/images/Eneo-logo-svg.svg" alt="Eneo.ai">
+            </div>
+            
+            <div class="footer-section">
+                <div class="footer-contact-block">
+                    <h3>Kontakt</h3>
+                    <a href="mailto:digitalisering@sundsvall.se">digitalisering@sundsvall.se</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>Ett initiativ från Sundsvalls kommun och Ånge kommun för hela offentliga Sverige</p>
+        </div>
+    </div>
+</footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

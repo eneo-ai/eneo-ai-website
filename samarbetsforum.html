@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samarbetsforum - Eneo.ai</title>
+    <meta name="description" content="Gå med i Eneo.ai samarbetsforum och bidra till utvecklingen av demokratisk AI för offentlig sektor. Hitta resurser, dokumentation och community-länkar.">
+    <link rel="icon" type="image/x-icon" href="public/favicon.ico">
+    
+    <!-- External Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/pages/samarbetsforum.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="public/images/Eneo-logo-svg.svg" alt="Eneo.ai">
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="nav">
+                    <a href="om-eneo.html">Om</a>
+                    <a href="tidslinje.html">Historik</a>
+                    <a href="samarbetsforum.html" class="active">Samarbete</a>
+                    <a href="docs.html">Docs</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="mobile-menu">
+                    <button class="mobile-menu-button" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu" id="mobile-menu-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="mobile-nav" id="mobile-nav">
+                <div class="container">
+                    <nav>
+                        <a href="index.html" onclick="closeMobileMenu()">Hem</a>
+                        <a href="om-eneo.html" onclick="closeMobileMenu()">Om Eneo</a>
+                        <a href="tidslinje.html" onclick="closeMobileMenu()">AI-utveckling</a>
+                        <a href="samarbetsforum.html" onclick="closeMobileMenu()" class="active">Samarbetsforum</a>
+                        <a href="kontakt.html" onclick="closeMobileMenu()">Kontakt</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <div class="page-hero-content">
+                    <h1>Samarbetsforum</h1>
+                    <p>Då Eneo AI är helt nybildat sommaren 2025 är samarbetsformerna under uppbyggnad, inom kort kommer det både digitala forum, öppna utvecklingsplaner med öppen backlog samt chatmöjligheter. Allt i syfte att dela kunskap, tillämpningar och erfarenheter mellan alla offentliga aktörer som nyttjar plattformen.</p>
+                    <p>Sedan utvecklingen av Intric Community (läs om Eneos historia under Historik) finns det en start till en användarförening, denna är så länge också användarförening för Eneo då Eneo är fortsättningen av den öppna plattformen som också var starten för användarföreningen. Mer om den och hur du deltar kan du läsa nedan.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- User Association Section -->
+        <section class="section user-association-section">
+            <div class="container">
+                <div class="user-association-content">
+                    <div class="association-text">
+                        <h2>Användarförening</h2>
+                        <p>Sundsvalls kommun och Ånge kommun har tillsammans med de första kommunerna som började nyttja plattformen Intric Community bildat en användarförening som är helt fristående från leverantörer. Vi har hämtat mycket erfarenheter från användarföreningen för Open ePlatform, då flera kommuner som använder Eneo även varit med och bildat eller aktivt medverkar i den användarföreningen.</p>
+                        <p>Grundsyftet med användarföreningen är att främja en bred spridning av öppna AI-tillämpningar i offentliga Sverige genom att offentliga aktörer delar lösningar och erfarenheter med varandra.</p>
+                        <div class="activities-section">
+                            <h3>Detta gör vi genom att;</h3>
+                            <ul class="activities-list">
+                                <li>Vi har en styrelse som samordnar arbete inom föreningen</li>
+                                <li>Tillhandahålla ett digitalt forum för utbyte av erfarenheter, lösningar, prompting m.m.</li>
+                                <li>Genomföra seminarium med demo och utbyte kring användningfall och lösningar som bygger på Intric</li>
+                                <li>Vid behov skapas arbetsgrupper där ett par kommuner blir färdledande i att utreda eller driva utveckling inom ett särskilt område</li>
+                                <li>Aktivt dela AI-tillämpningar byggda på Intric</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="forum-invitation">
+                            <h3>Gå med i digitalt forum för utbyte mellan offentliga aktörer</h3>
+                            <p>Gå gärna med i det digitala forum där kommuner som börjat använda plattformen bollar frågor och utbyter erfarenheter inom. Er offentliga organisation behöver inte vara användare av plattformen redan idag för att delta, det går bra att delta även om man bara är nyfiken.</p>
+                            <p>Maila <a href="mailto:digitalisering@sundsvall.se">digitalisering@sundsvall.se</a> så skickar vi en inbjudan så att du kan registrera dig!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Links Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-center">
+                    <h2>Kommande samarbetsfunktioner</h2>
+                    <p>Inom kort lanseras flera verktyg och forum för löpande samarbete kring plattformen.</p>
+                </div>
+                
+                <div class="links-grid">
+                    <a href="#samarbetsforum" class="link-card">
+                        <div class="link-icon">
+                            <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            </svg>
+                        </div>
+                        <h3>Samarbetsforum</h3>
+                        <p>Kommer snart! Ett digitalt forum för alla aktörer inom det offentliga som nyttjar plattformen. Ställ frågor och utbyt erfarenheter.</p>
+                        <div class="link-arrow">→</div>
+                    </a>
+
+                    <a href="#utvecklingsplan" class="link-card">
+                        <div class="link-icon">
+                            <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                        </div>
+                        <h3>Utvecklingsplan</h3>
+                        <p>Kommer snart! Ta del av plattformens övergripande utvecklingsplan.</p>
+                        <div class="link-arrow">→</div>
+                    </a>
+
+                    <a href="#chat" class="link-card">
+                        <div class="link-icon">
+                            <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                            </svg>
+                        </div>
+                        <h3>Chat</h3>
+                        <p>Kommer snart! Chat för löpande dialog inom användarföreningen, för mer dagliga och snabba frågor mellan parter inom föreningen samt för dialog kring utveckling.</p>
+                        <div class="link-arrow">→</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-logo">
+                <img src="public/images/Eneo-logo-svg.svg" alt="Eneo.ai">
+            </div>
+            
+            <div class="footer-section">
+                <div class="footer-contact-block">
+                    <h3>Kontakt</h3>
+                    <a href="mailto:digitalisering@sundsvall.se">digitalisering@sundsvall.se</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>Ett initiativ från Sundsvalls kommun och Ånge kommun för hela offentliga Sverige</p>
+        </div>
+    </div>
+</footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
