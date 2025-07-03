@@ -1,0 +1,227 @@
+/* Exempel Page Specific Styles */
+
+/* Page Hero */
+.page-hero {
+    padding: 13rem 0 8rem;
+    background: linear-gradient(135deg, rgba(0, 82, 147, 0.05) 0%, var(--accent) 50%, var(--background) 100%);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.page-hero::before {
+    content: '';
+    position: absolute;
+    top: 5rem;
+    left: 5rem;
+    width: 16rem;
+    height: 16rem;
+    background: rgba(0, 82, 147, 0.05);
+    border-radius: 50%;
+    filter: blur(3rem);
+}
+
+.page-hero::after {
+    content: '';
+    position: absolute;
+    bottom: 8rem;
+    right: 8rem;
+    width: 16rem;
+    height: 16rem;
+    background: rgba(0, 82, 147, 0.03);
+    border-radius: 50%;
+    filter: blur(4rem);
+    z-index: -1;
+}
+
+.page-hero-content {
+    position: relative;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.page-hero h1 {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    color: var(--foreground);
+}
+
+.page-hero p {
+    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+    color: var(--muted-foreground);
+    max-width: 60rem;
+    margin: 0 auto;
+    font-weight: var(--font-weight-light);
+    line-height: 1.6;
+}
+
+/* Use Cases Grid */
+.usecases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+/* Use Case Cards */
+.usecase-card {
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.usecase-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(0, 82, 147, 0.2);
+}
+
+.usecase-header {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.usecase-card h3 {
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--foreground);
+    margin: 0;
+}
+
+.usecase-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.usecase-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.375rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.875rem;
+    font-weight: var(--font-weight-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    border: 1px solid;
+}
+
+.usecase-tag.assistant {
+    background: rgba(34, 197, 94, 0.1);
+    color: #16a34a;
+    border-color: rgba(34, 197, 94, 0.2);
+}
+
+.usecase-tag.app {
+    background: rgba(0, 82, 147, 0.1);
+    color: var(--primary);
+    border-color: rgba(0, 82, 147, 0.2);
+}
+
+.usecase-tag.service {
+    background: rgba(168, 85, 247, 0.1);
+    color: #7c3aed;
+    border-color: rgba(168, 85, 247, 0.2);
+}
+
+.usecase-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.usecase-content p {
+    color: var(--muted-foreground);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* CTA Section */
+.cta-section {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 50%, var(--muted) 100%);
+    border-top: 1px solid var(--border);
+}
+
+.cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+/* Responsive Design */
+@media (min-width: 640px) {
+    .cta-buttons {
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .usecases-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
+    
+    .page-hero {
+        padding: 13rem 0 9rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .usecases-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+    
+    .page-hero {
+        padding: 14rem 0 10rem;
+    }
+}
+
+@media (max-width: 1023px) {
+    .page-hero {
+        padding: 11rem 0 8rem;
+    }
+}
+
+/* Animation for cards on load */
+.usecase-card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.usecase-card:nth-child(1) { animation-delay: 0.1s; }
+.usecase-card:nth-child(2) { animation-delay: 0.2s; }
+.usecase-card:nth-child(3) { animation-delay: 0.3s; }
+.usecase-card:nth-child(4) { animation-delay: 0.4s; }
+.usecase-card:nth-child(5) { animation-delay: 0.5s; }
+.usecase-card:nth-child(6) { animation-delay: 0.6s; }
+.usecase-card:nth-child(7) { animation-delay: 0.7s; }
+.usecase-card:nth-child(8) { animation-delay: 0.8s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exempel - Eneo AI användningsfall</title>
+    <meta name="description" content="Upptäck praktiska exempel på hur Eneo AI kan användas inom offentlig sektor. Från dokumentanalys till medborgarservice - se hur AI förbättrar offentliga tjänster.">
+    <link rel="icon" type="image/x-icon" href="public/favicon.ico">
+    <meta property="og:title" content="Exempel - Eneo AI användningsfall" />
+    <meta property="og:description" content="Upptäck praktiska exempel på hur Eneo AI kan användas inom offentlig sektor. Från dokumentanalys till medborgarservice - se hur AI förbättrar offentliga tjänster." />
+    <meta property="og:image" content="https://eneo.ai/public/logo-eneo.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://eneo.ai/exempel.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Eneo.ai" />
+    <meta property="og:locale" content="sv_SE" />
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- External Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/pages/exempel.css">
+    
+    <!-- Standard favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <!-- PNG favicons for different sizes -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32x32.png">
+
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" href="/public/apple-touch-icon.png">
+
+    <!-- Android Chrome icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/public/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/public/android-chrome-512x512.png">
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="public/images/Eneo-logo-svg.svg" alt="Eneo.ai">
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="nav">
+                    <a href="om-eneo.html">Om</a>
+                    <a href="exempel.html" class="active">Exempel</a>
+                    <a href="tidslinje.html">Historik</a>
+                    <a href="samarbetsforum.html">Samarbete</a>
+                    <a href="docs.html">Docs</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="mobile-menu">
+                    <button class="mobile-menu-button" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu" id="mobile-menu-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="mobile-nav" id="mobile-nav">
+                <div class="container">
+                    <nav>
+                        <a href="om-eneo.html" onclick="closeMobileMenu()">Om</a>
+                        <a href="exempel.html" onclick="closeMobileMenu()" class="active">Exempel</a>
+                        <a href="tidslinje.html" onclick="closeMobileMenu()">Historik</a>
+                        <a href="samarbetsforum.html" onclick="closeMobileMenu()">Samarbete</a>
+                        <a href="docs.html" onclick="closeMobileMenu()">Docs</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <div class="page-hero-content">
+                    <h1>Exempel på Eneo AI-lösningar</h1>
+                    <p>Upptäck hur Eneo AI redan idag används för att förbättra offentliga tjänster och processer. Från automatisk dokumentanalys till intelligenta medborgarservices - här är konkreta exempel på hur AI skapar värde inom offentlig sektor.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Use Cases Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-center">
+                    <h2>AI-lösningar i praktiken</h2>
+                    <p>Exempel på hur olika typer av AI-funktioner i Eneo används för att effektivisera och förbättra offentliga verksamheter</p>
+                </div>
+                
+                <div class="usecases-grid">
+                    <div class="usecase-card">
+                        <div class="usecase-header">
+                            <h3>Dokumentanalys</h3>
+                            <div class="usecase-tags">
+                                <span class="usecase-tag assistant">Assistant</span>
+                            </div>
+                        </div>
+                        <div class="usecase-content">
+                            <p>Automatisk analys och sammanfattning av kommunala dokument, handlingar och utredningar. Sparar tid och säkerställer att viktig information inte missas.</p>
+                        </div>
+                    </div>
+
+                    <div class="usecase-card">
+                        <div class="usecase-header">
+                            <h3>Medborgarservice</h3>
+                            <div class="usecase-tags">
+                                <span class="usecase-tag app">App</span>
+                            </div>
+                        </div>
+                        <div class="usecase-content">
+                            <p>AI-driven chatbot som hjälper medborgare att hitta information, boka tider och få svar på vanliga frågor dygnet runt.</p>
+                        </div>
+                    </div>
+
+                    <div class="usecase-card">
+                        <div class="usecase-header">
+                            <h3>Handlingsplanering</h3>
+                            <div class="usecase-tags">
+                                <span class="usecase-tag service">Service</span>
+                            </div>
+                        </div>
+                        <div class="usecase-content">
+                            <p>Automatisk generering av handlingsplaner baserat på policydokument, tidigare beslut och aktuella behov.</p>
+                        </div>
+                    </div>
+
+                    <div class="usecase-card">
+                        <div class="usecase-header">
+                            <h3>Ärendehantering</h3>
+                            <div class="usecase-tags">
+                                <span class="usecase-tag assistant">Assistant</span>
+                            </div>
+                        </div>
+                        <div class="usecase-content">
+                            <p>Intelligenta verktyg som hjälper handläggare att kategorisera, prioritera och hantera inkommande ärenden mer effektivt.</p>
+                        </div>
+                    </div>
+
+                    <div class="usecase-card">
+                        <div class="usecase-header">
+                            <h3>Språkstöd</h3>
+                            <div class="usecase-tags">
+                                <span class="usecase-tag service">Service</span>
+                            </div>
+                        </div>
+                        <div class="usecase-content">
+                            <p>Flerspråkig översättning och språkstöd för att göra offentliga tjänster tillgängliga för alla medborgare.</p>
+                        </div>
+                    </div>
+
+                    <div class="usecase-card">
+                        <div class="usecase-header">
+                            <h3>Rapportgenerering</h3>
+                            <div class="usecase-tags">
+                                <span class="usecase-tag app">App</span>
+                            </div>
+                        </div>
+                        <div class="usecase-content">
+                            <p>Automatisk skapande av rapporter baserat på data från olika system, med anpassade format för olika mottagare.</p>
+                        </div>
+                    </div>
+
+                    <div class="usecase-card">
+                        <div class="usecase-header">
+                            <h3>Beslutsstöd</h3>
+                            <div class="usecase-tags">
+                                <span class="usecase-tag assistant">Assistant</span>
+                            </div>
+                        </div>
+                        <div class="usecase-content">
+                            <p>Analysverktyg som hjälper beslutsfattare att förstå konsekvenser av olika alternativ baserat på historisk data.</p>
+                        </div>
+                    </div>
+
+                    <div class="usecase-card">
+                        <div class="usecase-header">
+                            <h3>Kvalitetssäkring</h3>
+                            <div class="usecase-tags">
+                                <span class="usecase-tag service">Service</span>
+                            </div>
+                        </div>
+                        <div class="usecase-content">
+                            <p>Automatisk granskning av dokument och processer för att säkerställa regelefterlevnad och kvalitetsstandarder.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section cta-section">
+            <div class="container">
+                <div class="section-center">
+                    <h2>Vill du veta mer om hur Eneo kan hjälpa er organisation?</h2>
+                    <p>Upptäck hur ni kan implementera liknande AI-lösningar i er verksamhet och bli en del av det demokratiska AI-samarbetet.</p>
+                    <div class="cta-buttons">
+                        <a href="samarbetsforum.html" class="btn btn-primary">
+                            Läs mer om samarbetet
+                        </a>
+                        <a href="docs.html" class="btn btn-outline">
+                            Teknisk dokumentation
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-logo">
+                    <img src="public/images/Eneo-logo-svg.svg" alt="Eneo.ai">
+                </div>
+                
+                <div class="footer-section">
+                    <div class="footer-contact-block">
+                        <h3>Kontakt</h3>
+                        <a href="mailto:digitalisering@sundsvall.se">digitalisering@sundsvall.se</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>Ett initiativ från Sundsvalls kommun och Ånge kommun för hela offentliga Sverige</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
