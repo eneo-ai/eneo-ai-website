@@ -285,13 +285,6 @@
     transform: translateY(-1px);
 }
 
-.webapp-link svg {
-    transition: transform var(--transition-smooth);
-}
-
-.webapp-link:hover svg {
-    transform: scale(1.1);
-}
 
 /* Documentation Section */
 .documentation-grid {
