@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utbildningar - Lär dig använda Eneo.ai</title>
+    <meta name="description" content="Utbildningar inom Eneo.ai för alla nivåer - från introduktion till avancerad användning. Videokurser, exempel och praktiska tips för offentlig sektor.">
+    <link rel="icon" type="image/x-icon" href="public/favicon.ico">
+    <meta property="og:title" content="Utbildningar - Lär dig använda Eneo.ai" />
+    <meta property="og:description" content="Utbildningar inom Eneo.ai för alla nivåer - från introduktion till avancerad användning. Videokurser, exempel och praktiska tips för offentlig sektor." />
+    <meta property="og:image" content="https://eneo.ai/public/logo-eneo.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://eneo.ai/utbildningar.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Eneo.ai" />
+    <meta property="og:locale" content="sv_SE" />
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Analytics -->
+    <script defer src="https://analytics.eneo.ai/script.js" data-website-id="50c055f0-8d28-4e1e-9d62-0d12a7c5dd57"></script>
+    
+    <!-- External Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/pages/utbildningar.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="public/images/Eneo-logo-svg.svg" alt="Eneo.ai">
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="nav">
+                    <a href="om-eneo.html">Om</a>
+                    <a href="utbildningar.html" class="active">Utbildningar</a>
+                    <a href="tidslinje.html">Historik</a>
+                    <a href="samarbetsforum.html">Samarbete</a>
+                    <a href="docs.html">Docs</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="mobile-menu">
+                    <button class="mobile-menu-button" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu" id="mobile-menu-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="mobile-nav" id="mobile-nav">
+                <div class="container">
+                    <nav>
+                        <a href="om-eneo.html" onclick="closeMobileMenu()">Om</a>
+                        <a href="utbildningar.html" onclick="closeMobileMenu()" class="active">Utbildningar</a>
+                        <a href="tidslinje.html" onclick="closeMobileMenu()">Historik</a>
+                        <a href="samarbetsforum.html" onclick="closeMobileMenu()">Samarbete</a>
+                        <a href="docs.html" onclick="closeMobileMenu()">Docs</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <div class="page-hero-content">
+                    <h1>Utbildningar</h1>
+                    <p>Lär dig att använda Eneo på bästa sätt. Våra utbildningar är indelade i tre områden som täcker allt från grundläggande introduktion till avancerad administration. Varje utbildningsområde innehåller videor, praktiska exempel och konkreta lärandemål.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Educational Areas Overview -->
+        <section class="section educational-overview">
+            <div class="container">
+                <div class="section-center">
+                    <h2>Utbildningsområden</h2>
+                    <p>Välj det utbildningsområde som passar dig bäst för att komma igång med Eneo.</p>
+                    
+                    <div class="overview-grid">
+                        <a href="#introduktion-till-eneo" class="overview-card">
+                            <div class="overview-icon">
+                                <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <h3>Introduktion till Eneo</h3>
+                            <p>Lär dig grunderna om vad Eneo är och hur det kan hjälpa din organisation.</p>
+                        </a>
+                        
+                        <a href="#funktioner-i-eneo" class="overview-card">
+                            <div class="overview-icon">
+                                <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <h3>Funktioner i Eneo</h3>
+                            <p>Upptäck och lär dig använda Eneos olika funktioner och verktyg i praktiken.</p>
+                        </a>
+                        
+                        <a href="#administrera-eneo" class="overview-card">
+                            <div class="overview-icon">
+                                <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                            </div>
+                            <h3>Administrera Eneo</h3>
+                            <p>Lär dig avancerade administrativa funktioner och systemhantering.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Introduktion till Eneo -->
+        <section id="introduktion-till-eneo" class="section training-area">
+            <div class="container">
+                <div class="area-header">
+                    <div class="area-badge introduction">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Introduktion till Eneo
+                    </div>
+                    <h2>Lär dig grunderna om Eneo</h2>
+                    <p>Perfekt för dig som är ny med Eneo och vill förstå vad plattformen är, hur den fungerar och varför den är rätt val för offentlig sektor. Här får du en grundläggande förståelse för Eneos syfte och möjligheter.</p>
+                </div>
+
+                <div class="training-grid">
+                    <div class="training-card">
+                        <div class="video-wrapper">
+                            <iframe src="https://www.youtube.com/embed/B1DcnSBWVxw" title="Introduktion till Eneo del 1 - Vad är Eneo?" frameborder="0" border="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="border: none;"></iframe>
+                        </div>
+                        <div class="card-content">
+                            <h3>Vad är Eneo?</h3>
+                            <p>En grundläggande introduktion där vi förklarar vad Eneo är, dess syfte och hur det kan hjälpa offentliga organisationer att implementera AI-lösningar på ett säkert och transparent sätt.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Funktioner i Eneo -->
+        <section id="funktioner-i-eneo" class="section section-secondary training-area">
+            <div class="container">
+                <div class="area-header">
+                    <div class="area-badge normal">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Funktioner i Eneo
+                    </div>
+                    <h2>Lär dig använda Eneos funktioner</h2>
+                    <p>Här lär du dig att praktiskt använda Eneos olika funktioner och verktyg. Vi går igenom plattformens möjligheter och visar konkreta exempel på hur du kan skapa och använda AI-lösningar i din verksamhet.</p>
+                </div>
+
+                <div class="training-grid">
+                    <div class="training-card">
+                        <div class="video-wrapper">
+                            <iframe src="https://www.youtube.com/embed/47yYp88k_y4" title="Personlig chatt" frameborder="0" border="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="border: none;"></iframe>
+                        </div>
+                        <div class="card-content">
+                            <h3>Personlig chatt</h3>
+                            <p>Lär dig om Eneos tekniska möjligheter, API:er och hur plattformen kan integreras med befintliga system. Perfekt för utvecklare och IT-ansvariga som vill förstå den tekniska sidan.</p>
+                        </div>
+                    </div>
+
+                    <div class="training-card">
+                        <div class="video-wrapper">
+                            <iframe src="https://www.youtube.com/embed/--1T5MherJg" title="Assistent med kunskap" frameborder="0" border="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="border: none;"></iframe>
+                        </div>
+                        <div class="card-content">
+                            <h3>Assistent med kunskap</h3>
+                            <p>Se en praktisk demonstration av hur man skapar en AI-tjänst i Eneo från början till slut. Följ med steg för steg och få en fördjupad förståelse för plattformens funktionalitet.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Administrera Eneo -->
+        <section id="administrera-eneo" class="section training-area">
+            <div class="container">
+                <div class="area-header">
+                    <div class="area-badge advanced">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        Administrera Eneo
+                    </div>
+                    <h2>Avancerad administration och systemhantering</h2>
+                    <p>För dig som ansvarar för administration och systemhantering av Eneo. Här lär du dig avancerade administrativa funktioner, användarhantering, säkerhetsaspekter och hur du kan optimera plattformen för din organisation.</p>
+                </div>
+
+                <div class="training-grid">
+                    <div class="training-card coming-soon">
+                        <div class="video-wrapper">
+                            <div class="coming-soon-placeholder">
+                                <svg width="64" height="64" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>Kommer snart</span>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Användarhantering och behörigheter</h3>
+                            <p>Lär dig att hantera användare, grupper och behörigheter i Eneo. Vi går igenom hur du skapar säkra arbetsmiljöer och hanterar åtkomst till olika funktioner och data.</p>
+                        </div>
+                    </div>
+
+                    <div class="training-card coming-soon">
+                        <div class="video-wrapper">
+                            <div class="coming-soon-placeholder">
+                                <svg width="64" height="64" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>Kommer snart</span>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Säkerhet och compliance</h3>
+                            <p>Fördjupa dig i säkerhetsaspekter, datahantering och compliance-funktioner i Eneo. Lär dig att implementera robusta säkerhetspolicies och uppfylla regulatoriska krav.</p>
+                        </div>
+                    </div>
+
+                    <div class="training-card coming-soon">
+                        <div class="video-wrapper">
+                            <div class="coming-soon-placeholder">
+                                <svg width="64" height="64" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>Kommer snart</span>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Systemoptimering och underhåll</h3>
+                            <p>Lär dig att optimera prestanda, hantera systemuppdateringar och utföra löpande underhåll av din Eneo-installation för bästa möjliga användarupplevelse.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-logo">
+                    <img src="public/images/Eneo-logo-svg.svg" alt="Eneo.ai">
+                </div>
+                
+                <div class="footer-section">
+                    <div class="footer-contact-block">
+                        <h3>Kontakt</h3>
+                        <a href="mailto:digitalisering@sundsvall.se">digitalisering@sundsvall.se</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>Ett initiativ från Sundsvalls kommun och Ånge kommun för hela offentliga Sverige</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
