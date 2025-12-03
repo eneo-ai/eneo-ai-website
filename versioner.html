@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Versioner - Eneo.ai Versionshistorik</title>
+    <meta name="description" content="Se alla versioner av Eneo.ai plattformen. Upptäck nya funktioner, förbättringar och kommande uppdateringar för vår AI-plattform för offentlig sektor.">
+    <link rel="icon" type="image/x-icon" href="public/favicon.ico">
+    <meta property="og:title" content="Versioner - Eneo.ai Versionshistorik" />
+    <meta property="og:description" content="Se alla versioner av Eneo.ai plattformen. Upptäck nya funktioner, förbättringar och kommande uppdateringar." />
+    <meta property="og:image" content="https://eneo.ai/public/logo-eneo.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://eneo.ai/versioner.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Eneo.ai" />
+    <meta property="og:locale" content="sv_SE" />
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Analytics -->
+    <script defer src="https://analytics.eneo.ai/script.js" data-website-id="50c055f0-8d28-4e1e-9d62-0d12a7c5dd57"></script>
+
+    <!-- External Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/pages/versioner.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="public/images/Eneo-logo-svg.svg" alt="Eneo.ai">
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="nav">
+                    <a href="om-eneo.html">Om</a>
+                    <a href="anvandningsfall.html">Användningsfall</a>
+                    <a href="utbildningar.html">Utbildningar</a>
+                    <a href="tidslinje.html">Historik</a>
+                    <a href="samarbetsforum.html">Samarbete</a>
+                    <a href="docs.html">Docs</a>
+                    <a href="versioner.html" class="active">Versioner</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="mobile-menu">
+                    <button class="mobile-menu-button" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu" id="mobile-menu-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="mobile-nav" id="mobile-nav">
+                <div class="container">
+                    <nav>
+                        <a href="om-eneo.html" onclick="closeMobileMenu()">Om</a>
+                        <a href="anvandningsfall.html" onclick="closeMobileMenu()">Användningsfall</a>
+                        <a href="utbildningar.html" onclick="closeMobileMenu()">Utbildningar</a>
+                        <a href="tidslinje.html" onclick="closeMobileMenu()">Historik</a>
+                        <a href="samarbetsforum.html" onclick="closeMobileMenu()">Samarbete</a>
+                        <a href="docs.html" onclick="closeMobileMenu()">Docs</a>
+                        <a href="versioner.html" onclick="closeMobileMenu()">Versioner</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <div class="page-hero-content">
+                    <h1>Versioner</h1>
+                    <p>Följ utvecklingen av Eneo.ai genom våra versionsanteckningar. Här hittar du information om nya funktioner, förbättringar och buggfixar för varje version av plattformen. Upptäck vad som är nytt och vad som kommer i framtida uppdateringar.</p>
+                    <div class="quick-nav">
+                        <a href="#versionshistorik" class="quick-nav-link">Versionshistorik</a>
+                        <a href="#kommande-funktioner" class="quick-nav-link">Kommande funktioner</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Release Notes Section -->
+        <section class="section">
+            <div class="container">
+                <div class="releases-container">
+                    <!-- Current Releases -->
+                    <div class="releases-section">
+                        <h2 id="versionshistorik" class="releases-section-title">Versionshistorik</h2>
+
+                        <!-- Version 1.5.0 - Latest (Expanded by default) -->
+                        <div class="release-item expanded">
+                            <div class="release-header" onclick="toggleRelease(this)">
+                                <div class="release-title-group">
+                                    <h3 class="release-version">Version 1.5.0</h3>
+                                    <span class="release-badge latest">Senaste version</span>
+                                </div>
+                                <div class="release-meta">
+                                    <svg class="release-chevron" width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="release-content">
+                                <div class="release-description">
+                                    <p>En omfattande uppdatering med fokus på kunskapshantering på organisationsnivå, förbättrad administrationsupplevelse och ökad flexibilitet för konfigurering av crawler-inställningar och API-nycklar.</p>
+                                </div>
+
+                                <div class="release-changes">
+                                    <div class="change-group">
+                                        <h4 class="change-type new">Nya funktioner</h4>
+                                        <ul>
+                                            <li><strong>Organisationsbaserad kunskap:</strong> Administratörer kan nu skapa och hantera kunskapsbaser på organisationsnivå som automatiskt blir tillgängliga för alla användare i organisationen. Detta gör det enklare att dela gemensam information i organisationen med ny flik för organisationshantering och stöd för webbplatser och dokument på organisationsnivå.</li>
+                                            <li><strong>Organisationsanpassade inställningar för crawler:</strong> Varje organisation kan nu konfigurera hur systemet samlar in information från webbplatser enligt sina egna behov och preferenser, med anpassningsbara timeout-inställningar, individuell konfiguration av crawlfrekvens samt kundspecifika begränsningar för storlek och omfattning.</li>
+                                            <li><strong>Kunskapsvisare:</strong> En ny funktion att förhandsgranska knowledge. Man kan nu expandera importerade kunskapskällor och se exakt vilka filer som ingår i en kollektion eller på en webbplats. Det går även att visa och ladda ned individuella filer. Detta ger en bättre överblick över vilket innehåll assistenter och appar har tillgång till.</li>
+                                            <li><strong>Hantering av API-nycklar i användargränssnittet:</strong> Administratörer kan nu hantera API-nycklar och credentials för AI-providers direkt i gränssnittet, konfigurera credentials för olika providers (OpenAI, Anthropic, etc.) samt få tydliga meddelanden när credentials saknas för en modell. Detta ger enklare överblick över vilka modeller som är tillgängliga. Observera: Denna funktion kräver att "tenant credentials" är aktiverat i systemkonfigurationen (miljövariabeln TENANT_CREDENTIALS_ENABLED = true).</li>
+                                            <li><strong>Förbättrad federerad inloggning:</strong> Systemet har nu bättre stöd för enkel inloggning (SSO/OIDC) med möjlighet att konfigurera federation per kund via API, vilket ger större flexibilitet i hur organisationer hanterar autentisering.</li>
+                                            <li><strong>Tenant-specifika mallar:</strong> Möjlighet att skapa och använda mallar som är specifika för varje tenant, vilket ger bättre anpassning och separation mellan olika tenants arbetsflöden.</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="change-group">
+                                        <h4 class="change-type improved">Förbättringar</h4>
+                                        <ul>
+                                            <li><strong>Administrationsgränssnitt:</strong> Paginering för användarlistan hanterar nu stora mängder användare utan prestandaproblem, med förbättrad filtrering av användare och bättre översikt och hantering av systemresurser.</li>
+                                            <li><strong>Schemaläggning av crawler:</strong> Webbplatser som är konfigurerade att krypas dagligen får nu en mer konsekvent schemaläggning med maximalt ~25 timmar mellan krypningar (tidigare kunde det bli upp till 39 timmar).</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="change-group">
+                                        <h4 class="change-type fixed">Buggfixar och stabilitet</h4>
+                                        <ul>
+                                            <li>Förbättrad felhantering och återförsök vid webbkrypning</li>
+                                            <li>Åtgärdad hantering av "övergivna" jobb i krypningssystemet</li>
+                                            <li>Fixat problem med webbplatsskapande som ibland kunde hänga sig</li>
+                                            <li>Korrigerad sessionshantering i crawler-feeder</li>
+                                            <li>Bättre hantering av behörigheter för kunskap</li>
+                                            <li>Åtgärdat filtreringsproblem i administratörsgränssnittet</li>
+                                            <li>Diverse förbättringar av testtäckning och stabilitet</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="release-footer">
+                                    <a href="https://github.com/eneo-ai/eneo/releases/tag/v1.5.0" target="_blank" rel="noopener noreferrer" class="github-release-link">
+                                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                        </svg>
+                                        Se fullständig release på GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Version 1.4.0 -->
+                        <div class="release-item">
+                            <div class="release-header" onclick="toggleRelease(this)">
+                                <div class="release-title-group">
+                                    <h3 class="release-version">Version 1.4.0</h3>
+                                </div>
+                                <div class="release-meta">
+                                    <svg class="release-chevron" width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="release-content">
+                                <div class="release-description">
+                                    <p>Fokus på säkerhet, kontroll och användarupplevelse. Vi har lagt till token-räknare för bättre överblick, tenant-specifika API-nycklar och OIDC-autentisering samt stöd för fler AI-leverantörer.</p>
+                                </div>
+
+                                <div class="release-changes">
+                                    <div class="change-group">
+                                        <h4 class="change-type new">Nya funktioner</h4>
+                                        <ul>
+                                            <li><strong>Token-räknare för chattkonversationer:</strong> Du kan nu se direkt i chattgränssnittet hur många tokens du har använt av det tillgängliga kontextfönstret. Token-räknaren tar hänsyn till uppladdade filer och konversationens historik samt modellens context window för beräkning av tokens. Detta ger bättre överblick över hur mycket av konversationens "minne" som är utnyttjat.</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="change-group">
+                                        <h4 class="change-type improved">Ökad kontroll och säkerhet</h4>
+                                        <ul>
+                                            <li><strong>Förbättrad loggning i inloggningsprocessen:</strong> Både OIDC och traditionella lösenordsbaserade inloggningar har nu utökad loggning och spårbarhet med korrelations-ID, vilket underlättar felsökning och säkerhetsövervakning.</li>
+                                            <li><strong>Tenant-specifika API-nycklar:</strong> Varje tenant kan nu konfigurera sina egna API-nycklar för AI-leverantörer, inklusive OpenAI, Anthropic, Azure och VLLM. Detta ger tenants full kontroll över autentisering och kostnader för AI-leverantörer samt säkerställer strikt säkerhetsisolering mellan tenants. Alla API-nycklar krypteras vid lagring med Fernet symmetrisk kryptering för extra säkerhet.</li>
+                                            <li><strong>Tenant-specifik OIDC-autentisering:</strong> Vi har lagt till stöd för tenant-specifik OIDC (OpenID Connect), vilket ger större flexibilitet i hur organisationer kan hantera sin inloggning och autentisering. Detta innebär att varje tenant kan använda sin egen identitetslösning, såsom EntraID och Mobilityguard, med stöd för alla OIDC-kompatibla leverantörer.</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="change-group">
+                                        <h4 class="change-type improved">Tekniska förbättringar</h4>
+                                        <ul>
+                                            <li><strong>Moderna utvecklingsverktyg:</strong> Migrering till uv och bun för snabbare builds och bättre utvecklarupplevelse.</li>
+                                            <li><strong>Förbättrad teststruktur:</strong> Bättre uppdelning mellan enhetstester och integrationstester.</li>
+                                            <li><strong>Worker-instans konfiguration:</strong> Ny konfigurationsmöjlighet för att köra backend som worker-instans.</li>
+                                            <li><strong>Stöd för GDM:</strong> Vi har lagt till stöd för att använda modeller via leverantören GDM, vilket utökar plattformens möjligheter att använda AI-modeller från svenska leverantörer.</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="change-group">
+                                        <h4 class="change-type fixed">Buggfixar</h4>
+                                        <ul>
+                                            <li>Diverse buggfixar och stabiliseringar.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="release-footer">
+                                    <a href="https://github.com/eneo-ai/eneo/releases/tag/v1.4.0" target="_blank" rel="noopener noreferrer" class="github-release-link">
+                                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                        </svg>
+                                        Se fullständig release på GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Version 1.3.0 -->
+                        <div class="release-item">
+                            <div class="release-header" onclick="toggleRelease(this)">
+                                <div class="release-title-group">
+                                    <h3 class="release-version">Version 1.3.0</h3>
+                                </div>
+                                <div class="release-meta">
+                                    <svg class="release-chevron" width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="release-content">
+                                <div class="release-description">
+                                    <p>En omfattande uppdatering med förbättrad säkerhet, användarvänlighet och nya funktioner för crawling och resursövervakning. Denna version introducerar även viktig krypteringshantering för ökad datasäkerhet.</p>
+                                </div>
+
+                                <div class="release-changes">
+                                    <div class="change-group">
+                                        <h4 class="change-type breaking">Viktig förändring - Kräver åtgärd!</h4>
+                                        <ul>
+                                            <li><strong>Ny krypteringsnyckel krävs:</strong> Från och med denna version måste du skapa en ENCRYPTION_KEY och lägga till den i både worker- och backend-instanserna. Kolla in .env.template-filen för instruktioner.</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="change-group">
+                                        <h4 class="change-type new">Nya funktioner</h4>
+                                        <ul>
+                                            <li><strong>Smartare navigation:</strong> När du skapar en ny delad yta (fd Spaces) eller en ny kunskapssamling (fd Collection) navigerar systemet automatiskt dit, så du slipper klicka dig fram manuellt</li>
+                                            <li><strong>Förbättrad översättning:</strong> Assistentfunktionen har nu kompletta svenska översättningar</li>
+                                            <li><strong>Autentiserad crawling:</strong> Ny autentiseringsmetod (Basic Authentication) för säker och autentiserad crawling av webbplatser, t ex intranät som kräver inloggning</li>
+                                            <li><strong>Användningsspårning:</strong> Systemet kan nu spåra hur mycket olika AI-modeller används, vilket ger bättre insikt i resursförbrukning i Eneo i hela organisationen</li>
+                                            <li><strong>Kvothantering:</strong> Bättre felhantering när en organisations kvot tar slut, så användare får tydligare information</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="change-group">
+                                        <h4 class="change-type improved">Tekniska förbättringar</h4>
+                                        <ul>
+                                            <li><strong>Integrationstester:</strong> Ny testinfrastruktur för att säkerställa att alla nya funktioner och dess kod fungerar korrekt och säkert vid/efter utveckling</li>
+                                            <li><strong>Renare loggning:</strong> Systemet loggar inte längre hela texter som ska omvandlas till embeddings, vilket minskar loggstorleken avsevärt</li>
+                                            <li><strong>Optimerad embedding-modell:</strong> E5-large-modellen har justerats för att fungera mer effektivt</li>
+                                            <li><strong>Städat i modellhanteringen:</strong> Inaktiverade AI-modeller syns inte längre där de inte ska</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="release-footer">
+                                    <a href="https://github.com/eneo-ai/eneo/releases/tag/v1.3.0" target="_blank" rel="noopener noreferrer" class="github-release-link">
+                                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                        </svg>
+                                        Se fullständig release på GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Future Features -->
+                    <div class="releases-section future-releases">
+                        <h2 id="kommande-funktioner" class="releases-section-title">Kommande funktioner</h2>
+                        <p class="future-disclaimer">Dessa funktioner är planerade men ännu inte släppta. Innehållet och prioritering kan komma att ändras baserat på utveckling och användarbehov.</p>
+
+                        <div class="future-features-list">
+                            <!-- Integration mot Sharepoint -->
+                            <div class="feature-item">
+                                <h3 class="feature-title">Integration mot SharePoint</h3>
+                                <div class="feature-description">
+                                    <p>Möjliggöra automatiserad nedladdning av kunskap från SharePoint till Eneo. Genom funktionen kan Eneos kunskapsbas vara helt synkroniserad med särskilda mappar eller filer i SharePoint. Så att Eneo alltid har den senaste versionen av filen efter att den uppdaterats i SharePoint, Teams, Word osv.</p>
+                                </div>
+                            </div>
+
+                            <!-- Audit-loggar -->
+                            <div class="feature-item">
+                                <h3 class="feature-title">Granskning av audit-loggar</h3>
+                                <div class="feature-description">
+                                    <p>En ny funktion för administratörer att granska loggar för användning av plattformen, både som stöd för felsökning men även för att utreda eller upptäcka incidenter. Funktionen är en viktig del för uppfyllnad av säkerhetskrav i t ex ISO27001 och NIS2.</p>
+                                </div>
+                            </div>
+
+                            <!-- API-nycklar -->
+                            <div class="feature-item">
+                                <h3 class="feature-title">Omarbetad och utökad funktion för API-nycklar</h3>
+                                <div class="feature-description">
+                                    <p>Implementera möjligheten att skapa API-nycklar för enskilda assistenter eller spaces. Introducera tidsbegränsningar för API-nycklars giltighet. Möjliggöra skapandet av API-nycklar med specifika behörigheter, såsom read-only eller write-only. Förbättra användargränssnittet för skapande och hantering av API-nycklar.</p>
+                                </div>
+                            </div>
+
+                            <!-- Driftmeddelanden -->
+                            <div class="feature-item">
+                                <h3 class="feature-title">Funktion för driftmeddelanden</h3>
+                                <div class="feature-description">
+                                    <p>Införa en funktion för att kunna skicka ut driftmeddelanden i Eneo, allt från centrala driftmeddelanden som syns för alla som använder plattformen till driftmeddelanden som syns i enskilda assistenter med stöd för extern exponering så att invånare och företagare kan få direkt information vid fel även i enskilda assistenter.</p>
+                                </div>
+                            </div>
+
+                            <!-- MCP-stöd -->
+                            <div class="feature-item">
+                                <h3 class="feature-title">MCP-stöd</h3>
+                                <div class="feature-description">
+                                    <p>Införande av ett robust och flexibelt stöd för MCP-källor i Eneo, som gör att verksamheten kan ansluta löpande till olika MCP-källor över tid i takt med att det introduceras fler löpande.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="future-footer">
+                            <a href="https://github.com/eneo-ai/eneo/issues" target="_blank" rel="noopener noreferrer" class="github-release-link">
+                                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                                Följ utvecklingen på GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-logo">
+                    <img src="public/images/Eneo-logo-svg.svg" alt="Eneo.ai">
+                </div>
+
+                <div class="footer-section">
+                    <div class="footer-contact-block">
+                        <h3>Kontakt</h3>
+                        <a href="mailto:digitalisering@sundsvall.se">digitalisering@sundsvall.se</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>Ett initiativ från Sundsvalls kommun och Ånge kommun för hela offentliga Sverige</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/versioner.js"></script>
+</body>
+</html>
