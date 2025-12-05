@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community - Öppen källkods styrning - Eneo.ai</title>
+    <meta name="description" content="Lär dig om den öppna källkods-communityn som styr och samverkar kring Eneo AI-plattformen. Upptäck styrningsstrukturen och hur du kan delta i utvecklingen.">
+    <link rel="icon" type="image/x-icon" href="public/favicon.ico">
+    <meta property="og:title" content="Community - Öppen källkods styrning - Eneo.ai" />
+    <meta property="og:description" content="Lär dig om den öppna källkods-communityn som styr och samverkar kring Eneo AI-plattformen. Upptäck styrningsstrukturen och hur du kan delta i utvecklingen." />
+    <meta property="og:image" content="https://eneo.ai/public/logo-eneo.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://eneo.ai/community.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Eneo.ai" />
+    <meta property="og:locale" content="sv_SE" />
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Analytics -->
+    <script defer src="https://analytics.eneo.ai/script.js" data-website-id="50c055f0-8d28-4e1e-9d62-0d12a7c5dd57"></script>
+
+    <!-- External Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/pages/community.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="nav-group">
+                    <!-- Logo -->
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="public/images/Eneo-logo-svg.svg" alt="Eneo.ai">
+                        </a>
+                    </div>
+
+                    <!-- Desktop Navigation -->
+                    <nav class="nav">
+                        <a href="om-eneo.html">Om</a>
+                        <a href="anvandningsfall.html">Användningsfall</a>
+                        <a href="utbildningar.html">Utbildningar</a>
+                        <a href="tidslinje.html">Historik</a>
+                        <a href="samarbetsforum.html">Samarbete</a>
+                        <a href="community.html" class="active">Community</a>
+                        <a href="docs.html">Docs</a>
+                        <a href="versioner.html">Versioner</a>
+                    </nav>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="mobile-menu">
+                    <button class="mobile-menu-button" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu" id="mobile-menu-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="mobile-nav" id="mobile-nav">
+                <div class="container">
+                    <nav>
+                        <a href="om-eneo.html" onclick="closeMobileMenu()">Om</a>
+                        <a href="anvandningsfall.html" onclick="closeMobileMenu()">Användningsfall</a>
+                        <a href="utbildningar.html" onclick="closeMobileMenu()">Utbildningar</a>
+                        <a href="tidslinje.html" onclick="closeMobileMenu()">Historik</a>
+                        <a href="samarbetsforum.html" onclick="closeMobileMenu()">Samarbete</a>
+                        <a href="community.html" onclick="closeMobileMenu()">Community</a>
+                        <a href="docs.html" onclick="closeMobileMenu()">Docs</a>
+                        <a href="versioner.html" onclick="closeMobileMenu()">Versioner</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <div class="page-hero-content">
+                    <h1>Community och styrning</h1>
+                    <p>Eneo AI är ett öppet källkodsprojekt som idag kontrolleras av Sundsvalls kommun, men där målbilden är att plattformen styrs och utvecklas i samarbete mellan flera offentliga aktörer och i nära samarbete med parter i näringslivet. Demokratisk AI på riktigt, där alla som vill kan bidra.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Governance Structure Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-center">
+                    <h2>Styrningsstruktur</h2>
+                    <p>Nedan beskrivs nuvarande visionsbild och arbetshypotes för styrningen kring Eneo AI som öppen källkods-projekt. Allt bygger på grundprincipen om att Eneo AI är en plattform av det offentliga, föra det offentliga, men med öppna dörrar för andra att bidra och samarbete. Samt med en viktig grundprincip om att projektet ska främja konkurrens.</p>
+                </div>
+
+                <div class="governance-grid">
+                    <!-- Styrgrupp -->
+                    <div class="governance-card">
+                        <div class="governance-header">
+                            <div class="governance-icon">
+                                <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                </svg>
+                            </div>
+                            <h3>Styrgrupp</h3>
+
+                            <div class="governance-badge">
+                                <h4>Fokus</h4>
+                                <p>Vision & Strategi</p>
+                            </div>
+
+                            <div class="governance-section partners-section">
+                                <h4>Parter</h4>
+                                <p>Sundsvalls kommun, med målet att bli ett konsortium av flera offentliga aktörer.</p>
+                            </div>
+                        </div>
+
+                        <div class="governance-description">
+                            <div>
+                                <h4>Beskrivning</h4>
+                                <p>Styrgruppen är den högsta beslutande instansen för Eneo AI och ansvarar för den övergripande strategiska riktningen och visionen för plattformen.</p>
+                            </div>
+                            <div class="governance-section">
+                                <h4>Ansvar</h4>
+                                <ul>
+                                    <li>Definiera vision, målbild och strategi</li>
+                                    <li>Utsätta teknisk kommitté</li>
+                                    <li>Hantera juridiska och licensfrågor</li>
+                                    <li>Ansvara för varumärket</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Teknisk kommitté -->
+                    <div class="governance-card">
+                        <div class="governance-header">
+                            <div class="governance-icon">
+                                <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                                </svg>
+                            </div>
+                            <h3>Teknisk kommitté</h3>
+
+                            <div class="governance-badge">
+                                <h4>Fokus</h4>
+                                <p>Teknik & Arkitektur</p>
+                            </div>
+
+                            <div class="governance-section partners-section">
+                                <h4>Parter</h4>
+                                <p>Sundsvalls kommun, med målet att bli ett konsortium av flera offentliga aktörer.</p>
+                            </div>
+                        </div>
+
+                        <div class="governance-description">
+                            <div>
+                                <h4>Beskrivning</h4>
+                                <p>Den tekniska kommittén säkerställer att plattformen utvecklas enligt bästa praxis och moderna tekniska standarder. De är ansvariga för den tekniska kvaliteten och säkerheten i hela plattformen.</p>
+                            </div>
+                            <div class="governance-section">
+                                <h4>Ansvar</h4>
+                                <ul>
+                                    <li>Utveckla teknisk roadmap och prioritering av releases</li>
+                                    <li>Definiera arkitektur och tekniska standarder</li>
+                                    <li>Hantera code review-process och kvalitetskrav</li>
+                                    <li>Hantera pull requests och contributions</li>
+                                    <li>Ansvara för security och compliance</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tekniskt råd -->
+                    <div class="governance-card">
+                        <div class="governance-header">
+                            <div class="governance-icon">
+                                <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                                </svg>
+                            </div>
+                            <h3>Tekniskt råd</h3>
+
+                            <div class="governance-badge">
+                                <h4>Fokus</h4>
+                                <p>Utveckling & Planering</p>
+                            </div>
+
+                            <div class="governance-section partners-section">
+                                <h4>Parter</h4>
+                                <p>Tekniskt kommitté samt externa parter som signerat memorandum of understanding.</p>
+                            </div>
+                        </div>
+
+                        <div class="governance-description">
+                            <div>
+                                <h4>Beskrivning</h4>
+                                <p>Det tekniska rådet är den operativa länken mellan användarbehov och teknisk implementation. De samordnar utvecklingsarbetet och säkerställer att alla parter arbetar mot samma mål.</p>
+                            </div>
+                            <div class="governance-section">
+                                <h4>Ansvar</h4>
+                                <ul>
+                                    <li>Insamling av behov till roadmap</li>
+                                    <li>Planering av genomförande av roadmap</li>
+                                    <li>Planering av utveckling enligt roadmap</li>
+                                    <li>Synkronisering av deltagande parter i utveckling och tillhandahållande av Eneo</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Användarråd -->
+                    <div class="governance-card">
+                        <div class="governance-header">
+                            <div class="governance-icon">
+                                <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </svg>
+                            </div>
+                            <h3>Användarråd</h3>
+
+                            <div class="governance-badge">
+                                <h4>Fokus</h4>
+                                <p>Användarfokus</p>
+                            </div>
+
+                            <div class="governance-section partners-section">
+                                <h4>Parter</h4>
+                                <p>Offentliga aktörer som nyttjar Eneo</p>
+                            </div>
+                        </div>
+
+                        <div class="governance-description">
+                            <div>
+                                <h4>Beskrivning</h4>
+                                <p>Användarrådet representerar alla organisationer som använder Eneo i sin verksamhet. De säkerställer att plattformen utvecklas utifrån verkliga användarbehov och underlättar kunskapsdelning mellan organisationer.</p>
+                            </div>
+                            <div class="governance-section">
+                                <h4>Ansvar</h4>
+                                <ul>
+                                    <li>Framställa behov till roadmap</li>
+                                    <li>Synkronisering av deltagande parter i användandet av Eneo inom offentlig sektor</li>
+                                    <li>Driva arbetsgrupp</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tillfälliga arbetsgrupper -->
+                    <div class="governance-card">
+                        <div class="governance-header">
+                            <div class="governance-icon">
+                                <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                                </svg>
+                            </div>
+                            <h3>Tillfälliga arbetsgrupper</h3>
+
+                            <div class="governance-badge">
+                                <h4>Fokus</h4>
+                                <p>Specifika områden</p>
+                            </div>
+
+                            <div class="governance-section partners-section">
+                                <h4>Parter</h4>
+                                <ul>
+                                    <li>Offentliga aktörer som väljer att delta</li>
+                                    <li>Näringsliv</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="governance-description">
+                            <div>
+                                <h4>Beskrivning</h4>
+                                <p>Tillfälliga arbetsgrupper bildas vid behov för att hantera specifika utmaningar eller utvecklingsområden. De möjliggör flexibel och fokuserad samverkan kring avgränsade frågeställningar.</p>
+                            </div>
+                            <div class="governance-section">
+                                <h4>Ansvar</h4>
+                                <ul>
+                                    <li>Framställa behov inom ett specifikt område</li>
+                                    <li>Forma behov till krav och lösningsförslag</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-center">
+                    <h2>Bli en del av Eneo-communityn</h2>
+                    <p>Oavsett om du är utvecklare, arkitekt, beslutsfattare eller användare inom offentlig sektor är du välkommen att delta i utvecklingen av Eneo. Tillsammans bygger vi framtidens AI-plattform för offentliga Sverige.</p>
+
+                    <div class="cta-buttons">
+                        <a href="samarbetsforum.html" class="btn btn-primary">
+                            Läs mer om samarbetet
+                        </a>
+                        <a href="https://github.com/eneo-ai/eneo" target="_blank" class="btn btn-outline">
+                            Bidra på GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-logo">
+                    <img src="public/images/Eneo-logo-svg.svg" alt="Eneo.ai">
+                </div>
+
+                <div class="footer-section">
+                    <div class="footer-contact-block">
+                        <h3>Kontakt</h3>
+                        <a href="mailto:digitalisering@sundsvall.se">digitalisering@sundsvall.se</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>Ett initiativ från Sundsvalls kommun och Ånge kommun för hela offentliga Sverige</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

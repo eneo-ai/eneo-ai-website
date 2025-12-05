@@ -14,21 +14,33 @@
     height: var(--header-height);
 }
 
+.header .container {
+    height: 100%;
+}
+
 .header-content {
     height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    position: relative;
+    justify-content: center;
+}
+
+/* Navigation Group - logo + nav centrerade tillsammans */
+.nav-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    height: 100%;
+    width: 100%;
 }
 
 /* Logo */
 .logo {
     display: flex;
     align-items: center;
-    min-width: 180px;
-    padding-left: 1.5rem;
-    z-index: 52;
+    flex-shrink: 0;
 }
 
 .logo a {
@@ -50,10 +62,6 @@
     width: auto;
     transition: opacity var(--transition-smooth);
     object-fit: contain;
-    position: relative;
-    z-index: 51;
-    margin-top: 1.5rem;
-    transform: translateY(0);
 }
 
 /* Hide broken images */
@@ -65,12 +73,8 @@
 .nav {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 1.5rem;
-    flex: 1;
     height: 100%;
-    padding: 0 1rem;
-    padding-top: 1.5rem;
 }
 
 .nav a {
@@ -111,11 +115,16 @@
     transform: scaleX(1);
 }
 
+/* Kompensera för padding på första och sista länken för symmetrisk centrering */
+.nav {
+    margin-right: -0.875rem;
+}
+
 /* Mobile Menu */
 .mobile-menu {
     display: none;
-    min-width: 180px;
-    justify-content: flex-end;
+    position: absolute;
+    right: 0;
     padding-right: 1.5rem;
 }
 
@@ -292,6 +301,10 @@
 }
 
 @media (min-width: 1024px) {
+    .nav-group {
+        gap: 2.5rem;
+    }
+
     .nav {
         display: flex;
         gap: 1.75rem;
@@ -305,14 +318,13 @@
         font-size: 1rem;
         padding: 1rem 1rem;
     }
-
-    /* Spacer to balance logo on the right side */
-    .mobile-menu {
-        min-width: 180px;
-    }
 }
 
 @media (min-width: 1200px) {
+    .nav-group {
+        gap: 3rem;
+    }
+
     .nav {
         gap: 2rem;
     }
@@ -321,17 +333,19 @@
         font-size: 1.0625rem;
         padding: 1rem 1.125rem;
     }
-
-    .logo {
-        min-width: 200px;
-    }
-
-    .mobile-menu {
-        min-width: 200px;
-    }
 }
 
 @media (max-width: 1023px) {
+    .header-content {
+        justify-content: center;
+        position: relative;
+    }
+
+    .nav-group {
+        flex-direction: column;
+        gap: 0;
+    }
+
     .nav {
         display: none;
     }
@@ -344,16 +358,8 @@
         height: var(--header-height-mobile);
     }
 
-    .logo {
-        flex: 1;
-        justify-content: center;
-        padding-left: 0;
-        padding-top: 0.5rem;
-    }
-
     .logo img {
         height: 3rem;
-        transform: translateY(-0.7rem);
     }
 }
 
