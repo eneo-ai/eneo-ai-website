@@ -124,6 +124,13 @@
                             <div class="release-content">
                                 <div class="release-changes">
                                     <div class="change-group">
+                                        <h4 class="change-type breaking">Viktig förändring - Kräver åtgärd!</h4>
+                                        <ul>
+                                            <li><strong>Viktig uppdatering:</strong> Denna version innehåller en stor databasmigrering som inte kan rullas tillbaka. Ta en snapshot eller databas-backup innan du uppdaterar — vid problem är återställning från backup den enda återhämtningsvägen. Se <a href="https://docs.eneo.ai/guides/upgrade-1-7-0" target="_blank" rel="noopener noreferrer">uppgraderingsguiden</a> för tekniska detaljer och steg-för-steg-instruktioner.</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="change-group">
                                         <h4 class="change-type new">Nya funktioner</h4>
                                         <ul>
                                             <li><strong>En helt omarbetad funktion för att hantera AI-modeller:</strong> Nu sker all hantering av AI-modeller direkt i Eneos webbgränssnitt. Detta innebär att alla former av modeller (completion, embedding, transcription) kan läggas upp, ändras och tas bort direkt i webbgränssnittet. Förändringen innebär även att alla leverantörer och modeller som det finns stöd för i LiteLLM kan läggas till med några få klick.</li>

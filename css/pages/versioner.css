@@ -308,6 +308,18 @@
     font-weight: bold;
 }
 
+.change-group li a {
+    color: var(--primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    font-weight: var(--font-weight-semibold);
+    transition: color var(--transition-fast);
+}
+
+.change-group li a:hover {
+    color: var(--primary-light);
+}
+
 /* Release Footer - GitHub Link */
 .release-footer {
     padding: 1.5rem 2rem;
