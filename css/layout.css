@@ -58,7 +58,7 @@
 }
 
 .logo img {
-    height: 2.5rem;
+    height: 2.25rem;
     width: auto;
     transition: opacity var(--transition-smooth);
     object-fit: contain;
@@ -206,8 +206,8 @@
 
 /* Footer */
 .footer {
-    background: var(--background);
-    border-top: 1px solid var(--border);
+    background: #1a202c;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding: 4rem 0 2rem;
 }
 
@@ -229,6 +229,7 @@
     height: 2.5rem;
     width: auto;
     object-fit: contain;
+    filter: brightness(0) invert(1);
 }
 
 .footer-section {
@@ -244,11 +245,11 @@
 .footer-section h3 {
     font-weight: var(--font-weight-medium);
     margin-bottom: 1rem;
-    color: var(--foreground);
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .footer-section a {
-    color: var(--muted-foreground);
+    color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
     font-size: 0.875rem;
     transition: color var(--transition-smooth);
@@ -259,14 +260,14 @@
 }
 
 .footer-bottom {
-    border-top: 1px solid var(--border);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 2rem;
     text-align: center;
 }
 
 .footer-bottom p {
     font-size: 0.875rem;
-    color: var(--muted-foreground);
+    color: rgba(255, 255, 255, 0.5);
 }
 
 /* Responsive Footer */

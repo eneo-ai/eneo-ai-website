@@ -8,7 +8,7 @@
 }
 
 .page-hero-content h1 {
-    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-size: clamp(1.75rem, 4.5vw, 2.75rem);
     font-weight: var(--font-weight-bold);
     margin-bottom: 1rem;
     color: var(--foreground);

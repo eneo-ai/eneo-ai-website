@@ -2,7 +2,7 @@
 
 /* Hero Section */
 .hero {
-    padding: 13rem 0 8rem;
+    padding: 7rem 0 4rem;
     background: linear-gradient(135deg, rgba(0, 82, 147, 0.05) 0%, var(--accent) 50%, var(--background) 100%);
     position: relative;
     overflow: hidden;
@@ -69,20 +69,21 @@
 }
 
 .hero h1 {
-    font-size: clamp(2rem, 8vw, 4.5rem);
+    font-size: clamp(1.75rem, 4.5vw, 2.75rem);
     font-weight: var(--font-weight-bold);
     line-height: 1.15;
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
 }
 
 .hero p {
-    font-size: clamp(1.25rem, 3vw, 1.875rem);
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
     color: var(--muted-foreground);
-    margin-bottom: 4rem;
-    max-width: 64rem;
+    margin-bottom: 2rem;
+    max-width: 48rem;
     margin-left: auto;
     margin-right: auto;
     font-weight: var(--font-weight-light);
+    line-height: 1.6;
 }
 
 .hero-buttons {
@@ -91,13 +92,13 @@
     gap: 1.5rem;
     align-items: center;
     justify-content: center;
-    margin-bottom: 5rem;
+    margin-bottom: 2.5rem;
     width: 100%;
 }
 
 /* Manifest Quote */
 .manifest-quote blockquote {
-    font-size: clamp(1.5rem, 3vw, 1.875rem);
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
     font-style: italic;
     color: var(--foreground);
     margin-bottom: 2rem;
@@ -106,7 +107,7 @@
 }
 
 .manifest-quote cite {
-    font-size: 1.125rem;
+    font-size: 1rem;
     color: var(--muted-foreground);
     font-weight: var(--font-weight-medium);
 }
@@ -126,15 +127,15 @@
 }
 
 .platform-text h2 {
-    font-size: clamp(1.875rem, 4vw, 2.5rem);
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
     font-weight: var(--font-weight-semibold);
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
 }
 
 .platform-text p {
-    font-size: 1.25rem;
+    font-size: 1.05rem;
     color: var(--muted-foreground);
-    line-height: 1.7;
+    line-height: 1.6;
 }
 
 .platform-cta {
@@ -148,7 +149,7 @@
     color: var(--primary);
     text-decoration: none;
     font-weight: var(--font-weight-semibold);
-    font-size: 1.125rem;
+    font-size: 1rem;
     transition: color var(--transition-smooth);
 }
 
@@ -196,12 +197,12 @@
 .pillars-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 3rem;
+    gap: 2rem;
 }
 
 .pillar-card {
     text-align: center;
-    padding: 2rem;
+    padding: 1.5rem;
     background: var(--background);
     border-radius: 0.75rem;
     box-shadow: var(--shadow-sm);
@@ -215,8 +216,8 @@
 }
 
 .pillar-icon {
-    width: 4rem;
-    height: 4rem;
+    width: 3rem;
+    height: 3rem;
     background: rgba(0, 82, 147, 0.08);
     border-radius: 1rem;
     display: flex;
@@ -228,7 +229,7 @@
 }
 
 .pillar-card h3 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: var(--font-weight-semibold);
     color: var(--foreground);
     margin-bottom: 1rem;
@@ -324,27 +325,27 @@
     }
 
     .hero {
-        padding: 13rem 0 9rem;
+        padding: 8rem 0 5rem;
     }
 }
 
 @media (min-width: 1024px) {
     .hero {
-        padding: 14rem 0 10rem;
+        padding: 9rem 0 5rem;
     }
 
     .hero-buttons {
-        gap: 2.5rem;
+        gap: 1.5rem;
     }
 
     .platform-showcase {
-        gap: 6rem;
+        gap: 3rem;
     }
 }
 
 @media (max-width: 1023px) {
     .hero {
-        padding: 11rem 0 8rem;
+        padding: 7rem 0 4rem;
     }
 }
 
@@ -370,7 +371,7 @@
 
 @media (max-width: 480px) {
     .hero h1 {
-        font-size: clamp(1.75rem, 6vw, 3rem);
+        font-size: clamp(1.75rem, 4.5vw, 2.75rem);
     }
 
     .hero p {

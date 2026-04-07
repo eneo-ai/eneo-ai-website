@@ -1,23 +1,23 @@
 /* CSS Custom Properties (Variables) */
 :root {
     /* Color Palette */
-    --background: #ffffff;
-    --foreground: #2d3748;
+    --background: #f8f9fb;
+    --foreground: #1a202c;
     --primary: #005293;
     --primary-light: #0074cc;
     --primary-foreground: #ffffff;
-    --secondary: #fbfcfd;
-    --muted: #f8f9fa;
+    --secondary: #edf0f5;
+    --muted: #e4e9f0;
     --muted-foreground: #4a5568;
-    --accent: #f1f5f9;
-    --border: #e2e8f0;
+    --accent: #dbe2ec;
+    --border: #d0d8e3;
     --success: #22c55e;
     
     /* Layout */
     --radius: 0.5rem;
     --header-height: 5rem;
     --header-height-mobile: 4.5rem;
-    --header-height-large: 6rem;
+    --header-height-large: 5rem;
     
     /* Typography */
     --font-family: 'Inter', system-ui, -apple-system, sans-serif;
