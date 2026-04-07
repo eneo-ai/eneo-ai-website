@@ -91,10 +91,32 @@
             <div class="container">
                 <div class="page-hero-content">
                     <h1>Dokumentation</h1>
-                    <p>Teknisk dokumentation och utvecklarresurser för Eneo.ai kommer snart att finnas tillgängliga i sin helhet. Tills vidare kan du utforska källkoden och komma igång direkt via vårt GitHub-repository.</p>
+                    <p>Teknisk dokumentation, källkod och utvecklarresurser för Eneo.ai.</p>
                 </div>
             </div>
-            <div class="github-card" style="max-width: 500px; margin: 3rem auto;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; max-width: 800px; margin: 3rem auto; padding: 0 var(--container-padding);">
+                    <div class="doc-card">
+                        <div class="doc-header">
+                            <div class="doc-icon">
+                                <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                </svg>
+                            </div>
+                            <h3>Teknisk dokumentation</h3>
+                        </div>
+                        <p>Samlad yta för all teknisk dokumentation — arkitektur, API-referens, installationsguider och driftinstruktioner.</p>
+                        <div class="doc-features" style="margin: 1.5rem 0;">
+                            <span class="doc-tag">Guider</span>
+                            <span class="doc-tag">API-referens</span>
+                            <span class="doc-tag">Drift</span>
+                        </div>
+                        <a href="https://docs.eneo.ai" target="_blank" rel="noopener noreferrer" class="doc-link btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; font-size: 0.95rem; border-radius: 0.5rem;">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                            Öppna docs.eneo.ai
+                        </a>
+                    </div>
                     <div class="doc-card">
                         <div class="doc-header">
                             <div class="doc-icon">
@@ -109,7 +131,7 @@
                             <span class="doc-tag">Öppen källkod</span>
                             <span class="doc-tag">AGPL-3.0 licens</span>
                         </div>
-                        <a href="https://github.com/eneo-ai/eneo" target="_blank" rel="noopener noreferrer" class="doc-link btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                        <a href="https://github.com/eneo-ai/eneo" target="_blank" rel="noopener noreferrer" class="doc-link btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; font-size: 0.95rem; border-radius: 0.5rem;">
                             <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
                                 <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
                             </svg>
@@ -117,7 +139,6 @@
                         </a>
                     </div>
                 </div>
-            </div>
         </section>
 
     </main>

@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grafisk Profil - Eneo AI</title>
+    <meta name="description" content="Eneo AI:s grafiska profil och designguide. Riktlinjer för logotyp, färger, typografi, komponenter och tonalitet.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/x-icon" href="../public/favicon.ico">
+    <meta property="og:title" content="Grafisk Profil - Eneo AI" />
+    <meta property="og:description" content="Designguide och grafisk profil för Eneo AI." />
+    <meta property="og:image" content="https://eneo.ai/public/logo-eneo.png" />
+    <meta property="og:url" content="https://eneo.ai/grafiskprofil" />
+    <meta property="og:type" content="website" />
+
+    <!-- Analytics -->
+    <script defer src="https://analytics.eneo.ai/script.js" data-website-id="50c055f0-8d28-4e1e-9d62-0d12a7c5dd57"></script>
+
+    <!-- External Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/pages/grafiskprofil.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="nav-group">
+                    <div class="logo">
+                        <a href="../index.html">
+                            <img src="../public/images/Eneo-logo-svg.svg" alt="Eneo.ai">
+                        </a>
+                    </div>
+                    <nav class="nav">
+                        <a href="../om-eneo.html">Om</a>
+                        <a href="../anvandningsfall.html">Användningsfall</a>
+                        <a href="../utbildningar.html">Utbildningar</a>
+                        <a href="../tidslinje.html">Historik</a>
+                        <a href="../samarbetsforum.html">Samarbete</a>
+                        <a href="../community.html">Community</a>
+                        <a href="../docs.html">Docs</a>
+                        <a href="../versioner.html">Versioner</a>
+                    </nav>
+                </div>
+                <div class="mobile-menu">
+                    <button class="mobile-menu-button" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu" id="mobile-menu-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+            <div class="mobile-nav" id="mobile-nav">
+                <div class="container">
+                    <nav>
+                        <a href="../om-eneo.html" onclick="closeMobileMenu()">Om</a>
+                        <a href="../anvandningsfall.html" onclick="closeMobileMenu()">Användningsfall</a>
+                        <a href="../utbildningar.html" onclick="closeMobileMenu()">Utbildningar</a>
+                        <a href="../tidslinje.html" onclick="closeMobileMenu()">Historik</a>
+                        <a href="../samarbetsforum.html" onclick="closeMobileMenu()">Samarbete</a>
+                        <a href="../community.html" onclick="closeMobileMenu()">Community</a>
+                        <a href="../docs.html" onclick="closeMobileMenu()">Docs</a>
+                        <a href="../versioner.html" onclick="closeMobileMenu()">Versioner</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="gp-layout">
+            <!-- Sidebar Navigation -->
+            <aside class="gp-sidebar">
+                <div class="gp-sidebar-title">Innehåll</div>
+                <nav>
+                    <a href="#logotyp">Logotyp</a>
+                    <a href="#farger">Färger</a>
+                    <a href="#gradienter">Gradienter</a>
+                    <a href="#typografi">Typografi</a>
+                    <a href="#knappar">Knappar</a>
+                    <a href="#kort">Kort & Komponenter</a>
+                    <a href="#skuggor">Skuggor</a>
+                    <a href="#spacing">Spacing & Radier</a>
+                    <a href="#ikoner">Ikoner</a>
+                    <a href="#animationer">Animationer</a>
+                    <a href="#tonalitet">Tonalitet</a>
+                </nav>
+            </aside>
+
+            <div class="gp-main">
+                <!-- Hero -->
+                <div class="gp-hero">
+                    <h1>Grafisk Profil</h1>
+                    <p>Riktlinjer för Eneo AI:s visuella identitet. Använd denna guide som ramverk för all kommunikation kring Eneo.</p>
+                    <div class="gp-hero-meta">
+                        <span>
+                            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                            Uppdaterad april 2026
+                        </span>
+                        <span>
+                            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/></svg>
+                            Version 1.0
+                        </span>
+                    </div>
+                </div>
+
+                <!-- ═══ LOGOTYP ═══ -->
+                <section class="gp-section" id="logotyp">
+                    <h2>Logotyp</h2>
+                    <p>Eneo-logotypen består av en geometrisk ikon och ordmärket "eneo". Logotypen ska alltid användas i sin helhet och aldrig modifieras.</p>
+
+                    <div class="gp-logo-showcase">
+                        <div>
+                            <div class="gp-logo-box light">
+                                <img src="../public/images/Eneo-logo-svg.svg" alt="Eneo logotyp på ljus bakgrund">
+                            </div>
+                            <div class="gp-logo-label">Ljus bakgrund (standard)</div>
+                        </div>
+                        <div>
+                            <div class="gp-logo-box muted">
+                                <img src="../public/images/Eneo-logo-svg.svg" alt="Eneo logotyp på grå bakgrund">
+                            </div>
+                            <div class="gp-logo-label">Ljusgrå bakgrund</div>
+                        </div>
+                        <div>
+                            <div class="gp-logo-box dark">
+                                <img src="../public/images/Eneo-logo-svg.svg" alt="Eneo logotyp på mörk bakgrund">
+                            </div>
+                            <div class="gp-logo-label">Mörk bakgrund (inverterad)</div>
+                        </div>
+                        <div>
+                            <div class="gp-logo-box primary">
+                                <img src="../public/images/Eneo-logo-svg.svg" alt="Eneo logotyp på primär bakgrund">
+                            </div>
+                            <div class="gp-logo-label">Primär bakgrund (inverterad)</div>
+                        </div>
+                    </div>
+
+                    <h3>Frizon</h3>
+                    <p style="font-size: 0.95rem; color: var(--muted-foreground); margin-bottom: 1rem;">Runt logotypen ska det alltid finnas en frizon som motsvarar minst logotypens höjd. Inget annat grafiskt element får placeras inom frizonen.</p>
+
+                    <h3>Regler</h3>
+                    <div class="gp-logo-rules">
+                        <div class="gp-rule do">
+                            <strong>Gör så här</strong>
+                            Använd logotypen i originalproportioner på ren bakgrund med tillräcklig frizon.
+                        </div>
+                        <div class="gp-rule do">
+                            <strong>Gör så här</strong>
+                            Använd inverterad (vit) logotyp på mörka eller färgade bakgrunder.
+                        </div>
+                        <div class="gp-rule dont">
+                            <strong>Undvik</strong>
+                            Stretcha, rotera, skeva eller ändra logotypens proportioner.
+                        </div>
+                        <div class="gp-rule dont">
+                            <strong>Undvik</strong>
+                            Ändra logotypens färger, lägga till skuggor eller effekter.
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ═══ FARGER ═══ -->
+                <section class="gp-section" id="farger">
+                    <h2>Färger</h2>
+                    <p>Färgpaletten är grunden i Eneos visuella identitet. Den primära blå färgen representerar tillit och professionalism, medan de neutrala tonerna skapar en ren och luftig känsla.</p>
+
+                    <h3>Primära färger</h3>
+                    <div class="gp-color-grid">
+                        <div class="gp-swatch">
+                            <div class="gp-swatch-color" style="background: #005293;"></div>
+                            <div class="gp-swatch-info">
+                                <div class="gp-swatch-name">Eneo Blue</div>
+                                <div class="gp-swatch-hex">#005293</div>
+                                <div class="gp-swatch-var">--primary</div>
+                            </div>
+                        </div>
+                        <div class="gp-swatch">
+                            <div class="gp-swatch-color" style="background: #0074cc;"></div>
+                            <div class="gp-swatch-info">
+                                <div class="gp-swatch-name">Eneo Blue Light</div>
+                                <div class="gp-swatch-hex">#0074cc</div>
+                                <div class="gp-swatch-var">--primary-light</div>
+                            </div>
+                        </div>
+                        <div class="gp-swatch">
+                            <div class="gp-swatch-color" style="background: #055594;"></div>
+                            <div class="gp-swatch-info">
+                                <div class="gp-swatch-name">Logo Blue</div>
+                                <div class="gp-swatch-hex">#055594</div>
+                                <div class="gp-swatch-var">Logotyp</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Neutrala färger</h3>
+                    <div class="gp-color-grid">
+                        <div class="gp-swatch">
+                            <div class="gp-swatch-color" style="background: #2d3748;"></div>
+                            <div class="gp-swatch-info">
+                                <div class="gp-swatch-name">Foreground</div>
+                                <div class="gp-swatch-hex">#2d3748</div>
+                                <div class="gp-swatch-var">--foreground</div>
+                            </div>
+                        </div>
+                        <div class="gp-swatch">
+                            <div class="gp-swatch-color" style="background: #4a5568;"></div>
+                            <div class="gp-swatch-info">
+                                <div class="gp-swatch-name">Muted Text</div>
+                                <div class="gp-swatch-hex">#4a5568</div>
+                                <div class="gp-swatch-var">--muted-foreground</div>
+                            </div>
+                        </div>
+                        <div class="gp-swatch">
+                            <div class="gp-swatch-color" style="background: #e2e8f0;"></div>
+                            <div class="gp-swatch-info">
+                                <div class="gp-swatch-name">Border</div>
+                                <div class="gp-swatch-hex">#e2e8f0</div>
+                                <div class="gp-swatch-var">--border</div>
+                            </div>
+                        </div>
+                        <div class="gp-swatch">
+                            <div class="gp-swatch-color" style="background: #f1f5f9; border: 1px solid #e2e8f0;"></div>
+                            <div class="gp-swatch-info">
+                                <div class="gp-swatch-name">Accent</div>
+                                <div class="gp-swatch-hex">#f1f5f9</div>
+                                <div class="gp-swatch-var">--accent</div>
+                            </div>
+                        </div>
+                        <div class="gp-swatch">
+                            <div class="gp-swatch-color" style="background: #f8f9fa; border: 1px solid #e2e8f0;"></div>
+                            <div class="gp-swatch-info">
+                                <div class="gp-swatch-name">Muted</div>
+                                <div class="gp-swatch-hex">#f8f9fa</div>
+                                <div class="gp-swatch-var">--muted</div>
+                            </div>
+                        </div>
+                        <div class="gp-swatch">
+                            <div class="gp-swatch-color" style="background: #ffffff; border: 1px solid #e2e8f0;"></div>
+                            <div class="gp-swatch-info">
+                                <div class="gp-swatch-name">White</div>
+                                <div class="gp-swatch-hex">#ffffff</div>
+                                <div class="gp-swatch-var">--background</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Funktionsfärger</h3>
+                    <div class="gp-color-grid">
+                        <div class="gp-swatch">
+                            <div class="gp-swatch-color" style="background: #22c55e;"></div>
+                            <div class="gp-swatch-info">
+                                <div class="gp-swatch-name">Success</div>
+                                <div class="gp-swatch-hex">#22c55e</div>
+                                <div class="gp-swatch-var">--success</div>
+                            </div>
+                        </div>
+                        <div class="gp-swatch">
+                            <div class="gp-swatch-color" style="background: #16a34a;"></div>
+                            <div class="gp-swatch-info">
+                                <div class="gp-swatch-name">Success Dark</div>
+                                <div class="gp-swatch-hex">#16a34a</div>
+                                <div class="gp-swatch-var">Gradienter</div>
+                            </div>
+                        </div>
+                        <div class="gp-swatch">
+                            <div class="gp-swatch-color" style="background: #8b5cf6;"></div>
+                            <div class="gp-swatch-info">
+                                <div class="gp-swatch-name">Purple Accent</div>
+                                <div class="gp-swatch-hex">#8b5cf6</div>
+                                <div class="gp-swatch-var">Specialaccent</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ═══ GRADIENTER ═══ -->
+                <section class="gp-section" id="gradienter">
+                    <h2>Gradienter</h2>
+                    <p>Gradienter används för att skapa djup och rikta uppmärksamhet. Den primära gradienten går från Eneo Blue till Eneo Blue Light.</p>
+
+                    <div class="gp-gradient-grid">
+                        <div class="gp-gradient-card">
+                            <div class="gp-gradient-preview" style="background: linear-gradient(to right, #005293, #0074cc);"></div>
+                            <div class="gp-gradient-info">
+                                <div class="gp-gradient-name">Primär gradient</div>
+                                <div class="gp-gradient-css">linear-gradient(to right, #005293, #0074cc)</div>
+                            </div>
+                        </div>
+                        <div class="gp-gradient-card">
+                            <div class="gp-gradient-preview" style="background: linear-gradient(135deg, #005293, #0074cc);"></div>
+                            <div class="gp-gradient-info">
+                                <div class="gp-gradient-name">Diagonal gradient</div>
+                                <div class="gp-gradient-css">linear-gradient(135deg, #005293, #0074cc)</div>
+                            </div>
+                        </div>
+                        <div class="gp-gradient-card">
+                            <div class="gp-gradient-preview" style="background: linear-gradient(135deg, rgba(0,82,147,0.05) 0%, #f1f5f9 50%, #ffffff 100%);"></div>
+                            <div class="gp-gradient-info">
+                                <div class="gp-gradient-name">Subtil bakgrund</div>
+                                <div class="gp-gradient-css">linear-gradient(135deg, rgba(0,82,147,0.05), #f1f5f9, #fff)</div>
+                            </div>
+                        </div>
+                        <div class="gp-gradient-card">
+                            <div class="gp-gradient-preview" style="background: linear-gradient(145deg, #ffffff, #f1f5f9);"></div>
+                            <div class="gp-gradient-info">
+                                <div class="gp-gradient-name">Kortbakgrund</div>
+                                <div class="gp-gradient-css">linear-gradient(145deg, #ffffff, #f1f5f9)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Gradienttext</h3>
+                    <p style="font-size: 2.5rem; font-weight: 700; letter-spacing: -0.025em; background: linear-gradient(135deg, #005293, #0074cc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin: 1rem 0 0.5rem;">AI för offentlig sektor</p>
+                    <div class="gp-code">
+                        <span class="comment">/* Gradienttext för rubriker */</span><br>
+                        <span class="prop">background</span>: <span class="value">linear-gradient(135deg, #005293, #0074cc)</span>;<br>
+                        <span class="prop">-webkit-background-clip</span>: <span class="value">text</span>;<br>
+                        <span class="prop">-webkit-text-fill-color</span>: <span class="value">transparent</span>;
+                    </div>
+                </section>
+
+                <!-- ═══ TYPOGRAFI ═══ -->
+                <section class="gp-section" id="typografi">
+                    <h2>Typografi</h2>
+                    <p>Inter är Eneos typsnitt. Det är ett modernt, lättläst sans-serif som fungerar utmärkt i digitala miljöer.</p>
+
+                    <h3>Typsnitt</h3>
+                    <div class="gp-code">
+                        <span class="prop">font-family</span>: <span class="value">'Inter', system-ui, -apple-system, sans-serif</span>;<br>
+                        <span class="comment">/* Kod */</span><br>
+                        <span class="prop">font-family</span>: <span class="value">'Monaco', 'Menlo', 'Ubuntu Mono', monospace</span>;
+                    </div>
+
+                    <h3>Teckenvikter</h3>
+                    <div class="gp-weight-grid">
+                        <div class="gp-weight-item">
+                            <div class="gp-weight-sample" style="font-weight: 300;">Aa</div>
+                            <div class="gp-weight-label">Light 300</div>
+                        </div>
+                        <div class="gp-weight-item">
+                            <div class="gp-weight-sample" style="font-weight: 400;">Aa</div>
+                            <div class="gp-weight-label">Regular 400</div>
+                        </div>
+                        <div class="gp-weight-item">
+                            <div class="gp-weight-sample" style="font-weight: 500;">Aa</div>
+                            <div class="gp-weight-label">Medium 500</div>
+                        </div>
+                        <div class="gp-weight-item">
+                            <div class="gp-weight-sample" style="font-weight: 600;">Aa</div>
+                            <div class="gp-weight-label">Semibold 600</div>
+                        </div>
+                        <div class="gp-weight-item">
+                            <div class="gp-weight-sample" style="font-weight: 700;">Aa</div>
+                            <div class="gp-weight-label">Bold 700</div>
+                        </div>
+                    </div>
+
+                    <h3>Texthierarki</h3>
+                    <div class="gp-type-specimen">
+                        <div class="gp-type-sample" style="font-size: clamp(2rem, 8vw, 4.5rem); font-weight: 700; line-height: 1.2; letter-spacing: -0.025em;">Hero-rubrik</div>
+                        <div class="gp-type-meta">
+                            <span>clamp(2rem, 8vw, 4.5rem)</span>
+                            <span>Bold 700</span>
+                            <span>Radavstand 1.2</span>
+                        </div>
+                    </div>
+                    <div class="gp-type-specimen">
+                        <div class="gp-type-sample" style="font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 700; line-height: 1.2; letter-spacing: -0.025em;">Sidorubrik H1</div>
+                        <div class="gp-type-meta">
+                            <span>clamp(2.5rem, 6vw, 4rem)</span>
+                            <span>Bold 700</span>
+                            <span>Radavstand 1.2</span>
+                        </div>
+                    </div>
+                    <div class="gp-type-specimen">
+                        <div class="gp-type-sample" style="font-size: clamp(1.875rem, 4vw, 2.5rem); font-weight: 700; line-height: 1.2; letter-spacing: -0.025em;">Sektionsrubrik H2</div>
+                        <div class="gp-type-meta">
+                            <span>clamp(1.875rem, 4vw, 2.5rem)</span>
+                            <span>Bold 700</span>
+                            <span>Radavstand 1.2</span>
+                        </div>
+                    </div>
+                    <div class="gp-type-specimen">
+                        <div class="gp-type-sample" style="font-size: 1.5rem; font-weight: 600; line-height: 1.3;">Underrubrik H3</div>
+                        <div class="gp-type-meta">
+                            <span>1.5rem</span>
+                            <span>Semibold 600</span>
+                            <span>Radavstand 1.3</span>
+                        </div>
+                    </div>
+                    <div class="gp-type-specimen">
+                        <div class="gp-type-sample" style="font-size: 1.25rem; font-weight: 400; line-height: 1.7; color: var(--muted-foreground);">Brödtext stor — för inledande paragrafer och hero-beskrivningar. Används för att ge extra vikt åt viktiga textblock.</div>
+                        <div class="gp-type-meta">
+                            <span>1.25rem</span>
+                            <span>Regular 400</span>
+                            <span>Radavstand 1.7</span>
+                        </div>
+                    </div>
+                    <div class="gp-type-specimen">
+                        <div class="gp-type-sample" style="font-size: 1.125rem; font-weight: 400; line-height: 1.6; color: var(--muted-foreground);">Brödtext — standardstorlek för löpande text, kortbeskrivningar och allmän information på hemsidan.</div>
+                        <div class="gp-type-meta">
+                            <span>1.125rem</span>
+                            <span>Regular 400</span>
+                            <span>Radavstand 1.6</span>
+                        </div>
+                    </div>
+                    <div class="gp-type-specimen">
+                        <div class="gp-type-sample" style="font-size: 0.875rem; font-weight: 500; line-height: 1.5; color: var(--muted-foreground);">Liten text — för metadata, etiketter, fotnoter och sekundär information.</div>
+                        <div class="gp-type-meta">
+                            <span>0.875rem</span>
+                            <span>Medium 500</span>
+                            <span>Radavstand 1.5</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ═══ KNAPPAR ═══ -->
+                <section class="gp-section" id="knappar">
+                    <h2>Knappar</h2>
+                    <p>Knappar är det primära sättet att guida användare till handling. Använd primär-knappen för huvudaktioner och outline-knappen för sekundära val.</p>
+
+                    <h3>Primär knapp</h3>
+                    <div class="gp-button-row">
+                        <a class="btn btn-primary" style="cursor: default;">Kom igång</a>
+                    </div>
+                    <div class="gp-code">
+                        <span class="comment">/* Primär knapp */</span><br>
+                        <span class="prop">background</span>: <span class="value">linear-gradient(to right, #005293, #0074cc)</span>;<br>
+                        <span class="prop">color</span>: <span class="value">#ffffff</span>;<br>
+                        <span class="prop">padding</span>: <span class="value">1.5rem 3rem</span>;<br>
+                        <span class="prop">border-radius</span>: <span class="value">1rem</span>;<br>
+                        <span class="prop">font-weight</span>: <span class="value">600</span>;<br>
+                        <span class="prop">font-size</span>: <span class="value">1.25rem</span>;
+                    </div>
+
+                    <h3>Outline-knapp</h3>
+                    <div class="gp-button-row">
+                        <a class="btn btn-outline" style="cursor: default;">Läs mer</a>
+                    </div>
+                    <div class="gp-code">
+                        <span class="comment">/* Outline-knapp */</span><br>
+                        <span class="prop">background</span>: <span class="value">rgba(255, 255, 255, 0.5)</span>;<br>
+                        <span class="prop">border</span>: <span class="value">2px solid rgba(45, 55, 72, 0.2)</span>;<br>
+                        <span class="prop">backdrop-filter</span>: <span class="value">blur(4px)</span>;<br>
+                        <span class="prop">padding</span>: <span class="value">1.5rem 3rem</span>;<br>
+                        <span class="prop">border-radius</span>: <span class="value">1rem</span>;
+                    </div>
+
+                    <h3>Knappar tillsammans</h3>
+                    <div class="gp-button-row">
+                        <a class="btn btn-primary" style="cursor: default;">Primär aktion</a>
+                        <a class="btn btn-outline" style="cursor: default;">Sekundär aktion</a>
+                    </div>
+                </section>
+
+                <!-- ═══ KORT & KOMPONENTER ═══ -->
+                <section class="gp-section" id="kort">
+                    <h2>Kort & Komponenter</h2>
+                    <p>Kort används för att gruppera relaterat innehåll. De följer ett konsekvent mönster med subtila hover-effekter.</p>
+
+                    <div class="gp-component-grid">
+                        <div class="gp-component-demo">
+                            <div class="gp-component-label">Nordic Card</div>
+                            <div class="nordic-card" style="padding: 1.5rem;">
+                                <h4 style="margin-bottom: 0.5rem; font-size: 1rem; font-weight: 600;">Rubrik</h4>
+                                <p style="font-size: 0.9rem; color: var(--muted-foreground); line-height: 1.6;">Kort med subtil gradient från vit till ljusgrå. Används för generellt innehåll.</p>
+                            </div>
+                        </div>
+
+                        <div class="gp-component-demo">
+                            <div class="gp-component-label">Feature Card</div>
+                            <div style="background: white; border: 1px solid #e2e8f0; border-radius: 1rem; padding: 1.5rem; transition: all 0.3s ease;">
+                                <div style="width: 3rem; height: 3rem; border-radius: 0.75rem; background: linear-gradient(135deg, #005293, #0074cc); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                                    <svg width="20" height="20" fill="none" stroke="white" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                                </div>
+                                <h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">Funktion</h4>
+                                <p style="font-size: 0.9rem; color: var(--muted-foreground); line-height: 1.6;">Kort med ikoner och accentbar vid hover.</p>
+                            </div>
+                        </div>
+
+                        <div class="gp-component-demo">
+                            <div class="gp-component-label">Trust Indicator</div>
+                            <div style="background: rgba(255,255,255,0.9); backdrop-filter: blur(8px); border: 1px solid var(--border); border-radius: 0.75rem; padding: 1.25rem; border-top: 3px solid var(--primary);">
+                                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                    <div style="width: 2.5rem; height: 2.5rem; border-radius: 50%; background: linear-gradient(135deg, #22c55e, #16a34a); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 0.9rem;">&#10003;</div>
+                                    <div>
+                                        <div style="font-weight: 600; font-size: 0.9rem;">Verifierad säkerhet</div>
+                                        <div style="font-size: 0.8rem; color: var(--muted-foreground);">GDPR-kompatibel</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gp-component-demo">
+                            <div class="gp-component-label">Glasmorfism</div>
+                            <div style="background: rgba(255,255,255,0.5); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.3); border-radius: 0.75rem; padding: 1.5rem; box-shadow: var(--shadow-md);">
+                                <p style="font-size: 0.9rem; color: var(--foreground); line-height: 1.6;">Element med backdrop-filter blur skapar en glasliknande effekt. Används i header och överlägg.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Kortspecifikationer</h3>
+                    <div class="gp-code">
+                        <span class="comment">/* Standard kortmönster */</span><br>
+                        <span class="prop">background</span>: <span class="value">#ffffff</span>;<br>
+                        <span class="prop">border</span>: <span class="value">1px solid #e2e8f0</span>;<br>
+                        <span class="prop">border-radius</span>: <span class="value">1rem</span>;<br>
+                        <span class="prop">padding</span>: <span class="value">2rem</span>;<br><br>
+                        <span class="comment">/* Hover */</span><br>
+                        <span class="prop">transform</span>: <span class="value">translateY(-2px)</span>;<br>
+                        <span class="prop">box-shadow</span>: <span class="value">0 4px 12px rgba(0, 0, 0, 0.08)</span>;
+                    </div>
+                </section>
+
+                <!-- ═══ SKUGGOR ═══ -->
+                <section class="gp-section" id="skuggor">
+                    <h2>Skuggor</h2>
+                    <p>Skuggor skapar djup och hierarki. Använd subtila skuggor för viloläge och starkare vid hover eller för framhävda element.</p>
+
+                    <div class="gp-shadow-grid">
+                        <div class="gp-shadow-box" style="box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                            <div class="gp-shadow-name">SM</div>
+                            <div class="gp-shadow-value">0 1px 3px rgba(0,0,0,0.05)</div>
+                        </div>
+                        <div class="gp-shadow-box" style="box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                            <div class="gp-shadow-name">MD</div>
+                            <div class="gp-shadow-value">0 4px 12px rgba(0,0,0,0.08)</div>
+                        </div>
+                        <div class="gp-shadow-box" style="box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
+                            <div class="gp-shadow-name">LG</div>
+                            <div class="gp-shadow-value">0 10px 25px rgba(0,0,0,0.1)</div>
+                        </div>
+                        <div class="gp-shadow-box" style="box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);">
+                            <div class="gp-shadow-name">XL</div>
+                            <div class="gp-shadow-value">0 25px 50px -12px rgba(0,0,0,0.25)</div>
+                        </div>
+                        <div class="gp-shadow-box" style="box-shadow: 0 25px 50px -12px rgba(0,82,147,0.25);">
+                            <div class="gp-shadow-name">Primary</div>
+                            <div class="gp-shadow-value">0 25px 50px -12px rgba(0,82,147,0.25)</div>
+                        </div>
+                        <div class="gp-shadow-box" style="box-shadow: 0 20px 40px -12px rgba(0,82,147,0.3);">
+                            <div class="gp-shadow-name">Primary Hover</div>
+                            <div class="gp-shadow-value">0 20px 40px -12px rgba(0,82,147,0.3)</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ═══ SPACING & RADIER ═══ -->
+                <section class="gp-section" id="spacing">
+                    <h2>Spacing & Radier</h2>
+                    <p>Konsekvent spacing skapar rytm och harmoni. Använd alltid värden från spacing-skalan.</p>
+
+                    <h3>Spacing-skala</h3>
+                    <div style="margin-bottom: 2rem;">
+                        <div class="gp-spacing-item">
+                            <div class="gp-spacing-bar" style="width: 4px;"></div>
+                            <div class="gp-spacing-label">0.25rem (4px)</div>
+                        </div>
+                        <div class="gp-spacing-item">
+                            <div class="gp-spacing-bar" style="width: 8px;"></div>
+                            <div class="gp-spacing-label">0.5rem (8px)</div>
+                        </div>
+                        <div class="gp-spacing-item">
+                            <div class="gp-spacing-bar" style="width: 12px;"></div>
+                            <div class="gp-spacing-label">0.75rem (12px)</div>
+                        </div>
+                        <div class="gp-spacing-item">
+                            <div class="gp-spacing-bar" style="width: 16px;"></div>
+                            <div class="gp-spacing-label">1rem (16px)</div>
+                        </div>
+                        <div class="gp-spacing-item">
+                            <div class="gp-spacing-bar" style="width: 24px;"></div>
+                            <div class="gp-spacing-label">1.5rem (24px)</div>
+                        </div>
+                        <div class="gp-spacing-item">
+                            <div class="gp-spacing-bar" style="width: 32px;"></div>
+                            <div class="gp-spacing-label">2rem (32px)</div>
+                        </div>
+                        <div class="gp-spacing-item">
+                            <div class="gp-spacing-bar" style="width: 48px;"></div>
+                            <div class="gp-spacing-label">3rem (48px)</div>
+                        </div>
+                        <div class="gp-spacing-item">
+                            <div class="gp-spacing-bar" style="width: 64px;"></div>
+                            <div class="gp-spacing-label">4rem (64px)</div>
+                        </div>
+                        <div class="gp-spacing-item">
+                            <div class="gp-spacing-bar" style="width: 96px;"></div>
+                            <div class="gp-spacing-label">6rem (96px)</div>
+                        </div>
+                    </div>
+
+                    <h3>Border Radius</h3>
+                    <div class="gp-radius-grid">
+                        <div class="gp-radius-item">
+                            <div class="gp-radius-box" style="border-radius: 0.25rem;"></div>
+                            <div class="gp-radius-label">0.25rem</div>
+                        </div>
+                        <div class="gp-radius-item">
+                            <div class="gp-radius-box" style="border-radius: 0.5rem;"></div>
+                            <div class="gp-radius-label">0.5rem</div>
+                        </div>
+                        <div class="gp-radius-item">
+                            <div class="gp-radius-box" style="border-radius: 0.75rem;"></div>
+                            <div class="gp-radius-label">0.75rem</div>
+                        </div>
+                        <div class="gp-radius-item">
+                            <div class="gp-radius-box" style="border-radius: 1rem;"></div>
+                            <div class="gp-radius-label">1rem</div>
+                        </div>
+                        <div class="gp-radius-item">
+                            <div class="gp-radius-box" style="border-radius: 1.5rem;"></div>
+                            <div class="gp-radius-label">1.5rem</div>
+                        </div>
+                        <div class="gp-radius-item">
+                            <div class="gp-radius-box" style="border-radius: 2rem;"></div>
+                            <div class="gp-radius-label">2rem</div>
+                        </div>
+                        <div class="gp-radius-item">
+                            <div class="gp-radius-box" style="border-radius: 50%;"></div>
+                            <div class="gp-radius-label">50%</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ═══ IKONER ═══ -->
+                <section class="gp-section" id="ikoner">
+                    <h2>Ikoner</h2>
+                    <p>Ikoner används i cirkulära eller rundade behållare med gradientbakgrund. Storlekarna följer ett konsekvent mönster.</p>
+
+                    <h3>Ikonstilar</h3>
+                    <div class="gp-icon-grid">
+                        <div class="gp-icon-item">
+                            <div class="gp-icon-circle" style="background: linear-gradient(135deg, #005293, #0074cc); width: 4rem; height: 4rem; font-size: 1.5rem;">
+                                <svg width="24" height="24" fill="none" stroke="white" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                            </div>
+                            <div class="gp-icon-label">4rem Primär</div>
+                        </div>
+                        <div class="gp-icon-item">
+                            <div class="gp-icon-circle" style="background: linear-gradient(135deg, #22c55e, #16a34a); width: 4rem; height: 4rem; font-size: 1.5rem;">
+                                <svg width="24" height="24" fill="none" stroke="white" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            </div>
+                            <div class="gp-icon-label">4rem Success</div>
+                        </div>
+                        <div class="gp-icon-item">
+                            <div class="gp-icon-circle" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed); width: 4rem; height: 4rem; font-size: 1.5rem;">
+                                <svg width="24" height="24" fill="none" stroke="white" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                            </div>
+                            <div class="gp-icon-label">4rem Purple</div>
+                        </div>
+                        <div class="gp-icon-item">
+                            <div class="gp-icon-circle" style="background: rgba(0, 82, 147, 0.08); width: 4rem; height: 4rem; color: #005293; font-size: 1.5rem;">
+                                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                            </div>
+                            <div class="gp-icon-label">4rem Subtil</div>
+                        </div>
+                        <div class="gp-icon-item">
+                            <div class="gp-icon-circle" style="background: linear-gradient(135deg, #005293, #0074cc);">
+                                <svg width="16" height="16" fill="none" stroke="white" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            </div>
+                            <div class="gp-icon-label">3rem Primär</div>
+                        </div>
+                        <div class="gp-icon-item">
+                            <div class="gp-icon-circle" style="background: linear-gradient(135deg, #22c55e, #16a34a);">
+                                <svg width="16" height="16" fill="none" stroke="white" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            </div>
+                            <div class="gp-icon-label">3rem Success</div>
+                        </div>
+                    </div>
+
+                    <h3>Specifikationer</h3>
+                    <div class="gp-code">
+                        <span class="comment">/* Stor ikon (feature cards) */</span><br>
+                        <span class="prop">width</span>: <span class="value">4rem</span>; <span class="prop">height</span>: <span class="value">4rem</span>;<br>
+                        <span class="prop">border-radius</span>: <span class="value">0.75rem</span>; <span class="comment">/* eller 50% för cirkel */</span><br>
+                        <span class="prop">background</span>: <span class="value">linear-gradient(135deg, #005293, #0074cc)</span>;<br><br>
+                        <span class="comment">/* Liten ikon (function cards) */</span><br>
+                        <span class="prop">width</span>: <span class="value">3rem</span>; <span class="prop">height</span>: <span class="value">3rem</span>;
+                    </div>
+                </section>
+
+                <!-- ═══ ANIMATIONER ═══ -->
+                <section class="gp-section" id="animationer">
+                    <h2>Animationer</h2>
+                    <p>Animationer ska vara subtila och meningsfulla. De förstärker interaktionen utan att distrahera.</p>
+
+                    <h3>Transition-hastigheter</h3>
+                    <div class="gp-code">
+                        <span class="prop">--transition-fast</span>: <span class="value">0.15s cubic-bezier(0.4, 0, 0.2, 1)</span>; <span class="comment">/* Hover, fokus */</span><br>
+                        <span class="prop">--transition-normal</span>: <span class="value">0.2s ease</span>; <span class="comment">/* Enklare övergångar */</span><br>
+                        <span class="prop">--transition-smooth</span>: <span class="value">0.3s cubic-bezier(0.4, 0, 0.2, 1)</span>; <span class="comment">/* Mjuka animationer */</span><br>
+                        <span class="prop">--transition-entrance</span>: <span class="value">0.6s cubic-bezier(0.4, 0, 0.2, 1)</span>; <span class="comment">/* Ingångsanimationer */</span>
+                    </div>
+
+                    <h3>Hover-mönster</h3>
+                    <div class="gp-component-grid" style="margin-top: 1rem;">
+                        <div class="gp-component-demo" style="text-align: center;">
+                            <div class="gp-component-label">Kort-hover: Lyft</div>
+                            <div style="background: white; border: 1px solid #e2e8f0; border-radius: 1rem; padding: 1.5rem; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer;" onmouseenter="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.1)'" onmouseleave="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                                <p style="font-size: 0.9rem; color: var(--muted-foreground);">Hovra över mig</p>
+                            </div>
+                        </div>
+                        <div class="gp-component-demo" style="text-align: center;">
+                            <div class="gp-component-label">Knapp-hover: Skugga</div>
+                            <a class="btn btn-primary" style="cursor: pointer; display: inline-block;">Hovra</a>
+                        </div>
+                    </div>
+
+                    <h3>Riktlinjer</h3>
+                    <div class="gp-dos-donts" style="margin-top: 1rem;">
+                        <div class="gp-rule do">
+                            <strong>Gör så här</strong>
+                            Använd subtila lyftar (translateY), skuggor och opacity för hover. Staggera ingångsanimationer med 0.1–0.2s delay.
+                        </div>
+                        <div class="gp-rule dont">
+                            <strong>Undvik</strong>
+                            Snabba blinkningar, överdriven rörelse, animationer som blockar interaktion. Respektera alltid prefers-reduced-motion.
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ═══ TONALITET ═══ -->
+                <section class="gp-section" id="tonalitet">
+                    <h2>Tonalitet</h2>
+                    <p>Eneo kommunicerar med en röst som är professionell men tillgänglig. Vi talar till offentlig sektor med respekt, tydlighet och värme.</p>
+
+                    <div class="gp-tone-grid">
+                        <div class="gp-tone-card">
+                            <h4>Professionell</h4>
+                            <p>Vi använder ett klart och formellt språk utan att vara stelt. Facktermer förklaras när de första gången introduceras.</p>
+                        </div>
+                        <div class="gp-tone-card">
+                            <h4>Tillgänglig</h4>
+                            <p>Teknisk komplexitet förenklas utan att försumma noggrannhet. Alla ska kunna förstå, oavsett teknisk bakgrund.</p>
+                        </div>
+                        <div class="gp-tone-card">
+                            <h4>Trovärdig</h4>
+                            <p>Vi understryker säkerhet, transparens och öppen källkod. Vi överdriver aldrig — fakta och resultat talar för sig själva.</p>
+                        </div>
+                        <div class="gp-tone-card">
+                            <h4>Inkluderande</h4>
+                            <p>Eneo är för hela offentliga Sverige. Vi använder ett språk som välkomnar alla kommuner, regioner och myndigheter.</p>
+                        </div>
+                    </div>
+
+                    <h3>Skrivregler</h3>
+                    <div class="gp-dos-donts" style="margin-top: 1rem;">
+                        <div class="gp-rule do">
+                            <strong>Gör så här</strong>
+                            "Eneo ger er kontroll över era AI-verktyg med full transparens och öppen källkod."
+                        </div>
+                        <div class="gp-rule dont">
+                            <strong>Undvik</strong>
+                            "Vår revolutionerande AI-lösning kommer att transformera er verksamhet på ett aldrig tidigare skådat sätt!"
+                        </div>
+                    </div>
+                    <div class="gp-dos-donts" style="margin-top: 1rem;">
+                        <div class="gp-rule do">
+                            <strong>Gör så här</strong>
+                            "Byggd med fokus på säkerhet och demokratisk kontroll, anpassad för offentlig sektor."
+                        </div>
+                        <div class="gp-rule dont">
+                            <strong>Undvik</strong>
+                            "Den bästa AI-plattformen på marknaden — inget annat kommer ens i närheten."
+                        </div>
+                    </div>
+                </section>
+
+            </div><!-- /gp-main -->
+        </div><!-- /gp-layout -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-logo">
+                    <img src="../public/images/Eneo-logo-svg.svg" alt="Eneo.ai">
+                </div>
+                <div class="footer-section">
+                    <div class="footer-contact-block">
+                        <h3>Kontakt</h3>
+                        <a href="mailto:digitalisering@sundsvall.se">digitalisering@sundsvall.se</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Ett initiativ från Sundsvalls kommun och Ånge kommun för hela offentliga Sverige</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+    <script>
+        // Sidebar active state on scroll
+        (function() {
+            var sections = document.querySelectorAll('.gp-section[id]');
+            var links = document.querySelectorAll('.gp-sidebar a');
+
+            function setActive() {
+                var scrollY = window.scrollY + 120;
+                sections.forEach(function(section) {
+                    var top = section.offsetTop;
+                    var height = section.offsetHeight;
+                    var id = section.getAttribute('id');
+                    if (scrollY >= top && scrollY < top + height) {
+                        links.forEach(function(link) {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === '#' + id) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', setActive);
+            setActive();
+
+            // Smooth scroll for sidebar links
+            links.forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    var target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        var offset = target.offsetTop - 100;
+                        window.scrollTo({ top: offset, behavior: 'smooth' });
+                    }
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
