@@ -139,11 +139,14 @@
 .uc-visual:hover {
     border-color: var(--border-hover);
 }
+.uc-visual {
+    padding: 1.2rem;
+}
 .uc-visual img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    border-radius: 13px;
+    object-fit: contain;
+    border-radius: 8px;
 }
 .uc-visual .placeholder-icon {
     font-size: 2.5rem;
