@@ -125,24 +125,18 @@
 
 /* Visual placeholder */
 .uc-visual {
-    aspect-ratio: 4 / 3;
     border-radius: 14px;
     background: var(--bg-card);
     border: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: relative;
     transition: border-color 0.3s ease;
-    padding: 1.2rem;
+    padding: 1.5rem;
 }
 .uc-visual:hover {
     border-color: var(--border-hover);
 }
 .uc-visual img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
+    width: 100%;
     border-radius: 8px;
     display: block;
 }
