@@ -99,11 +99,47 @@
     <section class="changelog" id="versionshistorik">
         <div class="container">
 
+            <!-- 1.8.0 -->
+            <div class="release">
+                <div class="release-header">
+                    <span class="ver-tag">v1.8.0</span>
+                    <span class="latest-badge">Senaste</span>
+                    <a href="https://github.com/eneo-ai/eneo/releases/tag/v1.8.0" class="release-link">Se på GitHub <span aria-hidden="true">→</span></a>
+                </div>
+                <div class="change-cat cat-new">
+                    <span class="cat-label">Nya funktioner</span>
+                    <ul class="change-list">
+                        <li><strong>MCP-serverintegration:</strong> Assistenter kan nu anslutas till externa MCP-servrar (Model Context Protocol), vilket gör det möjligt att använda verktyg från tredjepartstjänster direkt i en assistent. MCP-servrar stöder autentisering via bearer token och all användning loggas i granskningsloggar.</li>
+                    </ul>
+                </div>
+                <div class="change-cat cat-improved">
+                    <span class="cat-label">Förbättringar</span>
+                    <ul class="change-list">
+                        <li><strong>Bättre SharePoint-upplevelse:</strong> SharePoint-sajter kategoriseras nu efter Teams-medlemskap i importdialogen, vilket gör det enklare att hitta rätt sajt.</li>
+                        <li><strong>Stärkt behörighetsstyrning:</strong> Hantering av integrationer begränsad till rollerna AI-konfiguratör och Ägare.</li>
+                        <li><strong>Förbättrade källhänvisningar i RAG-svar:</strong> Stärkta promptar minskar risken för saknade referenser.</li>
+                        <li><strong>Längre svar från AI-modeller:</strong> Maximalt antal completion-tokens har höjts.</li>
+                        <li><strong>Modellvalidering i installationsguiden:</strong> Nytt valideringssteg kontrollerar att modellen är korrekt konfigurerad.</li>
+                        <li><strong>Snabbare insikter:</strong> Aggregerade frågor och optimerat dataflöde ger märkbart snabbare laddningstider.</li>
+                        <li><strong>Uppdaterade miljövariabler:</strong> Prefix bytt från INTRIC_ till ENEO_.</li>
+                        <li><strong>Skydd mot borttagning av embedding-modeller:</strong> Aktivt använda embedding-modeller kan inte längre tas bort av misstag.</li>
+                        <li>Förbättrad layout för modell-leverantörer i gränssnittet</li>
+                    </ul>
+                </div>
+                <div class="change-cat cat-fix">
+                    <span class="cat-label">Buggfixar</span>
+                    <ul class="change-list">
+                        <li>Åtgärdat problem med PDF-extraktion från SharePoint genom byte till pdfplumber</li>
+                        <li>Fixat hantering av medlemmar som enbart tillhör grupper i delade ytor</li>
+                        <li>Fixat CORS-konfiguration så att rätt request-origin returneras istället för wildcard (*)</li>
+                    </ul>
+                </div>
+            </div>
+
             <!-- 1.7.0 -->
             <div class="release">
                 <div class="release-header">
                     <span class="ver-tag">v1.7.0</span>
-                    <span class="latest-badge">Senaste</span>
                     <a href="https://github.com/eneo-ai/eneo/releases/tag/v1.7.0" class="release-link">Se på GitHub <span aria-hidden="true">→</span></a>
                 </div>
                 <div class="warning-box">
