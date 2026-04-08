@@ -8,11 +8,11 @@
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(6, 12, 23, 0.88);
+    background: var(--header-bg);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    box-shadow: var(--shadow-sm);
     z-index: var(--z-fixed);
     height: var(--header-height);
 }
@@ -140,6 +140,30 @@
 }
 
 /* ============================================
+   Theme Toggle Button
+   ============================================ */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all var(--transition-smooth);
+    flex-shrink: 0;
+}
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+    color: var(--text);
+    border-color: var(--border-hover);
+    background: var(--brand-dim);
+}
+
+/* ============================================
    Mobile Menu Button
    ============================================ */
 .mobile-menu-btn {
@@ -181,7 +205,7 @@
     top: 100%;
     left: 0;
     right: 0;
-    background: rgba(11, 19, 34, 0.97);
+    background: var(--mobile-nav-bg);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-top: 1px solid var(--border);
@@ -433,7 +457,7 @@
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     backdrop-filter: blur(20px) saturate(1.4);
     -webkit-backdrop-filter: blur(20px) saturate(1.4);
-    background: rgba(6, 12, 23, 0.88);
+    background: var(--header-bg);
     border-bottom: 1px solid var(--border);
 }
 .nav-inner {
@@ -469,11 +493,11 @@
    ============================================ */
 .v2-footer {
     padding: 5rem 2rem 4.5rem;
-    border-top: 1px solid rgba(5, 85, 148, 0.2);
+    border-top: 1px solid var(--footer-border);
     text-align: center;
     color: var(--text-muted);
     font-size: 0.85rem;
-    background: linear-gradient(180deg, #061020 0%, #091428 40%, #0b1a32 100%);
+    background: var(--footer-bg);
     position: relative;
 }
 .v2-footer::before {

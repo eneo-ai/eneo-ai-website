@@ -86,6 +86,10 @@ img {
     display: block;
 }
 
+/* SVG logo text color — controlled by theme */
+.nav-logo .logo-text { fill: var(--text); }
+.footer-logo .logo-text { fill: var(--text-muted); }
+
 /* Skip link for accessibility */
 .skip-link {
     position: absolute;

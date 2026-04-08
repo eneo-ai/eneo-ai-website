@@ -1,15 +1,5 @@
 /* Community Page Styles - Dark Theme v2 */
 
-/* ── EXTRA COLOR VARS ── */
-:root {
-    --amber: #f0a030;
-    --amber-dim: rgba(240, 160, 48, 0.12);
-    --purple: #a78bfa;
-    --purple-dim: rgba(167, 139, 250, 0.1);
-    --rose: #fb7185;
-    --rose-dim: rgba(251, 113, 133, 0.1);
-}
-
 /* ── GOVERNANCE INTRO ── */
 .gov-intro {
     padding: 4rem 2rem;
@@ -112,7 +102,7 @@
 .resp-list li {
     padding: 0.3rem 0.8rem;
     border-radius: 6px;
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--white-overlay);
     border: 1px solid var(--border);
     font-size: 0.8rem;
     color: var(--text-muted);

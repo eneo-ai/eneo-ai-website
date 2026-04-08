@@ -1,32 +1,54 @@
 /* v2 Design System - CSS Custom Properties */
 :root {
-    /* Brand Colors */
+    color-scheme: dark light;
+
+    /* Brand Colors (same in both themes) */
     --brand: #055594;
     --brand-bright: #1a7ad4;
     --brand-light: #3a9aef;
     --brand-dim: rgba(5, 85, 148, 0.15);
     --brand-glow: rgba(26, 122, 212, 0.25);
 
-    /* Accent */
+    /* Accent (same in both themes) */
     --accent: #38bdf8;
     --accent-dim: rgba(56, 189, 248, 0.1);
 
-    /* Backgrounds */
+    /* Status colors (same in both themes) */
+    --success: #22c55e;
+    --green: #34d399;
+    --green-dim: rgba(52, 211, 153, 0.1);
+    --amber: #f0a030;
+    --amber-dim: rgba(240, 160, 48, 0.12);
+    --purple: #a78bfa;
+    --purple-dim: rgba(167, 139, 250, 0.1);
+    --red: #f87171;
+    --red-dim: rgba(248, 113, 113, 0.1);
+    --rose: #fb7185;
+    --rose-dim: rgba(251, 113, 133, 0.1);
+
+    /* Backgrounds — dark default */
     --bg: #060c17;
     --bg-raised: #0b1322;
     --bg-card: #0f1a2e;
 
-    /* Text */
+    /* Text — dark default */
     --text: #e4e9f0;
     --text-muted: #7889a0;
     --text-faint: #5e7389;
 
-    /* Borders */
+    /* Borders — dark default */
     --border: rgba(255, 255, 255, 0.06);
     --border-hover: rgba(5, 85, 148, 0.4);
 
-    /* Success */
-    --success: #22c55e;
+    /* Surface overlays */
+    --white-overlay: rgba(255, 255, 255, 0.04);
+    --white-overlay-hover: rgba(255, 255, 255, 0.08);
+
+    /* Header / Nav / Footer */
+    --header-bg: rgba(6, 12, 23, 0.88);
+    --mobile-nav-bg: rgba(11, 19, 34, 0.97);
+    --footer-bg: linear-gradient(180deg, #061020 0%, #091428 40%, #0b1a32 100%);
+    --footer-border: rgba(5, 85, 148, 0.2);
 
     /* Typography */
     --font-display: 'Newsreader', serif;
@@ -85,6 +107,75 @@
     --secondary: var(--bg-raised);
     --muted: var(--bg-card);
     --muted-foreground: var(--text-muted);
+}
+
+/* ── LIGHT MODE ── */
+/* System preference (unless user has manually chosen dark) */
+@media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+        --bg: #f8f9fb;
+        --bg-raised: #ffffff;
+        --bg-card: #ffffff;
+        --text: #1a1f2e;
+        --text-muted: #5a6578;
+        --text-faint: #8896a8;
+        --border: rgba(0, 0, 0, 0.08);
+        --border-hover: rgba(5, 85, 148, 0.3);
+        --brand-dim: rgba(5, 85, 148, 0.07);
+        --brand-glow: rgba(26, 122, 212, 0.1);
+        --accent-dim: rgba(56, 189, 248, 0.07);
+        --green-dim: rgba(52, 211, 153, 0.08);
+        --amber-dim: rgba(240, 160, 48, 0.08);
+        --purple-dim: rgba(167, 139, 250, 0.08);
+        --red-dim: rgba(248, 113, 113, 0.08);
+        --rose-dim: rgba(251, 113, 133, 0.08);
+        --white-overlay: rgba(0, 0, 0, 0.02);
+        --white-overlay-hover: rgba(0, 0, 0, 0.04);
+        --header-bg: rgba(255, 255, 255, 0.92);
+        --mobile-nav-bg: rgba(255, 255, 255, 0.98);
+        --footer-bg: linear-gradient(180deg, #f0f2f5 0%, #e8ecf0 40%, #dfe4ea 100%);
+        --footer-border: rgba(5, 85, 148, 0.12);
+        --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+        --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+        --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.12);
+        --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        --shadow-brand: 0 25px 50px -12px rgba(5, 85, 148, 0.12);
+        --shadow-brand-hover: 0 20px 40px -12px rgba(5, 85, 148, 0.18);
+        --shadow-glow: 0 0 20px rgba(26, 122, 212, 0.08);
+    }
+}
+
+/* Manual override via data-theme attribute */
+:root[data-theme="light"] {
+    --bg: #f8f9fb;
+    --bg-raised: #ffffff;
+    --bg-card: #ffffff;
+    --text: #1a1f2e;
+    --text-muted: #5a6578;
+    --text-faint: #8896a8;
+    --border: rgba(0, 0, 0, 0.08);
+    --border-hover: rgba(5, 85, 148, 0.3);
+    --brand-dim: rgba(5, 85, 148, 0.07);
+    --brand-glow: rgba(26, 122, 212, 0.1);
+    --accent-dim: rgba(56, 189, 248, 0.07);
+    --green-dim: rgba(52, 211, 153, 0.08);
+    --amber-dim: rgba(240, 160, 48, 0.08);
+    --purple-dim: rgba(167, 139, 250, 0.08);
+    --red-dim: rgba(248, 113, 113, 0.08);
+    --rose-dim: rgba(251, 113, 133, 0.08);
+    --white-overlay: rgba(0, 0, 0, 0.02);
+    --white-overlay-hover: rgba(0, 0, 0, 0.04);
+    --header-bg: rgba(255, 255, 255, 0.92);
+    --mobile-nav-bg: rgba(255, 255, 255, 0.98);
+    --footer-bg: linear-gradient(180deg, #f0f2f5 0%, #e8ecf0 40%, #dfe4ea 100%);
+    --footer-border: rgba(5, 85, 148, 0.12);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.12);
+    --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    --shadow-brand: 0 25px 50px -12px rgba(5, 85, 148, 0.12);
+    --shadow-brand-hover: 0 20px 40px -12px rgba(5, 85, 148, 0.18);
+    --shadow-glow: 0 0 20px rgba(26, 122, 212, 0.08);
 }
 
 /* Responsive header heights */

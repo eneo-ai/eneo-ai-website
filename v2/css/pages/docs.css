@@ -72,7 +72,7 @@
     border-radius: 6px;
     font-size: 0.78rem;
     font-weight: 600;
-    background: rgba(255, 255, 255, 0.04);
+    background: var(--white-overlay);
     border: 1px solid var(--border);
     color: var(--text-muted);
 }
@@ -87,14 +87,14 @@
     padding: 0.7rem 1.4rem;
     border-radius: 8px;
     background: var(--brand-dim);
-    border: 1px solid rgba(5, 85, 148, 0.2);
+    border: 1px solid var(--footer-border);
     transition: all 0.25s;
     align-self: flex-start;
 }
 .res-link:hover,
 .res-link:focus-visible {
     background: rgba(5, 85, 148, 0.22);
-    border-color: rgba(5, 85, 148, 0.4);
+    border-color: var(--border-hover);
     gap: 0.7rem;
 }
 
