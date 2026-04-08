@@ -3,26 +3,41 @@
  */
 
 /**
- * Toggle a release item's expanded state
- * @param {HTMLElement} header - The release header element that was clicked
+ * Toggle a release's expanded state
+ * @param {HTMLElement} header - The release header element
  */
 function toggleRelease(header) {
-    const releaseItem = header.closest('.release-item');
+    const release = header.closest('.release');
+    if (!release) return;
 
-    if (releaseItem) {
-        // Toggle the expanded class
-        releaseItem.classList.toggle('expanded');
-    }
+    const isExpanded = header.getAttribute('aria-expanded') === 'true';
+    header.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
+    release.classList.toggle('collapsed', !isExpanded);
 }
 
 /**
- * Initialize the page - ensure the latest version is expanded by default
+ * Initialize accordion keyboard support and ARIA
  */
 document.addEventListener('DOMContentLoaded', function() {
-    // The first release item (latest version) should already have the "expanded" class in HTML
-    // This code ensures it's set even if it was missed
-    const firstRelease = document.querySelector('.release-item');
-    if (firstRelease && !firstRelease.classList.contains('future')) {
-        firstRelease.classList.add('expanded');
-    }
+    const headers = document.querySelectorAll('.release-header');
+
+    headers.forEach((header, index) => {
+        // Make headers focusable and interactive
+        header.setAttribute('role', 'button');
+        header.setAttribute('tabindex', '0');
+        header.setAttribute('aria-expanded', 'true');
+
+        // Click handler
+        header.addEventListener('click', function() {
+            toggleRelease(this);
+        });
+
+        // Keyboard handler (Enter and Space)
+        header.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleRelease(this);
+            }
+        });
+    });
 });

@@ -1,227 +1,248 @@
-/* Exempel Page Specific Styles */
+/* Användningsfall (Exempel) Page Styles - Dark Theme v2 */
 
-/* Page Hero */
-.page-hero {
-    padding: 13rem 0 8rem;
-    background: linear-gradient(135deg, rgba(0, 82, 147, 0.05) 0%, var(--accent) 50%, var(--background) 100%);
-    position: relative;
-    overflow: hidden;
-    text-align: center;
+/* ── SHARED HELPERS ── */
+.label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--brand-light);
+    margin-bottom: 0.8rem;
+}
+.subtitle {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 620px;
+    margin-bottom: 2.5rem;
 }
 
+/* ── BUTTONS ── */
+.btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.65rem 1.4rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: border-color 0.3s ease, color 0.3s ease, background 0.3s ease;
+}
+.btn-ghost:hover,
+.btn-ghost:focus-visible {
+    border-color: var(--border-hover);
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.03);
+}
+.btn-sm {
+    padding: 0.6rem 1.3rem;
+    font-size: 0.85rem;
+}
+
+/* ── PAGE HERO ── */
+.page-hero {
+    padding: 9rem 2rem 5rem;
+    position: relative;
+}
 .page-hero::before {
     content: '';
     position: absolute;
-    top: 5rem;
-    left: 5rem;
-    width: 16rem;
-    height: 16rem;
-    background: rgba(0, 82, 147, 0.05);
-    border-radius: 50%;
-    filter: blur(3rem);
+    inset: 0;
+    background: radial-gradient(ellipse 50% 50% at 50% 60%, rgba(5, 85, 148, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+}
+.page-hero .container {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+}
+.page-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.2rem;
+    animation: fadeUp 0.7s ease both;
+}
+.page-hero h1 em {
+    font-style: italic;
+    background: linear-gradient(135deg, var(--brand-light), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.page-hero .hero-text {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.75;
+    max-width: 620px;
+    animation: fadeUp 0.7s 0.1s ease both;
 }
 
-.page-hero::after {
+/* ── INTRO BAR ── */
+.intro-bar {
+    padding: 3rem 2rem;
+    background: var(--bg-raised);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+.intro-bar .container {
+    max-width: 760px;
+}
+.intro-bar p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ── USE CASES ── */
+.use-cases {
+    padding: 5rem 2rem 7rem;
+}
+.uc-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--border);
+}
+.uc-item:first-child {
+    padding-top: 0;
+}
+.uc-item:last-child {
+    border-bottom: none;
+}
+.uc-item:nth-child(even) .uc-visual {
+    order: -1;
+}
+
+/* Visual placeholder */
+.uc-visual {
+    border-radius: 14px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    position: relative;
+    transition: border-color 0.3s ease;
+}
+.uc-visual:hover {
+    border-color: var(--border-hover);
+}
+.uc-visual-inner {
+    padding: 1.5rem;
+}
+.uc-visual-inner img {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+}
+.uc-visual .placeholder-icon {
+    font-size: 2.5rem;
+    opacity: 0.3;
+}
+/* Decorative corner lines */
+.uc-visual::before,
+.uc-visual::after {
     content: '';
     position: absolute;
-    bottom: 8rem;
-    right: 8rem;
-    width: 16rem;
-    height: 16rem;
-    background: rgba(0, 82, 147, 0.03);
-    border-radius: 50%;
-    filter: blur(4rem);
-    z-index: -1;
+    width: 30px;
+    height: 30px;
+    border-color: rgba(5, 85, 148, 0.2);
+    border-style: solid;
+}
+.uc-visual::before {
+    top: 12px;
+    left: 12px;
+    border-width: 2px 0 0 2px;
+    border-radius: 4px 0 0 0;
+}
+.uc-visual::after {
+    bottom: 12px;
+    right: 12px;
+    border-width: 0 2px 2px 0;
+    border-radius: 0 0 4px 0;
 }
 
-.page-hero-content {
-    position: relative;
-    max-width: 80rem;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-}
-
-.page-hero h1 {
-    font-size: clamp(1.75rem, 4.5vw, 2.75rem);
-    font-weight: var(--font-weight-bold);
-    line-height: 1.2;
-    margin-bottom: 2rem;
-    color: var(--foreground);
-}
-
-.page-hero p {
-    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
-    color: var(--muted-foreground);
-    max-width: 60rem;
-    margin: 0 auto;
-    font-weight: var(--font-weight-light);
-    line-height: 1.6;
-}
-
-/* Use Cases Grid */
-.usecases-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-/* Use Case Cards */
-.usecase-card {
-    background: var(--secondary);
-    border: 1px solid var(--border);
-    border-radius: 0.75rem;
-    padding: 2rem;
-    box-shadow: var(--shadow-sm);
-    transition: all var(--transition-smooth);
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-.usecase-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
-    border-color: rgba(0, 82, 147, 0.2);
-}
-
-.usecase-header {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-}
-
-.usecase-card h3 {
-    font-size: 1.5rem;
-    font-weight: var(--font-weight-semibold);
-    color: var(--foreground);
-    margin: 0;
-}
-
-.usecase-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-.usecase-tag {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.375rem 0.75rem;
-    border-radius: 1rem;
-    font-size: 0.875rem;
-    font-weight: var(--font-weight-medium);
+/* Use case content */
+.uc-content .uc-tag {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.025em;
-    border: 1px solid;
+    letter-spacing: 0.1em;
+    color: var(--brand-light);
+    background: var(--brand-dim);
+    padding: 0.25rem 0.7rem;
+    border-radius: 5px;
+    margin-bottom: 0.8rem;
+}
+.uc-content h3 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.7rem;
+}
+.uc-content p {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    line-height: 1.65;
+    margin-bottom: 1.3rem;
 }
 
-.usecase-tag.assistant {
-    background: rgba(34, 197, 94, 0.1);
-    color: #16a34a;
-    border-color: rgba(34, 197, 94, 0.2);
-}
-
-.usecase-tag.app {
-    background: rgba(0, 82, 147, 0.1);
-    color: var(--primary);
-    border-color: rgba(0, 82, 147, 0.2);
-}
-
-.usecase-tag.service {
-    background: rgba(168, 85, 247, 0.1);
-    color: #7c3aed;
-    border-color: rgba(168, 85, 247, 0.2);
-}
-
-.usecase-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.usecase-content p {
-    color: var(--muted-foreground);
-    line-height: 1.6;
-    margin: 0;
-}
-
-/* CTA Section */
+/* ── CTA SECTION ── */
 .cta-section {
-    background: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 50%, var(--muted) 100%);
+    padding: 6rem 2rem;
+    text-align: center;
+    background: var(--bg-raised);
     border-top: 1px solid var(--border);
 }
-
-.cta-buttons {
+.cta-section .subtitle {
+    margin: 0 auto 2rem;
+}
+.cta-actions {
     display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    align-items: center;
-    margin-top: 2rem;
+    gap: 0.9rem;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-/* Responsive Design */
-@media (min-width: 640px) {
-    .cta-buttons {
-        flex-direction: row;
-        justify-content: center;
-        gap: 2rem;
-    }
-}
-
-@media (min-width: 768px) {
-    .usecases-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2.5rem;
-    }
-    
-    .page-hero {
-        padding: 13rem 0 9rem;
-    }
-}
-
-@media (min-width: 1024px) {
-    .usecases-grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 2rem;
-    }
-    
-    .page-hero {
-        padding: 14rem 0 10rem;
-    }
-}
-
-@media (max-width: 1023px) {
-    .page-hero {
-        padding: 11rem 0 8rem;
-    }
-}
-
-/* Animation for cards on load */
-.usecase-card {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.6s ease-out forwards;
-}
-
-.usecase-card:nth-child(1) { animation-delay: 0.1s; }
-.usecase-card:nth-child(2) { animation-delay: 0.2s; }
-.usecase-card:nth-child(3) { animation-delay: 0.3s; }
-.usecase-card:nth-child(4) { animation-delay: 0.4s; }
-.usecase-card:nth-child(5) { animation-delay: 0.5s; }
-.usecase-card:nth-child(6) { animation-delay: 0.6s; }
-.usecase-card:nth-child(7) { animation-delay: 0.7s; }
-.usecase-card:nth-child(8) { animation-delay: 0.8s; }
-
-@keyframes fadeInUp {
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(18px);
     }
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+    .uc-item {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .uc-item:nth-child(even) .uc-visual {
+        order: 0;
+    }
+    .page-hero {
+        padding: 7rem 1.2rem 3rem;
+    }
+    .use-cases {
+        padding: 3rem 1.2rem 4rem;
+    }
+    .intro-bar {
+        padding: 2rem 1.2rem;
+    }
+    .cta-section {
+        padding: 4rem 1.2rem;
     }
 }

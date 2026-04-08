@@ -124,7 +124,7 @@ All kod ska uppfylla WCAG 2.1 Level AA. Detta är ett lagkrav för offentlig sek
 - Interaktiva element ska ha minst 44×44px touch-target
 
 ### Tillgänglighetsredogörelse
-Webbplatsen har en publicerad tillgänglighetsredogörelse enligt DOS-lagens krav (se `v2/tillganglighetsredogorelse.html`).
+Webbplatsen har en publicerad tillgänglighetsredogörelse enligt DOS-lagens krav (se `tillganglighetsredogorelse.html`).
 
 ## Performance Considerations
 
