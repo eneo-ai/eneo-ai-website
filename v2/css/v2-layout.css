@@ -541,7 +541,7 @@
     background: var(--white-overlay);
     border: 1px solid var(--border);
 }
-.footer-box h4 {
+.footer-heading {
     font-family: var(--font-body);
     font-size: 0.68rem;
     font-weight: 700;
