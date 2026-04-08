@@ -1,0 +1,101 @@
+/* v2 Design System - CSS Custom Properties */
+:root {
+    /* Brand Colors */
+    --brand: #055594;
+    --brand-bright: #1a7ad4;
+    --brand-light: #3a9aef;
+    --brand-dim: rgba(5, 85, 148, 0.15);
+    --brand-glow: rgba(26, 122, 212, 0.25);
+
+    /* Accent */
+    --accent: #38bdf8;
+    --accent-dim: rgba(56, 189, 248, 0.1);
+
+    /* Backgrounds */
+    --bg: #060c17;
+    --bg-raised: #0b1322;
+    --bg-card: #0f1a2e;
+
+    /* Text */
+    --text: #e4e9f0;
+    --text-muted: #7889a0;
+    --text-faint: #5e7389;
+
+    /* Borders */
+    --border: rgba(255, 255, 255, 0.06);
+    --border-hover: rgba(5, 85, 148, 0.4);
+
+    /* Success */
+    --success: #22c55e;
+
+    /* Typography */
+    --font-display: 'Newsreader', serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    /* Spacing */
+    --container-max-width: 68.75rem; /* 1100px */
+    --container-padding: clamp(1.25rem, 5vw, 3rem);
+
+    /* Border Radius */
+    --radius: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+
+    /* Header */
+    --header-height: 4rem;
+    --header-height-mobile: 3.5rem;
+    --header-height-large: 4rem;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.5);
+    --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+    --shadow-brand: 0 25px 50px -12px rgba(5, 85, 148, 0.35);
+    --shadow-brand-hover: 0 20px 40px -12px rgba(5, 85, 148, 0.45);
+    --shadow-glow: 0 0 20px rgba(26, 122, 212, 0.15);
+
+    /* Transitions */
+    --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 0.2s ease;
+    --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-entrance: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Z-index scale */
+    --z-dropdown: 10;
+    --z-sticky: 20;
+    --z-fixed: 30;
+    --z-modal-backdrop: 40;
+    --z-modal: 50;
+    --z-popover: 60;
+    --z-tooltip: 70;
+
+    /* Legacy mappings for compatibility with v1 class names */
+    --background: var(--bg);
+    --foreground: var(--text);
+    --primary: var(--brand);
+    --primary-light: var(--brand-bright);
+    --primary-foreground: #ffffff;
+    --secondary: var(--bg-raised);
+    --muted: var(--bg-card);
+    --muted-foreground: var(--text-muted);
+}
+
+/* Responsive header heights */
+@media (max-width: 1023px) {
+    :root {
+        --header-height: var(--header-height-mobile);
+    }
+}
+
+@media (min-width: 1024px) {
+    :root {
+        --header-height: var(--header-height-large);
+    }
+}

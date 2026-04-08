@@ -1,0 +1,105 @@
+/* Docs Page Styles - Dark Theme v2 */
+
+/* ── RESOURCE CARDS ── */
+.resources {
+    padding: 2rem 2rem 8rem;
+}
+.res-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+.res-card {
+    padding: 2.5rem;
+    border-radius: 16px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.res-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--brand), var(--accent));
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.res-card:hover {
+    border-color: var(--border-hover);
+}
+.res-card:hover::before {
+    opacity: 1;
+}
+
+.res-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.res-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.7rem;
+}
+.res-card > p {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+.res-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-bottom: 1.8rem;
+}
+.res-tags span {
+    padding: 0.3rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+}
+.res-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--brand-light);
+    text-decoration: none;
+    padding: 0.7rem 1.4rem;
+    border-radius: 8px;
+    background: var(--brand-dim);
+    border: 1px solid rgba(5, 85, 148, 0.2);
+    transition: all 0.25s;
+    align-self: flex-start;
+}
+.res-link:hover,
+.res-link:focus-visible {
+    background: rgba(5, 85, 148, 0.22);
+    border-color: rgba(5, 85, 148, 0.4);
+    gap: 0.7rem;
+}
+
+@media (max-width: 768px) {
+    .res-grid {
+        grid-template-columns: 1fr;
+    }
+}

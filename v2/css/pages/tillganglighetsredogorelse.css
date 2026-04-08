@@ -1,0 +1,207 @@
+/* Tillgänglighetsredogörelse Page Styles */
+
+/* ── STATUS BOX ── */
+.status-box {
+    padding: 2rem 2.5rem;
+    border-radius: 14px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    margin-bottom: 3rem;
+}
+.status-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.9rem;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background: var(--amber-dim, rgba(240,160,48,0.12));
+    color: var(--amber, #f0a030);
+    border: 1px solid rgba(240,160,48,0.2);
+}
+.status-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+.status-meta dt {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-faint);
+    margin-bottom: 0.3rem;
+}
+.status-meta dd {
+    font-size: 0.92rem;
+    color: var(--text);
+    margin-bottom: 1rem;
+}
+
+/* ── CONTENT SECTIONS ── */
+.a11y-content {
+    padding: 4rem 2rem 7rem;
+}
+.a11y-content .container {
+    max-width: 760px;
+}
+.a11y-section {
+    margin-bottom: 3.5rem;
+}
+.a11y-section h2 {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--border);
+}
+.a11y-section p {
+    color: var(--text-muted);
+    font-size: 0.94rem;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+    max-width: 65ch;
+}
+.a11y-section ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+.a11y-section li {
+    padding-left: 1.2rem;
+    position: relative;
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+.a11y-section li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55rem;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--text-faint);
+}
+
+/* ── ISSUE TABLE ── */
+.issue-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.88rem;
+}
+.issue-table th {
+    text-align: left;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-faint);
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border);
+}
+.issue-table td {
+    padding: 0.85rem 1rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+}
+.issue-table tr:last-child td {
+    border-bottom: none;
+}
+.issue-table code {
+    font-size: 0.8rem;
+    padding: 0.15rem 0.45rem;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    color: var(--brand-light);
+    white-space: nowrap;
+}
+
+/* ── CONTACT BOX ── */
+.contact-box {
+    padding: 1.8rem 2rem;
+    border-radius: 12px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    margin: 1.5rem 0;
+}
+.contact-box p {
+    margin-bottom: 0.5rem;
+}
+.contact-box a {
+    color: var(--brand-light);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+.contact-box a:hover,
+.contact-box a:focus-visible {
+    color: var(--accent);
+}
+
+/* ── AI PROCESS BOX ── */
+.ai-process {
+    padding: 1.8rem 2rem;
+    border-radius: 12px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--brand-light);
+    margin: 1.5rem 0;
+}
+.ai-process p {
+    margin-bottom: 0.5rem;
+}
+
+/* ── DIGG LINK ── */
+.digg-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.6rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    background: var(--brand-dim);
+    color: var(--brand-light);
+    border: 1px solid rgba(5,85,148,0.2);
+    transition: all 0.25s;
+    margin-top: 0.5rem;
+}
+.digg-link:hover,
+.digg-link:focus-visible {
+    background: rgba(5,85,148,0.22);
+    border-color: rgba(5,85,148,0.4);
+    gap: 0.7rem;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+    .status-meta {
+        grid-template-columns: 1fr;
+    }
+    .issue-table {
+        font-size: 0.82rem;
+    }
+    .issue-table th,
+    .issue-table td {
+        padding: 0.6rem 0.5rem;
+    }
+}

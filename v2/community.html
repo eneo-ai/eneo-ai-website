@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community och styrning - Eneo.ai</title>
+    <meta name="description" content="Lär dig om den öppna källkods-communityn som styr och samverkar kring Eneo AI-plattformen. Upptäck styrningsstrukturen och hur du kan delta i utvecklingen.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../public/favicon.ico">
+
+    <!-- External Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,500;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/v2-variables.css">
+    <link rel="stylesheet" href="css/v2-base.css">
+    <link rel="stylesheet" href="css/v2-components.css">
+    <link rel="stylesheet" href="css/v2-layout.css">
+    <link rel="stylesheet" href="css/pages/om-eneo.css">
+    <link rel="stylesheet" href="css/pages/community.css">
+
+    <!-- OG Meta Tags -->
+    <meta property="og:title" content="Community och styrning - Eneo.ai" />
+    <meta property="og:description" content="Lär dig om den öppna källkods-communityn som styr och samverkar kring Eneo AI-plattformen. Upptäck styrningsstrukturen och hur du kan delta i utvecklingen." />
+    <meta property="og:image" content="https://eneo.ai/public/logo-eneo.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://eneo.ai/community.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Eneo.ai" />
+    <meta property="og:locale" content="sv_SE" />
+
+    <!-- Analytics -->
+    <script defer src="https://analytics.eneo.ai/script.js" data-website-id="50c055f0-8d28-4e1e-9d62-0d12a7c5dd57"></script>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Hoppa till huvudinnehåll</a>
+    <!-- NAV -->
+    <nav class="v2-nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo" aria-label="Eneo - till startsidan">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 172" style="height:30px;width:auto;shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;fill-rule:evenodd;clip-rule:evenodd;">
+                    <path fill="#1a7ad4" d="M 107.5,-0.5 C 114.833,-0.5 122.167,-0.5 129.5,-0.5C 176.816,9.15707 202.149,38.1571 205.5,86.5C 203.389,125.423 184.389,152.257 148.5,167C 142.419,168.71 136.419,170.21 130.5,171.5C 123.5,171.5 116.5,171.5 109.5,171.5C 93.3852,168.947 78.7185,162.781 65.5,153C 57.3188,144.986 49.3188,136.819 41.5,128.5C 61.6527,107.847 81.9861,87.3471 102.5,67C 111.582,60.8816 121.249,59.8816 131.5,64C 144.46,73.9171 146.96,86.0837 139,100.5C 131.833,107.667 124.667,114.833 117.5,122C 138.893,122.044 151.726,111.544 156,90.5C 156.442,68.8872 146.275,55.0539 125.5,49C 112.803,46.9218 101.803,50.2552 92.5,59C 86.6667,64.8333 80.8333,70.6667 75,76.5C 63.5,65 52,53.5 40.5,42C 50.2305,31.5999 60.5639,21.9333 71.5,13C 82.7423,6.20074 94.7423,1.70074 107.5,-0.5 Z"/>
+                    <path fill="#e4e9f0" d="M 649.5,76.5 C 649.5,82.1667 649.5,87.8333 649.5,93.5C 640.846,129.635 617.846,147.135 580.5,146C 552.923,141.09 535.59,125.09 528.5,98C 514.833,97.6667 501.167,97.3333 487.5,97C 480.994,93.8341 478.494,88.6674 480,81.5C 480.979,78.3749 482.813,75.8749 485.5,74C 498.401,72.538 511.401,72.038 524.5,72.5C 521.764,64.5453 516.764,58.3786 509.5,54C 488.763,45.1354 472.596,50.3021 461,69.5C 453.601,90.9824 459.767,107.149 479.5,118C 492.365,122.56 504.198,120.727 515,112.5C 519.225,119.939 523.725,127.272 528.5,134.5C 511.022,146.856 492.022,149.689 471.5,143C 466.51,141.335 462.01,138.835 458,135.5C 457.502,138.817 457.335,142.15 457.5,145.5C 448.833,145.5 440.167,145.5 431.5,145.5C 431.667,123.497 431.5,101.497 431,79.5C 426.715,61.265 415.215,51.265 396.5,49.5C 377.785,51.265 366.285,61.265 362,79.5C 361.5,101.497 361.333,123.497 361.5,145.5C 352.833,145.5 344.167,145.5 335.5,145.5C 335.5,129.5 335.5,113.5 335.5,97.5C 322.163,97.6666 308.829,97.4999 295.5,97C 287.991,92.8092 285.824,86.6426 289,78.5C 290.663,76.0833 292.829,74.25 295.5,73C 307.829,72.5001 320.162,72.3335 332.5,72.5C 327.027,58.2227 316.527,50.556 301,49.5C 282.085,51.1142 270.419,61.1142 266,79.5C 264.719,101.205 274.553,114.705 295.5,120C 303.532,121.06 311.032,119.56 318,115.5C 318.667,124.833 318.667,134.167 318,143.5C 289.265,150.965 266.265,142.631 249,118.5C 233.274,88.8088 237.108,61.9755 260.5,38C 285.142,19.8768 310.476,18.8768 336.5,35C 340.981,38.3143 344.981,42.1476 348.5,46.5C 369.825,23.1077 395.158,17.6077 424.5,30C 432.127,34.3166 438.794,39.8166 444.5,46.5C 465.825,23.1077 491.158,17.6077 520.5,30C 528.127,34.3166 534.794,39.8166 540.5,46.5C 561.825,23.1077 587.158,17.6077 616.5,30C 634.762,40.3615 645.762,55.8615 649.5,76.5 Z M 583.5,49.5 C 610.442,49.9416 623.609,63.6083 623,90.5C 619.82,107.013 609.987,116.846 593.5,120C 572.335,120.831 559.169,110.998 554,90.5C 552.92,68.7752 562.753,55.1085 583.5,49.5 Z"/>
+                    <path fill="#1a7ad4" d="M -0.5,87.5 C -0.5,85.8333 -0.5,84.1667 -0.5,82.5C 10.1734,71.9931 21.0067,61.6598 32,51.5C 43.9725,62.3055 55.4725,73.6388 66.5,85.5C 55.5,97.1667 44.1667,108.5 32.5,119.5C 21.4793,108.812 10.4793,98.1453 -0.5,87.5 Z"/>
+                </svg>
+            </a>
+            <ul class="nav-links">
+                <li><a href="om-eneo.html">Om</a></li>
+                <li><a href="anvandningsfall.html">Användningsfall</a></li>
+                <li><a href="utbildningar.html">Utbildningar</a></li>
+                <li><a href="tidslinje.html">Historik</a></li>
+                <li><a href="samarbetsforum.html">Samarbete</a></li>
+                <li><a href="community.html" class="nav-active">Community</a></li>
+                <li><a href="docs.html">Docs</a></li>
+                <li><a href="versioner.html">Versioner</a></li>
+            </ul>
+            <button id="mobile-menu-btn" class="mobile-menu-btn" aria-expanded="false" aria-controls="mobile-nav" aria-label="Meny" onclick="Eneo.toggleMobileMenu()">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+        <div id="mobile-nav" class="mobile-nav" aria-label="Mobil navigation">
+            <a href="om-eneo.html">Om</a>
+            <a href="anvandningsfall.html">Användningsfall</a>
+            <a href="utbildningar.html">Utbildningar</a>
+            <a href="tidslinje.html">Historik</a>
+            <a href="samarbetsforum.html">Samarbete</a>
+            <a href="community.html">Community</a>
+            <a href="docs.html">Docs</a>
+            <a href="versioner.html">Versioner</a>
+        </div>
+    </nav>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero" id="main-content">
+        <div class="container">
+            <div class="label">Community</div>
+            <h1>Öppen styrning för <em>demokratisk AI</em></h1>
+            <p class="hero-text">
+                Eneo AI är ett öppet källkodsprojekt som idag kontrolleras av Sundsvalls kommun,
+                men där målbilden är att plattformen styrs och utvecklas i samarbete mellan flera
+                offentliga aktörer och i nära samarbete med parter i näringslivet.
+                Demokratisk AI på riktigt, där alla som vill kan bidra.
+            </p>
+        </div>
+    </section>
+
+    <!-- GOVERNANCE INTRO -->
+    <section class="gov-intro">
+        <div class="container">
+            <p>
+                Nedan beskrivs nuvarande visionsbild och arbetshypotes för styrningen kring Eneo AI som
+                öppen källkodsprojekt. Allt bygger på grundprincipen att Eneo AI är en plattform
+                av det offentliga, för det offentliga – men med öppna dörrar för andra att bidra och samarbeta.
+                Med en viktig grundprincip om att projektet ska främja konkurrens.
+            </p>
+        </div>
+    </section>
+
+    <!-- GOVERNANCE STRUCTURE -->
+    <section class="governance">
+        <div class="container">
+            <div class="label">Styrningsstruktur</div>
+            <h2>Från vision till operativ utveckling</h2>
+            <p class="subtitle">Fem organ som tillsammans säkerställer att Eneo utvecklas demokratiskt, transparent och med verkliga behov i fokus.</p>
+
+            <div class="gov-grid">
+
+                <!-- Styrgrupp -->
+                <div class="gov-card">
+                    <div class="gov-side">
+                        <div class="gs-icon" style="background:var(--brand-dim);" aria-hidden="true">👑</div>
+                        <div class="gs-focus" style="color:var(--brand-light);">Vision &amp; Strategi</div>
+                        <div class="gs-parties">Sundsvalls kommun → konsortium av offentliga aktörer</div>
+                    </div>
+                    <div class="gov-main">
+                        <h3>Styrgrupp</h3>
+                        <p>Den högsta beslutande instansen för Eneo AI. Ansvarar för den övergripande strategiska riktningen och visionen för plattformen.</p>
+                        <div class="resp-label">Ansvar</div>
+                        <ul class="resp-list">
+                            <li>Vision, målbild &amp; strategi</li>
+                            <li>Utse teknisk kommitté</li>
+                            <li>Juridik &amp; licensfrågor</li>
+                            <li>Varumärke</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Teknisk kommitté -->
+                <div class="gov-card">
+                    <div class="gov-side">
+                        <div class="gs-icon" style="background:var(--accent-dim);" aria-hidden="true">⚙️</div>
+                        <div class="gs-focus" style="color:var(--accent);">Teknik &amp; Arkitektur</div>
+                        <div class="gs-parties">Sundsvalls kommun → konsortium av offentliga aktörer</div>
+                    </div>
+                    <div class="gov-main">
+                        <h3>Teknisk kommitté</h3>
+                        <p>Säkerställer att plattformen utvecklas enligt bästa praxis och moderna tekniska standarder. Ansvarar för teknisk kvalitet och säkerhet.</p>
+                        <div class="resp-label">Ansvar</div>
+                        <ul class="resp-list">
+                            <li>Teknisk roadmap &amp; releases</li>
+                            <li>Arkitektur &amp; standarder</li>
+                            <li>Code review &amp; kvalitetskrav</li>
+                            <li>Pull requests &amp; contributions</li>
+                            <li>Security &amp; compliance</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Tekniskt råd -->
+                <div class="gov-card">
+                    <div class="gov-side">
+                        <div class="gs-icon" style="background:var(--green-dim);" aria-hidden="true">🔄</div>
+                        <div class="gs-focus" style="color:var(--green);">Utveckling &amp; Planering</div>
+                        <div class="gs-parties">Teknisk kommitté + externa parter med MoU</div>
+                    </div>
+                    <div class="gov-main">
+                        <h3>Tekniskt råd</h3>
+                        <p>Den operativa länken mellan användarbehov och teknisk implementation. Samordnar utvecklingsarbetet och säkerställer att alla parter arbetar mot samma mål.</p>
+                        <div class="resp-label">Ansvar</div>
+                        <ul class="resp-list">
+                            <li>Insamling av behov till roadmap</li>
+                            <li>Planering av genomförande</li>
+                            <li>Planering av utveckling</li>
+                            <li>Synkronisering av parter</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Användarråd -->
+                <div class="gov-card">
+                    <div class="gov-side">
+                        <div class="gs-icon" style="background:var(--purple-dim);" aria-hidden="true">👥</div>
+                        <div class="gs-focus" style="color:var(--purple);">Användarfokus</div>
+                        <div class="gs-parties">Offentliga aktörer som nyttjar Eneo</div>
+                    </div>
+                    <div class="gov-main">
+                        <h3>Användarråd</h3>
+                        <p>Representerar alla organisationer som använder Eneo i sin verksamhet. Säkerställer att plattformen utvecklas utifrån verkliga användarbehov och underlättar kunskapsdelning.</p>
+                        <div class="resp-label">Ansvar</div>
+                        <ul class="resp-list">
+                            <li>Framställa behov till roadmap</li>
+                            <li>Synkronisering av användare</li>
+                            <li>Driva arbetsgrupper</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Tillfälliga arbetsgrupper -->
+                <div class="gov-card">
+                    <div class="gov-side">
+                        <div class="gs-icon" style="background:var(--rose-dim);" aria-hidden="true">🎯</div>
+                        <div class="gs-focus" style="color:var(--rose);">Specifika områden</div>
+                        <div class="gs-parties">Offentliga aktörer &amp; näringsliv</div>
+                    </div>
+                    <div class="gov-main">
+                        <h3>Tillfälliga arbetsgrupper</h3>
+                        <p>Bildas vid behov för att hantera specifika utmaningar eller utvecklingsområden. Möjliggör flexibel och fokuserad samverkan kring avgränsade frågeställningar.</p>
+                        <div class="resp-label">Ansvar</div>
+                        <ul class="resp-list">
+                            <li>Framställa behov inom specifikt område</li>
+                            <li>Forma behov till krav &amp; lösningsförslag</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Bli en del av Eneo-communityn</h2>
+            <p class="subtitle">
+                Oavsett om du är utvecklare, arkitekt, beslutsfattare eller användare inom offentlig sektor
+                är du välkommen att delta i utvecklingen av Eneo. Tillsammans bygger vi framtidens AI-plattform
+                för offentliga Sverige.
+            </p>
+            <div class="cta-actions">
+                <a href="samarbetsforum.html" class="btn btn-primary">Läs mer om samarbetet <span aria-hidden="true">→</span></a>
+                <a href="https://github.com/eneo-ai/eneo" class="btn btn-ghost">Bidra på GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="v2-footer">
+        <div class="container">
+            <div class="footer-logo">
+                <svg role="img" aria-label="Eneo logotyp" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 172" style="height:24px;width:auto;shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;fill-rule:evenodd;clip-rule:evenodd;">
+                    <path fill="#1a7ad4" d="M 107.5,-0.5 C 114.833,-0.5 122.167,-0.5 129.5,-0.5C 176.816,9.15707 202.149,38.1571 205.5,86.5C 203.389,125.423 184.389,152.257 148.5,167C 142.419,168.71 136.419,170.21 130.5,171.5C 123.5,171.5 116.5,171.5 109.5,171.5C 93.3852,168.947 78.7185,162.781 65.5,153C 57.3188,144.986 49.3188,136.819 41.5,128.5C 61.6527,107.847 81.9861,87.3471 102.5,67C 111.582,60.8816 121.249,59.8816 131.5,64C 144.46,73.9171 146.96,86.0837 139,100.5C 131.833,107.667 124.667,114.833 117.5,122C 138.893,122.044 151.726,111.544 156,90.5C 156.442,68.8872 146.275,55.0539 125.5,49C 112.803,46.9218 101.803,50.2552 92.5,59C 86.6667,64.8333 80.8333,70.6667 75,76.5C 63.5,65 52,53.5 40.5,42C 50.2305,31.5999 60.5639,21.9333 71.5,13C 82.7423,6.20074 94.7423,1.70074 107.5,-0.5 Z"/>
+                    <path fill="#7889a0" d="M 649.5,76.5 C 649.5,82.1667 649.5,87.8333 649.5,93.5C 640.846,129.635 617.846,147.135 580.5,146C 552.923,141.09 535.59,125.09 528.5,98C 514.833,97.6667 501.167,97.3333 487.5,97C 480.994,93.8341 478.494,88.6674 480,81.5C 480.979,78.3749 482.813,75.8749 485.5,74C 498.401,72.538 511.401,72.038 524.5,72.5C 521.764,64.5453 516.764,58.3786 509.5,54C 488.763,45.1354 472.596,50.3021 461,69.5C 453.601,90.9824 459.767,107.149 479.5,118C 492.365,122.56 504.198,120.727 515,112.5C 519.225,119.939 523.725,127.272 528.5,134.5C 511.022,146.856 492.022,149.689 471.5,143C 466.51,141.335 462.01,138.835 458,135.5C 457.502,138.817 457.335,142.15 457.5,145.5C 448.833,145.5 440.167,145.5 431.5,145.5C 431.667,123.497 431.5,101.497 431,79.5C 426.715,61.265 415.215,51.265 396.5,49.5C 377.785,51.265 366.285,61.265 362,79.5C 361.5,101.497 361.333,123.497 361.5,145.5C 352.833,145.5 344.167,145.5 335.5,145.5C 335.5,129.5 335.5,113.5 335.5,97.5C 322.163,97.6666 308.829,97.4999 295.5,97C 287.991,92.8092 285.824,86.6426 289,78.5C 290.663,76.0833 292.829,74.25 295.5,73C 307.829,72.5001 320.162,72.3335 332.5,72.5C 327.027,58.2227 316.527,50.556 301,49.5C 282.085,51.1142 270.419,61.1142 266,79.5C 264.719,101.205 274.553,114.705 295.5,120C 303.532,121.06 311.032,119.56 318,115.5C 318.667,124.833 318.667,134.167 318,143.5C 289.265,150.965 266.265,142.631 249,118.5C 233.274,88.8088 237.108,61.9755 260.5,38C 285.142,19.8768 310.476,18.8768 336.5,35C 340.981,38.3143 344.981,42.1476 348.5,46.5C 369.825,23.1077 395.158,17.6077 424.5,30C 432.127,34.3166 438.794,39.8166 444.5,46.5C 465.825,23.1077 491.158,17.6077 520.5,30C 528.127,34.3166 534.794,39.8166 540.5,46.5C 561.825,23.1077 587.158,17.6077 616.5,30C 634.762,40.3615 645.762,55.8615 649.5,76.5 Z M 583.5,49.5 C 610.442,49.9416 623.609,63.6083 623,90.5C 619.82,107.013 609.987,116.846 593.5,120C 572.335,120.831 559.169,110.998 554,90.5C 552.92,68.7752 562.753,55.1085 583.5,49.5 Z"/>
+                    <path fill="#1a7ad4" d="M -0.5,87.5 C -0.5,85.8333 -0.5,84.1667 -0.5,82.5C 10.1734,71.9931 21.0067,61.6598 32,51.5C 43.9725,62.3055 55.4725,73.6388 66.5,85.5C 55.5,97.1667 44.1667,108.5 32.5,119.5C 21.4793,108.812 10.4793,98.1453 -0.5,87.5 Z"/>
+                </svg>
+            </div>
+            <p>Ett initiativ från Sundsvalls kommun och Ånge kommun för hela offentliga Sverige.</p>
+            <p style="margin-top:0.4rem;"><a href="mailto:digitalisering@sundsvall.se">digitalisering@sundsvall.se</a></p>
+            <p style="margin-top:0.4rem;"><a href="tillganglighetsredogorelse.html">Tillgänglighetsredogörelse</a></p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+/* Utbildningar Page - v2 Dark Theme */
+
+:root {
+    --amber: #f0a030;
+    --amber-dim: rgba(240,160,48,0.12);
+    --green: #34d399;
+    --green-dim: rgba(52,211,153,0.1);
+}
+
+/* Page hero - standard v2 pattern */
+.page-hero { padding: 9rem 2rem 5rem; position: relative; }
+.page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 50% 50% at 50% 55%, rgba(5,85,148,0.08) 0%, transparent 70%); pointer-events: none; }
+.page-hero .container { position: relative; z-index: 1; max-width: 760px; }
+.page-hero h1 { font-family: var(--font-display); font-size: clamp(2rem,4.5vw,3rem); font-weight: 700; line-height: 1.12; letter-spacing: -0.03em; margin-bottom: 1.2rem; animation: fadeUp 0.7s ease both; }
+.page-hero h1 em { font-style: italic; background: linear-gradient(135deg, var(--brand-light), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.page-hero .hero-text { color: var(--text-muted); font-size: 1.05rem; line-height: 1.75; max-width: 640px; animation: fadeUp 0.7s 0.1s ease both; }
+
+/* Area picker */
+.area-picker { padding: 3.5rem 2rem; background: var(--bg-raised); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.area-picker .container { text-align: center; }
+.area-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 2rem; }
+.area-card { padding: 1.6rem; border-radius: 12px; background: var(--bg-card); border: 1px solid var(--border); text-decoration: none; color: var(--text); transition: all 0.3s; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.area-card:hover { border-color: var(--border-hover); transform: translateY(-2px); }
+.area-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 1rem; }
+.area-card h3 { font-family: var(--font-display); font-size: 1.05rem; font-weight: 600; margin-bottom: 0.4rem; }
+.area-card p { color: var(--text-muted); font-size: 0.84rem; line-height: 1.55; }
+
+/* Training sections */
+.training-section { padding: 5rem 2rem 3rem; }
+.training-section + .training-section { padding-top: 2rem; }
+.ts-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+.ts-icon { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
+.ts-header h2 { margin-bottom: 0; font-size: clamp(1.3rem, 2.5vw, 1.7rem); }
+.ts-header p { color: var(--text-muted); font-size: 0.92rem; margin-top: 0.25rem; }
+
+/* Lesson cards */
+.lesson-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.3rem; }
+.lesson-card { padding: 1.8rem; border-radius: 14px; background: var(--bg-card); border: 1px solid var(--border); transition: all 0.3s; position: relative; overflow: hidden; }
+.lesson-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--brand), var(--accent)); opacity: 0; transition: opacity 0.3s; }
+.lesson-card:hover { border-color: var(--border-hover); }
+.lesson-card:hover::before { opacity: 1; }
+
+.lesson-video { width: 100%; aspect-ratio: 16/9; border-radius: 10px; background: rgba(255,255,255,0.03); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; margin-bottom: 1.2rem; color: var(--text-faint); font-size: 1.8rem; transition: border-color 0.3s; overflow: hidden; }
+.lesson-video iframe { width: 100%; height: 100%; border: none; border-radius: 10px; }
+.lesson-card:hover .lesson-video { border-color: rgba(5,85,148,0.2); }
+.lesson-card h3 { font-family: var(--font-display); font-size: 1.05rem; font-weight: 600; margin-bottom: 0.45rem; }
+.lesson-card p { color: var(--text-muted); font-size: 0.85rem; line-height: 1.6; }
+
+/* Coming soon */
+.coming-soon { position: absolute; top: 1rem; right: 1rem; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.2rem 0.6rem; border-radius: 5px; background: var(--amber-dim); color: var(--amber); border: 1px solid rgba(240,160,48,0.2); }
+.lesson-card.soon { opacity: 0.6; }
+.lesson-card.soon:hover { border-color: var(--border); transform: none; }
+.lesson-card.soon::before { display: none; }
+
+/* Section divider */
+.section-divider { border: none; height: 1px; background: var(--border); margin: 0 2rem; max-width: 1100px; margin-left: auto; margin-right: auto; }
+
+/* Helpers */
+.label { display: inline-flex; align-items: center; gap: 0.45rem; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--brand-light); margin-bottom: 1rem; }
+.label::before { content: ''; width: 18px; height: 2px; background: var(--brand-light); border-radius: 2px; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 768px) {
+    .area-grid { grid-template-columns: 1fr; }
+    .lesson-grid { grid-template-columns: 1fr; }
+    .page-hero { padding: 7rem 1.2rem 3rem; }
+    .area-picker { padding: 2.5rem 1.2rem; }
+    .training-section { padding: 3rem 1.2rem 2rem; }
+}

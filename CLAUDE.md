@@ -107,6 +107,25 @@ eneo-ai-website/
 - Proper alt text for accessibility
 - Favicon set with multiple sizes
 
+## Webbtillgänglighet (WCAG)
+
+All kod ska uppfylla WCAG 2.1 Level AA. Detta är ett lagkrav för offentlig sektor (DOS-lagen, Lag 2018:1937).
+
+### Krav vid all nyutveckling
+- **All kod ska vara tillgänglig** — varje ny funktion, komponent eller sida måste uppfylla WCAG 2.1 Level AA
+- **Automatiserade tillgänglighetskontroller** ska genomföras vid varje ny funktion eller kodändring
+- **AI-genererad kod** genomgår automatiska kontroller utefter WCAG och webbtillgänglighetsregler
+- Semantisk HTML (korrekta heading-nivåer, landmarks, ARIA-attribut där det behövs)
+- Tangentbordsnavigation ska fungera för alla interaktiva element
+- Färgkontrast ska minst uppnå 4.5:1 (normal text) / 3:1 (stor text)
+- Alla bilder och ikoner ska ha textalternativ eller `aria-hidden="true"` om dekorativa
+- Animationer ska respektera `prefers-reduced-motion`
+- Alla hover-effekter ska ha matchande `:focus-visible`-stilar
+- Interaktiva element ska ha minst 44×44px touch-target
+
+### Tillgänglighetsredogörelse
+Webbplatsen har en publicerad tillgänglighetsredogörelse enligt DOS-lagens krav (se `v2/tillganglighetsredogorelse.html`).
+
 ## Performance Considerations
 
 - Minimal JavaScript footprint
