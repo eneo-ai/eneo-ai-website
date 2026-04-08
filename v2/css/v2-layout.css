@@ -509,62 +509,60 @@
 .v2-footer a:hover,
 .v2-footer a:focus-visible { color: var(--brand-light); }
 
-/* Footer top: logo + grid */
-.footer-top {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2.5rem;
-    padding-bottom: 2.5rem;
-    border-bottom: 1px solid var(--border);
+/* Footer intro text */
+.footer-intro {
+    text-align: center;
     margin-bottom: 2rem;
 }
-.footer-col h4 {
+.footer-intro .footer-logo { margin-bottom: 0.8rem; display: flex; justify-content: center; }
+.footer-intro .footer-logo svg { height: 22px; width: auto; }
+.footer-intro p { color: var(--text-muted); font-size: 0.88rem; margin: 0; }
+
+/* Footer grid: 3 boxed columns */
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+}
+.footer-box {
+    padding: 1.5rem;
+    border-radius: 10px;
+    background: var(--white-overlay);
+    border: 1px solid var(--border);
+}
+.footer-box h4 {
     font-family: var(--font-body);
-    font-size: 0.72rem;
+    font-size: 0.68rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: var(--text-faint);
-    margin-bottom: 0.9rem;
+    margin-bottom: 0.75rem;
 }
-.footer-col p {
-    color: var(--text-muted);
-    margin-bottom: 0.4rem;
-    line-height: 1.6;
-}
-.footer-col ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.45rem;
-}
-.footer-col li a {
+.footer-box a {
+    display: block;
     font-size: 0.85rem;
+    line-height: 1.7;
     transition: color 0.2s;
 }
 
-/* Footer bottom: logo + copyright */
+/* Footer bottom: copyright */
 .footer-bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
+    text-align: center;
 }
-.footer-bottom .footer-logo svg { height: 22px; width: auto; }
 .footer-bottom p {
     color: var(--text-faint);
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     margin: 0;
 }
 
 @media (max-width: 768px) {
-    .footer-top {
+    .footer-grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
-        text-align: center;
+        gap: 1rem;
     }
-    .footer-bottom {
-        flex-direction: column;
+    .footer-box {
         text-align: center;
     }
 }
