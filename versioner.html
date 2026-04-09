@@ -97,11 +97,61 @@
     <section class="changelog" id="versionshistorik">
         <div class="container">
 
+            <!-- 1.9.0 -->
+            <div class="release">
+                <div class="release-header">
+                    <span class="ver-tag">v1.9.0</span>
+                    <span class="latest-badge">Senaste</span>
+                    <a href="https://github.com/eneo-ai/eneo/releases/tag/v1.9.0" class="release-link">Se på GitHub <span aria-hidden="true">→</span></a>
+                </div>
+                <div class="change-cat cat-new">
+                    <span class="cat-label">Nya funktioner</span>
+                    <ul class="change-list">
+                        <li><strong>Ny hantering av AI-leverantörer:</strong> Administratörer kan nu lägga till och konfigurera över 60 AI-leverantörer direkt i gränssnittet, bland annat OpenAI, Azure, Anthropic, Gemini, Mistral, Groq, AWS Bedrock och vLLM. Den nya hanteringen gör det enklare att ge olika leverantörer samma förutsättningar: så länge en leverantör stöds av LiteLLM kan den läggas till i Eneo utan att vi behöver bygga något nytt i frontend. Uppgifter lagras krypterat, anslutningar kan testas direkt och nya modeller läggs till via en tydlig guide. Favoritleverantörer kan också fästas och sorteras om.</li>
+                        <li><strong>Mer exakt tokenräkning:</strong> Tokenanvändning och kontextfönster bygger nu på siffror från leverantören i stället för lokala uppskattningar. Om ett meddelande blir för långt visas tydlig information om varför, och texten ligger kvar så att du enkelt kan justera och skicka igen. Flera filer kan nu bifogas i samma meddelande.</li>
+                        <li><strong>Tydligare felmeddelanden:</strong> Fel visas nu med mer precisa och översatta meddelanden på svenska och engelska, så att det blir lättare att förstå vad som behöver rättas.</li>
+                        <li><strong>Integrationer i delade ytor:</strong> Delade ytor visar nu integrationsfliken och kan importera kunskap från till exempel SharePoint på samma sätt som organisationsytor.</li>
+                        <li><strong>Säkerhetsklassning för MCP-servrar:</strong> Administratörer kan sätta en säkerhetsnivå per MCP-server. Ytor visar då bara servrar som matchar eller överstiger den nivån.</li>
+                        <li><strong>Stöd för flera redirect-URI:er:</strong> Federation via IdP/SSO stöder nu flera redirect-URI:er, och federationer kan uppdateras stegvis utan att hela konfigurationen behöver skickas in på nytt.</li>
+                        <li><strong>Paginering i adminvyn för användare:</strong> Användarlistan pagineras nu på serversidan med nästa/föregående och tydlig antalsvisning, vilket gör stora användarbaser lättare att hantera.</li>
+                        <li><strong>Ikoner för gruppchattar:</strong> Gruppchattar kan nu få egna ikoner och blir enklare att skilja från assistenter i sidofältet.</li>
+                    </ul>
+                </div>
+                <div class="change-cat cat-improved">
+                    <span class="cat-label">Förbättringar</span>
+                    <ul class="change-list">
+                        <li><strong>Samlad användningssida för administratörer:</strong> Statistik och användningsnivåer är nu samlade på en sida och anpassas efter valt datumintervall. Den tidigare Användare-fliken är ihopslagen med Tokens-fliken.</li>
+                        <li><strong>Smidigare modellhantering:</strong> Modellinformation laddas först när den behövs, sorteringen hanterar fler datumformat och modeller som inte hör hemma i listan filtreras bort.</li>
+                        <li><strong>Förbättrade mallar:</strong> Onödig kunskapshantering är borttagen från app-mallarna, valet av completion-modell följer med genom hela guiden och hjälptexter förtydligar skillnaden mellan bifogade filer och kunskap.</li>
+                        <li><strong>Toast-notiser istället för alert-rutor:</strong> Alla gamla webbläsarvarningar är ersatta med tydligare toast-notiser i gränssnittet.</li>
+                        <li><strong>Smeknamn för embedding-modeller:</strong> Embedding-modeller kan nu få egna, mer användarvänliga visningsnamn.</li>
+                        <li><strong>Konventionella filstorlekar:</strong> Gränssnittet använder nu KB, MB och GB istället för KiB, MiB och GiB.</li>
+                        <li><strong>Nya issue-mallar på GitHub:</strong> Det finns nu färdiga mallar för buggrapporter och funktionsförslag.</li>
+                    </ul>
+                </div>
+                <div class="change-cat cat-security">
+                    <span class="cat-label">Säkerhet &amp; stabilitet</span>
+                    <ul class="change-list">
+                        <li><strong>Skärpt behörighet för integrationer:</strong> Ändringar i organisationsövergripande integrationer kräver nu administratörsbehörighet.</li>
+                        <li><strong>Uppdaterade beroenden:</strong> Python- och frontend-paket är uppdaterade med säkerhetspatchar, LiteLLM är uppdaterat till 1.83.0 och CI-flödet har skärpts.</li>
+                        <li><strong>Bättre städning av tempfiler:</strong> Fel vid uppladdning eller transkribering lämnar inte längre kvar tillfälliga filer.</li>
+                    </ul>
+                </div>
+                <div class="change-cat cat-fix">
+                    <span class="cat-label">Buggfixar</span>
+                    <ul class="change-list">
+                        <li>Fixat problem med chatt-strömning efter en felaktig import</li>
+                        <li>Fixat generering av schema.d.ts</li>
+                        <li>Fixat identifiering av transkriberingsmodell vid redigering via namn</li>
+                        <li>Flera förbättringar i DevContainer för stabilare miljö och renare beroenden</li>
+                    </ul>
+                </div>
+            </div>
+
             <!-- 1.8.0 -->
             <div class="release">
                 <div class="release-header">
                     <span class="ver-tag">v1.8.0</span>
-                    <span class="latest-badge">Senaste</span>
                     <a href="https://github.com/eneo-ai/eneo/releases/tag/v1.8.0" class="release-link">Se på GitHub <span aria-hidden="true">→</span></a>
                 </div>
                 <div class="change-cat cat-new">
