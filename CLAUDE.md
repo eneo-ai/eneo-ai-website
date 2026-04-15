@@ -126,17 +126,6 @@ All kod ska uppfylla WCAG 2.1 Level AA. Detta är ett lagkrav för offentlig sek
 ### Tillgänglighetsredogörelse
 Webbplatsen har en publicerad tillgänglighetsredogörelse enligt DOS-lagens krav (se `tillganglighetsredogorelse.html`).
 
-## Nyheter
-
-Nyheter publiceras som enskilda HTML-filer i `nyheter/`-katalogen och listas på `nyheter.html`.
-
-### HÅRD REGEL: När en ny nyhet skapas
-När Claude skapar en ny nyhet måste **alla** dessa steg genomföras:
-1. Skapa nyhetsartikeln som `nyheter/YYYY-MM-DD-slug.html`
-2. Lägg till ett nyhetskort på `nyheter.html` (överst i listan, som featured om det är den senaste)
-3. **Uppdatera startsidans nyhetslistning** (`index.html`, sektionen "Senaste nytt") med de 3 senaste nyheterna
-4. Kör tillgänglighetstest på alla ändrade filer
-
 ## Performance Considerations
 
 - Minimal JavaScript footprint
