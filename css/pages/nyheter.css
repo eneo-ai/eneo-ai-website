@@ -115,7 +115,7 @@
     flex-wrap: wrap;
 }
 .filter-btn {
-    padding: 0.4rem 0.9rem;
+    padding: 0.6rem 1rem;
     border-radius: 100px;
     font-size: 0.78rem;
     font-weight: 600;
@@ -305,6 +305,13 @@
 }
 .article-content .container {
     max-width: 700px;
+}
+.article-content > .container > p:first-child {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--text);
+    font-weight: 400;
+    margin-bottom: 2rem;
 }
 .article-content p {
     color: var(--text-muted);

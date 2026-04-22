@@ -126,6 +126,19 @@ All kod ska uppfylla WCAG 2.1 Level AA. Detta är ett lagkrav för offentlig sek
 ### Tillgänglighetsredogörelse
 Webbplatsen har en publicerad tillgänglighetsredogörelse enligt DOS-lagens krav (se `tillganglighetsredogorelse.html`).
 
+## Nyheter
+
+Nyheter publiceras som enskilda HTML-filer i `nyheter/`-katalogen och listas på `nyheter.html`.
+
+### HÅRD REGEL: När en ny nyhet skapas
+När Claude skapar en ny nyhet måste **alla** dessa steg genomföras:
+1. Skapa nyhetsartikeln som `nyheter/YYYY-MM-DD-slug.html`
+2. **Varje nyhet ska ha en illustrativ bild** (SVG i `public/images/nyheter/`) som visas både i artikeln (mellan header och content) och som thumb på nyhetskortet. Bilden ska ha beskrivande `aria-label` på `<svg>` och informativ `alt` på `<img>` i artikeln (dekorativ `alt=""` på kort-thumb). Meta `og:image` i artikeln ska peka på bilden.
+   - **Återanvändbara bilder:** `public/images/nyheter/version-release.svg` används för alla nyheter om nya versioner. Skapa motsvarande generiska illustrationer för andra återkommande nyhetstyper (säkerhet, community, insikter, evenemang) innan du tar till engångsbilder.
+3. Lägg till ett nyhetskort på `nyheter.html` (överst i listan, som featured om det är den senaste)
+4. **Uppdatera startsidans nyhetslistning** (`index.html`, sektionen "Senaste nytt") med de 3 senaste nyheterna
+5. Kör tillgänglighetstest på alla ändrade filer
+
 ## Performance Considerations
 
 - Minimal JavaScript footprint

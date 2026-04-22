@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eneo.ai lanserar ny webbplats - Nyheter - Eneo.ai</title>
-    <meta name="description" content="Eneo.ai har fått en helt ny webbplats med stöd för light och dark mode, full WCAG-tillgänglighet och en moderniserad design.">
+    <title>Eneo v1.9.0 - Nyheter - Eneo.ai</title>
+    <meta name="description" content="Eneo v1.9.0 lanserar ny hantering av AI-modellsleverantörer med stöd för över 60 leverantörer av inferens och LLM direkt i gränssnittet, mer exakt tokenräkning, säkerhetsklassning för MCP-servrar och integrationer i delade ytor.">
     <link rel="icon" type="image/x-icon" href="../public/favicon.ico">
-    <meta property="og:title" content="Eneo.ai lanserar ny webbplats - Nyheter - Eneo.ai" />
-    <meta property="og:description" content="Eneo.ai har fått en helt ny webbplats med stöd för light och dark mode, full WCAG-tillgänglighet och en moderniserad design." />
-    <meta property="og:image" content="https://eneo.ai/public/logo-eneo.png" />
+    <meta property="og:title" content="Eneo v1.9.0 - Nyheter - Eneo.ai" />
+    <meta property="og:description" content="Eneo v1.9.0 lanserar ny hantering av AI-modellsleverantörer med stöd för över 60 leverantörer av inferens och LLM direkt i gränssnittet, mer exakt tokenräkning, säkerhetsklassning för MCP-servrar och integrationer i delade ytor." />
+    <meta property="og:image" content="https://eneo.ai/public/images/nyheter/version-release.svg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:url" content="https://eneo.ai/nyheter/2026-04-08-ny-webbplats.html" />
+    <meta property="og:url" content="https://eneo.ai/nyheter/2026-04-22-v1-9-0.html" />
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="Eneo.ai" />
     <meta property="og:locale" content="sv_SE" />
@@ -82,38 +82,52 @@
         <section class="article-header">
             <div class="container">
                 <a href="../nyheter.html" class="article-back"><span aria-hidden="true">&larr;</span> Alla nyheter</a>
-                <h1>Eneo.ai lanserar ny webbplats</h1>
+                <h1>Eneo v1.9.0</h1>
                 <div class="news-meta">
-                    <span class="news-date">8 april 2026</span>
-                    <span class="news-tag news-tag-funktion">Funktion</span>
+                    <span class="news-date">22 april 2026</span>
+                    <span class="news-tag news-tag-release">Release</span>
                 </div>
+            </div>
+        </section>
+
+        <!-- Article Image -->
+        <section style="padding:0 2rem;">
+            <div class="container" style="max-width:700px;">
+                <img src="../public/images/nyheter/version-release.svg" alt="Illustration: en grön uppåtpekande pil – symbol för en ny version av Eneo." style="width:100%;border-radius:12px;margin-bottom:1rem;">
             </div>
         </section>
 
         <!-- Article Content -->
         <section class="article-content" id="main-content">
             <div class="container">
-                <p>Eneo.ai har fått en helt ny webbplats byggd från grunden med fokus på tillgänglighet, användarvänlighet och modern design. Den nya sajten stöder både ljust och mörkt tema och uppfyller WCAG 2.1 Level AA.</p>
+                <p>Version 1.9.0 av Eneo är här. Den här releasen lägger grunden för en betydligt mer flexibel hantering av AI-modellsleverantörer, gör tokenhanteringen mer exakt och stärker säkerheten kring MCP-integrationer. Flera kvalitetsförbättringar gör vardagen enklare både för administratörer och slutanvändare.</p>
 
-                <h2>Ny design med stöd för light och dark mode</h2>
-                <p>Webbplatsen anpassar sig automatiskt efter användarens systempreferens, men erbjuder även en manuell toggle direkt i navigeringen. Designen bygger på ett konsekvent system med CSS-variabler som gör det enkelt att underhålla och vidareutveckla.</p>
+                <h2>Över 60 AI-modellsleverantörer direkt i gränssnittet</h2>
+                <p>Den största nyheten är en helt omarbetad hantering av AI-modellsleverantörer – alltså leverantörer av inferens och LLM. Administratörer kan nu lägga till och konfigurera över 60 sådana leverantörer direkt i webbgränssnittet, bland annat OpenAI, Azure, Anthropic, Gemini, Mistral, Groq och AWS Bedrock.</p>
+                <p>Den nya hanteringen ger alla leverantörer samma förutsättningar: så länge en leverantör stöds av LiteLLM kan den läggas till i Eneo utan att vi behöver bygga något nytt i frontend. Uppgifter lagras krypterat, anslutningar kan testas direkt, och nya modeller läggs till via en tydlig guide. Favoritleverantörer kan fästas och sorteras om efter egna behov.</p>
+                <p>Självklart finns fortsatt fullt stöd för att köra AI-modeller lokalt, exempelvis via vLLM eller Ollama, för den som vill ha all inferens i egen drift. Eneo är agnostiskt kring var modellerna körs – valet mellan extern leverantör och lokal drift görs per modell utifrån verksamhetens egna krav på suveränitet, kostnad och prestanda.</p>
 
-                <h2>Full WCAG-tillgänglighet</h2>
-                <p>Samtliga sidor har genomgått en omfattande tillgänglighetsanalys och uppfyller WCAG 2.1 Level AA. Bland åtgärderna finns:</p>
+                <h2>Mer exakt tokenräkning</h2>
+                <p>Tokenanvändning och kontextfönster bygger nu på siffror från leverantören i stället för lokala uppskattningar. Om ett meddelande blir för långt visas tydlig information om varför, och texten ligger kvar så att det går att justera och skicka igen. Flera filer kan också bifogas i samma meddelande.</p>
+
+                <h2>Säkerhetsklassning för MCP-servrar</h2>
+                <p>Administratörer kan nu sätta en säkerhetsnivå per MCP-server. Ytor visar då bara de servrar som matchar eller överstiger den nivån, vilket gör det enklare att styra vilka verktyg som är tillgängliga i vilka sammanhang. Hantering av organisationsövergripande integrationer kräver dessutom nu administratörsbehörighet.</p>
+
+                <h2>Integrationer i delade ytor</h2>
+                <p>Delade ytor visar nu integrationsfliken och kan importera kunskap från till exempel SharePoint på samma sätt som organisationsytor. Det gör att grupper som samarbetar kring ett område kan arbeta mot samma kunskapskällor som övriga organisationen.</p>
+
+                <h2>Fler förbättringar</h2>
                 <ul>
-                    <li>Skip-to-content-länk på alla sidor</li>
-                    <li>Korrekt heading-hierarki och semantisk HTML</li>
-                    <li>Tangentbordsnavigering med synliga fokusindikatorer</li>
-                    <li>SVG-ikoner istället för emoji för konsekvent rendering</li>
-                    <li>Stöd för prefers-reduced-motion</li>
-                    <li>Aria-attribut och skärmläsaranpassningar</li>
+                    <li><strong>Tydligare felmeddelanden</strong> på svenska och engelska gör det lättare att förstå vad som behöver rättas.</li>
+                    <li><strong>Flera redirect-URI:er</strong> stöds nu för federation via IdP/SSO, och federationer kan uppdateras stegvis.</li>
+                    <li><strong>Paginering på serversidan</strong> i adminvyn för användare gör stora användarbaser lättare att hantera.</li>
+                    <li><strong>Ikoner för gruppchattar</strong> gör dem enklare att skilja från assistenter i sidofältet.</li>
+                    <li><strong>Samlad användningssida</strong> där statistik och användningsnivåer visas på en plats och anpassas efter valt datumintervall.</li>
+                    <li><strong>Toast-notiser</strong> ersätter gamla webbläsarvarningar i gränssnittet.</li>
+                    <li><strong>Smeknamn för embedding-modeller</strong> ger mer användarvänliga visningsnamn.</li>
                 </ul>
 
-                <h2>Ny struktur och innehåll</h2>
-                <p>Webbplatsen har fått en uppdaterad informationsarkitektur med tydligare navigering. Styrmodellen har integrerats under samarbetssidan, en ny tillgänglighetsredogörelse enligt DOS-lagen har publicerats, och nyhetssidan du läser just nu har lanserats.</p>
-
-                <h2>Utvecklad med AI-stöd</h2>
-                <p>Den nya webbplatsen har utvecklats med stöd av AI, där all kod genomgår automatiserade tillgänglighetskontroller vid varje ändring. Denna process säkerställer att nya funktioner och sidor uppfyller WCAG-kraven redan från start.</p>
+                <p>En fullständig lista med alla nya funktioner, förbättringar, säkerhetsändringar och buggfixar finns på <a href="../versioner.html#versionshistorik">versionssidan</a>. Källkoden och taggen v1.9.0 finns på <a href="https://github.com/eneo-ai/eneo/releases/tag/v1.9.0">GitHub</a>.</p>
             </div>
         </section>
     </main>
