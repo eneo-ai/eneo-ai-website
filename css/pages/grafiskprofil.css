@@ -810,10 +810,10 @@
     margin: 0;
 }
 
-/* Name forms (Eneo AI / Eneo) */
+/* Name forms (Eneo AI / Eneo / Eneo.ai) */
 .gp-name-forms {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1rem;
     margin: 1.5rem 0;
 }
