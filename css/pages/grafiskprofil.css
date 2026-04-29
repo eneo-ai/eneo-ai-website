@@ -810,6 +810,48 @@
     margin: 0;
 }
 
+/* Name forms (Eneo AI / Eneo) */
+.gp-name-forms {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+.gp-name-form {
+    padding: 1.75rem 1.25rem;
+    border-radius: var(--radius-md);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    text-align: center;
+}
+.gp-name-form .gp-name-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-faint);
+    margin-bottom: 0.75rem;
+}
+.gp-name-form .gp-name-display {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+.gp-name-form p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+@media (max-width: 640px) {
+    .gp-name-forms { grid-template-columns: 1fr; }
+}
+
 /* Voice examples */
 .gp-voice-examples {
     display: grid;
