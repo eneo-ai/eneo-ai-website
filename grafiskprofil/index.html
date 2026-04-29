@@ -3,839 +3,984 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grafisk Profil - Eneo AI</title>
-    <meta name="description" content="Eneo AI:s grafiska profil och designguide. Riktlinjer för logotyp, färger, typografi, komponenter och tonalitet.">
+    <title>Grafisk profil – Eneo.ai</title>
+    <meta name="description" content="Eneo.ai:s grafiska profil och designsystem. Riktlinjer för logotyp, färger, typografi, komponenter, tonalitet och sociala medier.">
     <meta name="robots" content="noindex, nofollow">
+
     <link rel="icon" type="image/x-icon" href="../public/favicon.ico">
-    <meta property="og:title" content="Grafisk Profil - Eneo AI" />
-    <meta property="og:description" content="Designguide och grafisk profil för Eneo AI." />
-    <meta property="og:image" content="https://eneo.ai/public/logo-eneo.png" />
-    <meta property="og:url" content="https://eneo.ai/grafiskprofil" />
-    <meta property="og:type" content="website" />
+
+    <meta property="og:title" content="Grafisk profil – Eneo.ai">
+    <meta property="og:description" content="Designsystem och grafisk profil för Eneo.ai.">
+    <meta property="og:image" content="https://eneo.ai/public/logo-eneo.png">
+    <meta property="og:url" content="https://eneo.ai/grafiskprofil/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="sv_SE">
+
+    <!-- External Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Files (v2 design system) -->
+    <link rel="stylesheet" href="../css/v2-variables.css?v=2">
+    <link rel="stylesheet" href="../css/v2-base.css?v=2">
+    <link rel="stylesheet" href="../css/v2-components.css?v=2">
+    <link rel="stylesheet" href="../css/v2-layout.css?v=2">
+    <link rel="stylesheet" href="../css/pages/grafiskprofil.css?v=2">
 
     <!-- Analytics -->
     <script defer src="https://analytics.eneo.ai/script.js" data-website-id="50c055f0-8d28-4e1e-9d62-0d12a7c5dd57"></script>
-
-    <!-- External Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="../css/variables.css">
-    <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/components.css">
-    <link rel="stylesheet" href="../css/layout.css">
-    <link rel="stylesheet" href="../css/pages/grafiskprofil.css">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <div class="nav-group">
-                    <div class="logo">
-                        <a href="../index.html">
-                            <img src="../public/images/Eneo-logo-svg.svg" alt="Eneo.ai">
-                        </a>
-                    </div>
-                    <nav class="nav">
-                        <a href="../om-eneo.html">Om</a>
-                        <a href="../anvandningsfall.html">Användningsfall</a>
-                        <a href="../utbildningar.html">Utbildningar</a>
-                        <a href="../tidslinje.html">Historik</a>
-                        <a href="../samarbetsforum.html">Samarbete</a>
-                        <a href="../community.html">Community</a>
-                        <a href="../docs.html">Docs</a>
-                        <a href="../versioner.html">Versioner</a>
-                    </nav>
-                </div>
-                <div class="mobile-menu">
-                    <button class="mobile-menu-button" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu" id="mobile-menu-btn">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                </div>
-            </div>
-            <div class="mobile-nav" id="mobile-nav">
-                <div class="container">
-                    <nav>
-                        <a href="../om-eneo.html" onclick="closeMobileMenu()">Om</a>
-                        <a href="../anvandningsfall.html" onclick="closeMobileMenu()">Användningsfall</a>
-                        <a href="../utbildningar.html" onclick="closeMobileMenu()">Utbildningar</a>
-                        <a href="../tidslinje.html" onclick="closeMobileMenu()">Historik</a>
-                        <a href="../samarbetsforum.html" onclick="closeMobileMenu()">Samarbete</a>
-                        <a href="../community.html" onclick="closeMobileMenu()">Community</a>
-                        <a href="../docs.html" onclick="closeMobileMenu()">Docs</a>
-                        <a href="../versioner.html" onclick="closeMobileMenu()">Versioner</a>
-                    </nav>
-                </div>
+    <a class="skip-link" href="#main-content">Hoppa till huvudinnehåll</a>
+
+    <!-- NAV -->
+    <nav class="v2-nav">
+        <div class="nav-inner">
+            <a href="../index.html" class="nav-logo" aria-label="Eneo - till startsidan">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 172" style="height:30px;width:auto;shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;fill-rule:evenodd;clip-rule:evenodd;">
+                    <path fill="#1a7ad4" d="M 107.5,-0.5 C 114.833,-0.5 122.167,-0.5 129.5,-0.5C 176.816,9.15707 202.149,38.1571 205.5,86.5C 203.389,125.423 184.389,152.257 148.5,167C 142.419,168.71 136.419,170.21 130.5,171.5C 123.5,171.5 116.5,171.5 109.5,171.5C 93.3852,168.947 78.7185,162.781 65.5,153C 57.3188,144.986 49.3188,136.819 41.5,128.5C 61.6527,107.847 81.9861,87.3471 102.5,67C 111.582,60.8816 121.249,59.8816 131.5,64C 144.46,73.9171 146.96,86.0837 139,100.5C 131.833,107.667 124.667,114.833 117.5,122C 138.893,122.044 151.726,111.544 156,90.5C 156.442,68.8872 146.275,55.0539 125.5,49C 112.803,46.9218 101.803,50.2552 92.5,59C 86.6667,64.8333 80.8333,70.6667 75,76.5C 63.5,65 52,53.5 40.5,42C 50.2305,31.5999 60.5639,21.9333 71.5,13C 82.7423,6.20074 94.7423,1.70074 107.5,-0.5 Z"/>
+                    <path class="logo-text" d="M 649.5,76.5 C 649.5,82.1667 649.5,87.8333 649.5,93.5C 640.846,129.635 617.846,147.135 580.5,146C 552.923,141.09 535.59,125.09 528.5,98C 514.833,97.6667 501.167,97.3333 487.5,97C 480.994,93.8341 478.494,88.6674 480,81.5C 480.979,78.3749 482.813,75.8749 485.5,74C 498.401,72.538 511.401,72.038 524.5,72.5C 521.764,64.5453 516.764,58.3786 509.5,54C 488.763,45.1354 472.596,50.3021 461,69.5C 453.601,90.9824 459.767,107.149 479.5,118C 492.365,122.56 504.198,120.727 515,112.5C 519.225,119.939 523.725,127.272 528.5,134.5C 511.022,146.856 492.022,149.689 471.5,143C 466.51,141.335 462.01,138.835 458,135.5C 457.502,138.817 457.335,142.15 457.5,145.5C 448.833,145.5 440.167,145.5 431.5,145.5C 431.667,123.497 431.5,101.497 431,79.5C 426.715,61.265 415.215,51.265 396.5,49.5C 377.785,51.265 366.285,61.265 362,79.5C 361.5,101.497 361.333,123.497 361.5,145.5C 352.833,145.5 344.167,145.5 335.5,145.5C 335.5,129.5 335.5,113.5 335.5,97.5C 322.163,97.6666 308.829,97.4999 295.5,97C 287.991,92.8092 285.824,86.6426 289,78.5C 290.663,76.0833 292.829,74.25 295.5,73C 307.829,72.5001 320.162,72.3335 332.5,72.5C 327.027,58.2227 316.527,50.556 301,49.5C 282.085,51.1142 270.419,61.1142 266,79.5C 264.719,101.205 274.553,114.705 295.5,120C 303.532,121.06 311.032,119.56 318,115.5C 318.667,124.833 318.667,134.167 318,143.5C 289.265,150.965 266.265,142.631 249,118.5C 233.274,88.8088 237.108,61.9755 260.5,38C 285.142,19.8768 310.476,18.8768 336.5,35C 340.981,38.3143 344.981,42.1476 348.5,46.5C 369.825,23.1077 395.158,17.6077 424.5,30C 432.127,34.3166 438.794,39.8166 444.5,46.5C 465.825,23.1077 491.158,17.6077 520.5,30C 528.127,34.3166 534.794,39.8166 540.5,46.5C 561.825,23.1077 587.158,17.6077 616.5,30C 634.762,40.3615 645.762,55.8615 649.5,76.5 Z M 583.5,49.5 C 610.442,49.9416 623.609,63.6083 623,90.5C 619.82,107.013 609.987,116.846 593.5,120C 572.335,120.831 559.169,110.998 554,90.5C 552.92,68.7752 562.753,55.1085 583.5,49.5 Z"/>
+                    <path fill="#1a7ad4" d="M -0.5,87.5 C -0.5,85.8333 -0.5,84.1667 -0.5,82.5C 10.1734,71.9931 21.0067,61.6598 32,51.5C 43.9725,62.3055 55.4725,73.6388 66.5,85.5C 55.5,97.1667 44.1667,108.5 32.5,119.5C 21.4793,108.812 10.4793,98.1453 -0.5,87.5 Z"/>
+                </svg>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../om-eneo.html">Om</a></li>
+                <li><a href="../anvandningsfall.html">Användningsfall</a></li>
+                <li><a href="../utbildningar.html">Utbildningar</a></li>
+                <li><a href="../tidslinje.html">Historik</a></li>
+                <li><a href="../samarbetsforum.html">Samarbete</a></li>
+                <li><a href="../docs.html">Docs</a></li>
+                <li><a href="../versioner.html">Versioner</a></li>
+                <li><a href="../nyheter.html">Nyheter</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle" onclick="Eneo.toggleTheme()" aria-label="Byt tema">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <button id="mobile-menu-btn" class="mobile-menu-btn" aria-expanded="false" aria-controls="mobile-nav" aria-label="Meny" onclick="Eneo.toggleMobileMenu()">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
             </div>
         </div>
-    </header>
+        <div id="mobile-nav" class="mobile-nav" aria-label="Mobil navigation">
+            <a href="../om-eneo.html">Om</a>
+            <a href="../anvandningsfall.html">Användningsfall</a>
+            <a href="../utbildningar.html">Utbildningar</a>
+            <a href="../tidslinje.html">Historik</a>
+            <a href="../samarbetsforum.html">Samarbete</a>
+            <a href="../docs.html">Docs</a>
+            <a href="../versioner.html">Versioner</a>
+            <a href="../nyheter.html">Nyheter</a>
+        </div>
+    </nav>
 
-    <main>
-        <div class="gp-layout">
-            <!-- Sidebar Navigation -->
-            <aside class="gp-sidebar">
-                <div class="gp-sidebar-title">Innehåll</div>
+    <main id="main-content">
+        <div class="gp-shell">
+
+            <!-- ============= SIDEBAR ============= -->
+            <aside class="gp-sidebar" aria-label="Innehåll">
+                <p class="gp-sidebar-title">Innehåll</p>
                 <nav>
+                    <a href="#oversikt">Översikt</a>
                     <a href="#logotyp">Logotyp</a>
-                    <a href="#farger">Färger</a>
+                    <a href="#farger">Färgsystem</a>
                     <a href="#gradienter">Gradienter</a>
                     <a href="#typografi">Typografi</a>
                     <a href="#knappar">Knappar</a>
-                    <a href="#kort">Kort & Komponenter</a>
-                    <a href="#skuggor">Skuggor</a>
-                    <a href="#spacing">Spacing & Radier</a>
+                    <a href="#komponenter">Komponenter</a>
+                    <a href="#skuggor">Skuggor & djup</a>
+                    <a href="#form">Form & spacing</a>
                     <a href="#ikoner">Ikoner</a>
-                    <a href="#animationer">Animationer</a>
-                    <a href="#tonalitet">Tonalitet</a>
+                    <a href="#rorelse">Rörelse</a>
+                    <a href="#tonalitet">Röst & tonalitet</a>
+                    <a href="#sociala">Sociala medier</a>
+                    <a href="#tillganglighet">Tillgänglighet</a>
+                    <a href="#resurser">Resurser</a>
                 </nav>
             </aside>
 
-            <div class="gp-main">
-                <!-- Hero -->
-                <div class="gp-hero">
-                    <h1>Grafisk Profil</h1>
-                    <p>Riktlinjer för Eneo AI:s visuella identitet. Använd denna guide som ramverk för all kommunikation kring Eneo.</p>
-                    <div class="gp-hero-meta">
-                        <span>
-                            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                            Uppdaterad april 2026
-                        </span>
-                        <span>
-                            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/></svg>
-                            Version 1.0
-                        </span>
-                    </div>
-                </div>
+            <!-- ============= MAIN ============= -->
+            <div>
 
-                <!-- ═══ LOGOTYP ═══ -->
+                <!-- HERO -->
+                <header class="gp-hero">
+                    <span class="gp-eyebrow">Designsystem · v2</span>
+                    <h1>Grafisk <em>profil</em></h1>
+                    <p>Riktlinjer för Eneo.ai:s visuella identitet — logotyp, färger, typografi och komponenter. Profilen är levande och hämtar sina värden direkt från sajtens designsystem.</p>
+                    <div class="gp-meta">
+                        <span><strong>Version</strong> · v2</span>
+                        <span><strong>Källa</strong> · css/v2-*.css</span>
+                        <span><strong>Tema</strong> · ljust + mörkt</span>
+                    </div>
+                </header>
+
+                <!-- ÖVERSIKT -->
+                <section class="gp-section" id="oversikt">
+                    <h2>Översikt</h2>
+                    <p class="gp-lead">Eneo.ai är en öppen AI-plattform för svensk offentlig sektor. Den visuella profilen ska kännas <strong>förtroendeingivande, modern och nordisk</strong> — med en tydlig signal om svensk datasuveränitet, öppenhet och kvalitet.</p>
+
+                    <div class="gp-voice-grid">
+                        <div class="gp-voice">
+                            <strong>Förtroende</strong>
+                            <p>Lugna färger, tydlig typografi och mycket andrum. Inga skrikiga effekter — det visuella ska bekräfta seriositet.</p>
+                        </div>
+                        <div class="gp-voice">
+                            <strong>Klarhet</strong>
+                            <p>Skarpt kontrastförhållande, läsbar text och en stram informationshierarki. Mindre brus, mer fokus.</p>
+                        </div>
+                        <div class="gp-voice">
+                            <strong>Modernitet</strong>
+                            <p>Subtila gradienter, mjuka skuggor och blå glödeffekt signalerar AI och digital tjänst utan att bli teknik-tungt.</p>
+                        </div>
+                        <div class="gp-voice">
+                            <strong>Nordisk ton</strong>
+                            <p>Stilren färgpalett, mycket vitrymd, naturliga övergångar. Personlig men professionell.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- LOGOTYP -->
                 <section class="gp-section" id="logotyp">
                     <h2>Logotyp</h2>
-                    <p>Eneo-logotypen består av en geometrisk ikon och ordmärket "eneo". Logotypen ska alltid användas i sin helhet och aldrig modifieras.</p>
+                    <p class="gp-lead">Logotypen består av en geometrisk ikon (vinklat &laquo;e&raquo;) och ordmärket &laquo;eneo&raquo;. Ikonen står för cirkulär rörelse och AI-precision; ordmärket är geometriskt och lågmält.</p>
 
-                    <div class="gp-logo-showcase">
-                        <div>
-                            <div class="gp-logo-box light">
-                                <img src="../public/images/Eneo-logo-svg.svg" alt="Eneo logotyp på ljus bakgrund">
-                            </div>
-                            <div class="gp-logo-label">Ljus bakgrund (standard)</div>
-                        </div>
-                        <div>
-                            <div class="gp-logo-box muted">
-                                <img src="../public/images/Eneo-logo-svg.svg" alt="Eneo logotyp på grå bakgrund">
-                            </div>
-                            <div class="gp-logo-label">Ljusgrå bakgrund</div>
-                        </div>
-                        <div>
-                            <div class="gp-logo-box dark">
-                                <img src="../public/images/Eneo-logo-svg.svg" alt="Eneo logotyp på mörk bakgrund">
-                            </div>
-                            <div class="gp-logo-label">Mörk bakgrund (inverterad)</div>
-                        </div>
-                        <div>
-                            <div class="gp-logo-box primary">
-                                <img src="../public/images/Eneo-logo-svg.svg" alt="Eneo logotyp på primär bakgrund">
-                            </div>
-                            <div class="gp-logo-label">Primär bakgrund (inverterad)</div>
-                        </div>
-                    </div>
-
-                    <h3>Frizon</h3>
-                    <p style="font-size: 0.95rem; color: var(--muted-foreground); margin-bottom: 1rem;">Runt logotypen ska det alltid finnas en frizon som motsvarar minst logotypens höjd. Inget annat grafiskt element får placeras inom frizonen.</p>
-
-                    <h3>Regler</h3>
-                    <div class="gp-logo-rules">
-                        <div class="gp-rule do">
-                            <strong>Gör så här</strong>
-                            Använd logotypen i originalproportioner på ren bakgrund med tillräcklig frizon.
-                        </div>
-                        <div class="gp-rule do">
-                            <strong>Gör så här</strong>
-                            Använd inverterad (vit) logotyp på mörka eller färgade bakgrunder.
-                        </div>
-                        <div class="gp-rule dont">
-                            <strong>Undvik</strong>
-                            Stretcha, rotera, skeva eller ändra logotypens proportioner.
-                        </div>
-                        <div class="gp-rule dont">
-                            <strong>Undvik</strong>
-                            Ändra logotypens färger, lägga till skuggor eller effekter.
-                        </div>
-                    </div>
-                </section>
-
-                <!-- ═══ FARGER ═══ -->
-                <section class="gp-section" id="farger">
-                    <h2>Färger</h2>
-                    <p>Färgpaletten är grunden i Eneos visuella identitet. Den primära blå färgen representerar tillit och professionalism, medan de neutrala tonerna skapar en ren och luftig känsla.</p>
-
-                    <h3>Primära färger</h3>
-                    <div class="gp-color-grid">
-                        <div class="gp-swatch">
-                            <div class="gp-swatch-color" style="background: #005293;"></div>
-                            <div class="gp-swatch-info">
-                                <div class="gp-swatch-name">Eneo Blue</div>
-                                <div class="gp-swatch-hex">#005293</div>
-                                <div class="gp-swatch-var">--primary</div>
-                            </div>
-                        </div>
-                        <div class="gp-swatch">
-                            <div class="gp-swatch-color" style="background: #0074cc;"></div>
-                            <div class="gp-swatch-info">
-                                <div class="gp-swatch-name">Eneo Blue Light</div>
-                                <div class="gp-swatch-hex">#0074cc</div>
-                                <div class="gp-swatch-var">--primary-light</div>
-                            </div>
-                        </div>
-                        <div class="gp-swatch">
-                            <div class="gp-swatch-color" style="background: #055594;"></div>
-                            <div class="gp-swatch-info">
-                                <div class="gp-swatch-name">Logo Blue</div>
-                                <div class="gp-swatch-hex">#055594</div>
-                                <div class="gp-swatch-var">Logotyp</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h3>Neutrala färger</h3>
-                    <div class="gp-color-grid">
-                        <div class="gp-swatch">
-                            <div class="gp-swatch-color" style="background: #2d3748;"></div>
-                            <div class="gp-swatch-info">
-                                <div class="gp-swatch-name">Foreground</div>
-                                <div class="gp-swatch-hex">#2d3748</div>
-                                <div class="gp-swatch-var">--foreground</div>
-                            </div>
-                        </div>
-                        <div class="gp-swatch">
-                            <div class="gp-swatch-color" style="background: #4a5568;"></div>
-                            <div class="gp-swatch-info">
-                                <div class="gp-swatch-name">Muted Text</div>
-                                <div class="gp-swatch-hex">#4a5568</div>
-                                <div class="gp-swatch-var">--muted-foreground</div>
-                            </div>
-                        </div>
-                        <div class="gp-swatch">
-                            <div class="gp-swatch-color" style="background: #e2e8f0;"></div>
-                            <div class="gp-swatch-info">
-                                <div class="gp-swatch-name">Border</div>
-                                <div class="gp-swatch-hex">#e2e8f0</div>
-                                <div class="gp-swatch-var">--border</div>
-                            </div>
-                        </div>
-                        <div class="gp-swatch">
-                            <div class="gp-swatch-color" style="background: #f1f5f9; border: 1px solid #e2e8f0;"></div>
-                            <div class="gp-swatch-info">
-                                <div class="gp-swatch-name">Accent</div>
-                                <div class="gp-swatch-hex">#f1f5f9</div>
-                                <div class="gp-swatch-var">--accent</div>
-                            </div>
-                        </div>
-                        <div class="gp-swatch">
-                            <div class="gp-swatch-color" style="background: #f8f9fa; border: 1px solid #e2e8f0;"></div>
-                            <div class="gp-swatch-info">
-                                <div class="gp-swatch-name">Muted</div>
-                                <div class="gp-swatch-hex">#f8f9fa</div>
-                                <div class="gp-swatch-var">--muted</div>
-                            </div>
-                        </div>
-                        <div class="gp-swatch">
-                            <div class="gp-swatch-color" style="background: #ffffff; border: 1px solid #e2e8f0;"></div>
-                            <div class="gp-swatch-info">
-                                <div class="gp-swatch-name">White</div>
-                                <div class="gp-swatch-hex">#ffffff</div>
-                                <div class="gp-swatch-var">--background</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h3>Funktionsfärger</h3>
-                    <div class="gp-color-grid">
-                        <div class="gp-swatch">
-                            <div class="gp-swatch-color" style="background: #22c55e;"></div>
-                            <div class="gp-swatch-info">
-                                <div class="gp-swatch-name">Success</div>
-                                <div class="gp-swatch-hex">#22c55e</div>
-                                <div class="gp-swatch-var">--success</div>
-                            </div>
-                        </div>
-                        <div class="gp-swatch">
-                            <div class="gp-swatch-color" style="background: #16a34a;"></div>
-                            <div class="gp-swatch-info">
-                                <div class="gp-swatch-name">Success Dark</div>
-                                <div class="gp-swatch-hex">#16a34a</div>
-                                <div class="gp-swatch-var">Gradienter</div>
-                            </div>
-                        </div>
-                        <div class="gp-swatch">
-                            <div class="gp-swatch-color" style="background: #8b5cf6;"></div>
-                            <div class="gp-swatch-info">
-                                <div class="gp-swatch-name">Purple Accent</div>
-                                <div class="gp-swatch-hex">#8b5cf6</div>
-                                <div class="gp-swatch-var">Specialaccent</div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- ═══ GRADIENTER ═══ -->
-                <section class="gp-section" id="gradienter">
-                    <h2>Gradienter</h2>
-                    <p>Gradienter används för att skapa djup och rikta uppmärksamhet. Den primära gradienten går från Eneo Blue till Eneo Blue Light.</p>
-
-                    <div class="gp-gradient-grid">
-                        <div class="gp-gradient-card">
-                            <div class="gp-gradient-preview" style="background: linear-gradient(to right, #005293, #0074cc);"></div>
-                            <div class="gp-gradient-info">
-                                <div class="gp-gradient-name">Primär gradient</div>
-                                <div class="gp-gradient-css">linear-gradient(to right, #005293, #0074cc)</div>
-                            </div>
-                        </div>
-                        <div class="gp-gradient-card">
-                            <div class="gp-gradient-preview" style="background: linear-gradient(135deg, #005293, #0074cc);"></div>
-                            <div class="gp-gradient-info">
-                                <div class="gp-gradient-name">Diagonal gradient</div>
-                                <div class="gp-gradient-css">linear-gradient(135deg, #005293, #0074cc)</div>
-                            </div>
-                        </div>
-                        <div class="gp-gradient-card">
-                            <div class="gp-gradient-preview" style="background: linear-gradient(135deg, rgba(0,82,147,0.05) 0%, #f1f5f9 50%, #ffffff 100%);"></div>
-                            <div class="gp-gradient-info">
-                                <div class="gp-gradient-name">Subtil bakgrund</div>
-                                <div class="gp-gradient-css">linear-gradient(135deg, rgba(0,82,147,0.05), #f1f5f9, #fff)</div>
-                            </div>
-                        </div>
-                        <div class="gp-gradient-card">
-                            <div class="gp-gradient-preview" style="background: linear-gradient(145deg, #ffffff, #f1f5f9);"></div>
-                            <div class="gp-gradient-info">
-                                <div class="gp-gradient-name">Kortbakgrund</div>
-                                <div class="gp-gradient-css">linear-gradient(145deg, #ffffff, #f1f5f9)</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h3>Gradienttext</h3>
-                    <p style="font-size: 2.5rem; font-weight: 700; letter-spacing: -0.025em; background: linear-gradient(135deg, #005293, #0074cc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin: 1rem 0 0.5rem;">AI för offentlig sektor</p>
-                    <div class="gp-code">
-                        <span class="comment">/* Gradienttext för rubriker */</span><br>
-                        <span class="prop">background</span>: <span class="value">linear-gradient(135deg, #005293, #0074cc)</span>;<br>
-                        <span class="prop">-webkit-background-clip</span>: <span class="value">text</span>;<br>
-                        <span class="prop">-webkit-text-fill-color</span>: <span class="value">transparent</span>;
-                    </div>
-                </section>
-
-                <!-- ═══ TYPOGRAFI ═══ -->
-                <section class="gp-section" id="typografi">
-                    <h2>Typografi</h2>
-                    <p>Inter är Eneos typsnitt. Det är ett modernt, lättläst sans-serif som fungerar utmärkt i digitala miljöer.</p>
-
-                    <h3>Typsnitt</h3>
-                    <div class="gp-code">
-                        <span class="prop">font-family</span>: <span class="value">'Inter', system-ui, -apple-system, sans-serif</span>;<br>
-                        <span class="comment">/* Kod */</span><br>
-                        <span class="prop">font-family</span>: <span class="value">'Monaco', 'Menlo', 'Ubuntu Mono', monospace</span>;
-                    </div>
-
-                    <h3>Teckenvikter</h3>
-                    <div class="gp-weight-grid">
-                        <div class="gp-weight-item">
-                            <div class="gp-weight-sample" style="font-weight: 300;">Aa</div>
-                            <div class="gp-weight-label">Light 300</div>
-                        </div>
-                        <div class="gp-weight-item">
-                            <div class="gp-weight-sample" style="font-weight: 400;">Aa</div>
-                            <div class="gp-weight-label">Regular 400</div>
-                        </div>
-                        <div class="gp-weight-item">
-                            <div class="gp-weight-sample" style="font-weight: 500;">Aa</div>
-                            <div class="gp-weight-label">Medium 500</div>
-                        </div>
-                        <div class="gp-weight-item">
-                            <div class="gp-weight-sample" style="font-weight: 600;">Aa</div>
-                            <div class="gp-weight-label">Semibold 600</div>
-                        </div>
-                        <div class="gp-weight-item">
-                            <div class="gp-weight-sample" style="font-weight: 700;">Aa</div>
-                            <div class="gp-weight-label">Bold 700</div>
-                        </div>
-                    </div>
-
-                    <h3>Texthierarki</h3>
-                    <div class="gp-type-specimen">
-                        <div class="gp-type-sample" style="font-size: clamp(2rem, 8vw, 4.5rem); font-weight: 700; line-height: 1.2; letter-spacing: -0.025em;">Hero-rubrik</div>
-                        <div class="gp-type-meta">
-                            <span>clamp(2rem, 8vw, 4.5rem)</span>
-                            <span>Bold 700</span>
-                            <span>Radavstand 1.2</span>
-                        </div>
-                    </div>
-                    <div class="gp-type-specimen">
-                        <div class="gp-type-sample" style="font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 700; line-height: 1.2; letter-spacing: -0.025em;">Sidorubrik H1</div>
-                        <div class="gp-type-meta">
-                            <span>clamp(2.5rem, 6vw, 4rem)</span>
-                            <span>Bold 700</span>
-                            <span>Radavstand 1.2</span>
-                        </div>
-                    </div>
-                    <div class="gp-type-specimen">
-                        <div class="gp-type-sample" style="font-size: clamp(1.875rem, 4vw, 2.5rem); font-weight: 700; line-height: 1.2; letter-spacing: -0.025em;">Sektionsrubrik H2</div>
-                        <div class="gp-type-meta">
-                            <span>clamp(1.875rem, 4vw, 2.5rem)</span>
-                            <span>Bold 700</span>
-                            <span>Radavstand 1.2</span>
-                        </div>
-                    </div>
-                    <div class="gp-type-specimen">
-                        <div class="gp-type-sample" style="font-size: 1.5rem; font-weight: 600; line-height: 1.3;">Underrubrik H3</div>
-                        <div class="gp-type-meta">
-                            <span>1.5rem</span>
-                            <span>Semibold 600</span>
-                            <span>Radavstand 1.3</span>
-                        </div>
-                    </div>
-                    <div class="gp-type-specimen">
-                        <div class="gp-type-sample" style="font-size: 1.25rem; font-weight: 400; line-height: 1.7; color: var(--muted-foreground);">Brödtext stor — för inledande paragrafer och hero-beskrivningar. Används för att ge extra vikt åt viktiga textblock.</div>
-                        <div class="gp-type-meta">
-                            <span>1.25rem</span>
-                            <span>Regular 400</span>
-                            <span>Radavstand 1.7</span>
-                        </div>
-                    </div>
-                    <div class="gp-type-specimen">
-                        <div class="gp-type-sample" style="font-size: 1.125rem; font-weight: 400; line-height: 1.6; color: var(--muted-foreground);">Brödtext — standardstorlek för löpande text, kortbeskrivningar och allmän information på hemsidan.</div>
-                        <div class="gp-type-meta">
-                            <span>1.125rem</span>
-                            <span>Regular 400</span>
-                            <span>Radavstand 1.6</span>
-                        </div>
-                    </div>
-                    <div class="gp-type-specimen">
-                        <div class="gp-type-sample" style="font-size: 0.875rem; font-weight: 500; line-height: 1.5; color: var(--muted-foreground);">Liten text — för metadata, etiketter, fotnoter och sekundär information.</div>
-                        <div class="gp-type-meta">
-                            <span>0.875rem</span>
-                            <span>Medium 500</span>
-                            <span>Radavstand 1.5</span>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- ═══ KNAPPAR ═══ -->
-                <section class="gp-section" id="knappar">
-                    <h2>Knappar</h2>
-                    <p>Knappar är det primära sättet att guida användare till handling. Använd primär-knappen för huvudaktioner och outline-knappen för sekundära val.</p>
-
-                    <h3>Primär knapp</h3>
-                    <div class="gp-button-row">
-                        <a class="btn btn-primary" style="cursor: default;">Kom igång</a>
-                    </div>
-                    <div class="gp-code">
-                        <span class="comment">/* Primär knapp */</span><br>
-                        <span class="prop">background</span>: <span class="value">linear-gradient(to right, #005293, #0074cc)</span>;<br>
-                        <span class="prop">color</span>: <span class="value">#ffffff</span>;<br>
-                        <span class="prop">padding</span>: <span class="value">1.5rem 3rem</span>;<br>
-                        <span class="prop">border-radius</span>: <span class="value">1rem</span>;<br>
-                        <span class="prop">font-weight</span>: <span class="value">600</span>;<br>
-                        <span class="prop">font-size</span>: <span class="value">1.25rem</span>;
-                    </div>
-
-                    <h3>Outline-knapp</h3>
-                    <div class="gp-button-row">
-                        <a class="btn btn-outline" style="cursor: default;">Läs mer</a>
-                    </div>
-                    <div class="gp-code">
-                        <span class="comment">/* Outline-knapp */</span><br>
-                        <span class="prop">background</span>: <span class="value">rgba(255, 255, 255, 0.5)</span>;<br>
-                        <span class="prop">border</span>: <span class="value">2px solid rgba(45, 55, 72, 0.2)</span>;<br>
-                        <span class="prop">backdrop-filter</span>: <span class="value">blur(4px)</span>;<br>
-                        <span class="prop">padding</span>: <span class="value">1.5rem 3rem</span>;<br>
-                        <span class="prop">border-radius</span>: <span class="value">1rem</span>;
-                    </div>
-
-                    <h3>Knappar tillsammans</h3>
-                    <div class="gp-button-row">
-                        <a class="btn btn-primary" style="cursor: default;">Primär aktion</a>
-                        <a class="btn btn-outline" style="cursor: default;">Sekundär aktion</a>
-                    </div>
-                </section>
-
-                <!-- ═══ KORT & KOMPONENTER ═══ -->
-                <section class="gp-section" id="kort">
-                    <h2>Kort & Komponenter</h2>
-                    <p>Kort används för att gruppera relaterat innehåll. De följer ett konsekvent mönster med subtila hover-effekter.</p>
-
-                    <div class="gp-component-grid">
-                        <div class="gp-component-demo">
-                            <div class="gp-component-label">Nordic Card</div>
-                            <div class="nordic-card" style="padding: 1.5rem;">
-                                <h4 style="margin-bottom: 0.5rem; font-size: 1rem; font-weight: 600;">Rubrik</h4>
-                                <p style="font-size: 0.9rem; color: var(--muted-foreground); line-height: 1.6;">Kort med subtil gradient från vit till ljusgrå. Används för generellt innehåll.</p>
-                            </div>
+                    <h3>Användning på olika bakgrunder</h3>
+                    <div class="gp-logo-grid">
+                        <!-- Mörk bakgrund -->
+                        <div class="gp-logo-preview bg-dark">
+                            <span class="gp-tag">Mörk</span>
+                            <svg aria-label="Eneo logotyp" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 172">
+                                <path fill="#1a7ad4" class="logo-mark" d="M 107.5,-0.5 C 114.833,-0.5 122.167,-0.5 129.5,-0.5C 176.816,9.15707 202.149,38.1571 205.5,86.5C 203.389,125.423 184.389,152.257 148.5,167C 142.419,168.71 136.419,170.21 130.5,171.5C 123.5,171.5 116.5,171.5 109.5,171.5C 93.3852,168.947 78.7185,162.781 65.5,153C 57.3188,144.986 49.3188,136.819 41.5,128.5C 61.6527,107.847 81.9861,87.3471 102.5,67C 111.582,60.8816 121.249,59.8816 131.5,64C 144.46,73.9171 146.96,86.0837 139,100.5C 131.833,107.667 124.667,114.833 117.5,122C 138.893,122.044 151.726,111.544 156,90.5C 156.442,68.8872 146.275,55.0539 125.5,49C 112.803,46.9218 101.803,50.2552 92.5,59C 86.6667,64.8333 80.8333,70.6667 75,76.5C 63.5,65 52,53.5 40.5,42C 50.2305,31.5999 60.5639,21.9333 71.5,13C 82.7423,6.20074 94.7423,1.70074 107.5,-0.5 Z"/>
+                                <path class="logo-text" d="M 649.5,76.5 C 649.5,82.1667 649.5,87.8333 649.5,93.5C 640.846,129.635 617.846,147.135 580.5,146C 552.923,141.09 535.59,125.09 528.5,98C 514.833,97.6667 501.167,97.3333 487.5,97C 480.994,93.8341 478.494,88.6674 480,81.5C 480.979,78.3749 482.813,75.8749 485.5,74C 498.401,72.538 511.401,72.038 524.5,72.5C 521.764,64.5453 516.764,58.3786 509.5,54C 488.763,45.1354 472.596,50.3021 461,69.5C 453.601,90.9824 459.767,107.149 479.5,118C 492.365,122.56 504.198,120.727 515,112.5C 519.225,119.939 523.725,127.272 528.5,134.5C 511.022,146.856 492.022,149.689 471.5,143C 466.51,141.335 462.01,138.835 458,135.5C 457.502,138.817 457.335,142.15 457.5,145.5C 448.833,145.5 440.167,145.5 431.5,145.5C 431.667,123.497 431.5,101.497 431,79.5C 426.715,61.265 415.215,51.265 396.5,49.5C 377.785,51.265 366.285,61.265 362,79.5C 361.5,101.497 361.333,123.497 361.5,145.5C 352.833,145.5 344.167,145.5 335.5,145.5C 335.5,129.5 335.5,113.5 335.5,97.5C 322.163,97.6666 308.829,97.4999 295.5,97C 287.991,92.8092 285.824,86.6426 289,78.5C 290.663,76.0833 292.829,74.25 295.5,73C 307.829,72.5001 320.162,72.3335 332.5,72.5C 327.027,58.2227 316.527,50.556 301,49.5C 282.085,51.1142 270.419,61.1142 266,79.5C 264.719,101.205 274.553,114.705 295.5,120C 303.532,121.06 311.032,119.56 318,115.5C 318.667,124.833 318.667,134.167 318,143.5C 289.265,150.965 266.265,142.631 249,118.5C 233.274,88.8088 237.108,61.9755 260.5,38C 285.142,19.8768 310.476,18.8768 336.5,35C 340.981,38.3143 344.981,42.1476 348.5,46.5C 369.825,23.1077 395.158,17.6077 424.5,30C 432.127,34.3166 438.794,39.8166 444.5,46.5C 465.825,23.1077 491.158,17.6077 520.5,30C 528.127,34.3166 534.794,39.8166 540.5,46.5C 561.825,23.1077 587.158,17.6077 616.5,30C 634.762,40.3615 645.762,55.8615 649.5,76.5 Z M 583.5,49.5 C 610.442,49.9416 623.609,63.6083 623,90.5C 619.82,107.013 609.987,116.846 593.5,120C 572.335,120.831 559.169,110.998 554,90.5C 552.92,68.7752 562.753,55.1085 583.5,49.5 Z"/>
+                                <path fill="#1a7ad4" class="logo-mark" d="M -0.5,87.5 C -0.5,85.8333 -0.5,84.1667 -0.5,82.5C 10.1734,71.9931 21.0067,61.6598 32,51.5C 43.9725,62.3055 55.4725,73.6388 66.5,85.5C 55.5,97.1667 44.1667,108.5 32.5,119.5C 21.4793,108.812 10.4793,98.1453 -0.5,87.5 Z"/>
+                            </svg>
                         </div>
 
-                        <div class="gp-component-demo">
-                            <div class="gp-component-label">Feature Card</div>
-                            <div style="background: white; border: 1px solid #e2e8f0; border-radius: 1rem; padding: 1.5rem; transition: all 0.3s ease;">
-                                <div style="width: 3rem; height: 3rem; border-radius: 0.75rem; background: linear-gradient(135deg, #005293, #0074cc); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
-                                    <svg width="20" height="20" fill="none" stroke="white" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                                </div>
-                                <h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">Funktion</h4>
-                                <p style="font-size: 0.9rem; color: var(--muted-foreground); line-height: 1.6;">Kort med ikoner och accentbar vid hover.</p>
-                            </div>
+                        <!-- Ljus bakgrund -->
+                        <div class="gp-logo-preview bg-light">
+                            <span class="gp-tag">Ljus</span>
+                            <svg aria-label="Eneo logotyp" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 172">
+                                <path fill="#1a7ad4" class="logo-mark" d="M 107.5,-0.5 C 114.833,-0.5 122.167,-0.5 129.5,-0.5C 176.816,9.15707 202.149,38.1571 205.5,86.5C 203.389,125.423 184.389,152.257 148.5,167C 142.419,168.71 136.419,170.21 130.5,171.5C 123.5,171.5 116.5,171.5 109.5,171.5C 93.3852,168.947 78.7185,162.781 65.5,153C 57.3188,144.986 49.3188,136.819 41.5,128.5C 61.6527,107.847 81.9861,87.3471 102.5,67C 111.582,60.8816 121.249,59.8816 131.5,64C 144.46,73.9171 146.96,86.0837 139,100.5C 131.833,107.667 124.667,114.833 117.5,122C 138.893,122.044 151.726,111.544 156,90.5C 156.442,68.8872 146.275,55.0539 125.5,49C 112.803,46.9218 101.803,50.2552 92.5,59C 86.6667,64.8333 80.8333,70.6667 75,76.5C 63.5,65 52,53.5 40.5,42C 50.2305,31.5999 60.5639,21.9333 71.5,13C 82.7423,6.20074 94.7423,1.70074 107.5,-0.5 Z"/>
+                                <path class="logo-text" d="M 649.5,76.5 C 649.5,82.1667 649.5,87.8333 649.5,93.5C 640.846,129.635 617.846,147.135 580.5,146C 552.923,141.09 535.59,125.09 528.5,98C 514.833,97.6667 501.167,97.3333 487.5,97C 480.994,93.8341 478.494,88.6674 480,81.5C 480.979,78.3749 482.813,75.8749 485.5,74C 498.401,72.538 511.401,72.038 524.5,72.5C 521.764,64.5453 516.764,58.3786 509.5,54C 488.763,45.1354 472.596,50.3021 461,69.5C 453.601,90.9824 459.767,107.149 479.5,118C 492.365,122.56 504.198,120.727 515,112.5C 519.225,119.939 523.725,127.272 528.5,134.5C 511.022,146.856 492.022,149.689 471.5,143C 466.51,141.335 462.01,138.835 458,135.5C 457.502,138.817 457.335,142.15 457.5,145.5C 448.833,145.5 440.167,145.5 431.5,145.5C 431.667,123.497 431.5,101.497 431,79.5C 426.715,61.265 415.215,51.265 396.5,49.5C 377.785,51.265 366.285,61.265 362,79.5C 361.5,101.497 361.333,123.497 361.5,145.5C 352.833,145.5 344.167,145.5 335.5,145.5C 335.5,129.5 335.5,113.5 335.5,97.5C 322.163,97.6666 308.829,97.4999 295.5,97C 287.991,92.8092 285.824,86.6426 289,78.5C 290.663,76.0833 292.829,74.25 295.5,73C 307.829,72.5001 320.162,72.3335 332.5,72.5C 327.027,58.2227 316.527,50.556 301,49.5C 282.085,51.1142 270.419,61.1142 266,79.5C 264.719,101.205 274.553,114.705 295.5,120C 303.532,121.06 311.032,119.56 318,115.5C 318.667,124.833 318.667,134.167 318,143.5C 289.265,150.965 266.265,142.631 249,118.5C 233.274,88.8088 237.108,61.9755 260.5,38C 285.142,19.8768 310.476,18.8768 336.5,35C 340.981,38.3143 344.981,42.1476 348.5,46.5C 369.825,23.1077 395.158,17.6077 424.5,30C 432.127,34.3166 438.794,39.8166 444.5,46.5C 465.825,23.1077 491.158,17.6077 520.5,30C 528.127,34.3166 534.794,39.8166 540.5,46.5C 561.825,23.1077 587.158,17.6077 616.5,30C 634.762,40.3615 645.762,55.8615 649.5,76.5 Z M 583.5,49.5 C 610.442,49.9416 623.609,63.6083 623,90.5C 619.82,107.013 609.987,116.846 593.5,120C 572.335,120.831 559.169,110.998 554,90.5C 552.92,68.7752 562.753,55.1085 583.5,49.5 Z"/>
+                                <path fill="#1a7ad4" class="logo-mark" d="M -0.5,87.5 C -0.5,85.8333 -0.5,84.1667 -0.5,82.5C 10.1734,71.9931 21.0067,61.6598 32,51.5C 43.9725,62.3055 55.4725,73.6388 66.5,85.5C 55.5,97.1667 44.1667,108.5 32.5,119.5C 21.4793,108.812 10.4793,98.1453 -0.5,87.5 Z"/>
+                            </svg>
                         </div>
 
-                        <div class="gp-component-demo">
-                            <div class="gp-component-label">Trust Indicator</div>
-                            <div style="background: rgba(255,255,255,0.9); backdrop-filter: blur(8px); border: 1px solid var(--border); border-radius: 0.75rem; padding: 1.25rem; border-top: 3px solid var(--primary);">
-                                <div style="display: flex; align-items: center; gap: 0.75rem;">
-                                    <div style="width: 2.5rem; height: 2.5rem; border-radius: 50%; background: linear-gradient(135deg, #22c55e, #16a34a); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 0.9rem;">&#10003;</div>
-                                    <div>
-                                        <div style="font-weight: 600; font-size: 0.9rem;">Verifierad säkerhet</div>
-                                        <div style="font-size: 0.8rem; color: var(--muted-foreground);">GDPR-kompatibel</div>
-                                    </div>
-                                </div>
-                            </div>
+                        <!-- Brandbakgrund -->
+                        <div class="gp-logo-preview bg-brand">
+                            <span class="gp-tag">På varumärkesfärg</span>
+                            <svg aria-label="Eneo logotyp" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 172">
+                                <path class="logo-mark" d="M 107.5,-0.5 C 114.833,-0.5 122.167,-0.5 129.5,-0.5C 176.816,9.15707 202.149,38.1571 205.5,86.5C 203.389,125.423 184.389,152.257 148.5,167C 142.419,168.71 136.419,170.21 130.5,171.5C 123.5,171.5 116.5,171.5 109.5,171.5C 93.3852,168.947 78.7185,162.781 65.5,153C 57.3188,144.986 49.3188,136.819 41.5,128.5C 61.6527,107.847 81.9861,87.3471 102.5,67C 111.582,60.8816 121.249,59.8816 131.5,64C 144.46,73.9171 146.96,86.0837 139,100.5C 131.833,107.667 124.667,114.833 117.5,122C 138.893,122.044 151.726,111.544 156,90.5C 156.442,68.8872 146.275,55.0539 125.5,49C 112.803,46.9218 101.803,50.2552 92.5,59C 86.6667,64.8333 80.8333,70.6667 75,76.5C 63.5,65 52,53.5 40.5,42C 50.2305,31.5999 60.5639,21.9333 71.5,13C 82.7423,6.20074 94.7423,1.70074 107.5,-0.5 Z"/>
+                                <path class="logo-text" d="M 649.5,76.5 C 649.5,82.1667 649.5,87.8333 649.5,93.5C 640.846,129.635 617.846,147.135 580.5,146C 552.923,141.09 535.59,125.09 528.5,98C 514.833,97.6667 501.167,97.3333 487.5,97C 480.994,93.8341 478.494,88.6674 480,81.5C 480.979,78.3749 482.813,75.8749 485.5,74C 498.401,72.538 511.401,72.038 524.5,72.5C 521.764,64.5453 516.764,58.3786 509.5,54C 488.763,45.1354 472.596,50.3021 461,69.5C 453.601,90.9824 459.767,107.149 479.5,118C 492.365,122.56 504.198,120.727 515,112.5C 519.225,119.939 523.725,127.272 528.5,134.5C 511.022,146.856 492.022,149.689 471.5,143C 466.51,141.335 462.01,138.835 458,135.5C 457.502,138.817 457.335,142.15 457.5,145.5C 448.833,145.5 440.167,145.5 431.5,145.5C 431.667,123.497 431.5,101.497 431,79.5C 426.715,61.265 415.215,51.265 396.5,49.5C 377.785,51.265 366.285,61.265 362,79.5C 361.5,101.497 361.333,123.497 361.5,145.5C 352.833,145.5 344.167,145.5 335.5,145.5C 335.5,129.5 335.5,113.5 335.5,97.5C 322.163,97.6666 308.829,97.4999 295.5,97C 287.991,92.8092 285.824,86.6426 289,78.5C 290.663,76.0833 292.829,74.25 295.5,73C 307.829,72.5001 320.162,72.3335 332.5,72.5C 327.027,58.2227 316.527,50.556 301,49.5C 282.085,51.1142 270.419,61.1142 266,79.5C 264.719,101.205 274.553,114.705 295.5,120C 303.532,121.06 311.032,119.56 318,115.5C 318.667,124.833 318.667,134.167 318,143.5C 289.265,150.965 266.265,142.631 249,118.5C 233.274,88.8088 237.108,61.9755 260.5,38C 285.142,19.8768 310.476,18.8768 336.5,35C 340.981,38.3143 344.981,42.1476 348.5,46.5C 369.825,23.1077 395.158,17.6077 424.5,30C 432.127,34.3166 438.794,39.8166 444.5,46.5C 465.825,23.1077 491.158,17.6077 520.5,30C 528.127,34.3166 534.794,39.8166 540.5,46.5C 561.825,23.1077 587.158,17.6077 616.5,30C 634.762,40.3615 645.762,55.8615 649.5,76.5 Z M 583.5,49.5 C 610.442,49.9416 623.609,63.6083 623,90.5C 619.82,107.013 609.987,116.846 593.5,120C 572.335,120.831 559.169,110.998 554,90.5C 552.92,68.7752 562.753,55.1085 583.5,49.5 Z"/>
+                                <path class="logo-mark" d="M -0.5,87.5 C -0.5,85.8333 -0.5,84.1667 -0.5,82.5C 10.1734,71.9931 21.0067,61.6598 32,51.5C 43.9725,62.3055 55.4725,73.6388 66.5,85.5C 55.5,97.1667 44.1667,108.5 32.5,119.5C 21.4793,108.812 10.4793,98.1453 -0.5,87.5 Z"/>
+                            </svg>
                         </div>
 
-                        <div class="gp-component-demo">
-                            <div class="gp-component-label">Glasmorfism</div>
-                            <div style="background: rgba(255,255,255,0.5); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.3); border-radius: 0.75rem; padding: 1.5rem; box-shadow: var(--shadow-md);">
-                                <p style="font-size: 0.9rem; color: var(--foreground); line-height: 1.6;">Element med backdrop-filter blur skapar en glasliknande effekt. Används i header och överlägg.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h3>Kortspecifikationer</h3>
-                    <div class="gp-code">
-                        <span class="comment">/* Standard kortmönster */</span><br>
-                        <span class="prop">background</span>: <span class="value">#ffffff</span>;<br>
-                        <span class="prop">border</span>: <span class="value">1px solid #e2e8f0</span>;<br>
-                        <span class="prop">border-radius</span>: <span class="value">1rem</span>;<br>
-                        <span class="prop">padding</span>: <span class="value">2rem</span>;<br><br>
-                        <span class="comment">/* Hover */</span><br>
-                        <span class="prop">transform</span>: <span class="value">translateY(-2px)</span>;<br>
-                        <span class="prop">box-shadow</span>: <span class="value">0 4px 12px rgba(0, 0, 0, 0.08)</span>;
-                    </div>
-                </section>
-
-                <!-- ═══ SKUGGOR ═══ -->
-                <section class="gp-section" id="skuggor">
-                    <h2>Skuggor</h2>
-                    <p>Skuggor skapar djup och hierarki. Använd subtila skuggor för viloläge och starkare vid hover eller för framhävda element.</p>
-
-                    <div class="gp-shadow-grid">
-                        <div class="gp-shadow-box" style="box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-                            <div class="gp-shadow-name">SM</div>
-                            <div class="gp-shadow-value">0 1px 3px rgba(0,0,0,0.05)</div>
-                        </div>
-                        <div class="gp-shadow-box" style="box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-                            <div class="gp-shadow-name">MD</div>
-                            <div class="gp-shadow-value">0 4px 12px rgba(0,0,0,0.08)</div>
-                        </div>
-                        <div class="gp-shadow-box" style="box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
-                            <div class="gp-shadow-name">LG</div>
-                            <div class="gp-shadow-value">0 10px 25px rgba(0,0,0,0.1)</div>
-                        </div>
-                        <div class="gp-shadow-box" style="box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);">
-                            <div class="gp-shadow-name">XL</div>
-                            <div class="gp-shadow-value">0 25px 50px -12px rgba(0,0,0,0.25)</div>
-                        </div>
-                        <div class="gp-shadow-box" style="box-shadow: 0 25px 50px -12px rgba(0,82,147,0.25);">
-                            <div class="gp-shadow-name">Primary</div>
-                            <div class="gp-shadow-value">0 25px 50px -12px rgba(0,82,147,0.25)</div>
-                        </div>
-                        <div class="gp-shadow-box" style="box-shadow: 0 20px 40px -12px rgba(0,82,147,0.3);">
-                            <div class="gp-shadow-name">Primary Hover</div>
-                            <div class="gp-shadow-value">0 20px 40px -12px rgba(0,82,147,0.3)</div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- ═══ SPACING & RADIER ═══ -->
-                <section class="gp-section" id="spacing">
-                    <h2>Spacing & Radier</h2>
-                    <p>Konsekvent spacing skapar rytm och harmoni. Använd alltid värden från spacing-skalan.</p>
-
-                    <h3>Spacing-skala</h3>
-                    <div style="margin-bottom: 2rem;">
-                        <div class="gp-spacing-item">
-                            <div class="gp-spacing-bar" style="width: 4px;"></div>
-                            <div class="gp-spacing-label">0.25rem (4px)</div>
-                        </div>
-                        <div class="gp-spacing-item">
-                            <div class="gp-spacing-bar" style="width: 8px;"></div>
-                            <div class="gp-spacing-label">0.5rem (8px)</div>
-                        </div>
-                        <div class="gp-spacing-item">
-                            <div class="gp-spacing-bar" style="width: 12px;"></div>
-                            <div class="gp-spacing-label">0.75rem (12px)</div>
-                        </div>
-                        <div class="gp-spacing-item">
-                            <div class="gp-spacing-bar" style="width: 16px;"></div>
-                            <div class="gp-spacing-label">1rem (16px)</div>
-                        </div>
-                        <div class="gp-spacing-item">
-                            <div class="gp-spacing-bar" style="width: 24px;"></div>
-                            <div class="gp-spacing-label">1.5rem (24px)</div>
-                        </div>
-                        <div class="gp-spacing-item">
-                            <div class="gp-spacing-bar" style="width: 32px;"></div>
-                            <div class="gp-spacing-label">2rem (32px)</div>
-                        </div>
-                        <div class="gp-spacing-item">
-                            <div class="gp-spacing-bar" style="width: 48px;"></div>
-                            <div class="gp-spacing-label">3rem (48px)</div>
-                        </div>
-                        <div class="gp-spacing-item">
-                            <div class="gp-spacing-bar" style="width: 64px;"></div>
-                            <div class="gp-spacing-label">4rem (64px)</div>
-                        </div>
-                        <div class="gp-spacing-item">
-                            <div class="gp-spacing-bar" style="width: 96px;"></div>
-                            <div class="gp-spacing-label">6rem (96px)</div>
-                        </div>
-                    </div>
-
-                    <h3>Border Radius</h3>
-                    <div class="gp-radius-grid">
-                        <div class="gp-radius-item">
-                            <div class="gp-radius-box" style="border-radius: 0.25rem;"></div>
-                            <div class="gp-radius-label">0.25rem</div>
-                        </div>
-                        <div class="gp-radius-item">
-                            <div class="gp-radius-box" style="border-radius: 0.5rem;"></div>
-                            <div class="gp-radius-label">0.5rem</div>
-                        </div>
-                        <div class="gp-radius-item">
-                            <div class="gp-radius-box" style="border-radius: 0.75rem;"></div>
-                            <div class="gp-radius-label">0.75rem</div>
-                        </div>
-                        <div class="gp-radius-item">
-                            <div class="gp-radius-box" style="border-radius: 1rem;"></div>
-                            <div class="gp-radius-label">1rem</div>
-                        </div>
-                        <div class="gp-radius-item">
-                            <div class="gp-radius-box" style="border-radius: 1.5rem;"></div>
-                            <div class="gp-radius-label">1.5rem</div>
-                        </div>
-                        <div class="gp-radius-item">
-                            <div class="gp-radius-box" style="border-radius: 2rem;"></div>
-                            <div class="gp-radius-label">2rem</div>
-                        </div>
-                        <div class="gp-radius-item">
-                            <div class="gp-radius-box" style="border-radius: 50%;"></div>
-                            <div class="gp-radius-label">50%</div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- ═══ IKONER ═══ -->
-                <section class="gp-section" id="ikoner">
-                    <h2>Ikoner</h2>
-                    <p>Ikoner används i cirkulära eller rundade behållare med gradientbakgrund. Storlekarna följer ett konsekvent mönster.</p>
-
-                    <h3>Ikonstilar</h3>
-                    <div class="gp-icon-grid">
-                        <div class="gp-icon-item">
-                            <div class="gp-icon-circle" style="background: linear-gradient(135deg, #005293, #0074cc); width: 4rem; height: 4rem; font-size: 1.5rem;">
-                                <svg width="24" height="24" fill="none" stroke="white" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-                            </div>
-                            <div class="gp-icon-label">4rem Primär</div>
-                        </div>
-                        <div class="gp-icon-item">
-                            <div class="gp-icon-circle" style="background: linear-gradient(135deg, #22c55e, #16a34a); width: 4rem; height: 4rem; font-size: 1.5rem;">
-                                <svg width="24" height="24" fill="none" stroke="white" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            </div>
-                            <div class="gp-icon-label">4rem Success</div>
-                        </div>
-                        <div class="gp-icon-item">
-                            <div class="gp-icon-circle" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed); width: 4rem; height: 4rem; font-size: 1.5rem;">
-                                <svg width="24" height="24" fill="none" stroke="white" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
-                            </div>
-                            <div class="gp-icon-label">4rem Purple</div>
-                        </div>
-                        <div class="gp-icon-item">
-                            <div class="gp-icon-circle" style="background: rgba(0, 82, 147, 0.08); width: 4rem; height: 4rem; color: #005293; font-size: 1.5rem;">
-                                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                            </div>
-                            <div class="gp-icon-label">4rem Subtil</div>
-                        </div>
-                        <div class="gp-icon-item">
-                            <div class="gp-icon-circle" style="background: linear-gradient(135deg, #005293, #0074cc);">
-                                <svg width="16" height="16" fill="none" stroke="white" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                            </div>
-                            <div class="gp-icon-label">3rem Primär</div>
-                        </div>
-                        <div class="gp-icon-item">
-                            <div class="gp-icon-circle" style="background: linear-gradient(135deg, #22c55e, #16a34a);">
-                                <svg width="16" height="16" fill="none" stroke="white" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                            </div>
-                            <div class="gp-icon-label">3rem Success</div>
+                        <!-- Monokrom -->
+                        <div class="gp-logo-preview bg-mono-light">
+                            <span class="gp-tag">Monokrom</span>
+                            <svg aria-label="Eneo logotyp" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 172">
+                                <path class="logo-mark" d="M 107.5,-0.5 C 114.833,-0.5 122.167,-0.5 129.5,-0.5C 176.816,9.15707 202.149,38.1571 205.5,86.5C 203.389,125.423 184.389,152.257 148.5,167C 142.419,168.71 136.419,170.21 130.5,171.5C 123.5,171.5 116.5,171.5 109.5,171.5C 93.3852,168.947 78.7185,162.781 65.5,153C 57.3188,144.986 49.3188,136.819 41.5,128.5C 61.6527,107.847 81.9861,87.3471 102.5,67C 111.582,60.8816 121.249,59.8816 131.5,64C 144.46,73.9171 146.96,86.0837 139,100.5C 131.833,107.667 124.667,114.833 117.5,122C 138.893,122.044 151.726,111.544 156,90.5C 156.442,68.8872 146.275,55.0539 125.5,49C 112.803,46.9218 101.803,50.2552 92.5,59C 86.6667,64.8333 80.8333,70.6667 75,76.5C 63.5,65 52,53.5 40.5,42C 50.2305,31.5999 60.5639,21.9333 71.5,13C 82.7423,6.20074 94.7423,1.70074 107.5,-0.5 Z"/>
+                                <path class="logo-text" d="M 649.5,76.5 C 649.5,82.1667 649.5,87.8333 649.5,93.5C 640.846,129.635 617.846,147.135 580.5,146C 552.923,141.09 535.59,125.09 528.5,98C 514.833,97.6667 501.167,97.3333 487.5,97C 480.994,93.8341 478.494,88.6674 480,81.5C 480.979,78.3749 482.813,75.8749 485.5,74C 498.401,72.538 511.401,72.038 524.5,72.5C 521.764,64.5453 516.764,58.3786 509.5,54C 488.763,45.1354 472.596,50.3021 461,69.5C 453.601,90.9824 459.767,107.149 479.5,118C 492.365,122.56 504.198,120.727 515,112.5C 519.225,119.939 523.725,127.272 528.5,134.5C 511.022,146.856 492.022,149.689 471.5,143C 466.51,141.335 462.01,138.835 458,135.5C 457.502,138.817 457.335,142.15 457.5,145.5C 448.833,145.5 440.167,145.5 431.5,145.5C 431.667,123.497 431.5,101.497 431,79.5C 426.715,61.265 415.215,51.265 396.5,49.5C 377.785,51.265 366.285,61.265 362,79.5C 361.5,101.497 361.333,123.497 361.5,145.5C 352.833,145.5 344.167,145.5 335.5,145.5C 335.5,129.5 335.5,113.5 335.5,97.5C 322.163,97.6666 308.829,97.4999 295.5,97C 287.991,92.8092 285.824,86.6426 289,78.5C 290.663,76.0833 292.829,74.25 295.5,73C 307.829,72.5001 320.162,72.3335 332.5,72.5C 327.027,58.2227 316.527,50.556 301,49.5C 282.085,51.1142 270.419,61.1142 266,79.5C 264.719,101.205 274.553,114.705 295.5,120C 303.532,121.06 311.032,119.56 318,115.5C 318.667,124.833 318.667,134.167 318,143.5C 289.265,150.965 266.265,142.631 249,118.5C 233.274,88.8088 237.108,61.9755 260.5,38C 285.142,19.8768 310.476,18.8768 336.5,35C 340.981,38.3143 344.981,42.1476 348.5,46.5C 369.825,23.1077 395.158,17.6077 424.5,30C 432.127,34.3166 438.794,39.8166 444.5,46.5C 465.825,23.1077 491.158,17.6077 520.5,30C 528.127,34.3166 534.794,39.8166 540.5,46.5C 561.825,23.1077 587.158,17.6077 616.5,30C 634.762,40.3615 645.762,55.8615 649.5,76.5 Z M 583.5,49.5 C 610.442,49.9416 623.609,63.6083 623,90.5C 619.82,107.013 609.987,116.846 593.5,120C 572.335,120.831 559.169,110.998 554,90.5C 552.92,68.7752 562.753,55.1085 583.5,49.5 Z"/>
+                                <path class="logo-mark" d="M -0.5,87.5 C -0.5,85.8333 -0.5,84.1667 -0.5,82.5C 10.1734,71.9931 21.0067,61.6598 32,51.5C 43.9725,62.3055 55.4725,73.6388 66.5,85.5C 55.5,97.1667 44.1667,108.5 32.5,119.5C 21.4793,108.812 10.4793,98.1453 -0.5,87.5 Z"/>
+                            </svg>
                         </div>
                     </div>
 
                     <h3>Specifikationer</h3>
-                    <div class="gp-code">
-                        <span class="comment">/* Stor ikon (feature cards) */</span><br>
-                        <span class="prop">width</span>: <span class="value">4rem</span>; <span class="prop">height</span>: <span class="value">4rem</span>;<br>
-                        <span class="prop">border-radius</span>: <span class="value">0.75rem</span>; <span class="comment">/* eller 50% för cirkel */</span><br>
-                        <span class="prop">background</span>: <span class="value">linear-gradient(135deg, #005293, #0074cc)</span>;<br><br>
-                        <span class="comment">/* Liten ikon (function cards) */</span><br>
-                        <span class="prop">width</span>: <span class="value">3rem</span>; <span class="prop">height</span>: <span class="value">3rem</span>;
+                    <dl class="gp-spec-row">
+                        <div class="gp-spec">
+                            <dt>Ikonfärg</dt>
+                            <dd><code>#1a7ad4</code> &middot; Brand bright</dd>
+                        </div>
+                        <div class="gp-spec">
+                            <dt>Ordmärke</dt>
+                            <dd>Adapterar till temat: <code>--text</code> i nav, <code>--text-muted</code> i footer</dd>
+                        </div>
+                        <div class="gp-spec">
+                            <dt>Minsta höjd (web)</dt>
+                            <dd>22 px (footer) / 30 px (header)</dd>
+                        </div>
+                        <div class="gp-spec">
+                            <dt>Minsta höjd (tryck)</dt>
+                            <dd>10 mm</dd>
+                        </div>
+                        <div class="gp-spec">
+                            <dt>Frizon</dt>
+                            <dd>Minst halva logotypens höjd som luft åt alla håll</dd>
+                        </div>
+                        <div class="gp-spec">
+                            <dt>Format</dt>
+                            <dd>SVG (primärt), PNG (fallback)</dd>
+                        </div>
+                    </dl>
+
+                    <div class="gp-callout">
+                        <strong>Notering:</strong> På sajten renderas ikonen i den ljusare blå nyansen <code>#1a7ad4</code> (Brand bright). Den fristående SVG-filen <code>public/images/Eneo-logo-svg.svg</code> är ett äldre exemplar med ikonen i <code>#055594</code> (Brand). Använd inline-SVG:n nedan eller exportera om filen för konsekvent färg.
+                    </div>
+
+                    <h3>Gör så här &middot; gör inte</h3>
+                    <div class="gp-rules">
+                        <div class="gp-rule do">Behåll proportionerna mellan ikon och ordmärke (alltid hela logotypen i SVG).</div>
+                        <div class="gp-rule do">Använd den ljusa blå <code>#1a7ad4</code> för ikonen — på alla bakgrunder utom när monokrom krävs.</div>
+                        <div class="gp-rule do">Lämna alltid frizon runt om — minst halva logotypens höjd.</div>
+                        <div class="gp-rule do">På mörka bakgrunder: ordmärket vitt. På ljusa: mörkgrått (<code>#1a1f2e</code>) eller svart.</div>
+                        <div class="gp-rule dont">Rotera, sträck, lutar eller deformera inte logotypen.</div>
+                        <div class="gp-rule dont">Byt inte färg på ikonen utöver vit, svart eller <code>#1a7ad4</code>.</div>
+                        <div class="gp-rule dont">Lägg inte logotypen på fotografiska bakgrunder med dålig kontrast.</div>
+                        <div class="gp-rule dont">Skapa inte egna sammansättningar (text + symbol åtskilda eller utbytta typsnitt).</div>
                     </div>
                 </section>
 
-                <!-- ═══ ANIMATIONER ═══ -->
-                <section class="gp-section" id="animationer">
-                    <h2>Animationer</h2>
-                    <p>Animationer ska vara subtila och meningsfulla. De förstärker interaktionen utan att distrahera.</p>
+                <!-- FÄRGER -->
+                <section class="gp-section" id="farger">
+                    <h2>Färgsystem</h2>
+                    <p class="gp-lead">Färgerna är definierade som CSS-variabler i <code>css/v2-variables.css</code> och anpassar sig till mörkt och ljust tema. <strong>Brand</strong> är primärfärg, <strong>Brand Bright</strong> är dominerande accent (logotyp, länkar, knapp-gradient).</p>
 
-                    <h3>Transition-hastigheter</h3>
-                    <div class="gp-code">
-                        <span class="prop">--transition-fast</span>: <span class="value">0.15s cubic-bezier(0.4, 0, 0.2, 1)</span>; <span class="comment">/* Hover, fokus */</span><br>
-                        <span class="prop">--transition-normal</span>: <span class="value">0.2s ease</span>; <span class="comment">/* Enklare övergångar */</span><br>
-                        <span class="prop">--transition-smooth</span>: <span class="value">0.3s cubic-bezier(0.4, 0, 0.2, 1)</span>; <span class="comment">/* Mjuka animationer */</span><br>
-                        <span class="prop">--transition-entrance</span>: <span class="value">0.6s cubic-bezier(0.4, 0, 0.2, 1)</span>; <span class="comment">/* Ingångsanimationer */</span>
-                    </div>
-
-                    <h3>Hover-mönster</h3>
-                    <div class="gp-component-grid" style="margin-top: 1rem;">
-                        <div class="gp-component-demo" style="text-align: center;">
-                            <div class="gp-component-label">Kort-hover: Lyft</div>
-                            <div style="background: white; border: 1px solid #e2e8f0; border-radius: 1rem; padding: 1.5rem; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer;" onmouseenter="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.1)'" onmouseleave="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-                                <p style="font-size: 0.9rem; color: var(--muted-foreground);">Hovra över mig</p>
+                    <h3>Varumärke</h3>
+                    <div class="gp-swatch-grid">
+                        <div class="gp-swatch">
+                            <div class="gp-swatch-fill" style="background:#055594;"><span class="gp-on-color">vit text · 8.4:1</span></div>
+                            <div class="gp-swatch-meta">
+                                <div class="gp-swatch-name">Brand</div>
+                                <div class="gp-swatch-token">--brand</div>
+                                <div class="gp-swatch-vals">
+                                    <span>#055594</span>
+                                    <span>rgb(5, 85, 148)</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="gp-component-demo" style="text-align: center;">
-                            <div class="gp-component-label">Knapp-hover: Skugga</div>
-                            <a class="btn btn-primary" style="cursor: pointer; display: inline-block;">Hovra</a>
+                        <div class="gp-swatch">
+                            <div class="gp-swatch-fill" style="background:#1a7ad4;"><span class="gp-on-color">vit text · 4.9:1</span></div>
+                            <div class="gp-swatch-meta">
+                                <div class="gp-swatch-name">Brand Bright</div>
+                                <div class="gp-swatch-token">--brand-bright</div>
+                                <div class="gp-swatch-vals">
+                                    <span>#1a7ad4</span>
+                                    <span>rgb(26, 122, 212)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gp-swatch">
+                            <div class="gp-swatch-fill" style="background:#3a9aef;"></div>
+                            <div class="gp-swatch-meta">
+                                <div class="gp-swatch-name">Brand Light</div>
+                                <div class="gp-swatch-token">--brand-light</div>
+                                <div class="gp-swatch-vals">
+                                    <span>#3a9aef</span>
+                                    <span>rgb(58, 154, 239)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gp-swatch">
+                            <div class="gp-swatch-fill checker" style="background-color:rgba(5, 85, 148, 0.15);"><span class="gp-on-color">15% alfa</span></div>
+                            <div class="gp-swatch-meta">
+                                <div class="gp-swatch-name">Brand Dim</div>
+                                <div class="gp-swatch-token">--brand-dim</div>
+                                <div class="gp-swatch-vals">
+                                    <span>rgba(5, 85, 148, 0.15)</span>
+                                    <span>tags · hover-bg</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gp-swatch">
+                            <div class="gp-swatch-fill" style="background:#38bdf8;"></div>
+                            <div class="gp-swatch-meta">
+                                <div class="gp-swatch-name">Accent</div>
+                                <div class="gp-swatch-token">--accent</div>
+                                <div class="gp-swatch-vals">
+                                    <span>#38bdf8</span>
+                                    <span>rgb(56, 189, 248)</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <h3>Riktlinjer</h3>
-                    <div class="gp-dos-donts" style="margin-top: 1rem;">
-                        <div class="gp-rule do">
-                            <strong>Gör så här</strong>
-                            Använd subtila lyftar (translateY), skuggor och opacity för hover. Staggera ingångsanimationer med 0.1–0.2s delay.
+                    <h3>Statusfärger</h3>
+                    <div class="gp-swatch-grid">
+                        <div class="gp-swatch">
+                            <div class="gp-swatch-fill" style="background:#22c55e;"></div>
+                            <div class="gp-swatch-meta">
+                                <div class="gp-swatch-name">Success</div>
+                                <div class="gp-swatch-token">--success</div>
+                                <div class="gp-swatch-vals"><span>#22c55e</span></div>
+                            </div>
                         </div>
-                        <div class="gp-rule dont">
-                            <strong>Undvik</strong>
-                            Snabba blinkningar, överdriven rörelse, animationer som blockar interaktion. Respektera alltid prefers-reduced-motion.
+                        <div class="gp-swatch">
+                            <div class="gp-swatch-fill" style="background:#34d399;"></div>
+                            <div class="gp-swatch-meta">
+                                <div class="gp-swatch-name">Green</div>
+                                <div class="gp-swatch-token">--green</div>
+                                <div class="gp-swatch-vals"><span>#34d399</span></div>
+                            </div>
+                        </div>
+                        <div class="gp-swatch">
+                            <div class="gp-swatch-fill" style="background:#f0a030;"></div>
+                            <div class="gp-swatch-meta">
+                                <div class="gp-swatch-name">Amber</div>
+                                <div class="gp-swatch-token">--amber</div>
+                                <div class="gp-swatch-vals"><span>#f0a030</span></div>
+                            </div>
+                        </div>
+                        <div class="gp-swatch">
+                            <div class="gp-swatch-fill" style="background:#a78bfa;"></div>
+                            <div class="gp-swatch-meta">
+                                <div class="gp-swatch-name">Purple</div>
+                                <div class="gp-swatch-token">--purple</div>
+                                <div class="gp-swatch-vals"><span>#a78bfa</span></div>
+                            </div>
+                        </div>
+                        <div class="gp-swatch">
+                            <div class="gp-swatch-fill" style="background:#f87171;"></div>
+                            <div class="gp-swatch-meta">
+                                <div class="gp-swatch-name">Red</div>
+                                <div class="gp-swatch-token">--red</div>
+                                <div class="gp-swatch-vals"><span>#f87171</span></div>
+                            </div>
+                        </div>
+                        <div class="gp-swatch">
+                            <div class="gp-swatch-fill" style="background:#fb7185;"></div>
+                            <div class="gp-swatch-meta">
+                                <div class="gp-swatch-name">Rose</div>
+                                <div class="gp-swatch-token">--rose</div>
+                                <div class="gp-swatch-vals"><span>#fb7185</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Yta &middot; mörkt tema</h3>
+                    <div class="gp-swatch-grid">
+                        <div class="gp-swatch">
+                            <div class="gp-swatch-fill" style="background:#060c17;"></div>
+                            <div class="gp-swatch-meta">
+                                <div class="gp-swatch-name">Background</div>
+                                <div class="gp-swatch-token">--bg</div>
+                                <div class="gp-swatch-vals"><span>#060c17</span></div>
+                            </div>
+                        </div>
+                        <div class="gp-swatch">
+                            <div class="gp-swatch-fill" style="background:#0b1322;"></div>
+                            <div class="gp-swatch-meta">
+                                <div class="gp-swatch-name">Background Raised</div>
+                                <div class="gp-swatch-token">--bg-raised</div>
+                                <div class="gp-swatch-vals"><span>#0b1322</span></div>
+                            </div>
+                        </div>
+                        <div class="gp-swatch">
+                            <div class="gp-swatch-fill" style="background:#0f1a2e;"></div>
+                            <div class="gp-swatch-meta">
+                                <div class="gp-swatch-name">Card</div>
+                                <div class="gp-swatch-token">--bg-card</div>
+                                <div class="gp-swatch-vals"><span>#0f1a2e</span></div>
+                            </div>
+                        </div>
+                        <div class="gp-swatch">
+                            <div class="gp-swatch-fill" style="background:#e4e9f0;"><span class="gp-on-color" style="color:#0b1322;background:rgba(255,255,255,0.6);">mörk text · 12.4:1</span></div>
+                            <div class="gp-swatch-meta">
+                                <div class="gp-swatch-name">Text</div>
+                                <div class="gp-swatch-token">--text</div>
+                                <div class="gp-swatch-vals"><span>#e4e9f0</span></div>
+                            </div>
+                        </div>
+                        <div class="gp-swatch">
+                            <div class="gp-swatch-fill" style="background:#7889a0;"></div>
+                            <div class="gp-swatch-meta">
+                                <div class="gp-swatch-name">Text Muted</div>
+                                <div class="gp-swatch-token">--text-muted</div>
+                                <div class="gp-swatch-vals"><span>#7889a0</span></div>
+                            </div>
+                        </div>
+                        <div class="gp-swatch">
+                            <div class="gp-swatch-fill" style="background:#5e7389;"></div>
+                            <div class="gp-swatch-meta">
+                                <div class="gp-swatch-name">Text Faint</div>
+                                <div class="gp-swatch-token">--text-faint</div>
+                                <div class="gp-swatch-vals"><span>#5e7389</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Yta &middot; ljust tema</h3>
+                    <div class="gp-swatch-grid">
+                        <div class="gp-swatch">
+                            <div class="gp-swatch-fill" style="background:#f8f9fb;"><span class="gp-on-color" style="color:#1a1f2e;background:rgba(255,255,255,0.7);">mörk text</span></div>
+                            <div class="gp-swatch-meta">
+                                <div class="gp-swatch-name">Background</div>
+                                <div class="gp-swatch-token">--bg (light)</div>
+                                <div class="gp-swatch-vals"><span>#f8f9fb</span></div>
+                            </div>
+                        </div>
+                        <div class="gp-swatch">
+                            <div class="gp-swatch-fill" style="background:#ffffff;"><span class="gp-on-color" style="color:#1a1f2e;background:rgba(0,0,0,0.08);">vit yta</span></div>
+                            <div class="gp-swatch-meta">
+                                <div class="gp-swatch-name">Card / Raised</div>
+                                <div class="gp-swatch-token">--bg-card (light)</div>
+                                <div class="gp-swatch-vals"><span>#ffffff</span></div>
+                            </div>
+                        </div>
+                        <div class="gp-swatch">
+                            <div class="gp-swatch-fill" style="background:#1a1f2e;"></div>
+                            <div class="gp-swatch-meta">
+                                <div class="gp-swatch-name">Text</div>
+                                <div class="gp-swatch-token">--text (light)</div>
+                                <div class="gp-swatch-vals"><span>#1a1f2e</span></div>
+                            </div>
+                        </div>
+                        <div class="gp-swatch">
+                            <div class="gp-swatch-fill" style="background:#5a6578;"></div>
+                            <div class="gp-swatch-meta">
+                                <div class="gp-swatch-name">Text Muted</div>
+                                <div class="gp-swatch-token">--text-muted (light)</div>
+                                <div class="gp-swatch-vals"><span>#5a6578</span></div>
+                            </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- ═══ TONALITET ═══ -->
+                <!-- GRADIENTER -->
+                <section class="gp-section" id="gradienter">
+                    <h2>Gradienter</h2>
+                    <p class="gp-lead">Gradienter är en signaturkomponent — främst för knapp-fyllning, hero-bakgrund och accentlinjer. Använd alltid 135° vinkel om inget annat anges.</p>
+
+                    <div class="gp-swatch-grid">
+                        <div class="gp-swatch">
+                            <div class="gp-swatch-fill" style="background:linear-gradient(135deg,#055594,#1a7ad4);"></div>
+                            <div class="gp-swatch-meta">
+                                <div class="gp-swatch-name">Primary Button</div>
+                                <div class="gp-swatch-token">linear-gradient(135deg, --brand, --brand-bright)</div>
+                            </div>
+                        </div>
+                        <div class="gp-swatch">
+                            <div class="gp-swatch-fill" style="background:linear-gradient(135deg,#1a7ad4,#3a9aef);"></div>
+                            <div class="gp-swatch-meta">
+                                <div class="gp-swatch-name">Button Hover</div>
+                                <div class="gp-swatch-token">linear-gradient(135deg, --brand-bright, --brand-light)</div>
+                            </div>
+                        </div>
+                        <div class="gp-swatch">
+                            <div class="gp-swatch-fill" style="background:linear-gradient(135deg,#3a9aef,#38bdf8);-webkit-background-clip:initial;"></div>
+                            <div class="gp-swatch-meta">
+                                <div class="gp-swatch-name">Gradient Text</div>
+                                <div class="gp-swatch-token">linear-gradient(135deg, --brand-light, --accent)</div>
+                            </div>
+                        </div>
+                        <div class="gp-swatch">
+                            <div class="gp-swatch-fill" style="background:radial-gradient(ellipse 60% 70% at 70% 30%, rgba(5, 85, 148, 0.5), transparent 70%), linear-gradient(135deg, #060c17 0%, #0b1a32 100%);"></div>
+                            <div class="gp-swatch-meta">
+                                <div class="gp-swatch-name">Hero Glow</div>
+                                <div class="gp-swatch-token">radial brand glow + dark base</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Gradient-text på rubriker</h3>
+                    <div class="gp-preview-stage">
+                        <p style="font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:700;letter-spacing:-0.03em;line-height:1.1;margin:0;">Generativ AI med <em style="font-style:italic;background:linear-gradient(135deg,var(--brand-light),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">svensk datasuveränitet</em></p>
+                    </div>
+                </section>
+
+                <!-- TYPOGRAFI -->
+                <section class="gp-section" id="typografi">
+                    <h2>Typografi</h2>
+                    <p class="gp-lead">Två typsnitt: <strong>Newsreader</strong> (serif) för rubriker och citat, <strong>Plus Jakarta Sans</strong> (sans-serif) för all löpande text och UI.</p>
+
+                    <div class="gp-font-card">
+                        <div class="gp-font-spec serif">
+                            <div class="gp-font-name">Display · Newsreader</div>
+                            <div class="gp-font-display">Aa <em>æ</em></div>
+                            <div class="gp-font-info">
+                                Serif, optisk storlek &middot; för rubriker, citat och kursiv accent.
+                                Källa: <code>fonts.google.com/specimen/Newsreader</code>
+                            </div>
+                            <div class="gp-weights">
+                                <span style="font-weight:300;">Light 300</span>
+                                <span style="font-weight:400;">Regular 400</span>
+                                <span style="font-weight:500;">Medium 500</span>
+                                <span style="font-weight:600;">Semibold 600</span>
+                                <span style="font-weight:700;">Bold 700</span>
+                            </div>
+                        </div>
+                        <div class="gp-font-spec sans">
+                            <div class="gp-font-name">Body · Plus Jakarta Sans</div>
+                            <div class="gp-font-display">Aa Åä</div>
+                            <div class="gp-font-info">
+                                Geometrisk sans-serif &middot; för brödtext, navigation, knappar och formulär.
+                                Källa: <code>fonts.google.com/specimen/Plus+Jakarta+Sans</code>
+                            </div>
+                            <div class="gp-weights">
+                                <span style="font-weight:300;">Light 300</span>
+                                <span style="font-weight:400;">Regular 400</span>
+                                <span style="font-weight:500;">Medium 500</span>
+                                <span style="font-weight:600;">Semibold 600</span>
+                                <span style="font-weight:700;">Bold 700</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Typskala</h3>
+                    <div class="gp-preview-stage" style="padding:0 2rem;">
+                        <div class="gp-type-row">
+                            <div class="gp-type-label">H1<small>clamp(2, 5vw, 3.5)rem</small></div>
+                            <div class="gp-type-sample" style="font-size:clamp(2rem,5vw,3.5rem);font-weight:700;letter-spacing:-0.03em;">Generativ AI med precision</div>
+                        </div>
+                        <div class="gp-type-row">
+                            <div class="gp-type-label">H2<small>clamp(1.5, 3vw, 2.25)rem</small></div>
+                            <div class="gp-type-sample" style="font-size:clamp(1.5rem,3vw,2.25rem);font-weight:600;letter-spacing:-0.025em;">Svensk datasuveränitet</div>
+                        </div>
+                        <div class="gp-type-row">
+                            <div class="gp-type-label">H3<small>clamp(1.125, 2vw, 1.5)rem</small></div>
+                            <div class="gp-type-sample" style="font-size:clamp(1.125rem,2vw,1.5rem);font-weight:600;letter-spacing:-0.025em;">Plattform för offentlig sektor</div>
+                        </div>
+                        <div class="gp-type-row">
+                            <div class="gp-type-label">H4<small>1.125rem</small></div>
+                            <div class="gp-type-sample" style="font-size:1.125rem;font-weight:600;letter-spacing:-0.025em;">Rubrik på kort eller modul</div>
+                        </div>
+                        <div class="gp-type-row">
+                            <div class="gp-type-label">Lead<small>1.1rem · 1.7</small></div>
+                            <div class="gp-type-sample body" style="font-size:1.1rem;line-height:1.7;font-weight:400;">Eneo är den öppna AI-plattformen som ger offentliga organisationer full kontroll över var data lagras.</div>
+                        </div>
+                        <div class="gp-type-row">
+                            <div class="gp-type-label">Body<small>1rem · 1.6</small></div>
+                            <div class="gp-type-sample body" style="font-size:1rem;line-height:1.6;font-weight:400;">Brödtext är 1 rem (16 px) i Plus Jakarta Sans Regular. Använd <strong style="color:var(--text);">--text</strong> för rubriker och primär text och <strong style="color:var(--text);">--text-muted</strong> för stödjande text.</div>
+                        </div>
+                        <div class="gp-type-row">
+                            <div class="gp-type-label">Small<small>0.875rem</small></div>
+                            <div class="gp-type-sample body" style="font-size:0.875rem;line-height:1.5;">Hjälptext, footer-länkar och sekundär metainformation.</div>
+                        </div>
+                        <div class="gp-type-row">
+                            <div class="gp-type-label">Caption<small>0.72rem · uppercase</small></div>
+                            <div class="gp-type-sample body" style="font-size:0.72rem;text-transform:uppercase;letter-spacing:0.12em;font-weight:700;color:var(--text-faint);">Eyebrow / kategori</div>
+                        </div>
+                    </div>
+
+                    <div class="gp-callout"><strong>Riktlinje:</strong> Använd <code>letter-spacing: -0.03em</code> på H1, <code>-0.025em</code> på H2–H4. Brödtext har <code>line-height: 1.6–1.7</code>. Maxbredd för läsbar text ≈ 65 ch.</div>
+                </section>
+
+                <!-- KNAPPAR -->
+                <section class="gp-section" id="knappar">
+                    <h2>Knappar</h2>
+                    <p class="gp-lead">Tre varianter används på sajten — primär (gradient), outline och ghost. Alla har 8 px radie, semibold-vikt och mjuk hover med translation 1–2 px upp.</p>
+
+                    <div class="gp-preview-stage row">
+                        <button class="btn btn-primary"><span>Primär CTA</span></button>
+                        <button class="btn btn-outline">Outline</button>
+                        <button class="btn btn-ghost" style="background:var(--white-overlay);color:var(--text);border:1px solid var(--border);display:inline-flex;align-items:center;gap:0.5rem;padding:0.8rem 1.6rem;border-radius:8px;font-size:0.9rem;font-weight:600;cursor:pointer;">Ghost</button>
+                    </div>
+
+                    <table class="gp-table">
+                        <thead>
+                            <tr><th>Variant</th><th>Klass</th><th>Användning</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong style="color:var(--text);">Primary</strong></td><td><code>.btn .btn-primary</code></td><td>Huvud-CTA per sektion. Endast en per vy.</td></tr>
+                            <tr><td><strong style="color:var(--text);">Outline</strong></td><td><code>.btn .btn-outline</code></td><td>Sekundär handling vid sidan av primär.</td></tr>
+                            <tr><td><strong style="color:var(--text);">Ghost</strong></td><td><code>.btn .btn-ghost</code></td><td>Lågprioriterad åtgärd, t.ex. &laquo;Ladda ned&raquo; intill primär.</td></tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- KOMPONENTER -->
+                <section class="gp-section" id="komponenter">
+                    <h2>Komponenter</h2>
+                    <p class="gp-lead">Återkommande byggstenar från designsystemet — kort, taggar, badge och feature-listor.</p>
+
+                    <h3>Hero-badge</h3>
+                    <div class="gp-preview-stage">
+                        <div style="display:inline-flex;align-items:center;gap:0.55rem;background:var(--brand-dim);border:1px solid var(--brand-glow);border-radius:100px;padding:0.4rem 1.1rem;font-size:0.78rem;font-weight:600;color:var(--brand-light);">
+                            <span style="width:7px;height:7px;border-radius:50%;background:var(--brand-light);box-shadow:0 0 8px var(--brand-glow);"></span>
+                            Öppen AI-plattform för offentlig sektor
+                        </div>
+                    </div>
+
+                    <h3>Advantage card</h3>
+                    <div class="gp-preview-stage" style="background:transparent;border:none;padding:0;">
+                        <div style="max-width:340px;">
+                            <div class="advantage-card">
+                                <div class="advantage-icon">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                </div>
+                                <h3 style="margin-top:0;">Datasuveränitet</h3>
+                                <p>Data behöver aldrig lämna Sverige. Du behåller kontrollen över var, hur och av vem den behandlas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Tag / chip</h3>
+                    <div class="gp-preview-stage row">
+                        <span class="doc-tag">Öppen källkod</span>
+                        <span class="doc-tag">EU-värd</span>
+                        <span class="doc-tag">Kompatibel</span>
+                        <span class="doc-tag">v1.9.0</span>
+                    </div>
+
+                    <h3>Feature item</h3>
+                    <div class="gp-preview-stage">
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <span class="feature-icon"></span>
+                                <p>Plattformen är öppen källkod under Apache 2.0.</p>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon"></span>
+                                <p>Stöd för svenska, kommunal terminologi och offentliga arbetsflöden.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SKUGGOR -->
+                <section class="gp-section" id="skuggor">
+                    <h2>Skuggor &amp; djup</h2>
+                    <p class="gp-lead">Skuggor används sparsamt för att signalera elevation och hover. Mörka teman har djupare alfa, ljust tema har subtilare.</p>
+
+                    <div class="gp-shadow-grid">
+                        <div class="gp-shadow-card s-sm">--shadow-sm</div>
+                        <div class="gp-shadow-card s-md">--shadow-md</div>
+                        <div class="gp-shadow-card s-lg">--shadow-lg</div>
+                        <div class="gp-shadow-card s-xl">--shadow-xl</div>
+                        <div class="gp-shadow-card s-brand">--shadow-brand</div>
+                        <div class="gp-shadow-card s-glow">--shadow-glow</div>
+                    </div>
+                </section>
+
+                <!-- FORM & SPACING -->
+                <section class="gp-section" id="form">
+                    <h2>Form &amp; spacing</h2>
+                    <p class="gp-lead">Mjuka hörn ger en vänlig, modern känsla. Skalan bygger på 4-px-multipler.</p>
+
+                    <h3>Border radius</h3>
+                    <div class="gp-radius-grid">
+                        <div class="gp-radius-card r-sm"><span>radius<br>0.5 rem</span><small>--radius</small></div>
+                        <div class="gp-radius-card r-md"><span>md<br>0.75 rem</span><small>--radius-md</small></div>
+                        <div class="gp-radius-card r-lg"><span>lg<br>1 rem</span><small>--radius-lg</small></div>
+                        <div class="gp-radius-card r-xl"><span>xl<br>1.5 rem</span><small>--radius-xl</small></div>
+                        <div class="gp-radius-card r-pill"><span>pill<br>100 px</span><small>(badge)</small></div>
+                    </div>
+
+                    <h3>Spacing-mått</h3>
+                    <div class="gp-spacing-row">
+                        <div class="gp-spacing-bar"><span>0.25 rem</span><span class="bar" style="width:4px;"></span></div>
+                        <div class="gp-spacing-bar"><span>0.5 rem</span><span class="bar" style="width:8px;"></span></div>
+                        <div class="gp-spacing-bar"><span>0.75 rem</span><span class="bar" style="width:12px;"></span></div>
+                        <div class="gp-spacing-bar"><span>1 rem</span><span class="bar" style="width:16px;"></span></div>
+                        <div class="gp-spacing-bar"><span>1.5 rem</span><span class="bar" style="width:24px;"></span></div>
+                        <div class="gp-spacing-bar"><span>2 rem</span><span class="bar" style="width:32px;"></span></div>
+                        <div class="gp-spacing-bar"><span>3 rem</span><span class="bar" style="width:48px;"></span></div>
+                        <div class="gp-spacing-bar"><span>5 rem</span><span class="bar" style="width:80px;"></span></div>
+                    </div>
+
+                    <div class="gp-callout">Containerns max-bredd är <code>68.75 rem</code> (1 100 px) med padding <code>clamp(1.25 rem, 5vw, 3 rem)</code>. Sektioner har vertikal padding <code>5 rem</code> (mobil: 3 rem).</div>
+                </section>
+
+                <!-- IKONER -->
+                <section class="gp-section" id="ikoner">
+                    <h2>Ikoner</h2>
+                    <p class="gp-lead">Ikoner är linjebaserade (stroke) i 1.8 px stroke, 24×24 viewBox och färgsätts med <code>currentColor</code>. Stilen följer Lucide / Feather-konventionen.</p>
+
+                    <div class="gp-icon-grid">
+                        <div class="gp-icon-card">
+                            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            <span>shield</span>
+                        </div>
+                        <div class="gp-icon-card">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                            <span>globe</span>
+                        </div>
+                        <div class="gp-icon-card">
+                            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                            <span>chat</span>
+                        </div>
+                        <div class="gp-icon-card">
+                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+                            <span>document</span>
+                        </div>
+                        <div class="gp-icon-card">
+                            <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                            <span>github</span>
+                        </div>
+                        <div class="gp-icon-card">
+                            <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                            <span>moon</span>
+                        </div>
+                        <div class="gp-icon-card">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                            <span>sun</span>
+                        </div>
+                        <div class="gp-icon-card">
+                            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            <span>arrow</span>
+                        </div>
+                    </div>
+
+                    <div class="gp-callout"><strong>Tips:</strong> Använd <code>aria-hidden="true"</code> på dekorativa ikoner och <code>role="img"</code> + <code>aria-label</code> på meningsbärande.</div>
+                </section>
+
+                <!-- RÖRELSE -->
+                <section class="gp-section" id="rorelse">
+                    <h2>Rörelse</h2>
+                    <p class="gp-lead">Animationer ska vara <strong>snabba, mjuka och respektfulla</strong> — aldrig distraherande. Sajten respekterar <code>prefers-reduced-motion</code>.</p>
+
+                    <table class="gp-table">
+                        <thead>
+                            <tr><th>Token</th><th>Värde</th><th>Användning</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><code>--transition-fast</code></td><td>0.15s cubic-bezier(0.4,0,0.2,1)</td><td>Mikrointeraktioner</td></tr>
+                            <tr><td><code>--transition-normal</code></td><td>0.2s ease</td><td>Standard, hover</td></tr>
+                            <tr><td><code>--transition-smooth</code></td><td>0.3s cubic-bezier(0.4,0,0.2,1)</td><td>Knapp / kort</td></tr>
+                            <tr><td><code>--transition-entrance</code></td><td>0.6s cubic-bezier(0.4,0,0.2,1)</td><td>Inanimering</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Mönster</h3>
+                    <ul style="list-style:disc;padding-left:1.5rem;color:var(--text-muted);line-height:1.8;font-size:0.95rem;">
+                        <li><strong style="color:var(--text);">Hover-lyft:</strong> kort flyttas upp 2–4 px med ökad skugga.</li>
+                        <li><strong style="color:var(--text);">Fade up:</strong> innehåll fadear in nedifrån vid scroll-entré (20 px translation).</li>
+                        <li><strong style="color:var(--text);">Pulse:</strong> badge-prick pulserar i 2.5 s loop som subtil livssignal.</li>
+                        <li><strong style="color:var(--text);">Reduced motion:</strong> alla translations stängs av om användaren begärt det.</li>
+                    </ul>
+                </section>
+
+                <!-- TONALITET -->
                 <section class="gp-section" id="tonalitet">
-                    <h2>Tonalitet</h2>
-                    <p>Eneo kommunicerar med en röst som är professionell men tillgänglig. Vi talar till offentlig sektor med respekt, tydlighet och värme.</p>
+                    <h2>Röst &amp; tonalitet</h2>
+                    <p class="gp-lead">Eneo skriver på <strong>tydlig svenska</strong>, för svensk offentlig sektor. Tonen är saklig, varm och självsäker — utan teknisk jargong eller hype.</p>
 
-                    <div class="gp-tone-grid">
-                        <div class="gp-tone-card">
-                            <h4>Professionell</h4>
-                            <p>Vi använder ett klart och formellt språk utan att vara stelt. Facktermer förklaras när de första gången introduceras.</p>
+                    <div class="gp-voice-grid">
+                        <div class="gp-voice"><strong>Tydlig</strong><p>Korta meningar. Konkret framför abstrakt. Förklara förkortningar första gången.</p></div>
+                        <div class="gp-voice"><strong>Saklig</strong><p>Underbygg påståenden med konkreta funktioner eller egenskaper. Undvik superlativer.</p></div>
+                        <div class="gp-voice"><strong>Inkluderande</strong><p>Skriv för läsaren — ofta en kommunal medarbetare. Ingen forskningsjargong eller AI-mystik.</p></div>
+                        <div class="gp-voice"><strong>Trygg</strong><p>Lyft frågor om datasuveränitet, integritet och kontroll proaktivt. Förtroende är centralt.</p></div>
+                    </div>
+
+                    <h3>Skriv så här &middot; skriv inte</h3>
+                    <div class="gp-voice-examples">
+                        <div class="gp-voice-example do">
+                            <span class="gp-voice-tag">Skriv så här</span>
+                            Eneo körs på svenska servrar. Du bestämmer var datan lagras och vem som har tillgång.
                         </div>
-                        <div class="gp-tone-card">
-                            <h4>Tillgänglig</h4>
-                            <p>Teknisk komplexitet förenklas utan att försumma noggrannhet. Alla ska kunna förstå, oavsett teknisk bakgrund.</p>
+                        <div class="gp-voice-example dont">
+                            <span class="gp-voice-tag">Inte så här</span>
+                            Vår banbrytande AI-plattform revolutionerar paradigmet för enterprise-grade compliance.
                         </div>
-                        <div class="gp-tone-card">
-                            <h4>Trovärdig</h4>
-                            <p>Vi understryker säkerhet, transparens och öppen källkod. Vi överdriver aldrig — fakta och resultat talar för sig själva.</p>
+                        <div class="gp-voice-example do">
+                            <span class="gp-voice-tag">Skriv så här</span>
+                            En öppen plattform — du kan granska koden, anpassa modulerna och bygga vidare själv.
                         </div>
-                        <div class="gp-tone-card">
-                            <h4>Inkluderande</h4>
-                            <p>Eneo är för hela offentliga Sverige. Vi använder ett språk som välkomnar alla kommuner, regioner och myndigheter.</p>
+                        <div class="gp-voice-example dont">
+                            <span class="gp-voice-tag">Inte så här</span>
+                            State-of-the-art LLM-orkestrering med next-gen RAG-arkitektur.
                         </div>
                     </div>
 
-                    <h3>Skrivregler</h3>
-                    <div class="gp-dos-donts" style="margin-top: 1rem;">
-                        <div class="gp-rule do">
-                            <strong>Gör så här</strong>
-                            "Eneo ger er kontroll över era AI-verktyg med full transparens och öppen källkod."
+                    <h3>Konventioner</h3>
+                    <ul style="list-style:disc;padding-left:1.5rem;color:var(--text-muted);line-height:1.8;font-size:0.95rem;">
+                        <li>&laquo;Eneo&raquo; eller &laquo;Eneo.ai&raquo; — alltid med versalt E. <em>Aldrig</em> &laquo;ENEO&raquo; eller &laquo;eneo.ai&raquo; i löptext.</li>
+                        <li>&laquo;AI&raquo; (versaler), &laquo;LLM&raquo; (versaler) — förkortningar utan punkter.</li>
+                        <li>Vi skriver &laquo;offentlig sektor&raquo;, inte &laquo;public sector&raquo; eller &laquo;myndighet&raquo; (det senare när det specifikt avses).</li>
+                        <li>Citationstecken: &laquo;svenska gåsögon&raquo;, inte "raka" eller "engelska".</li>
+                        <li>Tankstreck: – (en dash) med blanksteg, inte - (bindestreck).</li>
+                    </ul>
+                </section>
+
+                <!-- SOCIALA MEDIER -->
+                <section class="gp-section" id="sociala">
+                    <h2>Sociala medier</h2>
+                    <p class="gp-lead">Riktlinjer för avatar, omslag, OG-bild och inläggsformat. Konsekvens i avatar och tonalitet bygger igenkänning över tid.</p>
+
+                    <h3>Format</h3>
+                    <div class="gp-social-grid">
+                        <div class="gp-social avatar">
+                            <div class="gp-social-canvas">
+                                <svg class="logo-svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 172">
+                                    <path fill="#ffffff" d="M 107.5,-0.5 C 114.833,-0.5 122.167,-0.5 129.5,-0.5C 176.816,9.15707 202.149,38.1571 205.5,86.5C 203.389,125.423 184.389,152.257 148.5,167C 142.419,168.71 136.419,170.21 130.5,171.5C 123.5,171.5 116.5,171.5 109.5,171.5C 93.3852,168.947 78.7185,162.781 65.5,153C 57.3188,144.986 49.3188,136.819 41.5,128.5C 61.6527,107.847 81.9861,87.3471 102.5,67C 111.582,60.8816 121.249,59.8816 131.5,64C 144.46,73.9171 146.96,86.0837 139,100.5C 131.833,107.667 124.667,114.833 117.5,122C 138.893,122.044 151.726,111.544 156,90.5C 156.442,68.8872 146.275,55.0539 125.5,49C 112.803,46.9218 101.803,50.2552 92.5,59C 86.6667,64.8333 80.8333,70.6667 75,76.5C 63.5,65 52,53.5 40.5,42C 50.2305,31.5999 60.5639,21.9333 71.5,13C 82.7423,6.20074 94.7423,1.70074 107.5,-0.5 Z"/>
+                                    <path fill="#ffffff" d="M 649.5,76.5 C 649.5,82.1667 649.5,87.8333 649.5,93.5C 640.846,129.635 617.846,147.135 580.5,146C 552.923,141.09 535.59,125.09 528.5,98C 514.833,97.6667 501.167,97.3333 487.5,97C 480.994,93.8341 478.494,88.6674 480,81.5C 480.979,78.3749 482.813,75.8749 485.5,74C 498.401,72.538 511.401,72.038 524.5,72.5C 521.764,64.5453 516.764,58.3786 509.5,54C 488.763,45.1354 472.596,50.3021 461,69.5C 453.601,90.9824 459.767,107.149 479.5,118C 492.365,122.56 504.198,120.727 515,112.5C 519.225,119.939 523.725,127.272 528.5,134.5C 511.022,146.856 492.022,149.689 471.5,143C 466.51,141.335 462.01,138.835 458,135.5C 457.502,138.817 457.335,142.15 457.5,145.5C 448.833,145.5 440.167,145.5 431.5,145.5C 431.667,123.497 431.5,101.497 431,79.5C 426.715,61.265 415.215,51.265 396.5,49.5C 377.785,51.265 366.285,61.265 362,79.5C 361.5,101.497 361.333,123.497 361.5,145.5C 352.833,145.5 344.167,145.5 335.5,145.5C 335.5,129.5 335.5,113.5 335.5,97.5C 322.163,97.6666 308.829,97.4999 295.5,97C 287.991,92.8092 285.824,86.6426 289,78.5C 290.663,76.0833 292.829,74.25 295.5,73C 307.829,72.5001 320.162,72.3335 332.5,72.5C 327.027,58.2227 316.527,50.556 301,49.5C 282.085,51.1142 270.419,61.1142 266,79.5C 264.719,101.205 274.553,114.705 295.5,120C 303.532,121.06 311.032,119.56 318,115.5C 318.667,124.833 318.667,134.167 318,143.5C 289.265,150.965 266.265,142.631 249,118.5C 233.274,88.8088 237.108,61.9755 260.5,38C 285.142,19.8768 310.476,18.8768 336.5,35C 340.981,38.3143 344.981,42.1476 348.5,46.5C 369.825,23.1077 395.158,17.6077 424.5,30C 432.127,34.3166 438.794,39.8166 444.5,46.5C 465.825,23.1077 491.158,17.6077 520.5,30C 528.127,34.3166 534.794,39.8166 540.5,46.5C 561.825,23.1077 587.158,17.6077 616.5,30C 634.762,40.3615 645.762,55.8615 649.5,76.5 Z M 583.5,49.5 C 610.442,49.9416 623.609,63.6083 623,90.5C 619.82,107.013 609.987,116.846 593.5,120C 572.335,120.831 559.169,110.998 554,90.5C 552.92,68.7752 562.753,55.1085 583.5,49.5 Z"/>
+                                    <path fill="#ffffff" d="M -0.5,87.5 C -0.5,85.8333 -0.5,84.1667 -0.5,82.5C 10.1734,71.9931 21.0067,61.6598 32,51.5C 43.9725,62.3055 55.4725,73.6388 66.5,85.5C 55.5,97.1667 44.1667,108.5 32.5,119.5C 21.4793,108.812 10.4793,98.1453 -0.5,87.5 Z"/>
+                                </svg>
+                            </div>
+                            <div class="gp-social-meta">
+                                <strong>Avatar</strong>
+                                <span>1:1 · 400×400 · 1024×1024</span>
+                            </div>
                         </div>
-                        <div class="gp-rule dont">
-                            <strong>Undvik</strong>
-                            "Vår revolutionerande AI-lösning kommer att transformera er verksamhet på ett aldrig tidigare skådat sätt!"
+                        <div class="gp-social square">
+                            <div class="gp-social-canvas">
+                                <svg class="logo-svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 172" style="height:18%;">
+                                    <path fill="#1a7ad4" d="M 107.5,-0.5 C 114.833,-0.5 122.167,-0.5 129.5,-0.5C 176.816,9.15707 202.149,38.1571 205.5,86.5C 203.389,125.423 184.389,152.257 148.5,167C 142.419,168.71 136.419,170.21 130.5,171.5C 123.5,171.5 116.5,171.5 109.5,171.5C 93.3852,168.947 78.7185,162.781 65.5,153C 57.3188,144.986 49.3188,136.819 41.5,128.5C 61.6527,107.847 81.9861,87.3471 102.5,67C 111.582,60.8816 121.249,59.8816 131.5,64C 144.46,73.9171 146.96,86.0837 139,100.5C 131.833,107.667 124.667,114.833 117.5,122C 138.893,122.044 151.726,111.544 156,90.5C 156.442,68.8872 146.275,55.0539 125.5,49C 112.803,46.9218 101.803,50.2552 92.5,59C 86.6667,64.8333 80.8333,70.6667 75,76.5C 63.5,65 52,53.5 40.5,42C 50.2305,31.5999 60.5639,21.9333 71.5,13C 82.7423,6.20074 94.7423,1.70074 107.5,-0.5 Z"/>
+                                    <path fill="#ffffff" d="M 649.5,76.5 C 649.5,82.1667 649.5,87.8333 649.5,93.5C 640.846,129.635 617.846,147.135 580.5,146C 552.923,141.09 535.59,125.09 528.5,98C 514.833,97.6667 501.167,97.3333 487.5,97C 480.994,93.8341 478.494,88.6674 480,81.5C 480.979,78.3749 482.813,75.8749 485.5,74C 498.401,72.538 511.401,72.038 524.5,72.5C 521.764,64.5453 516.764,58.3786 509.5,54C 488.763,45.1354 472.596,50.3021 461,69.5C 453.601,90.9824 459.767,107.149 479.5,118C 492.365,122.56 504.198,120.727 515,112.5C 519.225,119.939 523.725,127.272 528.5,134.5C 511.022,146.856 492.022,149.689 471.5,143C 466.51,141.335 462.01,138.835 458,135.5C 457.502,138.817 457.335,142.15 457.5,145.5C 448.833,145.5 440.167,145.5 431.5,145.5C 431.667,123.497 431.5,101.497 431,79.5C 426.715,61.265 415.215,51.265 396.5,49.5C 377.785,51.265 366.285,61.265 362,79.5C 361.5,101.497 361.333,123.497 361.5,145.5C 352.833,145.5 344.167,145.5 335.5,145.5C 335.5,129.5 335.5,113.5 335.5,97.5C 322.163,97.6666 308.829,97.4999 295.5,97C 287.991,92.8092 285.824,86.6426 289,78.5C 290.663,76.0833 292.829,74.25 295.5,73C 307.829,72.5001 320.162,72.3335 332.5,72.5C 327.027,58.2227 316.527,50.556 301,49.5C 282.085,51.1142 270.419,61.1142 266,79.5C 264.719,101.205 274.553,114.705 295.5,120C 303.532,121.06 311.032,119.56 318,115.5C 318.667,124.833 318.667,134.167 318,143.5C 289.265,150.965 266.265,142.631 249,118.5C 233.274,88.8088 237.108,61.9755 260.5,38C 285.142,19.8768 310.476,18.8768 336.5,35C 340.981,38.3143 344.981,42.1476 348.5,46.5C 369.825,23.1077 395.158,17.6077 424.5,30C 432.127,34.3166 438.794,39.8166 444.5,46.5C 465.825,23.1077 491.158,17.6077 520.5,30C 528.127,34.3166 534.794,39.8166 540.5,46.5C 561.825,23.1077 587.158,17.6077 616.5,30C 634.762,40.3615 645.762,55.8615 649.5,76.5 Z M 583.5,49.5 C 610.442,49.9416 623.609,63.6083 623,90.5C 619.82,107.013 609.987,116.846 593.5,120C 572.335,120.831 559.169,110.998 554,90.5C 552.92,68.7752 562.753,55.1085 583.5,49.5 Z"/>
+                                    <path fill="#1a7ad4" d="M -0.5,87.5 C -0.5,85.8333 -0.5,84.1667 -0.5,82.5C 10.1734,71.9931 21.0067,61.6598 32,51.5C 43.9725,62.3055 55.4725,73.6388 66.5,85.5C 55.5,97.1667 44.1667,108.5 32.5,119.5C 21.4793,108.812 10.4793,98.1453 -0.5,87.5 Z"/>
+                                </svg>
+                                <span class="gp-social-tag">Square 1:1</span>
+                            </div>
+                            <div class="gp-social-meta">
+                                <strong>Inläggsbild</strong>
+                                <span>1:1 · 1080×1080</span>
+                            </div>
+                        </div>
+                        <div class="gp-social">
+                            <div class="gp-social-canvas">
+                                <svg class="logo-svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 172">
+                                    <path fill="#1a7ad4" d="M 107.5,-0.5 C 114.833,-0.5 122.167,-0.5 129.5,-0.5C 176.816,9.15707 202.149,38.1571 205.5,86.5C 203.389,125.423 184.389,152.257 148.5,167C 142.419,168.71 136.419,170.21 130.5,171.5C 123.5,171.5 116.5,171.5 109.5,171.5C 93.3852,168.947 78.7185,162.781 65.5,153C 57.3188,144.986 49.3188,136.819 41.5,128.5C 61.6527,107.847 81.9861,87.3471 102.5,67C 111.582,60.8816 121.249,59.8816 131.5,64C 144.46,73.9171 146.96,86.0837 139,100.5C 131.833,107.667 124.667,114.833 117.5,122C 138.893,122.044 151.726,111.544 156,90.5C 156.442,68.8872 146.275,55.0539 125.5,49C 112.803,46.9218 101.803,50.2552 92.5,59C 86.6667,64.8333 80.8333,70.6667 75,76.5C 63.5,65 52,53.5 40.5,42C 50.2305,31.5999 60.5639,21.9333 71.5,13C 82.7423,6.20074 94.7423,1.70074 107.5,-0.5 Z"/>
+                                    <path fill="#ffffff" d="M 649.5,76.5 C 649.5,82.1667 649.5,87.8333 649.5,93.5C 640.846,129.635 617.846,147.135 580.5,146C 552.923,141.09 535.59,125.09 528.5,98C 514.833,97.6667 501.167,97.3333 487.5,97C 480.994,93.8341 478.494,88.6674 480,81.5C 480.979,78.3749 482.813,75.8749 485.5,74C 498.401,72.538 511.401,72.038 524.5,72.5C 521.764,64.5453 516.764,58.3786 509.5,54C 488.763,45.1354 472.596,50.3021 461,69.5C 453.601,90.9824 459.767,107.149 479.5,118C 492.365,122.56 504.198,120.727 515,112.5C 519.225,119.939 523.725,127.272 528.5,134.5C 511.022,146.856 492.022,149.689 471.5,143C 466.51,141.335 462.01,138.835 458,135.5C 457.502,138.817 457.335,142.15 457.5,145.5C 448.833,145.5 440.167,145.5 431.5,145.5C 431.667,123.497 431.5,101.497 431,79.5C 426.715,61.265 415.215,51.265 396.5,49.5C 377.785,51.265 366.285,61.265 362,79.5C 361.5,101.497 361.333,123.497 361.5,145.5C 352.833,145.5 344.167,145.5 335.5,145.5C 335.5,129.5 335.5,113.5 335.5,97.5C 322.163,97.6666 308.829,97.4999 295.5,97C 287.991,92.8092 285.824,86.6426 289,78.5C 290.663,76.0833 292.829,74.25 295.5,73C 307.829,72.5001 320.162,72.3335 332.5,72.5C 327.027,58.2227 316.527,50.556 301,49.5C 282.085,51.1142 270.419,61.1142 266,79.5C 264.719,101.205 274.553,114.705 295.5,120C 303.532,121.06 311.032,119.56 318,115.5C 318.667,124.833 318.667,134.167 318,143.5C 289.265,150.965 266.265,142.631 249,118.5C 233.274,88.8088 237.108,61.9755 260.5,38C 285.142,19.8768 310.476,18.8768 336.5,35C 340.981,38.3143 344.981,42.1476 348.5,46.5C 369.825,23.1077 395.158,17.6077 424.5,30C 432.127,34.3166 438.794,39.8166 444.5,46.5C 465.825,23.1077 491.158,17.6077 520.5,30C 528.127,34.3166 534.794,39.8166 540.5,46.5C 561.825,23.1077 587.158,17.6077 616.5,30C 634.762,40.3615 645.762,55.8615 649.5,76.5 Z M 583.5,49.5 C 610.442,49.9416 623.609,63.6083 623,90.5C 619.82,107.013 609.987,116.846 593.5,120C 572.335,120.831 559.169,110.998 554,90.5C 552.92,68.7752 562.753,55.1085 583.5,49.5 Z"/>
+                                    <path fill="#1a7ad4" d="M -0.5,87.5 C -0.5,85.8333 -0.5,84.1667 -0.5,82.5C 10.1734,71.9931 21.0067,61.6598 32,51.5C 43.9725,62.3055 55.4725,73.6388 66.5,85.5C 55.5,97.1667 44.1667,108.5 32.5,119.5C 21.4793,108.812 10.4793,98.1453 -0.5,87.5 Z"/>
+                                </svg>
+                                <span class="gp-social-tag">OG / länkkort 1.91:1</span>
+                            </div>
+                            <div class="gp-social-meta">
+                                <strong>OG-bild</strong>
+                                <span>1.91:1 · 1200×630</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="gp-dos-donts" style="margin-top: 1rem;">
-                        <div class="gp-rule do">
-                            <strong>Gör så här</strong>
-                            "Byggd med fokus på säkerhet och demokratisk kontroll, anpassad för offentlig sektor."
-                        </div>
-                        <div class="gp-rule dont">
-                            <strong>Undvik</strong>
-                            "Den bästa AI-plattformen på marknaden — inget annat kommer ens i närheten."
-                        </div>
+
+                    <h3>Riktlinjer per kanal</h3>
+                    <table class="gp-table">
+                        <thead>
+                            <tr><th>Kanal</th><th>Avatar</th><th>Omslag/banner</th><th>Inlägg</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>LinkedIn</td><td>400×400</td><td>1128×191</td><td>1200×627 (länk) eller 1080×1080</td></tr>
+                            <tr><td>X / Bluesky</td><td>400×400</td><td>1500×500</td><td>1200×675</td></tr>
+                            <tr><td>YouTube</td><td>800×800</td><td>2560×1440</td><td>Tumnagel 1280×720</td></tr>
+                            <tr><td>OG (länkdelning)</td><td>—</td><td>—</td><td>1200×630 (placerad i <code>public/logo-eneo.png</code>)</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Inläggsstruktur</h3>
+                    <ul style="list-style:disc;padding-left:1.5rem;color:var(--text-muted);line-height:1.8;font-size:0.95rem;">
+                        <li><strong style="color:var(--text);">Krok</strong> — En konkret iakttagelse eller fråga, första raden.</li>
+                        <li><strong style="color:var(--text);">Substans</strong> — Vad är nytt? Varför spelar det roll för offentlig sektor?</li>
+                        <li><strong style="color:var(--text);">Avslut</strong> — Länk, fråga eller inbjudan till samarbete.</li>
+                        <li><strong style="color:var(--text);">Hashtaggar</strong> — Sparsam användning. Föredra svenska: #offentligsektor #digitalisering #AI #öppenkällkod.</li>
+                    </ul>
+
+                    <div class="gp-callout"><strong>Bildregler:</strong> Använd alltid varumärkesblå bakgrund eller den mörka hero-glow-gradienten. Undvik stockfoton som inte representerar svensk offentlig sektor. Bilder ska vara läsbara även på liten skärm — text minst 32 px för OG-bilder.</div>
+                </section>
+
+                <!-- TILLGÄNGLIGHET -->
+                <section class="gp-section" id="tillganglighet">
+                    <h2>Tillgänglighet</h2>
+                    <p class="gp-lead">Eneo riktar sig till offentlig sektor — tillgänglighet är ett baskrav, inte en pluskvalitet. Designen följer WCAG 2.1 AA.</p>
+
+                    <ul style="list-style:disc;padding-left:1.5rem;color:var(--text-muted);line-height:1.8;font-size:0.95rem;">
+                        <li><strong style="color:var(--text);">Kontrast:</strong> brödtext mot bakgrund &ge; 4.5:1, stora rubriker &ge; 3:1.</li>
+                        <li><strong style="color:var(--text);">Fokus:</strong> alla interaktiva element har tydlig fokusring (<code>outline: 2px solid var(--brand-bright)</code>).</li>
+                        <li><strong style="color:var(--text);">Tangentbord:</strong> all navigation och interaktion ska gå att nå med tabb och retur.</li>
+                        <li><strong style="color:var(--text);">Hoppa till innehåll:</strong> varje sida börjar med en skip-länk till <code>#main-content</code>.</li>
+                        <li><strong style="color:var(--text);">Reduced motion:</strong> respektera <code>prefers-reduced-motion</code> — animationer stängs av.</li>
+                        <li><strong style="color:var(--text);">Forced colors:</strong> gradient-text faller tillbaka till <code>LinkText</code> i Windows High Contrast.</li>
+                        <li><strong style="color:var(--text);">Språk:</strong> alltid <code>lang="sv"</code> i HTML-rotelementet.</li>
+                        <li><strong style="color:var(--text);">Alt-text:</strong> meningsbärande bilder får beskrivande alt; dekorativa får <code>alt=""</code> eller <code>aria-hidden="true"</code>.</li>
+                    </ul>
+
+                    <div class="gp-callout"><strong>Tillgänglighetsredogörelse:</strong> Den officiella redogörelsen finns på <a href="../tillganglighetsredogorelse.html" style="color:var(--brand-light);text-decoration:underline;">tillganglighetsredogorelse.html</a> och uppdateras minst en gång per år.</div>
+                </section>
+
+                <!-- RESURSER -->
+                <section class="gp-section" id="resurser">
+                    <h2>Resurser</h2>
+                    <p class="gp-lead">Filer för nedladdning. För konsekvens — använd alltid de officiella filerna nedan, inte skärmdumpar eller exporter från Word.</p>
+
+                    <div class="gp-resources">
+                        <a class="gp-resource" href="../public/images/Eneo-logo-svg.svg" download>
+                            <span class="gp-resource-icon"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></span>
+                            <span class="gp-resource-meta">
+                                <strong>Logotyp · SVG</strong>
+                                <span>Eneo-logo-svg.svg</span>
+                            </span>
+                        </a>
+                        <a class="gp-resource" href="../public/logo-eneo.png" download>
+                            <span class="gp-resource-icon"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></span>
+                            <span class="gp-resource-meta">
+                                <strong>Logotyp · PNG</strong>
+                                <span>logo-eneo.png &middot; OG-bild</span>
+                            </span>
+                        </a>
+                        <a class="gp-resource" href="../public/favicon.ico" download>
+                            <span class="gp-resource-icon"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></span>
+                            <span class="gp-resource-meta">
+                                <strong>Favicon</strong>
+                                <span>favicon.ico &middot; 16/32/48</span>
+                            </span>
+                        </a>
+                        <a class="gp-resource" href="../public/apple-touch-icon.png" download>
+                            <span class="gp-resource-icon"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></span>
+                            <span class="gp-resource-meta">
+                                <strong>Apple touch icon</strong>
+                                <span>180×180</span>
+                            </span>
+                        </a>
+                        <a class="gp-resource" href="../DESIGN-GUIDE.md">
+                            <span class="gp-resource-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></span>
+                            <span class="gp-resource-meta">
+                                <strong>Designguide (Markdown)</strong>
+                                <span>DESIGN-GUIDE.md</span>
+                            </span>
+                        </a>
+                        <a class="gp-resource" href="../css/v2-variables.css">
+                            <span class="gp-resource-icon"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+                            <span class="gp-resource-meta">
+                                <strong>Designtokens (CSS)</strong>
+                                <span>css/v2-variables.css</span>
+                            </span>
+                        </a>
                     </div>
                 </section>
 
-            </div><!-- /gp-main -->
-        </div><!-- /gp-layout -->
+            </div>
+        </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
+    <!-- FOOTER -->
+    <footer class="v2-footer">
         <div class="container">
-            <div class="footer-grid">
+            <div class="footer-intro">
                 <div class="footer-logo">
-                    <img src="../public/images/Eneo-logo-svg.svg" alt="Eneo.ai">
+                    <svg role="img" aria-label="Eneo logotyp" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 172" style="height:22px;width:auto;shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;fill-rule:evenodd;clip-rule:evenodd;">
+                        <path fill="#1a7ad4" d="M 107.5,-0.5 C 114.833,-0.5 122.167,-0.5 129.5,-0.5C 176.816,9.15707 202.149,38.1571 205.5,86.5C 203.389,125.423 184.389,152.257 148.5,167C 142.419,168.71 136.419,170.21 130.5,171.5C 123.5,171.5 116.5,171.5 109.5,171.5C 93.3852,168.947 78.7185,162.781 65.5,153C 57.3188,144.986 49.3188,136.819 41.5,128.5C 61.6527,107.847 81.9861,87.3471 102.5,67C 111.582,60.8816 121.249,59.8816 131.5,64C 144.46,73.9171 146.96,86.0837 139,100.5C 131.833,107.667 124.667,114.833 117.5,122C 138.893,122.044 151.726,111.544 156,90.5C 156.442,68.8872 146.275,55.0539 125.5,49C 112.803,46.9218 101.803,50.2552 92.5,59C 86.6667,64.8333 80.8333,70.6667 75,76.5C 63.5,65 52,53.5 40.5,42C 50.2305,31.5999 60.5639,21.9333 71.5,13C 82.7423,6.20074 94.7423,1.70074 107.5,-0.5 Z"/>
+                        <path class="logo-text" d="M 649.5,76.5 C 649.5,82.1667 649.5,87.8333 649.5,93.5C 640.846,129.635 617.846,147.135 580.5,146C 552.923,141.09 535.59,125.09 528.5,98C 514.833,97.6667 501.167,97.3333 487.5,97C 480.994,93.8341 478.494,88.6674 480,81.5C 480.979,78.3749 482.813,75.8749 485.5,74C 498.401,72.538 511.401,72.038 524.5,72.5C 521.764,64.5453 516.764,58.3786 509.5,54C 488.763,45.1354 472.596,50.3021 461,69.5C 453.601,90.9824 459.767,107.149 479.5,118C 492.365,122.56 504.198,120.727 515,112.5C 519.225,119.939 523.725,127.272 528.5,134.5C 511.022,146.856 492.022,149.689 471.5,143C 466.51,141.335 462.01,138.835 458,135.5C 457.502,138.817 457.335,142.15 457.5,145.5C 448.833,145.5 440.167,145.5 431.5,145.5C 431.667,123.497 431.5,101.497 431,79.5C 426.715,61.265 415.215,51.265 396.5,49.5C 377.785,51.265 366.285,61.265 362,79.5C 361.5,101.497 361.333,123.497 361.5,145.5C 352.833,145.5 344.167,145.5 335.5,145.5C 335.5,129.5 335.5,113.5 335.5,97.5C 322.163,97.6666 308.829,97.4999 295.5,97C 287.991,92.8092 285.824,86.6426 289,78.5C 290.663,76.0833 292.829,74.25 295.5,73C 307.829,72.5001 320.162,72.3335 332.5,72.5C 327.027,58.2227 316.527,50.556 301,49.5C 282.085,51.1142 270.419,61.1142 266,79.5C 264.719,101.205 274.553,114.705 295.5,120C 303.532,121.06 311.032,119.56 318,115.5C 318.667,124.833 318.667,134.167 318,143.5C 289.265,150.965 266.265,142.631 249,118.5C 233.274,88.8088 237.108,61.9755 260.5,38C 285.142,19.8768 310.476,18.8768 336.5,35C 340.981,38.3143 344.981,42.1476 348.5,46.5C 369.825,23.1077 395.158,17.6077 424.5,30C 432.127,34.3166 438.794,39.8166 444.5,46.5C 465.825,23.1077 491.158,17.6077 520.5,30C 528.127,34.3166 534.794,39.8166 540.5,46.5C 561.825,23.1077 587.158,17.6077 616.5,30C 634.762,40.3615 645.762,55.8615 649.5,76.5 Z M 583.5,49.5 C 610.442,49.9416 623.609,63.6083 623,90.5C 619.82,107.013 609.987,116.846 593.5,120C 572.335,120.831 559.169,110.998 554,90.5C 552.92,68.7752 562.753,55.1085 583.5,49.5 Z"/>
+                        <path fill="#1a7ad4" d="M -0.5,87.5 C -0.5,85.8333 -0.5,84.1667 -0.5,82.5C 10.1734,71.9931 21.0067,61.6598 32,51.5C 43.9725,62.3055 55.4725,73.6388 66.5,85.5C 55.5,97.1667 44.1667,108.5 32.5,119.5C 21.4793,108.812 10.4793,98.1453 -0.5,87.5 Z"/>
+                    </svg>
                 </div>
-                <div class="footer-section">
-                    <div class="footer-contact-block">
-                        <h3>Kontakt</h3>
-                        <a href="mailto:digitalisering@sundsvall.se">digitalisering@sundsvall.se</a>
-                    </div>
+                <p>Ett initiativ från Sundsvalls kommun och Ånge kommun för hela offentliga Sverige.</p>
+            </div>
+            <div class="footer-grid">
+                <div class="footer-box">
+                    <p class="footer-heading">Kontakt</p>
+                    <a href="mailto:digitalisering@sundsvall.se">digitalisering@sundsvall.se</a>
+                </div>
+                <div class="footer-box">
+                    <p class="footer-heading">Ladda ned</p>
+                    <a href="https://github.com/eneo-ai/eneo">Källkod</a>
+                </div>
+                <div class="footer-box">
+                    <p class="footer-heading">Tillgänglighet</p>
+                    <a href="../tillganglighetsredogorelse.html">Tillgänglighetsredogörelse</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>Ett initiativ från Sundsvalls kommun och Ånge kommun för hela offentliga Sverige</p>
+                <p>© Sundsvalls kommun och Ånge kommun</p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="../js/main.js"></script>
+    <!-- JS -->
+    <script src="../js/main.js?v=2"></script>
     <script>
-        // Sidebar active state on scroll
-        (function() {
-            var sections = document.querySelectorAll('.gp-section[id]');
-            var links = document.querySelectorAll('.gp-sidebar a');
-
-            function setActive() {
-                var scrollY = window.scrollY + 120;
-                sections.forEach(function(section) {
-                    var top = section.offsetTop;
-                    var height = section.offsetHeight;
-                    var id = section.getAttribute('id');
-                    if (scrollY >= top && scrollY < top + height) {
-                        links.forEach(function(link) {
-                            link.classList.remove('active');
-                            if (link.getAttribute('href') === '#' + id) {
-                                link.classList.add('active');
-                            }
-                        });
+        // Sidebar scroll-spy
+        (function () {
+            const links = document.querySelectorAll('.gp-sidebar nav a');
+            const sections = Array.from(links).map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+            if (!('IntersectionObserver' in window) || sections.length === 0) return;
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + entry.target.id));
                     }
                 });
-            }
-
-            window.addEventListener('scroll', setActive);
-            setActive();
-
-            // Smooth scroll for sidebar links
-            links.forEach(function(link) {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    var target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        var offset = target.offsetTop - 100;
-                        window.scrollTo({ top: offset, behavior: 'smooth' });
-                    }
-                });
-            });
+            }, { rootMargin: '-30% 0px -60% 0px', threshold: 0 });
+            sections.forEach(s => observer.observe(s));
         })();
     </script>
 </body>
