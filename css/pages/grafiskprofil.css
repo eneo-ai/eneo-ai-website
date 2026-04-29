@@ -207,6 +207,52 @@
     gap: 1.25rem;
 }
 
+.gp-logo-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.gp-logo-downloads {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.gp-logo-downloads a {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.55rem 0.75rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all var(--transition-smooth);
+}
+
+.gp-logo-downloads a:hover,
+.gp-logo-downloads a:focus-visible {
+    color: var(--brand-light);
+    border-color: var(--border-hover);
+    background: var(--brand-dim);
+    transform: translateY(-1px);
+}
+
+.gp-logo-downloads svg {
+    width: 14px;
+    height: 14px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
 .gp-logo-preview {
     border-radius: var(--radius-lg);
     border: 1px solid var(--border);
