@@ -33,13 +33,6 @@
     font-size: 3.5rem;
     opacity: 0.35;
 }
-.featured-img::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, transparent 50%, rgba(6,12,23,0.4));
-    pointer-events: none;
-}
 .featured-body {
     padding: 2.5rem;
     display: flex;
