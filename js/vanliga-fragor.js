@@ -24,6 +24,33 @@
         return { item, text, category: item.dataset.category || '' };
     });
 
+    // Slug helper for auto-generated anchor ids
+    function slugify(text) {
+        return (text || '')
+            .toLowerCase()
+            .replace(/å|ä/g, 'a')
+            .replace(/ö/g, 'o')
+            .replace(/[^\w\s-]/g, '')
+            .trim()
+            .replace(/\s+/g, '-')
+            .replace(/-+/g, '-');
+    }
+
+    // Auto-assign id to items without one so every question gets a stable anchor.
+    // Manually set ids are preserved; collisions get a numeric suffix.
+    const usedIds = new Set();
+    items.forEach(item => { if (item.id) usedIds.add(item.id); });
+    items.forEach(item => {
+        if (item.id) return;
+        const q = item.querySelector('.faq-q-text');
+        const base = 'faq-' + (slugify(q ? q.textContent : '') || 'item');
+        let id = base;
+        let n = 2;
+        while (usedIds.has(id)) { id = base + '-' + n; n++; }
+        item.id = id;
+        usedIds.add(id);
+    });
+
     let activeFilter = 'all';
     let currentQuery = '';
 
@@ -127,7 +154,6 @@
 
     // Keep hash in URL when opening an item (without scroll-jump)
     items.forEach(item => {
-        if (!item.id) return;
         item.addEventListener('toggle', () => {
             if (item.open && history.replaceState) {
                 history.replaceState(null, '', '#' + item.id);
