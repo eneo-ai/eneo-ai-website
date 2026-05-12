@@ -52,6 +52,7 @@
                 <li><a href="docs.html">Docs</a></li>
                 <li><a href="versioner.html">Versioner</a></li>
                 <li><a href="nyheter.html">Nyheter</a></li>
+                <li><a href="vanliga-fragor.html" class="nav-active">FAQ</a></li>
             </ul>
             <div class="nav-actions">
                 <button id="theme-toggle" class="theme-toggle" onclick="Eneo.toggleTheme()" aria-label="Byt tema">
@@ -73,6 +74,7 @@
             <a href="docs.html">Docs</a>
             <a href="versioner.html">Versioner</a>
             <a href="nyheter.html">Nyheter</a>
+            <a href="vanliga-fragor.html">FAQ</a>
         </div>
     </nav>
 
@@ -157,7 +159,7 @@
                             <svg class="faq-q-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                         </summary>
                         <div class="faq-answer">
-                            <p><strong>Ja, själva Eneo-plattformen är fri programvara med öppen källkod.</strong> Det finns ingen licensavgift för att ladda ner, installera eller använda Eneo, och inga begränsningar på antal användare.</p>
+                            <p><strong>Ja, själva Eneo-plattformen är fri programvara med öppen källkod.</strong> Det finns ingen licensavgift för att ladda ner, installera eller använda Eneo, och inga begränsningar på antal användare — men självklart kostar det att drifta och supportera Eneo.</p>
                             <p>Som kommun eller offentlig aktör har ni två huvudvägar att driva Eneo:</p>
                             <ul>
                                 <li><strong>Installera lokalt</strong> — er egen IT-avdelning sköter driften i er befintliga miljö. Kostnaden beror på vilka resurser ni redan har och hur stort ni vill köra.</li>
@@ -178,8 +180,14 @@
                             <svg class="faq-q-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                         </summary>
                         <div class="faq-answer">
-                            <p>Kostnaden beror främst på vilken skala ni vill köra och vilka AI-modeller ni väljer. För en pilot eller mindre installation räcker det ofta med modesta serverresurser och en eller två tekniker som sätter upp miljön.</p>
-                            <p>Vill ni köra större och produktionsmässigt rekommenderar vi dimensionering tillsammans med samarbetsforumet, där andra organisationer delar med sig av sina driftserfarenheter och kostnadsuppskattningar.</p>
+                            <p><strong>Det beror på vad ni vill göra med plattformen.</strong> En av Eneos styrkor är att den har låga krav på hårdvara och tekniska förutsättningar — för själva plattformen krävs ingen kostsam GPU, och ni kan komma igång på en enda server.</p>
+                            <p>Som riktmärken kan ni räkna med:</p>
+                            <ul>
+                                <li><strong>Test eller pilot</strong> — några hundralappar per månad räcker för att utvärdera Eneo i mindre skala.</li>
+                                <li><strong>Produktion för hela kommunen</strong> — 5 000–10 000 kr per månad är realistiskt för en kommun som rullar Eneo brett internt.</li>
+                            </ul>
+                            <p>Det som däremot kan dra iväg är användningen av AI-modeller. Där bestämmer ni själva vilka modeller som ska användas — i ett testskede kan ni välja enkla och kostnadseffektiva alternativ och sedan skala upp efter behov. Ni har alltså full kontroll över den delen av kostnaden.</p>
+                            <p>För större och produktionsmässiga installationer rekommenderar vi dimensionering tillsammans med samarbetsforumet, där andra organisationer delar med sig av sina driftserfarenheter och kostnadsuppskattningar.</p>
                         </div>
                     </details>
                 </div>
@@ -199,14 +207,15 @@
                             <svg class="faq-q-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                         </summary>
                         <div class="faq-answer">
-                            <p><strong>Eneo är byggt för att köras i er egen miljö</strong> — det är en av kärnpunkterna med plattformen. Det är så ni får full kontroll över data och kan garantera datasuveränitet.</p>
-                            <p>Det finns flera vägar fram:</p>
+                            <p><strong>Nej, det behöver ni inte.</strong> Eneo kan absolut köras i egen miljö — och att ha full kontroll över var och hur plattformen driftas är en av kärnpunkterna med Eneo. Det är så ni får full kontroll över er data och kan garantera datasuveränitet.</p>
+                            <p>Men det är inget krav. Det finns redan idag aktörer på marknaden som levererar Eneo som en nyckelfärdig molntjänst — om ni önskar kan ni välja en partner som driftar 100&nbsp;% i svensk datahall.</p>
+                            <p>Det finns alltså tre huvudvägar:</p>
                             <ul>
-                                <li><strong>Egen drift</strong> — ni installerar Eneo själva i er infrastruktur (lokalt eller i molnet). Allt ni behöver finns dokumenterat och som öppen källkod.</li>
-                                <li><strong>Kommunal samverkan</strong> — flera kommuner samarbetar redan om gemensam drift via samarbetsforumet.</li>
-                                <li><strong>Driftpartner</strong> — ni kan ta hjälp av en extern leverantör som driftar Eneo åt er, men där ni fortfarande äger data och miljön.</li>
+                                <li><strong>Egen drift</strong> — ni installerar Eneo själva i er infrastruktur (lokalt eller i eget moln). Allt ni behöver finns dokumenterat och som öppen källkod, och flera kommuner samarbetar redan om gemensam drift via samarbetsforumet.</li>
+                                <li><strong>Upphandlad molntjänst</strong> — en driftpartner sätter upp och förvaltar Eneo åt er. Om er kommun inte har alla förmågor som krävs för att tillhandahålla Eneo lokalt på ett hållbart sätt över tid kan det vara ett bra alternativ — och det behöver inte vara mindre säkert.</li>
+                                <li><strong>Via Sambruk</strong> — är er kommun medlem i Sambruk erbjuder även de tjänster kring Eneo, vilket kan vara en smidig väg in för kommuner som redan samverkar genom föreningen.</li>
                             </ul>
-                            <p>Eneo levereras inte som en SaaS-tjänst där en leverantör hanterar er data åt er — just för att undvika att medborgardata hamnar utanför er kontroll.</p>
+                            <p>Oavsett väg behåller ni kontrollen över valet av AI-modeller, var data behandlas och vilka som har åtkomst.</p>
                         </div>
                     </details>
 
@@ -216,8 +225,14 @@
                             <svg class="faq-q-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                         </summary>
                         <div class="faq-answer">
-                            <p>Eneo körs i Docker-baserade containrar och kan köras både lokalt (on-prem) och i molnplattformar som Azure, AWS eller GCP. Grundkraven är blygsamma — ni kan komma igång på en enda server.</p>
-                            <p>Vill ni köra egna språkmodeller lokalt behövs GPU-resurser, men ni kan också välja att enbart koppla in externa AI-modeller via API och då räcker vanliga CPU-servrar.</p>
+                            <p><strong>Eneo har medvetet låga krav på infrastruktur.</strong> Plattformen är byggd för att kunna köras hos i princip vilken offentlig aktör som helst, utan att kräva omfattande hårdvara eller specialresurser. Ofta räcker det med en enda server för att komma igång.</p>
+                            <p>Några viktiga punkter:</p>
+                            <ul>
+                                <li><strong>Ingen GPU krävs</strong> — själva plattformen kör utmärkt på vanliga CPU-servrar. GPU är något ni kan välja att lägga till om ni vill köra egna språkmodeller lokalt, men det är inget krav.</li>
+                                <li><strong>Externa AI-modeller fungerar även lokalt</strong> — ni kan koppla in modeller från externa leverantörer (t.ex. via Azure OpenAI) även när Eneo körs i er egen miljö.</li>
+                                <li><strong>Containerbaserad drift</strong> — Eneo körs i Docker-containrar och fungerar både on-prem och i molnplattformar som Azure, AWS eller GCP.</li>
+                            </ul>
+                            <p>För detaljerade och aktuella hårdvarukrav, se <a href="https://docs.eneo.ai" target="_blank" rel="noopener">docs.eneo.ai</a>.</p>
                         </div>
                     </details>
 
@@ -227,8 +242,9 @@
                             <svg class="faq-q-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                         </summary>
                         <div class="faq-answer">
-                            <p>All data lagras där <em>ni</em> väljer att lagra den — i er egen infrastruktur, i ert eget moln eller i en miljö ni själva har valt. Eneo skickar aldrig data till tredje part utan att ni aktivt har konfigurerat det.</p>
+                            <p><strong>All data lagras där ni väljer att lagra den</strong> — i er egen infrastruktur, i ert eget moln eller i en miljö ni själva har valt. Eneo skickar aldrig data till tredje part utan att ni aktivt har konfigurerat det.</p>
                             <p>Om ni väljer att koppla in externa AI-modeller (t.ex. via Azure OpenAI) går prompten till den valda leverantören enligt deras avtal — men det är ett medvetet val ni gör per modell, inte ett standardbeteende.</p>
+                            <p>Vill ni säkerställa att ingen data alls lämnar er organisation kan ni installera Eneo lokalt och köra egna språkmodeller på er egen GPU-kraft. Då stannar både prompts och svar i er egen datahall — full datasuveränitet i praktiken.</p>
                         </div>
                     </details>
                 </div>
@@ -248,16 +264,19 @@
                             <svg class="faq-q-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                         </summary>
                         <div class="faq-answer">
-                            <p>Eneo och Microsoft Copilot löser olika problem. Copilot är en bred produktivitetsassistent inbäddad i Microsofts produkter; Eneo är en öppen plattform som ni själva kontrollerar. De viktigaste skillnaderna:</p>
+                            <p>Eneo och Microsoft Copilot löser olika problem. <strong>Många organisationer väljer eller överväger Copilot som en produktivitetshöjande assistent kring Office-programmen</strong> — alltså som ett stöd när användare skriver i Word, sammanfattar i Outlook eller analyserar i Excel.</p>
+                            <p><strong>Eneo är en öppen plattform som hanterar både verksamhetsprocesser och data från flera olika systemkällor</strong> — och kan dessutom köras på sätt som gör att även känslig och sekretessbelagd data kan hanteras. Det är något Microsoft Copilot inte kan idag.</p>
+                            <p>De viktigaste skillnaderna:</p>
                             <div class="faq-compare">
                                 <div class="faq-compare-card">
                                     <h4>Eneo</h4>
                                     <ul>
                                         <li>Öppen källkod — granskbar, anpassningsbar, utan inlåsning</li>
                                         <li>Drift i er egen miljö — full datasuveränitet</li>
+                                        <li>Kan hantera känslig och sekretessbelagd data när den driftas rätt</li>
+                                        <li>Integrerar mot flera systemkällor och stöder verksamhetsprocesser</li>
                                         <li>Fri valbar AI-modell (även egna, lokala modeller)</li>
-                                        <li>Byggd specifikt för offentlig sektors krav</li>
-                                        <li>Gemensamt utvecklad av kommuner</li>
+                                        <li>Byggd specifikt för offentlig sektors krav, gemensamt utvecklad av kommuner</li>
                                     </ul>
                                 </div>
                                 <div class="faq-compare-card alt">
@@ -265,13 +284,15 @@
                                     <ul>
                                         <li>Proprietär tjänst från Microsoft</li>
                                         <li>Drift i Microsofts moln</li>
+                                        <li>Inte avsedd för att hantera sekretessbelagd data</li>
+                                        <li>Inbäddad i Microsoft 365-produkter, fokus på produktivitet i Office</li>
                                         <li>Bunden till OpenAI:s modeller via Microsoft</li>
-                                        <li>Inbäddad i Microsoft 365-produkter</li>
                                         <li>Användningsbaserad licens per användare</li>
                                     </ul>
                                 </div>
                             </div>
-                            <p>Många organisationer använder båda — Copilot för Office-arbete och Eneo för verksamhetsspecifika AI-lösningar där ni behöver full kontroll över data och beteende.</p>
+                            <p>Många organisationer använder båda — Copilot som produktivitetsstöd i Office-arbetet och Eneo för verksamhetsspecifika AI-lösningar där ni behöver full kontroll, hantering av känslig data och integration med flera systemkällor.</p>
+                            <p>De kompletterar alltså varandra snarare än konkurrerar. Det finns till exempel ingen plan att integrera Eneo i PowerPoint för att bygga snygga presentationer — den typen av produktivitetsuppgifter är just det Copilot är byggd för.</p>
                         </div>
                     </details>
 
@@ -281,39 +302,53 @@
                             <svg class="faq-q-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                         </summary>
                         <div class="faq-answer">
-                            <p>Eneo och Svea har båda offentlig sektor som målgrupp men har olika utgångspunkter. Eneo är en bred AI-plattform med öppen källkod som körs i er egen miljö, medan Svea är en svensk språkmodell utvecklad av AI Sweden.</p>
+                            <p>Eneo och Svea har båda offentlig sektor som målgrupp men har olika ansatser.</p>
+                            <p><strong>Svea-projektet har lagt mycket fokus på enskilda processer</strong> — tusentals timmar har gått åt till att träna och konfigurera assistenten inom specifika verksamhetsområden. Det ger djup på utvalda områden men kräver också omfattande projektarbete för varje nytt scenario.</p>
+                            <p><strong>Eneo är istället en generalistplattform.</strong> Här kan ni bygga AI-tjänster för alla typer av verksamheter och processer — samma kärnplattform oavsett om det handlar om medborgardialog, internt stöd, ärendehantering eller dokumentanalys.</p>
+                            <p>De viktigaste skillnaderna:</p>
                             <div class="faq-compare">
                                 <div class="faq-compare-card">
                                     <h4>Eneo</h4>
                                     <ul>
-                                        <li>Komplett <em>plattform</em> — assistenter, kunskapsbas, API, användarhantering</li>
-                                        <li>Modellagnostisk — kan använda många olika språkmodeller</li>
-                                        <li>Öppen källkod, drift i er miljö</li>
-                                        <li>Initiativ från Sundsvalls och Ånge kommuner</li>
+                                        <li>Generalistplattform — AI-tjänster för alla verksamheter och processer</li>
+                                        <li>Öppen källkod, drift i er egen miljö</li>
+                                        <li>Modellagnostisk — fri valbar AI-modell, integration mot flera systemkällor</li>
+                                        <li>Enkelt och snabbt att bygga nya AI-tjänster</li>
                                     </ul>
                                 </div>
                                 <div class="faq-compare-card alt">
                                     <h4>Svea</h4>
                                     <ul>
-                                        <li>En <em>språkmodell</em> — själva AI-modellen, inte en hel plattform</li>
-                                        <li>Tränad specifikt på svenska språkdata</li>
-                                        <li>Utvecklad av AI Sweden</li>
-                                        <li>Kan köras inom Eneo som en av flera valbara modeller</li>
+                                        <li>Digital assistent med fokus på enskilda processer</li>
+                                        <li>Omfattande konfiguration och träning per verksamhetsområde</li>
+                                        <li>Djup på utvalda områden</li>
+                                        <li>Resultat släpps under öppna licenser</li>
                                     </ul>
                                 </div>
                             </div>
-                            <p><strong>De är inte konkurrenter — de kompletterar varandra.</strong> Svea kan användas som AI-modell <em>inom</em> Eneo-plattformen. Eneo ger gränssnittet, integrationerna och funktionaliteten; Svea kan vara den språkmodell som driver svaren.</p>
+                            <p><strong>Projekten kompletterar varandra.</strong> Eftersom allt som Svea-projektet släpper kommer under öppna licenser kan de erfarenheter och tillgångar som tas fram där också implementeras i Eneo — till nytta för båda gemenskaperna och hela offentliga sektorn.</p>
                         </div>
                     </details>
 
                     <details class="faq-item" data-category="jamforelse">
                         <summary class="faq-question">
-                            <span class="faq-q-text">Hur skiljer sig Eneo från ChatGPT?</span>
+                            <span class="faq-q-text">Hur skiljer sig Eneo från publika AI-verktyg som ChatGPT?</span>
                             <svg class="faq-q-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                         </summary>
                         <div class="faq-answer">
-                            <p>ChatGPT är en konsumenttjänst som drivs av OpenAI där all data passerar OpenAI:s servrar. Eneo är en plattform ni driftar själva och där ni bestämmer vilken AI-modell som används och var data lagras.</p>
-                            <p>Eneo kan dessutom göra mycket som ChatGPT inte gör direkt: skapa specialiserade assistenter med egna kunskapsbaser, stödja flera användare med roll- och behörighetshantering, integrera mot era verksamhetssystem via API och spåra användning för uppföljning.</p>
+                            <p><strong>Publika AI-verktyg är inte byggda för att hantera myndighetsdata.</strong> Tjänster som ChatGPT, Gemini och liknande är konsumenttjänster där data passerar leverantörens servrar. För offentlig sektor innebär det två betydande risker:</p>
+                            <ul>
+                                <li><strong>Personuppgifter och sekretessbelagd information</strong> — publika AI-verktyg får sällan eller aldrig användas för den här typen av information, eftersom det saknas tillräckliga avtalsmässiga och tekniska skydd.</li>
+                                <li><strong>Träning på inmatad data</strong> — det användarna matar in i publika verktyg används ofta för att förbättra framtida modeller. Det innebär att organisationens information kan dyka upp i svar till andra kunder eller på annat sätt påverka modellen över tid.</li>
+                            </ul>
+                            <p>Eneo löser detta genom att lägga all kontroll hos er:</p>
+                            <ul>
+                                <li><strong>Driftas i er egen miljö</strong> — er data lämnar inte organisationen om ni inte uttryckligen konfigurerar det.</li>
+                                <li><strong>Ni väljer AI-modell</strong> — kommersiell via avtal med tydliga villkor, eller en öppen modell som ni kör helt lokalt på er egen hårdvara.</li>
+                                <li><strong>Säkerhet och spårbarhet</strong> — rollbaserad behörighetshantering, loggning och uppföljning av användningen.</li>
+                                <li><strong>Anpassat för verksamheten</strong> — bygg specialiserade assistenter med egna kunskapsbaser och integrera mot era verksamhetssystem via API.</li>
+                            </ul>
+                            <p>Det innebär att Eneo kan användas även för uppgifter där publika AI-verktyg inte är ett alternativ — som ärenden med personuppgifter eller intern verksamhetsinformation.</p>
                         </div>
                     </details>
                 </div>
@@ -333,21 +368,19 @@
                             <svg class="faq-q-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                         </summary>
                         <div class="faq-answer">
-                            <p>Eftersom Eneo körs i er egen infrastruktur stannar all data hos er. Det innebär att ni kan tillämpa era befintliga rutiner för informationssäkerhet, sekretess och behörighetsstyrning på samma sätt som för andra interna system.</p>
-                            <p>Plattformen har inbyggt stöd för rollbaserad behörighetsstyrning, SSO-integration, loggning och åtkomstkontroll. Hur strikt det konfigureras avgörs av er.</p>
+                            <p><strong>Hanteringen av känslig och sekretessbelagd information är en av Eneos kärnfrågor</strong> — och utgångspunkten är att <em>ni själva styr i alla delar</em>. Plattformen är byggd så att kontrollen över hur data behandlas, lagras och delas alltid ligger hos er, inte hos en leverantör.</p>
+                            <p>I praktiken innebär det att ni bestämmer:</p>
+                            <ul>
+                                <li><strong>Var Eneo driftas</strong> — i er egen datahall, hos en svensk driftpartner eller i en miljö ni själva valt.</li>
+                                <li><strong>Vilka AI-modeller som används</strong> — externa via avtal med tydliga villkor, eller egna språkmodeller som körs lokalt på er GPU. Det senare innebär att data aldrig behöver lämna er organisation — <strong>full datasuveränitet i praktiken</strong>.</li>
+                                <li><strong>Vem som har åtkomst till vad</strong> — rollbaserad behörighetsstyrning, SSO-integration, loggning och åtkomstkontroll, anpassat efter era befintliga säkerhetsrutiner.</li>
+                                <li><strong>Hur era egna rutiner tillämpas</strong> — informationssäkerhet, sekretess och behörighet kan hanteras på samma sätt som för andra interna system.</li>
+                            </ul>
+                            <p><strong>Eneo utvecklas kontinuerligt utefter behoven i offentlig sektor</strong> — det gäller även krav på säkerhet och governance. I takt med att lagstiftning, AI Act och nationella riktlinjer skärper kraven anpassas plattformen så att den hjälper offentliga organisationer att uppnå dem, snarare än att stå i vägen.</p>
+                            <p>Eftersom Eneo är öppen källkod är all funktionalitet kring säkerhet dessutom granskbar — ni kan själva, eller via en oberoende part, verifiera hur data hanteras.</p>
                         </div>
                     </details>
 
-                    <details class="faq-item" data-category="sakerhet">
-                        <summary class="faq-question">
-                            <span class="faq-q-text">Är Eneo förenligt med GDPR?</span>
-                            <svg class="faq-q-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-                        </summary>
-                        <div class="faq-answer">
-                            <p>Eneo är byggt med GDPR och offentlig sektors regelverk i åtanke. Eftersom data inte lämnar er miljö av förinställning är det enklare att uppfylla kraven på personuppgiftsbehandling, register­förteckning och dataminimering.</p>
-                            <p>Den slutliga GDPR-bedömningen görs alltid av er som personuppgiftsansvarig — utifrån hur ni konfigurerar Eneo, vilka modeller ni kopplar in och hur ni använder plattformen i verksamheten.</p>
-                        </div>
-                    </details>
                 </div>
 
                 <!-- ── FUNKTIONER ── -->
@@ -365,8 +398,14 @@
                             <svg class="faq-q-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                         </summary>
                         <div class="faq-answer">
-                            <p>Eneo är modellagnostiskt och kan kopplas till en rad olika språkmodeller — både öppna modeller som ni kör själva (t.ex. Llama, Mistral, Svea) och kommersiella modeller via API (t.ex. via Azure OpenAI).</p>
-                            <p>Olika modeller har olika styrkor när det gäller språk, säkerhet, prestanda och pris. Inom samma Eneo-installation kan ni använda flera modeller parallellt för olika ändamål.</p>
+                            <p><strong>Ni styr själva vilka AI-modeller som används i er Eneo-installation</strong> — det är ett medvetet val per modell och per scenario. Eneo har stöd för i stort sett alla språkmodeller på marknaden, både öppna och kommersiella.</p>
+                            <ul>
+                                <li><strong>Öppna modeller som körs lokalt</strong> — exempelvis Llama eller Mistral som ni laddar ner och kör på er egen hårdvara. Här lämnar data aldrig er organisation.</li>
+                                <li><strong>Kommersiella modeller via API</strong> — t.ex. GPT via Azure OpenAI, Claude via Anthropic eller andra leverantörer ni har avtal med. Eneo har stöd för över 60 leverantörer av inferens och LLM, och listan utökas kontinuerligt.</li>
+                                <li><strong>Specialiserade modeller</strong> — för t.ex. dokumentförståelse, översättning eller andra domänspecifika uppgifter.</li>
+                            </ul>
+                            <p><strong>Att lägga till en ny modell tar bara några klick.</strong> Eneos modellhantering är byggd för att administratörer själva ska kunna lägga till, byta och konfigurera modeller — med säkerhetsklassning, kostnadsspårning och styrning av vilka assistenter som får använda vad. Inget kodarbete eller leverantörsärende behövs.</p>
+                            <p>Olika modeller har olika styrkor när det gäller språk, säkerhet, prestanda och pris. I samma Eneo-installation kan ni använda flera modeller parallellt och välja rätt modell för rätt sammanhang.</p>
                         </div>
                     </details>
 
@@ -387,7 +426,14 @@
                             <svg class="faq-q-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                         </summary>
                         <div class="faq-answer">
-                            <p>Ja, Eneo har stöd för Single Sign-On (SSO) via standardiserade protokoll, vilket gör att användare kan logga in med samma identitet som i andra system. Plattformen är också helt API-baserad så ni kan integrera Eneo i era befintliga arbetsflöden, intranät eller verksamhetssystem.</p>
+                            <p><strong>Ja, Eneo har stöd för Single Sign-On (SSO).</strong> Standard är <strong>OIDC (OpenID Connect)</strong>, vilket gör att användare kan logga in med samma identitet som i era andra system — t.ex. via Microsoft Entra ID, Keycloak eller andra identitetsleverantörer som stöder protokollet.</p>
+                            <p>Utöver inloggning finns även:</p>
+                            <ul>
+                                <li><strong>Provisionering</strong> — användare och behörigheter kan skapas och underhållas automatiskt från er identitetshanterare.</li>
+                                <li><strong>SCIM-server</strong> — inom kort tillkommer även stöd för SCIM, vilket gör att livscykelhantering av användare (skapa, uppdatera, avregistrera) sker enligt en öppen standard.</li>
+                            </ul>
+                            <p>Eneo är helt API-baserat, så plattformen kan dessutom integreras i era befintliga arbetsflöden, intranät eller verksamhetssystem.</p>
+                            <p>Steg-för-steg-instruktion för att sätta upp SSO finns i guiden <a href="https://docs.eneo.ai/guides/authentication" target="_blank" rel="noopener">docs.eneo.ai/guides/authentication</a>.</p>
                         </div>
                     </details>
                 </div>
@@ -407,8 +453,10 @@
                             <svg class="faq-q-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                         </summary>
                         <div class="faq-answer">
-                            <p>Eneo är ett initiativ från <strong>Sundsvalls kommun och Ånge kommun</strong>, men plattformen är öppen källkod och utvecklas tillsammans med fler offentliga organisationer. Det finns ingen enskild leverantör som äger plattformen — den ägs gemensamt av offentlig sektor.</p>
-                            <p>Källkoden finns på GitHub och vem som helst kan granska, bidra eller bygga vidare på den.</p>
+                            <p><strong>Eneo är ett initiativ från Sundsvalls kommun och Ånge kommun</strong>, och det är de två kommunerna som äger kontrollen över källkoden och plattformens utveckling.</p>
+                            <p>Varje part som bidrar till plattformens funktion behåller <strong>upphovsrätten till sin egen del</strong> av koden. Men för att ett bidrag ska tas in i Eneo behöver det släppas öppet och följa plattformens licensmodell <strong>AGPLv3</strong>. På så sätt förblir hela plattformen fri att granska, använda och vidareutveckla — utan leverantörsinlåsning.</p>
+                            <p>För att hantera Eneo långsiktigt har Sundsvall och Ånge bildat en <strong>användarförening och en styrmodell</strong> för plattformen. Läs mer om hur samarbetet är organiserat på <a href="samarbetsforum.html">sidan Samarbete</a>.</p>
+                            <p>Källkoden finns öppet på <a href="https://github.com/eneo-ai/" target="_blank" rel="noopener">github.com/eneo-ai</a> — där kan vem som helst granska, bidra eller bygga vidare på den.</p>
                         </div>
                     </details>
 
@@ -418,14 +466,15 @@
                             <svg class="faq-q-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                         </summary>
                         <div class="faq-answer">
-                            <p>Det finns flera sätt att engagera sig:</p>
+                            <p><strong>Alla är välkomna att vara med och bidra</strong> — på det sätt och i den omfattning som passar er — för plattformens långsiktiga bästa.</p>
+                            <p>Konkret kan ni engagera er på många sätt och nivåer:</p>
                             <ul>
-                                <li>Gå med i <a href="samarbetsforum.html">samarbetsforumet</a> för erfarenhetsutbyte med andra organisationer.</li>
-                                <li>Dela assistenter, prompts och lösningar med andra Eneo-användare.</li>
-                                <li>Bidra med kod, dokumentation eller idéer på GitHub.</li>
-                                <li>Föreslå förbättringar och rapportera problem direkt till utvecklingsteamet.</li>
+                                <li><strong>Delta i samarbetsforumet</strong> — vara aktiva, dela erfarenheter och AI-lösningar med andra offentliga organisationer.</li>
+                                <li><strong>Delta i användarföreningens styrning</strong> — om ni vill bidra mer aktivt och vara med och forma plattformens långsiktiga inriktning.</li>
+                                <li><strong>Bidra direkt i utvecklingen av plattformen</strong> — på den djupaste nivån, med kod, dokumentation och tekniska bidrag via GitHub.</li>
                             </ul>
-                            <p>Ju fler organisationer som deltar, desto starkare blir det gemensamma ekosystemet.</p>
+                            <p>Det finns inget rätt eller fel i hur mycket ni bidrar — ni engagerar er utifrån er organisations förmåga och behov.</p>
+                            <p>På <a href="samarbetsforum.html">sidan Samarbete</a> hittar ni mer information om alla forum, samverkansformer och hur ni kan ansluta er till användarföreningen.</p>
                         </div>
                     </details>
                 </div>
