@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eneo RAG-flöde – underlag för dialog</title>
+    <meta name="description" content="En tolkning och beskrivning av dataflödet vid Retrieval-Augmented Generation när Eneo driftas i organisationens egen datahall. Framtagen som underlag för fortsatt dialog med jurist.">
+
+    <!-- Sidan ska inte indexeras eller listas i menyer -->
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="public/favicon.ico">
+
+    <!-- External Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,300;1,6..72,400;1,6..72,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/v2-variables.css?v=2">
+    <link rel="stylesheet" href="css/v2-base.css?v=2">
+    <link rel="stylesheet" href="css/v2-components.css?v=2">
+    <link rel="stylesheet" href="css/v2-layout.css?v=2">
+    <link rel="stylesheet" href="css/pages/flode.css?v=1">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Hoppa till huvudinnehåll</a>
+
+    <!-- NAV -->
+    <nav class="v2-nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo" aria-label="Eneo - till startsidan">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 172" style="height:30px;width:auto;shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;fill-rule:evenodd;clip-rule:evenodd;">
+                    <path fill="#1a7ad4" d="M 107.5,-0.5 C 114.833,-0.5 122.167,-0.5 129.5,-0.5C 176.816,9.15707 202.149,38.1571 205.5,86.5C 203.389,125.423 184.389,152.257 148.5,167C 142.419,168.71 136.419,170.21 130.5,171.5C 123.5,171.5 116.5,171.5 109.5,171.5C 93.3852,168.947 78.7185,162.781 65.5,153C 57.3188,144.986 49.3188,136.819 41.5,128.5C 61.6527,107.847 81.9861,87.3471 102.5,67C 111.582,60.8816 121.249,59.8816 131.5,64C 144.46,73.9171 146.96,86.0837 139,100.5C 131.833,107.667 124.667,114.833 117.5,122C 138.893,122.044 151.726,111.544 156,90.5C 156.442,68.8872 146.275,55.0539 125.5,49C 112.803,46.9218 101.803,50.2552 92.5,59C 86.6667,64.8333 80.8333,70.6667 75,76.5C 63.5,65 52,53.5 40.5,42C 50.2305,31.5999 60.5639,21.9333 71.5,13C 82.7423,6.20074 94.7423,1.70074 107.5,-0.5 Z"/>
+                    <path class="logo-text" d="M 649.5,76.5 C 649.5,82.1667 649.5,87.8333 649.5,93.5C 640.846,129.635 617.846,147.135 580.5,146C 552.923,141.09 535.59,125.09 528.5,98C 514.833,97.6667 501.167,97.3333 487.5,97C 480.994,93.8341 478.494,88.6674 480,81.5C 480.979,78.3749 482.813,75.8749 485.5,74C 498.401,72.538 511.401,72.038 524.5,72.5C 521.764,64.5453 516.764,58.3786 509.5,54C 488.763,45.1354 472.596,50.3021 461,69.5C 453.601,90.9824 459.767,107.149 479.5,118C 492.365,122.56 504.198,120.727 515,112.5C 519.225,119.939 523.725,127.272 528.5,134.5C 511.022,146.856 492.022,149.689 471.5,143C 466.51,141.335 462.01,138.835 458,135.5C 457.502,138.817 457.335,142.15 457.5,145.5C 448.833,145.5 440.167,145.5 431.5,145.5C 431.667,123.497 431.5,101.497 431,79.5C 426.715,61.265 415.215,51.265 396.5,49.5C 377.785,51.265 366.285,61.265 362,79.5C 361.5,101.497 361.333,123.497 361.5,145.5C 352.833,145.5 344.167,145.5 335.5,145.5C 335.5,129.5 335.5,113.5 335.5,97.5C 322.163,97.6666 308.829,97.4999 295.5,97C 287.991,92.8092 285.824,86.6426 289,78.5C 290.663,76.0833 292.829,74.25 295.5,73C 307.829,72.5001 320.162,72.3335 332.5,72.5C 327.027,58.2227 316.527,50.556 301,49.5C 282.085,51.1142 270.419,61.1142 266,79.5C 264.719,101.205 274.553,114.705 295.5,120C 303.532,121.06 311.032,119.56 318,115.5C 318.667,124.833 318.667,134.167 318,143.5C 289.265,150.965 266.265,142.631 249,118.5C 233.274,88.8088 237.108,61.9755 260.5,38C 285.142,19.8768 310.476,18.8768 336.5,35C 340.981,38.3143 344.981,42.1476 348.5,46.5C 369.825,23.1077 395.158,17.6077 424.5,30C 432.127,34.3166 438.794,39.8166 444.5,46.5C 465.825,23.1077 491.158,17.6077 520.5,30C 528.127,34.3166 534.794,39.8166 540.5,46.5C 561.825,23.1077 587.158,17.6077 616.5,30C 634.762,40.3615 645.762,55.8615 649.5,76.5 Z M 583.5,49.5 C 610.442,49.9416 623.609,63.6083 623,90.5C 619.82,107.013 609.987,116.846 593.5,120C 572.335,120.831 559.169,110.998 554,90.5C 552.92,68.7752 562.753,55.1085 583.5,49.5 Z"/>
+                    <path fill="#1a7ad4" d="M -0.5,87.5 C -0.5,85.8333 -0.5,84.1667 -0.5,82.5C 10.1734,71.9931 21.0067,61.6598 32,51.5C 43.9725,62.3055 55.4725,73.6388 66.5,85.5C 55.5,97.1667 44.1667,108.5 32.5,119.5C 21.4793,108.812 10.4793,98.1453 -0.5,87.5 Z"/>
+                </svg>
+            </a>
+            <ul class="nav-links">
+                <li><a href="om-eneo.html">Om</a></li>
+                <li><a href="anvandningsfall.html">Användningsfall</a></li>
+                <li><a href="utbildningar.html">Utbildningar</a></li>
+                <li><a href="tidslinje.html">Historik</a></li>
+                <li><a href="samarbetsforum.html">Samarbete</a></li>
+                <li><a href="docs.html">Docs</a></li>
+                <li><a href="versioner.html">Versioner</a></li>
+                <li><a href="nyheter.html">Nyheter</a></li>
+                <li><a href="vanliga-fragor.html">FAQ</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle" onclick="Eneo.toggleTheme()" aria-label="Byt tema">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <button id="mobile-menu-btn" class="mobile-menu-btn" aria-expanded="false" aria-controls="mobile-nav" aria-label="Meny" onclick="Eneo.toggleMobileMenu()">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-nav" class="mobile-nav" aria-label="Mobil navigation">
+            <a href="om-eneo.html">Om</a>
+            <a href="anvandningsfall.html">Användningsfall</a>
+            <a href="utbildningar.html">Utbildningar</a>
+            <a href="tidslinje.html">Historik</a>
+            <a href="samarbetsforum.html">Samarbete</a>
+            <a href="docs.html">Docs</a>
+            <a href="versioner.html">Versioner</a>
+            <a href="nyheter.html">Nyheter</a>
+            <a href="vanliga-fragor.html">FAQ</a>
+        </div>
+    </nav>
+
+    <!-- MAIN -->
+    <main id="main-content" class="flode-page">
+        <div class="container">
+
+            <!-- ============ HEADER ============ -->
+            <header class="flode-header">
+                <div class="flode-meta-row">
+                    <span>Underlag för dialog <span class="dot" aria-hidden="true"></span> Tolkning och beskrivning</span>
+                    <span>Eneo RAG-flöde <span class="dot" aria-hidden="true"></span> Lokal drift</span>
+                </div>
+                <h1 class="flode-h1">Hur en fråga<br>blir ett <em>svar</em><br>i Eneo.</h1>
+                <p class="flode-subtitle">En tolkning och beskrivning av dataflödet vid Retrieval-Augmented Generation när plattformen driftas i organisationens egen datahall – framtagen som underlag för fortsatt dialog med jurist.</p>
+            </header>
+
+            <!-- ============ INTRO ============ -->
+            <section class="flode-intro" aria-label="Inledning">
+                <div class="flode-label">Inledning</div>
+                <div>
+                    <p class="has-dropcap">Retrieval-Augmented Generation, RAG, är arkitekturen som låter ett AI-system svara utifrån organisationens egna dokument i stället för utifrån sin allmänna träningsdata. Det är därför också den arkitektur som har störst rättsliga implikationer – och störst möjligheter att möta dem.</p>
+                    <p>Den här översikten beskriver flödet steg för steg och pekar ut var i kedjan personuppgifter behandlas, var beslut faktiskt fattas, och var spårbarheten uppstår. Allt under förutsättning att Eneo är installerat i en datahall under organisationens egen kontroll.</p>
+                </div>
+            </section>
+
+            <!-- ============ FLOW DIAGRAM ============ -->
+            <section class="flode-diagram-section" aria-labelledby="diagram-heading">
+                <div class="flode-section-header">
+                    <div class="flode-section-num">i. Översiktsbild</div>
+                    <h2 id="diagram-heading">Flödet i en <em>bild</em></h2>
+                </div>
+
+                <figure class="flode-diagram-wrap">
+                    <svg class="flode-diagram" viewBox="0 135 900 665" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="diagram-title diagram-desc">
+                        <title id="diagram-title">RAG-flöde i Eneo – översikt</title>
+                        <desc id="diagram-desc">Schematisk översikt över dataflödet vid en RAG-fråga. Allt sker innanför organisationens datahall: från frågans gränssnitt, via vektorisering och semantisk sökning mot pgvector, till sammanställning av kontext och språkmodellen, samt loggning för spårbarhet.</desc>
+                        <defs>
+                            <marker id="flode-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                                <path d="M 0 0 L 10 5 L 0 10 z" class="arrow-marker"/>
+                            </marker>
+                        </defs>
+
+                        <!-- BOUNDARY -->
+                        <rect x="40" y="150" width="820" height="640" rx="12" class="boundary"/>
+                        <text x="60" y="175" class="boundary-label">Organisationens datahall – data lämnar aldrig denna gräns</text>
+
+                        <!-- Step 1: Frontend -->
+                        <g>
+                            <text x="450" y="215" class="node-num">i.</text>
+                            <rect x="320" y="225" width="260" height="56" rx="8" class="node"/>
+                            <text x="450" y="252" class="node-label">Gränssnitt (frontend)</text>
+                            <text x="450" y="271" class="node-sub">SSO / behörighetsstyrd inloggning</text>
+                        </g>
+
+                        <!-- Arrow 1->2 -->
+                        <path d="M 450 281 L 450 315" class="arrow" marker-end="url(#flode-arr)"/>
+                        <text x="460" y="303" class="arrow-label">frågan i klartext</text>
+
+                        <!-- Step 2: Backend embedding -->
+                        <g>
+                            <text x="450" y="335" class="node-num">ii.</text>
+                            <rect x="320" y="345" width="260" height="56" rx="8" class="node"/>
+                            <text x="450" y="372" class="node-label">Vektorisering av frågan</text>
+                            <text x="450" y="391" class="node-sub">embedding-modell (lokal)</text>
+                        </g>
+
+                        <!-- Arrow 2->3 -->
+                        <path d="M 450 401 L 450 435" class="arrow" marker-end="url(#flode-arr)"/>
+                        <text x="460" y="423" class="arrow-label">vektor (talserie)</text>
+
+                        <!-- Step 3: pgvector -->
+                        <g>
+                            <text x="450" y="455" class="node-num">iii.</text>
+                            <rect x="280" y="465" width="340" height="80" rx="8" class="vector-db"/>
+                            <text x="450" y="495" class="node-label" style="font-size: 15px;">Vektordatabas (pgvector)</text>
+                            <text x="450" y="515" class="node-sub">semantisk sökning mot</text>
+                            <text x="450" y="530" class="node-sub">era egna, förindexerade dokument</text>
+                        </g>
+
+                        <!-- Pre-loaded knowledge (side) -->
+                        <g>
+                            <rect x="60" y="465" width="180" height="80" rx="8" class="preload"/>
+                            <text x="150" y="490" class="node-label" style="font-size: 12px;">Era dokument</text>
+                            <text x="150" y="508" class="node-sub">uppladdade i förväg,</text>
+                            <text x="150" y="521" class="node-sub">vektoriserade &amp; lagrade</text>
+                            <text x="150" y="534" class="arrow-side-label" text-anchor="middle">(steg 0)</text>
+                            <path d="M 240 505 L 278 505" class="arrow arrow-dashed" marker-end="url(#flode-arr)"/>
+                        </g>
+
+                        <!-- Access control side note -->
+                        <g>
+                            <text x="700" y="500" class="arrow-side-label">åtkomstregler</text>
+                            <text x="700" y="514" class="arrow-side-label">filtrerar träffarna</text>
+                            <path d="M 620 505 L 660 505" class="arrow arrow-brand"/>
+                        </g>
+
+                        <!-- Arrow 3->4 -->
+                        <path d="M 450 545 L 450 580" class="arrow" marker-end="url(#flode-arr)"/>
+                        <text x="460" y="568" class="arrow-label">relevanta textsegment</text>
+
+                        <!-- Step 4: Prompt assembly -->
+                        <g>
+                            <text x="450" y="600" class="node-num">iv.</text>
+                            <rect x="320" y="610" width="260" height="56" rx="8" class="node"/>
+                            <text x="450" y="637" class="node-label">Sammanställning av kontext</text>
+                            <text x="450" y="656" class="node-sub">instruktion + källtext + fråga</text>
+                        </g>
+
+                        <!-- Arrow 4->5 -->
+                        <path d="M 450 666 L 450 700" class="arrow" marker-end="url(#flode-arr)"/>
+                        <text x="460" y="688" class="arrow-label">prompt-paket</text>
+
+                        <!-- Step 5: LLM -->
+                        <g>
+                            <text x="450" y="720" class="node-num">v.</text>
+                            <rect x="320" y="730" width="260" height="56" rx="8" class="node node-llm"/>
+                            <text x="450" y="757" class="node-label node-llm-label">Språkmodell (LLM)</text>
+                            <text x="450" y="776" class="node-sub node-llm-sub">lokal drift eller via konfigurerat API</text>
+                        </g>
+
+                        <!-- Audit log side -->
+                        <g>
+                            <rect x="660" y="730" width="180" height="56" rx="8" class="audit"/>
+                            <text x="750" y="757" class="node-label" style="font-size: 12px;">Granskningslogg</text>
+                            <text x="750" y="775" class="node-sub">spårbarhet, vem &amp; vad</text>
+                            <path d="M 580 758 L 658 758" class="arrow arrow-dashed"/>
+                        </g>
+                    </svg>
+
+                    <figcaption class="flode-diagram-caption">Fig. 01 — Hela kedjan från fråga till svar sker innanför datahallens gränser. Den streckade ramen är en juridiskt meningsfull gräns: inget innehåll passerar den om inte ni aktivt konfigurerar att så ska ske.</figcaption>
+                </figure>
+            </section>
+
+            <!-- ============ STEPS ============ -->
+            <section class="flode-steps" aria-labelledby="steps-heading">
+                <div class="flode-section-header">
+                    <div class="flode-section-num">ii. Genomgång</div>
+                    <h2 id="steps-heading">Steg för steg, med <em>juridiska</em> noter</h2>
+                </div>
+
+                <!-- STEP 0 -->
+                <article class="flode-step">
+                    <aside class="flode-step-aside">
+                        <div class="flode-step-number" aria-hidden="true">0<sup>preludium</sup></div>
+                        <div class="flode-step-title-aside">Innan någon fråga ställs</div>
+                    </aside>
+                    <div class="flode-step-content">
+                        <h3>Förberedelsen — <em>kunskapen läses in</em></h3>
+                        <p>En administratör laddar upp dokument, kopplar in en webbplats eller ansluter en datakälla. Eneo bryter ned innehållet i mindre textsegment, översätter varje segment till en numerisk vektor via en embedding-modell, och lagrar vektorerna tillsammans med själva texten och metadata i pgvector-databasen som ligger i datahallen.</p>
+                        <p>Det är här ni också knyter en kunskapskälla till en viss assistent och sätter de behörigheter som styr vem som senare får ställa frågor mot materialet.</p>
+                        <div class="flode-legal-note">
+                            <p>Personuppgiftsansvar uppstår redan i detta steg. Den rättsliga grunden för att indexera materialet, ändamålsbegränsningen, och bedömningen av om en konsekvensbedömning (DPIA) behövs ska vara klarlagda innan dokumenten läses in – inte efter att assistenten är i drift.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- STEP 1 -->
+                <article class="flode-step">
+                    <aside class="flode-step-aside">
+                        <div class="flode-step-number" aria-hidden="true">1</div>
+                        <div class="flode-step-title-aside">Frågan ställs</div>
+                    </aside>
+                    <div class="flode-step-content">
+                        <h3>Användaren formulerar sin <em>fråga</em></h3>
+                        <p>Användaren loggar in mot Eneo, autentiseras genom organisationens identitetsleverantör (typiskt SSO/OIDC) och skickar sin fråga till en specifik assistent. Frågan färdas över ett internt, krypterat nätverk till backenden inom datahallen.</p>
+                        <div class="flode-legal-note">
+                            <p>Frågans innehåll kan i sig utgöra en personuppgift eller en känslig uppgift, även när den ställs i ett professionellt sammanhang («hur hanterar vi medarbetare X som …»). Behandlingen av själva frågan är därför en självständig behandling som måste vara förenlig med ändamålet.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- STEP 2 -->
+                <article class="flode-step">
+                    <aside class="flode-step-aside">
+                        <div class="flode-step-number" aria-hidden="true">2</div>
+                        <div class="flode-step-title-aside">Frågan översätts</div>
+                    </aside>
+                    <div class="flode-step-content">
+                        <h3>Frågan blir en <em>vektor</em></h3>
+                        <p>Backenden skickar frågan genom samma embedding-modell som användes vid uppladdningen och får tillbaka en vektor – en lång rad tal som representerar frågans innebörd. Detta är förutsättningen för att kunna söka på betydelse i stället för på exakta ord.</p>
+                        <div class="flode-legal-note">
+                            <p>Vektorn är härledd från frågans innehåll och kan därmed, beroende på omständigheterna, fortfarande betraktas som en personuppgift. Att data är «matematiskt representerad» innebär inte att GDPR upphör att gälla.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- STEP 3 -->
+                <article class="flode-step">
+                    <aside class="flode-step-aside">
+                        <div class="flode-step-number" aria-hidden="true">3</div>
+                        <div class="flode-step-title-aside">Den semantiska sökningen</div>
+                    </aside>
+                    <div class="flode-step-content">
+                        <h3>Vektordatabasen <em>hittar</em> rätt avsnitt</h3>
+                        <p>Frågans vektor jämförs mot alla lagrade dokumentvektorer i pgvector. Databasen returnerar de textsegment vars vektorer ligger närmast frågans – det vill säga de stycken som semantiskt sett bäst matchar det användaren undrar över.</p>
+                        <p>Vid den här jämförelsen tillämpas också era åtkomstregler. En användare får bara träffar i den data hen faktiskt har behörighet att se, och assistenten avgränsas till de kunskapskällor den är konfigurerad mot.</p>
+                        <div class="flode-legal-note">
+                            <p>Två principer realiseras i kod just här: <em>uppgiftsminimering</em> (endast de mest relevanta styckena hämtas ut, inte hela dokumentbiblioteket) och <em>behörighetsstyrning</em>. Det är detta steg ni vill att en granskning kan visa hur det fungerar i praktiken.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- STEP 4 -->
+                <article class="flode-step">
+                    <aside class="flode-step-aside">
+                        <div class="flode-step-number" aria-hidden="true">4</div>
+                        <div class="flode-step-title-aside">Kontexten paketeras</div>
+                    </aside>
+                    <div class="flode-step-content">
+                        <h3>Instruktion, källtext och fråga <em>förs samman</em></h3>
+                        <p>Backenden bygger ett prompt-paket bestående av tre delar: (1) assistentens systeminstruktion («svara enbart utifrån källtexten nedan»), (2) de framsökta textsegmenten som kontext, och (3) användarens ursprungliga fråga. Det är detta paket som ska in i språkmodellen.</p>
+                        <div class="flode-legal-note">
+                            <p>Innehållet i prompten är den faktiska indata som genererar det slutliga utfallet. För att efterleva transparenskravet i AI-förordningen behöver det vara möjligt att i efterhand visa <em>vad</em> som faktiskt skickades in – inte bara vilket svar som kom ut.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- STEP 5 -->
+                <article class="flode-step">
+                    <aside class="flode-step-aside">
+                        <div class="flode-step-number" aria-hidden="true">5</div>
+                        <div class="flode-step-title-aside">Svaret genereras</div>
+                    </aside>
+                    <div class="flode-step-content">
+                        <h3>Språkmodellen <em>formulerar</em> svaret</h3>
+                        <p>Prompt-paketet skickas till språkmodellen. Är modellen driftad lokalt – exempelvis på en GPU-server i samma datahall – stannar även detta steg innanför ramen. Är den i stället konfigurerad mot en extern leverantör, är det <em>här</em> data passerar ut till tredje part. Vilket alternativ som gäller är ett konfigurationsval per assistent.</p>
+                        <p>Modellen läser instruktionen, kontexten och frågan och skriver ett svar baserat på just det material som hämtades ur era dokument.</p>
+                        <div class="flode-legal-note">
+                            <p>Detta är den centrala juridiska beslutspunkten: lokal modell eller extern. Vid extern modell uppstår en personuppgiftsbiträdesrelation, en bedömning av tredjelandsöverföring kan aktualiseras, och leverantörens villkor för loggning och vidareanvändning blir relevanta. Frågan om utlämnandet kan rymmas inom undantaget för teknisk bearbetning i 10 kap. 2 a § OSL behandlas i fördjupningsavsnittet nedan.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- STEP 6 -->
+                <article class="flode-step">
+                    <aside class="flode-step-aside">
+                        <div class="flode-step-number" aria-hidden="true">6</div>
+                        <div class="flode-step-title-aside">Svaret återförs</div>
+                    </aside>
+                    <div class="flode-step-content">
+                        <h3>Svar och <em>källhänvisning</em> till användaren</h3>
+                        <p>Svaret strömmas tillbaka till gränssnittet, normalt tillsammans med hänvisningar till de dokumentavsnitt som låg till grund för det. Hela interaktionen – fråga, hämtade källor, modell, svar – skrivs till granskningsloggen.</p>
+                        <div class="flode-legal-note">
+                            <p>Källhänvisningarna är inte enbart en pedagogisk hjälp utan en grundförutsättning för den mänskliga tillsynen: utan att veta vilket material som låg till grund för svaret kan användaren inte göra någon egen, kvalificerad bedömning. Granskningsloggen är i sin tur er bevisning vid en framtida tillsyn.</p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <!-- ============ DEEP DIVE: OSL 10:2a ============ -->
+            <section class="flode-deep-dive" aria-labelledby="deep-dive-heading">
+                <div class="flode-section-header">
+                    <div class="flode-section-num">iii. Fördjupning</div>
+                    <h2 id="deep-dive-heading">Teknisk <em>bearbetning</em>?<span class="flode-osl-ref">— 10 kap. 2 a § offentlighets- och sekretesslagen</span></h2>
+                </div>
+
+                <div class="flode-dive-intro">
+                    <p>När sekretessbelagda uppgifter skickas till en extern språkmodell uppkommer den centrala offentligrättsliga frågan: kan utlämnandet rymmas inom undantaget för <em>teknisk bearbetning</em> i 10 kap. 2 a § OSL, eller är det en otillåten överlämning av saklig prövning? RAG-arkitekturen är intressant just därför att den flyttar tyngdpunkten i hanteringen tillbaka in i myndigheten.</p>
+                </div>
+
+                <blockquote class="flode-pull-quote">
+                    <p>Den externa modellen får inget eget urval, ingen egen hämtning, ingen handläggningsmässig bedömning. Den utför en transformation — färdigt avgränsat material in, en sammanställning ut. Det är, funktionellt sett, närmare <em>redigering</em> än <em>saklig prövning</em>.</p>
+                </blockquote>
+
+                <h3 class="flode-dive-h3">Varför arkitekturen <em>stärker</em> tillämpligheten</h3>
+                <p class="flode-dive-p">Sökning, chunking, vektorisering, urval och relevansbedömning sker internt i datahallen. Det är dessa moment som har sakligt avgörande karaktär. Den externa leverantören får ett färdigt, avgränsat material med uppdraget att sammanställa det. Det liknar i sin karaktär de typexempel — tryckning, kopiering, redigering av magnetband — som anges i bestämmelsens förarbeten från 1970-talet.</p>
+
+                <p class="flode-dive-p">Den invändning som annars väger tyngst — att modellens egna vikter «skapar» innehåll — väger lättare när uppdraget är att sammanställa specifikt tillhandahållet material. Modellens träningsdata används då närmast som ett språkligt verktyg (grammatik, formuleringsförmåga), inte som en informationskälla. Det är analogt med att en transkriberingstjänst använder en språkmodell för att gissa rätt på otydliga ord — en teknisk hjälpfunktion, inte saklig prövning.</p>
+
+                <h3 class="flode-dive-h3">Fyra faktorer som <em>avgör utfallet</em></h3>
+                <div class="flode-factors">
+                    <article class="flode-factor">
+                        <div class="flode-factor-num" aria-hidden="true">01</div>
+                        <h4>Promptens utformning</h4>
+                        <p>En systemprompt som instruerar modellen att svara <em>endast</em> utifrån det tillhandahållna kontextet («grounding») är inte bara en kvalitetsåtgärd – det är ett aktivt argument för att modellen i den här användningen är instängd i en ren bearbetningsroll. Tillåts modellen komplettera med «allmän kunskap» eller resonera utöver underlaget närmar man sig gränsen.</p>
+                    </article>
+                    <article class="flode-factor">
+                        <div class="flode-factor-num" aria-hidden="true">02</div>
+                        <h4>Vad «sammanställa» betyder konkret</h4>
+                        <p>En glidande skala: <em>extraktiv sammanfattning</em> ligger tydligt inom teknisk bearbetning, <em>abstraktiv sammanfattning</em> som omformulerar utan att tillföra likaså, <em>frågesvar grundat enbart i kontexten</em> sannolikt också. <em>Resonemang, slutsatser eller rekommendationer</em> ifrågasätts dock. Ju närmare beslutsstöd, desto svagare argument.</p>
+                    </article>
+                    <article class="flode-factor">
+                        <div class="flode-factor-num" aria-hidden="true">03</div>
+                        <h4>«Endast»-rekvisitet gäller leverantören</h4>
+                        <p>Detta är den verkliga proppen och RAG löser det inte i sig. Avgörande är vad leverantören gör med input och output: loggning och retention, eventuell träning eller finetuning, missbruksanalys, vilka underbiträden som har åtkomst, geografisk placering av inferensen. Det måste gå att verifiera i avtalet att leverantören enbart utför inferens åt er räkning – inget annat.</p>
+                    </article>
+                    <article class="flode-factor">
+                        <div class="flode-factor-num" aria-hidden="true">04</div>
+                        <h4>Lämplighetsbedömningen är separat</h4>
+                        <p>Även om bestämmelsen är tillämplig kvarstår frågan om utlämnandet är olämpligt med hänsyn till omständigheterna: typ av sekretess, datavolymer över tid, eventuell säkerhetsskyddsklassificering, leverantörens utsatthet för utländsk lagstiftning (FISA 702, CLOUD Act). För säkerhetsskyddsklassificerade uppgifter räcker bestämmelsen inte ensamt.</p>
+                    </article>
+                </div>
+
+                <h3 class="flode-dive-h3">Praktiska <em>implikationer</em></h3>
+                <p class="flode-dive-p">Det som återstår att lösa är inte arkitekturen utan leverantörsrelationen och dokumentationen. Tre saker bör finnas på plats:</p>
+                <ul class="flode-practical-list">
+                    <li><strong>Avtalsvillkor</strong> som binder leverantören vid «endast»-rollen – no-training, kort eller noll retention, tydlig roll som personuppgiftsbiträde, namngivna underbiträden och geografisk placering av inferensen.</li>
+                    <li><strong>Dokumenterad lämplighetsbedömning per uppgiftskategori och flöde</strong> – inte per anrop. Vid hundratals frågor per dag är allt annat praktiskt omöjligt. Bedömningen ska hållas levande och uppdateras vid förändringar i tjänsten eller leverantörens villkor.</li>
+                    <li><strong>Granskningsmekanism för outputen</strong> innan den används i ärendehandläggning. Modellen levererar ett underlag, inte ett beslut – och det måste synas i processen.</li>
+                </ul>
+
+                <p class="flode-dive-p">Frågan om huruvida prompts och svar utgör <em>allmänna handlingar</em> ska hanteras separat. Länsstyrelsernas utredning från oktober 2025 pekar på att svaret kan vara en allmän handling även om prompten ses som en mellanprodukt – relevant för diarieföring och bevarande snarare än för sekretessbrytningen i sig.</p>
+
+                <aside class="flode-bedomning-box" aria-label="Sammanfattande bedömning">
+                    <div class="flode-bedomning-label">Sammanfattande bedömning</div>
+                    <p>Konfigurationen <em>«internt RAG + extern modell som sammanställer färdiga chunks»</em> är ett av de tydligaste fallen där 10 kap. 2 a § kan vara tillämplig på generativ AI. Tre faktorer bär bedömningen:</p>
+                    <ol class="flode-bedomning-list">
+                        <li>Den externa modellen får ingen autonomi i urval eller hämtning – den utför en avgränsad transformation.</li>
+                        <li>Saklig prövning av material och resultat ligger kvar internt hos myndigheten.</li>
+                        <li>Underlaget är förkurerat, vilket gör det möjligt att kontrollera vad som faktiskt lämnar myndigheten.</li>
+                    </ol>
+                </aside>
+            </section>
+
+            <!-- ============ SUMMARY TABLE ============ -->
+            <section class="flode-summary" aria-labelledby="summary-heading">
+                <div class="flode-section-header">
+                    <div class="flode-section-num">iv. Sammanställning</div>
+                    <h2 id="summary-heading">Juridiska principer <em>mot</em> implementation</h2>
+                </div>
+
+                <div class="flode-summary-table" role="table" aria-label="Juridiska principer mot implementation">
+                    <div class="flode-summary-row flode-summary-header" role="row">
+                        <div role="columnheader">Princip</div>
+                        <div role="columnheader">Rättskälla (urval)</div>
+                        <div role="columnheader">Var i flödet realiseras den</div>
+                    </div>
+                    <div class="flode-summary-row" role="row">
+                        <div class="principle" role="cell">Uppgiftsminimering</div>
+                        <div class="source" role="cell">GDPR art. 5.1 c</div>
+                        <div class="impl" role="cell">Vektorsökningen returnerar enbart de mest relevanta textsegmenten, inte hela dokumentmängden. (Steg 3)</div>
+                    </div>
+                    <div class="flode-summary-row" role="row">
+                        <div class="principle" role="cell">Ändamålsbegränsning</div>
+                        <div class="source" role="cell">GDPR art. 5.1 b</div>
+                        <div class="impl" role="cell">Per-assistent-konfiguration: en assistent får endast åtkomst till de kunskapskällor den är knuten till. (Steg 0 &amp; 3)</div>
+                    </div>
+                    <div class="flode-summary-row" role="row">
+                        <div class="principle" role="cell">Integritet och konfidentialitet</div>
+                        <div class="source" role="cell">GDPR art. 5.1 f &amp; art. 32</div>
+                        <div class="impl" role="cell">Lokal drift; krypterad intern trafik; rollbaserad åtkomst via SSO. (Steg 1, hela kedjan)</div>
+                    </div>
+                    <div class="flode-summary-row" role="row">
+                        <div class="principle" role="cell">Tredjelandsöverföring</div>
+                        <div class="source" role="cell">GDPR kap. V, Schrems II</div>
+                        <div class="impl" role="cell">Undviks i grundkonfigurationen; aktualiseras endast vid val av extern modellleverantör. (Steg 5)</div>
+                    </div>
+                    <div class="flode-summary-row" role="row">
+                        <div class="principle" role="cell">Teknisk bearbetning</div>
+                        <div class="source" role="cell">OSL 10 kap. 2 a §</div>
+                        <div class="impl" role="cell">Möjliggörs av att urval, sökning och relevansbedömning sker internt – den externa modellen utför en avgränsad transformation. Förutsätter avtal som binder leverantören vid «endast»-rollen. (Se § iii)</div>
+                    </div>
+                    <div class="flode-summary-row" role="row">
+                        <div class="principle" role="cell">Transparens &amp; spårbarhet</div>
+                        <div class="source" role="cell">AI-förordningen art. 12–13</div>
+                        <div class="impl" role="cell">Granskningsloggar över fråga, källor, modell och svar; källhänvisningar i gränssnittet. (Steg 6)</div>
+                    </div>
+                    <div class="flode-summary-row" role="row">
+                        <div class="principle" role="cell">Mänsklig tillsyn</div>
+                        <div class="source" role="cell">AI-förordningen art. 14</div>
+                        <div class="impl" role="cell">Användaren ser källorna och kan verifiera; AI:n är ett underlag, inte en automatisk beslutsfattare. (Steg 6)</div>
+                    </div>
+                    <div class="flode-summary-row" role="row">
+                        <div class="principle" role="cell">Granskbarhet av algoritm</div>
+                        <div class="source" role="cell">Egen policy / offentlighetsprincipen</div>
+                        <div class="impl" role="cell">All kod är öppen källkod (AGPL v3) och kan granskas av jurist eller extern revisor.</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============ CLOSING ============ -->
+            <section class="flode-closing" aria-label="Att ta med sig">
+                <div class="flode-closing-label">Att ta med sig</div>
+                <h2>Datasuveränitet är inte en <em>egenskap</em><br>utan ett <em>konfigurationsval</em>.</h2>
+                <p>Eneo gör det möjligt att hålla hela RAG-kedjan inom er egen datahall, men den möjligheten realiseras först när konfigurationsbesluten – modellval, identitetsleverantör, loggnivå, kunskapskällornas omfattning – är fattade i samråd mellan verksamhet, IT och juridik. Den här översikten visar var i flödet de besluten får verkan.</p>
+            </section>
+
+            <footer class="flode-doc-footer">
+                <span>Eneo · RAG · Underlag för dialog</span>
+                <span>Källa: eneo.ai &amp; öppen källkod (AGPL v3)</span>
+            </footer>
+
+        </div>
+    </main>
+
+    <!-- ============ SAJTENS FOOTER ============ -->
+    <footer class="v2-footer">
+        <div class="container">
+            <div class="footer-intro">
+                <div class="footer-logo">
+                    <svg role="img" aria-label="Eneo logotyp" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 172" style="height:22px;width:auto;shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;fill-rule:evenodd;clip-rule:evenodd;">
+                        <path fill="#1a7ad4" d="M 107.5,-0.5 C 114.833,-0.5 122.167,-0.5 129.5,-0.5C 176.816,9.15707 202.149,38.1571 205.5,86.5C 203.389,125.423 184.389,152.257 148.5,167C 142.419,168.71 136.419,170.21 130.5,171.5C 123.5,171.5 116.5,171.5 109.5,171.5C 93.3852,168.947 78.7185,162.781 65.5,153C 57.3188,144.986 49.3188,136.819 41.5,128.5C 61.6527,107.847 81.9861,87.3471 102.5,67C 111.582,60.8816 121.249,59.8816 131.5,64C 144.46,73.9171 146.96,86.0837 139,100.5C 131.833,107.667 124.667,114.833 117.5,122C 138.893,122.044 151.726,111.544 156,90.5C 156.442,68.8872 146.275,55.0539 125.5,49C 112.803,46.9218 101.803,50.2552 92.5,59C 86.6667,64.8333 80.8333,70.6667 75,76.5C 63.5,65 52,53.5 40.5,42C 50.2305,31.5999 60.5639,21.9333 71.5,13C 82.7423,6.20074 94.7423,1.70074 107.5,-0.5 Z"/>
+                        <path class="logo-text" d="M 649.5,76.5 C 649.5,82.1667 649.5,87.8333 649.5,93.5C 640.846,129.635 617.846,147.135 580.5,146C 552.923,141.09 535.59,125.09 528.5,98C 514.833,97.6667 501.167,97.3333 487.5,97C 480.994,93.8341 478.494,88.6674 480,81.5C 480.979,78.3749 482.813,75.8749 485.5,74C 498.401,72.538 511.401,72.038 524.5,72.5C 521.764,64.5453 516.764,58.3786 509.5,54C 488.763,45.1354 472.596,50.3021 461,69.5C 453.601,90.9824 459.767,107.149 479.5,118C 492.365,122.56 504.198,120.727 515,112.5C 519.225,119.939 523.725,127.272 528.5,134.5C 511.022,146.856 492.022,149.689 471.5,143C 466.51,141.335 462.01,138.835 458,135.5C 457.502,138.817 457.335,142.15 457.5,145.5C 448.833,145.5 440.167,145.5 431.5,145.5C 431.667,123.497 431.5,101.497 431,79.5C 426.715,61.265 415.215,51.265 396.5,49.5C 377.785,51.265 366.285,61.265 362,79.5C 361.5,101.497 361.333,123.497 361.5,145.5C 352.833,145.5 344.167,145.5 335.5,145.5C 335.5,129.5 335.5,113.5 335.5,97.5C 322.163,97.6666 308.829,97.4999 295.5,97C 287.991,92.8092 285.824,86.6426 289,78.5C 290.663,76.0833 292.829,74.25 295.5,73C 307.829,72.5001 320.162,72.3335 332.5,72.5C 327.027,58.2227 316.527,50.556 301,49.5C 282.085,51.1142 270.419,61.1142 266,79.5C 264.719,101.205 274.553,114.705 295.5,120C 303.532,121.06 311.032,119.56 318,115.5C 318.667,124.833 318.667,134.167 318,143.5C 289.265,150.965 266.265,142.631 249,118.5C 233.274,88.8088 237.108,61.9755 260.5,38C 285.142,19.8768 310.476,18.8768 336.5,35C 340.981,38.3143 344.981,42.1476 348.5,46.5C 369.825,23.1077 395.158,17.6077 424.5,30C 432.127,34.3166 438.794,39.8166 444.5,46.5C 465.825,23.1077 491.158,17.6077 520.5,30C 528.127,34.3166 534.794,39.8166 540.5,46.5C 561.825,23.1077 587.158,17.6077 616.5,30C 634.762,40.3615 645.762,55.8615 649.5,76.5 Z M 583.5,49.5 C 610.442,49.9416 623.609,63.6083 623,90.5C 619.82,107.013 609.987,116.846 593.5,120C 572.335,120.831 559.169,110.998 554,90.5C 552.92,68.7752 562.753,55.1085 583.5,49.5 Z"/>
+                        <path fill="#1a7ad4" d="M -0.5,87.5 C -0.5,85.8333 -0.5,84.1667 -0.5,82.5C 10.1734,71.9931 21.0067,61.6598 32,51.5C 43.9725,62.3055 55.4725,73.6388 66.5,85.5C 55.5,97.1667 44.1667,108.5 32.5,119.5C 21.4793,108.812 10.4793,98.1453 -0.5,87.5 Z"/>
+                    </svg>
+                </div>
+                <p>Ett initiativ från Sundsvalls kommun och Ånge kommun för hela offentliga Sverige.</p>
+            </div>
+            <div class="footer-grid">
+                <div class="footer-box">
+                    <p class="footer-heading">Kontakt</p>
+                    <a href="mailto:digitalisering@sundsvall.se">digitalisering@sundsvall.se</a>
+                </div>
+                <div class="footer-box">
+                    <p class="footer-heading">Ladda ned</p>
+                    <a href="https://github.com/eneo-ai/eneo">Källkod</a>
+                </div>
+                <div class="footer-box">
+                    <p class="footer-heading">Tillgänglighet</p>
+                    <a href="tillganglighetsredogorelse.html">Tillgänglighetsredogörelse</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© Sundsvalls kommun och Ånge kommun</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js?v=2"></script>
+</body>
+</html>
