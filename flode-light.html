@@ -74,14 +74,23 @@
     <main id="main-content" class="flode-light-page">
         <div class="container">
 
-            <div class="flode-light-eyebrow">
-                <span class="flode-light-badge">Sammanfattning</span>
-            </div>
-
             <header class="flode-light-header">
+                <div class="flode-light-meta-row">
+                    <span>Sammanfattning <span class="dot" aria-hidden="true"></span> I korthet</span>
+                    <span>Eneo RAG-flöde <span class="dot" aria-hidden="true"></span> Lokal drift</span>
+                </div>
                 <h1 class="flode-light-h1">Eneo i <em>korthet</em> — kontroll, insyn och teknisk bearbetning.</h1>
-                <p class="flode-light-subtitle">En förenklad och sammanfattande beskrivning av hur kommunen behåller kontrollen genom hela flödet, vad som faktiskt skickas till en extern språkmodell, och varför arkitekturen är central för begreppet «teknisk bearbetning». För en mer ingående genomgång — med steg-för-steg-beskrivning, juridiska anmärkningar och fördjupning i 10 kap. 2 a § OSL — se den <a href="flode.html">fullständiga versionen</a> av detta underlag.</p>
+                <p class="flode-light-subtitle">En komprimerad bild av hur kommunen behåller kontrollen genom hela flödet, och varför arkitekturen är central för begreppet «teknisk bearbetning».</p>
             </header>
+
+            <!-- ============ INTRO ============ -->
+            <section class="flode-light-intro" aria-label="Inledning">
+                <div class="flode-light-intro-label">Inledning</div>
+                <div>
+                    <p class="has-dropcap">Retrieval-Augmented Generation, RAG, är arkitekturen som låter ett AI-system svara utifrån organisationens egna dokument. När sökning och behörighetsprövning sker innanför datahallen och den externa språkmodellen får ett färdigt, avgränsat material att arbeta med, reduceras modellens roll till just det den är bäst på: språklig bearbetning av redan kurerat innehåll.</p>
+                    <p>Den här översikten visar arkitekturen i sin enklaste form. För steg-för-steg-beskrivning, juridiska anmärkningar och fördjupning i 10 kap. 2 a § offentlighets- och sekretesslagen — se <a href="flode.html">den fullständiga versionen</a> av underlaget.</p>
+                </div>
+            </section>
 
             <!-- ============ SIMPLIFIED DIAGRAM ============ -->
             <figure class="flode-light-diagram-wrap" aria-labelledby="ld-title ld-desc">
