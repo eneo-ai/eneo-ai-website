@@ -1,0 +1,335 @@
+/* Flöde light page – kort sammanfattningsversion
+   Förenklad editorial layout med Eneos design-tokens.
+   Fungerar i både mörkt och ljust läge. */
+
+/* ============ LOKALA TOKENS ============ */
+.flode-light-page {
+    --rule: var(--border);
+    --brand-tint: rgba(26, 122, 212, 0.08);
+    --brand-tint-strong: rgba(26, 122, 212, 0.14);
+    /* Extern aktör – Eneos amber-token */
+    --external: var(--amber);
+    --external-tint: var(--amber-dim);
+}
+
+/* ============ PAGE WRAP ============ */
+.flode-light-page {
+    padding-top: 1.75rem;
+    padding-bottom: 5rem;
+}
+.flode-light-page .container {
+    max-width: 50rem;
+}
+
+/* ============ ARTICLE HEADER ============ */
+.flode-light-eyebrow {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
+.flode-light-badge {
+    font-family: var(--font-body);
+    font-size: 0.56rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border: 1px solid var(--rule);
+    border-radius: 100px;
+}
+.flode-light-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--rule);
+}
+.flode-light-h1 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(1.625rem, 3.4vw, 2.125rem);
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    color: var(--text);
+    margin-bottom: 0.625rem;
+}
+.flode-light-h1 em {
+    font-style: italic;
+    background: linear-gradient(135deg, var(--brand), var(--brand-bright) 50%, var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.flode-light-subtitle {
+    font-family: var(--font-display);
+    font-size: 0.94rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+    font-weight: 300;
+    max-width: 38rem;
+}
+
+/* ============ DIAGRAM ============ */
+.flode-light-diagram-wrap {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1.25rem 1.5rem 1.4rem;
+    margin-bottom: 1.25rem;
+    box-shadow: var(--shadow-sm);
+}
+.flode-light-diagram-wrap svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+/* SVG-element via klasser så de följer temat */
+.flode-light-diagram .boundary {
+    fill: var(--brand-tint);
+    stroke: var(--brand-bright);
+    stroke-width: 1.5;
+    stroke-dasharray: 5 4;
+    opacity: 0.85;
+}
+.flode-light-diagram .boundary-label {
+    font-family: var(--font-body);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    fill: var(--brand-light);
+    font-weight: 700;
+}
+.flode-light-diagram .external-boundary-label {
+    font-family: var(--font-body);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    fill: var(--external);
+    font-weight: 700;
+}
+.flode-light-diagram .node {
+    fill: var(--bg-raised);
+    stroke: var(--border);
+    stroke-width: 1;
+}
+.flode-light-diagram .node-highlight {
+    fill: var(--brand-tint);
+    stroke: var(--brand-bright);
+    stroke-width: 1.5;
+}
+.flode-light-diagram .node-title {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 14px;
+    fill: var(--text);
+    text-anchor: middle;
+}
+.flode-light-diagram .node-num {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 11px;
+    fill: var(--brand-light);
+    text-anchor: middle;
+}
+.flode-light-diagram .node-sub {
+    font-family: var(--font-body);
+    font-size: 10px;
+    fill: var(--text-muted);
+    text-anchor: middle;
+}
+.flode-light-diagram .external-llm-box {
+    fill: var(--brand);
+    stroke: var(--external);
+    stroke-width: 1.5;
+    stroke-dasharray: 4 3;
+}
+.flode-light-diagram .external-llm-num {
+    fill: var(--external);
+}
+.flode-light-diagram .external-llm-title {
+    fill: #ffffff;
+}
+.flode-light-diagram .external-llm-sub {
+    fill: rgba(255, 255, 255, 0.75);
+}
+.flode-light-diagram .arrow {
+    stroke: var(--brand);
+    stroke-width: 1.5;
+    fill: none;
+}
+.flode-light-diagram .arrow-dashed {
+    stroke-dasharray: 3 3;
+}
+.flode-light-diagram .arrow-external {
+    stroke: var(--external);
+    stroke-width: 1.5;
+    fill: none;
+    stroke-dasharray: 3 3;
+}
+.flode-light-diagram .arrow-label-brand {
+    font-family: var(--font-body);
+    font-size: 9px;
+    fill: var(--brand);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+.flode-light-diagram .arrow-label-external {
+    font-family: var(--font-body);
+    font-size: 9px;
+    fill: var(--external);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+.flode-light-diagram .marker-brand {
+    fill: var(--brand);
+}
+.flode-light-diagram .marker-external {
+    fill: var(--external);
+}
+
+/* ============ TWO-COLUMN SECTION ============ */
+.flode-light-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.flode-light-col {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1rem 1.125rem;
+}
+.flode-light-col-eyebrow {
+    font-family: var(--font-body);
+    font-size: 0.625rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--brand-light);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+.flode-light-col h2 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1.0625rem;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    color: var(--text);
+    margin-bottom: 0.625rem;
+}
+.flode-light-col h2 em {
+    font-style: italic;
+    color: var(--brand-light);
+    font-weight: 400;
+}
+.flode-light-col p {
+    font-size: 0.8125rem;
+    line-height: 1.55;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+.flode-light-col p:last-child {
+    margin-bottom: 0;
+}
+.flode-light-col p strong {
+    color: var(--text);
+    font-weight: 600;
+}
+.flode-light-col p em {
+    font-style: italic;
+    color: var(--brand-light);
+    font-weight: 500;
+}
+
+/* ============ CLOSING ============ */
+.flode-light-closing {
+    background: var(--bg-card);
+    background-image:
+        radial-gradient(ellipse 80% 60% at 30% 30%, rgba(26, 122, 212, 0.22) 0%, transparent 60%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1.125rem 1.4rem;
+    color: var(--text);
+    margin-bottom: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+.flode-light-closing::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(135deg, var(--brand), var(--brand-bright));
+}
+.flode-light-closing-label {
+    font-family: var(--font-body);
+    font-size: 0.625rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--brand-light);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+.flode-light-closing p {
+    font-family: var(--font-display);
+    font-size: 0.94rem;
+    line-height: 1.5;
+    color: var(--text);
+    font-weight: 300;
+}
+.flode-light-closing p em {
+    font-style: italic;
+    background: linear-gradient(135deg, var(--brand-bright), var(--accent) 60%, #7dd3fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 400;
+}
+
+/* ============ DOC FOOTER ============ */
+.flode-light-doc-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-body);
+    font-size: 0.625rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    font-weight: 600;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--rule);
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 720px) {
+    .flode-light-two-col {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    .flode-light-doc-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* ============ MOTION ============ */
+@media (prefers-reduced-motion: reduce) {
+    .flode-light-page *,
+    .flode-light-page *::before,
+    .flode-light-page *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ============ PRINT ============ */
+@media print {
+    .flode-light-closing {
+        background-image: none;
+        border: 1px solid var(--rule);
+    }
+}
