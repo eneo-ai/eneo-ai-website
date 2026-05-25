@@ -314,6 +314,122 @@ svg.flode-diagram {
     fill: var(--external);
 }
 
+/* ============ PREPARATION PHASE (FAS 0) ============ */
+.flode-prep-wrap {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 3rem 2.75rem 2.5rem;
+    box-shadow: var(--shadow-md);
+    position: relative;
+}
+.flode-prep-wrap::before {
+    content: "FAS 0";
+    position: absolute;
+    top: 1.5rem;
+    right: 1.75rem;
+    font-family: var(--font-body);
+    font-size: 0.625rem;
+    letter-spacing: 0.16em;
+    color: var(--text-faint);
+    font-weight: 600;
+}
+.flode-prep-lead {
+    font-family: var(--font-display);
+    font-size: 1.18rem;
+    line-height: 1.55;
+    color: var(--text);
+    font-weight: 300;
+    max-width: 800px;
+    margin-bottom: 2.5rem;
+}
+.flode-prep-lead em {
+    font-style: italic;
+    color: var(--brand-light);
+    font-weight: 400;
+}
+.flode-prep-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.125rem;
+    position: relative;
+}
+.flode-prep-step {
+    padding: 1.5rem 1.375rem;
+    background: var(--bg-raised);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    position: relative;
+    transition: transform var(--transition-smooth),
+                box-shadow var(--transition-smooth),
+                border-color var(--transition-smooth);
+}
+.flode-prep-step:hover,
+.flode-prep-step:focus-within {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--brand-bright);
+}
+.flode-prep-step-num {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 0.875rem;
+    color: var(--brand-light);
+    letter-spacing: 0.04em;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+.flode-prep-step h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1.125rem;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+}
+.flode-prep-step p {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin: 0;
+}
+.flode-prep-step p strong {
+    color: var(--text);
+    font-weight: 600;
+}
+.flode-prep-control {
+    margin-top: 2rem;
+    padding: 1.4rem 1.6rem;
+    background: var(--brand-tint);
+    border-left: 3px solid var(--brand-bright);
+    border-radius: 0 var(--radius) var(--radius) 0;
+}
+.flode-prep-control::before {
+    content: "Kontrollpunkten";
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.625rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--brand-light);
+    font-weight: 700;
+    margin-bottom: 0.625rem;
+}
+.flode-prep-control p {
+    font-family: var(--font-display);
+    font-size: 0.94rem;
+    line-height: 1.6;
+    color: var(--text);
+    margin: 0;
+}
+.flode-prep-control em {
+    font-style: italic;
+    color: var(--brand-light);
+    font-weight: 500;
+}
+
 /* ============ PROMPT PACKAGE DIAGRAM (Fig 02) ============ */
 .flode-prompt-package {
     display: flex;
@@ -984,6 +1100,8 @@ svg.flode-diagram {
         gap: 0.875rem;
     }
     .flode-card-num { font-size: 2rem; }
+    .flode-prep-wrap { padding: 2rem 1.375rem 1.75rem; }
+    .flode-prep-steps { grid-template-columns: 1fr; gap: 0.875rem; }
 }
 
 /* ============ MOTION ============ */

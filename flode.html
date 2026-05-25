@@ -197,10 +197,48 @@
                 </figure>
             </section>
 
+            <!-- ============ PREPARATION PHASE (FAS 0) ============ -->
+            <section class="flode-diagram-section" aria-labelledby="prep-heading">
+                <div class="flode-section-header">
+                    <div class="flode-section-num">ii. Förberedelsen</div>
+                    <h2 id="prep-heading">Innan flödet — <em>kunskapen kureras</em></h2>
+                </div>
+
+                <div class="flode-prep-wrap">
+                    <p class="flode-prep-lead">Innan en användare kan ställa en fråga måste det finnas en faktakälla att hämta från. Den här fasen är inte teknisk utan <em>aktivt redaktionell</em>: kommunen avgör själv vilket material som ska kunna besvara frågor, vem som får komma åt det och i vilket sammanhang. Det är här flödets kvalitet och sekretess avgörs i förväg.</p>
+
+                    <div class="flode-prep-steps">
+
+                        <div class="flode-prep-step">
+                            <span class="flode-prep-step-num">i.</span>
+                            <h4>Urval av källor</h4>
+                            <p>Kommunen avgör <strong>vilka dokument, webbplatser eller datakällor</strong> som ska utgöra faktagrund — riktlinjer, handböcker, beslutsstöd, lokala föreskrifter. Material som inte väljs är heller inte sökbart.</p>
+                        </div>
+
+                        <div class="flode-prep-step">
+                            <span class="flode-prep-step-num">ii.</span>
+                            <h4>Granskning &amp; kontroll</h4>
+                            <p>Innehållet <strong>granskas innan det laddas in</strong> — är det aktuellt, korrekt, fritt från känsliga uppgifter som inte bör spridas? Den kontrollen görs av människa, inte av plattformen.</p>
+                        </div>
+
+                        <div class="flode-prep-step">
+                            <span class="flode-prep-step-num">iii.</span>
+                            <h4>Indexering &amp; behörighet</h4>
+                            <p>Eneo bryter ned materialet, vektoriserar det och lagrar det i datahallen. Samtidigt knyts varje källa till en <strong>specifik assistent</strong> med uttalade behörighetsregler för vem som senare får fråga.</p>
+                        </div>
+
+                    </div>
+
+                    <div class="flode-prep-control">
+                        <p>Det är denna fas som avgör vad assistenten <em>kan</em> svara på. Material som inte väljs ut och inte indexeras kan flödet inte heller använda — oavsett hur frågan formuleras. Förberedelsen är därför inte en teknisk uppstart utan ett <em>aktivt kommunalt urval</em> som kan dokumenteras, gallras och revideras över tid.</p>
+                    </div>
+                </div>
+            </section>
+
             <!-- ============ PROMPT PACKAGE DIAGRAM (Fig 02) ============ -->
             <section class="flode-diagram-section" aria-labelledby="package-heading">
                 <div class="flode-section-header">
-                    <div class="flode-section-num">ii. Promptpaketet</div>
+                    <div class="flode-section-num">iii. Promptpaketet</div>
                     <h2 id="package-heading">Uppdraget till <em>LLM</em> i en bild</h2>
                 </div>
 
@@ -259,7 +297,7 @@
             <!-- ============ STEPS ============ -->
             <section class="flode-steps" aria-labelledby="steps-heading">
                 <div class="flode-section-header">
-                    <div class="flode-section-num">iii. Genomgång</div>
+                    <div class="flode-section-num">iv. Genomgång</div>
                     <h2 id="steps-heading">Steg för steg, med <em>juridiska</em> noter</h2>
                 </div>
 
@@ -375,7 +413,7 @@
             <!-- ============ DEEP DIVE: OSL 10:2a ============ -->
             <section class="flode-deep-dive" aria-labelledby="deep-dive-heading">
                 <div class="flode-section-header">
-                    <div class="flode-section-num">iv. Fördjupning</div>
+                    <div class="flode-section-num">v. Fördjupning</div>
                     <h2 id="deep-dive-heading">Teknisk <em>bearbetning</em>?<span class="flode-osl-ref">— 10 kap. 2 a § offentlighets- och sekretesslagen</span></h2>
                 </div>
 
@@ -440,7 +478,7 @@
             <!-- ============ SUMMARY TABLE ============ -->
             <section class="flode-summary" aria-labelledby="summary-heading">
                 <div class="flode-section-header">
-                    <div class="flode-section-num">v. Sammanställning</div>
+                    <div class="flode-section-num">vi. Sammanställning</div>
                     <h2 id="summary-heading">Juridiska principer <em>mot</em> implementation</h2>
                 </div>
 
@@ -473,7 +511,7 @@
                     <div class="flode-summary-row" role="row">
                         <div class="principle" role="cell">Teknisk bearbetning</div>
                         <div class="source" role="cell">OSL 10 kap. 2 a §</div>
-                        <div class="impl" role="cell">Möjliggörs av att urval, sökning och relevansbedömning sker internt – den externa modellen utför en avgränsad transformation. Förutsätter avtal som binder leverantören vid «endast»-rollen. (Se § iv)</div>
+                        <div class="impl" role="cell">Möjliggörs av att urval, sökning och relevansbedömning sker internt – den externa modellen utför en avgränsad transformation. Förutsätter avtal som binder leverantören vid «endast»-rollen. (Se § v)</div>
                     </div>
                     <div class="flode-summary-row" role="row">
                         <div class="principle" role="cell">Transparens &amp; spårbarhet</div>
