@@ -8,6 +8,9 @@
     --rule-strong: rgba(120, 137, 160, 0.25);
     --brand-tint: rgba(26, 122, 212, 0.08);
     --brand-tint-strong: rgba(26, 122, 212, 0.14);
+    /* Extern aktör – använder Eneos amber-token för "utanför datahallen" */
+    --external: var(--amber);
+    --external-tint: var(--amber-dim);
 }
 
 /* ============ PAGE WRAP ============ */
@@ -172,7 +175,7 @@
     box-shadow: var(--shadow-md);
 }
 .flode-diagram-wrap::before {
-    content: "FIG. 01";
+    content: "FIG. " attr(data-fig);
     position: absolute;
     top: 1.5rem;
     right: 1.75rem;
@@ -293,6 +296,161 @@ svg.flode-diagram {
 .flode-diagram .arrow-marker {
     fill: var(--text-muted);
 }
+.flode-diagram .external-boundary {
+    fill: var(--external-tint);
+    stroke: var(--external);
+    stroke-width: 1.5;
+    stroke-dasharray: 6 4;
+}
+.flode-diagram .external-label {
+    font-family: var(--font-body);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    fill: var(--external);
+    font-weight: 700;
+}
+.flode-diagram .external-num {
+    fill: var(--external);
+}
+
+/* ============ PROMPT PACKAGE DIAGRAM (Fig 02) ============ */
+.flode-prompt-package {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+    max-width: 740px;
+    margin: 0 auto;
+}
+.flode-package-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--brand-bright);
+    border-radius: var(--radius-md);
+    padding: 1.5rem 1.75rem;
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    gap: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-smooth),
+                box-shadow var(--transition-smooth);
+}
+.flode-package-card:hover {
+    transform: translateX(2px);
+    box-shadow: var(--shadow-md);
+}
+.flode-card-marker {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+    padding-top: 2px;
+}
+.flode-card-num {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 2.625rem;
+    line-height: 1;
+    background: linear-gradient(135deg, var(--brand-light), var(--accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.flode-card-role {
+    font-family: var(--font-body);
+    font-size: 0.625rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 700;
+}
+.flode-card-body h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1.3125rem;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    color: var(--text);
+    margin-bottom: 0.875rem;
+}
+.flode-card-example {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.97rem;
+    color: var(--text);
+    line-height: 1.55;
+    margin-bottom: 0.875rem;
+    padding: 0.875rem 1.125rem;
+    background: var(--brand-tint);
+    border-radius: var(--radius);
+}
+.flode-card-fn {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+    padding-left: 2px;
+}
+.flode-card-fn::before {
+    content: "→ ";
+    color: var(--brand-bright);
+    font-weight: 700;
+}
+.flode-package-arrow {
+    text-align: center;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    padding: 0.25rem 0 0;
+}
+.flode-package-arrow::before {
+    content: "↓";
+    display: block;
+    font-size: 1.375rem;
+    color: var(--brand-bright);
+    font-style: normal;
+    margin-bottom: 2px;
+    line-height: 1;
+}
+.flode-package-llm {
+    background: var(--bg-raised);
+    background-image:
+        radial-gradient(ellipse at center, rgba(26, 122, 212, 0.18) 0%, transparent 70%);
+    color: var(--text);
+    border-radius: var(--radius-md);
+    padding: 1.75rem 1.75rem 1.5rem;
+    text-align: center;
+    position: relative;
+    border: 1.5px dashed var(--external);
+    margin-top: 4px;
+}
+.flode-package-llm::before {
+    content: "EXTERN AKTÖR";
+    position: absolute;
+    top: -9px;
+    left: 24px;
+    background: var(--bg-card);
+    padding: 0 10px;
+    font-family: var(--font-body);
+    font-size: 0.625rem;
+    letter-spacing: 0.14em;
+    color: var(--external);
+    font-weight: 700;
+}
+.flode-llm-label {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 1.375rem;
+    margin-bottom: 0.375rem;
+    letter-spacing: -0.015em;
+}
+.flode-llm-sub {
+    font-family: var(--font-body);
+    font-size: 0.84rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
 
 /* ============ STEPS ============ */
 .flode-steps {
@@ -318,23 +476,13 @@ svg.flode-diagram {
     font-family: var(--font-display);
     font-size: 5.5rem;
     font-weight: 300;
-    line-height: 0.85;
+    line-height: 1;
+    padding-top: 0.08em;
     background: linear-gradient(135deg, var(--brand-light), var(--accent));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin-bottom: 1rem;
-}
-.flode-step-number sup {
-    font-family: var(--font-display);
-    font-style: italic;
-    font-size: 0.875rem;
-    color: var(--text-muted);
-    background: none;
-    -webkit-text-fill-color: var(--text-muted);
-    vertical-align: super;
-    margin-left: 0.25rem;
-    font-weight: 400;
 }
 .flode-step-title-aside {
     font-family: var(--font-body);
@@ -825,6 +973,17 @@ svg.flode-diagram {
         align-items: flex-start;
         gap: 0.5rem;
     }
+    .flode-package-card {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        padding: 1.25rem;
+    }
+    .flode-card-marker {
+        flex-direction: row;
+        align-items: baseline;
+        gap: 0.875rem;
+    }
+    .flode-card-num { font-size: 2rem; }
 }
 
 /* ============ MOTION ============ */

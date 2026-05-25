@@ -81,7 +81,7 @@
                     <span>Eneo RAG-flöde <span class="dot" aria-hidden="true"></span> Lokal drift</span>
                 </div>
                 <h1 class="flode-h1">Hur en fråga<br>blir ett <em>svar</em><br>i Eneo.</h1>
-                <p class="flode-subtitle">En tolkning och beskrivning av dataflödet vid Retrieval-Augmented Generation när plattformen driftas i organisationens egen datahall – framtagen som underlag för fortsatt dialog med jurist.</p>
+                <p class="flode-subtitle">En beskrivning av dataflödet vid Retrieval-Augmented Generation när plattformen driftas i organisationens egen datahall – framtagen som underlag för fortsatt dialog med jurist.</p>
             </header>
 
             <!-- ============ INTRO ============ -->
@@ -100,19 +100,19 @@
                     <h2 id="diagram-heading">Flödet i en <em>bild</em></h2>
                 </div>
 
-                <figure class="flode-diagram-wrap">
+                <figure class="flode-diagram-wrap" data-fig="01">
                     <svg class="flode-diagram" viewBox="0 135 900 665" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="diagram-title diagram-desc">
                         <title id="diagram-title">RAG-flöde i Eneo – översikt</title>
-                        <desc id="diagram-desc">Schematisk översikt över dataflödet vid en RAG-fråga. Allt sker innanför organisationens datahall: från frågans gränssnitt, via vektorisering och semantisk sökning mot pgvector, till sammanställning av kontext och språkmodellen, samt loggning för spårbarhet.</desc>
+                        <desc id="diagram-desc">Schematisk översikt över dataflödet vid en RAG-fråga. Sökning, urval och behörighetsprövning sker innanför datahallen; endast promptpaketet (steg fyra till fem) passerar ut till språkmodellen som hanteras av extern aktör.</desc>
                         <defs>
                             <marker id="flode-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
                                 <path d="M 0 0 L 10 5 L 0 10 z" class="arrow-marker"/>
                             </marker>
                         </defs>
 
-                        <!-- BOUNDARY -->
-                        <rect x="40" y="150" width="820" height="640" rx="12" class="boundary"/>
-                        <text x="60" y="175" class="boundary-label">Organisationens datahall – data lämnar aldrig denna gräns</text>
+                        <!-- DATAHALL-BOUNDARY -->
+                        <rect x="40" y="150" width="820" height="530" rx="12" class="boundary"/>
+                        <text x="60" y="175" class="boundary-label">Organisationens datahall – urval, sökning och behörighet stannar här</text>
 
                         <!-- Step 1: Frontend -->
                         <g>
@@ -176,42 +176,97 @@
                             <text x="450" y="656" class="node-sub">instruktion + källtext + fråga</text>
                         </g>
 
-                        <!-- Arrow 4->5 -->
-                        <path d="M 450 666 L 450 700" class="arrow" marker-end="url(#flode-arr)"/>
-                        <text x="460" y="688" class="arrow-label">prompt-paket</text>
+                        <!-- Arrow 4->5 (crosses the data hall boundary) -->
+                        <path d="M 450 666 L 450 746" class="arrow" marker-end="url(#flode-arr)"/>
+                        <text x="460" y="695" class="arrow-label">promptpaket lämnar</text>
+                        <text x="460" y="710" class="arrow-label">datahallen</text>
 
-                        <!-- Step 5: LLM -->
-                        <g>
-                            <text x="450" y="720" class="node-num">v.</text>
-                            <rect x="320" y="730" width="260" height="56" rx="8" class="node node-llm"/>
-                            <text x="450" y="757" class="node-label node-llm-label">Språkmodell (LLM)</text>
-                            <text x="450" y="776" class="node-sub node-llm-sub">lokal drift eller via konfigurerat API</text>
-                        </g>
+                        <!-- EXTERN AKTÖR container -->
+                        <rect x="150" y="700" width="600" height="92" rx="12" class="external-boundary"/>
+                        <text x="170" y="722" class="external-label">Extern aktör — utanför myndighetens kontroll</text>
 
-                        <!-- Audit log side -->
+                        <!-- Step 5: LLM (inside external container) -->
                         <g>
-                            <rect x="660" y="730" width="180" height="56" rx="8" class="audit"/>
-                            <text x="750" y="757" class="node-label" style="font-size: 12px;">Granskningslogg</text>
-                            <text x="750" y="775" class="node-sub">spårbarhet, vem &amp; vad</text>
-                            <path d="M 580 758 L 658 758" class="arrow arrow-dashed"/>
+                            <text x="450" y="746" class="node-num external-num">v.</text>
+                            <rect x="280" y="750" width="340" height="36" rx="6" class="node node-llm"/>
+                            <text x="450" y="773" class="node-label node-llm-label">Språkmodell (LLM)</text>
                         </g>
                     </svg>
 
-                    <figcaption class="flode-diagram-caption">Fig. 01 — Hela kedjan från fråga till svar sker innanför datahallens gränser. Den streckade ramen är en juridiskt meningsfull gräns: inget innehåll passerar den om inte ni aktivt konfigurerar att så ska ske.</figcaption>
+                    <figcaption class="flode-diagram-caption">Fig. 01 — Den blå ramen markerar datahallen där sökning, urval och behörighetsprövning sker. Den gulbruna ramen markerar den externa aktören. Endast promptpaketet (steg iv → v) passerar mellan dem.</figcaption>
+                </figure>
+            </section>
+
+            <!-- ============ PROMPT PACKAGE DIAGRAM (Fig 02) ============ -->
+            <section class="flode-diagram-section" aria-labelledby="package-heading">
+                <div class="flode-section-header">
+                    <div class="flode-section-num">ii. Promptpaketet</div>
+                    <h2 id="package-heading">Uppdraget till <em>LLM</em> i en bild</h2>
+                </div>
+
+                <figure class="flode-diagram-wrap" data-fig="02">
+                    <div class="flode-prompt-package">
+
+                        <div class="flode-package-card">
+                            <div class="flode-card-marker">
+                                <span class="flode-card-num" aria-hidden="true">01</span>
+                                <span class="flode-card-role">Uppdraget</span>
+                            </div>
+                            <div class="flode-card-body">
+                                <h4>Systeminstruktion</h4>
+                                <p class="flode-card-example">«Du är en handläggarassistent. Svara enbart utifrån källtexten nedan. Om svaret inte finns där, säg det — hitta inte på.»</p>
+                                <p class="flode-card-fn">Definierar och begränsar vad modellen får göra — låser den vid en bearbetande roll.</p>
+                            </div>
+                        </div>
+
+                        <div class="flode-package-card">
+                            <div class="flode-card-marker">
+                                <span class="flode-card-num" aria-hidden="true">02</span>
+                                <span class="flode-card-role">Materialet</span>
+                            </div>
+                            <div class="flode-card-body">
+                                <h4>Källtext (kontext)</h4>
+                                <p class="flode-card-example">[ Textavsnitt 1 ] &nbsp; [ Textavsnitt 2 ] &nbsp; [ Textavsnitt 3 ] …<br>— de stycken som vektorsökningen plockat ur era egna dokument</p>
+                                <p class="flode-card-fn">Avgränsar exakt vilket material modellen kan utgå från — inget annat är åtkomligt.</p>
+                            </div>
+                        </div>
+
+                        <div class="flode-package-card">
+                            <div class="flode-card-marker">
+                                <span class="flode-card-num" aria-hidden="true">03</span>
+                                <span class="flode-card-role">Uppgiften</span>
+                            </div>
+                            <div class="flode-card-body">
+                                <h4>Användarens fråga</h4>
+                                <p class="flode-card-example">«Vad gäller för bygglov vid komplementbyggnad under 30 m²?»</p>
+                                <p class="flode-card-fn">Specificerar vad modellen konkret ska besvara — ett enskilt, avgränsat uppdrag.</p>
+                            </div>
+                        </div>
+
+                        <div class="flode-package-arrow" aria-hidden="true">skickas som ett enda anrop</div>
+
+                        <div class="flode-package-llm">
+                            <div class="flode-llm-label">Språkmodell (LLM)</div>
+                            <div class="flode-llm-sub">utför en avgränsad transformation av paketet — inget eget urval, ingen egen hämtning</div>
+                        </div>
+
+                    </div>
+
+                    <figcaption class="flode-diagram-caption">Fig. 02 — Promptpaketet är det enda LLM:n har tillgång till. Modellen kan inte söka, hämta eller resonera utöver dessa tre delar. Det är just denna avgränsning som gör att uppdraget kan beskrivas som en transformation snarare än en saklig prövning.</figcaption>
                 </figure>
             </section>
 
             <!-- ============ STEPS ============ -->
             <section class="flode-steps" aria-labelledby="steps-heading">
                 <div class="flode-section-header">
-                    <div class="flode-section-num">ii. Genomgång</div>
+                    <div class="flode-section-num">iii. Genomgång</div>
                     <h2 id="steps-heading">Steg för steg, med <em>juridiska</em> noter</h2>
                 </div>
 
                 <!-- STEP 0 -->
                 <article class="flode-step">
                     <aside class="flode-step-aside">
-                        <div class="flode-step-number" aria-hidden="true">0<sup>preludium</sup></div>
+                        <div class="flode-step-number" aria-hidden="true">0</div>
                         <div class="flode-step-title-aside">Innan någon fråga ställs</div>
                     </aside>
                     <div class="flode-step-content">
@@ -320,7 +375,7 @@
             <!-- ============ DEEP DIVE: OSL 10:2a ============ -->
             <section class="flode-deep-dive" aria-labelledby="deep-dive-heading">
                 <div class="flode-section-header">
-                    <div class="flode-section-num">iii. Fördjupning</div>
+                    <div class="flode-section-num">iv. Fördjupning</div>
                     <h2 id="deep-dive-heading">Teknisk <em>bearbetning</em>?<span class="flode-osl-ref">— 10 kap. 2 a § offentlighets- och sekretesslagen</span></h2>
                 </div>
 
@@ -385,7 +440,7 @@
             <!-- ============ SUMMARY TABLE ============ -->
             <section class="flode-summary" aria-labelledby="summary-heading">
                 <div class="flode-section-header">
-                    <div class="flode-section-num">iv. Sammanställning</div>
+                    <div class="flode-section-num">v. Sammanställning</div>
                     <h2 id="summary-heading">Juridiska principer <em>mot</em> implementation</h2>
                 </div>
 
@@ -418,7 +473,7 @@
                     <div class="flode-summary-row" role="row">
                         <div class="principle" role="cell">Teknisk bearbetning</div>
                         <div class="source" role="cell">OSL 10 kap. 2 a §</div>
-                        <div class="impl" role="cell">Möjliggörs av att urval, sökning och relevansbedömning sker internt – den externa modellen utför en avgränsad transformation. Förutsätter avtal som binder leverantören vid «endast»-rollen. (Se § iii)</div>
+                        <div class="impl" role="cell">Möjliggörs av att urval, sökning och relevansbedömning sker internt – den externa modellen utför en avgränsad transformation. Förutsätter avtal som binder leverantören vid «endast»-rollen. (Se § iv)</div>
                     </div>
                     <div class="flode-summary-row" role="row">
                         <div class="principle" role="cell">Transparens &amp; spårbarhet</div>
