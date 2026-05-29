@@ -74,6 +74,22 @@ a {
     transition: color var(--transition-smooth);
 }
 
+/* Extern-länk-ikon: visar att en länk öppnas i ny flik / leder till en
+   annan webbplats. Gäller länkar med target="_blank" i löptext och i footern.
+   Ikonen är dekorativ – betydelsen förmedlas via sr-only-text i länken. */
+.article-content a[target="_blank"]::after,
+.v2-footer a[target="_blank"]::after {
+    content: "";
+    display: inline-block;
+    width: 0.72em;
+    height: 0.72em;
+    margin-left: 0.2em;
+    vertical-align: -0.05em;
+    background-color: currentColor;
+    -webkit-mask: var(--external-link-icon) no-repeat center / contain;
+    mask: var(--external-link-icon) no-repeat center / contain;
+}
+
 /* Lists */
 ul, ol {
     list-style: none;

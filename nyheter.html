@@ -94,20 +94,20 @@
     <section class="featured">
         <div class="container">
             <h2 class="sr-only">Utvald nyhet</h2>
-            <a href="nyheter/2026-05-25-skelleftea-teknisk-kommitte.html" class="featured-card">
+            <a href="nyheter/2026-05-29-v2-0-0.html" class="featured-card" data-category="release">
                 <div class="featured-img" aria-hidden="true">
-                    <img src="public/images/nyheter/samarbete.svg" alt="" style="width:100%;height:100%;object-fit:cover;">
+                    <img src="public/images/nyheter/version-release.svg" alt="" style="width:100%;height:100%;object-fit:cover;">
                 </div>
                 <div class="featured-body">
                     <div class="meta">
-                        <span class="tag tag-community">Samarbete</span>
-                        <span class="date">25 maj 2026</span>
+                        <span class="tag tag-release">Release</span>
+                        <span class="date">29 maj 2026</span>
                     </div>
-                    <h3>Skellefteå kommun tar plats i styrningen av Eneo</h3>
+                    <h3>Eneo v2.0.0</h3>
                     <p>
-                        Skellefteå kommun kliver in i den tekniska kommittén för Eneo –
-                        tillsammans med Örebro, Sundsvalls kommun och Försäkringskassan formar
-                        de plattformens framtida tekniska riktning.
+                        En milstolpe med fokus på säkerhet och kontroll: ett helt omarbetat
+                        system för API-nycklar, roller som organisationen själv formar,
+                        live-listning av modeller från alla leverantörer och SBOM för varje release.
                     </p>
                     <span class="read-more">Läs artikeln <span aria-hidden="true">→</span></span>
                 </div>
@@ -120,15 +120,31 @@
         <div class="container">
             <h2 class="sr-only">Alla nyheter</h2>
 
-            <div class="filter-bar" aria-label="Filtrera nyheter">
-                <button class="filter-btn active">Alla</button>
-                <button class="filter-btn">Releaser</button>
-                <button class="filter-btn">Samarbete</button>
+            <div class="filter-bar" role="group" aria-label="Filtrera nyheter">
+                <button type="button" class="filter-btn active" data-filter="alla" aria-pressed="true">Alla</button>
+                <button type="button" class="filter-btn" data-filter="release" aria-pressed="false">Releaser</button>
+                <button type="button" class="filter-btn" data-filter="community" aria-pressed="false">Samarbete</button>
             </div>
+            <p class="sr-only" role="status" aria-live="polite" id="filter-status"></p>
 
             <div class="news-grid" style="grid-template-columns:repeat(auto-fit, minmax(260px, 360px));justify-content:center;">
 
-                <a href="nyheter/2026-05-11-orebro-teknisk-kommitte.html" class="news-card">
+                <a href="nyheter/2026-05-25-skelleftea-teknisk-kommitte.html" class="news-card" data-category="community">
+                    <div class="news-thumb" aria-hidden="true">
+                        <img src="public/images/nyheter/samarbete.svg" alt="" style="width:100%;height:100%;object-fit:cover;">
+                    </div>
+                    <div class="news-body">
+                        <div class="meta">
+                            <span class="tag tag-community">Samarbete</span>
+                            <span class="date">25 maj 2026</span>
+                        </div>
+                        <h3>Skellefteå kommun tar plats i styrningen av Eneo</h3>
+                        <p>Skellefteå kommun kliver in i den tekniska kommittén för Eneo – tillsammans med Örebro, Sundsvalls kommun och Försäkringskassan formar de plattformens framtida tekniska riktning.</p>
+                        <span class="read-more">Läs mer <span aria-hidden="true">→</span></span>
+                    </div>
+                </a>
+
+                <a href="nyheter/2026-05-11-orebro-teknisk-kommitte.html" class="news-card" data-category="community">
                     <div class="news-thumb" aria-hidden="true">
                         <img src="public/images/nyheter/samarbete.svg" alt="" style="width:100%;height:100%;object-fit:cover;">
                     </div>
@@ -143,7 +159,7 @@
                     </div>
                 </a>
 
-                <a href="nyheter/2026-04-15-recon-projekt.html" class="news-card">
+                <a href="nyheter/2026-04-15-recon-projekt.html" class="news-card" data-category="community">
                     <div class="news-thumb" aria-hidden="true">
                         <img src="public/images/nyheter/recon-satellit.svg" alt="" style="width:100%;height:100%;object-fit:cover;">
                     </div>
@@ -158,7 +174,7 @@
                     </div>
                 </a>
 
-                <a href="nyheter/2026-04-07-v1-9-0.html" class="news-card">
+                <a href="nyheter/2026-04-07-v1-9-0.html" class="news-card" data-category="release">
                     <div class="news-thumb" aria-hidden="true">
                         <img src="public/images/nyheter/version-release.svg" alt="" style="width:100%;height:100%;object-fit:cover;">
                     </div>
@@ -214,7 +230,7 @@
                 </div>
                 <div class="footer-box">
                     <p class="footer-heading">Ladda ned</p>
-                    <a href="https://github.com/eneo-ai/eneo">Källkod</a>
+                    <a href="https://github.com/eneo-ai/eneo" target="_blank" rel="noopener">Källkod<span class="sr-only"> (öppnas i ny flik)</span></a>
                 </div>
                 <div class="footer-box">
                     <p class="footer-heading">Tillgänglighet</p>
@@ -229,5 +245,6 @@
 
     <!-- JavaScript -->
     <script src="js/main.js?v=2"></script>
+    <script src="js/nyheter.js?v=2"></script>
 </body>
 </html>

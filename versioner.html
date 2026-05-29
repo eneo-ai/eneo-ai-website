@@ -102,11 +102,53 @@
     <section class="changelog" id="versionshistorik">
         <div class="container">
 
+            <!-- 2.0.0 -->
+            <div class="release">
+                <div class="release-header">
+                    <span class="ver-tag">v2.0.0</span>
+                    <span class="latest-badge">Senaste</span>
+                    <a href="https://github.com/eneo-ai/eneo/releases/tag/v2.0.0" class="release-link">Se på GitHub <span aria-hidden="true">→</span></a>
+                </div>
+                <div class="change-cat cat-new">
+                    <span class="cat-label">Nya funktioner</span>
+                    <ul class="change-list">
+                        <li><strong>Helt ny hantering av API-nycklar:</strong> Eneo har fått ett omarbetat system för API-nycklar som gör det både säkrare och mer flexibelt att ge program och tjänster åtkomst. Det går nu att skilja på personliga nycklar och tjänstenycklar, sätta finkorniga behörigheter per nyckel och styra exakt vad varje nyckel får göra. Nycklar kan roteras med eller utan en övergångsperiod, få ändrat utgångsdatum och förlängas vid rotation. Personliga nycklar skapas inte längre automatiskt vid nya användare, och varje användare ser och hanterar bara sina egna nycklar. Läs mer i dokumentationen om <a href="https://docs.eneo.ai/docs/api-key-management">API Key Management</a>.</li>
+                        <li><strong>Omarbetad hantering av roller:</strong> De tidigare fördefinierade rollerna är nu omstrukturerade till grundmallar, men nu kan en organisation även förändra i dessa och därmed ha 100% kontroll över säkerhetsdesignen kring roller i sin installation.</li>
+                        <li><strong>Live-listning av modeller från alla leverantörer:</strong> Tillgängliga modeller hämtas nu direkt från leverantören i realtid, oavsett vilken leverantör det gäller. Den tidigare fasta listan med leverantörer är borttagen, vilket gör att nya modeller dyker upp automatiskt utan särskild hantering.</li>
+                    </ul>
+                </div>
+                <div class="change-cat cat-improved">
+                    <span class="cat-label">Förbättringar</span>
+                    <ul class="change-list">
+                        <li><strong>Smidigare hantering av bifogade filer:</strong> När många filer bifogas i en chatt visas de nu i ett kompakt rutnät i två kolumner som kan fällas ihop, så att meddelandet hålls överskådligt.</li>
+                        <li><strong>Mer detaljerad granskningslogg:</strong> Loggningen fångar nu även teknisk kontext som IP-adress, webbläsarinformation och förfrågnings-ID, vilket gör det lättare att följa upp och analysera händelser.</li>
+                        <li><strong>Första stegen mot ett mer modernt gränssnitt:</strong> Eneo börjar övergå till ett nytt designsystem (shadcn-svelte), med start på ytöversikten och i hanteringen av API-nycklar. Färger och komponenter har städats upp för ett mer enhetligt utseende.</li>
+                    </ul>
+                </div>
+                <div class="change-cat cat-security">
+                    <span class="cat-label">Säkerhet &amp; stabilitet</span>
+                    <ul class="change-list">
+                        <li><strong>SBOM för varje release:</strong> Varje version av Eneo levereras nu med en innehållsförteckning över programvaran (SBOM, Software Bill of Materials) för både backend- och frontend-avbildningarna. Filerna bifogas direkt på GitHub-releasen och listar exakt vilka komponenter och beroenden som ingår i den version du kör, i standardformaten CycloneDX och SPDX. Det gör det enklare att granska beroenden, jämföra versioner och arbeta med säkerhet och regelefterlevnad. Läs mer i dokumentationen om <a href="https://docs.eneo.ai/docs/release-sboms">Release SBOMs</a>.</li>
+                        <li><strong>Striktare kodkvalitet:</strong> Hela kodbasen följer nu strikt typkontroll i både backend och frontend, vilket minskar risken för fel.</li>
+                        <li><strong>Säkerhetsfunktioner i CI:</strong> Bygg- och testflödet kontrollerar nu beroenden för kända sårbarheter automatiskt.</li>
+                        <li><strong>Uppdaterade beroenden:</strong> LiteLLM, LangChain och Traefik är uppdaterade, och Python-versionen som stöds har avgränsats tydligare.</li>
+                    </ul>
+                </div>
+                <div class="change-cat cat-fix">
+                    <span class="cat-label">Buggfixar</span>
+                    <ul class="change-list">
+                        <li>Fixat så att schema.d.ts hålls uppdaterat</li>
+                        <li>Fixat fel på modeller utan resonemangsstöd (reasoning_content)</li>
+                        <li>Fixat krasch i gruppchatt när val hamnade utanför giltigt intervall</li>
+                        <li>Fixat hantering av redirect-URI vid SSO så att den styrs från backend-konfigurationen</li>
+                    </ul>
+                </div>
+            </div>
+
             <!-- 1.9.0 -->
             <div class="release">
                 <div class="release-header">
                     <span class="ver-tag">v1.9.0</span>
-                    <span class="latest-badge">Senaste</span>
                     <a href="https://github.com/eneo-ai/eneo/releases/tag/v1.9.0" class="release-link">Se på GitHub <span aria-hidden="true">→</span></a>
                 </div>
                 <div class="change-cat cat-new">
@@ -405,7 +447,7 @@
                 </div>
                 <div class="footer-box">
                     <p class="footer-heading">Ladda ned</p>
-                    <a href="https://github.com/eneo-ai/eneo">Källkod</a>
+                    <a href="https://github.com/eneo-ai/eneo" target="_blank" rel="noopener">Källkod<span class="sr-only"> (öppnas i ny flik)</span></a>
                 </div>
                 <div class="footer-box">
                     <p class="footer-heading">Tillgänglighet</p>

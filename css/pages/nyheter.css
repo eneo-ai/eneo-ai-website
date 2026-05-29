@@ -108,7 +108,11 @@
     flex-wrap: wrap;
 }
 .filter-btn {
-    padding: 0.6rem 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0.6rem 1.1rem;
     border-radius: 100px;
     font-size: 0.78rem;
     font-weight: 600;
@@ -128,6 +132,12 @@
     background: var(--brand-dim);
     color: var(--brand-light);
     border-color: rgba(5,85,148,0.3);
+}
+/* Döljda kort/sektioner vid filtrering (.news-card är display:flex,
+   så hidden-attributet behöver förstärkas). */
+.news-card[hidden],
+.featured[hidden] {
+    display: none !important;
 }
 
 .news-grid {
@@ -349,6 +359,26 @@
     color: var(--text);
     font-weight: 600;
 }
+
+/* ── LÄNKAR I LÖPTEXT ── */
+/* Globalt är a { text-decoration: none } (för nav/kort/knappar), så
+   länkar i artikeltext får här en tydlig visuell indikator: färg + understrykning. */
+.article-content p a,
+.article-content li a {
+    color: var(--brand-bright);
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+    text-decoration-thickness: 1px;
+    transition: color var(--transition-smooth);
+}
+.article-content p a:hover,
+.article-content li a:hover,
+.article-content p a:focus-visible,
+.article-content li a:focus-visible {
+    color: var(--brand-light);
+    text-decoration-thickness: 2px;
+}
+/* Extern-länk-ikon på artikellänkar hanteras globalt i v2-base.css. */
 
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
