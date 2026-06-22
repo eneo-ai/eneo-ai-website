@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Säkerhet i Eneo AI – Eneo.ai</title>
+    <meta name="description" content="En övergripande beskrivning av säkerhetsfunktioner och säkerhetsprinciper i Eneo AI – AI-plattformen för svensk offentlig sektor.">
+
+    <!-- Dold undersida: ska inte indexeras av sökmotorer -->
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="public/favicon.ico">
+
+    <!-- External Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,500;0,6..72,700;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- OG Meta Tags -->
+    <meta property="og:title" content="Säkerhet i Eneo AI – Eneo.ai" />
+    <meta property="og:description" content="Säkerhetsfunktioner och säkerhetsprinciper i Eneo AI – AI-plattformen för svensk offentlig sektor." />
+    <meta property="og:image" content="https://eneo.ai/public/og-image.png" />
+    <meta property="og:url" content="https://eneo.ai/sakerhet.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Eneo.ai" />
+    <meta property="og:locale" content="sv_SE" />
+
+    <!-- Avoid theme flash: apply saved theme before paint -->
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('theme');
+                if (saved) document.documentElement.setAttribute('data-theme', saved);
+            } catch (e) {}
+        })();
+    </script>
+
+    <style>
+        /* ============================================================
+           Eneo v2 design tokens (self-contained copy)
+           ============================================================ */
+        :root {
+            color-scheme: dark light;
+
+            --brand: #055594;
+            --brand-bright: #1a7ad4;
+            --brand-light: #3a9aef;
+            --brand-dim: rgba(5, 85, 148, 0.15);
+            --brand-glow: rgba(26, 122, 212, 0.25);
+
+            --accent: #38bdf8;
+            --accent-dim: rgba(56, 189, 248, 0.1);
+
+            --external-link-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/%3E%3Cpolyline points='15 3 21 3 21 9'/%3E%3Cline x1='10' y1='14' x2='21' y2='3'/%3E%3C/svg%3E");
+
+            --success: #22c55e;
+            --green: #34d399;
+            --green-dim: rgba(52, 211, 153, 0.1);
+            --amber: #f0a030;
+            --amber-dim: rgba(240, 160, 48, 0.12);
+            --red: #f87171;
+            --red-dim: rgba(248, 113, 113, 0.1);
+
+            --bg: #060c17;
+            --bg-raised: #0b1322;
+            --bg-card: #0f1a2e;
+
+            --text: #e4e9f0;
+            --text-muted: #7889a0;
+            --text-faint: #5e7389;
+
+            --border: rgba(255, 255, 255, 0.06);
+            --border-hover: rgba(5, 85, 148, 0.4);
+
+            --white-overlay: rgba(255, 255, 255, 0.04);
+            --white-overlay-hover: rgba(255, 255, 255, 0.08);
+
+            --header-bg: rgba(6, 12, 23, 0.88);
+            --mobile-nav-bg: rgba(11, 19, 34, 0.97);
+            --footer-bg: linear-gradient(180deg, #061020 0%, #091428 40%, #0b1a32 100%);
+            --footer-border: rgba(5, 85, 148, 0.2);
+
+            --font-display: 'Newsreader', serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+
+            --container-max-width: 68.75rem;
+            --container-padding: clamp(1.25rem, 5vw, 3rem);
+
+            --radius: 0.5rem;
+            --radius-md: 0.75rem;
+            --radius-lg: 1rem;
+            --radius-xl: 1.5rem;
+
+            --header-height: 4rem;
+
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.5);
+
+            --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ── LIGHT MODE (system preference unless overridden) ── */
+        @media (prefers-color-scheme: light) {
+            :root:not([data-theme="dark"]) {
+                --green-dim: rgba(52, 211, 153, 0.12);
+                --amber-dim: rgba(240, 160, 48, 0.14);
+                --red-dim: rgba(248, 113, 113, 0.12);
+                --bg: #f8f9fb;
+                --bg-raised: #ffffff;
+                --bg-card: #ffffff;
+                --text: #1a1f2e;
+                --text-muted: #5a6578;
+                --text-faint: #8896a8;
+                --border: rgba(0, 0, 0, 0.08);
+                --border-hover: rgba(5, 85, 148, 0.3);
+                --brand-dim: rgba(5, 85, 148, 0.07);
+                --brand-glow: rgba(26, 122, 212, 0.1);
+                --accent-dim: rgba(56, 189, 248, 0.07);
+                --white-overlay: rgba(0, 0, 0, 0.02);
+                --white-overlay-hover: rgba(0, 0, 0, 0.04);
+                --header-bg: rgba(255, 255, 255, 0.92);
+                --mobile-nav-bg: rgba(255, 255, 255, 0.98);
+                --footer-bg: linear-gradient(180deg, #f0f2f5 0%, #e8ecf0 40%, #dfe4ea 100%);
+                --footer-border: rgba(5, 85, 148, 0.12);
+                --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+                --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+                --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.12);
+            }
+        }
+
+        /* ── Manual dark/light override ── */
+        :root[data-theme="light"] {
+            --green-dim: rgba(52, 211, 153, 0.12);
+            --amber-dim: rgba(240, 160, 48, 0.14);
+            --red-dim: rgba(248, 113, 113, 0.12);
+            --bg: #f8f9fb;
+            --bg-raised: #ffffff;
+            --bg-card: #ffffff;
+            --text: #1a1f2e;
+            --text-muted: #5a6578;
+            --text-faint: #8896a8;
+            --border: rgba(0, 0, 0, 0.08);
+            --border-hover: rgba(5, 85, 148, 0.3);
+            --brand-dim: rgba(5, 85, 148, 0.07);
+            --brand-glow: rgba(26, 122, 212, 0.1);
+            --accent-dim: rgba(56, 189, 248, 0.07);
+            --white-overlay: rgba(0, 0, 0, 0.02);
+            --white-overlay-hover: rgba(0, 0, 0, 0.04);
+            --header-bg: rgba(255, 255, 255, 0.92);
+            --mobile-nav-bg: rgba(255, 255, 255, 0.98);
+            --footer-bg: linear-gradient(180deg, #f0f2f5 0%, #e8ecf0 40%, #dfe4ea 100%);
+            --footer-border: rgba(5, 85, 148, 0.12);
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        /* ============================================================
+           Reset & base
+           ============================================================ */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+        body {
+            font-family: var(--font-body);
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--bg);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            line-height: 1.15;
+            font-weight: 600;
+            letter-spacing: -0.025em;
+            color: var(--text);
+        }
+        p { color: var(--text-muted); line-height: 1.7; }
+        a { color: inherit; text-decoration: none; transition: color var(--transition-smooth); }
+        ul, ol { list-style: none; }
+        img, svg { max-width: 100%; }
+        ::selection { background-color: var(--brand-dim); color: var(--accent); }
+        *:focus-visible { outline: 2px solid var(--brand-bright); outline-offset: 2px; border-radius: var(--radius); }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb { background: var(--text-faint); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+        /* Extern-länk-ikon i löptext och footer */
+        .prose a[target="_blank"]::after,
+        .v2-footer a[target="_blank"]::after {
+            content: ""; display: inline-block;
+            width: 0.72em; height: 0.72em; margin-left: 0.2em; vertical-align: -0.05em;
+            background-color: currentColor;
+            -webkit-mask: var(--external-link-icon) no-repeat center / contain;
+            mask: var(--external-link-icon) no-repeat center / contain;
+        }
+
+        /* Skip link */
+        .skip-link {
+            position: absolute; top: -100%; left: 1rem; z-index: 200;
+            padding: 0.75rem 1.5rem; background: var(--brand); color: #fff;
+            font-weight: 600; font-size: 0.9rem; border-radius: 0 0 8px 8px;
+            text-decoration: none; transition: top 0.2s;
+        }
+        .skip-link:focus { top: 0; }
+
+        .sr-only {
+            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+            overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+        }
+
+        .container { max-width: var(--container-max-width); margin: 0 auto; padding: 0 var(--container-padding); position: relative; }
+        .container-narrow { max-width: 56rem; margin: 0 auto; padding: 0 var(--container-padding); position: relative; }
+
+        /* ============================================================
+           Nav (v2)
+           ============================================================ */
+        .v2-nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            backdrop-filter: blur(20px) saturate(1.4);
+            -webkit-backdrop-filter: blur(20px) saturate(1.4);
+            background: var(--header-bg);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-inner {
+            max-width: 1180px; margin: 0 auto; padding: 0.75rem 2rem;
+            display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+        }
+        .nav-logo svg { height: 30px; width: auto; display: block; }
+        .nav-logo .logo-text { fill: var(--text); }
+        .nav-links { display: flex; gap: 1.5rem; list-style: none; flex-wrap: wrap; align-items: center; }
+        .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.84rem; font-weight: 500; transition: color 0.2s; }
+        .nav-links a:hover, .nav-links a:focus-visible { color: var(--text); }
+        .nav-links a.nav-active { color: var(--brand-light); }
+        .nav-actions { display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0; }
+        .theme-toggle {
+            display: flex; align-items: center; justify-content: center;
+            width: 44px; height: 44px; background: none; border: 1px solid var(--border);
+            border-radius: var(--radius); color: var(--text-muted); cursor: pointer;
+            transition: all var(--transition-smooth); flex-shrink: 0;
+        }
+        .theme-toggle:hover, .theme-toggle:focus-visible {
+            color: var(--text); border-color: var(--border-hover); background: var(--brand-dim);
+        }
+        .mobile-menu-btn {
+            display: none; flex-direction: column; justify-content: center; align-items: center;
+            width: 44px; height: 44px; background: none; border: none; cursor: pointer;
+            padding: 0.5rem; border-radius: var(--radius); transition: background-color var(--transition-smooth);
+        }
+        .mobile-menu-btn:hover, .mobile-menu-btn:focus-visible { background: var(--white-overlay-hover); }
+        .hamburger-line { display: block; height: 2px; width: 20px; background: var(--text); border-radius: 1px; margin: 2px 0; }
+        .mobile-nav {
+            display: none; position: absolute; top: 100%; left: 0; right: 0;
+            background: var(--mobile-nav-bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border-top: 1px solid var(--border); box-shadow: var(--shadow-lg); z-index: 40;
+            opacity: 0; transform: translateY(-10px); transition: all var(--transition-smooth);
+            padding: 1rem 0; flex-direction: column; gap: 0.25rem;
+        }
+        .mobile-nav.active { display: flex; opacity: 1; transform: translateY(0); }
+        .mobile-nav a {
+            color: var(--text-muted); font-weight: 500; font-size: 1.05rem;
+            padding: 0.875rem 1.5rem; margin: 0 0.5rem; border-radius: var(--radius); transition: all var(--transition-smooth);
+        }
+        .mobile-nav a:hover, .mobile-nav a:focus-visible { color: var(--text); background: var(--brand-dim); transform: translateX(0.25rem); }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: flex; }
+        }
+
+        /* ============================================================
+           Page hero
+           ============================================================ */
+        .page-hero { padding: 9rem 0 5rem; position: relative; overflow: hidden; }
+        @media (max-width: 640px) { .page-hero { padding: 7rem 0 3rem; } }
+        .page-hero::before {
+            content: ''; position: absolute; inset: 0; pointer-events: none;
+            background: radial-gradient(ellipse 60% 55% at 70% 40%, rgba(5, 85, 148, 0.12) 0%, transparent 70%);
+        }
+        .page-hero .container { position: relative; z-index: 1; max-width: 760px; }
+        .label {
+            font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em;
+            text-transform: uppercase; color: var(--brand-light); margin-bottom: 0.9rem;
+            display: inline-flex; align-items: center; gap: 0.6em;
+        }
+        .label::before { content: ""; width: 26px; height: 2px; background: var(--accent); border-radius: 1px; }
+        .label.label-center { justify-content: center; }
+        .page-hero h1 {
+            font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 700; line-height: 1.12;
+            letter-spacing: -0.03em; margin-bottom: 1.2rem;
+        }
+        .page-hero h1 em {
+            font-style: italic;
+            background: linear-gradient(135deg, var(--brand-light), var(--accent));
+            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .hero-text { color: var(--text-muted); font-size: 1.05rem; line-height: 1.75; max-width: 620px; }
+
+        /* ── Översiktskort (klickbara genvägar till sidans avsnitt) ── */
+        .section-overview { padding: clamp(3.5rem, 7vw, 6rem) 0; }
+        .nav-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1.25rem; margin-top: 3rem; }
+        .nav-card {
+            display: flex; flex-direction: column;
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg);
+            padding: 1.5rem; color: var(--text); position: relative;
+            transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), border-color var(--transition-smooth);
+        }
+        .nav-card:hover, .nav-card:focus-visible {
+            transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--border-hover);
+        }
+        .nav-card-icon {
+            width: 44px; height: 44px; border-radius: 12px; background: var(--brand-dim);
+            display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;
+        }
+        .nav-card-icon svg { width: 22px; height: 22px; color: var(--brand-light); }
+        .nav-card h3 { font-size: 1.1rem; margin-bottom: 0.4rem; }
+        .nav-card p { font-size: 0.88rem; margin: 0; }
+        .nav-card-go {
+            margin-top: auto; padding-top: 0.9rem; display: inline-flex; align-items: center; gap: 0.4rem;
+            color: var(--brand-light); font-size: 0.82rem; font-weight: 600;
+        }
+        .nav-card-go svg { width: 16px; height: 16px; transition: transform var(--transition-smooth); }
+        .nav-card:hover .nav-card-go svg, .nav-card:focus-visible .nav-card-go svg { transform: translateX(3px); }
+
+        /* ============================================================
+           Sections & rhythm
+           ============================================================ */
+        section { padding: clamp(3.5rem, 7vw, 6rem) 0; }
+        .section-band { background: var(--bg-raised); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .section-head { max-width: 44rem; }
+        .section-head.center { margin: 0 auto; text-align: center; }
+        .section-head h2 { font-size: clamp(1.6rem, 3.2vw, 2.3rem); font-weight: 600; margin-bottom: 0.6rem; }
+        .section-head .lead { color: var(--text-muted); font-size: 1.05rem; line-height: 1.7; margin-top: 0.5rem; }
+        .section-head.center .lead { margin-left: auto; margin-right: auto; max-width: 62ch; }
+
+        /* ── Two-column layout ── */
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 3.5rem); align-items: start; }
+        @media (max-width: 900px) { .two-col { grid-template-columns: 1fr; gap: 2.5rem; } }
+
+        /* ── Feature list ── */
+        .feature-list { display: flex; flex-direction: column; gap: 1rem; }
+        .feature {
+            display: flex; gap: 1.1rem; padding: 1.2rem 1.25rem;
+            background: var(--white-overlay); border: 1px solid var(--border); border-radius: var(--radius-md);
+            transition: border-color var(--transition-smooth), background-color var(--transition-smooth);
+        }
+        .feature:hover { border-color: var(--border-hover); background: var(--white-overlay-hover); }
+        .feature-number {
+            flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%;
+            background: var(--brand); color: #fff; display: flex; align-items: center; justify-content: center;
+            font-family: var(--font-display); font-weight: 600; font-size: 1rem;
+        }
+        .feature-text strong { display: block; margin-bottom: 0.25rem; color: var(--text); font-size: 1rem; font-weight: 600; }
+        .feature-text p { font-size: 0.9rem; margin: 0; }
+
+        /* ============================================================
+           Brand band (accent sections – translation of prototype "dark" band)
+           ============================================================ */
+        .band-brand {
+            background: linear-gradient(165deg, #06294a 0%, #0a4474 55%, #0b3c69 100%);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            position: relative; overflow: hidden;
+        }
+        .band-brand::before {
+            content: ''; position: absolute; inset: 0; pointer-events: none;
+            background: radial-gradient(ellipse 50% 60% at 80% 0%, rgba(56, 189, 248, 0.16) 0%, transparent 65%);
+        }
+        .band-brand .container, .band-brand .container-narrow { position: relative; z-index: 1; }
+        .band-brand h2 { color: #ffffff; }
+        .band-brand .label { color: #7cc4f5; }
+        .band-brand .label::before { background: #7cc4f5; }
+        .band-brand .lead { color: rgba(231, 240, 250, 0.85); }
+
+        /* ── Spec cards (used in brand bands) ── */
+        .specs { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1.25rem; margin-top: 2.75rem; }
+        .spec {
+            padding: 1.4rem 1.5rem; background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.14); border-radius: var(--radius-md);
+        }
+        .spec h4 { color: #8fd0f7; font-size: 0.98rem; font-weight: 700; margin-bottom: 0.5rem; font-family: var(--font-body); }
+        .spec p { color: rgba(231, 240, 250, 0.82); font-size: 0.88rem; line-height: 1.6; }
+
+        /* ── Classification flow diagram ── */
+        .flow-diagram {
+            margin: 2.75rem auto 0; max-width: 56rem;
+            background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: var(--radius-xl); padding: clamp(1.25rem, 3vw, 2.5rem);
+        }
+        .flow-diagram svg { width: 100%; height: auto; }
+
+        /* ── Compliance cards ── */
+        .compliance-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 1.25rem; margin-top: 3rem; }
+        .comp-card {
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.75rem;
+            transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), border-color var(--transition-smooth);
+        }
+        .comp-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--border-hover); }
+        .comp-tag {
+            display: inline-block; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+            background: var(--brand-dim); color: var(--brand-light); padding: 0.2rem 0.65rem; border-radius: 100px; margin-bottom: 0.85rem;
+        }
+        .comp-card h3 { font-size: 1.15rem; color: var(--brand-light); margin-bottom: 0.5rem; }
+        .comp-card p { font-size: 0.9rem; }
+
+        /* ── Standards strip ── */
+        .standards-strip {
+            margin-top: 2.5rem; padding: 1.5rem; background: var(--white-overlay);
+            border: 1px solid var(--border); border-radius: var(--radius-lg);
+            display: flex; flex-wrap: wrap; gap: 0.7rem; justify-content: center;
+        }
+        .std-badge {
+            background: var(--bg-card); border: 1px solid var(--border); padding: 0.45rem 0.9rem;
+            border-radius: var(--radius); font-size: 0.82rem; font-weight: 600; color: var(--text);
+        }
+
+        /* ── Inline prose block ── */
+        .prose p { font-size: 0.95rem; color: var(--text-muted); }
+        .prose p + p { margin-top: 1rem; }
+        .prose a { color: var(--brand-light); }
+        .prose a:hover { color: var(--brand-bright); }
+
+        /* ============================================================
+           Footer (v2)
+           ============================================================ */
+        .v2-footer {
+            padding: 4rem 0 3rem; border-top: 1px solid var(--footer-border);
+            color: var(--text-muted); font-size: 0.85rem; background: var(--footer-bg); position: relative;
+        }
+        .v2-footer::before {
+            content: ''; position: absolute; top: 0; left: 10%; right: 10%; height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(5, 85, 148, 0.35), transparent);
+        }
+        .v2-footer a { color: var(--text-muted); }
+        .v2-footer a:hover, .v2-footer a:focus-visible { color: var(--brand-light); }
+        .footer-intro { text-align: center; margin-bottom: 2rem; }
+        .footer-intro .footer-logo { margin-bottom: 0.8rem; display: flex; justify-content: center; }
+        .footer-intro .footer-logo svg { height: 22px; width: auto; }
+        .footer-intro .footer-logo .logo-text { fill: var(--text-muted); }
+        .footer-intro p { color: var(--text-muted); font-size: 0.88rem; margin: 0 auto; max-width: 48ch; }
+        .footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.2rem; margin-bottom: 2rem; }
+        .footer-box { padding: 1.5rem; border-radius: 10px; background: var(--white-overlay); border: 1px solid var(--border); }
+        .footer-heading { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-faint); margin-bottom: 0.75rem; }
+        .footer-box a { display: block; font-size: 0.85rem; line-height: 1.7; }
+        .footer-bottom { text-align: center; }
+        .footer-bottom p { color: var(--text-faint); font-size: 0.78rem; margin: 0; }
+        @media (max-width: 768px) {
+            .footer-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .footer-box { text-align: center; }
+        }
+
+        /* ============================================================
+           Animations
+           ============================================================ */
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+        .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+        .reveal.in-view { opacity: 1; transform: none; }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+            .reveal { opacity: 1; transform: none; }
+        }
+
+        @media (forced-colors: active) {
+            .page-hero h1 em { -webkit-text-fill-color: unset; background: none; color: LinkText; }
+        }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Hoppa till huvudinnehåll</a>
+
+    <!-- NAV -->
+    <nav class="v2-nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo" aria-label="Eneo - till startsidan">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 172" style="height:30px;width:auto;shape-rendering:geometricPrecision;fill-rule:evenodd;clip-rule:evenodd;">
+                    <path fill="#1a7ad4" d="M 107.5,-0.5 C 114.833,-0.5 122.167,-0.5 129.5,-0.5C 176.816,9.15707 202.149,38.1571 205.5,86.5C 203.389,125.423 184.389,152.257 148.5,167C 142.419,168.71 136.419,170.21 130.5,171.5C 123.5,171.5 116.5,171.5 109.5,171.5C 93.3852,168.947 78.7185,162.781 65.5,153C 57.3188,144.986 49.3188,136.819 41.5,128.5C 61.6527,107.847 81.9861,87.3471 102.5,67C 111.582,60.8816 121.249,59.8816 131.5,64C 144.46,73.9171 146.96,86.0837 139,100.5C 131.833,107.667 124.667,114.833 117.5,122C 138.893,122.044 151.726,111.544 156,90.5C 156.442,68.8872 146.275,55.0539 125.5,49C 112.803,46.9218 101.803,50.2552 92.5,59C 86.6667,64.8333 80.8333,70.6667 75,76.5C 63.5,65 52,53.5 40.5,42C 50.2305,31.5999 60.5639,21.9333 71.5,13C 82.7423,6.20074 94.7423,1.70074 107.5,-0.5 Z"/>
+                    <path class="logo-text" d="M 649.5,76.5 C 649.5,82.1667 649.5,87.8333 649.5,93.5C 640.846,129.635 617.846,147.135 580.5,146C 552.923,141.09 535.59,125.09 528.5,98C 514.833,97.6667 501.167,97.3333 487.5,97C 480.994,93.8341 478.494,88.6674 480,81.5C 480.979,78.3749 482.813,75.8749 485.5,74C 498.401,72.538 511.401,72.038 524.5,72.5C 521.764,64.5453 516.764,58.3786 509.5,54C 488.763,45.1354 472.596,50.3021 461,69.5C 453.601,90.9824 459.767,107.149 479.5,118C 492.365,122.56 504.198,120.727 515,112.5C 519.225,119.939 523.725,127.272 528.5,134.5C 511.022,146.856 492.022,149.689 471.5,143C 466.51,141.335 462.01,138.835 458,135.5C 457.502,138.817 457.335,142.15 457.5,145.5C 448.833,145.5 440.167,145.5 431.5,145.5C 431.667,123.497 431.5,101.497 431,79.5C 426.715,61.265 415.215,51.265 396.5,49.5C 377.785,51.265 366.285,61.265 362,79.5C 361.5,101.497 361.333,123.497 361.5,145.5C 352.833,145.5 344.167,145.5 335.5,145.5C 335.5,129.5 335.5,113.5 335.5,97.5C 322.163,97.6666 308.829,97.4999 295.5,97C 287.991,92.8092 285.824,86.6426 289,78.5C 290.663,76.0833 292.829,74.25 295.5,73C 307.829,72.5001 320.162,72.3335 332.5,72.5C 327.027,58.2227 316.527,50.556 301,49.5C 282.085,51.1142 270.419,61.1142 266,79.5C 264.719,101.205 274.553,114.705 295.5,120C 303.532,121.06 311.032,119.56 318,115.5C 318.667,124.833 318.667,134.167 318,143.5C 289.265,150.965 266.265,142.631 249,118.5C 233.274,88.8088 237.108,61.9755 260.5,38C 285.142,19.8768 310.476,18.8768 336.5,35C 340.981,38.3143 344.981,42.1476 348.5,46.5C 369.825,23.1077 395.158,17.6077 424.5,30C 432.127,34.3166 438.794,39.8166 444.5,46.5C 465.825,23.1077 491.158,17.6077 520.5,30C 528.127,34.3166 534.794,39.8166 540.5,46.5C 561.825,23.1077 587.158,17.6077 616.5,30C 634.762,40.3615 645.762,55.8615 649.5,76.5 Z M 583.5,49.5 C 610.442,49.9416 623.609,63.6083 623,90.5C 619.82,107.013 609.987,116.846 593.5,120C 572.335,120.831 559.169,110.998 554,90.5C 552.92,68.7752 562.753,55.1085 583.5,49.5 Z"/>
+                    <path fill="#1a7ad4" d="M -0.5,87.5 C -0.5,85.8333 -0.5,84.1667 -0.5,82.5C 10.1734,71.9931 21.0067,61.6598 32,51.5C 43.9725,62.3055 55.4725,73.6388 66.5,85.5C 55.5,97.1667 44.1667,108.5 32.5,119.5C 21.4793,108.812 10.4793,98.1453 -0.5,87.5 Z"/>
+                </svg>
+            </a>
+            <ul class="nav-links">
+                <li><a href="sakerhet.html" class="nav-active">Säkerhet</a></li>
+                <li><a href="anvandningsfall.html">Användningsfall</a></li>
+                <li><a href="utbildningar.html">Utbildningar</a></li>
+                <li><a href="tidslinje.html">Historik</a></li>
+                <li><a href="samarbetsforum.html">Samarbete</a></li>
+                <li><a href="docs.html">Docs</a></li>
+                <li><a href="versioner.html">Versioner</a></li>
+                <li><a href="nyheter.html">Nyheter</a></li>
+                <li><a href="vanliga-fragor.html">FAQ</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle" onclick="Eneo.toggleTheme()" aria-label="Byt tema">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <button id="mobile-menu-btn" class="mobile-menu-btn" aria-expanded="false" aria-controls="mobile-nav" aria-label="Meny" onclick="Eneo.toggleMobileMenu()">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-nav" class="mobile-nav" aria-label="Mobil navigation">
+            <a href="sakerhet.html">Säkerhet</a>
+            <a href="anvandningsfall.html">Användningsfall</a>
+            <a href="utbildningar.html">Utbildningar</a>
+            <a href="tidslinje.html">Historik</a>
+            <a href="samarbetsforum.html">Samarbete</a>
+            <a href="docs.html">Docs</a>
+            <a href="versioner.html">Versioner</a>
+            <a href="nyheter.html">Nyheter</a>
+            <a href="vanliga-fragor.html">FAQ</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="page-hero" id="main-content">
+        <div class="container">
+            <div class="reveal">
+                <span class="label">Säkerhet i Eneo AI</span>
+                <h1>Trygg AI för <em>svensk offentlig sektor</em></h1>
+                <p class="hero-text">Eneo är byggd från grunden för verksamheter med höga krav på dataskydd, spårbarhet och regelefterlevnad. Säkerhet är inte en separat funktion utan en bärande del av arkitekturen.</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ÖVERSIKT: klickbara genvägar till sidans avsnitt -->
+        <section class="section-overview section-band" id="oversikt" aria-label="Innehåll på sidan – genvägar till avsnitt">
+            <div class="container">
+                <div class="section-head center reveal">
+                    <span class="label label-center">På den här sidan</span>
+                    <h2>Utforska Eneos säkerhet</h2>
+                    <p class="lead">Sidan är indelad i sex avsnitt. Välj ett kort för att hoppa direkt till det område du vill läsa mer om.</p>
+                </div>
+                <div class="nav-cards">
+                    <a class="nav-card reveal" href="#identitet">
+                        <span class="nav-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg></span>
+                        <h3>Identitet och åtkomst</h3>
+                        <p>Federation via OIDC, flerskiktad rollstyrning, API-nyckelhantering och SCIM-baserad provisionering.</p>
+                        <span class="nav-card-go">Till avsnittet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                    </a>
+                    <a class="nav-card reveal" href="#klassning">
+                        <span class="nav-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L4 7v6c0 4.5 3.5 8.5 8 9 4.5-.5 8-4.5 8-9V7l-8-5z"/><path d="M9 12l2 2 4-4"/></svg></span>
+                        <h3>Klassningsstyrd AI</h3>
+                        <p>Verksamhetens informationsklassning styr i realtid vilka AI-modeller och tjänster som får användas.</p>
+                        <span class="nav-card-go">Till avsnittet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                    </a>
+                    <a class="nav-card reveal" href="#granskning">
+                        <span class="nav-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg></span>
+                        <h3>Spårbarhet och granskning</h3>
+                        <p>Strukturerade granskningsloggar, skyddad loggåtkomst samt loggström via OpenTelemetry.</p>
+                        <span class="nav-card-go">Till avsnittet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                    </a>
+                    <a class="nav-card reveal" href="#saker-utveckling">
+                        <span class="nav-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+                        <h3>En säker utveckling</h3>
+                        <p>SBOM (krav i NIS2), verifierade byggen, granskade beroenden och en publicerad sårbarhetsprocess.</p>
+                        <span class="nav-card-go">Till avsnittet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                    </a>
+                    <a class="nav-card reveal" href="#standarder">
+                        <span class="nav-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></span>
+                        <h3>Efterlevnad och regelverk</h3>
+                        <p>GDPR, NIS2, EU AI Act, ISO 27001/42001 och CRA – samt etablerade säkerhetsstandarder.</p>
+                        <span class="nav-card-go">Till avsnittet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                    </a>
+                    <a class="nav-card reveal" href="#utveckling">
+                        <span class="nav-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></span>
+                        <h3>Kontinuerlig säkerhet</h3>
+                        <p>Hur säkerheten utvecklas löpande som en integrerad del av plattformens ordinarie utveckling.</p>
+                        <span class="nav-card-go">Till avsnittet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- IDENTITY & ACCESS -->
+        <section id="identitet">
+            <div class="container">
+                <div class="two-col">
+                    <div class="section-head reveal">
+                        <span class="label">Identitet och åtkomst</span>
+                        <h2>Modern federation med flerskiktad åtkomstkontroll</h2>
+                        <p class="lead">Eneo integreras med organisationens befintliga identitetshantering och bygger på etablerade standarder som OpenID Connect (OIDC) och OAuth 2.0. Användare provisioneras automatiskt via SCIM, och åtkomst för automation styrs med granulär API-nyckelhantering.</p>
+                    </div>
+                    <div class="feature-list reveal">
+                        <div class="feature">
+                            <div class="feature-number" aria-hidden="true">1</div>
+                            <div class="feature-text">
+                                <strong>Single Sign-On via OIDC</strong>
+                                <p>Federation mot Entra ID, Keycloak, Auth0 och andra OIDC-leverantörer. Användaridentiteten hanteras centralt och MFA tvingas via din befintliga IdP.</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-number" aria-hidden="true">2</div>
+                            <div class="feature-text">
+                                <strong>Rollbaserad åtkomstkontroll på flera nivåer</strong>
+                                <p>Globala roller (Admin/User) skiljs från samarbetsyte-roller (Owner/Editor/Viewer) och resursrättigheter. Stödjer separation av arbetsuppgifter mellan administratör och slutanvändare.</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-number" aria-hidden="true">3</div>
+                            <div class="feature-text">
+                                <strong>Granulär API-nyckelhantering</strong>
+                                <p>Server-nycklar (sk_) för automation med IP-allowlist, browser-nycklar (pk_) med origin-allowlist och scope-kontroll. Alla nycklar hashas med HMAC-SHA256 och lagras aldrig i klartext.</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-number" aria-hidden="true">4</div>
+                            <div class="feature-text">
+                                <strong>Automatisk användarprovisionering med SCIM</strong>
+                                <p>Provisionera användare via REST API eller JIT vid OIDC-inloggning. En inbyggd SCIM-server ger standardiserad automatisk provisionering och deprovisionering direkt från HR- och identitetssystem.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CLASSIFICATION-DRIVEN AI -->
+        <section class="band-brand" id="klassning">
+            <div class="container-narrow">
+                <div class="section-head center reveal">
+                    <span class="label label-center">Klassningsstyrd AI-användning</span>
+                    <h2>Verksamhetens klassningsmodell styr vilken AI som får användas</h2>
+                    <p class="lead">En av Eneos mest särpräglade egenskaper: informationsklassning är inte en pappersrutin utan en operativ säkerhetsmekanism som påverkar plattformens beteende i realtid.</p>
+                </div>
+                <div class="flow-diagram reveal">
+                    <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tre steg: verksamheten definierar klasser, projekt skapas och klassas, och plattformen styr automatiskt vilka AI-modeller och tjänster som får användas.">
+                        <defs>
+                            <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                                <path d="M0,0 L0,6 L9,3 z" fill="#7cc4f5"/>
+                            </marker>
+                        </defs>
+                        <g>
+                            <rect x="40" y="100" width="160" height="100" rx="12" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.3)" stroke-width="1.5"/>
+                            <text x="120" y="135" text-anchor="middle" fill="#8fd0f7" font-family="Newsreader, serif" font-size="15" font-weight="600">STEG 1</text>
+                            <text x="120" y="160" text-anchor="middle" fill="#eef5fc" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="600">Verksamheten</text>
+                            <text x="120" y="178" text-anchor="middle" fill="#eef5fc" font-family="Plus Jakarta Sans, sans-serif" font-size="13">definierar klasser</text>
+                        </g>
+                        <path d="M210 150 L250 150" stroke="#7cc4f5" stroke-width="2" marker-end="url(#arrow)"/>
+                        <g>
+                            <rect x="260" y="100" width="160" height="100" rx="12" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.3)" stroke-width="1.5"/>
+                            <text x="340" y="135" text-anchor="middle" fill="#8fd0f7" font-family="Newsreader, serif" font-size="15" font-weight="600">STEG 2</text>
+                            <text x="340" y="160" text-anchor="middle" fill="#eef5fc" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="600">Projekt skapas</text>
+                            <text x="340" y="178" text-anchor="middle" fill="#eef5fc" font-family="Plus Jakarta Sans, sans-serif" font-size="13">och klassas</text>
+                        </g>
+                        <path d="M430 150 L470 150" stroke="#7cc4f5" stroke-width="2" marker-end="url(#arrow)"/>
+                        <g>
+                            <rect x="480" y="100" width="280" height="100" rx="12" fill="rgba(26,122,212,.32)" stroke="#3a9aef" stroke-width="1.5"/>
+                            <text x="620" y="135" text-anchor="middle" fill="#8fd0f7" font-family="Newsreader, serif" font-size="15" font-weight="600">STEG 3</text>
+                            <text x="620" y="160" text-anchor="middle" fill="#eef5fc" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="600">Automatisk styrning</text>
+                            <text x="620" y="178" text-anchor="middle" fill="#eef5fc" font-family="Plus Jakarta Sans, sans-serif" font-size="13">av AI-modeller och tjänster</text>
+                        </g>
+                        <text x="400" y="258" text-anchor="middle" fill="rgba(231,240,250,.72)" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-style="italic">Information med högre klassning kan inte oavsiktligt nå AI-modeller som saknar behörighet</text>
+                    </svg>
+                </div>
+                <div class="specs">
+                    <div class="spec reveal">
+                        <h4>Organisationsdefinierad modell</h4>
+                        <p>Ingen påtvingad standardmodell – din egen befintliga klassningsmodell (t.ex. publik, intern, konfidentiell, hemlig) implementeras direkt i plattformen.</p>
+                    </div>
+                    <div class="spec reveal">
+                        <h4>Automatisk metadata-ärvning</h4>
+                        <p>När ett projekt klassas ärvs klassningen automatiskt till all information som skapas eller bearbetas inom projektet.</p>
+                    </div>
+                    <div class="spec reveal">
+                        <h4>Förebyggande skydd</h4>
+                        <p>Skyddet är inbyggt i flödet – inte ett krav som dokumenteras i efterhand. Klassningen styr modellåtkomst i realtid.</p>
+                    </div>
+                    <div class="spec reveal">
+                        <h4>ISO 27001 5.12 + 5.13</h4>
+                        <p>Realiserar standardens kärnsyfte: att märkning ska möjliggöra automatisering av informationsbehandling och hantering.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AUDIT LOGGING -->
+        <section id="granskning">
+            <div class="container">
+                <div class="two-col">
+                    <div class="feature-list reveal">
+                        <div class="feature">
+                            <div class="feature-number" aria-hidden="true">A</div>
+                            <div class="feature-text">
+                                <strong>Strukturerade granskningsloggar</strong>
+                                <p>JSON-format med aktör, handling, utfall och tidpunkt. Persisterade i PostgreSQL för långsiktig spårbarhet.</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-number" aria-hidden="true">B</div>
+                            <div class="feature-text">
+                                <strong>Skyddad åtkomst med motivering</strong>
+                                <p>Att läsa granskningsloggen kräver att en motivering anges. Själva åtkomsten loggas i sin tur – du ser alltid vem som kollade vad och varför.</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-number" aria-hidden="true">C</div>
+                            <div class="feature-text">
+                                <strong>Verksamhetsstyrd detaljnivå</strong>
+                                <p>Detaljnivå konfigureras per kategori och händelsetyp. Du bestämmer vad som ska loggas och hur länge data sparas.</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-number" aria-hidden="true">D</div>
+                            <div class="feature-text">
+                                <strong>Gallring, export och loggström</strong>
+                                <p>Konfigurerbara retention-policyer med dagliga purge-jobb och export i CSV och JSON Lines via sync- och async-API. Loggar kan dessutom strömmas till extern logginfrastruktur med stöd för OpenTelemetry.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-head reveal">
+                        <span class="label">Spårbarhet och granskning</span>
+                        <h2>Allt loggas – inklusive vem som granskade loggarna</h2>
+                        <p class="lead">Granskningsloggen är inte bara ett spår av användarhandlingar. Den dokumenterar även administrativa åtgärder och själva loggåtkomsten – en cirkulär kontroll som gör att ingen kan undersöka data utan att lämna spår efter sig.</p>
+                        <div class="prose" style="margin-top:1.25rem">
+                            <p>Granskningsloggen utgör grunden för efterlevnad enligt GDPR, NIS2/cybersäkerhetslagen och ISO 27001 (kontroll 8.15 Loggning och 8.16 Övervakning).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECURE DEVELOPMENT -->
+        <section class="band-brand" id="saker-utveckling">
+            <div class="container">
+                <div class="section-head center reveal">
+                    <span class="label label-center">Säker utveckling</span>
+                    <h2>En säker utveckling</h2>
+                    <p class="lead">Säkerheten börjar i hur Eneo byggs. Hela leveranskedjan är granskad, dokumenterad och spårbar – från enskilda beroenden till containerimagen som körs i produktion.</p>
+                </div>
+                <div class="specs">
+                    <div class="spec reveal">
+                        <h4>SBOM per release – krav i NIS2</h4>
+                        <p>Varje release levereras med en programvaruförteckning (SBOM) i formaten CycloneDX och SPDX. En SBOM är ett uttryckligt krav i NIS2/cybersäkerhetslagen och möjliggör snabb sårbarhetsbedömning av samtliga ingående komponenter.</p>
+                    </div>
+                    <div class="spec reveal">
+                        <h4>Verifierade byggen</h4>
+                        <p>Container-images byggs via spårbara CI-pipelines med GHCR provenance attestations, så att det går att verifiera att det som körs i produktion verkligen motsvarar källkoden.</p>
+                    </div>
+                    <div class="spec reveal">
+                        <h4>Låsta och granskade beroenden</h4>
+                        <p>Beroenden är låsta via lockfiles och granskas automatiskt. Dependency review blockerar PR:er som introducerar kända sårbarheter på HIGH-nivå eller högre.</p>
+                    </div>
+                    <div class="spec reveal">
+                        <h4>Publicerad sårbarhetsprocess</h4>
+                        <p>Säkerhetspolicy med tydliga svarstider (SLA): Kritisk 1 arbetsdag, Hög 1–2 arbetsdagar, Medel 2–5 arbetsdagar – med en definierad väg för ansvarsfull rapportering.</p>
+                    </div>
+                    <div class="spec reveal">
+                        <h4>Etablerade ramverk för säker utveckling</h4>
+                        <p>Utvecklingen förhåller sig till erkända ramverk som NIST SSDF och SLSA samt OWASP ASVS, SCVS och LLM Top 10.</p>
+                    </div>
+                    <div class="spec reveal">
+                        <h4>Öppen källkod och insyn</h4>
+                        <p>Hela kodbasen är öppen under AGPL-3.0. Det gör att vem som helst kan granska, revidera och bidra till plattformens säkerhet – ingen säkerhet vilar på dolda antaganden.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPLIANCE -->
+        <section id="standarder">
+            <div class="container">
+                <div class="section-head center reveal">
+                    <span class="label label-center">Efterlevnad och regelverk</span>
+                    <h2>Byggd för svensk offentlig sektor</h2>
+                    <p class="lead">Eneos arkitektur är anpassad till de europeiska och svenska regelverk som styr informationshantering i offentlig sektor.</p>
+                </div>
+                <div class="compliance-grid">
+                    <div class="comp-card reveal">
+                        <span class="comp-tag">EU + Sverige</span>
+                        <h3>GDPR</h3>
+                        <p>Datasuveränitet, åtkomstkontroll, retention och granskningslogg ger grund för att uppfylla dataskyddsförordningens krav på säkerhet och spårbarhet.</p>
+                    </div>
+                    <div class="comp-card reveal">
+                        <span class="comp-tag">Sverige</span>
+                        <h3>Cybersäkerhetslagen (NIS2)</h3>
+                        <p>Lagen som trädde i kraft 15 januari 2026 ställer krav på säkerhetsåtgärder och incidentrapportering – Eneo stödjer med loggning, RBAC och kryptering.</p>
+                    </div>
+                    <div class="comp-card reveal">
+                        <span class="comp-tag">EU</span>
+                        <h3>EU AI Act</h3>
+                        <p>Eneos klassningssystem, granskningsloggar och dokumentation underlättar att uppfylla högrisk-AI-systemens krav på riskhantering och loggspårning.</p>
+                    </div>
+                    <div class="comp-card reveal">
+                        <span class="comp-tag">Internationell</span>
+                        <h3>ISO/IEC 27001:2022</h3>
+                        <p>Eneo täcker ca 20 av kärnkontrollerna i ISO 27001:s tekniska och organisatoriska åtgärder – från identitetshantering till loggning och konfigurationshantering. <a href="iso-27001.html">Se detaljerad analys.</a></p>
+                    </div>
+                    <div class="comp-card reveal">
+                        <span class="comp-tag">Internationell</span>
+                        <h3>ISO/IEC 42001</h3>
+                        <p>Standarden för AI-managementsystem – Eneos klassningsstyrning, transparens och spårbarhet bidrar till en strukturerad AI-styrning.</p>
+                    </div>
+                    <div class="comp-card reveal">
+                        <span class="comp-tag">EU</span>
+                        <h3>Cyber Resilience Act (CRA)</h3>
+                        <p>Eneos SBOM, sårbarhetsprocess och säkra utvecklingscykel går i linje med CRA:s krav på säkerhet i digitala produkter.</p>
+                    </div>
+                </div>
+                <div class="standards-strip reveal" aria-label="Standarder och ramverk som Eneo förhåller sig till">
+                    <span class="std-badge">OWASP ASVS</span>
+                    <span class="std-badge">OWASP SCVS</span>
+                    <span class="std-badge">OWASP LLM Top 10</span>
+                    <span class="std-badge">CycloneDX</span>
+                    <span class="std-badge">SPDX</span>
+                    <span class="std-badge">NIST SSDF</span>
+                    <span class="std-badge">SLSA</span>
+                    <span class="std-badge">OIDC / OAuth 2.0</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- KONTINUERLIG SÄKERHET -->
+        <section class="section-band" id="utveckling">
+            <div class="container">
+                <div class="section-head center reveal">
+                    <span class="label label-center">Kontinuerlig säkerhet</span>
+                    <h2>Säkerheten utvecklas löpande</h2>
+                    <p class="lead">Säkerhet är inte ett avgränsat projekt utan en integrerad del av den ordinarie utvecklingen av plattformen. Funktioner, härdning och anpassningar till nya regelverk levereras kontinuerligt i Eneos vanliga versionsflöde.</p>
+                </div>
+                <div class="compliance-grid">
+                    <div class="comp-card reveal">
+                        <h3>Del av ordinarie utveckling</h3>
+                        <p>Säkerhet är inbyggt i hur plattformen byggs. Varje förändring tas fram med dataskydd, åtkomstkontroll och spårbarhet som utgångspunkt – inte som ett separat spår vid sidan av.</p>
+                    </div>
+                    <div class="comp-card reveal">
+                        <h3>Löpande granskning och härdning</h3>
+                        <p>Kod, beroenden och konfiguration granskas kontinuerligt och sårbarheter åtgärdas enligt en publicerad säkerhetspolicy med tydliga svarstider. Den öppna källkoden gör att hela community kan granska och bidra.</p>
+                    </div>
+                    <div class="comp-card reveal">
+                        <h3>Förbättringar i varje release</h3>
+                        <p>Nya säkerhetsfunktioner och förstärkningar rullas ut i plattformens ordinarie releaser. Utvecklingen följer omvärldens krav och de europeiska och svenska regelverk som styr offentlig sektor.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="v2-footer">
+        <div class="container">
+            <div class="footer-intro">
+                <div class="footer-logo">
+                    <svg role="img" aria-label="Eneo logotyp" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 172" style="height:22px;width:auto;shape-rendering:geometricPrecision;fill-rule:evenodd;clip-rule:evenodd;">
+                        <path fill="#1a7ad4" d="M 107.5,-0.5 C 114.833,-0.5 122.167,-0.5 129.5,-0.5C 176.816,9.15707 202.149,38.1571 205.5,86.5C 203.389,125.423 184.389,152.257 148.5,167C 142.419,168.71 136.419,170.21 130.5,171.5C 123.5,171.5 116.5,171.5 109.5,171.5C 93.3852,168.947 78.7185,162.781 65.5,153C 57.3188,144.986 49.3188,136.819 41.5,128.5C 61.6527,107.847 81.9861,87.3471 102.5,67C 111.582,60.8816 121.249,59.8816 131.5,64C 144.46,73.9171 146.96,86.0837 139,100.5C 131.833,107.667 124.667,114.833 117.5,122C 138.893,122.044 151.726,111.544 156,90.5C 156.442,68.8872 146.275,55.0539 125.5,49C 112.803,46.9218 101.803,50.2552 92.5,59C 86.6667,64.8333 80.8333,70.6667 75,76.5C 63.5,65 52,53.5 40.5,42C 50.2305,31.5999 60.5639,21.9333 71.5,13C 82.7423,6.20074 94.7423,1.70074 107.5,-0.5 Z"/>
+                        <path class="logo-text" d="M 649.5,76.5 C 649.5,82.1667 649.5,87.8333 649.5,93.5C 640.846,129.635 617.846,147.135 580.5,146C 552.923,141.09 535.59,125.09 528.5,98C 514.833,97.6667 501.167,97.3333 487.5,97C 480.994,93.8341 478.494,88.6674 480,81.5C 480.979,78.3749 482.813,75.8749 485.5,74C 498.401,72.538 511.401,72.038 524.5,72.5C 521.764,64.5453 516.764,58.3786 509.5,54C 488.763,45.1354 472.596,50.3021 461,69.5C 453.601,90.9824 459.767,107.149 479.5,118C 492.365,122.56 504.198,120.727 515,112.5C 519.225,119.939 523.725,127.272 528.5,134.5C 511.022,146.856 492.022,149.689 471.5,143C 466.51,141.335 462.01,138.835 458,135.5C 457.502,138.817 457.335,142.15 457.5,145.5C 448.833,145.5 440.167,145.5 431.5,145.5C 431.667,123.497 431.5,101.497 431,79.5C 426.715,61.265 415.215,51.265 396.5,49.5C 377.785,51.265 366.285,61.265 362,79.5C 361.5,101.497 361.333,123.497 361.5,145.5C 352.833,145.5 344.167,145.5 335.5,145.5C 335.5,129.5 335.5,113.5 335.5,97.5C 322.163,97.6666 308.829,97.4999 295.5,97C 287.991,92.8092 285.824,86.6426 289,78.5C 290.663,76.0833 292.829,74.25 295.5,73C 307.829,72.5001 320.162,72.3335 332.5,72.5C 327.027,58.2227 316.527,50.556 301,49.5C 282.085,51.1142 270.419,61.1142 266,79.5C 264.719,101.205 274.553,114.705 295.5,120C 303.532,121.06 311.032,119.56 318,115.5C 318.667,124.833 318.667,134.167 318,143.5C 289.265,150.965 266.265,142.631 249,118.5C 233.274,88.8088 237.108,61.9755 260.5,38C 285.142,19.8768 310.476,18.8768 336.5,35C 340.981,38.3143 344.981,42.1476 348.5,46.5C 369.825,23.1077 395.158,17.6077 424.5,30C 432.127,34.3166 438.794,39.8166 444.5,46.5C 465.825,23.1077 491.158,17.6077 520.5,30C 528.127,34.3166 534.794,39.8166 540.5,46.5C 561.825,23.1077 587.158,17.6077 616.5,30C 634.762,40.3615 645.762,55.8615 649.5,76.5 Z M 583.5,49.5 C 610.442,49.9416 623.609,63.6083 623,90.5C 619.82,107.013 609.987,116.846 593.5,120C 572.335,120.831 559.169,110.998 554,90.5C 552.92,68.7752 562.753,55.1085 583.5,49.5 Z"/>
+                        <path fill="#1a7ad4" d="M -0.5,87.5 C -0.5,85.8333 -0.5,84.1667 -0.5,82.5C 10.1734,71.9931 21.0067,61.6598 32,51.5C 43.9725,62.3055 55.4725,73.6388 66.5,85.5C 55.5,97.1667 44.1667,108.5 32.5,119.5C 21.4793,108.812 10.4793,98.1453 -0.5,87.5 Z"/>
+                    </svg>
+                </div>
+                <p>Ett initiativ från Sundsvalls kommun och Ånge kommun för hela offentliga Sverige.</p>
+            </div>
+            <div class="footer-grid">
+                <div class="footer-box">
+                    <p class="footer-heading">Kontakt</p>
+                    <a href="mailto:digitalisering@sundsvall.se">digitalisering@sundsvall.se</a>
+                </div>
+                <div class="footer-box">
+                    <p class="footer-heading">Säkerhet</p>
+                    <a href="https://github.com/eneo-ai/eneo/security/policy" target="_blank" rel="noopener">Säkerhetspolicy<span class="sr-only"> (öppnas i ny flik)</span></a>
+                    <a href="iso-27001.html">ISO 27001-analys</a>
+                </div>
+                <div class="footer-box">
+                    <p class="footer-heading">Tillgänglighet</p>
+                    <a href="tillganglighetsredogorelse.html">Tillgänglighetsredogörelse</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© Sundsvalls kommun och Ånge kommun</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.Eneo = (function () {
+            'use strict';
+            var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+            /* ── Theme toggle ── */
+            function updateThemeIcon() {
+                var btn = document.getElementById('theme-toggle');
+                if (!btn) return;
+                var theme = document.documentElement.getAttribute('data-theme');
+                var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                var isDark = theme === 'dark' || (!theme && prefersDark);
+                btn.setAttribute('aria-label', isDark ? 'Byt till ljust tema' : 'Byt till mörkt tema');
+                btn.innerHTML = isDark
+                    ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>'
+                    : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+            }
+
+            function toggleTheme() {
+                var current = document.documentElement.getAttribute('data-theme');
+                var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                var next;
+                if (current === 'light') next = 'dark';
+                else if (current === 'dark') next = 'light';
+                else next = prefersDark ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', next);
+                try { localStorage.setItem('theme', next); } catch (e) {}
+                updateThemeIcon();
+            }
+
+            /* ── Mobile menu ── */
+            function toggleMobileMenu() {
+                var mobileNav = document.getElementById('mobile-nav');
+                var menuBtn = document.getElementById('mobile-menu-btn');
+                if (!mobileNav || !menuBtn) return;
+                if (mobileNav.classList.contains('active')) {
+                    closeMobileMenu();
+                } else {
+                    mobileNav.classList.add('active');
+                    menuBtn.setAttribute('aria-expanded', 'true');
+                    var firstLink = mobileNav.querySelector('a');
+                    if (firstLink) firstLink.focus();
+                }
+            }
+
+            function closeMobileMenu() {
+                var mobileNav = document.getElementById('mobile-nav');
+                var menuBtn = document.getElementById('mobile-menu-btn');
+                if (!mobileNav || !menuBtn) return;
+                mobileNav.classList.remove('active');
+                menuBtn.setAttribute('aria-expanded', 'false');
+            }
+
+            document.addEventListener('click', function (event) {
+                var mobileNav = document.getElementById('mobile-nav');
+                var menuBtn = document.getElementById('mobile-menu-btn');
+                if (mobileNav && menuBtn && !menuBtn.contains(event.target) && !mobileNav.contains(event.target)) {
+                    closeMobileMenu();
+                }
+            });
+
+            document.addEventListener('keydown', function (event) {
+                if (event.key === 'Escape') {
+                    var mobileNav = document.getElementById('mobile-nav');
+                    var menuBtn = document.getElementById('mobile-menu-btn');
+                    if (mobileNav && mobileNav.classList.contains('active')) {
+                        closeMobileMenu();
+                        if (menuBtn) menuBtn.focus();
+                    }
+                }
+                if (event.key === 'Tab') {
+                    var nav = document.getElementById('mobile-nav');
+                    if (!nav || !nav.classList.contains('active')) return;
+                    var btn = document.getElementById('mobile-menu-btn');
+                    var focusable = [btn].concat(Array.prototype.slice.call(nav.querySelectorAll('a, button'))).filter(Boolean);
+                    if (!focusable.length) return;
+                    var first = focusable[0], last = focusable[focusable.length - 1];
+                    if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+                    else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+                }
+            });
+
+            window.addEventListener('resize', function () {
+                if (window.innerWidth >= 769) closeMobileMenu();
+            });
+
+            /* ── Smooth scroll for in-page anchors ── */
+            document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+                anchor.addEventListener('click', function (e) {
+                    var targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    var target = document.querySelector(targetId);
+                    if (!target) return;
+                    e.preventDefault();
+                    var headerOffset = 90;
+                    var offsetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+                    window.scrollTo({ top: offsetPosition, behavior: prefersReducedMotion.matches ? 'auto' : 'smooth' });
+                });
+            });
+
+            /* ── Reveal on scroll ── */
+            function initReveal() {
+                var els = document.querySelectorAll('.reveal');
+                if (prefersReducedMotion.matches || !('IntersectionObserver' in window)) {
+                    els.forEach(function (el) { el.classList.add('in-view'); });
+                    return;
+                }
+                var observer = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('in-view');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+                els.forEach(function (el) { observer.observe(el); });
+            }
+
+            updateThemeIcon();
+            initReveal();
+
+            return { toggleTheme: toggleTheme, toggleMobileMenu: toggleMobileMenu };
+        })();
+    </script>
+</body>
+</html>
