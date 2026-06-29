@@ -201,67 +201,6 @@
     margin-top: 1rem;
 }
 
-/* ── NEWSLETTER ── */
-.newsletter {
-    padding: 5rem 2rem;
-    text-align: center;
-}
-.newsletter .container {
-    max-width: 560px;
-}
-.newsletter h2 {
-    margin-bottom: 0.6rem;
-}
-.newsletter .subtitle {
-    margin: 0 auto 2rem;
-}
-.nl-form {
-    display: flex;
-    gap: 0.6rem;
-    max-width: 440px;
-    margin: 0 auto;
-}
-.nl-input {
-    flex: 1;
-    padding: 0.75rem 1rem;
-    border-radius: 8px;
-    border: 1px solid var(--border);
-    background: var(--bg-card);
-    color: var(--text);
-    font-family: var(--font-body);
-    font-size: 0.9rem;
-    outline: none;
-    transition: border-color 0.2s;
-}
-.nl-input::placeholder {
-    color: var(--text-faint);
-}
-.nl-input:focus {
-    border-color: var(--border-hover);
-}
-.nl-btn {
-    padding: 0.75rem 1.4rem;
-    border-radius: 8px;
-    background: linear-gradient(135deg, var(--brand), var(--brand-bright));
-    color: #fff;
-    font-size: 0.88rem;
-    font-weight: 600;
-    border: none;
-    cursor: pointer;
-    font-family: var(--font-body);
-    transition: all 0.25s;
-    white-space: nowrap;
-}
-.nl-btn:hover,
-.nl-btn:focus-visible {
-    box-shadow: 0 4px 20px rgba(5,85,148,0.35);
-}
-.nl-note {
-    font-size: 0.75rem;
-    color: var(--text-faint);
-    margin-top: 0.7rem;
-}
-
 /* ── ARTICLE PAGE ── */
 .article-header {
     padding: 9rem 2rem 3rem;
@@ -392,9 +331,6 @@
 @media (max-width: 640px) {
     .news-grid {
         grid-template-columns: 1fr;
-    }
-    .nl-form {
-        flex-direction: column;
     }
     .article-header {
         padding: 7rem 1.2rem 2rem;
