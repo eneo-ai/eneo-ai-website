@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-24T03:42:22.447Z",
+  "generatedAt": "2026-07-24T08:41:35.330Z",
   "source": {
     "owner": "eneo-ai",
     "project": "5",
@@ -18,7 +18,7 @@
       "number": 549,
       "url": "https://github.com/eneo-ai/eneo/issues/549",
       "title": "Etablera en hållbar lagringsmodell för objektinnehåll",
-      "summary": "Eneo ska ge kommuner en tillförlitlig livscykel för beständiga filer utan att tvinga varje installation att driva objektlagring. PostgreSQL äger alltid identitet, integritet, referenser, åtkomst, lagringstid, livscykel, revision och återställningsuppgifter; varje innehållsobjekt lagrar sina byte antingen i avgränsad PostgreSQL-inline-lagring eller i en uttryckligen konfigurerad privat S3-kompatibel slutpunkt. PostgreSQL-inline är det permanenta och enkla standardvalet. SeaweedFS är Eneos valfria referensdriftsättning, medan MinIO och andra kompatibla europeiska eller egendriftade slutpunkter använder samma leverantörsneutrala kontrakt.",
+      "summary": "Kommuner behöver samma säkra filhantering även när deras infrastruktur och skala skiljer sig åt. Eneo behåller PostgreSQL som färdig standard, medan administratörer kan välja en privat S3-kompatibel lagring när de behöver separat filkapacitet eller dataplacering. Uppladdningar, chattbilagor, kunskapsfiler och genererat innehåll följer samma regler för integritet, återställning och radering i båda uppsättningarna.",
       "status": "In Progress",
       "roadmapVersion": "2.X",
       "area": "Backend",
@@ -26,19 +26,6 @@
       "startDate": "2026-07-15",
       "targetDate": "Not assigned.",
       "group": "in_progress"
-    },
-    {
-      "number": 545,
-      "url": "https://github.com/eneo-ai/eneo/issues/545",
-      "title": "Inför förstklassiga Eneo Skills och portabla Skill-paket",
-      "summary": "Eneo-författare ska kunna dela upp en stor Assistant- eller App-prompt i namngivna, versionerade Skills, återanvända godkända funktioner utan att kopiera instruktioner och hålla varje resurs kopplad till känt innehåll. Tenant-administratörer ska styra organisationsövergripande Skills och Personal Chat utan att göra den externa Marketplace till ett aktivt körningsberoende.\n\nResultatet är skiktat:\n\n1. lokala Space-ägda Skills fungerar självständigt;\n2. varje Eneo-installation har en styrd organisationskatalog med exakta godkända revisioner;\n3. byggare kan koppla en godkänd organisationsrevision till Assistants och Apps i Spaces de får redigera;\n4. ett valfritt senare arbetsflöde kan skapa en redigerbar Space-ägd kopia för självständig anpassning;\n5. portabla paket och den externa Marketplace flyttar senare kompletta, versionerade resurser mellan installationer.",
-      "status": "Todo",
-      "roadmapVersion": "2.X",
-      "area": "Backend, persistence, generated API, native frontend, documentation, and package contracts.",
-      "priority": "P1",
-      "startDate": "2026-07-15",
-      "targetDate": "Not assigned.",
-      "group": "later"
     },
     {
       "number": 546,
@@ -50,6 +37,19 @@
       "area": "Other",
       "priority": "P2",
       "startDate": "Not assigned.",
+      "targetDate": "Not assigned.",
+      "group": "later"
+    },
+    {
+      "number": 545,
+      "url": "https://github.com/eneo-ai/eneo/issues/545",
+      "title": "Inför förstklassiga Eneo Skills och portabla Skill-paket",
+      "summary": "Eneo-författare ska kunna dela upp en stor Assistant- eller App-prompt i namngivna, versionerade Skills, återanvända godkända funktioner utan att kopiera instruktioner och hålla varje resurs kopplad till känt innehåll. Tenant-administratörer ska styra organisationsövergripande Skills och Personal Chat utan att göra den externa Marketplace till ett aktivt körningsberoende.\n\nResultatet är skiktat:\n\n1. lokala Space-ägda Skills fungerar självständigt;\n2. varje Eneo-installation har en styrd organisationskatalog med exakta godkända revisioner;\n3. byggare kan koppla en godkänd organisationsrevision till Assistants och Apps i Spaces de får redigera;\n4. ett valfritt senare arbetsflöde kan skapa en redigerbar Space-ägd kopia för självständig anpassning;\n5. portabla paket och den externa Marketplace flyttar senare kompletta, versionerade resurser mellan installationer.",
+      "status": "Todo",
+      "roadmapVersion": "Unscheduled",
+      "area": "Backend, persistence, generated API, native frontend, documentation, and package contracts.",
+      "priority": "P1",
+      "startDate": "2026-07-15",
       "targetDate": "Not assigned.",
       "group": "later"
     },
