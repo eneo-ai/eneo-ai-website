@@ -1,0 +1,12 @@
+{
+  "name": "eneo-website-scripts",
+  "private": true,
+  "type": "module",
+  "description": "Byggskript för roadmapdata (används endast av GitHub Actions, ej av webbplatsen)",
+  "scripts": {
+    "test": "node --test 'test/*.test.mjs'"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.113.0"
+  }
+}

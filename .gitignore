@@ -1,1 +1,8 @@
 node_modules/
+
+# Nedladdad roadmap-artifakt (indata till scripts/build-roadmap.mjs) – ska aldrig committas.
+# Publicerad, översatt data ligger i data/roadmap.json.
+/roadmap.json
+
+# Lokala hemligheter (t.ex. ANTHROPIC_API_KEY för scripts/build-roadmap.mjs)
+.env

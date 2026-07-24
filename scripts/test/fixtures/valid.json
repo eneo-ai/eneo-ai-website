@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-23T06:17:00Z",
+  "source": {
+    "owner": "eneo-ai",
+    "project": "5",
+    "repository": "eneo-ai/eneo"
+  },
+  "groups": ["in_progress", "next", "later", "delivered"],
+  "unpublishedItemCount": 2,
+  "items": [
+    {
+      "number": 601,
+      "url": "https://github.com/eneo-ai/eneo/issues/601",
+      "title": "New design system rollout",
+      "summary": "Continue migrating the UI to shadcn-svelte for a consistent, accessible interface.",
+      "status": "In Progress",
+      "roadmapVersion": "2.1.0",
+      "area": "Frontend",
+      "priority": "High",
+      "startDate": "2026-06-01",
+      "targetDate": "2026-09-30",
+      "group": "in_progress"
+    },
+    {
+      "number": 602,
+      "url": "https://github.com/eneo-ai/eneo/issues/602",
+      "title": "Operational announcements",
+      "summary": "Central operational messages for all users and per-assistant announcements.",
+      "status": "Todo",
+      "roadmapVersion": "2.1.0",
+      "area": "Platform",
+      "priority": "Medium",
+      "startDate": null,
+      "targetDate": null,
+      "group": "next"
+    },
+    {
+      "number": 603,
+      "url": "https://github.com/eneo-ai/eneo/issues/603",
+      "title": "Agent builder",
+      "summary": null,
+      "status": "Future",
+      "roadmapVersion": "Future",
+      "area": null,
+      "priority": null,
+      "startDate": null,
+      "targetDate": null,
+      "group": "later"
+    },
+    {
+      "number": 604,
+      "url": "https://github.com/eneo-ai/eneo/issues/604",
+      "title": "Reworked API key management",
+      "summary": "Personal and service keys with fine-grained permissions and rotation.",
+      "status": "Done",
+      "roadmapVersion": "2.0.0",
+      "area": "Security",
+      "priority": "High",
+      "startDate": null,
+      "targetDate": null,
+      "group": "delivered"
+    }
+  ]
+}

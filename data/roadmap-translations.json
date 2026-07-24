@@ -1,0 +1,25 @@
+{
+  "cacheVersion": 1,
+  "entries": {
+    "545": {
+      "hash": "9a9a5cb89cc55419301721e6b7541c6ad6e2dd257370ba7786857437fb5876f6",
+      "title": "Inför förstklassiga Eneo Skills och portabla Skill-paket",
+      "summary": "Eneo-författare ska kunna dela upp en stor Assistant- eller App-prompt i namngivna, versionerade Skills, återanvända godkända funktioner utan att kopiera instruktioner och hålla varje resurs kopplad till känt innehåll. Tenant-administratörer ska styra organisationsövergripande Skills och Personal Chat utan att göra den externa Marketplace till ett aktivt körningsberoende.\n\nResultatet är skiktat:\n\n1. lokala Space-ägda Skills fungerar självständigt;\n2. varje Eneo-installation har en styrd organisationskatalog med exakta godkända revisioner;\n3. byggare kan koppla en godkänd organisationsrevision till Assistants och Apps i Spaces de får redigera;\n4. ett valfritt senare arbetsflöde kan skapa en redigerbar Space-ägd kopia för självständig anpassning;\n5. portabla paket och den externa Marketplace flyttar senare kompletta, versionerade resurser mellan installationer."
+    },
+    "546": {
+      "hash": "246ee0577d98f98076ab53bd406a8abbc75ad82a7f1788e32d01dd22089955bf",
+      "title": "Leverera den centrala Eneo Marketplace Hub och inbyggd Marketplace",
+      "summary": "Kommuner ska kunna upptäcka och dela styrda Eneo-lösningar utan att manuellt utbyta paketfiler. Detta epic levererar en centralt driftad Eneo Marketplace Hub samt en inbyggd Marketplace-upplevelse i varje ansluten Eneo-installation.\n\nHubben styr bidragsgivare, granskning, oföränderliga releaser, målgrupper, registrerade instanser och revision. Varje Eneo-installation behåller kontrollen över sina användare, tenantadministratörer, lokala behörigheter, installationsplaner och installerade resurser. Installerat innehåll är en lokal kopia och fortsätter att fungera när hubben är otillgänglig."
+    },
+    "549": {
+      "hash": "09db91f2d748f94c0538d47ded2a5614dcc78bc9a3ef1ab04a6aebd3abdb97c7",
+      "title": "Etablera en hållbar lagringsmodell för objektinnehåll",
+      "summary": "Eneo ska ge kommuner en tillförlitlig livscykel för beständiga filer utan att tvinga varje installation att driva objektlagring. PostgreSQL äger alltid identitet, integritet, referenser, åtkomst, lagringstid, livscykel, revision och återställningsuppgifter; varje innehållsobjekt lagrar sina byte antingen i avgränsad PostgreSQL-inline-lagring eller i en uttryckligen konfigurerad privat S3-kompatibel slutpunkt. PostgreSQL-inline är det permanenta och enkla standardvalet. SeaweedFS är Eneos valfria referensdriftsättning, medan MinIO och andra kompatibla europeiska eller egendriftade slutpunkter använder samma leverantörsneutrala kontrakt."
+    },
+    "562": {
+      "hash": "a66a9287dd7f0d4681d11e27a2cd5a620966936d0a29395c604e483881f585ee",
+      "title": "Gör felkonfigurationer i driften åtgärdbara",
+      "summary": "Utvecklare ska kunna starta och felsöka Eneo lokalt utan att dolda konfigurationsluckor leder till förvirrande fel. Den lokala installationen ska identifiera saknade krav tidigt och ge ett tydligt nästa steg när en utvecklare når en påverkad funktion. Detta minskar tiden för onboarding och felsökning samtidigt som den normala utvecklingsmiljön hålls enkel."
+    }
+  }
+}

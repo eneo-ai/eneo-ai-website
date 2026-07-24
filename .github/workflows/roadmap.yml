@@ -1,0 +1,102 @@
+# Hämtar den offentliga roadmap-exporten från eneo-ai/eneo, validerar den,
+# översätter titlar/sammanfattningar till svenska (med cache) och committar
+# uppdaterad data/roadmap.json. Se ROADMAP_WEBSITE_HANDOFF.md.
+#
+# Kräver repository secrets:
+#   ROADMAP_ARTIFACT_TOKEN  - fine-grained PAT: endast eneo-ai/eneo, Actions read-only
+#   ANTHROPIC_API_KEY       - för översättningen
+#
+# Vid fel (hämtning, validering, översättning) misslyckas körningen utan commit
+# och den senaste fungerande roadmapen ligger kvar på webbplatsen.
+
+name: Update roadmap data
+
+on:
+  schedule:
+    # Källexporten i eneo-ai/eneo kör minut 17 var sjätte timme; vi kör 30 min senare
+    - cron: '47 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write   # committa genererad data
+  actions: write    # dispatcha Pages-deployen (static.yml) efter push
+
+concurrency:
+  group: roadmap-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Setup Node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: scripts/package-lock.json
+
+      - name: Install script dependencies
+        run: npm ci --prefix scripts
+
+      # Tester körs före alla nätverkssteg - ett trasigt skript ska aldrig
+      # hinna översätta eller committa något
+      - name: Run tests
+        run: npm test --prefix scripts
+
+      - name: Download latest source export
+        env:
+          GH_TOKEN: ${{ secrets.ROADMAP_ARTIFACT_TOKEN }}
+        run: |
+          set -euo pipefail
+          run_id="$(gh run list \
+            --repo eneo-ai/eneo \
+            --workflow export-roadmap.yml \
+            --event schedule \
+            --status success \
+            --limit 1 \
+            --json databaseId \
+            --jq '.[0].databaseId')"
+          test -n "$run_id"
+
+          # Temp-katalog utanför repot - artifact-zippen får aldrig committas
+          source_dir="$(mktemp -d)"
+          gh run download "$run_id" \
+            --repo eneo-ai/eneo \
+            --name eneo-roadmap-public-json \
+            --dir "$source_dir"
+          test -f "$source_dir/roadmap.json"
+          echo "SOURCE_JSON=$source_dir/roadmap.json" >> "$GITHUB_ENV"
+
+      - name: Build data/roadmap.json
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/build-roadmap.mjs "$SOURCE_JSON"
+
+      - name: Commit and push if changed
+        id: commit
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Endast genererad data committas - aldrig git add -A
+          git add data/roadmap.json data/roadmap-translations.json
+          if git diff --cached --quiet; then
+            echo "Ingen ändring i genererad data - ingen commit."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "chore(roadmap): uppdatera roadmapdata"
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      # En push med GITHUB_TOKEN triggar INTE andra workflows (GitHubs
+      # rekursionsskydd), så Pages-deployen måste dispatchas explicit
+      - name: Trigger Pages deploy
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run static.yml --ref main
