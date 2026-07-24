@@ -63,13 +63,44 @@
     font-weight: 600;
 }
 
-/* ── VERSIONSFILTER ── */
+/* Inaktualitetslarm — amber varning, framträdande överst */
+.roadmap-stale {
+    margin-bottom: 1.5rem;
+    padding: 0.9rem 1.2rem 0.9rem 2.6rem;
+    position: relative;
+    border-radius: var(--radius-md);
+    background: var(--amber-dim);
+    border: 1px solid rgba(240, 160, 48, 0.35);
+    color: var(--text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    max-width: 48rem;
+}
+.roadmap-stale::before {
+    content: '';
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    width: 1rem;
+    height: 1rem;
+    background: var(--amber);
+    /* triangel-varningsikon via mask */
+    -webkit-mask: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2 1 21h22L12 2zm0 6v6m0 3v.5' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    mask: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2 1 21h22L12 2zm0 6v6m0 3v.5' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+/* ── FILTER (version + sponsor) ── */
+.roadmap-filters {
+    margin-bottom: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
 .roadmap-filter {
     display: flex;
     align-items: center;
     gap: 0.6rem;
     flex-wrap: wrap;
-    margin-bottom: 2.5rem;
 }
 .roadmap-filter[hidden] {
     display: none;
@@ -207,6 +238,42 @@
     font-weight: 600;
     line-height: 1.35;
     margin: 0;
+}
+
+/* Sponsor/kommun — alltid synlig etikett på kortet, filtrerar vid klick */
+.epic-sponsor {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-top: 0.55rem;
+    padding: 0.25rem 0.6rem 0.25rem 0.5rem;
+    border-radius: 999px;
+    border: 1px solid var(--brand-bright);
+    background: var(--brand-dim);
+    color: var(--brand-light);
+    font-family: inherit;
+    font-size: 0.74rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+.epic-sponsor::before {
+    content: '';
+    width: 0.7rem;
+    height: 0.7rem;
+    flex-shrink: 0;
+    background: currentColor;
+    /* karta/plats-ikon (feather map-pin) via mask */
+    -webkit-mask: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z'/%3E%3Ccircle cx='12' cy='10' r='3'/%3E%3C/svg%3E");
+    mask: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z'/%3E%3Ccircle cx='12' cy='10' r='3'/%3E%3C/svg%3E");
+}
+.epic-sponsor:hover {
+    background: var(--brand-bright);
+    color: #fff;
+}
+.epic-sponsor:focus-visible {
+    outline: 2px solid var(--brand-bright);
+    outline-offset: 2px;
 }
 
 /* ── VISA MER / VISA MINDRE ── */
@@ -377,6 +444,7 @@
     .epic-card,
     .epic-link,
     .epic-version,
+    .epic-sponsor,
     .epic-toggle,
     .epic-toggle-icon,
     .roadmap-filter button {

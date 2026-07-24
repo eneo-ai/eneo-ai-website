@@ -20,7 +20,7 @@ const ISSUE_URL_PATTERN = /^https:\/\/github\.com\/eneo-ai\/eneo\/issues\/(\d+)$
 // Fält som måste finnas med giltigt värde på varje item
 const REQUIRED_ITEM_FIELDS = ['number', 'url', 'title', 'status', 'group'];
 // Fält som får saknas/vara null, men måste vara sträng om de har värde
-const OPTIONAL_STRING_FIELDS = ['summary', 'roadmapVersion', 'area', 'priority', 'startDate', 'targetDate'];
+const OPTIONAL_STRING_FIELDS = ['summary', 'roadmapVersion', 'area', 'priority', 'startDate', 'targetDate', 'sponsor'];
 
 function fail(message) {
     throw new RoadmapValidationError(message);

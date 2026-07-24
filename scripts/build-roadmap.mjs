@@ -77,6 +77,7 @@ export async function build(source, existingCacheRaw, callModel) {
                 priority: item.priority ?? null,
                 startDate: item.startDate ?? null,
                 targetDate: item.targetDate ?? null,
+                sponsor: item.sponsor ?? null,
                 group: item.group,
             };
         }),

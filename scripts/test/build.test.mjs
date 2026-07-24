@@ -34,6 +34,10 @@ test('build: envelope kopieras ordagrant, titlar/sammanfattningar byts ut', asyn
     const noSummary = output.items.find((i) => i.number === 603);
     assert.equal(noSummary.summary, null);
 
+    // sponsor skickas rakt av (oöversatt); saknas det blir det null
+    assert.equal(first.sponsor, 'Sundsvalls kommun');
+    assert.equal(output.items.find((i) => i.number === 602).sponsor, null);
+
     assert.equal(apiCalls, VALID.items.length);
     assert.equal(warnings.length, 1);
 });

@@ -14,6 +14,12 @@
     var DATA_URL = 'data/roadmap.json';
     var ISSUE_URL_PREFIX = 'https://github.com/eneo-ai/eneo/';
 
+    // Datan uppdateras normalt var 6:e timme. Är den äldre än så här har något
+    // stannat (t.ex. utgången GitHub-token, stoppad källexport) — då visas en
+    // inaktualitetsnotis. 24h = flera missade cykler, tål cron-jitter utan
+    // falsklarm.
+    var STALE_THRESHOLD_HOURS = 24;
+
     /* ── Hjälpare ── */
 
     // Exporten använder fritext-sentineln "Not assigned." för tomma fält.
@@ -59,7 +65,9 @@
     function buildCard(item) {
         var card = el('li', 'epic-card');
         var version = hasValue(item.roadmapVersion) ? item.roadmapVersion : '';
+        var sponsor = hasValue(item.sponsor) ? item.sponsor : '';
         card.dataset.version = version;
+        card.dataset.sponsor = sponsor;
 
         var title = stripTrackerPrefix(item.title);
         var heading = el('h3');
@@ -77,7 +85,19 @@
         }
         card.appendChild(heading);
 
-        // Fällbar del: beskrivning + metadata. Bara rubriken visas i första läget.
+        // Sponsor visas alltid direkt på kortet (även i kollapsat läge) och
+        // filtrerar vid klick.
+        if (sponsor) {
+            var sponsorButton = el('button', 'epic-sponsor', sponsor);
+            sponsorButton.type = 'button';
+            sponsorButton.dataset.filterDimension = 'sponsor';
+            sponsorButton.dataset.filterValue = sponsor;
+            sponsorButton.setAttribute('aria-label', 'Filtrera på sponsor ' + sponsor);
+            card.appendChild(sponsorButton);
+        }
+
+        // Fällbar del: beskrivning + metadata. Bara rubriken (+ sponsor) visas
+        // i första läget.
         var details = el('div', 'epic-details');
         details.id = 'epic-details-' + item.number;
         details.hidden = true;
@@ -90,7 +110,8 @@
         if (version) {
             var versionButton = el('button', 'epic-version', version);
             versionButton.type = 'button';
-            versionButton.dataset.version = version;
+            versionButton.dataset.filterDimension = 'version';
+            versionButton.dataset.filterValue = version;
             versionButton.setAttribute('aria-label', 'Filtrera på version ' + version);
             meta.appendChild(versionButton);
         }
@@ -186,67 +207,115 @@
         }
     }
 
-    /* ── Versionsfilter ── */
+    /* ── Inaktualitetslarm ── */
 
-    function buildFilter(data) {
-        var container = document.querySelector('.roadmap-filter');
-        if (!container) return;
+    function renderStaleness(data) {
+        var notice = document.getElementById('roadmap-stale');
+        if (!notice) return;
 
-        var versions = [];
-        data.items.forEach(function (item) {
-            if (hasValue(item.roadmapVersion) && versions.indexOf(item.roadmapVersion) === -1) {
-                versions.push(item.roadmapVersion);
-            }
+        var generated = new Date(data.generatedAt);
+        if (Number.isNaN(generated.getTime())) return;
+
+        var ageHours = (Date.now() - generated.getTime()) / 3600000;
+        if (ageHours <= STALE_THRESHOLD_HOURS) return;
+
+        var formatted = formatDate(data.generatedAt, {
+            year: 'numeric', month: 'long', day: 'numeric',
         });
-
-        if (versions.length === 0) {
-            container.hidden = true;
-            return;
-        }
-
-        // Numerisk-medveten sortering; fritextvärden utan inledande siffra
-        // (t.ex. "Future") hamnar sist
-        versions.sort(function (a, b) {
-            var aNumeric = /^\d/.test(a);
-            var bNumeric = /^\d/.test(b);
-            if (aNumeric !== bNumeric) return aNumeric ? -1 : 1;
-            return a.localeCompare(b, 'sv', { numeric: true });
-        });
-
-        var label = el('span', 'filter-label', 'Version:');
-        label.setAttribute('aria-hidden', 'true');
-        container.appendChild(label);
-
-        ['alla'].concat(versions).forEach(function (version) {
-            var button = el('button', null, version === 'alla' ? 'Alla' : version);
-            button.type = 'button';
-            button.dataset.version = version;
-            button.setAttribute('aria-pressed', version === 'alla' ? 'true' : 'false');
-            if (version === 'alla') button.classList.add('active');
-            container.appendChild(button);
-        });
-
-        container.hidden = false;
+        notice.textContent = 'Roadmapen uppdaterades senast ' + formatted
+            + ' och kan vara inaktuell just nu.';
+        notice.hidden = false;
     }
 
-    function applyFilter(version) {
-        var filterButtons = document.querySelectorAll('.roadmap-filter button[data-version]');
-        var cards = document.querySelectorAll('.epic-card');
+    /* ── Filter (version + sponsor, oberoende dimensioner, kombineras med AND) ── */
+
+    // Numerisk-medveten sortering; fritextvärden utan inledande siffra sist
+    function versionSort(a, b) {
+        var aNumeric = /^\d/.test(a);
+        var bNumeric = /^\d/.test(b);
+        if (aNumeric !== bNumeric) return aNumeric ? -1 : 1;
+        return a.localeCompare(b, 'sv', { numeric: true });
+    }
+    function alphaSort(a, b) {
+        return a.localeCompare(b, 'sv');
+    }
+
+    var FILTER_DIMENSIONS = [
+        { key: 'version', field: 'roadmapVersion', label: 'Version:', sort: versionSort },
+        { key: 'sponsor', field: 'sponsor', label: 'Sponsor:', sort: alphaSort },
+    ];
+
+    var activeFilters = { version: 'alla', sponsor: 'alla' };
+
+    function buildFilters(data) {
+        FILTER_DIMENSIONS.forEach(function (dim) {
+            var container = document.querySelector('.roadmap-filter[data-dimension="' + dim.key + '"]');
+            if (!container) return;
+
+            var values = [];
+            data.items.forEach(function (item) {
+                var value = item[dim.field];
+                if (hasValue(value) && values.indexOf(value) === -1) values.push(value);
+            });
+
+            // Dölj hela filterraden om det inte finns fler än ett värde att välja mellan
+            if (values.length < 2) {
+                container.hidden = true;
+                return;
+            }
+            values.sort(dim.sort);
+
+            var label = el('span', 'filter-label', dim.label);
+            label.setAttribute('aria-hidden', 'true');
+            container.appendChild(label);
+
+            ['alla'].concat(values).forEach(function (value) {
+                var button = el('button', null, value === 'alla' ? 'Alla' : value);
+                button.type = 'button';
+                button.dataset.filterValue = value;
+                button.setAttribute('aria-pressed', value === 'alla' ? 'true' : 'false');
+                if (value === 'alla') button.classList.add('active');
+                button.addEventListener('click', function () {
+                    setFilter(dim.key, value);
+                });
+                container.appendChild(button);
+            });
+
+            container.hidden = false;
+        });
+    }
+
+    function setFilter(dimension, value) {
+        activeFilters[dimension] = value;
+        applyFilters();
+    }
+
+    function applyFilters() {
         var liveRegion = document.getElementById('roadmap-filter-status');
 
-        filterButtons.forEach(function (btn) {
-            var isActive = btn.dataset.version === version;
-            btn.setAttribute('aria-pressed', String(isActive));
-            btn.classList.toggle('active', isActive);
+        // Uppdatera knapparnas tillstånd per dimension
+        FILTER_DIMENSIONS.forEach(function (dim) {
+            var container = document.querySelector('.roadmap-filter[data-dimension="' + dim.key + '"]');
+            if (!container) return;
+            container.querySelectorAll('button[data-filter-value]').forEach(function (btn) {
+                var isActive = btn.dataset.filterValue === activeFilters[dim.key];
+                btn.setAttribute('aria-pressed', String(isActive));
+                btn.classList.toggle('active', isActive);
+            });
         });
 
+        // Kort visas endast om det matchar ALLA aktiva dimensioner
         var visibleTotal = 0;
-        cards.forEach(function (card) {
-            var show = version === 'alla' || card.dataset.version === version;
+        document.querySelectorAll('.epic-card').forEach(function (card) {
+            var show = FILTER_DIMENSIONS.every(function (dim) {
+                var active = activeFilters[dim.key];
+                return active === 'alla' || card.dataset[dim.key] === active;
+            });
             card.hidden = !show;
             if (show) visibleTotal++;
         });
 
+        // Antal per kolumn + tomtillstånd
         document.querySelectorAll('.roadmap-column').forEach(function (column) {
             if (column.hidden) return; // dold Levererat-kolumn lämnas orörd
             var visibleInColumn = column.querySelectorAll('.epic-card:not([hidden])').length;
@@ -256,23 +325,25 @@
             if (empty) empty.hidden = visibleInColumn !== 0;
         });
 
+        // Meddela skärmläsare
         if (liveRegion) {
-            liveRegion.textContent = version === 'alla'
+            var parts = [];
+            FILTER_DIMENSIONS.forEach(function (dim) {
+                if (activeFilters[dim.key] !== 'alla') {
+                    parts.push(dim.label.replace(':', '').toLowerCase() + ' ' + activeFilters[dim.key]);
+                }
+            });
+            liveRegion.textContent = parts.length === 0
                 ? 'Visar alla ' + visibleTotal + ' epics.'
-                : 'Visar ' + visibleTotal + ' epics för version ' + version + '.';
+                : 'Visar ' + visibleTotal + ' epics (' + parts.join(', ') + ').';
         }
     }
 
-    function bindFilterEvents() {
-        document.querySelectorAll('.roadmap-filter button[data-version]').forEach(function (btn) {
-            btn.addEventListener('click', function () {
-                applyFilter(this.dataset.version);
-            });
-        });
-        // Versionsknappar på korten filtrerar också
-        document.querySelectorAll('.epic-version').forEach(function (badge) {
+    function bindCardFilterButtons() {
+        // Versionsbadge och sponsor-chip på korten filtrerar också
+        document.querySelectorAll('[data-filter-dimension][data-filter-value]').forEach(function (badge) {
             badge.addEventListener('click', function () {
-                applyFilter(this.dataset.version);
+                setFilter(this.dataset.filterDimension, this.dataset.filterValue);
             });
         });
     }
@@ -302,9 +373,10 @@
 
         renderBoard(data);
         renderMeta(data);
-        buildFilter(data);
-        bindFilterEvents();
-        applyFilter('alla');
+        renderStaleness(data);
+        buildFilters(data);
+        bindCardFilterButtons();
+        applyFilters();
     }
 
     document.addEventListener('DOMContentLoaded', loadRoadmap);

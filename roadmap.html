@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="css/v2-components.css?v=2">
     <link rel="stylesheet" href="css/v2-layout.css?v=2">
     <link rel="stylesheet" href="css/pages/om-eneo.css?v=2">
-    <link rel="stylesheet" href="css/pages/roadmap.css?v=4">
+    <link rel="stylesheet" href="css/pages/roadmap.css?v=6">
 </head>
 <body>
     <a class="skip-link" href="#main-content">Hoppa till huvudinnehåll</a>
@@ -89,11 +89,18 @@
     <section class="roadmap" aria-label="Roadmap">
         <div class="container">
 
+            <!-- Inaktualitetslarm: visas om datan inte uppdaterats på länge
+                 (t.ex. utgången GitHub-token eller stoppad källexport) -->
+            <p id="roadmap-stale" class="roadmap-stale" role="status" hidden></p>
+
             <!-- Transparensnotis: epics som ännu inte är publika issues -->
             <p id="roadmap-unpublished" class="roadmap-notice" role="status" hidden></p>
 
-            <!-- Versionsfilter (fylls av JS från datans roadmapVersion-värden) -->
-            <div class="roadmap-filter" role="group" aria-label="Filtrera epics efter version" hidden></div>
+            <!-- Filter (fylls av JS från datans värden) -->
+            <div class="roadmap-filters">
+                <div class="roadmap-filter" data-dimension="version" role="group" aria-label="Filtrera epics efter version" hidden></div>
+                <div class="roadmap-filter" data-dimension="sponsor" role="group" aria-label="Filtrera epics efter sponsor" hidden></div>
+            </div>
             <p id="roadmap-filter-status" class="sr-only" role="status" aria-live="polite"></p>
 
             <p id="roadmap-loading" class="roadmap-loading">Läser in roadmapen …</p>
@@ -192,6 +199,6 @@
 
     <!-- JavaScript -->
     <script src="js/main.js?v=2"></script>
-    <script src="js/roadmap.js?v=3"></script>
+    <script src="js/roadmap.js?v=5"></script>
 </body>
 </html>
