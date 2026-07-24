@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-24T08:41:35.330Z",
+  "generatedAt": "2026-07-24T14:10:58.804Z",
   "source": {
     "owner": "eneo-ai",
     "project": "5",
@@ -18,7 +18,7 @@
       "number": 549,
       "url": "https://github.com/eneo-ai/eneo/issues/549",
       "title": "Etablera en hållbar lagringsmodell för objektinnehåll",
-      "summary": "Kommuner behöver samma säkra filhantering även när deras infrastruktur och skala skiljer sig åt. Eneo behåller PostgreSQL som färdig standard, medan administratörer kan välja en privat S3-kompatibel lagring när de behöver separat filkapacitet eller dataplacering. Uppladdningar, chattbilagor, kunskapsfiler och genererat innehåll följer samma regler för integritet, återställning och radering i båda uppsättningarna.",
+      "summary": "Kommuner behöver samma säkra filhantering även när deras infrastruktur och skala skiljer sig åt. Eneo behåller PostgreSQL som färdigt standardval, medan administratörer kan välja en privat S3-kompatibel lagring när de behöver separat filkapacitet eller kontroll över dataplacering. Uppladdningar, chattbilagor, kunskapsfiler och genererat innehåll följer samma regler för integritet, återställning och radering i båda uppsättningarna.",
       "status": "In Progress",
       "roadmapVersion": "2.X",
       "area": "Backend",
