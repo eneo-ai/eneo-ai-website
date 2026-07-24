@@ -25,6 +25,7 @@
       "priority": "P1",
       "startDate": "2026-07-15",
       "targetDate": "Not assigned.",
+      "sponsor": "Sundsvalls kommun",
       "group": "in_progress"
     },
     {
@@ -38,6 +39,7 @@
       "priority": "P2",
       "startDate": "Not assigned.",
       "targetDate": "Not assigned.",
+      "sponsor": "Sundsvall",
       "group": "later"
     },
     {
@@ -51,6 +53,7 @@
       "priority": "P1",
       "startDate": "2026-07-15",
       "targetDate": "Not assigned.",
+      "sponsor": "Sundsvalls kommun",
       "group": "later"
     },
     {
@@ -64,6 +67,7 @@
       "priority": "Not assigned.",
       "startDate": "Not assigned.",
       "targetDate": "Not assigned.",
+      "sponsor": "Not assigned.",
       "group": "later"
     }
   ]
