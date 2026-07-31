@@ -2,9 +2,9 @@
   "cacheVersion": 1,
   "entries": {
     "545": {
-      "hash": "9a9a5cb89cc55419301721e6b7541c6ad6e2dd257370ba7786857437fb5876f6",
-      "title": "Inför förstklassiga Eneo Skills och portabla Skill-paket",
-      "summary": "Eneo-författare ska kunna dela upp en stor Assistant- eller App-prompt i namngivna, versionerade Skills, återanvända godkända funktioner utan att kopiera instruktioner och hålla varje resurs kopplad till känt innehåll. Tenant-administratörer ska styra organisationsövergripande Skills och Personal Chat utan att göra den externa Marketplace till ett aktivt körningsberoende.\n\nResultatet är skiktat:\n\n1. lokala Space-ägda Skills fungerar självständigt;\n2. varje Eneo-installation har en styrd organisationskatalog med exakta godkända revisioner;\n3. byggare kan koppla en godkänd organisationsrevision till Assistants och Apps i Spaces de får redigera;\n4. ett valfritt senare arbetsflöde kan skapa en redigerbar Space-ägd kopia för självständig anpassning;\n5. portabla paket och den externa Marketplace flyttar senare kompletta, versionerade resurser mellan installationer."
+      "hash": "2f42e3f01ed801fb07a335eefec199437384a9778fca2b0e0f3c7abaab1837a7",
+      "title": "Skapa, styra och återanvänd färdigheter",
+      "summary": "Team kan skapa en färdighet en gång och återanvända samma godkända instruktioner i Personlig chatt, Assistenter och Appar. Varje koppling ligger kvar på en exakt version av färdigheten tills en behörig användare väljer att uppdatera den.\n\nAdministratörer kan publicera organisationsfärdigheter, se var varje version används, stoppa osäkra färdigheter och flytta befintliga kopplingar till en nyligen godkänd version. Assistenter kan ladda en färdighet endast när den är relevant; Appar använder sina konfigurerade färdigheter vid varje körning."
     },
     "546": {
       "hash": "246ee0577d98f98076ab53bd406a8abbc75ad82a7f1788e32d01dd22089955bf",
@@ -20,6 +20,11 @@
       "hash": "a66a9287dd7f0d4681d11e27a2cd5a620966936d0a29395c604e483881f585ee",
       "title": "Gör felkonfigurationer i driften åtgärdbara",
       "summary": "Utvecklare ska kunna starta och felsöka Eneo lokalt utan att dolda konfigurationsluckor leder till förvirrande fel. Den lokala installationen ska identifiera saknade krav tidigt och ge ett tydligt nästa steg när en utvecklare når en påverkad funktion. Detta minskar tiden för onboarding och felsökning samtidigt som den normala utvecklingsmiljön hålls enkel."
+    },
+    "660": {
+      "hash": "45494c24e6b7526761483a0ddd152b1f2b49d8d369a7534e42320835e512660e",
+      "title": "Utför repeterbara uppgifter med Skills",
+      "summary": "Skills kan använda Python-skript, referenser och mallar för repeterbart arbete såsom beräkningar, validering, datatransformation och dokumentskapande. Eneo kör varje skript i en tillfällig isolerad miljö utan åtkomst till Eneo-tjänster, distributionsuppgifter eller externa nätverk. Organisationer styr separat vem som får lägga till skript i Skills och vem som får köra dem. Befintliga Skills med enbart instruktioner fungerar som tidigare, och organisationens publicering är fortsatt granskningssteget för att dela en exakt godkänd version mellan Spaces."
     }
   }
 }

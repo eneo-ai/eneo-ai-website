@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-30T08:48:27.504Z",
+  "generatedAt": "2026-07-31T09:20:47.082Z",
   "source": {
     "owner": "eneo-ai",
     "project": "5",
@@ -43,17 +43,17 @@
       "group": "later"
     },
     {
-      "number": 545,
-      "url": "https://github.com/eneo-ai/eneo/issues/545",
-      "title": "Inför förstklassiga Eneo Skills och portabla Skill-paket",
-      "summary": "Eneo-författare ska kunna dela upp en stor Assistant- eller App-prompt i namngivna, versionerade Skills, återanvända godkända funktioner utan att kopiera instruktioner och hålla varje resurs kopplad till känt innehåll. Tenant-administratörer ska styra organisationsövergripande Skills och Personal Chat utan att göra den externa Marketplace till ett aktivt körningsberoende.\n\nResultatet är skiktat:\n\n1. lokala Space-ägda Skills fungerar självständigt;\n2. varje Eneo-installation har en styrd organisationskatalog med exakta godkända revisioner;\n3. byggare kan koppla en godkänd organisationsrevision till Assistants och Apps i Spaces de får redigera;\n4. ett valfritt senare arbetsflöde kan skapa en redigerbar Space-ägd kopia för självständig anpassning;\n5. portabla paket och den externa Marketplace flyttar senare kompletta, versionerade resurser mellan installationer.",
+      "number": 660,
+      "url": "https://github.com/eneo-ai/eneo/issues/660",
+      "title": "Utför repeterbara uppgifter med Skills",
+      "summary": "Skills kan använda Python-skript, referenser och mallar för repeterbart arbete såsom beräkningar, validering, datatransformation och dokumentskapande. Eneo kör varje skript i en tillfällig isolerad miljö utan åtkomst till Eneo-tjänster, distributionsuppgifter eller externa nätverk. Organisationer styr separat vem som får lägga till skript i Skills och vem som får köra dem. Befintliga Skills med enbart instruktioner fungerar som tidigare, och organisationens publicering är fortsatt granskningssteget för att dela en exakt godkänd version mellan Spaces.",
       "status": "Todo",
       "roadmapVersion": "Unscheduled",
-      "area": "Backend, persistence, generated API, native frontend, documentation, and package contracts.",
+      "area": "Other",
       "priority": "P1",
-      "startDate": "2026-07-15",
-      "targetDate": "Not assigned.",
-      "sponsor": "Sundsvalls kommun",
+      "startDate": "",
+      "targetDate": "",
+      "sponsor": "",
       "group": "later"
     },
     {
@@ -69,6 +69,20 @@
       "targetDate": "Not assigned.",
       "sponsor": "Not assigned.",
       "group": "later"
+    },
+    {
+      "number": 545,
+      "url": "https://github.com/eneo-ai/eneo/issues/545",
+      "title": "Skapa, styra och återanvänd färdigheter",
+      "summary": "Team kan skapa en färdighet en gång och återanvända samma godkända instruktioner i Personlig chatt, Assistenter och Appar. Varje koppling ligger kvar på en exakt version av färdigheten tills en behörig användare väljer att uppdatera den.\n\nAdministratörer kan publicera organisationsfärdigheter, se var varje version används, stoppa osäkra färdigheter och flytta befintliga kopplingar till en nyligen godkänd version. Assistenter kan ladda en färdighet endast när den är relevant; Appar använder sina konfigurerade färdigheter vid varje körning.",
+      "status": "Done",
+      "roadmapVersion": "2.X",
+      "area": "Other",
+      "priority": "P1",
+      "startDate": "2026-07-15",
+      "targetDate": "Not assigned.",
+      "sponsor": "Sundsvalls kommun",
+      "group": "delivered"
     }
   ]
 }
