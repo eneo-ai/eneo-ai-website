@@ -12,9 +12,9 @@
       "summary": "Kommuner ska kunna upptäcka och dela styrda Eneo-lösningar utan att manuellt utbyta paketfiler. Detta epic levererar en centralt driftad Eneo Marketplace Hub samt en inbyggd Marketplace-upplevelse i varje ansluten Eneo-installation.\n\nHubben styr bidragsgivare, granskning, oföränderliga releaser, målgrupper, registrerade instanser och revision. Varje Eneo-installation behåller kontrollen över sina användare, tenantadministratörer, lokala behörigheter, installationsplaner och installerade resurser. Installerat innehåll är en lokal kopia och fortsätter att fungera när hubben är otillgänglig."
     },
     "549": {
-      "hash": "44f67dde45ed48773914a9480e07e0de021c5506ecfee5a22cde69d48500da22",
-      "title": "Etablera en hållbar lagringsmodell för objektinnehåll",
-      "summary": "Kommuner behöver samma säkra filhantering även när deras infrastruktur och skala skiljer sig åt. Eneo behåller PostgreSQL som färdigt standardval, medan administratörer kan välja en privat S3-kompatibel lagring när de behöver separat filkapacitet eller kontroll över dataplacering. Uppladdningar, chattbilagor, kunskapsfiler och genererat innehåll följer samma regler för integritet, återställning och radering i båda uppsättningarna."
+      "hash": "fe6a2583fae91d17e2cfc43947b4cef1d9a18bf3dc588ffd78ea4122e973504f",
+      "title": "Ge administratörer kontroll över fillagring och lagringstid",
+      "summary": "Eneo-administratörer ska kunna se vad som förbrukar fillagringen, välja var nytt innehåll lagras och fastställa säkra regler för lagringstid utan att starta om installationen eller be värdleverantören att ändra en miljövariabel. PostgreSQL förblir det fullständiga standardvalet, medan en privat S3-kompatibel lagring är valfri. Aktiva filer förblir tillgängliga för chattar, assistenter, appar och kunskap tills den ägande produktens livscykel frigör dem."
     },
     "562": {
       "hash": "a66a9287dd7f0d4681d11e27a2cd5a620966936d0a29395c604e483881f585ee",

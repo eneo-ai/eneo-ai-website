@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-31T09:20:47.082Z",
+  "generatedAt": "2026-07-31T14:33:11.880Z",
   "source": {
     "owner": "eneo-ai",
     "project": "5",
@@ -17,14 +17,14 @@
     {
       "number": 549,
       "url": "https://github.com/eneo-ai/eneo/issues/549",
-      "title": "Etablera en hållbar lagringsmodell för objektinnehåll",
-      "summary": "Kommuner behöver samma säkra filhantering även när deras infrastruktur och skala skiljer sig åt. Eneo behåller PostgreSQL som färdigt standardval, medan administratörer kan välja en privat S3-kompatibel lagring när de behöver separat filkapacitet eller kontroll över dataplacering. Uppladdningar, chattbilagor, kunskapsfiler och genererat innehåll följer samma regler för integritet, återställning och radering i båda uppsättningarna.",
+      "title": "Ge administratörer kontroll över fillagring och lagringstid",
+      "summary": "Eneo-administratörer ska kunna se vad som förbrukar fillagringen, välja var nytt innehåll lagras och fastställa säkra regler för lagringstid utan att starta om installationen eller be värdleverantören att ändra en miljövariabel. PostgreSQL förblir det fullständiga standardvalet, medan en privat S3-kompatibel lagring är valfri. Aktiva filer förblir tillgängliga för chattar, assistenter, appar och kunskap tills den ägande produktens livscykel frigör dem.",
       "status": "In Progress",
       "roadmapVersion": "2.X",
       "area": "Backend",
       "priority": "P1",
       "startDate": "2026-07-15",
-      "targetDate": "Not assigned.",
+      "targetDate": "",
       "sponsor": "Sundsvalls kommun",
       "group": "in_progress"
     },
