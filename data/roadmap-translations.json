@@ -17,9 +17,9 @@
       "summary": "Eneo-administratörer ska kunna se vad som förbrukar fillagringen, välja var nytt innehåll lagras och fastställa säkra regler för lagringstid utan att starta om installationen eller be värdleverantören att ändra en miljövariabel. PostgreSQL förblir det fullständiga standardvalet, medan en privat S3-kompatibel lagring är valfri. Aktiva filer förblir tillgängliga för chattar, assistenter, appar och kunskap tills den ägande produktens livscykel frigör dem."
     },
     "562": {
-      "hash": "a66a9287dd7f0d4681d11e27a2cd5a620966936d0a29395c604e483881f585ee",
-      "title": "Gör felkonfigurationer i driften åtgärdbara",
-      "summary": "Utvecklare ska kunna starta och felsöka Eneo lokalt utan att dolda konfigurationsluckor leder till förvirrande fel. Den lokala installationen ska identifiera saknade krav tidigt och ge ett tydligt nästa steg när en utvecklare når en påverkad funktion. Detta minskar tiden för onboarding och felsökning samtidigt som den normala utvecklingsmiljön hålls enkel."
+      "hash": "e3afd257ae1e9d1693c8ad496fd9c70803694680dfc41d9ed42cdad7736c00d7",
+      "title": "Gör fel i driftskonfiguration åtgärdbara",
+      "summary": "Utvecklare ska kunna starta, testa och felsöka Eneo lokalt utan att dolda konfigurationsluckor eller ordningsberoende databastillstånd förvandlas till förvirrande fel. Den lokala installationen ska tidigt identifiera saknade krav och tillhandahålla ett tydligt nästa steg när en utvecklare når en berörd funktion. Detta minskar tiden för introduktion och felsökning samtidigt som den normala utvecklingsmiljön hålls enkel."
     },
     "660": {
       "hash": "45494c24e6b7526761483a0ddd152b1f2b49d8d369a7534e42320835e512660e",

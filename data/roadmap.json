@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-11T07:35:05.757Z",
+  "generatedAt": "2026-08-11T13:41:20.447Z",
   "source": {
     "owner": "eneo-ai",
     "project": "5",
@@ -59,8 +59,8 @@
     {
       "number": 562,
       "url": "https://github.com/eneo-ai/eneo/issues/562",
-      "title": "Gör felkonfigurationer i driften åtgärdbara",
-      "summary": "Utvecklare ska kunna starta och felsöka Eneo lokalt utan att dolda konfigurationsluckor leder till förvirrande fel. Den lokala installationen ska identifiera saknade krav tidigt och ge ett tydligt nästa steg när en utvecklare når en påverkad funktion. Detta minskar tiden för onboarding och felsökning samtidigt som den normala utvecklingsmiljön hålls enkel.",
+      "title": "Gör fel i driftskonfiguration åtgärdbara",
+      "summary": "Utvecklare ska kunna starta, testa och felsöka Eneo lokalt utan att dolda konfigurationsluckor eller ordningsberoende databastillstånd förvandlas till förvirrande fel. Den lokala installationen ska tidigt identifiera saknade krav och tillhandahålla ett tydligt nästa steg när en utvecklare når en berörd funktion. Detta minskar tiden för introduktion och felsökning samtidigt som den normala utvecklingsmiljön hålls enkel.",
       "status": "Todo",
       "roadmapVersion": "Unscheduled",
       "area": "Other",
