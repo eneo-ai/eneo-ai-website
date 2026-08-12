@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-12T13:45:05.929Z",
+  "generatedAt": "2026-08-12T19:19:04.515Z",
   "source": {
     "owner": "eneo-ai",
     "project": "5",
@@ -51,6 +51,20 @@
       "roadmapVersion": "Unscheduled",
       "area": "Other",
       "priority": "P1",
+      "startDate": "",
+      "targetDate": "",
+      "sponsor": "",
+      "group": "later"
+    },
+    {
+      "number": 716,
+      "url": "https://github.com/eneo-ai/eneo/issues/716",
+      "title": "Ge organisationer kontroll över modellers resonemang",
+      "summary": "Organisationer kan bestämma hur resonemangskapabla modeller ska balansera hastighet och djup, samtidigt som användarupplevelsen förblir förutsägbar. Administratörer kan ange ett säkert standardvärde och välja om användare får åsidosätta det. Inställningarna i Personlig chatt och Assistent visar endast alternativ som stöds av den valda modellen.",
+      "status": "Todo",
+      "roadmapVersion": "Unscheduled",
+      "area": "Other",
+      "priority": "P2",
       "startDate": "",
       "targetDate": "",
       "sponsor": "",

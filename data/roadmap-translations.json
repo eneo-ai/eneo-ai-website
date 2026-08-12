@@ -25,6 +25,11 @@
       "hash": "45494c24e6b7526761483a0ddd152b1f2b49d8d369a7534e42320835e512660e",
       "title": "Utför repeterbara uppgifter med Skills",
       "summary": "Skills kan använda Python-skript, referenser och mallar för repeterbart arbete såsom beräkningar, validering, datatransformation och dokumentskapande. Eneo kör varje skript i en tillfällig isolerad miljö utan åtkomst till Eneo-tjänster, distributionsuppgifter eller externa nätverk. Organisationer styr separat vem som får lägga till skript i Skills och vem som får köra dem. Befintliga Skills med enbart instruktioner fungerar som tidigare, och organisationens publicering är fortsatt granskningssteget för att dela en exakt godkänd version mellan Spaces."
+    },
+    "716": {
+      "hash": "d9bc38f5a627a6c4ad24d94472facfd410fb1feebbe41a0f0cf458d4df10624b",
+      "title": "Ge organisationer kontroll över modellers resonemang",
+      "summary": "Organisationer kan bestämma hur resonemangskapabla modeller ska balansera hastighet och djup, samtidigt som användarupplevelsen förblir förutsägbar. Administratörer kan ange ett säkert standardvärde och välja om användare får åsidosätta det. Inställningarna i Personlig chatt och Assistent visar endast alternativ som stöds av den valda modellen."
     }
   }
 }
