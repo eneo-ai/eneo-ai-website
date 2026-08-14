@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-14T07:49:03.026Z",
+  "generatedAt": "2026-08-14T13:40:59.692Z",
   "source": {
     "owner": "eneo-ai",
     "project": "5",
@@ -27,6 +27,20 @@
       "targetDate": "",
       "sponsor": "Sundsvalls kommun",
       "group": "in_progress"
+    },
+    {
+      "number": 722,
+      "url": "https://github.com/eneo-ai/eneo/issues/722",
+      "title": "Låt organisationer välja och styra webbsökning",
+      "summary": "Organisationer ska själva bestämma vilken leverantör av webbsökning Eneo använder, registrera den själva och byta den utan kodändring. En administratör registrerar en leverantör, aktiverar exakt en åt gången och styr vilka av dess verktyg assistenter får använda. Webbsökning följer sedan den vanliga nedärvningen från organisation till space till assistent, och användare aktiverar eller inaktiverar den per meddelande. Eneo blir därmed inte längre beroende av en inbyggd leverantörsintegration.",
+      "status": "Todo",
+      "roadmapVersion": "2.2",
+      "area": "Other",
+      "priority": "P2",
+      "startDate": "Not assigned.",
+      "targetDate": "Not assigned.",
+      "sponsor": "Not assigned.",
+      "group": "next"
     },
     {
       "number": 546,

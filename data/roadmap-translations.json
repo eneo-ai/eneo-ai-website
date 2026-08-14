@@ -30,6 +30,11 @@
       "hash": "d9bc38f5a627a6c4ad24d94472facfd410fb1feebbe41a0f0cf458d4df10624b",
       "title": "Ge organisationer kontroll över modellers resonemang",
       "summary": "Organisationer kan bestämma hur resonemangskapabla modeller ska balansera hastighet och djup, samtidigt som användarupplevelsen förblir förutsägbar. Administratörer kan ange ett säkert standardvärde och välja om användare får åsidosätta det. Inställningarna i Personlig chatt och Assistent visar endast alternativ som stöds av den valda modellen."
+    },
+    "722": {
+      "hash": "51982d51db9620fec6413e87705c281d450521ba1a6e1d4bccc2d6e4f3331630",
+      "title": "Låt organisationer välja och styra webbsökning",
+      "summary": "Organisationer ska själva bestämma vilken leverantör av webbsökning Eneo använder, registrera den själva och byta den utan kodändring. En administratör registrerar en leverantör, aktiverar exakt en åt gången och styr vilka av dess verktyg assistenter får använda. Webbsökning följer sedan den vanliga nedärvningen från organisation till space till assistent, och användare aktiverar eller inaktiverar den per meddelande. Eneo blir därmed inte längre beroende av en inbyggd leverantörsintegration."
     }
   }
 }
