@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-25T14:00:35.870Z",
+  "generatedAt": "2026-08-19T13:07:41.338Z",
   "source": {
     "owner": "eneo-ai",
     "project": "5",
@@ -17,16 +17,30 @@
     {
       "number": 549,
       "url": "https://github.com/eneo-ai/eneo/issues/549",
-      "title": "Etablera en hållbar lagringsmodell för objektinnehåll",
-      "summary": "Kommuner behöver samma säkra filhantering även när deras infrastruktur och skala skiljer sig åt. Eneo behåller PostgreSQL som färdigt standardval, samtidigt som administratörer kan välja en privat S3-kompatibel lagring när de behöver separat filkapacitet eller dataplacering. Uppladdningar, chattbilagor, kunskapsfiler och genererat innehåll följer samma regler för integritet, återställning och radering i båda uppsättningarna.",
+      "title": "Ge administratörer kontroll över fillagring och lagringstid",
+      "summary": "Eneo-administratörer ska kunna se vad som förbrukar fillagring, välja var nytt innehåll lagras och ange säkra regler för lagringstid utan att starta om installationen eller be värdleverantören ändra en miljövariabel. PostgreSQL förblir det kompletta standardvalet, medan en privat S3-kompatibel lagring förblir valfri. Aktiva filer förblir tillgängliga för chattar, assistenter, appar och kunskap tills deras ägande produktlivscykel frigör dem.",
       "status": "In Progress",
       "roadmapVersion": "2.X",
       "area": "Backend",
       "priority": "P1",
       "startDate": "2026-07-15",
-      "targetDate": "Not assigned.",
+      "targetDate": "",
       "sponsor": "Sundsvalls kommun",
       "group": "in_progress"
+    },
+    {
+      "number": 722,
+      "url": "https://github.com/eneo-ai/eneo/issues/722",
+      "title": "Låt organisationer välja och styra webbsökning",
+      "summary": "Organisationer ska själva avgöra vilken leverantör av webbsökning Eneo använder, registrera den själva och byta den utan kodändring. En administratör registrerar en leverantör, aktiverar exakt en åt gången och styr vilka av dess verktyg assistenter får använda. Webbsökningen följer sedan det vanliga arvet från organisation till space till assistent, och användare aktiverar eller inaktiverar den per meddelande. Eneo slutar vara beroende av en enda inbyggd leverantörsintegration.",
+      "status": "Todo",
+      "roadmapVersion": "2.2",
+      "area": "Other",
+      "priority": "P2",
+      "startDate": "Not assigned.",
+      "targetDate": "Not assigned.",
+      "sponsor": "Not assigned.",
+      "group": "next"
     },
     {
       "number": 546,
@@ -43,24 +57,38 @@
       "group": "later"
     },
     {
-      "number": 545,
-      "url": "https://github.com/eneo-ai/eneo/issues/545",
-      "title": "Lägg till förstklassiga Eneo Skills och portabla Skill-paket",
-      "summary": "Eneo-författare ska kunna dela upp en stor Assistant- eller App-prompt i namngivna, versionshanterade Skills, återanvända godkända funktioner utan att kopiera instruktioner och hålla varje resurs kopplad till känt innehåll. Tenant-administratörer ska styra organisationsövergripande Skills och Personal Chat utan att göra den externa Marketplace till ett aktivt körtidsberoende.\n\nResultatet är skiktat:\n\n1. lokala, Space-ägda Skills fungerar självständigt;\n2. varje Eneo-installation har en styrd organisationskatalog med exakt godkända revisioner;\n3. byggare kan koppla en godkänd organisationsrevision till Assistants och Apps i Spaces de får redigera;\n4. ett valfritt senare arbetsflöde kan skapa en redigerbar, Space-ägd kopia för självständig anpassning;\n5. portabla paket och den externa Marketplace flyttar senare kompletta, versionshanterade resurser mellan installationer.",
+      "number": 660,
+      "url": "https://github.com/eneo-ai/eneo/issues/660",
+      "title": "Kör upprepningsbara uppgifter med Skills",
+      "summary": "Skills kan använda Python-skript, referenser och mallar för upprepningsbart arbete som beräkningar, validering, datatransformation och dokumentskapande. Eneo kör varje skript i en tillfällig isolerad miljö utan åtkomst till Eneo-tjänster, distributionsuppgifter eller externa nätverk. Organisationer styr separat vem som får lägga till skript i Skills och vem som får köra dem. Befintliga Skills som endast innehåller instruktioner fungerar som tidigare, och organisationens publicering är fortsatt granskningssteget för att dela en exakt godkänd revision mellan Spaces.",
       "status": "Todo",
       "roadmapVersion": "Unscheduled",
-      "area": "Backend, persistence, generated API, native frontend, documentation, and package contracts.",
+      "area": "Other",
       "priority": "P1",
-      "startDate": "2026-07-15",
-      "targetDate": "Not assigned.",
-      "sponsor": "Sundsvalls kommun",
+      "startDate": "",
+      "targetDate": "",
+      "sponsor": "",
+      "group": "later"
+    },
+    {
+      "number": 716,
+      "url": "https://github.com/eneo-ai/eneo/issues/716",
+      "title": "Ge organisationer kontroll över modellers resonemang",
+      "summary": "Organisationer kan bestämma hur resonemangskapabla modeller ska balansera hastighet och djup, samtidigt som användarupplevelsen förblir förutsägbar. Administratörer kan ange ett säkert standardläge och välja om användare får åsidosätta det; inställningarna för Personlig chatt och Assistent visar endast alternativ som stöds av den valda modellen.",
+      "status": "Todo",
+      "roadmapVersion": "Unscheduled",
+      "area": "Other",
+      "priority": "P2",
+      "startDate": "",
+      "targetDate": "",
+      "sponsor": "",
       "group": "later"
     },
     {
       "number": 562,
       "url": "https://github.com/eneo-ai/eneo/issues/562",
-      "title": "Gör fel i driftkonfiguration åtgärdbara",
-      "summary": "Utvecklare ska kunna starta och felsöka Eneo lokalt utan att dolda konfigurationsbrister leder till förvirrande fel. Lokal installation ska identifiera saknade krav tidigt och ge ett tydligt nästa steg när en utvecklare når en berörd funktion.\n\nDetta minskar tiden för introduktion och felsökning samtidigt som den normala utvecklingsmiljön hålls enkel.",
+      "title": "Gör fel i driftskonfiguration åtgärdbara",
+      "summary": "Utvecklare ska kunna starta, testa och felsöka Eneo lokalt utan att dolda konfigurationsluckor eller ordningsberoende databastillstånd förvandlas till förvirrande fel. Lokal installation ska identifiera saknade krav tidigt och ge ett tydligt nästa steg när en utvecklare når en påverkad funktion. Detta minskar tiden för onboarding och felsökning samtidigt som den normala utvecklingsmiljön hålls enkel.",
       "status": "Todo",
       "roadmapVersion": "Unscheduled",
       "area": "Other",
@@ -69,6 +97,20 @@
       "targetDate": "Not assigned.",
       "sponsor": "Not assigned.",
       "group": "later"
+    },
+    {
+      "number": 545,
+      "url": "https://github.com/eneo-ai/eneo/issues/545",
+      "title": "Skapa, styra och återanvänd Skills",
+      "summary": "Team kan skapa en Skill en gång och återanvända samma godkända instruktioner i Personlig chatt, Assistenter och Appar. Varje koppling ligger kvar på en exakt Skill-version tills en behörig användare väljer att uppdatera den.\n\nAdministratörer kan publicera organisationens Skills, se var varje version används, stoppa osäkra Skills och flytta befintliga kopplingar till en nyligen godkänd version. Assistenter kan ladda en Skill endast när den är relevant; Appar använder sina konfigurerade Skills vid varje körning.",
+      "status": "Done",
+      "roadmapVersion": "2.X",
+      "area": "Other",
+      "priority": "P1",
+      "startDate": "2026-07-15",
+      "targetDate": "Not assigned.",
+      "sponsor": "Sundsvalls kommun",
+      "group": "delivered"
     }
   ]
 }
