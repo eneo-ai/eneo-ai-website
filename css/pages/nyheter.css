@@ -39,7 +39,8 @@
     flex-direction: column;
     justify-content: center;
 }
-.featured-body h2 {
+.featured-body h2,
+.featured-body h3 {
     font-family: var(--font-display);
     font-size: 1.5rem;
     font-weight: 700;
@@ -74,6 +75,12 @@
 .tag-community { background: var(--purple-dim); color: var(--purple); }
 .tag-insight { background: var(--brand-dim); color: var(--brand-light); }
 .tag-event { background: var(--amber-dim); color: var(--amber); }
+/* Bärnstensgult mot ljus bakgrund ger bara ~2,2:1. Mörkare nyans i ljust
+   tema så att taggen når WCAG AA (4.5:1). */
+@media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) .tag-event { color: #8f5300; }
+}
+:root[data-theme="light"] .tag-event { color: #8f5300; }
 .tag-security { background: var(--accent-dim); color: var(--accent); }
 .meta .date {
     font-size: 0.78rem;
@@ -302,22 +309,38 @@
 /* ── LÄNKAR I LÖPTEXT ── */
 /* Globalt är a { text-decoration: none } (för nav/kort/knappar), så
    länkar i artikeltext får här en tydlig visuell indikator: färg + understrykning. */
-.article-content p a,
-.article-content li a {
+/* :not(.btn) — annars vinner den här regeln (0,2,1) över .btn-primary (0,1,0)
+   och ger blå, understruken text på knappens blå bakgrund. */
+.article-content p a:not(.btn),
+.article-content li a:not(.btn) {
     color: var(--brand-bright);
     text-decoration: underline;
     text-underline-offset: 0.18em;
     text-decoration-thickness: 1px;
     transition: color var(--transition-smooth);
 }
-.article-content p a:hover,
-.article-content li a:hover,
-.article-content p a:focus-visible,
-.article-content li a:focus-visible {
+.article-content p a:not(.btn):hover,
+.article-content li a:not(.btn):hover,
+.article-content p a:not(.btn):focus-visible,
+.article-content li a:not(.btn):focus-visible {
     color: var(--brand-light);
     text-decoration-thickness: 2px;
 }
 /* Extern-länk-ikon på artikellänkar hanteras globalt i v2-base.css. */
+
+/* ── KNAPP I ARTIKELTEXT ──
+   Standardgradienten i .btn-primary slutar på #1a7ad4, vilket ger vit text
+   4.39:1 — strax under WCAG AA. Här används en gradient som håller sig över
+   4.5:1 hela vägen (7.68:1 → 5.57:1), samma som CTA:n på anvandartraff.html. */
+.article-content .btn-primary {
+    background: linear-gradient(135deg, #055594, #0b6ab8);
+    min-height: 3rem;
+    padding: 0.95rem 2rem;
+    font-size: 1rem;
+}
+.article-content .btn-primary::before {
+    background: linear-gradient(135deg, #0b6ab8, #0f72bd);
+}
 
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {

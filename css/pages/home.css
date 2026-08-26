@@ -799,3 +799,10 @@
     margin-bottom: 0.4rem;
     color: var(--text-muted);
 }
+
+/* Fokusnyhet i "Senaste nytt" — använder .featured-card från nyheter.css,
+   här sätts bara bredd och luft ned till nyhetsgriden. */
+.home-featured {
+    max-width: 1100px;
+    margin: 0 auto 2.5rem;
+}
