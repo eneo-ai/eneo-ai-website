@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-27T09:45:24.770Z",
+  "generatedAt": "2026-08-27T22:14:51.515Z",
   "source": {
     "owner": "eneo-ai",
     "project": "5",
@@ -82,6 +82,20 @@
       "startDate": "",
       "targetDate": "",
       "sponsor": "",
+      "group": "later"
+    },
+    {
+      "number": 758,
+      "url": "https://github.com/eneo-ai/eneo/issues/758",
+      "title": "Ge användare säkra självbetjäningskontroller för konton",
+      "summary": "Användare ska kunna hantera säkerhetskänslig kontoåtkomst utan administratörsinblandning, samtidigt som Eneo håller ägarskap av inloggningsuppgifter och sessionsgränser tydliga. Plattformen ska tillhandahålla säkra självbetjäningskontroller för lokala inloggningsuppgifter, integrera med externa identitetsleverantörer när de äger uppgifterna och lämna ett spårbart underlag utan att exponera hemligheter.",
+      "status": "Todo",
+      "roadmapVersion": "Unscheduled",
+      "area": "Security",
+      "priority": "P2",
+      "startDate": "2026-08-27",
+      "targetDate": "Not assigned.",
+      "sponsor": "Not assigned.",
       "group": "later"
     },
     {
