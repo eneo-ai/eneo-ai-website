@@ -74,6 +74,12 @@
 .tag-release { background: var(--green-dim); color: var(--green); }
 .tag-community { background: var(--purple-dim); color: var(--purple); }
 .tag-insight { background: var(--brand-dim); color: var(--brand-light); }
+/* Ljus varumärkesblå mot ljus bakgrund ger bara ~2,7:1. Mörkare nyans i
+   ljust tema så att taggen når WCAG AA. */
+@media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) .tag-insight { color: #044b84; }
+}
+:root[data-theme="light"] .tag-insight { color: #044b84; }
 .tag-event { background: var(--amber-dim); color: var(--amber); }
 /* Bärnstensgult mot ljus bakgrund ger bara ~2,2:1. Mörkare nyans i ljust
    tema så att taggen når WCAG AA (4.5:1). */
