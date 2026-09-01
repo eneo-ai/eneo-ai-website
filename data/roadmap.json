@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-01T05:05:12.754Z",
+  "generatedAt": "2026-09-01T11:37:13.197Z",
   "source": {
     "owner": "eneo-ai",
     "project": "5",
@@ -96,6 +96,20 @@
       "startDate": "2026-08-27",
       "targetDate": "Not assigned.",
       "sponsor": "Not assigned.",
+      "group": "later"
+    },
+    {
+      "number": 767,
+      "url": "https://github.com/eneo-ai/eneo/issues/767",
+      "title": "Låt administratörer avveckla och ersätta AI-modeller på ett säkert sätt",
+      "summary": "Administratörer måste kunna avveckla AI-modeller som inte längre är tillgängliga och flytta aktuell konfiguration till en modell som stöds som ersättning. Livscykeln ska hålla organisationer isolerade, bevara historisk modellattribution och tydligt förklara vad som kommer att ändras innan en administratör bekräftar migreringen.",
+      "status": "Todo",
+      "roadmapVersion": "Unscheduled",
+      "area": "Other",
+      "priority": "",
+      "startDate": "",
+      "targetDate": "",
+      "sponsor": "",
       "group": "later"
     },
     {

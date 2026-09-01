@@ -40,6 +40,11 @@
       "hash": "f48002751964affcd5032366aefca10d36021d2127b77da0484f180d34add172",
       "title": "Ge användare säkra självbetjäningskontroller för konton",
       "summary": "Användare ska kunna hantera säkerhetskänslig kontoåtkomst utan administratörsinblandning, samtidigt som Eneo håller ägarskap av inloggningsuppgifter och sessionsgränser tydliga. Plattformen ska tillhandahålla säkra självbetjäningskontroller för lokala inloggningsuppgifter, integrera med externa identitetsleverantörer när de äger uppgifterna och lämna ett spårbart underlag utan att exponera hemligheter."
+    },
+    "767": {
+      "hash": "6280ac310c0bf378b6e647994803152ed7736d89f06e958bb52a7c1b13f80a6a",
+      "title": "Låt administratörer avveckla och ersätta AI-modeller på ett säkert sätt",
+      "summary": "Administratörer måste kunna avveckla AI-modeller som inte längre är tillgängliga och flytta aktuell konfiguration till en modell som stöds som ersättning. Livscykeln ska hålla organisationer isolerade, bevara historisk modellattribution och tydligt förklara vad som kommer att ändras innan en administratör bekräftar migreringen."
     }
   }
 }
