@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-03T11:11:49.242Z",
+  "generatedAt": "2026-09-03T16:24:09.163Z",
   "source": {
     "owner": "eneo-ai",
     "project": "5",
@@ -45,8 +45,8 @@
     {
       "number": 546,
       "url": "https://github.com/eneo-ai/eneo/issues/546",
-      "title": "Leverera den centrala Eneo Marketplace Hub och inbyggd Marketplace",
-      "summary": "Kommuner ska kunna upptäcka och dela styrda Eneo-lösningar utan att manuellt utbyta paketfiler. Detta epic levererar en centralt driftad Eneo Marketplace Hub samt en inbyggd Marketplace-upplevelse i varje ansluten Eneo-installation.\n\nHubben styr bidragsgivare, granskning, oföränderliga releaser, målgrupper, registrerade instanser och revision. Varje Eneo-installation behåller kontrollen över sina användare, tenantadministratörer, lokala behörigheter, installationsplaner och installerade resurser. Installerat innehåll är en lokal kopia och fortsätter att fungera när hubben är otillgänglig.",
+      "title": "Eneo marknadsplats",
+      "summary": "Kommuner ska kunna upptäcka och dela styrda Eneo-lösningar utan att manuellt utbyta paketfiler. Detta epic levererar en centralt hostad Eneo Marketplace Hub samt en inbyggd marknadsplatsupplevelse i varje ansluten Eneo-installation.\n\nHubben styr bidragsgivare, granskning, oföränderliga versioner, målgrupper, registrerade instanser och revision. Varje Eneo-installation behåller kontrollen över sina användare, tenantadministratörer, lokala behörigheter, installationsplaner och installerade resurser. Installerat innehåll är en lokal kopia och fortsätter att fungera när hubben är otillgänglig.",
       "status": "Todo",
       "roadmapVersion": "2.X",
       "area": "Other",
@@ -59,8 +59,8 @@
     {
       "number": 660,
       "url": "https://github.com/eneo-ai/eneo/issues/660",
-      "title": "Kör upprepningsbara uppgifter med Skills",
-      "summary": "Skills kan använda Python-skript, referenser och mallar för upprepningsbart arbete som beräkningar, validering, datatransformation och dokumentskapande. Eneo kör varje skript i en tillfällig isolerad miljö utan åtkomst till Eneo-tjänster, distributionsuppgifter eller externa nätverk. Organisationer styr separat vem som får lägga till skript i Skills och vem som får köra dem. Befintliga Skills som endast innehåller instruktioner fungerar som tidigare, och organisationens publicering är fortsatt granskningssteget för att dela en exakt godkänd revision mellan Spaces.",
+      "title": "Låt Skills köra skript säkert",
+      "summary": "Skills kan använda Python-skript, referenser och mallar för återkommande arbete som beräkningar, validering, datatransformering och dokumentskapande. Eneo kör varje skript i en tillfällig isolerad miljö utan åtkomst till Eneos tjänster, distributionsuppgifter eller externa nätverk. Organisationer styr separat vem som får lägga till skript i Skills och vem som får köra dem. Befintliga Skills med enbart instruktioner fungerar som tidigare, och organisationspublicering förblir granskningssteget för att dela en exakt godkänd revision mellan Spaces.",
       "status": "Todo",
       "roadmapVersion": "Unscheduled",
       "area": "Other",
@@ -99,6 +99,20 @@
       "group": "later"
     },
     {
+      "number": 562,
+      "url": "https://github.com/eneo-ai/eneo/issues/562",
+      "title": "Förbättra den lokala utvecklingsupplevelsen",
+      "summary": "Utvecklare ska kunna starta, testa och felsöka Eneo lokalt utan att dolda konfigurationsluckor eller ordningsberoende databastillstånd leder till förvirrande fel. Den lokala uppsättningen ska tidigt identifiera saknade krav och ge ett tydligt nästa steg när en utvecklare når en berörd funktion.\n\nDetta minskar tiden för onboarding och felsökning samtidigt som den normala utvecklingsmiljön förblir enkel.",
+      "status": "Todo",
+      "roadmapVersion": "Unscheduled",
+      "area": "Other",
+      "priority": "Not assigned.",
+      "startDate": "Not assigned.",
+      "targetDate": "Not assigned.",
+      "sponsor": "Not assigned.",
+      "group": "later"
+    },
+    {
       "number": 767,
       "url": "https://github.com/eneo-ai/eneo/issues/767",
       "title": "Låt administratörer avveckla och ersätta AI-modeller på ett säkert sätt",
@@ -110,20 +124,6 @@
       "startDate": "",
       "targetDate": "",
       "sponsor": "",
-      "group": "later"
-    },
-    {
-      "number": 562,
-      "url": "https://github.com/eneo-ai/eneo/issues/562",
-      "title": "Gör fel i driftskonfiguration åtgärdbara",
-      "summary": "Utvecklare ska kunna starta, testa och felsöka Eneo lokalt utan att dolda konfigurationsluckor eller ordningsberoende databastillstånd förvandlas till förvirrande fel. Lokal installation ska identifiera saknade krav tidigt och ge ett tydligt nästa steg när en utvecklare når en påverkad funktion. Detta minskar tiden för onboarding och felsökning samtidigt som den normala utvecklingsmiljön hålls enkel.",
-      "status": "Todo",
-      "roadmapVersion": "Unscheduled",
-      "area": "Other",
-      "priority": "Not assigned.",
-      "startDate": "Not assigned.",
-      "targetDate": "Not assigned.",
-      "sponsor": "Not assigned.",
       "group": "later"
     },
     {

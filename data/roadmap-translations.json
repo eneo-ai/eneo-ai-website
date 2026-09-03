@@ -7,9 +7,9 @@
       "summary": "Team kan skapa en Skill en gång och återanvända samma godkända instruktioner i Personlig chatt, Assistenter och Appar. Varje koppling ligger kvar på en exakt Skill-version tills en behörig användare väljer att uppdatera den.\n\nAdministratörer kan publicera organisationens Skills, se var varje version används, stoppa osäkra Skills och flytta befintliga kopplingar till en nyligen godkänd version. Assistenter kan ladda en Skill endast när den är relevant; Appar använder sina konfigurerade Skills vid varje körning."
     },
     "546": {
-      "hash": "246ee0577d98f98076ab53bd406a8abbc75ad82a7f1788e32d01dd22089955bf",
-      "title": "Leverera den centrala Eneo Marketplace Hub och inbyggd Marketplace",
-      "summary": "Kommuner ska kunna upptäcka och dela styrda Eneo-lösningar utan att manuellt utbyta paketfiler. Detta epic levererar en centralt driftad Eneo Marketplace Hub samt en inbyggd Marketplace-upplevelse i varje ansluten Eneo-installation.\n\nHubben styr bidragsgivare, granskning, oföränderliga releaser, målgrupper, registrerade instanser och revision. Varje Eneo-installation behåller kontrollen över sina användare, tenantadministratörer, lokala behörigheter, installationsplaner och installerade resurser. Installerat innehåll är en lokal kopia och fortsätter att fungera när hubben är otillgänglig."
+      "hash": "b5f836c0ed2706df3c34c4a986805a2b889b236333e7398287d75ba9d9853255",
+      "title": "Eneo marknadsplats",
+      "summary": "Kommuner ska kunna upptäcka och dela styrda Eneo-lösningar utan att manuellt utbyta paketfiler. Detta epic levererar en centralt hostad Eneo Marketplace Hub samt en inbyggd marknadsplatsupplevelse i varje ansluten Eneo-installation.\n\nHubben styr bidragsgivare, granskning, oföränderliga versioner, målgrupper, registrerade instanser och revision. Varje Eneo-installation behåller kontrollen över sina användare, tenantadministratörer, lokala behörigheter, installationsplaner och installerade resurser. Installerat innehåll är en lokal kopia och fortsätter att fungera när hubben är otillgänglig."
     },
     "549": {
       "hash": "fe6a2583fae91d17e2cfc43947b4cef1d9a18bf3dc588ffd78ea4122e973504f",
@@ -17,14 +17,14 @@
       "summary": "Eneo-administratörer ska kunna se vad som förbrukar fillagring, välja var nytt innehåll lagras och ange säkra regler för lagringstid utan att starta om installationen eller be värdleverantören ändra en miljövariabel. PostgreSQL förblir det kompletta standardvalet, medan en privat S3-kompatibel lagring förblir valfri. Aktiva filer förblir tillgängliga för chattar, assistenter, appar och kunskap tills deras ägande produktlivscykel frigör dem."
     },
     "562": {
-      "hash": "e3afd257ae1e9d1693c8ad496fd9c70803694680dfc41d9ed42cdad7736c00d7",
-      "title": "Gör fel i driftskonfiguration åtgärdbara",
-      "summary": "Utvecklare ska kunna starta, testa och felsöka Eneo lokalt utan att dolda konfigurationsluckor eller ordningsberoende databastillstånd förvandlas till förvirrande fel. Lokal installation ska identifiera saknade krav tidigt och ge ett tydligt nästa steg när en utvecklare når en påverkad funktion. Detta minskar tiden för onboarding och felsökning samtidigt som den normala utvecklingsmiljön hålls enkel."
+      "hash": "9a5f2bb81d843456dd3803b8e6af505131e4a1ed347d999c8ec4da97769db3c4",
+      "title": "Förbättra den lokala utvecklingsupplevelsen",
+      "summary": "Utvecklare ska kunna starta, testa och felsöka Eneo lokalt utan att dolda konfigurationsluckor eller ordningsberoende databastillstånd leder till förvirrande fel. Den lokala uppsättningen ska tidigt identifiera saknade krav och ge ett tydligt nästa steg när en utvecklare når en berörd funktion.\n\nDetta minskar tiden för onboarding och felsökning samtidigt som den normala utvecklingsmiljön förblir enkel."
     },
     "660": {
-      "hash": "45494c24e6b7526761483a0ddd152b1f2b49d8d369a7534e42320835e512660e",
-      "title": "Kör upprepningsbara uppgifter med Skills",
-      "summary": "Skills kan använda Python-skript, referenser och mallar för upprepningsbart arbete som beräkningar, validering, datatransformation och dokumentskapande. Eneo kör varje skript i en tillfällig isolerad miljö utan åtkomst till Eneo-tjänster, distributionsuppgifter eller externa nätverk. Organisationer styr separat vem som får lägga till skript i Skills och vem som får köra dem. Befintliga Skills som endast innehåller instruktioner fungerar som tidigare, och organisationens publicering är fortsatt granskningssteget för att dela en exakt godkänd revision mellan Spaces."
+      "hash": "3da94bf0054643094a144e5446a1fa637307b6e7cab7282e202ea99d5736857a",
+      "title": "Låt Skills köra skript säkert",
+      "summary": "Skills kan använda Python-skript, referenser och mallar för återkommande arbete som beräkningar, validering, datatransformering och dokumentskapande. Eneo kör varje skript i en tillfällig isolerad miljö utan åtkomst till Eneos tjänster, distributionsuppgifter eller externa nätverk. Organisationer styr separat vem som får lägga till skript i Skills och vem som får köra dem. Befintliga Skills med enbart instruktioner fungerar som tidigare, och organisationspublicering förblir granskningssteget för att dela en exakt godkänd revision mellan Spaces."
     },
     "716": {
       "hash": "d9bc38f5a627a6c4ad24d94472facfd410fb1feebbe41a0f0cf458d4df10624b",
