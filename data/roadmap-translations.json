@@ -45,6 +45,11 @@
       "hash": "6280ac310c0bf378b6e647994803152ed7736d89f06e958bb52a7c1b13f80a6a",
       "title": "Låt administratörer avveckla och ersätta AI-modeller på ett säkert sätt",
       "summary": "Administratörer måste kunna avveckla AI-modeller som inte längre är tillgängliga och flytta aktuell konfiguration till en modell som stöds. Livscykeln ska hålla organisationer isolerade, bevara historisk modellattribuering och tydligt förklara vad som kommer att ändras innan en administratör bekräftar migreringen."
+    },
+    "779": {
+      "hash": "1a6da5d063af75e9df0ed7c9916225b1c6f593a012bb527ad3e2f741710beee3",
+      "title": "Dokumentationswebbplats: versionshantering, noggrannhetsöversyn och skydd mot avvikelser",
+      "summary": "docs.eneo.ai driftsätts endast från `develop`, vilket innebär att den dokumenterar ännu inte släppta funktioner för alla som kör en release, och en verifierad granskning (30 sidor) hittade 2 föråldrade sidor, 6 med allvarliga fel och 14 med mindre fel — påhittade miljövariabler, endpoints och kommandon från det ursprungliga underlaget. Detta epic gör webbplatsen versionshanterad och automatisk, korrigerar innehållet mot koden och lägger till ett skydd så att pull requests håller den korrekt."
     }
   }
 }
