@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-09T04:39:33.593Z",
+  "generatedAt": "2026-09-09T11:20:13.283Z",
   "source": {
     "owner": "eneo-ai",
     "project": "5",
@@ -55,6 +55,20 @@
       "targetDate": "",
       "sponsor": "",
       "group": "next"
+    },
+    {
+      "number": 804,
+      "url": "https://github.com/eneo-ai/eneo/issues/804",
+      "title": "Kräv godkänd MFA för konfidentiella delade utrymmen och moduler",
+      "summary": "Kommuner behöver kunna kräva en godkänd MFA-inloggning innan personal får åtkomst till ett delat utrymme som innehåller konfidentiell information. Administratörer konfigurerar vilka autentiseringsresultat som deras identitetsleverantör intygar som godtagbara, och utrymmesadministratörer kan kräva det skyddet. Eneo fattar samma åtkomstbeslut för sitt eget gränssnitt, API:er, interna verktyg och externa moduler, inklusive framtida publicerade Flow-applikationer.",
+      "status": "Todo",
+      "roadmapVersion": "2.3",
+      "area": "Security",
+      "priority": "P1",
+      "startDate": "",
+      "targetDate": "",
+      "sponsor": "",
+      "group": "later"
     },
     {
       "number": 546,
