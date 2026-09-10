@@ -476,7 +476,7 @@
     display: flex; align-items: center; justify-content: space-between;
 }
 .nav-logo svg { height: 30px; width: auto; display: block; }
-.nav-links { display: flex; gap: 1.5rem; list-style: none; flex-wrap: wrap; align-items: center; }
+.nav-links { display: flex; gap: 1.5rem; list-style: none; flex-wrap: nowrap; align-items: center; }
 .nav-links a {
     color: var(--text-muted); text-decoration: none;
     font-size: 0.84rem; font-weight: 500; transition: color 0.2s;
@@ -493,7 +493,9 @@
 .nav-cta:hover,
 .nav-active:hover { background: rgba(5,85,148,0.22); border-color: rgba(5,85,148,0.45); }
 
-@media (max-width: 768px) {
+/* Hamburgermenyn tar över innan menyraden behöver brytas på två rader
+   (tio länkar ryms på en rad först från ca 1060px) */
+@media (max-width: 1079px) {
     .nav-links { display: none; }
     .mobile-menu-btn { display: flex; }
 }

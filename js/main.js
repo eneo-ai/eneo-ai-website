@@ -124,7 +124,7 @@ document.addEventListener('keydown', function(event) {
 
 // Close mobile menu on window resize
 window.addEventListener('resize', function() {
-    if (window.innerWidth >= 1024) {
+    if (window.innerWidth >= 1080) { // samma brytpunkt som .mobile-menu-btn i v2-layout.css
         closeMobileMenu();
     }
 });

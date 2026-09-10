@@ -3,42 +3,6 @@
    ============================================ */
 
 /* ============================================
-   Nav (prototype-matching nav for index)
-   ============================================ */
-.v2-nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    backdrop-filter: blur(20px) saturate(1.4);
-    -webkit-backdrop-filter: blur(20px) saturate(1.4);
-    background: var(--header-bg);
-    border-bottom: 1px solid var(--border);
-}
-.nav-inner {
-    max-width: 1180px; margin: 0 auto;
-    padding: 0.75rem 2rem;
-    display: flex; align-items: center; justify-content: space-between;
-}
-.nav-logo svg { height: 30px; width: auto; display: block; }
-.nav-links { display: flex; gap: 1.5rem; list-style: none; flex-wrap: wrap; align-items: center; }
-.nav-links a {
-    color: var(--text-muted); text-decoration: none;
-    font-size: 0.84rem; font-weight: 500; transition: color 0.2s;
-}
-.nav-links a:hover, .nav-links a:focus-visible { color: var(--text); }
-.nav-cta {
-    padding: 0.42rem 0.95rem; border-radius: 7px;
-    font-size: 0.8rem; font-weight: 600;
-    background: var(--brand-dim); color: var(--brand-light) !important;
-    border: 1px solid var(--brand-glow);
-    transition: all 0.25s;
-}
-.nav-cta:hover, .nav-cta:focus-visible { background: rgba(5,85,148,0.22); border-color: rgba(5,85,148,0.45); }
-
-@media (max-width: 768px) {
-    .nav-links { display: none; }
-    .mobile-menu-btn { display: flex; }
-}
-
-/* ============================================
    Hero Section
    ============================================ */
 .hero {
