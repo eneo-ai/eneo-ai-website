@@ -55,6 +55,11 @@
       "hash": "be70c22b73288c1664d34de441f5da6e2191e01680f7e3f4d96a8e9efde1e501",
       "title": "Kräv godkänd MFA för konfidentiella delade utrymmen och moduler",
       "summary": "Kommuner behöver kunna kräva en godkänd MFA-inloggning innan personal får åtkomst till ett delat utrymme som innehåller konfidentiell information. Administratörer konfigurerar vilka autentiseringsresultat som deras identitetsleverantör intygar som godtagbara, och utrymmesadministratörer kan kräva det skyddet. Eneo fattar samma åtkomstbeslut för sitt eget gränssnitt, API:er, interna verktyg och externa moduler, inklusive framtida publicerade Flow-applikationer."
+    },
+    "819": {
+      "hash": "5ad1ab06664765bd9ee87ea3ab0499801426a4e7dc29e6095a2c4666c84aa6d1",
+      "title": "Låt användare granska delade kunskapskällor från chatten",
+      "summary": "Användare ska kunna granska en källa som citeras i chatten när kunskapen finns tillgänglig via någon av deras ytor. Detta inkluderar centralt insamlad organisationskunskap, så att samma webbplats kan betjäna många användare utan dubblerad insamling."
     }
   }
 }

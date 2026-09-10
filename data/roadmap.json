@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-10T11:16:49.983Z",
+  "generatedAt": "2026-09-10T20:50:23.496Z",
   "source": {
     "owner": "eneo-ai",
     "project": "5",
@@ -148,6 +148,20 @@
       "status": "Todo",
       "roadmapVersion": "Unscheduled",
       "area": "Other",
+      "priority": "",
+      "startDate": "",
+      "targetDate": "",
+      "sponsor": "",
+      "group": "later"
+    },
+    {
+      "number": 819,
+      "url": "https://github.com/eneo-ai/eneo/issues/819",
+      "title": "Låt användare granska delade kunskapskällor från chatten",
+      "summary": "Användare ska kunna granska en källa som citeras i chatten när kunskapen finns tillgänglig via någon av deras ytor. Detta inkluderar centralt insamlad organisationskunskap, så att samma webbplats kan betjäna många användare utan dubblerad insamling.",
+      "status": "Todo",
+      "roadmapVersion": "Unscheduled",
+      "area": "",
       "priority": "",
       "startDate": "",
       "targetDate": "",
