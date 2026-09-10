@@ -7,6 +7,33 @@
 .page-hero h1 { font-family: var(--font-display); font-size: clamp(2rem,4.5vw,3rem); font-weight: 700; line-height: 1.12; letter-spacing: -0.03em; margin-bottom: 1.2rem; animation: fadeUp 0.7s ease both; }
 .page-hero h1 em { font-style: italic; background: linear-gradient(135deg, var(--brand-light), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .page-hero .hero-text { color: var(--text-muted); font-size: 1.05rem; line-height: 1.75; max-width: 640px; animation: fadeUp 0.7s 0.1s ease both; }
+.page-hero .hero-actions { margin-top: 1.4rem; display: flex; flex-wrap: wrap; gap: 0.9rem; animation: fadeUp 0.7s 0.2s ease both; }
+/* Sekundär, blåtonad knapp för presentationsläget */
+.btn-presentation {
+    gap: 0.5rem;
+    min-height: 44px;
+    padding: 0.55rem 1.1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 999px;
+    color: var(--brand-light);
+    background: var(--brand-dim);
+    border: 1px solid var(--brand-glow);
+}
+.btn-presentation:hover, .btn-presentation:focus-visible {
+    background: var(--brand-glow);
+    border-color: var(--brand-bright);
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-1px);
+}
+.btn-presentation:focus-visible { outline: 3px solid var(--brand-light); outline-offset: 3px; }
+:root[data-theme="light"] .btn-presentation { color: var(--brand); }
+@media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) .btn-presentation { color: var(--brand); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .btn-presentation, .btn-presentation:hover { transition: none; transform: none; }
+}
 
 /* Association section */
 .association { padding: 5rem 2rem; background: var(--bg-raised); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }

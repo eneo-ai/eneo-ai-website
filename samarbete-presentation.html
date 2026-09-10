@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samarbete i Eneo – presentation</title>
+    <meta name="description" content="Presentationsläge för sidan Samarbete: användarförening, samarbetsverktyg och styrmodell för Eneo AI.">
+
+    <!-- Sidan ska inte indexeras eller listas i menyer. Nås endast via direkt adress. -->
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="public/favicon.ico">
+
+    <!-- External Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,500;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/v2-variables.css?v=2">
+    <link rel="stylesheet" href="css/v2-base.css?v=2">
+    <link rel="stylesheet" href="css/pages/samarbete-presentation.css?v=1">
+
+    <!-- Tema sätts före rendering för att undvika blink -->
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (t) { document.documentElement.setAttribute('data-theme', t); }
+            } catch (e) { /* localStorage kan vara blockerat */ }
+        })();
+    </script>
+</head>
+<body class="presentation-body">
+    <a class="skip-link" href="#deck-controls">Hoppa till presentationskontroller</a>
+
+    <main id="main-content" class="deck" aria-roledescription="presentation" aria-label="Samarbete i Eneo">
+
+        <!-- 1. Titel -->
+        <section class="slide slide--title" id="slide-1" tabindex="0" aria-roledescription="bild" aria-label="Bild 1: Så är samarbetet kring Eneo organiserat">
+            <div class="slide-inner">
+                <div class="deck-logo">
+                    <svg role="img" aria-label="Eneo logotyp" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 172" fill-rule="evenodd" clip-rule="evenodd" style="shape-rendering:geometricPrecision;">
+                        <path fill="#1a7ad4" d="M 107.5,-0.5 C 114.833,-0.5 122.167,-0.5 129.5,-0.5C 176.816,9.15707 202.149,38.1571 205.5,86.5C 203.389,125.423 184.389,152.257 148.5,167C 142.419,168.71 136.419,170.21 130.5,171.5C 123.5,171.5 116.5,171.5 109.5,171.5C 93.3852,168.947 78.7185,162.781 65.5,153C 57.3188,144.986 49.3188,136.819 41.5,128.5C 61.6527,107.847 81.9861,87.3471 102.5,67C 111.582,60.8816 121.249,59.8816 131.5,64C 144.46,73.9171 146.96,86.0837 139,100.5C 131.833,107.667 124.667,114.833 117.5,122C 138.893,122.044 151.726,111.544 156,90.5C 156.442,68.8872 146.275,55.0539 125.5,49C 112.803,46.9218 101.803,50.2552 92.5,59C 86.6667,64.8333 80.8333,70.6667 75,76.5C 63.5,65 52,53.5 40.5,42C 50.2305,31.5999 60.5639,21.9333 71.5,13C 82.7423,6.20074 94.7423,1.70074 107.5,-0.5 Z"/>
+                        <path class="logo-text" d="M 649.5,76.5 C 649.5,82.1667 649.5,87.8333 649.5,93.5C 640.846,129.635 617.846,147.135 580.5,146C 552.923,141.09 535.59,125.09 528.5,98C 514.833,97.6667 501.167,97.3333 487.5,97C 480.994,93.8341 478.494,88.6674 480,81.5C 480.979,78.3749 482.813,75.8749 485.5,74C 498.401,72.538 511.401,72.038 524.5,72.5C 521.764,64.5453 516.764,58.3786 509.5,54C 488.763,45.1354 472.596,50.3021 461,69.5C 453.601,90.9824 459.767,107.149 479.5,118C 492.365,122.56 504.198,120.727 515,112.5C 519.225,119.939 523.725,127.272 528.5,134.5C 511.022,146.856 492.022,149.689 471.5,143C 466.51,141.335 462.01,138.835 458,135.5C 457.502,138.817 457.335,142.15 457.5,145.5C 448.833,145.5 440.167,145.5 431.5,145.5C 431.667,123.497 431.5,101.497 431,79.5C 426.715,61.265 415.215,51.265 396.5,49.5C 377.785,51.265 366.285,61.265 362,79.5C 361.5,101.497 361.333,123.497 361.5,145.5C 352.833,145.5 344.167,145.5 335.5,145.5C 335.5,129.5 335.5,113.5 335.5,97.5C 322.163,97.6666 308.829,97.4999 295.5,97C 287.991,92.8092 285.824,86.6426 289,78.5C 290.663,76.0833 292.829,74.25 295.5,73C 307.829,72.5001 320.162,72.3335 332.5,72.5C 327.027,58.2227 316.527,50.556 301,49.5C 282.085,51.1142 270.419,61.1142 266,79.5C 264.719,101.205 274.553,114.705 295.5,120C 303.532,121.06 311.032,119.56 318,115.5C 318.667,124.833 318.667,134.167 318,143.5C 289.265,150.965 266.265,142.631 249,118.5C 233.274,88.8088 237.108,61.9755 260.5,38C 285.142,19.8768 310.476,18.8768 336.5,35C 340.981,38.3143 344.981,42.1476 348.5,46.5C 369.825,23.1077 395.158,17.6077 424.5,30C 432.127,34.3166 438.794,39.8166 444.5,46.5C 465.825,23.1077 491.158,17.6077 520.5,30C 528.127,34.3166 534.794,39.8166 540.5,46.5C 561.825,23.1077 587.158,17.6077 616.5,30C 634.762,40.3615 645.762,55.8615 649.5,76.5 Z M 583.5,49.5 C 610.442,49.9416 623.609,63.6083 623,90.5C 619.82,107.013 609.987,116.846 593.5,120C 572.335,120.831 559.169,110.998 554,90.5C 552.92,68.7752 562.753,55.1085 583.5,49.5 Z"/>
+                        <path fill="#1a7ad4" d="M -0.5,87.5 C -0.5,85.8333 -0.5,84.1667 -0.5,82.5C 10.1734,71.9931 21.0067,61.6598 32,51.5C 43.9725,62.3055 55.4725,73.6388 66.5,85.5C 55.5,97.1667 44.1667,108.5 32.5,119.5C 21.4793,108.812 10.4793,98.1453 -0.5,87.5 Z"/>
+                    </svg>
+                </div>
+                <p class="label">Samarbete</p>
+                <h1>Så är samarbetet kring <em>Eneo</em> organiserat</h1>
+                <p class="lead">
+                    En beskrivning av hur samarbetet kring Eneo AI är uppbyggt och varför:
+                    användarföreningen, de digitala samarbetsytorna och styrmodellen med fem organ.
+                    Eneo AI bildades sommaren 2025 och samarbetsformerna är delvis under uppbyggnad.
+                </p>
+                <p class="hint">Bläddra med piltangenterna eller knapparna nere till höger. Tryck <kbd>F</kbd> för helskärm.</p>
+            </div>
+        </section>
+
+        <!-- 2. Användarförening -->
+        <section class="slide" id="slide-2" tabindex="0" aria-roledescription="bild" aria-label="Bild 2: Varför en användarförening">
+            <div class="slide-inner">
+                <p class="label">Användarförening</p>
+                <h2>Varför en användarförening?</h2>
+                <div class="assoc-flow">
+
+                    <div class="flow-col">
+                        <p class="flow-col-title">Vilka</p>
+                        <ul class="flow-list">
+                            <li class="flow-node">
+                                <span class="flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/><path d="M9 11h.01M15 11h.01"/></svg></span>
+                                <span>Kommuner</span>
+                            </li>
+                            <li class="flow-node">
+                                <span class="flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 0 20"/><path d="M12 2a15.3 15.3 0 0 0 0 20"/></svg></span>
+                                <span>Regioner</span>
+                            </li>
+                            <li class="flow-node">
+                                <span class="flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg></span>
+                                <span>Myndigheter</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="flow-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="14 6 20 12 14 18"/></svg></div>
+
+                    <div class="flow-hub">
+                        <span class="flow-hub-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+                        <p class="flow-hub-title">Användarföreningen</p>
+                    </div>
+
+                    <div class="flow-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="14 6 20 12 14 18"/></svg></div>
+
+                    <div class="flow-col">
+                        <p class="flow-col-title">Varför</p>
+                        <ul class="flow-list">
+                            <li class="flow-node flow-node--out">
+                                <span class="flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+                                <span>Dela erfarenheter</span>
+                            </li>
+                            <li class="flow-node flow-node--out">
+                                <span class="flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2z"/></svg></span>
+                                <span>Dela lösningar</span>
+                            </li>
+                            <li class="flow-node flow-node--out">
+                                <span class="flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 4v6"/></svg></span>
+                                <span>Dela användningsfall</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <p class="flow-caption">Ingen organisation ska behöva lösa samma fråga på egen hand.</p>
+            </div>
+        </section>
+
+        <!-- 3. Avgränsning och konkurrensneutralitet -->
+        <section class="slide" id="slide-3" tabindex="0" aria-roledescription="bild" aria-label="Bild 3: Avgränsat till offentliga aktörer, näringslivet avgörande för skalning">
+            <div class="slide-inner">
+                <div class="note-grid">
+                    <div class="note-box">
+                        <div class="note-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg></div>
+                        <h2>Avgränsat till offentliga aktörer</h2>
+                        <p class="note-lead">Trygga ytor för kollegialt delande och lärande.</p>
+                        <ul class="note-points">
+                            <li>Endast anställda inom kommuner, regioner och statliga myndigheter</li>
+                            <li>Registrering med e-postadress från en offentlig myndighet</li>
+                            <li>Kollegor kan dela öppet – frågor, misstag och lösningar</li>
+                        </ul>
+                    </div>
+                    <div class="note-box note-box--dark">
+                        <div class="note-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="3" x2="12" y2="21"/><path d="M5 7h14"/><path d="M3 15l3-8 3 8a3 3 0 0 1-6 0z"/><path d="M15 15l3-8 3 8a3 3 0 0 1-6 0z"/></svg></div>
+                        <h2>Näringslivet – avgörande för skalning</h2>
+                        <p class="note-lead">Ett brett och aktivt deltagande från näringslivet främjas.</p>
+                        <ul class="note-points">
+                            <li>Alla aktörer har samma möjlighet att delta</li>
+                            <li>Lika villkor – ingen leverantör har företräde</li>
+                            <li>Det offentliga behåller kontrollen över plattformen</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="flow-caption">Samma möjlighet för alla att delta – men inte överallt.</p>
+            </div>
+        </section>
+
+        <!-- 4. Organ och roller -->
+        <section class="slide" id="slide-4" tabindex="0" aria-roledescription="bild" aria-label="Bild 4: Fem organ och deras roller">
+            <div class="slide-inner slide-inner--wide">
+                <p class="label">Användarförening · Styrmodell</p>
+                <h2 class="sr-only">Fem organ och deras roller</h2>
+                <div class="mou-frame">
+                    <div class="mou-head">
+                        <span class="mou-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="14" y2="17"/></svg></span>
+                        <span class="mou-title">Memorandum of Understanding (MoU)</span>
+                        <span class="mou-text">Beskriver ekosystemet Eneo samt de krav som ställs och förväntas av alla som deltar.</span>
+                    </div>
+                <ol class="gov-compact">
+                    <li class="gov-slide gov-slide--compact gov-slide--brand">
+                        <div class="gov-side">
+                            <div class="gs-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"/></svg></div>
+                            <div class="gs-text">
+                                <p class="gs-focus">Vision &amp; Strategi</p>
+                                <p class="gs-parties">Sundsvalls kommun <span aria-hidden="true">→</span><span class="sr-only">följt av</span> konsortium av offentliga aktörer</p>
+                            </div>
+                        </div>
+                        <div class="gov-main">
+                            <h3>Styrgrupp</h3>
+                            <p class="gov-desc">Den högsta beslutande instansen för Eneo AI. Ansvarar för den övergripande strategiska riktningen och visionen för plattformen.</p>
+                        </div>
+                        <div class="gov-resp">
+                            <p class="resp-label">Ansvar</p>
+                            <ul class="resp-list"><li>Vision, målbild &amp; strategi</li><li>Utse teknisk kommitté</li><li>Juridik &amp; licensfrågor</li><li>Varumärke</li></ul>
+                        </div>
+                    </li>
+                    <li class="gov-slide gov-slide--compact gov-slide--accent">
+                        <div class="gov-side">
+                            <div class="gs-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+                            <div class="gs-text">
+                                <p class="gs-focus">Teknik &amp; Arkitektur</p>
+                                <p class="gs-parties">Sundsvalls kommun, Örebro kommun, Skellefteå kommun, Ånge kommun, Försäkringskassan</p>
+                            </div>
+                        </div>
+                        <div class="gov-main">
+                            <h3>Teknisk kommitté</h3>
+                            <p class="gov-desc">Säkerställer att plattformen utvecklas enligt bästa praxis och moderna tekniska standarder. Ansvarar för teknisk kvalitet och säkerhet.</p>
+                        </div>
+                        <div class="gov-resp">
+                            <p class="resp-label">Ansvar</p>
+                            <ul class="resp-list"><li>Teknisk roadmap &amp; releases</li><li>Arkitektur &amp; standarder</li><li>Code review &amp; kvalitetskrav</li><li>Pull requests &amp; contributions</li><li>Security &amp; compliance</li></ul>
+                        </div>
+                    </li>
+                    <li class="gov-slide gov-slide--compact gov-slide--green">
+                        <div class="gov-side">
+                            <div class="gs-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></div>
+                            <div class="gs-text">
+                                <p class="gs-focus">Utveckling &amp; Planering</p>
+                                <p class="gs-parties">Sundsvalls kommun, Örebro kommun, Skellefteå kommun, Borlänge kommun, Ånge kommun, Försäkringskassan, Sambruk + Näringsliv</p>
+                            </div>
+                        </div>
+                        <div class="gov-main">
+                            <h3>Tekniskt råd</h3>
+                            <p class="gov-desc">Den operativa länken mellan användarbehov och teknisk implementation. Samordnar utvecklingsarbetet och säkerställer att alla parter arbetar mot samma mål.</p>
+                        </div>
+                        <div class="gov-resp">
+                            <p class="resp-label">Ansvar</p>
+                            <ul class="resp-list"><li>Insamling av behov till roadmap</li><li>Planering av genomförande</li><li>Planering av utveckling</li><li>Synkronisering av parter</li></ul>
+                        </div>
+                    </li>
+                    <li class="gov-slide gov-slide--compact gov-slide--purple">
+                        <div class="gov-side">
+                            <div class="gs-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                            <div class="gs-text">
+                                <p class="gs-focus">Användarfokus</p>
+                                <p class="gs-parties">Offentliga aktörer som nyttjar Eneo</p>
+                            </div>
+                        </div>
+                        <div class="gov-main">
+                            <h3>Användarråd</h3>
+                            <p class="gov-desc">Representerar alla organisationer som använder Eneo i sin verksamhet. Säkerställer att plattformen utvecklas utifrån verkliga användarbehov och underlättar kunskapsdelning.</p>
+                        </div>
+                        <div class="gov-resp">
+                            <p class="resp-label">Ansvar</p>
+                            <ul class="resp-list"><li>Framställa behov till roadmap</li><li>Synkronisering av användare</li><li>Driva arbetsgrupper</li></ul>
+                        </div>
+                    </li>
+                    <li class="gov-slide gov-slide--compact gov-slide--rose">
+                        <div class="gov-side">
+                            <div class="gs-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+                            <div class="gs-text">
+                                <p class="gs-focus">Specifika områden</p>
+                                <p class="gs-parties">Offentliga aktörer &amp; näringsliv</p>
+                            </div>
+                        </div>
+                        <div class="gov-main">
+                            <h3>Tillfälliga arbetsgrupper</h3>
+                            <p class="gov-desc">Bildas vid behov för att hantera specifika utmaningar eller utvecklingsområden. Möjliggör flexibel och fokuserad samverkan kring avgränsade frågeställningar.</p>
+                        </div>
+                        <div class="gov-resp">
+                            <p class="resp-label">Ansvar</p>
+                            <ul class="resp-list"><li>Framställa behov inom specifikt område</li><li>Forma behov till krav &amp; lösningsförslag</li></ul>
+                        </div>
+                    </li>
+                </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Samarbetsverktyg -->
+        <section class="slide" id="slide-5" tabindex="0" aria-roledescription="bild" aria-label="Bild 5: Digitala samarbetsytor">
+            <div class="slide-inner">
+                <p class="label">Samarbetsverktyg</p>
+                <h2>Digitala samarbetsytor</h2>
+                <p class="subtitle">Samarbetet sker på fyra ytor med olika syften: webbplats, forum, chat och utveckling.</p>
+                <div class="tools-grid tools-grid--4">
+                    <a href="https://eneo.ai/" target="_blank" rel="noopener noreferrer" class="tool-card">
+                        <div class="tool-icon tool-icon--green" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+                        <h3>Webbplats</h3>
+                        <p>Eneos gemensamma webbplats med nyheter, roadmap, versioner, dokumentation och användningsfall. Öppen för alla.</p>
+                        <span class="tool-link">eneo.ai <span aria-hidden="true">→</span></span>
+                        <span class="sr-only">(öppnas i ny flik)</span>
+                    </a>
+                    <a href="https://forum.eneo.ai/" target="_blank" rel="noopener noreferrer" class="tool-card">
+                        <div class="tool-icon tool-icon--brand" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+                        <h3>Samarbetsforum</h3>
+                        <p>Digitalt forum för alla aktörer inom det offentliga som nyttjar plattformen. Används för frågor, erfarenhetsutbyte och som arkiv över tidigare delad kunskap.</p>
+                        <span class="tool-link">forum.eneo.ai <span aria-hidden="true">→</span></span>
+                        <span class="sr-only">(öppnas i ny flik)</span>
+                    </a>
+                    <a href="https://chat.eneo.ai/" target="_blank" rel="noopener noreferrer" class="tool-card">
+                        <div class="tool-icon tool-icon--accent" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+                        <h3>Chat</h3>
+                        <p>Chat för löpande dialog inom användarföreningen. Används för dagliga och snabba frågor mellan parter samt dialog kring utveckling.</p>
+                        <span class="tool-link">chat.eneo.ai <span aria-hidden="true">→</span></span>
+                        <span class="sr-only">(öppnas i ny flik)</span>
+                    </a>
+                    <a href="https://github.com/eneo-ai/eneo" target="_blank" rel="noopener noreferrer" class="tool-card">
+                        <div class="tool-icon tool-icon--amber" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg></div>
+                        <h3>Utveckling</h3>
+                        <p>All teknisk utveckling hanteras i kanban-brädor på GitHub, tillsammans med källkod, ärenden och releaser. Öppet för alla att följa och bidra till.</p>
+                        <span class="tool-link">github.com/eneo-ai <span aria-hidden="true">→</span></span>
+                        <span class="sr-only">(öppnas i ny flik)</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Gemensam utvecklingsprocess -->
+        <section class="slide" id="slide-6" tabindex="0" aria-roledescription="bild" aria-label="Bild 6: Gemensam utvecklingsprocess">
+            <div class="slide-inner">
+                <p class="label">Utveckling</p>
+                <h2>Gemensam utvecklingsprocess</h2>
+                <div class="note-grid note-grid--3">
+                    <div class="note-box">
+                        <div class="note-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg></div>
+                        <h3>Alla kan bidra</h3>
+                        <p class="note-lead">Utvecklingen sker öppet på GitHub.</p>
+                        <ul class="note-points">
+                            <li>Alla parter kan bidra med kod, ärenden och förslag</li>
+                            <li>Offentliga aktörer såväl som näringsliv</li>
+                        </ul>
+                    </div>
+                    <div class="note-box note-box--dark">
+                        <div class="note-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                        <h3>Gemensamma stand-ups</h3>
+                        <p class="note-lead">De offentliga aktörer som utvecklar Eneo har knutit ihop sina utvecklingsprocesser.</p>
+                        <ul class="note-points">
+                            <li>Utvecklingen planeras gemensamt</li>
+                            <li>Stäms av löpande mot Eneos roadmap</li>
+                        </ul>
+                    </div>
+                    <div class="note-box">
+                        <div class="note-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+                        <h3>Dedikerad utvecklarchat</h3>
+                        <p class="note-lead">Daglig kontakt mellan utvecklarna.</p>
+                        <ul class="note-points">
+                            <li>Bollande av idéer och lösningar</li>
+                            <li>Stöd mellan varandra i vardagen</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="flow-caption">Vi har krokat arm: en gemensam process i stället för arbete i egna kammare.</p>
+            </div>
+        </section>
+
+        <!-- 7. Avslut -->
+        <section class="slide slide--end" id="slide-7" tabindex="0" aria-roledescription="bild" aria-label="Bild 7: Sammanfattning">
+            <div class="slide-inner slide-inner--narrow">
+                <p class="label">Sammanfattning</p>
+                <h2>Samarbetsmodellen i <em>korthet</em></h2>
+                <ul class="summary-list">
+                    <li><span class="ck" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>Det offentliga äger plattformen, sätter riktningen och fattar besluten.</span></li>
+                    <li><span class="ck" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>En användarförening samlar offentliga aktörer för erfarenhetsutbyte, avgränsad till anställda inom offentliga myndigheter.</span></li>
+                    <li><span class="ck" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>Digitala samarbetsytor: eneo.ai, forum, chat och utveckling på GitHub.</span></li>
+                    <li><span class="ck" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>Fem organ i styrmodellen, från vision och strategi till operativ utveckling.</span></li>
+                    <li><span class="ck" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>Konkurrensneutralt: alla aktörer i näringslivet har lika förutsättningar kring Eneo.</span></li>
+                </ul>
+                <p class="end-footer">Eneo AI är ett initiativ från Sundsvalls kommun och Ånge kommun. Frågor om samarbetsmodellen: <a href="mailto:digitalisering@sundsvall.se">digitalisering@sundsvall.se</a></p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Statusrad för skärmläsare: läser upp vilken bild som visas -->
+    <div class="sr-only" id="deck-status" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- Förloppsindikator (dekorativ, bildräknaren nedan bär informationen) -->
+    <div class="deck-progress" aria-hidden="true"><div class="deck-progress-bar" id="deck-progress-bar"></div></div>
+
+    <!-- Kontroller -->
+    <nav class="deck-controls" id="deck-controls" aria-label="Presentationskontroller">
+        <a class="deck-btn deck-btn--text" href="samarbetsforum.html" title="Öppna den vanliga webbsidan">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <span>Webbversion</span>
+        </a>
+        <button type="button" class="deck-btn" id="deck-help-btn" aria-label="Visa tangentbordsgenvägar" aria-haspopup="dialog">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </button>
+        <button type="button" class="deck-btn" id="deck-theme-btn" aria-label="Byt tema">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button type="button" class="deck-btn" id="deck-fullscreen-btn" aria-label="Helskärm" aria-pressed="false">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+        </button>
+        <span class="deck-sep" aria-hidden="true"></span>
+        <button type="button" class="deck-btn" id="deck-prev-btn" aria-label="Föregående bild">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <span class="deck-counter" id="deck-counter">1 / 7</span>
+        <button type="button" class="deck-btn" id="deck-next-btn" aria-label="Nästa bild">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+    </nav>
+
+    <!-- Hjälp: tangentbordsgenvägar -->
+    <dialog class="deck-help" id="deck-help" aria-labelledby="deck-help-title">
+        <h2 id="deck-help-title">Tangentbordsgenvägar</h2>
+        <dl class="deck-help-list">
+            <div><dt><kbd>→</kbd> <kbd>↓</kbd> <kbd>Mellanslag</kbd> <kbd>Page Down</kbd></dt><dd>Nästa bild</dd></div>
+            <div><dt><kbd>←</kbd> <kbd>↑</kbd> <kbd>Page Up</kbd></dt><dd>Föregående bild</dd></div>
+            <div><dt><kbd>Home</kbd> / <kbd>End</kbd></dt><dd>Första / sista bilden</dd></div>
+            <div><dt><kbd>F</kbd></dt><dd>Helskärm av/på</dd></div>
+            <div><dt><kbd>T</kbd></dt><dd>Byt mellan mörkt och ljust tema</dd></div>
+            <div><dt><kbd>?</kbd></dt><dd>Visa den här hjälpen</dd></div>
+            <div><dt><kbd>Esc</kbd></dt><dd>Stäng hjälpen eller lämna helskärm</dd></div>
+        </dl>
+        <p class="deck-help-tip">Varje bild har en egen adress, till exempel <code>#4</code>, som går att dela.</p>
+        <form method="dialog"><button type="submit" class="deck-help-close">Stäng</button></form>
+    </dialog>
+
+    <script src="js/presentation.js?v=1"></script>
+</body>
+</html>

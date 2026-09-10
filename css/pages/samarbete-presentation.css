@@ -1,0 +1,925 @@
+/* Samarbete – presentationsläge
+   Dold sida som visar innehållet från samarbetsforum.html som ett bildspel
+   som fyller hela skärmen. Bygger på v2-variables.css och v2-base.css.
+   Skalningen utgår från en 16:9-yta: --u är 1 % av bredden eller motsvarande
+   andel av höjden, beroende på vilket som är minst. */
+
+:root {
+    --u: min(1vw, 1.78vh);
+
+    /* Textfärger med tillräcklig kontrast i mörkt tema */
+    --p-brand: var(--brand-light);
+    --p-accent: var(--accent);
+    --p-green: var(--green);
+    --p-purple: var(--purple);
+    --p-rose: var(--rose);
+    --p-amber: var(--amber);
+}
+
+/* Ljust tema: mörkare varianter så att färgad text når 4.5:1 mot ljus bakgrund */
+@media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+        --p-brand: var(--brand);
+        --p-accent: #0369a1;
+        --p-green: #047857;
+        --p-purple: #6d28d9;
+        --p-rose: #be123c;
+        --p-amber: #b45309;
+    }
+}
+:root[data-theme="light"] {
+    --p-brand: var(--brand);
+    --p-accent: #0369a1;
+    --p-green: #047857;
+    --p-purple: #6d28d9;
+    --p-rose: #be123c;
+    --p-amber: #b45309;
+}
+
+/* ── Sidan tar hela ytan ── */
+html, body.presentation-body {
+    height: 100%;
+    overflow: hidden;
+    scroll-behavior: auto;
+}
+body.presentation-body {
+    min-height: 100dvh;
+    background:
+        radial-gradient(ellipse 60% 50% at 50% 60%, var(--brand-dim) 0%, transparent 70%),
+        var(--bg);
+}
+
+.deck {
+    position: fixed;
+    inset: 0;
+}
+
+/* ── Bilder ── */
+.slide {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: calc(var(--u) * 4) calc(var(--u) * 6) calc(var(--u) * 9);
+    outline: none;
+}
+.slide[hidden] { display: none; }
+.slide:focus-visible {
+    outline: 3px solid var(--p-brand);
+    outline-offset: -6px;
+    border-radius: 0.5rem;
+}
+
+.slide-inner {
+    width: 100%;
+    max-width: calc(var(--u) * 88);
+    font-size: clamp(1rem, calc(var(--u) * 1.3), 1.8rem);
+    line-height: 1.6;
+}
+.slide-inner--narrow { max-width: calc(var(--u) * 66); }
+
+@media (prefers-reduced-motion: no-preference) {
+    .slide.is-entering .slide-inner {
+        animation: deck-fade-up 0.45s cubic-bezier(0.4, 0, 0.2, 1) both;
+    }
+}
+@keyframes deck-fade-up {
+    from { opacity: 0; transform: translateY(1rem); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Typografi ── */
+.slide h1 {
+    font-family: var(--font-display);
+    font-size: 2.6em;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.5em;
+    max-width: 16em;
+}
+.slide h2 {
+    font-family: var(--font-display);
+    font-size: 2em;
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+    margin-bottom: 0.5em;
+}
+.slide h1 em, .slide h2 em {
+    font-style: italic;
+    background: linear-gradient(135deg, var(--p-brand), var(--p-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.slide p { color: var(--text-muted); }
+.nowrap { white-space: nowrap; }
+.slide .lead {
+    font-size: 1.1em;
+    line-height: 1.65;
+    max-width: 30em;
+}
+.slide .subtitle {
+    font-size: 1em;
+    max-width: 38em;
+    margin-bottom: 1.6em;
+}
+.slide .hint {
+    margin-top: 2em;
+    font-size: 0.72em;
+    color: var(--text-muted);
+}
+
+.label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 0.7em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--p-brand);
+    margin-bottom: 1.2em;
+}
+.label::before {
+    content: '';
+    width: 1.4em;
+    height: 2px;
+    background: var(--p-brand);
+    border-radius: 2px;
+}
+
+kbd {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.85em;
+    padding: 0.05em 0.45em;
+    border-radius: 0.3em;
+    border: 1px solid var(--border);
+    background: var(--white-overlay);
+    color: var(--text);
+    box-shadow: 0 1px 0 var(--border);
+}
+
+/* ── Titelbild ── */
+.slide--title .slide-inner { text-align: left; }
+.deck-logo svg {
+    height: calc(var(--u) * 4.2);
+    width: auto;
+    margin-bottom: 2em;
+}
+.deck-logo .logo-text { fill: var(--text); }
+
+/* ── Två spalter ── */
+.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.2em;
+    margin-top: 0.4em;
+}
+.two-col p { line-height: 1.65; }
+
+/* ── Användarförening: flödesbild (vilka → föreningen → varför) ── */
+.assoc-flow {
+    display: grid;
+    grid-template-columns: 1fr auto 1.25fr auto 1fr;
+    align-items: center;
+    gap: 1em;
+    margin-top: 0.8em;
+}
+.flow-col-title {
+    font-size: 0.7em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+    margin-bottom: 0.8em;
+}
+.flow-list {
+    list-style: none;
+    display: grid;
+    gap: 0.7em;
+}
+.flow-node {
+    display: flex;
+    align-items: center;
+    gap: 0.8em;
+    padding: 0.8em 1em;
+    border-radius: 0.7em;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    font-size: 1.05em;
+    font-weight: 600;
+    color: var(--text);
+}
+.flow-icon {
+    flex-shrink: 0;
+    width: 2em;
+    height: 2em;
+    border-radius: 0.5em;
+    background: var(--brand-dim);
+    color: var(--p-brand);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.flow-icon svg { width: 1.1em; height: 1.1em; }
+.flow-node--out .flow-icon { background: var(--green-dim); color: var(--p-green); }
+
+.flow-arrow {
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+}
+.flow-arrow svg { width: 2em; height: 2em; }
+
+.flow-hub {
+    text-align: center;
+    padding: 1.8em 1.4em;
+    border-radius: 1em;
+    background: linear-gradient(180deg, rgba(5, 85, 148, 0.34), rgba(5, 85, 148, 0.18)), var(--bg);
+    border: 1px solid var(--border-hover);
+    box-shadow: var(--shadow-glow);
+}
+:root[data-theme="light"] .flow-hub { background: #dce6f1; }
+@media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) .flow-hub { background: #dce6f1; }
+}
+.flow-hub-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.2em;
+    height: 3.2em;
+    margin: 0 auto 0.8em;
+    border-radius: 50%;
+    background: var(--brand);
+    color: #fff;
+}
+.flow-hub-icon svg { width: 1.6em; height: 1.6em; }
+.flow-hub-title {
+    font-family: var(--font-display);
+    font-size: 1.5em;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    color: var(--text) !important;
+}
+.flow-caption {
+    margin-top: 1.6em;
+    text-align: center;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.15em;
+}
+
+/* ── Aktivitetslista ── */
+.act-list {
+    list-style: none;
+    display: grid;
+    gap: 0.9em;
+    margin-top: 0.6em;
+}
+.act-list li {
+    display: flex;
+    gap: 0.9em;
+    align-items: flex-start;
+    font-size: 1.08em;
+    line-height: 1.5;
+    padding: 0.85em 1.1em;
+    border-radius: 0.6em;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+}
+.act-list .ck {
+    flex-shrink: 0;
+    margin-top: 0.15em;
+    width: 1.3em;
+    height: 1.3em;
+    border-radius: 0.35em;
+    background: var(--green-dim);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.act-list .ck svg {
+    width: 0.8em;
+    height: 0.8em;
+    stroke: var(--p-green);
+    fill: none;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* ── MoU-ram runt organen på bild 4 ── */
+.mou-frame {
+    position: relative;
+    padding: 1.4em 0.7em 0.7em;
+    border: 2px dashed var(--border-hover);
+    border-radius: 1.1em;
+}
+.mou-head {
+    position: absolute;
+    top: 0;
+    left: 1.2em;
+    transform: translateY(-50%);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6em;
+    max-width: calc(100% - 2.4em);
+    padding: 0.3em 0.9em 0.3em 0.6em;
+    border-radius: 999px;
+    background: var(--brand);
+    color: #fff;
+    font-size: 0.72em;
+    line-height: 1.3;
+}
+.mou-icon {
+    flex-shrink: 0;
+    width: 1.7em;
+    height: 1.7em;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mou-icon svg { width: 1em; height: 1em; }
+.mou-title { font-weight: 700; white-space: nowrap; }
+.mou-text { opacity: 0.92; }
+.mou-text::before { content: '·'; margin-right: 0.6em; font-weight: 700; }
+
+/* ── Organ och roller (bild 4) – detaljkorten i komprimerad form ── */
+.slide-inner--wide { max-width: calc(var(--u) * 92); }
+.gov-compact {
+    list-style: none;
+    display: grid;
+    grid-auto-rows: 1fr;
+    gap: 0.4em;
+    font-size: 0.7em;
+    margin-top: 0.2em;
+}
+#slide-4 { padding-top: calc(var(--u) * 1.5); padding-bottom: calc(var(--u) * 5.5); }
+#slide-4 .label { margin-bottom: 1.9em; }
+.gov-compact .gov-slide--compact { grid-template-columns: 22em 1fr 31em; border-radius: 0.8em; } /* högre specificitet än basregeln för .gov-slide längre ned */
+.gov-slide--compact .gov-side {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    gap: 0.9em;
+    padding: 0.7em 1.1em;
+}
+.gov-slide--compact .gs-text { display: grid; gap: 0.25em; }
+.gov-slide--compact .gs-icon { flex-shrink: 0; }
+.gov-slide--compact .gs-icon { width: 2.4em; height: 2.4em; border-radius: 0.6em; }
+.gov-slide--compact .gs-icon svg { width: 1.2em; height: 1.2em; }
+.gov-slide--compact .gs-focus { font-size: 0.85em; }
+.gov-slide--compact .gs-parties { font-size: 0.8em; line-height: 1.35; }
+.gov-resp {
+    padding: 0.7em 1.2em 0.7em 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.gov-resp .resp-label { margin-bottom: 0.4em; }
+.gov-slide--compact .gov-main { padding: 0.7em 1.4em; display: flex; flex-direction: column; justify-content: center; }
+.gov-slide--compact h3 {
+    font-family: var(--font-display);
+    font-size: 1.35em;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 0.25em;
+}
+.gov-slide--compact .gov-desc { font-size: 0.95em; line-height: 1.45; margin-bottom: 0; max-width: none; }
+.gov-slide--compact .resp-list { gap: 0.35em; }
+.gov-slide--compact .resp-list li { padding: 0.2em 0.55em; font-size: 0.8em; }
+
+/* ── Informationsruta ── */
+.note-box {
+    padding: 2.2em 2.4em;
+    border-radius: 1em;
+    background: var(--brand-dim);
+    border: 1px solid var(--footer-border);
+}
+.note-icon {
+    width: 2.6em;
+    height: 2.6em;
+    border-radius: 0.7em;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--p-brand);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+.note-icon svg { width: 1.4em; height: 1.4em; }
+.note-box p { margin-bottom: 0.8em; line-height: 1.65; }
+.note-box p:last-child { margin-bottom: 0; }
+.note-box h2 { font-size: 1.6em; }
+.note-box .note-lead {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.15em;
+    color: var(--text);
+    margin-bottom: 1em;
+}
+.note-points {
+    list-style: none;
+    display: grid;
+    gap: 0.55em;
+}
+.note-points li {
+    position: relative;
+    padding-left: 1.3em;
+    font-size: 0.92em;
+    line-height: 1.5;
+    color: var(--text-muted);
+}
+.note-points li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 50%;
+    background: var(--p-brand);
+}
+
+/* Två kort sida vid sida */
+.note-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.4em;
+    align-items: stretch;
+}
+
+.note-grid--3 { grid-template-columns: repeat(3, 1fr); }
+.note-grid--3 .note-box { padding: 1.8em 1.7em; }
+.note-grid--3 .note-box h3 {
+    font-family: var(--font-display);
+    font-size: 1.35em;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 0.5em;
+}
+.note-grid--3 .note-lead { font-size: 1.05em; }
+
+/* Mörkare variant: tonad mot brand-färgen istället för transparent tint */
+.note-box--dark {
+    background: linear-gradient(180deg, rgba(5, 85, 148, 0.34), rgba(5, 85, 148, 0.22)), var(--bg);
+    border-color: var(--border-hover);
+}
+.note-box--dark .note-icon {
+    background: var(--brand);
+    border-color: var(--brand);
+    color: #fff;
+}
+:root[data-theme="light"] .note-box--dark { background: #dce6f1; }
+@media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) .note-box--dark { background: #dce6f1; }
+}
+
+/* ── Verktyg ── */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2em;
+}
+.tool-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em;
+    border-radius: 0.9em;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: border-color var(--transition-smooth), transform var(--transition-smooth);
+}
+.tool-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--brand), var(--accent));
+    opacity: 0;
+    transition: opacity var(--transition-smooth);
+}
+.tool-card:hover, .tool-card:focus-visible {
+    border-color: var(--border-hover);
+    transform: translateY(-2px);
+}
+.tool-card:hover::before, .tool-card:focus-visible::before { opacity: 1; }
+.tool-card:focus-visible {
+    outline: 3px solid var(--p-brand);
+    outline-offset: 3px;
+}
+.tool-icon {
+    width: 2.4em;
+    height: 2.4em;
+    border-radius: 0.6em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.9em;
+}
+.tool-icon svg { width: 1.3em; height: 1.3em; }
+.tool-icon--brand { background: var(--brand-dim); color: var(--p-brand); }
+.tool-icon--accent { background: var(--accent-dim); color: var(--p-accent); }
+.tool-icon--amber { background: var(--amber-dim); color: var(--p-amber); }
+.tool-icon--green { background: var(--green-dim); color: var(--p-green); }
+.tools-grid--4 { grid-template-columns: repeat(4, 1fr); gap: 1em; }
+.tools-grid--4 .tool-card { padding: 1.3em; }
+.tools-grid--4 .tool-card p { font-size: 0.82em; }
+.tool-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.15em;
+    font-weight: 600;
+    margin-bottom: 0.4em;
+}
+.tool-card p {
+    font-size: 0.85em;
+    line-height: 1.55;
+    flex-grow: 1;
+    margin-bottom: 1.1em;
+}
+.tool-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: var(--p-brand);
+    transition: gap var(--transition-normal);
+}
+.tool-card:hover .tool-link { gap: 0.65em; }
+.tool-card .invite-note {
+    display: block;
+    font-size: 0.68em;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-top: 0.5em;
+}
+
+/* ── Styrmodell: översikt ── */
+.gov-overview {
+    list-style: none;
+    counter-reset: organ;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.9em;
+}
+.gov-tile {
+    counter-increment: organ;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5em;
+    padding: 1.3em 1.1em 1.2em;
+    border-radius: 0.8em;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--tile-color);
+}
+.gov-tile::before {
+    content: counter(organ);
+    position: absolute;
+    top: 0.8em;
+    right: 0.9em;
+    font-size: 0.7em;
+    font-weight: 700;
+    color: var(--text-muted);
+}
+.gov-tile-icon {
+    width: 2.2em;
+    height: 2.2em;
+    border-radius: 0.55em;
+    background: var(--tile-dim);
+    color: var(--tile-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.gov-tile-icon svg { width: 1.2em; height: 1.2em; }
+.gov-tile-name {
+    font-family: var(--font-display);
+    font-size: 1.05em;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--text);
+}
+.gov-tile-focus {
+    font-size: 0.66em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--tile-color);
+}
+.gov-tile--brand  { --tile-color: var(--p-brand);  --tile-dim: var(--brand-dim); }
+.gov-tile--accent { --tile-color: var(--p-accent); --tile-dim: var(--accent-dim); }
+.gov-tile--green  { --tile-color: var(--p-green);  --tile-dim: var(--green-dim); }
+.gov-tile--purple { --tile-color: var(--p-purple); --tile-dim: var(--purple-dim); }
+.gov-tile--rose   { --tile-color: var(--p-rose);   --tile-dim: var(--rose-dim); }
+
+/* ── Styrmodell: ett organ per bild ── */
+.gov-slide {
+    display: grid;
+    grid-template-columns: minmax(12em, 16em) 1fr;
+    border-radius: 1em;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    overflow: hidden;
+}
+.gov-slide--brand  { --organ-color: var(--p-brand);  --organ-dim: var(--brand-dim); }
+.gov-slide--accent { --organ-color: var(--p-accent); --organ-dim: var(--accent-dim); }
+.gov-slide--green  { --organ-color: var(--p-green);  --organ-dim: var(--green-dim); }
+.gov-slide--purple { --organ-color: var(--p-purple); --organ-dim: var(--purple-dim); }
+.gov-slide--rose   { --organ-color: var(--p-rose);   --organ-dim: var(--rose-dim); }
+
+.gov-side {
+    padding: 2.2em 1.6em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.7em;
+    border-right: 1px solid var(--border);
+    background: var(--organ-dim);
+}
+.gs-icon {
+    width: 3.2em;
+    height: 3.2em;
+    border-radius: 0.8em;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--organ-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.gs-icon svg { width: 1.6em; height: 1.6em; }
+.gs-focus {
+    font-size: 0.7em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--organ-color) !important;
+}
+.gov-side .gs-parties {
+    font-size: 0.8em;
+    line-height: 1.5;
+    color: var(--text); /* text-muted når inte 4.5:1 mot den tonade sidopanelen i mörkt tema */
+}
+
+.gov-main { padding: 2.2em 2.4em; }
+.gov-main .label { margin-bottom: 0.8em; }
+.gov-main h2 { margin-bottom: 0.4em; }
+.gov-desc {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 1.4em;
+    max-width: 34em;
+}
+.resp-label {
+    font-family: var(--font-body);
+    font-size: 0.7em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin-bottom: 0.7em;
+}
+.resp-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6em;
+}
+.resp-list li {
+    padding: 0.45em 0.9em;
+    border-radius: 0.45em;
+    background: var(--white-overlay);
+    border: 1px solid var(--border);
+    font-size: 0.88em;
+    color: var(--text);
+}
+
+/* ── Avslutsbild ── */
+.slide--end h2 { font-size: 2.4em; }
+.summary-list {
+    list-style: none;
+    display: grid;
+    gap: 0.7em;
+    margin: 0.4em 0 1.8em;
+}
+.summary-list li {
+    display: flex;
+    gap: 0.9em;
+    align-items: flex-start;
+    font-size: 1em;
+    line-height: 1.5;
+    padding: 0.7em 1em;
+    border-radius: 0.6em;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+}
+.summary-list .ck {
+    flex-shrink: 0;
+    margin-top: 0.15em;
+    width: 1.3em;
+    height: 1.3em;
+    border-radius: 0.35em;
+    background: var(--brand-dim);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.summary-list .ck svg {
+    width: 0.8em;
+    height: 0.8em;
+    stroke: var(--p-brand);
+    fill: none;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.end-footer a {
+    color: var(--p-brand);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+}
+.end-footer a:focus-visible { outline: 3px solid var(--p-brand); outline-offset: 3px; }
+.end-footer { font-size: 0.8em; }
+
+/* ── Förloppsindikator ── */
+.deck-progress {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    height: 4px;
+    background: var(--border);
+    z-index: var(--z-fixed);
+}
+.deck-progress-bar {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, var(--brand), var(--accent));
+    transition: width var(--transition-smooth);
+}
+
+/* ── Kontroller ── */
+.deck-controls {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: var(--z-fixed);
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.35rem;
+    border-radius: 999px;
+    background: var(--header-bg);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: var(--shadow-md);
+}
+.deck-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0 0.6rem;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--text);
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+.deck-btn svg { width: 20px; height: 20px; flex-shrink: 0; }
+.deck-btn:hover { background: var(--white-overlay-hover); border-color: var(--border); }
+.deck-btn:focus-visible {
+    outline: 3px solid var(--p-brand);
+    outline-offset: 2px;
+}
+.deck-btn[disabled] { opacity: 0.4; cursor: default; }
+.deck-btn[disabled]:hover { background: transparent; border-color: transparent; }
+.deck-btn[aria-pressed="true"] { background: var(--brand-dim); border-color: var(--border-hover); }
+.deck-sep {
+    width: 1px;
+    height: 1.4rem;
+    background: var(--border);
+    margin: 0 0.2rem;
+}
+.deck-counter {
+    min-width: 4.2rem;
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    color: var(--text);
+}
+
+/* ── Hjälpdialog ── */
+.deck-help {
+    width: min(92vw, 30rem);
+    padding: 2rem;
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    background: var(--bg-raised);
+    color: var(--text);
+    box-shadow: var(--shadow-xl);
+}
+.deck-help::backdrop { background: rgba(0, 0, 0, 0.55); }
+.deck-help h2 {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    margin-bottom: 1.2rem;
+}
+.deck-help-list { display: grid; gap: 0.8rem; margin-bottom: 1.4rem; }
+.deck-help-list > div {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    align-items: center;
+    font-size: 0.9rem;
+}
+.deck-help-list dt { display: flex; flex-wrap: wrap; gap: 0.3rem; align-items: center; }
+.deck-help-list dd { color: var(--text-muted); text-align: right; }
+.deck-help-tip { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.4rem; }
+.deck-help-tip code {
+    font-size: 0.9em;
+    padding: 0.1em 0.4em;
+    border-radius: 0.3em;
+    background: var(--white-overlay);
+    border: 1px solid var(--border);
+}
+.deck-help-close {
+    min-height: 44px;
+    padding: 0 1.4rem;
+    border-radius: 999px;
+    border: none;
+    background: var(--brand);
+    color: #fff;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+.deck-help-close:hover { background: var(--brand-bright); }
+.deck-help-close:focus-visible { outline: 3px solid var(--p-brand); outline-offset: 3px; }
+
+/* ── Responsivt ── */
+@media (max-width: 900px) {
+    .gov-overview { grid-template-columns: repeat(2, 1fr); }
+    .tools-grid { grid-template-columns: 1fr; }
+    .tools-grid--4 { grid-template-columns: repeat(2, 1fr); }
+    .note-grid--3 { grid-template-columns: 1fr; }
+    .gov-slide { grid-template-columns: 1fr; }
+    .gov-compact .gov-slide--compact { grid-template-columns: 1fr; }
+    .mou-head { position: static; transform: none; display: flex; flex-wrap: wrap; margin-bottom: 0.8em; border-radius: 0.6em; }
+    .mou-title { white-space: normal; }
+    .mou-frame { padding: 0.8em 0.6em; }
+    .gov-resp { padding: 0 1.4em 0.9em; }
+    .gov-slide--compact .gov-side { border-right: none; border-bottom: 1px solid var(--border); }
+    .assoc-flow { grid-template-columns: 1fr; }
+    .flow-arrow { justify-content: center; }
+    .flow-arrow svg { transform: rotate(90deg); }
+    .gov-side { border-right: none; border-bottom: 1px solid var(--border); padding: 1.6em 1.2em; }
+    .gov-main { padding: 1.6em 1.4em; }
+}
+@media (max-width: 640px) {
+    .slide { padding: 1.5rem 1.25rem 6.5rem; }
+    .slide-inner { font-size: 1rem; }
+    .two-col { grid-template-columns: 1fr; gap: 1.2em; }
+    .tools-grid--4 { grid-template-columns: 1fr; }
+    .gov-overview { grid-template-columns: 1fr; }
+    .note-box { padding: 1.5em 1.3em; }
+    .note-grid { grid-template-columns: 1fr; }
+    .deck-controls { left: 0.75rem; right: 0.75rem; justify-content: space-between; }
+    .deck-btn--text span { display: none; }
+    .deck-sep { display: none; }
+}
+
+/* ── Reducerad rörelse ── */
+@media (prefers-reduced-motion: reduce) {
+    .tool-card, .deck-progress-bar, .deck-btn { transition: none; }
+    .tool-card:hover { transform: none; }
+}
