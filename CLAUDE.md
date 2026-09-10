@@ -107,6 +107,33 @@ eneo-ai-website/
 - Proper alt text for accessibility
 - Favicon set with multiple sizes
 
+### HÅRD REGEL: Delningsmetadata (Open Graph) på alla sidor
+Varje publik sida ska ha komplett metadata för delning i sociala medier i `<head>`,
+enligt sajtens standard (se t.ex. `versioner.html`). Kontrollera detta vid varje ny
+sida och vid varje ändring av titel eller beskrivning.
+
+```html
+<!-- OG Meta Tags -->
+<meta property="og:title" content="Sidans titel - Eneo.ai" />
+<meta property="og:description" content="Samma text som meta name=description" />
+<meta property="og:image" content="https://eneo.ai/public/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Eneo AI" />
+<meta property="og:url" content="https://eneo.ai/sidans-filnamn.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Eneo.ai" />
+<meta property="og:locale" content="sv_SE" />
+```
+
+- `og:title` ska matcha `<title>` och `og:description` ska matcha `meta name="description"`
+- `og:url` ska vara sidans absoluta adress på `https://eneo.ai/` (nyheter: `https://eneo.ai/nyheter/…`)
+- Vanliga sidor använder sajtens gemensamma bild `public/og-image.png` och `og:type` `website`
+- Nyhetsartiklar använder artikelns egen illustration i `public/images/nyheter/` och `og:type` `article`
+- Sidhuvudet ska även innehålla analysskriptet (`analytics.eneo.ai`) på samma sätt som övriga sidor
+- Undantag: dolda sidor med `noindex`, omdirigeringssidor och presentationsläget
+- Kontroll: `grep -L "og:image" *.html nyheter/*.html` ska bara lista undantagen ovan
+
 ## Webbtillgänglighet (WCAG)
 
 All kod ska uppfylla WCAG 2.1 Level AA. Detta är ett lagkrav för offentlig sektor (DOS-lagen, Lag 2018:1937).
