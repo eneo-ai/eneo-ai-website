@@ -55,6 +55,7 @@
                 <li><a href="samarbetsforum.html">Samarbete</a></li>
                 <li><a href="docs.html">Docs</a></li>
                 <li><a href="versioner.html" class="nav-active">Versioner</a></li>
+                <li><a href="roadmap.html">Roadmap</a></li>
                 <li><a href="nyheter.html">Nyheter</a></li>
                 <li><a href="vanliga-fragor.html">FAQ</a></li>
             </ul>
@@ -77,24 +78,23 @@
             <a href="samarbetsforum.html">Samarbete</a>
             <a href="docs.html">Docs</a>
             <a href="versioner.html">Versioner</a>
+            <a href="roadmap.html">Roadmap</a>
             <a href="nyheter.html">Nyheter</a>
             <a href="vanliga-fragor.html">FAQ</a>
         </div>
     </nav>
 
     <!-- HERO -->
-    <section class="page-hero" id="main-content">
+    <main id="main-content">
+    <section class="page-hero">
         <div class="container">
             <div class="label">Versioner</div>
             <h1>Följ utvecklingen av <em>Eneo</em></h1>
             <p class="hero-text">
                 Versionsanteckningar med nya funktioner, förbättringar och buggfixar
-                för varje release av plattformen.
+                för varje release av plattformen. Vad som planeras i kommande
+                versioner finns under <a href="roadmap.html">Roadmap</a>.
             </p>
-            <div class="jump-links">
-                <a href="#versionshistorik">Versionshistorik</a>
-                <a href="#kommande">Kommande funktioner</a>
-            </div>
         </div>
     </section>
 
@@ -102,330 +102,378 @@
     <section class="changelog" id="versionshistorik">
         <div class="container">
 
-            <!-- 2.0.0 -->
-            <div class="release">
+            <!-- 2.1.0 -->
+            <div class="release" id="v2.1.0">
                 <div class="release-header">
-                    <span class="ver-tag">v2.0.0</span>
+                    <button type="button" class="ver-tag" aria-expanded="true" aria-controls="v2.1.0-innehall">v2.1.0<svg class="ver-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+                    <a class="release-anchor" href="#v2.1.0" aria-label="Länk till v2.1.0" title="Länk till denna version"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
                     <span class="latest-badge">Senaste</span>
+                    <a href="https://github.com/eneo-ai/eneo/releases/tag/v2.1.0" class="release-link">Se på GitHub <span aria-hidden="true">→</span></a>
+                </div>
+                <div class="release-body" id="v2.1.0-innehall">
+                    <div class="warning-box">
+                        <strong>Information inför uppgradering:</strong> Installationer som tidigare uppgraderats från v2.0.1 till v2.1.0-rc.1 behöver följa en särskild anvisning för att rätta databasens migreringsstatus. Direkt uppgradering från v2.0.0 eller v2.0.1 till slutversionen, samt nya installationer, kräver inte denna åtgärd. Se <a href="https://github.com/eneo-ai/eneo/releases/tag/v2.1.0">uppgraderingsanvisningen i den engelska releasen</a>.
+                    </div>
+                    <div class="change-cat cat-new">
+                        <span class="cat-label">Nya funktioner</span>
+                        <ul class="change-list">
+                            <li><strong>Automatisk användarhantering via SCIM:</strong> Eneo har nu stöd för SCIM 2.0, vilket innebär att användare kan skapas, uppdateras och avaktiveras automatiskt från organisationens identitetssystem, till exempel Microsoft Entra ID. Grupper och medlemskap kan också synkroniseras. När kopplingen är konfigurerad minskar behovet av att hantera användare manuellt i Eneo. Läs mer i <a href="https://docs.eneo.ai/guides/scim-provisioning">SCIM-guiden</a>.</li>
+                            <li><strong>Behörighet för personlig chatt:</strong> Rätten att använda den personliga chatten är nu en egen behörighet, skild från rätten att använda assistenter. Det gör att en organisation kan ge olika grupper olika åtkomst, till exempel tillåta assistenter men inte personlig chatt, eller det omvända.</li>
+                            <li><strong>Promptguide i Eneo:</strong> En ny guide hjälper den som skapar eller redigerar en assistent att formulera tydligare instruktioner. Guiden ställer följdfrågor och tar fram ett förslag som kan granskas och sparas i assistentens inställningar. En administratör installerar guiden och ser till att den har en AI-modell att använda.</li>
+                            <li><strong>Lättare felsökning med OpenTelemetry:</strong> Eneo har fått strukturerade loggar och gemensamma spårnings-ID, så att det blir lättare att följa ett anrop och hitta orsaken till ett fel. Loggformatet bygger på OpenTelemetry och kan användas i organisationens logghantering.</li>
+                        </ul>
+                    </div>
+                    <div class="change-cat cat-improved">
+                        <span class="cat-label">Förbättringar</span>
+                        <ul class="change-list">
+                            <li><strong>Utökad livscykelhantering för AI-modeller:</strong> Modellhanteringen visar nu tydligare vilka modeller som är på väg att fasas ut och vilka assistenter, appar och andra resurser som berörs av ett modellbyte. Varningar om kompatibilitet och säkerhetsklassning har blivit tydligare, och det går nu att migrera även transkriptionsmodeller. Modellbyten kan följas i en sökbar historik, samtidigt som tidigare chatsvar behåller kopplingen till modellen som skapade dem.</li>
+                            <li><strong>Kostnader i användningsstatistiken:</strong> Statistiken har kompletterats med uppskattade modellkostnader i USD, så att administratörer kan följa både tokenförbrukning och kostnad. Modellpriser kan hämtas från modellkatalogen eller anges i administrationen. Beräkningen använder modellernas aktuella prisuppgifter och ska ses som en uppskattning.</li>
+                            <li><strong>Bättre koll på hur mycket som ryms i konversationen:</strong> Chatten visar nu det uppskattade utrymmet i förhållande till modellens kontextgräns i en indikator som uppdateras medan du skriver och bifogar filer. Det blir lättare att se när du behöver korta meddelandet eller börja en ny konversation, redan innan du skickar.</li>
+                            <li><strong>Avbrutna chatsvar sparas:</strong> Om ett svar avbryts medan det skrivs ut sparas nu både din fråga och den del av svaret som hann komma fram. Tidigare kunde hela utbytet försvinna.</li>
+                            <li><strong>Byt namn på konversationer:</strong> Konversationer kan nu döpas om direkt från historiken, så att det blir lättare att hitta tillbaka till ett tidigare samtal.</li>
+                            <li><strong>Modernare gränssnitt i flera delar:</strong> Sidhuvudet är omarbetat med ny profilmeny, uppdaterad jobbhanterare och tydligare navigering. Temaväljaren har flyttat upp i sidhuvudet, och vyn för att välja kunskapskällor har byggts om. Modelladministrationen har också fått en ny design och ett gemensamt flöde för att lägga till olika modelltyper.</li>
+                            <li><strong>Tydligare felmeddelanden och fler översatta texter:</strong> Felmeddelanden för misslyckade jobb och filuppladdningar kan nu expanderas, så att hela meddelandet går att läsa. Fler texter i gränssnittet har översatts, bland annat namn och beskrivningar för händelser i granskningsloggen.</li>
+                            <li><strong>Stabilare SharePoint-synkronisering:</strong> När Microsoft Graph tillfälligt begränsar anropen väntar Eneo och försöker igen. Skyddet mot att flera synkroniseringar krockar har förstärkts, och sökvägar med olika skrivsätt hanteras bättre.</li>
+                            <li><strong>Tydligare API-dokumentation och felbesked:</strong> API-dokumentationen har kompletterats med beskrivningar, svarstyper och felkoder, vilket gör det enklare att bygga egna integrationer mot Eneo. Tillfälliga driftstörningar hos AI-leverantörer rapporteras också tydligare till den som anropar API:et.</li>
+                        </ul>
+                    </div>
+                    <div class="change-cat cat-security">
+                        <span class="cat-label">Säkerhet &amp; stabilitet</span>
+                        <ul class="change-list">
+                            <li><strong>SBOM-filer med digital attestering:</strong> Innehållsförteckningar över programvaran (SBOM) publiceras nu automatiskt tillsammans med varje release. De kan verifieras med digitala attesteringar och ger underlag för att granska vilka komponenter leveransen innehåller. Läs mer i dokumentationen om <a href="https://docs.eneo.ai/docs/release-sboms">Release SBOMs</a>.</li>
+                            <li><strong>Uppdaterade beroenden och bättre kvalitetskontroller:</strong> Både backend och frontend har fått uppdaterade paket med säkerhetsrättningar. De automatiserade testerna har utökats, och nya kontroller fångar bland annat saknade beskrivningar av händelsetyper i granskningsloggen.</li>
+                            <li><strong>Stabilare anslutningar och filhantering:</strong> Versionen innehåller förbättringar av MCP-anslutningar, filuppladdningar och hanteringen av äldre installationer. Bland annat har en resursläcka i MCP åtgärdats som kunde få serverns processorbelastning att öka över tid.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2.0.0 -->
+            <div class="release" id="v2.0.0">
+                <div class="release-header">
+                    <button type="button" class="ver-tag" aria-expanded="true" aria-controls="v2.0.0-innehall">v2.0.0<svg class="ver-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+                    <a class="release-anchor" href="#v2.0.0" aria-label="Länk till v2.0.0" title="Länk till denna version"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
                     <a href="https://github.com/eneo-ai/eneo/releases/tag/v2.0.0" class="release-link">Se på GitHub <span aria-hidden="true">→</span></a>
                 </div>
-                <div class="change-cat cat-new">
-                    <span class="cat-label">Nya funktioner</span>
-                    <ul class="change-list">
-                        <li><strong>Helt ny hantering av API-nycklar:</strong> Eneo har fått ett omarbetat system för API-nycklar som gör det både säkrare och mer flexibelt att ge program och tjänster åtkomst. Det går nu att skilja på personliga nycklar och tjänstenycklar, sätta finkorniga behörigheter per nyckel och styra exakt vad varje nyckel får göra. Nycklar kan roteras med eller utan en övergångsperiod, få ändrat utgångsdatum och förlängas vid rotation. Personliga nycklar skapas inte längre automatiskt vid nya användare, och varje användare ser och hanterar bara sina egna nycklar. Läs mer i dokumentationen om <a href="https://docs.eneo.ai/docs/api-key-management">API Key Management</a>.</li>
-                        <li><strong>Omarbetad hantering av roller:</strong> De tidigare fördefinierade rollerna är nu omstrukturerade till grundmallar, men nu kan en organisation även förändra i dessa och därmed ha 100% kontroll över säkerhetsdesignen kring roller i sin installation.</li>
-                        <li><strong>Live-listning av modeller från alla leverantörer:</strong> Tillgängliga modeller hämtas nu direkt från leverantören i realtid, oavsett vilken leverantör det gäller. Den tidigare fasta listan med leverantörer är borttagen, vilket gör att nya modeller dyker upp automatiskt utan särskild hantering.</li>
-                    </ul>
-                </div>
-                <div class="change-cat cat-improved">
-                    <span class="cat-label">Förbättringar</span>
-                    <ul class="change-list">
-                        <li><strong>Smidigare hantering av bifogade filer:</strong> När många filer bifogas i en chatt visas de nu i ett kompakt rutnät i två kolumner som kan fällas ihop, så att meddelandet hålls överskådligt.</li>
-                        <li><strong>Mer detaljerad granskningslogg:</strong> Loggningen fångar nu även teknisk kontext som IP-adress, webbläsarinformation och förfrågnings-ID, vilket gör det lättare att följa upp och analysera händelser.</li>
-                        <li><strong>Första stegen mot ett mer modernt gränssnitt:</strong> Eneo börjar övergå till ett nytt designsystem (shadcn-svelte), med start på ytöversikten och i hanteringen av API-nycklar. Färger och komponenter har städats upp för ett mer enhetligt utseende.</li>
-                    </ul>
-                </div>
-                <div class="change-cat cat-security">
-                    <span class="cat-label">Säkerhet &amp; stabilitet</span>
-                    <ul class="change-list">
-                        <li><strong>SBOM för varje release:</strong> Varje version av Eneo levereras nu med en innehållsförteckning över programvaran (SBOM, Software Bill of Materials) för både backend- och frontend-avbildningarna. Filerna bifogas direkt på GitHub-releasen och listar exakt vilka komponenter och beroenden som ingår i den version du kör, i standardformaten CycloneDX och SPDX. Det gör det enklare att granska beroenden, jämföra versioner och arbeta med säkerhet och regelefterlevnad. Läs mer i dokumentationen om <a href="https://docs.eneo.ai/docs/release-sboms">Release SBOMs</a>.</li>
-                        <li><strong>Striktare kodkvalitet:</strong> Hela kodbasen följer nu strikt typkontroll i både backend och frontend, vilket minskar risken för fel.</li>
-                        <li><strong>Säkerhetsfunktioner i CI:</strong> Bygg- och testflödet kontrollerar nu beroenden för kända sårbarheter automatiskt.</li>
-                        <li><strong>Uppdaterade beroenden:</strong> LiteLLM, LangChain och Traefik är uppdaterade, och Python-versionen som stöds har avgränsats tydligare.</li>
-                    </ul>
-                </div>
-                <div class="change-cat cat-fix">
-                    <span class="cat-label">Buggfixar</span>
-                    <ul class="change-list">
-                        <li>Fixat så att schema.d.ts hålls uppdaterat</li>
-                        <li>Fixat fel på modeller utan resonemangsstöd (reasoning_content)</li>
-                        <li>Fixat krasch i gruppchatt när val hamnade utanför giltigt intervall</li>
-                        <li>Fixat hantering av redirect-URI vid SSO så att den styrs från backend-konfigurationen</li>
-                    </ul>
+                <div class="release-body" id="v2.0.0-innehall">
+                    <div class="change-cat cat-new">
+                        <span class="cat-label">Nya funktioner</span>
+                        <ul class="change-list">
+                            <li><strong>Helt ny hantering av API-nycklar:</strong> Eneo har fått ett omarbetat system för API-nycklar som gör det både säkrare och mer flexibelt att ge program och tjänster åtkomst. Det går nu att skilja på personliga nycklar och tjänstenycklar, sätta finkorniga behörigheter per nyckel och styra exakt vad varje nyckel får göra. Nycklar kan roteras med eller utan en övergångsperiod, få ändrat utgångsdatum och förlängas vid rotation. Personliga nycklar skapas inte längre automatiskt vid nya användare, och varje användare ser och hanterar bara sina egna nycklar. Läs mer i dokumentationen om <a href="https://docs.eneo.ai/docs/api-key-management">API Key Management</a>.</li>
+                            <li><strong>Omarbetad hantering av roller:</strong> De tidigare fördefinierade rollerna är nu omstrukturerade till grundmallar, men nu kan en organisation även förändra i dessa och därmed ha 100% kontroll över säkerhetsdesignen kring roller i sin installation.</li>
+                            <li><strong>Live-listning av modeller från alla leverantörer:</strong> Tillgängliga modeller hämtas nu direkt från leverantören i realtid, oavsett vilken leverantör det gäller. Den tidigare fasta listan med leverantörer är borttagen, vilket gör att nya modeller dyker upp automatiskt utan särskild hantering.</li>
+                        </ul>
+                    </div>
+                    <div class="change-cat cat-improved">
+                        <span class="cat-label">Förbättringar</span>
+                        <ul class="change-list">
+                            <li><strong>Smidigare hantering av bifogade filer:</strong> När många filer bifogas i en chatt visas de nu i ett kompakt rutnät i två kolumner som kan fällas ihop, så att meddelandet hålls överskådligt.</li>
+                            <li><strong>Mer detaljerad granskningslogg:</strong> Loggningen fångar nu även teknisk kontext som IP-adress, webbläsarinformation och förfrågnings-ID, vilket gör det lättare att följa upp och analysera händelser.</li>
+                            <li><strong>Första stegen mot ett mer modernt gränssnitt:</strong> Eneo börjar övergå till ett nytt designsystem (shadcn-svelte), med start på ytöversikten och i hanteringen av API-nycklar. Färger och komponenter har städats upp för ett mer enhetligt utseende.</li>
+                        </ul>
+                    </div>
+                    <div class="change-cat cat-security">
+                        <span class="cat-label">Säkerhet &amp; stabilitet</span>
+                        <ul class="change-list">
+                            <li><strong>SBOM för varje release:</strong> Varje version av Eneo levereras nu med en innehållsförteckning över programvaran (SBOM, Software Bill of Materials) för både backend- och frontend-avbildningarna. Filerna bifogas direkt på GitHub-releasen och listar exakt vilka komponenter och beroenden som ingår i den version du kör, i standardformaten CycloneDX och SPDX. Det gör det enklare att granska beroenden, jämföra versioner och arbeta med säkerhet och regelefterlevnad. Läs mer i dokumentationen om <a href="https://docs.eneo.ai/docs/release-sboms">Release SBOMs</a>.</li>
+                            <li><strong>Striktare kodkvalitet:</strong> Hela kodbasen följer nu strikt typkontroll i både backend och frontend, vilket minskar risken för fel.</li>
+                            <li><strong>Säkerhetsfunktioner i CI:</strong> Bygg- och testflödet kontrollerar nu beroenden för kända sårbarheter automatiskt.</li>
+                            <li><strong>Uppdaterade beroenden:</strong> LiteLLM, LangChain och Traefik är uppdaterade, och Python-versionen som stöds har avgränsats tydligare.</li>
+                        </ul>
+                    </div>
+                    <div class="change-cat cat-fix">
+                        <span class="cat-label">Buggfixar</span>
+                        <ul class="change-list">
+                            <li>Fixat så att schema.d.ts hålls uppdaterat</li>
+                            <li>Fixat fel på modeller utan resonemangsstöd (reasoning_content)</li>
+                            <li>Fixat krasch i gruppchatt när val hamnade utanför giltigt intervall</li>
+                            <li>Fixat hantering av redirect-URI vid SSO så att den styrs från backend-konfigurationen</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
             <!-- 1.9.0 -->
-            <div class="release">
+            <div class="release" id="v1.9.0">
                 <div class="release-header">
-                    <span class="ver-tag">v1.9.0</span>
+                    <button type="button" class="ver-tag" aria-expanded="true" aria-controls="v1.9.0-innehall">v1.9.0<svg class="ver-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+                    <a class="release-anchor" href="#v1.9.0" aria-label="Länk till v1.9.0" title="Länk till denna version"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
                     <a href="https://github.com/eneo-ai/eneo/releases/tag/v1.9.0" class="release-link">Se på GitHub <span aria-hidden="true">→</span></a>
                 </div>
-                <div class="change-cat cat-new">
-                    <span class="cat-label">Nya funktioner</span>
-                    <ul class="change-list">
-                        <li><strong>Ny hantering av AI-leverantörer:</strong> Administratörer kan nu lägga till och konfigurera över 60 AI-leverantörer direkt i gränssnittet, bland annat OpenAI, Azure, Anthropic, Gemini, Mistral, Groq, AWS Bedrock och vLLM. Den nya hanteringen gör det enklare att ge olika leverantörer samma förutsättningar: så länge en leverantör stöds av LiteLLM kan den läggas till i Eneo utan att vi behöver bygga något nytt i frontend. Uppgifter lagras krypterat, anslutningar kan testas direkt och nya modeller läggs till via en tydlig guide. Favoritleverantörer kan också fästas och sorteras om.</li>
-                        <li><strong>Mer exakt tokenräkning:</strong> Tokenanvändning och kontextfönster bygger nu på siffror från leverantören i stället för lokala uppskattningar. Om ett meddelande blir för långt visas tydlig information om varför, och texten ligger kvar så att du enkelt kan justera och skicka igen. Flera filer kan nu bifogas i samma meddelande.</li>
-                        <li><strong>Tydligare felmeddelanden:</strong> Fel visas nu med mer precisa och översatta meddelanden på svenska och engelska, så att det blir lättare att förstå vad som behöver rättas.</li>
-                        <li><strong>Integrationer i delade ytor:</strong> Delade ytor visar nu integrationsfliken och kan importera kunskap från till exempel SharePoint på samma sätt som organisationsytor.</li>
-                        <li><strong>Säkerhetsklassning för MCP-servrar:</strong> Administratörer kan sätta en säkerhetsnivå per MCP-server. Ytor visar då bara servrar som matchar eller överstiger den nivån.</li>
-                        <li><strong>Stöd för flera redirect-URI:er:</strong> Federation via IdP/SSO stöder nu flera redirect-URI:er, och federationer kan uppdateras stegvis utan att hela konfigurationen behöver skickas in på nytt.</li>
-                        <li><strong>Paginering i adminvyn för användare:</strong> Användarlistan pagineras nu på serversidan med nästa/föregående och tydlig antalsvisning, vilket gör stora användarbaser lättare att hantera.</li>
-                        <li><strong>Ikoner för gruppchattar:</strong> Gruppchattar kan nu få egna ikoner och blir enklare att skilja från assistenter i sidofältet.</li>
-                    </ul>
-                </div>
-                <div class="change-cat cat-improved">
-                    <span class="cat-label">Förbättringar</span>
-                    <ul class="change-list">
-                        <li><strong>Samlad användningssida för administratörer:</strong> Statistik och användningsnivåer är nu samlade på en sida och anpassas efter valt datumintervall. Den tidigare Användare-fliken är ihopslagen med Tokens-fliken.</li>
-                        <li><strong>Smidigare modellhantering:</strong> Modellinformation laddas först när den behövs, sorteringen hanterar fler datumformat och modeller som inte hör hemma i listan filtreras bort.</li>
-                        <li><strong>Förbättrade mallar:</strong> Onödig kunskapshantering är borttagen från app-mallarna, valet av completion-modell följer med genom hela guiden och hjälptexter förtydligar skillnaden mellan bifogade filer och kunskap.</li>
-                        <li><strong>Toast-notiser istället för alert-rutor:</strong> Alla gamla webbläsarvarningar är ersatta med tydligare toast-notiser i gränssnittet.</li>
-                        <li><strong>Smeknamn för embedding-modeller:</strong> Embedding-modeller kan nu få egna, mer användarvänliga visningsnamn.</li>
-                        <li><strong>Konventionella filstorlekar:</strong> Gränssnittet använder nu KB, MB och GB istället för KiB, MiB och GiB.</li>
-                        <li><strong>Nya issue-mallar på GitHub:</strong> Det finns nu färdiga mallar för buggrapporter och funktionsförslag.</li>
-                    </ul>
-                </div>
-                <div class="change-cat cat-security">
-                    <span class="cat-label">Säkerhet &amp; stabilitet</span>
-                    <ul class="change-list">
-                        <li><strong>Skärpt behörighet för integrationer:</strong> Ändringar i organisationsövergripande integrationer kräver nu administratörsbehörighet.</li>
-                        <li><strong>Uppdaterade beroenden:</strong> Python- och frontend-paket är uppdaterade med säkerhetspatchar, LiteLLM är uppdaterat till 1.83.0 och CI-flödet har skärpts.</li>
-                        <li><strong>Bättre städning av tempfiler:</strong> Fel vid uppladdning eller transkribering lämnar inte längre kvar tillfälliga filer.</li>
-                    </ul>
-                </div>
-                <div class="change-cat cat-fix">
-                    <span class="cat-label">Buggfixar</span>
-                    <ul class="change-list">
-                        <li>Fixat problem med chatt-strömning efter en felaktig import</li>
-                        <li>Fixat generering av schema.d.ts</li>
-                        <li>Fixat identifiering av transkriberingsmodell vid redigering via namn</li>
-                        <li>Flera förbättringar i DevContainer för stabilare miljö och renare beroenden</li>
-                    </ul>
+                <div class="release-body" id="v1.9.0-innehall">
+                    <div class="change-cat cat-new">
+                        <span class="cat-label">Nya funktioner</span>
+                        <ul class="change-list">
+                            <li><strong>Ny hantering av AI-leverantörer:</strong> Administratörer kan nu lägga till och konfigurera över 60 AI-leverantörer direkt i gränssnittet, bland annat OpenAI, Azure, Anthropic, Gemini, Mistral, Groq, AWS Bedrock och vLLM. Den nya hanteringen gör det enklare att ge olika leverantörer samma förutsättningar: så länge en leverantör stöds av LiteLLM kan den läggas till i Eneo utan att vi behöver bygga något nytt i frontend. Uppgifter lagras krypterat, anslutningar kan testas direkt och nya modeller läggs till via en tydlig guide. Favoritleverantörer kan också fästas och sorteras om.</li>
+                            <li><strong>Mer exakt tokenräkning:</strong> Tokenanvändning och kontextfönster bygger nu på siffror från leverantören i stället för lokala uppskattningar. Om ett meddelande blir för långt visas tydlig information om varför, och texten ligger kvar så att du enkelt kan justera och skicka igen. Flera filer kan nu bifogas i samma meddelande.</li>
+                            <li><strong>Tydligare felmeddelanden:</strong> Fel visas nu med mer precisa och översatta meddelanden på svenska och engelska, så att det blir lättare att förstå vad som behöver rättas.</li>
+                            <li><strong>Integrationer i delade ytor:</strong> Delade ytor visar nu integrationsfliken och kan importera kunskap från till exempel SharePoint på samma sätt som organisationsytor.</li>
+                            <li><strong>Säkerhetsklassning för MCP-servrar:</strong> Administratörer kan sätta en säkerhetsnivå per MCP-server. Ytor visar då bara servrar som matchar eller överstiger den nivån.</li>
+                            <li><strong>Stöd för flera redirect-URI:er:</strong> Federation via IdP/SSO stöder nu flera redirect-URI:er, och federationer kan uppdateras stegvis utan att hela konfigurationen behöver skickas in på nytt.</li>
+                            <li><strong>Paginering i adminvyn för användare:</strong> Användarlistan pagineras nu på serversidan med nästa/föregående och tydlig antalsvisning, vilket gör stora användarbaser lättare att hantera.</li>
+                            <li><strong>Ikoner för gruppchattar:</strong> Gruppchattar kan nu få egna ikoner och blir enklare att skilja från assistenter i sidofältet.</li>
+                        </ul>
+                    </div>
+                    <div class="change-cat cat-improved">
+                        <span class="cat-label">Förbättringar</span>
+                        <ul class="change-list">
+                            <li><strong>Samlad användningssida för administratörer:</strong> Statistik och användningsnivåer är nu samlade på en sida och anpassas efter valt datumintervall. Den tidigare Användare-fliken är ihopslagen med Tokens-fliken.</li>
+                            <li><strong>Smidigare modellhantering:</strong> Modellinformation laddas först när den behövs, sorteringen hanterar fler datumformat och modeller som inte hör hemma i listan filtreras bort.</li>
+                            <li><strong>Förbättrade mallar:</strong> Onödig kunskapshantering är borttagen från app-mallarna, valet av completion-modell följer med genom hela guiden och hjälptexter förtydligar skillnaden mellan bifogade filer och kunskap.</li>
+                            <li><strong>Toast-notiser istället för alert-rutor:</strong> Alla gamla webbläsarvarningar är ersatta med tydligare toast-notiser i gränssnittet.</li>
+                            <li><strong>Smeknamn för embedding-modeller:</strong> Embedding-modeller kan nu få egna, mer användarvänliga visningsnamn.</li>
+                            <li><strong>Konventionella filstorlekar:</strong> Gränssnittet använder nu KB, MB och GB istället för KiB, MiB och GiB.</li>
+                            <li><strong>Nya issue-mallar på GitHub:</strong> Det finns nu färdiga mallar för buggrapporter och funktionsförslag.</li>
+                        </ul>
+                    </div>
+                    <div class="change-cat cat-security">
+                        <span class="cat-label">Säkerhet &amp; stabilitet</span>
+                        <ul class="change-list">
+                            <li><strong>Skärpt behörighet för integrationer:</strong> Ändringar i organisationsövergripande integrationer kräver nu administratörsbehörighet.</li>
+                            <li><strong>Uppdaterade beroenden:</strong> Python- och frontend-paket är uppdaterade med säkerhetspatchar, LiteLLM är uppdaterat till 1.83.0 och CI-flödet har skärpts.</li>
+                            <li><strong>Bättre städning av tempfiler:</strong> Fel vid uppladdning eller transkribering lämnar inte längre kvar tillfälliga filer.</li>
+                        </ul>
+                    </div>
+                    <div class="change-cat cat-fix">
+                        <span class="cat-label">Buggfixar</span>
+                        <ul class="change-list">
+                            <li>Fixat problem med chatt-strömning efter en felaktig import</li>
+                            <li>Fixat generering av schema.d.ts</li>
+                            <li>Fixat identifiering av transkriberingsmodell vid redigering via namn</li>
+                            <li>Flera förbättringar i DevContainer för stabilare miljö och renare beroenden</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
             <!-- 1.8.0 -->
-            <div class="release">
+            <div class="release" id="v1.8.0">
                 <div class="release-header">
-                    <span class="ver-tag">v1.8.0</span>
+                    <button type="button" class="ver-tag" aria-expanded="true" aria-controls="v1.8.0-innehall">v1.8.0<svg class="ver-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+                    <a class="release-anchor" href="#v1.8.0" aria-label="Länk till v1.8.0" title="Länk till denna version"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
                     <a href="https://github.com/eneo-ai/eneo/releases/tag/v1.8.0" class="release-link">Se på GitHub <span aria-hidden="true">→</span></a>
                 </div>
-                <div class="change-cat cat-new">
-                    <span class="cat-label">Nya funktioner</span>
-                    <ul class="change-list">
-                        <li><strong>MCP-serverintegration:</strong> Assistenter kan nu anslutas till externa MCP-servrar (Model Context Protocol), vilket gör det möjligt att använda verktyg från tredjepartstjänster direkt i en assistent. MCP-servrar stöder autentisering via bearer token och all användning loggas i granskningsloggar.</li>
-                    </ul>
-                </div>
-                <div class="change-cat cat-improved">
-                    <span class="cat-label">Förbättringar</span>
-                    <ul class="change-list">
-                        <li><strong>Bättre SharePoint-upplevelse:</strong> SharePoint-sajter kategoriseras nu efter Teams-medlemskap i importdialogen, vilket gör det enklare att hitta rätt sajt.</li>
-                        <li><strong>Stärkt behörighetsstyrning:</strong> Hantering av integrationer begränsad till rollerna AI-konfiguratör och Ägare.</li>
-                        <li><strong>Förbättrade källhänvisningar i RAG-svar:</strong> Stärkta promptar minskar risken för saknade referenser.</li>
-                        <li><strong>Längre svar från AI-modeller:</strong> Maximalt antal completion-tokens har höjts.</li>
-                        <li><strong>Modellvalidering i installationsguiden:</strong> Nytt valideringssteg kontrollerar att modellen är korrekt konfigurerad.</li>
-                        <li><strong>Snabbare insikter:</strong> Aggregerade frågor och optimerat dataflöde ger märkbart snabbare laddningstider.</li>
-                        <li><strong>Uppdaterade miljövariabler:</strong> Prefix bytt från INTRIC_ till ENEO_.</li>
-                        <li><strong>Skydd mot borttagning av embedding-modeller:</strong> Aktivt använda embedding-modeller kan inte längre tas bort av misstag.</li>
-                        <li>Förbättrad layout för modell-leverantörer i gränssnittet</li>
-                    </ul>
-                </div>
-                <div class="change-cat cat-fix">
-                    <span class="cat-label">Buggfixar</span>
-                    <ul class="change-list">
-                        <li>Åtgärdat problem med PDF-extraktion från SharePoint genom byte till pdfplumber</li>
-                        <li>Fixat hantering av medlemmar som enbart tillhör grupper i delade ytor</li>
-                        <li>Fixat CORS-konfiguration så att rätt request-origin returneras istället för wildcard (*)</li>
-                    </ul>
+                <div class="release-body" id="v1.8.0-innehall">
+                    <div class="change-cat cat-new">
+                        <span class="cat-label">Nya funktioner</span>
+                        <ul class="change-list">
+                            <li><strong>MCP-serverintegration:</strong> Assistenter kan nu anslutas till externa MCP-servrar (Model Context Protocol), vilket gör det möjligt att använda verktyg från tredjepartstjänster direkt i en assistent. MCP-servrar stöder autentisering via bearer token och all användning loggas i granskningsloggar.</li>
+                        </ul>
+                    </div>
+                    <div class="change-cat cat-improved">
+                        <span class="cat-label">Förbättringar</span>
+                        <ul class="change-list">
+                            <li><strong>Bättre SharePoint-upplevelse:</strong> SharePoint-sajter kategoriseras nu efter Teams-medlemskap i importdialogen, vilket gör det enklare att hitta rätt sajt.</li>
+                            <li><strong>Stärkt behörighetsstyrning:</strong> Hantering av integrationer begränsad till rollerna AI-konfiguratör och Ägare.</li>
+                            <li><strong>Förbättrade källhänvisningar i RAG-svar:</strong> Stärkta promptar minskar risken för saknade referenser.</li>
+                            <li><strong>Längre svar från AI-modeller:</strong> Maximalt antal completion-tokens har höjts.</li>
+                            <li><strong>Modellvalidering i installationsguiden:</strong> Nytt valideringssteg kontrollerar att modellen är korrekt konfigurerad.</li>
+                            <li><strong>Snabbare insikter:</strong> Aggregerade frågor och optimerat dataflöde ger märkbart snabbare laddningstider.</li>
+                            <li><strong>Uppdaterade miljövariabler:</strong> Prefix bytt från INTRIC_ till ENEO_.</li>
+                            <li><strong>Skydd mot borttagning av embedding-modeller:</strong> Aktivt använda embedding-modeller kan inte längre tas bort av misstag.</li>
+                            <li>Förbättrad layout för modell-leverantörer i gränssnittet</li>
+                        </ul>
+                    </div>
+                    <div class="change-cat cat-fix">
+                        <span class="cat-label">Buggfixar</span>
+                        <ul class="change-list">
+                            <li>Åtgärdat problem med PDF-extraktion från SharePoint genom byte till pdfplumber</li>
+                            <li>Fixat hantering av medlemmar som enbart tillhör grupper i delade ytor</li>
+                            <li>Fixat CORS-konfiguration så att rätt request-origin returneras istället för wildcard (*)</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
             <!-- 1.7.0 -->
-            <div class="release">
+            <div class="release" id="v1.7.0">
                 <div class="release-header">
-                    <span class="ver-tag">v1.7.0</span>
+                    <button type="button" class="ver-tag" aria-expanded="true" aria-controls="v1.7.0-innehall">v1.7.0<svg class="ver-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+                    <a class="release-anchor" href="#v1.7.0" aria-label="Länk till v1.7.0" title="Länk till denna version"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
                     <a href="https://github.com/eneo-ai/eneo/releases/tag/v1.7.0" class="release-link">Se på GitHub <span aria-hidden="true">→</span></a>
                 </div>
-                <div class="warning-box">
-                    <strong>Viktig förändring – kräver åtgärd!</strong> Denna version innehåller en stor databasmigrering som inte kan rullas tillbaka. Ta en snapshot eller databas-backup innan du uppdaterar. Se <a href="https://docs.eneo.ai/guides/upgrade-1-7-0">uppgraderingsguiden</a> för detaljer.
-                </div>
-                <div class="change-cat cat-new">
-                    <span class="cat-label">Nya funktioner</span>
-                    <ul class="change-list">
-                        <li><strong>Omarbetad modellhantering:</strong> All hantering av AI-modeller sker nu direkt i webbgränssnittet. Alla leverantörer och modeller med LiteLLM-stöd kan läggas till med några klick.</li>
-                        <li><strong>Modeller per organisation:</strong> Administratörer kan konfigurera vilka AI-modeller som är tillgängliga per tenant.</li>
-                        <li><strong>Automatiskt skapande av användare via federation:</strong> Ny valbar inställning för automatiskt skapande av OIDC-användare.</li>
-                        <li><strong>Tal till text i assistenter:</strong> Diktera input direkt i chatten via Web Speech API.</li>
-                        <li><strong>Utökade användargrupper:</strong> Enklare hantering av grupper och medlemskap direkt i gränssnittet.</li>
-                        <li><strong>Gruppbaserat medlemskap i delade ytor:</strong> Styr medlemskap via användargrupper.</li>
-                    </ul>
-                </div>
-                <div class="change-cat cat-improved">
-                    <span class="cat-label">Förbättringar</span>
-                    <ul class="change-list">
-                        <li>Bättre mobil- och appupplevelse</li>
-                        <li>Förbättrad filhantering och nedladdning</li>
-                        <li>SharePoint: förbättrad behörighetshantering, "Azure AD" → "Microsoft Entra ID"</li>
-                        <li>Stabilare och mer pålitlig webbcrawling med varningar vid misslyckande</li>
-                        <li>Stöd för vLLM och Mistral med nya ikoner och konfiguration</li>
-                        <li>Grupperad modellväljare per leverantör</li>
-                        <li>Förbättrad visning av AI:ns reasoning-steg</li>
-                        <li>Uppdaterad dokumentation med nya contribution guidelines</li>
-                    </ul>
-                </div>
-                <div class="change-cat cat-fix">
-                    <span class="cat-label">Buggfixar</span>
-                    <ul class="change-list">
-                        <li>Fixat problem med modell-tilldelning för assistenter skapade utan modell</li>
-                        <li>Fixat embedding-leverantörsupplösning i worker</li>
-                        <li>Fixat OpenAPI-schemafel, krypteringsfel vid federation-maskering, Azure-modellnamn vid migrering</li>
-                        <li>Ny felspårning med error_id för 500-svar</li>
-                        <li>Pyright-typkontroller i CI-pipeline</li>
-                    </ul>
+                <div class="release-body" id="v1.7.0-innehall">
+                    <div class="warning-box">
+                        <strong>Viktig förändring – kräver åtgärd!</strong> Denna version innehåller en stor databasmigrering som inte kan rullas tillbaka. Ta en snapshot eller databas-backup innan du uppdaterar. Se <a href="https://docs.eneo.ai/guides/upgrade-1-7-0">uppgraderingsguiden</a> för detaljer.
+                    </div>
+                    <div class="change-cat cat-new">
+                        <span class="cat-label">Nya funktioner</span>
+                        <ul class="change-list">
+                            <li><strong>Omarbetad modellhantering:</strong> All hantering av AI-modeller sker nu direkt i webbgränssnittet. Alla leverantörer och modeller med LiteLLM-stöd kan läggas till med några klick.</li>
+                            <li><strong>Modeller per organisation:</strong> Administratörer kan konfigurera vilka AI-modeller som är tillgängliga per tenant.</li>
+                            <li><strong>Automatiskt skapande av användare via federation:</strong> Ny valbar inställning för automatiskt skapande av OIDC-användare.</li>
+                            <li><strong>Tal till text i assistenter:</strong> Diktera input direkt i chatten via Web Speech API.</li>
+                            <li><strong>Utökade användargrupper:</strong> Enklare hantering av grupper och medlemskap direkt i gränssnittet.</li>
+                            <li><strong>Gruppbaserat medlemskap i delade ytor:</strong> Styr medlemskap via användargrupper.</li>
+                        </ul>
+                    </div>
+                    <div class="change-cat cat-improved">
+                        <span class="cat-label">Förbättringar</span>
+                        <ul class="change-list">
+                            <li>Bättre mobil- och appupplevelse</li>
+                            <li>Förbättrad filhantering och nedladdning</li>
+                            <li>SharePoint: förbättrad behörighetshantering, "Azure AD" → "Microsoft Entra ID"</li>
+                            <li>Stabilare och mer pålitlig webbcrawling med varningar vid misslyckande</li>
+                            <li>Stöd för vLLM och Mistral med nya ikoner och konfiguration</li>
+                            <li>Grupperad modellväljare per leverantör</li>
+                            <li>Förbättrad visning av AI:ns reasoning-steg</li>
+                            <li>Uppdaterad dokumentation med nya contribution guidelines</li>
+                        </ul>
+                    </div>
+                    <div class="change-cat cat-fix">
+                        <span class="cat-label">Buggfixar</span>
+                        <ul class="change-list">
+                            <li>Fixat problem med modell-tilldelning för assistenter skapade utan modell</li>
+                            <li>Fixat embedding-leverantörsupplösning i worker</li>
+                            <li>Fixat OpenAPI-schemafel, krypteringsfel vid federation-maskering, Azure-modellnamn vid migrering</li>
+                            <li>Ny felspårning med error_id för 500-svar</li>
+                            <li>Pyright-typkontroller i CI-pipeline</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
             <!-- 1.6.0 -->
-            <div class="release">
+            <div class="release" id="v1.6.0">
                 <div class="release-header">
-                    <span class="ver-tag">v1.6.0</span>
+                    <button type="button" class="ver-tag" aria-expanded="true" aria-controls="v1.6.0-innehall">v1.6.0<svg class="ver-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+                    <a class="release-anchor" href="#v1.6.0" aria-label="Länk till v1.6.0" title="Länk till denna version"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
                     <a href="https://github.com/eneo-ai/eneo/releases/tag/v1.6.0" class="release-link">Se på GitHub <span aria-hidden="true">→</span></a>
                 </div>
-                <div class="change-cat cat-new">
-                    <span class="cat-label">Nya funktioner</span>
-                    <ul class="change-list">
-                        <li><strong>SharePoint-integration:</strong> Via OpenGraph API – Eneo har alltid tillgång till senaste versionen av filer.</li>
-                        <li><strong>Ikoner till assistenter och appar</strong></li>
-                        <li><strong>Granskningsloggar:</strong> Audit logs för administratörer.</li>
-                        <li><strong>Gallring av loggar</strong></li>
-                        <li><strong>Ny dokumentationssajt:</strong> docs.eneo.ai</li>
-                    </ul>
-                </div>
-                <div class="change-cat cat-improved">
-                    <span class="cat-label">Förbättringar</span>
-                    <ul class="change-list">
-                        <li>Mobilanpassad vy med fler funktioner tillgängliga</li>
-                        <li>Stöd för Excel-filer med smart innehållsinläsning</li>
-                        <li>Utökad felsökningsdokumentation</li>
-                        <li>Utökat stöd för GPT-modeller via Azure</li>
-                    </ul>
-                </div>
-                <div class="change-cat cat-fix">
-                    <span class="cat-label">Buggfixar</span>
-                    <ul class="change-list">
-                        <li>Engelska språkinställningar, stabilare Azure OpenAI-strömning</li>
-                        <li>Förbättrad schemaläggning av bakgrundsprocesser</li>
-                        <li>Fliken "Webbplatser" visas nu korrekt, WSO2-valideringsfix</li>
-                    </ul>
+                <div class="release-body" id="v1.6.0-innehall">
+                    <div class="change-cat cat-new">
+                        <span class="cat-label">Nya funktioner</span>
+                        <ul class="change-list">
+                            <li><strong>SharePoint-integration:</strong> Via OpenGraph API – Eneo har alltid tillgång till senaste versionen av filer.</li>
+                            <li><strong>Ikoner till assistenter och appar</strong></li>
+                            <li><strong>Granskningsloggar:</strong> Audit logs för administratörer.</li>
+                            <li><strong>Gallring av loggar</strong></li>
+                            <li><strong>Ny dokumentationssajt:</strong> docs.eneo.ai</li>
+                        </ul>
+                    </div>
+                    <div class="change-cat cat-improved">
+                        <span class="cat-label">Förbättringar</span>
+                        <ul class="change-list">
+                            <li>Mobilanpassad vy med fler funktioner tillgängliga</li>
+                            <li>Stöd för Excel-filer med smart innehållsinläsning</li>
+                            <li>Utökad felsökningsdokumentation</li>
+                            <li>Utökat stöd för GPT-modeller via Azure</li>
+                        </ul>
+                    </div>
+                    <div class="change-cat cat-fix">
+                        <span class="cat-label">Buggfixar</span>
+                        <ul class="change-list">
+                            <li>Engelska språkinställningar, stabilare Azure OpenAI-strömning</li>
+                            <li>Förbättrad schemaläggning av bakgrundsprocesser</li>
+                            <li>Fliken "Webbplatser" visas nu korrekt, WSO2-valideringsfix</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
             <!-- 1.5.0 -->
-            <div class="release">
+            <div class="release" id="v1.5.0">
                 <div class="release-header">
-                    <span class="ver-tag">v1.5.0</span>
+                    <button type="button" class="ver-tag" aria-expanded="true" aria-controls="v1.5.0-innehall">v1.5.0<svg class="ver-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+                    <a class="release-anchor" href="#v1.5.0" aria-label="Länk till v1.5.0" title="Länk till denna version"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
                     <a href="https://github.com/eneo-ai/eneo/releases/tag/v1.5.0" class="release-link">Se på GitHub <span aria-hidden="true">→</span></a>
                 </div>
-                <div class="change-cat cat-new">
-                    <span class="cat-label">Nya funktioner</span>
-                    <ul class="change-list">
-                        <li><strong>Organisationsbaserad kunskap:</strong> Kunskapsbaser på organisationsnivå tillgängliga för alla användare.</li>
-                        <li><strong>Crawler-inställningar per organisation</strong></li>
-                        <li><strong>Kunskapsvisare:</strong> Förhandsgranska, expandera och ladda ned filer i kunskapskällor.</li>
-                        <li><strong>API-nycklar i gränssnittet:</strong> Hantera credentials för AI-providers direkt i UI.</li>
-                        <li><strong>Förbättrad federerad inloggning:</strong> Konfigurera federation per kund via API.</li>
-                        <li><strong>Tenant-specifika mallar</strong></li>
-                    </ul>
-                </div>
-                <div class="change-cat cat-improved">
-                    <span class="cat-label">Förbättringar</span>
-                    <ul class="change-list">
-                        <li>Paginering för användarlistan, förbättrad filtrering</li>
-                        <li>Konsekventare schemaläggning av crawler (max ~25h mellan krypningar)</li>
-                    </ul>
-                </div>
-                <div class="change-cat cat-fix">
-                    <span class="cat-label">Buggfixar</span>
-                    <ul class="change-list">
-                        <li>Förbättrad felhantering vid webbkrypning, åtgärdade "övergivna" jobb</li>
-                        <li>Fixat problem med webbplatsskapande, sessionshantering, behörigheter</li>
-                    </ul>
+                <div class="release-body" id="v1.5.0-innehall">
+                    <div class="change-cat cat-new">
+                        <span class="cat-label">Nya funktioner</span>
+                        <ul class="change-list">
+                            <li><strong>Organisationsbaserad kunskap:</strong> Kunskapsbaser på organisationsnivå tillgängliga för alla användare.</li>
+                            <li><strong>Crawler-inställningar per organisation</strong></li>
+                            <li><strong>Kunskapsvisare:</strong> Förhandsgranska, expandera och ladda ned filer i kunskapskällor.</li>
+                            <li><strong>API-nycklar i gränssnittet:</strong> Hantera credentials för AI-providers direkt i UI.</li>
+                            <li><strong>Förbättrad federerad inloggning:</strong> Konfigurera federation per kund via API.</li>
+                            <li><strong>Tenant-specifika mallar</strong></li>
+                        </ul>
+                    </div>
+                    <div class="change-cat cat-improved">
+                        <span class="cat-label">Förbättringar</span>
+                        <ul class="change-list">
+                            <li>Paginering för användarlistan, förbättrad filtrering</li>
+                            <li>Konsekventare schemaläggning av crawler (max ~25h mellan krypningar)</li>
+                        </ul>
+                    </div>
+                    <div class="change-cat cat-fix">
+                        <span class="cat-label">Buggfixar</span>
+                        <ul class="change-list">
+                            <li>Förbättrad felhantering vid webbkrypning, åtgärdade "övergivna" jobb</li>
+                            <li>Fixat problem med webbplatsskapande, sessionshantering, behörigheter</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
             <!-- 1.4.0 -->
-            <div class="release">
+            <div class="release" id="v1.4.0">
                 <div class="release-header">
-                    <span class="ver-tag">v1.4.0</span>
+                    <button type="button" class="ver-tag" aria-expanded="true" aria-controls="v1.4.0-innehall">v1.4.0<svg class="ver-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+                    <a class="release-anchor" href="#v1.4.0" aria-label="Länk till v1.4.0" title="Länk till denna version"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
                     <a href="https://github.com/eneo-ai/eneo/releases/tag/v1.4.0" class="release-link">Se på GitHub <span aria-hidden="true">→</span></a>
                 </div>
-                <div class="change-cat cat-new">
-                    <span class="cat-label">Nya funktioner</span>
-                    <ul class="change-list">
-                        <li><strong>Token-räknare:</strong> Se hur mycket av kontextfönstret som är utnyttjat direkt i chatten.</li>
-                    </ul>
-                </div>
-                <div class="change-cat cat-security">
-                    <span class="cat-label">Säkerhet &amp; kontroll</span>
-                    <ul class="change-list">
-                        <li><strong>Förbättrad inloggningsloggning:</strong> Korrelations-ID för OIDC och lösenord.</li>
-                        <li><strong>Tenant-specifika API-nycklar:</strong> Egna nycklar per tenant med Fernet-kryptering.</li>
-                        <li><strong>Tenant-specifik OIDC:</strong> Stöd för EntraID, Mobilityguard m.fl.</li>
-                    </ul>
-                </div>
-                <div class="change-cat cat-improved">
-                    <span class="cat-label">Förbättringar</span>
-                    <ul class="change-list">
-                        <li>Migrering till uv och bun för snabbare builds</li>
-                        <li>Bättre teststruktur, worker-instans konfiguration</li>
-                        <li>Stöd för GDM – svenska AI-modeller</li>
-                    </ul>
+                <div class="release-body" id="v1.4.0-innehall">
+                    <div class="change-cat cat-new">
+                        <span class="cat-label">Nya funktioner</span>
+                        <ul class="change-list">
+                            <li><strong>Token-räknare:</strong> Se hur mycket av kontextfönstret som är utnyttjat direkt i chatten.</li>
+                        </ul>
+                    </div>
+                    <div class="change-cat cat-security">
+                        <span class="cat-label">Säkerhet &amp; kontroll</span>
+                        <ul class="change-list">
+                            <li><strong>Förbättrad inloggningsloggning:</strong> Korrelations-ID för OIDC och lösenord.</li>
+                            <li><strong>Tenant-specifika API-nycklar:</strong> Egna nycklar per tenant med Fernet-kryptering.</li>
+                            <li><strong>Tenant-specifik OIDC:</strong> Stöd för EntraID, Mobilityguard m.fl.</li>
+                        </ul>
+                    </div>
+                    <div class="change-cat cat-improved">
+                        <span class="cat-label">Förbättringar</span>
+                        <ul class="change-list">
+                            <li>Migrering till uv och bun för snabbare builds</li>
+                            <li>Bättre teststruktur, worker-instans konfiguration</li>
+                            <li>Stöd för GDM – svenska AI-modeller</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
             <!-- 1.3.0 -->
-            <div class="release">
+            <div class="release" id="v1.3.0">
                 <div class="release-header">
-                    <span class="ver-tag">v1.3.0</span>
+                    <button type="button" class="ver-tag" aria-expanded="true" aria-controls="v1.3.0-innehall">v1.3.0<svg class="ver-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+                    <a class="release-anchor" href="#v1.3.0" aria-label="Länk till v1.3.0" title="Länk till denna version"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
                     <a href="https://github.com/eneo-ai/eneo/releases/tag/v1.3.0" class="release-link">Se på GitHub <span aria-hidden="true">→</span></a>
                 </div>
-                <div class="warning-box">
-                    <strong>Viktig förändring – kräver åtgärd!</strong> Ny ENCRYPTION_KEY krävs. Måste läggas till i både worker- och backend-instanserna. Se .env.template för instruktioner.
-                </div>
-                <div class="change-cat cat-new">
-                    <span class="cat-label">Nya funktioner</span>
-                    <ul class="change-list">
-                        <li><strong>Smartare navigation:</strong> Automatisk navigering vid skapande av ytor/kollektioner.</li>
-                        <li><strong>Autentiserad crawling:</strong> Basic Auth för intranät som kräver inloggning.</li>
-                        <li><strong>Användningsspårning:</strong> Spåra AI-modellförbrukning i organisationen.</li>
-                        <li><strong>Kvothantering:</strong> Tydligare info vid förbrukad kvot.</li>
-                        <li>Kompletta svenska översättningar för assistenter</li>
-                    </ul>
-                </div>
-                <div class="change-cat cat-improved">
-                    <span class="cat-label">Förbättringar</span>
-                    <ul class="change-list">
-                        <li>Ny testinfrastruktur, renare loggning, optimerad E5-large-modell</li>
-                        <li>Inaktiverade modeller döljs korrekt</li>
-                    </ul>
+                <div class="release-body" id="v1.3.0-innehall">
+                    <div class="warning-box">
+                        <strong>Viktig förändring – kräver åtgärd!</strong> Ny ENCRYPTION_KEY krävs. Måste läggas till i både worker- och backend-instanserna. Se .env.template för instruktioner.
+                    </div>
+                    <div class="change-cat cat-new">
+                        <span class="cat-label">Nya funktioner</span>
+                        <ul class="change-list">
+                            <li><strong>Smartare navigation:</strong> Automatisk navigering vid skapande av ytor/kollektioner.</li>
+                            <li><strong>Autentiserad crawling:</strong> Basic Auth för intranät som kräver inloggning.</li>
+                            <li><strong>Användningsspårning:</strong> Spåra AI-modellförbrukning i organisationen.</li>
+                            <li><strong>Kvothantering:</strong> Tydligare info vid förbrukad kvot.</li>
+                            <li>Kompletta svenska översättningar för assistenter</li>
+                        </ul>
+                    </div>
+                    <div class="change-cat cat-improved">
+                        <span class="cat-label">Förbättringar</span>
+                        <ul class="change-list">
+                            <li>Ny testinfrastruktur, renare loggning, optimerad E5-large-modell</li>
+                            <li>Inaktiverade modeller döljs korrekt</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
         </div>
     </section>
-
-    <!-- UPCOMING -->
-    <section class="upcoming" id="kommande">
-        <div class="container">
-            <div class="label">Kommande</div>
-            <h2>Planerade funktioner</h2>
-            <p class="subtitle">Dessa funktioner är planerade men ännu inte släppta. Innehåll och prioritering kan ändras baserat på utveckling och användarbehov.</p>
-
-            <div class="upcoming-grid">
-                <div class="upcoming-card">
-                    <h3>Omarbetad och utökad funktion för API-nycklar</h3>
-                    <p>API-nycklar per assistent eller space, tidsbegränsningar, specifika behörigheter (read-only/write-only) och förbättrat UI för hantering.</p>
-                </div>
-                <div class="upcoming-card">
-                    <h3>Funktion för driftmeddelanden</h3>
-                    <p>Centrala driftmeddelanden för alla användare, meddelanden i enskilda assistenter samt extern exponering för invånare och företagare.</p>
-                </div>
-            </div>
-
-            <a href="https://github.com/eneo-ai/eneo/issues" class="gh-link">Följ utvecklingen på GitHub <span aria-hidden="true">→</span></a>
-        </div>
-    </section>
+    </main>
 
             <!-- Footer -->
     <footer class="v2-footer">
@@ -461,6 +509,7 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="js/main.js?v=2"></script>
+    <script src="js/main.js?v=3"></script>
+    <script src="js/versioner.js?v=2"></script>
 </body>
 </html>

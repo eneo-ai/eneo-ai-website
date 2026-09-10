@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roadmap - Eneo.ai</title>
-    <meta name="description" content="Roadmap för Eneo.ai – följ vilka funktioner som pågår, kommer härnäst, planeras senare och har levererats.">
+    <meta name="description" content="Roadmap för Eneo.ai – vad som planeras att levereras i kommande versioner av plattformen.">
 
     <!-- Dold testsida: ska inte indexeras (tas bort vid go-live) -->
-    <meta name="robots" content="noindex, nofollow">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="public/favicon.ico">
@@ -21,7 +20,7 @@
     <link rel="stylesheet" href="css/v2-components.css?v=2">
     <link rel="stylesheet" href="css/v2-layout.css?v=2">
     <link rel="stylesheet" href="css/pages/om-eneo.css?v=2">
-    <link rel="stylesheet" href="css/pages/roadmap.css?v=6">
+    <link rel="stylesheet" href="css/pages/roadmap.css?v=10">
 </head>
 <body>
     <a class="skip-link" href="#main-content">Hoppa till huvudinnehåll</a>
@@ -43,6 +42,7 @@
                 <li><a href="samarbetsforum.html">Samarbete</a></li>
                 <li><a href="docs.html">Docs</a></li>
                 <li><a href="versioner.html">Versioner</a></li>
+                <li><a href="roadmap.html" class="nav-active">Roadmap</a></li>
                 <li><a href="nyheter.html">Nyheter</a></li>
                 <li><a href="vanliga-fragor.html">FAQ</a></li>
             </ul>
@@ -65,104 +65,99 @@
             <a href="samarbetsforum.html">Samarbete</a>
             <a href="docs.html">Docs</a>
             <a href="versioner.html">Versioner</a>
+            <a href="roadmap.html">Roadmap</a>
             <a href="nyheter.html">Nyheter</a>
             <a href="vanliga-fragor.html">FAQ</a>
         </div>
     </nav>
 
     <!-- HERO -->
-    <section class="page-hero" id="main-content">
+    <main id="main-content">
+    <section class="page-hero">
         <div class="container">
             <div class="label">Roadmap</div>
-            <h1>Vad händer härnäst i <em>Eneo</em></h1>
+            <h1>Roadmap för <em>Eneo</em></h1>
             <p class="hero-text">
-                Följ utvecklingen av Eneo – vad som pågår, vad som kommer härnäst
-                och vad som redan har levererats. Varje kort är en epic, en större
-                funktion, hämtad direkt från utvecklingsarbetet på GitHub.
+                Vad vi planerar att leverera i kommande versioner av plattformen.
+                Versionsanteckningar för släppta versioner finns under
+                <a href="versioner.html">Versioner</a>.
             </p>
-            <p class="roadmap-disclaimer">Prioritering och tidplan kan ändras under arbetets gång.</p>
-            <p id="roadmap-meta" class="roadmap-meta" hidden>Senast uppdaterad: <time id="roadmap-generated-at"></time></p>
         </div>
     </section>
 
     <!-- ROADMAP -->
-    <section class="roadmap" aria-label="Roadmap">
-        <div class="container">
 
-            <!-- Inaktualitetslarm: visas om datan inte uppdaterats på länge
-                 (t.ex. utgången GitHub-token eller stoppad källexport) -->
-            <p id="roadmap-stale" class="roadmap-stale" role="status" hidden></p>
+        <!-- ROADMAP (manuellt underhållen, en spalt per planerad version) -->
+        <section class="roadmap" aria-label="Roadmap per version">
+            <div class="container">
+                <p class="roadmap-disclaimer"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>Innehåll och tidplan per version kan ändras under arbetets gång.</p>
 
-            <!-- Transparensnotis: epics som ännu inte är publika issues -->
-            <p id="roadmap-unpublished" class="roadmap-notice" role="status" hidden></p>
+                <!-- Alltid tre spalter: nuvarande version under utveckling (gul),
+                     under utveckling utan fastställd version (blå) och planerat (grå).
+                     Varje spalt rymmer två kort i bredd på stora skärmar. -->
+                <div class="roadmap-board roadmap-versions">
 
-            <!-- Filter (fylls av JS från datans värden) -->
-            <div class="roadmap-filters">
-                <div class="roadmap-filter" data-dimension="version" role="group" aria-label="Filtrera epics efter version" hidden></div>
-                <div class="roadmap-filter" data-dimension="sponsor" role="group" aria-label="Filtrera epics efter sponsor" hidden></div>
+                    <section class="roadmap-column column-v-next" aria-labelledby="ver-2-2">
+                        <h2 id="ver-2-2" class="column-title">
+                            <span class="column-dot" aria-hidden="true"></span>
+                            <span class="column-label">Version 2.2</span>
+                            <span class="column-count" aria-hidden="true">10</span>
+                        </h2>
+                        <p class="column-hint">Nuvarande version under utveckling.</p>
+                        <ul class="column-cards">
+                            <li class="epic-card"><h3>Teknisk grund till moduler</h3><p class="epic-desc">Arkitektur för att bygga och koppla in fristående moduler i plattformen.</p></li>
+                            <li class="epic-card"><h3>Personlig chatt 2.0</h3><p class="epic-desc">Webbsök, bildgenerering och skills i den personliga chatten, med central styrning av konfigurationen.</p></li>
+                            <li class="epic-card"><h3>Skills 1.0</h3><p class="epic-desc">Återanvändbara färdigheter som ger assistenter specialiserade arbetssätt.</p></li>
+                            <li class="epic-card"><h3>MCP 2.0 (MCP + kunskap)</h3><p class="epic-desc">MCP-verktyg kombineras med plattformens kunskapskällor i samma svar.</p></li>
+                            <li class="epic-card"><h3>Utökat stöd för felsökning</h3><p class="epic-desc">Ny administratörsfunktion för att felsöka och analysera assistenter och AI-tjänster i plattformen.</p></li>
+                            <li class="epic-card"><h3>Objektlagring som alternativ</h3><p class="epic-desc">Filer kan lagras i objektlagring istället för lokal disk.</p></li>
+                            <li class="epic-card"><h3>UI-optimeringar admingränssnitt</h3><p class="epic-desc">Administratörsgränssnittet är förbättrat och omstrukturerat för att rymma fler funktioner.</p></li>
+                            <li class="epic-card"><h3>Sharepoint-optimering</h3><p class="epic-desc">Integrationen fungerar bättre och snabbare mot väldigt stora SharePoint- och Teams-installationer.</p></li>
+                            <li class="epic-card"><h3>Webbsök</h3><p class="epic-desc">Assistenten söker på webben för att komplettera egna kunskapskällor.</p></li>
+                            <li class="epic-card"><h3>Bildgenerering</h3><p class="epic-desc">Skapa bilder direkt i plattformen.</p></li>
+                        </ul>
+                        <p class="column-empty" hidden>Inget planerat här ännu.</p>
+                    </section>
+
+                    <section class="roadmap-column column-v-soon" aria-labelledby="col-under-utveckling">
+                        <h2 id="col-under-utveckling" class="column-title">
+                            <span class="column-dot" aria-hidden="true"></span>
+                            <span class="column-label">Under utveckling</span>
+                            <span class="column-count" aria-hidden="true">9</span>
+                        </h2>
+                        <p class="column-hint">Utvecklas nu, utan fastställd version.</p>
+                        <ul class="column-cards">
+                            <li class="epic-card"><h3>Flöden</h3><p class="epic-desc">Ny funktion för att bygga automatiserade AI-baserade flöden och processer, och grunden till bland annat tal-till-text.</p></li>
+                            <li class="epic-card"><h3>Tal-till-text-app</h3><p class="epic-desc">Gränssnitt för tal-till-text som bygger på flöden.</p></li>
+                            <li class="epic-card"><h3>Utbyte av crawler</h3><p class="epic-desc">Ny webbcrawler som ersätter den nuvarande.</p></li>
+                            <li class="epic-card"><h3>Marketplace</h3><p class="epic-desc">Yta för att publicera och återanvända assistenter och skills mellan verksamheter.</p></li>
+                            <li class="epic-card"><h3>Widget</h3><p class="epic-desc">Inbäddningsbar chatt för externa webbplatser och intranät.</p></li>
+                            <li class="epic-card"><h3>Ställa frågor till fil</h3><p class="epic-desc">Ladda upp mer komplexa filer, som Excel, och ställa frågor till dem med bibehållen struktur.</p></li>
+                            <li class="epic-card"><h3>Byta lösenord</h3><p class="epic-desc">Användaren byter själv sitt lösenord.</p></li>
+                            <li class="epic-card"><h3>Custom headers/metadata, för t ex intern fakturering</h3><p class="epic-desc">Egen metadata på anrop så användning kan fördelas på rätt kostnadsställe.</p></li>
+                            <li class="epic-card"><h3>Styra modell på användargrupp</h3><p class="epic-desc">Administratören bestämmer vilka modeller olika användargrupper får använda.</p></li>
+                        </ul>
+                        <p class="column-empty" hidden>Inget planerat här ännu.</p>
+                    </section>
+
+                    <section class="roadmap-column column-v-none" aria-labelledby="col-planerat">
+                        <h2 id="col-planerat" class="column-title">
+                            <span class="column-dot" aria-hidden="true"></span>
+                            <span class="column-label">Planerat</span>
+                            <span class="column-count" aria-hidden="true">2</span>
+                        </h2>
+                        <p class="column-hint">Beslutat eller under utredning, inte påbörjat.</p>
+                        <ul class="column-cards">
+                            <li class="epic-card"><h3>GDPR-registerutdrag</h3><p class="epic-desc">Ta fram alla personuppgifter som lagras om en användare.</p></li>
+                            <li class="epic-card"><h3>Utvecklat stöd för introduktion och utbildning i plattformen</h3><p class="epic-desc">Inbyggd onboarding och guider för nya användare.</p></li>
+                        </ul>
+                        <p class="column-empty" hidden>Inget planerat här ännu.</p>
+                    </section>
+
+                </div>
             </div>
-            <p id="roadmap-filter-status" class="sr-only" role="status" aria-live="polite"></p>
-
-            <p id="roadmap-loading" class="roadmap-loading">Läser in roadmapen …</p>
-            <p id="roadmap-error" class="roadmap-error" role="status" hidden>
-                Roadmapen kunde inte läsas in just nu.
-                <a href="https://github.com/eneo-ai/eneo/issues" target="_blank" rel="noopener">Följ utvecklingen på GitHub<span class="sr-only"> (öppnas i ny flik)</span></a>.
-            </p>
-            <noscript>
-                <p class="roadmap-notice">
-                    Roadmapen kräver JavaScript för att visas här.
-                    <a href="https://github.com/eneo-ai/eneo/issues" target="_blank" rel="noopener">Följ utvecklingen på GitHub<span class="sr-only"> (öppnas i ny flik)</span></a>.
-                </p>
-            </noscript>
-
-            <!-- Tavla: grupperna kommer från exportens kontrakt, JS fyller listorna -->
-            <div class="roadmap-board">
-
-                <section class="roadmap-column column-pagar" data-group="in_progress" aria-labelledby="col-pagar">
-                    <h2 id="col-pagar" class="column-title">
-                        <span class="column-dot" aria-hidden="true"></span>
-                        Pågår
-                        <span class="column-count" aria-hidden="true"></span>
-                    </h2>
-                    <ul class="column-cards"></ul>
-                    <p class="column-empty" hidden>Inga epics här just nu.</p>
-                </section>
-
-                <section class="roadmap-column column-harnast" data-group="next" aria-labelledby="col-harnast">
-                    <h2 id="col-harnast" class="column-title">
-                        <span class="column-dot" aria-hidden="true"></span>
-                        Härnäst
-                        <span class="column-count" aria-hidden="true"></span>
-                    </h2>
-                    <ul class="column-cards"></ul>
-                    <p class="column-empty" hidden>Inga epics här just nu.</p>
-                </section>
-
-                <section class="roadmap-column column-senare" data-group="later" aria-labelledby="col-senare">
-                    <h2 id="col-senare" class="column-title">
-                        <span class="column-dot" aria-hidden="true"></span>
-                        Senare
-                        <span class="column-count" aria-hidden="true"></span>
-                    </h2>
-                    <ul class="column-cards"></ul>
-                    <p class="column-empty" hidden>Inga epics här just nu.</p>
-                </section>
-
-                <section class="roadmap-column column-levererat" data-group="delivered" aria-labelledby="col-levererat">
-                    <h2 id="col-levererat" class="column-title">
-                        <span class="column-dot" aria-hidden="true"></span>
-                        Levererat
-                        <span class="column-count" aria-hidden="true"></span>
-                    </h2>
-                    <ul class="column-cards"></ul>
-                    <p class="column-empty" hidden>Inga epics här just nu.</p>
-                </section>
-
-            </div>
-
-            <a href="https://github.com/eneo-ai/eneo/issues" class="gh-link" target="_blank" rel="noopener">Följ utvecklingen på GitHub<span class="sr-only"> (öppnas i ny flik)</span> <span aria-hidden="true">→</span></a>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="v2-footer">
@@ -198,7 +193,6 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="js/main.js?v=2"></script>
-    <script src="js/roadmap.js?v=5"></script>
+    <script src="js/main.js?v=3"></script>
 </body>
 </html>

@@ -129,22 +129,29 @@ window.addEventListener('resize', function() {
     }
 });
 
-// Smooth scrolling for anchor links
+// Smooth scrolling for anchor links.
+// Målet slås upp med getElementById (inte querySelector) så att id:n med
+// punkter, t.ex. "v2.1.0", fungerar. Adressfältet uppdateras så att länken
+// går att kopiera och dela.
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        let id;
+        try { id = decodeURIComponent(href.slice(1)); } catch (err) { return; }
+        const target = id && document.getElementById(id);
+        if (!target) return; // låt webbläsaren sköta t.ex. "#" eller okända mål
+
         e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const target = document.querySelector(targetId);
+        const headerOffset = 100;
+        const elementPosition = target.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-        if (target) {
-            const headerOffset = 100;
-            const elementPosition = target.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: prefersReducedMotion.matches ? 'auto' : 'smooth'
-            });
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: prefersReducedMotion.matches ? 'auto' : 'smooth'
+        });
+        if (window.location.hash !== href) {
+            history.pushState(null, '', href);
         }
     });
 });
@@ -202,6 +209,40 @@ function createIntersectionObserver(callback, options = {}) {
 
     return new IntersectionObserver(callback, observerOptions);
 }
+
+// Ankarlänkar vid sidladdning: webbläsaren hoppar till #målet innan
+// webbtypsnitt och bilder laddats, och när layouten sedan förskjuts hamnar
+// målet under det fasta sidhuvudet. Under ett par sekunder efter laddning
+// hoppar vi därför om till målet varje gång sidans höjd ändras – tills
+// användaren själv börjar rulla.
+(function () {
+    if (!window.location.hash || typeof ResizeObserver === 'undefined') return;
+    var id;
+    try { id = decodeURIComponent(window.location.hash.slice(1)); } catch (e) { return; }
+    var target = id && document.getElementById(id);
+    if (!target || target.closest('[hidden]')) return;
+
+    var active = true;
+    function stop() {
+        active = false;
+        observer.disconnect();
+        ['wheel', 'touchstart', 'keydown'].forEach(function (type) {
+            window.removeEventListener(type, stop);
+        });
+    }
+    function rescroll() {
+        if (active) target.scrollIntoView({ behavior: 'instant', block: 'start' });
+    }
+    var observer = new ResizeObserver(rescroll);
+    observer.observe(document.documentElement);
+    ['wheel', 'touchstart', 'keydown'].forEach(function (type) {
+        window.addEventListener(type, stop, { passive: true });
+    });
+    window.addEventListener('load', function () {
+        rescroll();
+        setTimeout(stop, 2500);
+    });
+})();
 
 // Export functions for potential use in other scripts
 window.Eneo = {

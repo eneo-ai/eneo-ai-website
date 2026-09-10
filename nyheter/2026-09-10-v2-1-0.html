@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eneo v1.9.0 - Nyheter - Eneo.ai</title>
-    <meta name="description" content="Eneo v1.9.0 lanserar ny hantering av AI-modellsleverantörer med stöd för över 60 leverantörer av inferens och LLM direkt i gränssnittet, mer exakt tokenräkning, säkerhetsklassning för MCP-servrar och integrationer i delade ytor.">
+    <title>Eneo v2.1.0 - Nyheter - Eneo.ai</title>
+    <meta name="description" content="Eneo v2.1.0 ger automatisk användarhantering via SCIM, egen behörighet för personlig chatt, en promptguide för assistenter, felsökning med OpenTelemetry och kostnader i användningsstatistiken.">
     <link rel="icon" type="image/x-icon" href="../public/favicon.ico">
-    <meta property="og:title" content="Eneo v1.9.0 - Nyheter - Eneo.ai" />
-    <meta property="og:description" content="Eneo v1.9.0 lanserar ny hantering av AI-modellsleverantörer med stöd för över 60 leverantörer av inferens och LLM direkt i gränssnittet, mer exakt tokenräkning, säkerhetsklassning för MCP-servrar och integrationer i delade ytor." />
+    <meta property="og:title" content="Eneo v2.1.0 - Nyheter - Eneo.ai" />
+    <meta property="og:description" content="Eneo v2.1.0 ger automatisk användarhantering via SCIM, egen behörighet för personlig chatt, en promptguide för assistenter, felsökning med OpenTelemetry och kostnader i användningsstatistiken." />
     <meta property="og:image" content="https://eneo.ai/public/images/nyheter/version-release.svg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:url" content="https://eneo.ai/nyheter/2026-04-07-v1-9-0.html" />
+    <meta property="og:url" content="https://eneo.ai/nyheter/2026-09-10-v2-1-0.html" />
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="Eneo.ai" />
     <meta property="og:locale" content="sv_SE" />
@@ -86,9 +86,9 @@
         <section class="article-header">
             <div class="container">
                 <a href="../nyheter.html" class="article-back"><span aria-hidden="true">&larr;</span> Alla nyheter</a>
-                <h1>Eneo v1.9.0</h1>
+                <h1>Eneo v2.1.0</h1>
                 <div class="news-meta">
-                    <span class="news-date">7 april 2026</span>
+                    <span class="news-date">10 september 2026</span>
                     <span class="news-tag news-tag-release">Release</span>
                 </div>
             </div>
@@ -104,34 +104,42 @@
         <!-- Article Content -->
         <section class="article-content" id="main-content">
             <div class="container">
-                <p>Version 1.9.0 av Eneo är här. Den här releasen lägger grunden för en betydligt mer flexibel hantering av AI-modellsleverantörer, gör tokenhanteringen mer exakt och stärker säkerheten kring MCP-integrationer. Flera kvalitetsförbättringar gör vardagen enklare både för administratörer och slutanvändare.</p>
+                <p>Eneo version 2.1.0 är släppt. Versionen gör det enklare att driva Eneo i en större organisation: användare kan hanteras automatiskt från identitetssystemet via SCIM, rätten till personlig chatt blir en egen behörighet, en promptguide hjälper till att skriva bättre instruktioner till assistenter och strukturerade loggar gör felsökning lättare. Dessutom får administratörer bättre överblick över modeller och kostnader.</p>
 
-                <h2>Över 60 AI-modellsleverantörer direkt i gränssnittet</h2>
-                <p>Den största nyheten är en helt omarbetad hantering av AI-modellsleverantörer – alltså leverantörer av inferens och LLM. Administratörer kan nu lägga till och konfigurera över 60 sådana leverantörer direkt i webbgränssnittet, bland annat OpenAI, Azure, Anthropic, Gemini, Mistral, Groq och AWS Bedrock.</p>
-                <p>Den nya hanteringen ger alla leverantörer samma förutsättningar: så länge en leverantör stöds av LiteLLM kan den läggas till i Eneo utan att vi behöver bygga något nytt i frontend. Uppgifter lagras krypterat, anslutningar kan testas direkt, och nya modeller läggs till via en tydlig guide. Favoritleverantörer kan fästas och sorteras om efter egna behov.</p>
-                <p>Självklart finns fortsatt fullt stöd för att köra AI-modeller lokalt, exempelvis via vLLM eller Ollama, för den som vill ha all inferens i egen drift. Eneo är agnostiskt kring var modellerna körs – valet mellan extern leverantör och lokal drift görs per modell utifrån verksamhetens egna krav på suveränitet, kostnad och prestanda.</p>
+                <h2>Automatisk användarhantering via SCIM</h2>
+                <p>Eneo har nu stöd för SCIM 2.0. Det innebär att användare kan skapas, uppdateras och avaktiveras automatiskt från organisationens identitetssystem, till exempel Microsoft Entra ID. Grupper och medlemskap kan också synkroniseras.</p>
+                <p>När kopplingen är konfigurerad minskar behovet av att hantera användare manuellt i Eneo. Läs mer i <a href="https://docs.eneo.ai/guides/scim-provisioning" target="_blank" rel="noopener">SCIM-guiden<span class="sr-only"> (öppnas i ny flik)</span></a>.</p>
 
-                <h2>Mer exakt tokenräkning</h2>
-                <p>Tokenanvändning och kontextfönster bygger nu på siffror från leverantören i stället för lokala uppskattningar. Om ett meddelande blir för långt visas tydlig information om varför, och texten ligger kvar så att det går att justera och skicka igen. Flera filer kan också bifogas i samma meddelande.</p>
+                <h2>Egen behörighet för personlig chatt</h2>
+                <p>Rätten att använda den personliga chatten är nu en egen behörighet, skild från rätten att använda assistenter. Det gör att en organisation kan ge olika grupper olika åtkomst, till exempel tillåta assistenter men inte personlig chatt, eller det omvända.</p>
 
-                <h2>Säkerhetsklassning för MCP-servrar</h2>
-                <p>Administratörer kan nu sätta en säkerhetsnivå per MCP-server. Ytor visar då bara de servrar som matchar eller överstiger den nivån, vilket gör det enklare att styra vilka verktyg som är tillgängliga i vilka sammanhang. Hantering av organisationsövergripande integrationer kräver dessutom nu administratörsbehörighet.</p>
+                <h2>Promptguide i Eneo</h2>
+                <p>En ny guide hjälper den som skapar eller redigerar en assistent att formulera tydligare instruktioner. Guiden ställer följdfrågor och tar fram ett förslag som kan granskas och sparas i assistentens inställningar. En administratör installerar guiden och ser till att den har en AI-modell att använda.</p>
 
-                <h2>Integrationer i delade ytor</h2>
-                <p>Delade ytor visar nu integrationsfliken och kan importera kunskap från till exempel SharePoint på samma sätt som organisationsytor. Det gör att grupper som samarbetar kring ett område kan arbeta mot samma kunskapskällor som övriga organisationen.</p>
+                <h2>Lättare felsökning med OpenTelemetry</h2>
+                <p>Eneo har fått strukturerade loggar och gemensamma spårnings-ID, så att det blir lättare att följa ett anrop och hitta orsaken till ett fel. Loggformatet bygger på OpenTelemetry och kan användas i organisationens logghantering.</p>
+
+                <h2>Bättre överblick över modeller och kostnader</h2>
+                <p>Modellhanteringen visar nu tydligare vilka modeller som är på väg att fasas ut och vilka assistenter, appar och andra resurser som berörs av ett modellbyte. Varningar om kompatibilitet och säkerhetsklassning har blivit tydligare, och det går nu att migrera även transkriptionsmodeller. Modellbyten kan följas i en sökbar historik, samtidigt som tidigare chatsvar behåller kopplingen till modellen som skapade dem.</p>
+                <p>Användningsstatistiken har kompletterats med uppskattade modellkostnader i USD, så att administratörer kan följa både tokenförbrukning och kostnad. Modellpriser kan hämtas från modellkatalogen eller anges i administrationen. Beräkningen bygger på modellernas aktuella prisuppgifter och ska ses som en uppskattning.</p>
 
                 <h2>Fler förbättringar</h2>
                 <ul>
-                    <li><strong>Tydligare felmeddelanden</strong> på svenska och engelska gör det lättare att förstå vad som behöver rättas.</li>
-                    <li><strong>Flera redirect-URI:er</strong> stöds nu för federation via IdP/SSO, och federationer kan uppdateras stegvis.</li>
-                    <li><strong>Paginering på serversidan</strong> i adminvyn för användare gör stora användarbaser lättare att hantera.</li>
-                    <li><strong>Ikoner för gruppchattar</strong> gör dem enklare att skilja från assistenter i sidofältet.</li>
-                    <li><strong>Samlad användningssida</strong> där statistik och användningsnivåer visas på en plats och anpassas efter valt datumintervall.</li>
-                    <li><strong>Toast-notiser</strong> ersätter gamla webbläsarvarningar i gränssnittet.</li>
-                    <li><strong>Smeknamn för embedding-modeller</strong> ger mer användarvänliga visningsnamn.</li>
+                    <li><strong>Bättre koll på utrymmet i konversationen</strong> – chatten visar det uppskattade utrymmet i förhållande till modellens kontextgräns i en indikator som uppdateras medan du skriver och bifogar filer.</li>
+                    <li><strong>Avbrutna chatsvar sparas</strong> – om ett svar avbryts medan det skrivs ut sparas både din fråga och den del av svaret som hann komma fram.</li>
+                    <li><strong>Byt namn på konversationer</strong> direkt från historiken, så att det blir lättare att hitta tillbaka till ett tidigare samtal.</li>
+                    <li><strong>Modernare gränssnitt</strong> – omarbetat sidhuvud med ny profilmeny, uppdaterad jobbhanterare, ny vy för att välja kunskapskällor och en ny design för modelladministrationen.</li>
+                    <li><strong>Tydligare felmeddelanden och fler översatta texter</strong> – felmeddelanden för misslyckade jobb och filuppladdningar kan expanderas, och fler texter i gränssnittet är översatta.</li>
+                    <li><strong>Stabilare SharePoint-synkronisering</strong> – när Microsoft Graph tillfälligt begränsar anropen väntar Eneo och försöker igen, och skyddet mot krockande synkroniseringar har förstärkts.</li>
+                    <li><strong>Tydligare API-dokumentation</strong> med beskrivningar, svarstyper och felkoder, vilket gör det enklare att bygga egna integrationer mot Eneo.</li>
+                    <li><strong>SBOM-filer med digital attestering</strong> publiceras automatiskt med varje release och kan verifieras. Läs mer i dokumentationen om <a href="https://docs.eneo.ai/docs/release-sboms" target="_blank" rel="noopener">Release SBOMs<span class="sr-only"> (öppnas i ny flik)</span></a>.</li>
+                    <li><strong>Uppdaterade beroenden och utökade tester</strong> – både backend och frontend har fått paket med säkerhetsrättningar, och en resursläcka i MCP-anslutningar som kunde öka serverns processorbelastning över tid är åtgärdad.</li>
                 </ul>
 
-                <p>En fullständig lista med alla nya funktioner, förbättringar, säkerhetsändringar och buggfixar finns på <a href="../versioner.html#versionshistorik">versionssidan</a>. Källkoden och taggen v1.9.0 finns på <a href="https://github.com/eneo-ai/eneo/releases/tag/v1.9.0" target="_blank" rel="noopener">GitHub<span class="sr-only"> (öppnas i ny flik)</span></a>.</p>
+                <h2>Inför uppgradering</h2>
+                <p>Installationer som tidigare uppgraderats från v2.0.1 till v2.1.0-rc.1 behöver följa en särskild anvisning för att rätta databasens migreringsstatus. Direkt uppgradering från v2.0.0 eller v2.0.1 till slutversionen, samt nya installationer, kräver inte denna åtgärd. Se <a href="https://github.com/eneo-ai/eneo/releases/tag/v2.1.0" target="_blank" rel="noopener">uppgraderingsanvisningen i den engelska releasen<span class="sr-only"> (öppnas i ny flik)</span></a>.</p>
+
+                <p>En fullständig lista med alla nya funktioner, förbättringar och säkerhetsändringar finns på <a href="../versioner.html#v2.1.0">versionssidan</a>. Källkoden och taggen v2.1.0 finns på <a href="https://github.com/eneo-ai/eneo/releases/tag/v2.1.0" target="_blank" rel="noopener">GitHub<span class="sr-only"> (öppnas i ny flik)</span></a>.</p>
             </div>
         </section>
     </main>

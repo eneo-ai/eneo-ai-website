@@ -763,6 +763,30 @@ kbd {
 .end-footer a:focus-visible { outline: 3px solid var(--p-brand); outline-offset: 3px; }
 .end-footer { font-size: 0.8em; }
 
+/* ── Stängknapp uppe till höger ── */
+.deck-close {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: var(--z-fixed);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--header-bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: var(--shadow-md);
+    transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+.deck-close svg { width: 20px; height: 20px; }
+.deck-close:hover { background: var(--white-overlay-hover); border-color: var(--border-hover); }
+.deck-close:focus-visible { outline: 3px solid var(--p-brand); outline-offset: 2px; }
+
 /* ── Förloppsindikator ── */
 .deck-progress {
     position: fixed;
@@ -920,6 +944,6 @@ kbd {
 
 /* ── Reducerad rörelse ── */
 @media (prefers-reduced-motion: reduce) {
-    .tool-card, .deck-progress-bar, .deck-btn { transition: none; }
+    .tool-card, .deck-progress-bar, .deck-btn, .deck-close { transition: none; }
     .tool-card:hover { transform: none; }
 }

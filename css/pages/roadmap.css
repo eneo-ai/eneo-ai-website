@@ -1,153 +1,63 @@
-/* Roadmap Page Styles - v3 (GitHub-driven data) */
+/* Roadmap Page Styles – manuellt underhållna kort per version */
 
 :root {
     --font-mono: 'JetBrains Mono', monospace;
 }
 
 /* ── HERO-META ── */
+/* Faktaruta ovanför tavlan: etikett i stället för löpande text */
 .roadmap-disclaimer {
-    margin-top: 1.25rem;
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    max-width: 42rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 0 1.25rem;
+    padding: 0.45rem 0.9rem 0.45rem 0.7rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--white-overlay);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text);
 }
-.roadmap-meta {
-    margin-top: 0.4rem;
-    font-size: 0.82rem;
-    color: var(--text-faint);
+.roadmap-disclaimer svg {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    color: var(--brand-light);
 }
-.roadmap-meta time {
-    color: var(--text-muted);
+.page-hero .hero-text a {
+    color: var(--text);
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+}
+.page-hero .hero-text a:hover,
+.page-hero .hero-text a:focus-visible {
+    color: var(--brand-light);
+}
+.page-hero .hero-text a:focus-visible {
+    outline: 2px solid var(--brand-bright);
+    outline-offset: 2px;
+    border-radius: 3px;
 }
 
+/* Tätare mellan sidhuvudets ingress och tavlan */
+.page-hero {
+    padding-bottom: 2.5rem;
+}
 /* ── SECTION ── */
 .roadmap {
-    padding: 2rem 0 7rem;
+    padding: 0.5rem 0 7rem;
 }
 /* Bredare yta för tavlan på desktop än sajtens standardcontainer */
 .roadmap .container {
-    max-width: 90rem;
+    max-width: 100rem;
 }
 
-/* ── NOTISER / TILLSTÅND ── */
-.roadmap-notice {
-    margin-bottom: 1.5rem;
-    padding: 0.9rem 1.2rem;
-    border-radius: var(--radius-md);
-    background: var(--brand-dim);
-    border: 1px solid var(--border);
-    color: var(--text);
-    font-size: 0.9rem;
-    line-height: 1.5;
-    max-width: 48rem;
-}
-.roadmap-loading {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    padding: 2rem 0;
-}
-.roadmap-error {
-    margin-bottom: 1.5rem;
-    padding: 0.9rem 1.2rem;
-    border-radius: var(--radius-md);
-    background: var(--amber-dim);
-    border: 1px solid rgba(240, 160, 48, 0.3);
-    color: var(--text);
-    font-size: 0.9rem;
-    line-height: 1.5;
-    max-width: 48rem;
-}
-.roadmap-error a,
-.roadmap-notice a {
-    color: var(--brand-light);
-    font-weight: 600;
-}
-
-/* Inaktualitetslarm — amber varning, framträdande överst */
-.roadmap-stale {
-    margin-bottom: 1.5rem;
-    padding: 0.9rem 1.2rem 0.9rem 2.6rem;
-    position: relative;
-    border-radius: var(--radius-md);
-    background: var(--amber-dim);
-    border: 1px solid rgba(240, 160, 48, 0.35);
-    color: var(--text);
-    font-size: 0.9rem;
-    line-height: 1.5;
-    max-width: 48rem;
-}
-.roadmap-stale::before {
-    content: '';
-    position: absolute;
-    left: 1rem;
-    top: 1rem;
-    width: 1rem;
-    height: 1rem;
-    background: var(--amber);
-    /* triangel-varningsikon via mask */
-    -webkit-mask: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2 1 21h22L12 2zm0 6v6m0 3v.5' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-    mask: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2 1 21h22L12 2zm0 6v6m0 3v.5' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-}
-
-/* ── FILTER (version + sponsor) ── */
-.roadmap-filters {
-    margin-bottom: 2.5rem;
+/* ── TAVLA (rader: en per grupp, korten i ett flödande rutnät) ── */
+.roadmap-board {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
-}
-.roadmap-filter {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    flex-wrap: wrap;
-}
-.roadmap-filter[hidden] {
-    display: none;
-}
-.filter-label {
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin-right: 0.2rem;
-}
-.roadmap-filter button {
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
-    font-weight: 500;
-    padding: 0.6rem 1rem;
-    min-height: 44px;
-    display: inline-flex;
-    align-items: center;
-    border-radius: 7px;
-    border: 1px solid var(--border);
-    background: transparent;
-    color: var(--text-muted);
-    cursor: pointer;
-    transition: all var(--transition-normal);
-}
-.roadmap-filter button:hover {
-    border-color: var(--border-hover);
-    color: var(--text);
-}
-.roadmap-filter button:focus-visible {
-    outline: 2px solid var(--brand-bright);
-    outline-offset: 2px;
-}
-.roadmap-filter button.active {
-    background: var(--brand-dim);
-    border-color: var(--brand-bright);
-    color: var(--brand-light);
-}
-
-/* ── TAVLA ── */
-.roadmap-board {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.25rem;
-    align-items: start;
+    gap: 1.75rem;
 }
 .roadmap-board[hidden] {
     display: none;
@@ -157,27 +67,70 @@
     background: var(--white-overlay);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
-    padding: 1.25rem 1rem;
+    padding: 1.4rem 1.5rem 1.6rem;
 }
 .roadmap-column[hidden] {
     display: none;
 }
 
-/* Kolumnfärger (grupper från exportens kontrakt) */
-.column-pagar     { --col-color: var(--amber);  --col-dim: var(--amber-dim); }
-.column-harnast   { --col-color: var(--accent); --col-dim: var(--accent-dim); }
-.column-senare    { --col-color: var(--purple); --col-dim: var(--purple-dim); }
-.column-levererat { --col-color: var(--green);  --col-dim: var(--green-dim); }
+/* ── VERSIONSTAVLA (Roadmap-fliken: en spalt per planerad version) ── */
+.roadmap-versions {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 1.25rem;
+}
+/* Alltid tre spalter sida vid sida på stora skärmar, med två kort i bredd i varje */
+@media (min-width: 1100px) {
+    .roadmap-versions {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .roadmap-versions .column-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: stretch; /* två kort i samma rad får samma höjd */
+        gap: 0.8rem;
+    }
+}
+/* Spaltfärgen visar tidsavstånd, inte kategori */
+.column-v-next  { --col-color: var(--amber);      --col-dim: var(--amber-dim); }
+.column-v-soon  { --col-color: var(--accent);     --col-dim: var(--accent-dim); }
+.column-v-later { --col-color: var(--purple);     --col-dim: var(--purple-dim); }
+.column-v-none  { --col-color: var(--text-faint); --col-dim: transparent; }
+/* Spalten är smal: rubriklinjen och räknaren får inte tränga ut versionsnamnet */
+.roadmap-versions .column-title {
+    flex-wrap: wrap;
+}
+.roadmap-versions h2.column-title::after {
+    flex-basis: 100%;
+    margin-top: 0.65rem;
+}
+.column-v-none .column-count {
+    background: var(--white-overlay);
+}
 
+/* Statusetikett på ett manuellt kort (t.ex. Pågår, Utforskas) */
 .column-title {
     display: flex;
     align-items: center;
-    gap: 0.55rem;
-    font-size: 0.95rem;
+    gap: 0.6rem;
+    font-size: 1.05rem;
     font-weight: 700;
     color: var(--text);
-    margin: 0 0 1.1rem;
-    padding: 0 0.25rem;
+    margin: 0;
+    padding: 0;
+}
+.column-label {
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: 1.2;
+    margin: 0;
+}
+/* Hårfin linje som avslutar radrubriken (endast de öppna raderna) */
+h2.column-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--border), transparent);
 }
 .column-dot {
     width: 0.6rem;
@@ -188,11 +141,10 @@
     box-shadow: 0 0 8px var(--col-dim);
 }
 .column-count {
-    margin-left: auto;
     font-family: var(--font-mono);
     font-size: 0.75rem;
     font-weight: 500;
-    color: var(--text-muted);
+    color: var(--text); /* text-muted når inte 4.5:1 mot den tonade bakgrunden i mörkt tema */
     background: var(--col-dim);
     border: 1px solid var(--border);
     padding: 0.15rem 0.55rem;
@@ -202,13 +154,21 @@
     display: none;
 }
 
+/* Kort ledtext under radrubriken */
+.column-hint {
+    margin: 0.45rem 0 1.15rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
 .column-cards {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.9rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 21rem), 1fr));
+    gap: 1rem;
+    align-items: start;
 }
 
 /* ── EPIC-KORT ── */
@@ -216,7 +176,6 @@
     position: relative;
     background: var(--bg-card);
     border: 1px solid var(--border);
-    border-left: 3px solid var(--col-color);
     border-radius: var(--radius-md);
     padding: 1rem 1.1rem 1.1rem;
     box-shadow: var(--shadow-sm);
@@ -230,171 +189,29 @@
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
     border-color: var(--border-hover);
-    border-left-color: var(--col-color);
 }
 
+/* Korttitlar i sans-serif: serifen Newsreader är sajtens rubriktypsnitt för
+   stora ytor, men i små kort blir den plottrig. Plus Jakarta Sans i semibold
+   läses bättre i kortstorlek och är redan inläst på sidan. */
 .epic-card h3 {
-    font-size: 0.98rem;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
     font-weight: 600;
-    line-height: 1.35;
+    letter-spacing: -0.01em;
+    line-height: 1.4;
     margin: 0;
 }
 
-/* Sponsor/kommun — alltid synlig etikett på kortet, filtrerar vid klick */
-.epic-sponsor {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
-    margin-top: 0.55rem;
-    padding: 0.25rem 0.6rem 0.25rem 0.5rem;
-    border-radius: 999px;
-    border: 1px solid var(--brand-bright);
-    background: var(--brand-dim);
-    color: var(--brand-light);
-    font-family: inherit;
-    font-size: 0.74rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all var(--transition-normal);
-}
-.epic-sponsor::before {
-    content: '';
-    width: 0.7rem;
-    height: 0.7rem;
-    flex-shrink: 0;
-    background: currentColor;
-    /* karta/plats-ikon (feather map-pin) via mask */
-    -webkit-mask: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z'/%3E%3Ccircle cx='12' cy='10' r='3'/%3E%3C/svg%3E");
-    mask: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z'/%3E%3Ccircle cx='12' cy='10' r='3'/%3E%3C/svg%3E");
-}
-.epic-sponsor:hover {
-    background: var(--brand-bright);
-    color: #fff;
-}
-.epic-sponsor:focus-visible {
-    outline: 2px solid var(--brand-bright);
-    outline-offset: 2px;
-}
-
-/* ── VISA MER / VISA MINDRE ── */
-.epic-toggle {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    margin-top: 0.6rem;
-    padding: 0.35rem 0;
-    min-height: 44px;
-    background: none;
-    border: none;
-    color: var(--brand-light);
-    font-family: inherit;
-    font-size: 0.8rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: color var(--transition-normal);
-}
-.epic-toggle:hover {
-    color: var(--accent);
-}
-.epic-toggle:focus-visible {
-    outline: 2px solid var(--brand-bright);
-    outline-offset: 2px;
-    border-radius: 4px;
-}
-.epic-toggle-icon {
-    width: 0.55rem;
-    height: 0.55rem;
-    border-right: 2px solid currentColor;
-    border-bottom: 2px solid currentColor;
-    transform: rotate(45deg);
-    transition: transform var(--transition-normal);
-    margin-top: -0.15rem;
-}
-.epic-toggle[aria-expanded="true"] .epic-toggle-icon {
-    transform: rotate(-135deg);
-    margin-top: 0.1rem;
-}
-
-/* Fällbar del: beskrivning + metadata */
-.epic-details {
-    margin-top: 0.7rem;
-}
-.epic-details[hidden] {
-    display: none;
-}
-.epic-link {
-    color: var(--text);
-    text-decoration: none;
-    transition: color var(--transition-normal);
-}
-.epic-link:hover {
-    color: var(--brand-light);
-    text-decoration: underline;
-}
-.epic-link:focus-visible {
-    outline: 2px solid var(--brand-bright);
-    outline-offset: 2px;
-    border-radius: 4px;
-}
-
-.epic-summary {
-    font-size: 0.85rem;
-    line-height: 1.55;
+/* Kort beskrivning under titeln, en mening */
+.epic-desc {
+    margin: 0.35rem 0 0;
+    font-size: 0.82rem;
+    line-height: 1.45;
     color: var(--text-muted);
-    margin: 0 0 0.85rem;
-    white-space: pre-line;
-}
-.epic-summary:last-child {
-    margin-bottom: 0;
 }
 
-.epic-meta {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    flex-wrap: wrap;
-}
-.epic-chip {
-    font-size: 0.72rem;
-    font-weight: 500;
-    color: var(--text-muted);
-    background: var(--white-overlay);
-    border: 1px solid var(--border);
-    border-radius: 5px;
-    padding: 0.22rem 0.55rem;
-}
-
-/* Versionsknapp på kortet - filtrerar vid klick */
-.epic-version {
-    position: relative;
-    flex-shrink: 0;
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    font-weight: 500;
-    color: var(--text-muted);
-    background: var(--white-overlay);
-    border: 1px solid var(--border);
-    border-radius: 5px;
-    padding: 0.25rem 0.6rem;
-    cursor: pointer;
-    transition: all var(--transition-normal);
-}
-/* Utökad träffyta (minst 44x44px) utan att förstora knappen visuellt */
-.epic-version::after {
-    content: '';
-    position: absolute;
-    inset: -0.7rem;
-}
-.epic-version:hover {
-    color: var(--brand-light);
-    border-color: var(--brand-bright);
-    background: var(--brand-dim);
-}
-.epic-version:focus-visible {
-    outline: 2px solid var(--brand-bright);
-    outline-offset: 2px;
-}
-
+/* Etikett-yta längst ned på kortet (alltid synlig) */
 /* ── TOM KOLUMN ── */
 .column-empty {
     font-size: 0.85rem;
@@ -406,33 +223,16 @@
     border-radius: var(--radius-md);
 }
 
-/* ── GITHUB-LÄNK ── */
-.roadmap .gh-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    margin-top: 2.5rem;
-    min-height: 44px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--brand-light);
-    text-decoration: none;
-    transition: color var(--transition-normal);
-}
-.roadmap .gh-link:hover,
-.roadmap .gh-link:focus-visible {
-    color: var(--accent);
-}
-
 /* ── RESPONSIVT ── */
-@media (max-width: 1023px) {
-    .roadmap-board {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
 @media (max-width: 640px) {
+    .roadmap-column {
+        padding: 1.1rem 1rem 1.25rem;
+    }
     .roadmap-board {
-        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+    .roadmap-versions {
+        gap: 1rem;
     }
     .roadmap {
         padding-bottom: 4rem;
@@ -441,13 +241,7 @@
 
 /* ── REDUCERAD RÖRELSE ── */
 @media (prefers-reduced-motion: reduce) {
-    .epic-card,
-    .epic-link,
-    .epic-version,
-    .epic-sponsor,
-    .epic-toggle,
-    .epic-toggle-icon,
-    .roadmap-filter button {
+    .epic-card {
         transition: none;
     }
     .epic-card:hover {
