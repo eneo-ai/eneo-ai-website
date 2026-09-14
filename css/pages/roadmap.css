@@ -1,7 +1,7 @@
 /* Roadmap Page Styles – manuellt underhållna kort per version */
 
 :root {
-    --font-mono: 'JetBrains Mono', monospace;
+    --font-mono: ui-monospace, 'Cascadia Mono', Consolas, 'SF Mono', Menlo, 'DejaVu Sans Mono', monospace;
 }
 
 /* ── HERO-META ── */

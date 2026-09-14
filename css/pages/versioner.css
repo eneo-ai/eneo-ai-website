@@ -2,7 +2,7 @@
 
 /* ── EXTRA VARS ── */
 :root {
-    --font-mono: 'JetBrains Mono', monospace;
+    --font-mono: ui-monospace, 'Cascadia Mono', Consolas, 'SF Mono', Menlo, 'DejaVu Sans Mono', monospace;
 }
 
 /* ── JUMP LINKS ── */
