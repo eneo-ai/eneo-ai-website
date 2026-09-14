@@ -48,7 +48,10 @@
 
 /* Coming soon */
 .coming-soon { position: absolute; top: 1rem; right: 1rem; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.2rem 0.6rem; border-radius: 5px; background: var(--amber-dim); color: var(--amber); border: 1px solid rgba(240,160,48,0.2); }
-.lesson-card.soon { opacity: 0.6; }
+/* Ingen opacitet på hela kortet – det sänker textkontrasten under WCAG AA.
+   Kommande lektioner markeras i stället med streckad ram och dämpad videoyta. */
+.lesson-card.soon { border-style: dashed; }
+.lesson-card.soon .lesson-video { opacity: 0.6; }
 .lesson-card.soon:hover { border-color: var(--border); transform: none; }
 .lesson-card.soon::before { display: none; }
 

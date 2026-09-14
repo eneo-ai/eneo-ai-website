@@ -36,8 +36,10 @@
 
     /* Text — dark default */
     --text: #e4e9f0;
-    --text-muted: #7889a0;
-    --text-faint: #5e7389;
+    /* Dämpade textfärger håller minst 4,5:1 (WCAG AA) mot alla mörka ytor
+       (--bg, --bg-raised, --bg-card och varningsrutor). */
+    --text-muted: #8a9bb2;
+    --text-faint: #8090a6;
 
     /* Borders — dark default */
     --border: rgba(255, 255, 255, 0.06);
@@ -121,7 +123,18 @@
         --bg-card: #ffffff;
         --text: #1a1f2e;
         --text-muted: #5a6578;
-        --text-faint: #8896a8;
+        --text-faint: #5d687e;
+        /* Ljusa varumärkes- och statusfärger används som textfärg på många
+           ställen. Mot ljus bakgrund når de bara 1,8–3:1, så i ljust tema
+           används mörkare nyanser som håller minst 4,5:1 (WCAG AA). */
+        --brand-light: #0d64b3;
+        --accent: #0369a1;
+        --success: #15803d;
+        --green: #047857;
+        --amber: #8f5300;
+        --purple: #6d28d9;
+        --red: #b91c1c;
+        --rose: #be123c;
         --border: rgba(0, 0, 0, 0.08);
         --border-hover: rgba(5, 85, 148, 0.3);
         --brand-dim: rgba(5, 85, 148, 0.07);
@@ -155,7 +168,18 @@
     --bg-card: #ffffff;
     --text: #1a1f2e;
     --text-muted: #5a6578;
-    --text-faint: #8896a8;
+    --text-faint: #5d687e;
+    /* Ljusa varumärkes- och statusfärger används som textfärg på många
+       ställen. Mot ljus bakgrund når de bara 1,8–3:1, så i ljust tema
+       används mörkare nyanser som håller minst 4,5:1 (WCAG AA). */
+    --brand-light: #0d64b3;
+    --accent: #0369a1;
+    --success: #15803d;
+    --green: #047857;
+    --amber: #8f5300;
+    --purple: #6d28d9;
+    --red: #b91c1c;
+    --rose: #be123c;
     --border: rgba(0, 0, 0, 0.08);
     --border-hover: rgba(5, 85, 148, 0.3);
     --brand-dim: rgba(5, 85, 148, 0.07);

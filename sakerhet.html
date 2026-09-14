@@ -67,8 +67,8 @@
             --bg-card: #0f1a2e;
 
             --text: #e4e9f0;
-            --text-muted: #7889a0;
-            --text-faint: #5e7389;
+            --text-muted: #8a9bb2;
+            --text-faint: #8090a6;
 
             --border: rgba(255, 255, 255, 0.06);
             --border-hover: rgba(5, 85, 148, 0.4);
@@ -113,7 +113,15 @@
                 --bg-card: #ffffff;
                 --text: #1a1f2e;
                 --text-muted: #5a6578;
-                --text-faint: #8896a8;
+                --text-faint: #5d687e;
+                --brand-light: #0d64b3;
+                --accent: #0369a1;
+                --success: #15803d;
+                --green: #047857;
+                --amber: #8f5300;
+                --purple: #6d28d9;
+                --red: #b91c1c;
+                --rose: #be123c;
                 --border: rgba(0, 0, 0, 0.08);
                 --border-hover: rgba(5, 85, 148, 0.3);
                 --brand-dim: rgba(5, 85, 148, 0.07);
@@ -141,7 +149,15 @@
             --bg-card: #ffffff;
             --text: #1a1f2e;
             --text-muted: #5a6578;
-            --text-faint: #8896a8;
+            --text-faint: #5d687e;
+            --brand-light: #0d64b3;
+            --accent: #0369a1;
+            --success: #15803d;
+            --green: #047857;
+            --amber: #8f5300;
+            --purple: #6d28d9;
+            --red: #b91c1c;
+            --rose: #be123c;
             --border: rgba(0, 0, 0, 0.08);
             --border-hover: rgba(5, 85, 148, 0.3);
             --brand-dim: rgba(5, 85, 148, 0.07);
@@ -384,7 +400,7 @@
             padding: 1.4rem 1.5rem; background: rgba(255, 255, 255, 0.06);
             border: 1px solid rgba(255, 255, 255, 0.14); border-radius: var(--radius-md);
         }
-        .spec h4 { color: #8fd0f7; font-size: 0.98rem; font-weight: 700; margin-bottom: 0.5rem; font-family: var(--font-body); }
+        .spec h3 { color: #8fd0f7; font-size: 0.98rem; font-weight: 700; margin-bottom: 0.5rem; font-family: var(--font-body); }
         .spec p { color: rgba(231, 240, 250, 0.82); font-size: 0.88rem; line-height: 1.6; }
 
         /* ── Classification flow diagram ── */
@@ -666,19 +682,19 @@
                 </div>
                 <div class="specs">
                     <div class="spec reveal">
-                        <h4>Organisationsdefinierad modell</h4>
+                        <h3>Organisationsdefinierad modell</h3>
                         <p>Ingen påtvingad standardmodell – din egen befintliga klassningsmodell (t.ex. publik, intern, konfidentiell, hemlig) implementeras direkt i plattformen.</p>
                     </div>
                     <div class="spec reveal">
-                        <h4>Automatisk metadata-ärvning</h4>
+                        <h3>Automatisk metadata-ärvning</h3>
                         <p>När ett projekt klassas ärvs klassningen automatiskt till all information som skapas eller bearbetas inom projektet.</p>
                     </div>
                     <div class="spec reveal">
-                        <h4>Förebyggande skydd</h4>
+                        <h3>Förebyggande skydd</h3>
                         <p>Skyddet är inbyggt i flödet – inte ett krav som dokumenteras i efterhand. Klassningen styr modellåtkomst i realtid.</p>
                     </div>
                     <div class="spec reveal">
-                        <h4>ISO 27001 5.12 + 5.13</h4>
+                        <h3>ISO 27001 5.12 + 5.13</h3>
                         <p>Realiserar standardens kärnsyfte: att märkning ska möjliggöra automatisering av informationsbehandling och hantering.</p>
                     </div>
                 </div>
@@ -741,27 +757,27 @@
                 </div>
                 <div class="specs">
                     <div class="spec reveal">
-                        <h4>SBOM per release – krav i NIS2</h4>
+                        <h3>SBOM per release – krav i NIS2</h3>
                         <p>Varje release levereras med en programvaruförteckning (SBOM) i formaten CycloneDX och SPDX. En SBOM är ett uttryckligt krav i NIS2/cybersäkerhetslagen och möjliggör snabb sårbarhetsbedömning av samtliga ingående komponenter.</p>
                     </div>
                     <div class="spec reveal">
-                        <h4>Verifierade byggen</h4>
+                        <h3>Verifierade byggen</h3>
                         <p>Container-images byggs via spårbara CI-pipelines med GHCR provenance attestations, så att det går att verifiera att det som körs i produktion verkligen motsvarar källkoden.</p>
                     </div>
                     <div class="spec reveal">
-                        <h4>Låsta och granskade beroenden</h4>
+                        <h3>Låsta och granskade beroenden</h3>
                         <p>Beroenden är låsta via lockfiles och granskas automatiskt. Dependency review blockerar PR:er som introducerar kända sårbarheter på HIGH-nivå eller högre.</p>
                     </div>
                     <div class="spec reveal">
-                        <h4>Publicerad sårbarhetsprocess</h4>
+                        <h3>Publicerad sårbarhetsprocess</h3>
                         <p>Säkerhetspolicy med tydliga svarstider (SLA): Kritisk 1 arbetsdag, Hög 1–2 arbetsdagar, Medel 2–5 arbetsdagar – med en definierad väg för ansvarsfull rapportering.</p>
                     </div>
                     <div class="spec reveal">
-                        <h4>Etablerade ramverk för säker utveckling</h4>
+                        <h3>Etablerade ramverk för säker utveckling</h3>
                         <p>Utvecklingen förhåller sig till erkända ramverk som NIST SSDF och SLSA samt OWASP ASVS, SCVS och LLM Top 10.</p>
                     </div>
                     <div class="spec reveal">
-                        <h4>Öppen källkod och insyn</h4>
+                        <h3>Öppen källkod och insyn</h3>
                         <p>Hela kodbasen är öppen under AGPL-3.0. Det gör att vem som helst kan granska, revidera och bidra till plattformens säkerhet – ingen säkerhet vilar på dolda antaganden.</p>
                     </div>
                 </div>
