@@ -317,21 +317,30 @@
    länkar i artikeltext får här en tydlig visuell indikator: färg + understrykning. */
 /* :not(.btn) — annars vinner den här regeln (0,2,1) över .btn-primary (0,1,0)
    och ger blå, understruken text på knappens blå bakgrund. */
+/* --brand-bright (#1a7ad4) ger bara 4,45:1 mot mörk och 4,17:1 mot ljus
+   bakgrund. Därför --brand-light i mörkt tema (~6:1) och --brand i ljust
+   tema (~7:1). Hover/fokus markeras med tjockare understrykning så att
+   färgen kan hållas inom WCAG AA i båda tillstånden. */
 .article-content p a:not(.btn),
 .article-content li a:not(.btn) {
-    color: var(--brand-bright);
+    color: var(--brand-light);
     text-decoration: underline;
     text-underline-offset: 0.18em;
     text-decoration-thickness: 1px;
-    transition: color var(--transition-smooth);
+    transition: text-decoration-thickness var(--transition-smooth);
 }
 .article-content p a:not(.btn):hover,
 .article-content li a:not(.btn):hover,
 .article-content p a:not(.btn):focus-visible,
 .article-content li a:not(.btn):focus-visible {
-    color: var(--brand-light);
     text-decoration-thickness: 2px;
 }
+@media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) .article-content p a:not(.btn),
+    :root:not([data-theme="dark"]) .article-content li a:not(.btn) { color: var(--brand); }
+}
+:root[data-theme="light"] .article-content p a:not(.btn),
+:root[data-theme="light"] .article-content li a:not(.btn) { color: var(--brand); }
 /* Extern-länk-ikon på artikellänkar hanteras globalt i v2-base.css. */
 
 /* ── KNAPP I ARTIKELTEXT ──
