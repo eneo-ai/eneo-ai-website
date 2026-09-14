@@ -108,15 +108,26 @@ eneo-ai-website/
 - Favicon set with multiple sizes
 
 ### HÅRD REGEL: Delningsmetadata (Open Graph) på alla sidor
-Varje publik sida ska ha komplett metadata för delning i sociala medier i `<head>`,
-enligt sajtens standard (se t.ex. `versioner.html`). Kontrollera detta vid varje ny
-sida och vid varje ändring av titel eller beskrivning.
+**Varje ny publik sida, nyhetsartikel eller annan HTML-fil som kan delas ska ha komplett
+och korrekt metadata för delning i `<head>` innan arbetet anses klart.** Regeln gäller
+utan undantag vid nya sidor, nya nyheter, kopierade sidor och vid varje ändring av titel,
+beskrivning eller bild. Kontrollera alltid, även om sidan skapats från en mall – mallen
+kan ha fel (det har hänt).
+
+**Delningsbilden ska alltid vara en PNG i 1200×630 px.** Sociala plattformar (LinkedIn,
+Facebook, Teams, Slack) visar inte SVG som delningsbild. Illustrationer skapas som SVG
+för webbsidan, men `og:image` ska peka på en PNG-version med samma filnamn, renderad
+från SVG:n med headless Chromium (Playwright, viewport 1200×630, skala 1). Saknas
+PNG:n för en illustration: rendera och committa den tillsammans med sidan.
+
+**Standard för vanliga sidor** (`og:type` `website`, sajtens gemensamma bild):
 
 ```html
 <!-- OG Meta Tags -->
 <meta property="og:title" content="Sidans titel - Eneo.ai" />
 <meta property="og:description" content="Samma text som meta name=description" />
 <meta property="og:image" content="https://eneo.ai/public/og-image.png" />
+<meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content="Eneo AI" />
@@ -126,13 +137,38 @@ sida och vid varje ändring av titel eller beskrivning.
 <meta property="og:locale" content="sv_SE" />
 ```
 
+**Standard för nyhetsartiklar** (`og:type` `article`, artikelns egen illustration som PNG):
+
+```html
+<meta property="og:title" content="Artikelns rubrik - Nyheter - Eneo.ai" />
+<meta property="og:description" content="Samma text som meta name=description" />
+<meta property="og:image" content="https://eneo.ai/public/images/nyheter/illustration.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Samma beskrivning som bildens alt-text i artikeln" />
+<meta property="og:url" content="https://eneo.ai/nyheter/YYYY-MM-DD-slug.html" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Eneo.ai" />
+<meta property="og:locale" content="sv_SE" />
+```
+
+Krav på innehållet:
 - `og:title` ska matcha `<title>` och `og:description` ska matcha `meta name="description"`
 - `og:url` ska vara sidans absoluta adress på `https://eneo.ai/` (nyheter: `https://eneo.ai/nyheter/…`)
-- Vanliga sidor använder sajtens gemensamma bild `public/og-image.png` och `og:type` `website`
-- Nyhetsartiklar använder artikelns egen illustration i `public/images/nyheter/` och `og:type` `article`
+- `og:image` ska vara en absolut adress till en PNG som finns i repot, 1200×630, aldrig SVG
+- `og:image:type`, `og:image:width`, `og:image:height` och `og:image:alt` ska alltid finnas
+- Bilden ska följa sajtens grafiska profil: vanliga sidor använder `public/og-image.png`,
+  nyheter använder illustrationerna i `public/images/nyheter/` (samma stil, färger och
+  Eneo-logotyp som befintliga; återanvänd de generiska bilderna när det passar)
 - Sidhuvudet ska även innehålla analysskriptet (`analytics.eneo.ai`) på samma sätt som övriga sidor
 - Undantag: dolda sidor med `noindex`, omdirigeringssidor och presentationsläget
-- Kontroll: `grep -L "og:image" *.html nyheter/*.html` ska bara lista undantagen ovan
+
+Kontroller som ska köras innan en sida eller nyhet rapporteras som klar:
+- `grep -L "og:image" *.html nyheter/*.html` ska bara lista undantagen ovan
+- `grep -l 'og:image" content="[^"]*\.svg' *.html nyheter/*.html` ska inte lista någon sida
+- `grep -L "og:image:alt" $(grep -l "og:image" *.html nyheter/*.html)` ska inte lista någon sida
+- Varje adress i `og:image` ska motsvara en fil som finns i repot (`public/…`)
 
 ## Webbtillgänglighet (WCAG)
 
@@ -160,7 +196,7 @@ Nyheter publiceras som enskilda HTML-filer i `nyheter/`-katalogen och listas på
 ### HÅRD REGEL: När en ny nyhet skapas
 När Claude skapar en ny nyhet måste **alla** dessa steg genomföras:
 1. Skapa nyhetsartikeln som `nyheter/YYYY-MM-DD-slug.html`
-2. **Varje nyhet ska ha en illustrativ bild** (SVG i `public/images/nyheter/`) som visas både i artikeln (mellan header och content) och som thumb på nyhetskortet. Bilden ska ha beskrivande `aria-label` på `<svg>` och informativ `alt` på `<img>` i artikeln (dekorativ `alt=""` på kort-thumb). Meta `og:image` i artikeln ska peka på bilden.
+2. **Varje nyhet ska ha en illustrativ bild** (SVG i `public/images/nyheter/`) som visas både i artikeln (mellan header och content) och som thumb på nyhetskortet. Bilden ska ha beskrivande `aria-label` på `<svg>` och informativ `alt` på `<img>` i artikeln (dekorativ `alt=""` på kort-thumb). Meta `og:image` i artikeln ska peka på en **PNG-version** av bilden enligt den hårda regeln om delningsmetadata ovan (aldrig SVG; rendera PNG:n om den saknas).
    - **Återanvändbara bilder:** `public/images/nyheter/version-release.svg` används för alla nyheter om nya versioner. Skapa motsvarande generiska illustrationer för andra återkommande nyhetstyper (säkerhet, community, insikter, evenemang) innan du tar till engångsbilder.
 3. Lägg till ett nyhetskort på `nyheter.html` (överst i listan, som featured om det är den senaste)
 4. **Uppdatera startsidans nyhetslistning** (`index.html`, sektionen "Senaste nytt") med de 3 senaste nyheterna
