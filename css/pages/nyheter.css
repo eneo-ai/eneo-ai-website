@@ -377,3 +377,38 @@
         padding: 2rem 1.2rem 4rem;
     }
 }
+
+/* ── INFORUTA I ARTIKEL ── */
+/* Används för uppdateringar i efterhand, t.ex. att en anmälan har stängt. */
+.article-notice {
+    display: flex;
+    gap: 0.85rem;
+    align-items: flex-start;
+    margin: 0.5rem 0 0;
+    padding: 1.1rem 1.25rem;
+    border: 1px solid var(--border-hover);
+    border-left: 4px solid var(--brand-bright);
+    border-radius: 10px;
+    background: var(--brand-dim);
+}
+.article-notice svg {
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+    color: var(--brand-light);
+}
+.article-notice p {
+    color: var(--text);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0;
+}
+.article-notice p + p {
+    margin-top: 0.5rem;
+}
+.article-notice strong {
+    font-weight: 600;
+}
+@media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) .article-notice svg { color: var(--brand); }
+}
+:root[data-theme="light"] .article-notice svg { color: var(--brand); }

@@ -194,3 +194,10 @@
 @media (forced-colors: active) {
     .event-hero h1 em { -webkit-text-fill-color: unset; background: none; color: LinkText; }
 }
+
+/* ── Inforuta (uppdatering) – samma utseende som .article-notice i nyheter.css ── */
+.event-notice { display: flex; gap: 0.85rem; align-items: flex-start; margin-top: 2rem; max-width: 60ch; padding: 1.1rem 1.25rem; border: 1px solid var(--border-hover); border-left: 4px solid var(--brand-bright); border-radius: 10px; background: var(--brand-dim); }
+.event-notice svg { flex-shrink: 0; margin-top: 0.15rem; color: var(--brand-light); }
+.event-notice p { color: var(--text); font-size: 0.95rem; line-height: 1.7; margin: 0; }
+.event-notice p + p { margin-top: 0.5rem; }
+.event-notice strong { font-weight: 600; }
