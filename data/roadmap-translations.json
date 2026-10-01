@@ -45,6 +45,21 @@
       "hash": "6280ac310c0bf378b6e647994803152ed7736d89f06e958bb52a7c1b13f80a6a",
       "title": "Låt administratörer avveckla och ersätta AI-modeller på ett säkert sätt",
       "summary": "Administratörer måste kunna avveckla AI-modeller som inte längre är tillgängliga och flytta aktuell konfiguration till en modell som stöds. Livscykeln ska hålla organisationer isolerade, bevara historisk modellattribuering och tydligt förklara vad som kommer att ändras innan en administratör bekräftar migreringen."
+    },
+    "779": {
+      "hash": "1a6da5d063af75e9df0ed7c9916225b1c6f593a012bb527ad3e2f741710beee3",
+      "title": "Dokumentationswebbplats: versionshantering, noggrannhetsöversyn och driftskydd",
+      "summary": "docs.eneo.ai driftsätts endast från `develop`, vilket innebär att den dokumenterar ej släppta funktioner för alla som kör en release, och en verifierad granskning (30 sidor) hittade 2 föråldrade sidor, 6 med allvarliga fel och 14 med mindre fel — påhittade miljövariabler, endpoints och kommandon från den ursprungliga grundstrukturen. Detta epic gör webbplatsen versionshanterad och automatisk, korrigerar innehållet mot koden och lägger till ett skydd så att pull requests håller den korrekt."
+    },
+    "804": {
+      "hash": "be70c22b73288c1664d34de441f5da6e2191e01680f7e3f4d96a8e9efde1e501",
+      "title": "Kräv godkänd MFA för konfidentiella delade utrymmen och moduler",
+      "summary": "Kommuner behöver kunna kräva en godkänd MFA-inloggning innan personal får åtkomst till ett delat utrymme som innehåller konfidentiell information. Administratörer konfigurerar vilka autentiseringsresultat som deras identitetsleverantör intygar som godtagbara, och utrymmesadministratörer kan kräva det skyddet. Eneo fattar samma åtkomstbeslut för sitt eget gränssnitt, API:er, interna verktyg och externa moduler, inklusive framtida publicerade Flow-applikationer."
+    },
+    "819": {
+      "hash": "5ad1ab06664765bd9ee87ea3ab0499801426a4e7dc29e6095a2c4666c84aa6d1",
+      "title": "Låt användare granska delade kunskapskällor från chatten",
+      "summary": "Användare ska kunna granska en källa som citeras i chatten när den kunskapen är tillgänglig via någon av deras ytor. Detta inkluderar centralt insamlad organisationskunskap, så att samma webbplats kan betjäna många användare utan dubblerad insamling."
     }
   }
 }
