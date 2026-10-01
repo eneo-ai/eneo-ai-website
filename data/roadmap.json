@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-15T04:52:18.643Z",
+  "generatedAt": "2026-09-04T20:44:15.688Z",
   "source": {
     "owner": "eneo-ai",
     "project": "5",
@@ -41,34 +41,6 @@
       "targetDate": "Not assigned.",
       "sponsor": "Not assigned.",
       "group": "next"
-    },
-    {
-      "number": 779,
-      "url": "https://github.com/eneo-ai/eneo/issues/779",
-      "title": "Dokumentationswebbplats: versionshantering, noggrannhetsöversyn och skydd mot drift",
-      "summary": "docs.eneo.ai driftsätts endast från `develop`, vilket innebär att den dokumenterar ännu inte släppta funktioner för alla som kör en release, och en verifierad granskning (30 sidor) hittade 2 föråldrade sidor, 6 med allvarliga fel och 14 med mindre fel — påhittade miljövariabler, endpoints och kommandon från det ursprungliga underlaget. Detta epic gör webbplatsen versionshanterad och automatisk, korrigerar innehållet mot koden och lägger till ett skydd så att pull requests håller den korrekt.",
-      "status": "Todo",
-      "roadmapVersion": "2.2",
-      "area": "Docs",
-      "priority": "",
-      "startDate": "",
-      "targetDate": "",
-      "sponsor": "",
-      "group": "next"
-    },
-    {
-      "number": 804,
-      "url": "https://github.com/eneo-ai/eneo/issues/804",
-      "title": "Kräv godkänd MFA för konfidentiella delade utrymmen och moduler",
-      "summary": "Kommuner behöver kräva en godkänd MFA-inloggning innan personal kan få tillgång till ett delat utrymme som innehåller konfidentiell information. Administratörer konfigurerar vilka autentiseringsresultat som deras identitetsleverantör intygar som godtagbara, och utrymmesadministratörer kan kräva det skyddet. Eneo fattar samma åtkomstbeslut för sitt eget gränssnitt, API:er, interna verktyg och externa moduler, inklusive framtida publicerade Flow-applikationer.",
-      "status": "Todo",
-      "roadmapVersion": "2.3",
-      "area": "Security",
-      "priority": "P1",
-      "startDate": "",
-      "targetDate": "",
-      "sponsor": "",
-      "group": "later"
     },
     {
       "number": 546,
@@ -148,20 +120,6 @@
       "status": "Todo",
       "roadmapVersion": "Unscheduled",
       "area": "Other",
-      "priority": "",
-      "startDate": "",
-      "targetDate": "",
-      "sponsor": "",
-      "group": "later"
-    },
-    {
-      "number": 819,
-      "url": "https://github.com/eneo-ai/eneo/issues/819",
-      "title": "Låt användare granska delade kunskapskällor från chatten",
-      "summary": "Användare ska kunna granska en källa som citeras i chatten när den kunskapen är tillgänglig via någon av deras ytor. Detta inkluderar centralt insamlad organisationskunskap, så att samma webbplats kan betjäna många användare utan duplicerad insamling.",
-      "status": "Todo",
-      "roadmapVersion": "Unscheduled",
-      "area": "",
       "priority": "",
       "startDate": "",
       "targetDate": "",
