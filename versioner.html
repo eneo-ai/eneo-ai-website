@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="css/v2-components.css?v=2">
     <link rel="stylesheet" href="css/v2-layout.css?v=3">
     <link rel="stylesheet" href="css/pages/om-eneo.css?v=2">
-    <link rel="stylesheet" href="css/pages/versioner.css?v=3">
+    <link rel="stylesheet" href="css/pages/versioner.css?v=4">
 
     <!-- OG Meta Tags -->
     <meta property="og:title" content="Versioner - Eneo.ai Versionshistorik" />
@@ -105,12 +105,120 @@
     <section class="changelog" id="versionshistorik">
         <div class="container">
 
+            <!-- 2.2.0 -->
+            <div class="release" id="v2.2.0">
+                <div class="release-header">
+                    <button type="button" class="ver-tag" aria-expanded="true" aria-controls="v2.2.0-innehall">v2.2.0<svg class="ver-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+                    <a class="release-anchor" href="#v2.2.0" aria-label="Länk till v2.2.0" title="Länk till denna version"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+                    <span class="latest-badge">Senaste</span>
+                    <a href="https://github.com/eneo-ai/eneo/releases/tag/v2.2.0" class="release-link">Se på GitHub <span aria-hidden="true">→</span></a>
+                </div>
+                <div class="release-body" id="v2.2.0-innehall">
+                    <div class="warning-box">
+                        <p><strong>Viktig förändring – kräver åtgärd!</strong> Version 2.2 slutför namnbytet från Intric till Eneo och kräver förberedelser före uppgradering:</p>
+                        <ul>
+                            <li><strong>Miljövariabler:</strong> gamla <code>INTRIC_</code>-namn måste bytas till <code>ENEO_</code>, och <code>ENEO_SUPER_DUPER_API_KEY</code> tas bort. Tjänsterna startar inte annars.</li>
+                            <li><strong>Nya krav:</strong> webbappen kräver <code>ENEO_BACKEND_URL</code>, <code>JWT_EXPIRY_TIME</code> får vara högst 43200 och <code>URL_SIGNING_KEY</code> måste vara minst 32 byte.</li>
+                            <li><strong>Filmigrering:</strong> filer och ikoner flyttas i en engångsmigrering. Planera med backup och underhållsfönster.</li>
+                            <li><strong>Webbsökning och bildgenerering</strong> fungerar inte förrän en källa kopplats under Administration › Verktyg.</li>
+                            <li><strong>Alla användare måste logga in igen</strong> efter uppgraderingen.</li>
+                            <li><strong>Ingen rullande uppgradering:</strong> alla instanser av backend och worker byts samtidigt.</li>
+                            <li><strong>API-integrationer</strong> behöver gå över till de nya Eneo-namnen.</li>
+                            <li><strong>CORS:</strong> API-anrop med ett otillåtet <code>Origin</code> avvisas nu av backend. Kontrollera integrationer där till exempel en API-gateway skickar vidare <code>Origin</code> till Eneo.</li>
+                            <li><strong>Databasmigrering:</strong> versionshanteringen av kunskap kräver en migrering som kan ta flera minuter. Den går inte att backa, så ta backup först.</li>
+                        </ul>
+                        <p>Se <a href="https://docs.eneo.ai/guides/upgrade-2-2-0">uppgraderingsguiden för 2.2.0</a>, guiden för <a href="https://docs.eneo.ai/guides/file-icon-storage-upgrade">fil- och ikonlagring</a> och avsnittet <em>För dig som driftar Eneo</em> nedan.</p>
+                    </div>
+                    <div class="change-cat cat-new">
+                        <span class="cat-label">Nya funktioner</span>
+                        <ul class="change-list">
+                            <li><strong>Teknisk grund till moduler:</strong> Valfria moduler installeras och konfigureras under Administration › Moduler och använder Eneo-inloggningen. Den första modulen är tal-till-text.</li>
+                            <li><strong>Personlig chatt 2.0:</strong> Webbsök, bildgenerering och Skills i den personliga chatten. Administratören styr centralt modeller, verktyg, standardinstruktioner och resonemangsnivå. Allt är avstängt tills det aktiveras.</li>
+                            <li><strong>Skills 1.0:</strong> Långa instruktioner kan delas upp i versionshanterade Skills som återanvänds i assistenter, appar och personlig chatt, antingen <em>Alltid på</em> eller <em>Vid behov</em>. Administratörer publicerar, rullar ut och kan stoppa Skills centralt. Läs mer i <a href="https://docs.eneo.ai/guides/skills">guiden om Skills</a>.</li>
+                            <li><strong>MCP 2.0 (MCP + kunskap):</strong> MCP-servrar kan användas tillsammans med kunskap på samma assistent. Användarens identitet kan skickas vidare till servern, och verktyg kan få egna visningsnamn. Verktyg kan ställa följdfrågor direkt i chatten.</li>
+                            <li><strong>Utökat stöd för felsökning:</strong> En felsökningspanel visar verktygsanrop, kunskap, bilagor och Skills för varje chattsvar. Kräver behörigheten Assistant Debug, och meddelandetexter visas aldrig.</li>
+                            <li><strong>Objektlagring som alternativ:</strong> Filer kan lagras i S3-kompatibel objektlagring, och en ny sida under Administration › Fillagring visar lagringsanvändningen. PostgreSQL är fortfarande standard. Läs mer om <a href="https://docs.eneo.ai/guides/object-content-storage">innehållslagring</a>.</li>
+                            <li><strong>Webbsök:</strong> Assistenten kan söka på webben via en extern MCP-server som administratören kopplar under Administration › Verktyg. Olika grupper kan få olika källor. Läs mer i <a href="https://docs.eneo.ai/guides/capabilities">guiden</a>.</li>
+                            <li><strong>Bildgenerering:</strong> Skapa bilder med en bildmodell ur modellkatalogen eller via en MCP-server. Med stöd för redigering kan bilder också ändras och varieras, till exempel ”gör den blåare”.</li>
+                            <li><strong>Byta lösenord:</strong> Den som loggar in med lokalt lösenord byter det själv under Mitt konto.</li>
+                            <li><strong>Originalfiler bevaras:</strong> Nya uppladdningar till kunskap kan laddas ner i original.</li>
+                            <li><strong>Kopiera som formaterad text:</strong> Svar kan kopieras som Rich text för Word och e-post, eller som Markdown.</li>
+                        </ul>
+                    </div>
+                    <div class="change-cat cat-improved">
+                        <span class="cat-label">Förbättringar</span>
+                        <ul class="change-list">
+                            <li><strong>UI-optimeringar admingränssnitt:</strong> Administrationen är omstrukturerad för fler funktioner. Filter och sökning bland användare gäller hela organisationen, avstängda modeller kan migreras och sidorna fungerar i smala fönster och på iPad.</li>
+                            <li><strong>SharePoint-optimering:</strong> Importdialogen öppnas på sekunder även i stora organisationer, och sökning i SharePoint och Confluence går betydligt snabbare. <code>Group.Read.All</code> behövs inte längre.</li>
+                            <li><strong>Kunskapssökning vid behov:</strong> Assistenten kan själv söka i sin kunskap när frågan kräver det. Väljs per assistent och är avstängt som standard.</li>
+                            <li><strong>Mer information vid val av modell:</strong> Förhandsvisning med vägledning, kontextstorlek, funktioner och eventuellt pris.</li>
+                            <li><strong>Tydligare verktygsanrop:</strong> Parametrar och svar visas i samma panel, och inbyggda verktyg som kompakta steg.</li>
+                            <li><strong>Bättre bilagor:</strong> Bilder i PDF, Word och PowerPoint kan läsas, och HEIC-, JSON- och XML-filer stöds.</li>
+                            <li><strong>Tryggare kunskapsuppdatering:</strong> Dokument förblir sökbara under ombearbetning, och äldre versioner bevaras så att källhänvisningar i tidigare konversationer fortfarande fungerar.</li>
+                            <li><strong>Automatisk städning av filer:</strong> Filer som bara användes i en raderad konversation tas bort tillsammans med den, och oanvända uppladdningar rensas dagligen. Kunskapsdokument påverkas inte.</li>
+                            <li><strong>Bättre promptguide</strong> med flervalsfrågor och instruktioner av högre kvalitet.</li>
+                            <li><strong>Snabbare start och ny inloggningssida</strong> med bättre stöd för skärmläsare och tangentbord.</li>
+                            <li><strong>Dokumentation per version</strong> på docs.eneo.ai, och Eneo-ordmärket följer ljust och mörkt tema.</li>
+                        </ul>
+                    </div>
+                    <div class="change-cat cat-security">
+                        <span class="cat-label">Säkerhet &amp; stabilitet</span>
+                        <ul class="change-list">
+                            <li><strong>Nya sessioner:</strong> Nytt tokenformat med högst 30 dagars giltighet. Alla loggar in igen, och inloggningen spärras tillfälligt efter fem misslyckade försök.</li>
+                            <li><strong>Skärpt åtkomstkontroll</strong> mellan organisationer, ytor och roller på flera ställen, bland annat för API-nycklar, mallar och integrationer.</li>
+                            <li><strong>Ny API-nyckel krävs</strong> när adressen till en modelleverantör ändras.</li>
+                            <li><strong>Striktare SSO:</strong> Automatiskt skapade konton kräver godkända domäner och verifierad e-post.</li>
+                            <li><strong>Krypterade kopplingar:</strong> OAuth-tokens för SharePoint och Confluence krypteras i databasen.</li>
+                            <li><strong>Säkrare nedladdningslänkar</strong> med begränsad giltighetstid. Äldre länkar slutar gälla.</li>
+                            <li><strong>Äldre API-nycklar avvecklade:</strong> Nycklar som aldrig migrerats till nuvarande system slutar fungera och behöver ersättas.</li>
+                            <li><strong>Striktare CORS:</strong> Anrop från otillåtna ursprung avvisas. För publika nycklar kan administratören välja att nyckelns egen lista över tillåtna ursprung räcker.</li>
+                            <li><strong>Säkrare webbcrawling</strong> (sedan 2.1.2): Interna systemadresser blockeras.</li>
+                            <li><strong>Isolerat datalager:</strong> Den nya driftmallen lägger PostgreSQL och Redis i ett internt nätverk och stödjer lösenord för Redis. Vi rekommenderar att alla tar in den.</li>
+                            <li><strong>Jämnare strömning</strong> av långa svar, utan pauser.</li>
+                            <li><strong>Uppdaterade beroenden,</strong> bland annat LiteLLM 1.101.0 och säkerhetsrättningar.</li>
+                        </ul>
+                    </div>
+                    <div class="change-cat cat-fix">
+                        <span class="cat-label">Buggfixar</span>
+                        <ul class="change-list">
+                            <li>Källhänvisningar till organisationens och delad kunskap gick inte att öppna</li>
+                            <li>En avstängd MCP-server kunde fortfarande användas av befintliga assistenter</li>
+                            <li>Nyligen aktiverade MCP-servrar gick inte att koppla i personliga ytor</li>
+                            <li>Koppling av personligt SharePoint- eller Confluence-konto kunde ge serverfel</li>
+                            <li>Samma fil gick inte att bifoga igen efter att den tagits bort</li>
+                            <li>Arbetsytan visade ibland en felsida vid inläsning</li>
+                        </ul>
+                    </div>
+                    <div class="change-cat cat-removed">
+                        <span class="cat-label">Borttaget</span>
+                        <ul class="change-list">
+                            <li>Den äldre vyn Tjänster. Moduler ersätter de tidigare funktionsflaggorna.</li>
+                            <li>De inbyggda kopplingarna till Tavily och Flux, inklusive variablerna <code>TAVILY_API_KEY</code>, <code>FLUX_API_KEY</code>, <code>USING_IMAGE_GENERATION</code> och API-fältet <code>use_web_search</code>.</li>
+                        </ul>
+                    </div>
+                    <div class="change-cat cat-ops">
+                        <span class="cat-label">För dig som driftar Eneo</span>
+                        <ul class="change-list">
+                            <li><strong>Miljövariabler:</strong> <code>INTRIC_SUPER_API_KEY</code>, <code>INTRIC_BACKEND_URL</code>, <code>INTRIC_BACKEND_SERVER_URL</code> och <code>PUBLIC_INTRIC_BACKEND_URL</code> byter till <code>ENEO_</code>-namn. <code>ENEO_SUPER_DUPER_API_KEY</code> tas bort.</li>
+                            <li><strong>Sessioner:</strong> <code>JWT_EXPIRY_TIME</code> i minuter, högst 43200 (1440 = ett dygn).</li>
+                            <li><strong>Signerade länkar:</strong> <code>URL_SIGNING_KEY</code> minst 32 byte, t.ex. <code>openssl rand -hex 32</code>.</li>
+                            <li><strong>OIDC:</strong> Kräver <code>OIDC_TENANT_ID</code>, och nya konton kräver <code>OIDC_ALLOWED_DOMAINS</code> eller <code>allowed_domains</code>. Med SCIM behålls <code>provisioning: false</code>.</li>
+                            <li><strong>SharePoint-webhooks:</strong> Sätt <code>SHAREPOINT_WEBHOOK_CLIENT_STATE</code> och deploya backend och frontend samtidigt.</li>
+                            <li><strong>Fil- och ikonlagring:</strong> Kör <code>preflight</code> före driftstoppet. Upp till 5 GiB kopieras automatiskt, större mängder kräver bekräftelse.</li>
+                            <li><strong>Ingen rullande uppgradering:</strong> Stoppa alla backend-instanser och gamla workers innan <code>db-init</code>, och starta sedan backend, worker och frontend tillsammans.</li>
+                            <li><strong>Nätverk och Redis:</strong> Ta in nya <code>docker-compose.yml</code> och sätt <code>REDIS_PASSWORD</code>. Verktyg som nådde <code>db</code> eller <code>redis</code> via proxy-nätet behöver <code>docker exec</code> eller <code>eneo_data_net</code>. Se <code>docs/deployment/README.md</code>.</li>
+                            <li><strong>Övervakning och kommandon:</strong> <code>/api/healthz/crawler</code> kräver <code>ENEO_SUPER_API_KEY</code>. Egna container-kommandon använder <code>eneo</code>-sökvägar (t.ex. <code>src.eneo.server.main:app</code>), loggar heter <code>eneo.*</code> och <code>.mjs</code>-filer måste serveras som JavaScript.</li>
+                            <li><strong>API-integrationer:</strong> <code>intric_*</code>-fält byter till <code>eneo_*</code>, och WebSocket-subprotokollet heter <code>eneo</code>. Regenerera klienter från OpenAPI-schemat.</li>
+                            <li><strong>Öppna flikar:</strong> Be användarna ladda om Eneo efter uppgraderingen.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
             <!-- 2.1.0 -->
             <div class="release" id="v2.1.0">
                 <div class="release-header">
                     <button type="button" class="ver-tag" aria-expanded="true" aria-controls="v2.1.0-innehall">v2.1.0<svg class="ver-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
                     <a class="release-anchor" href="#v2.1.0" aria-label="Länk till v2.1.0" title="Länk till denna version"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
-                    <span class="latest-badge">Senaste</span>
                     <a href="https://github.com/eneo-ai/eneo/releases/tag/v2.1.0" class="release-link">Se på GitHub <span aria-hidden="true">→</span></a>
                 </div>
                 <div class="release-body" id="v2.1.0-innehall">
