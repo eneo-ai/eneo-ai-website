@@ -67,9 +67,10 @@
 
 /* ── CTA-rad i hero ── */
 .hero-cta { margin-top: 2.25rem; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; }
-.deadline-note { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: var(--text-muted); }
-.deadline-note strong { color: var(--evt-amber-text); font-weight: 600; }
+.deadline-note, .capacity-note { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: var(--text-muted); }
+.deadline-note strong, .capacity-note strong { color: var(--evt-amber-text); font-weight: 600; }
 .deadline-note svg { color: var(--evt-amber-text); flex-shrink: 0; }
+.capacity-note svg { color: var(--evt-brand-text); flex-shrink: 0; }
 
 /* Knapp: minst 44px touch-target */
 .btn-cta { min-height: 3rem; padding: 0.95rem 2rem; font-size: 1rem; gap: 0.6rem; background: var(--evt-cta); }
