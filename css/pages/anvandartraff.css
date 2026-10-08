@@ -201,3 +201,58 @@
 .event-notice p { color: var(--text); font-size: 0.95rem; line-height: 1.7; margin: 0; }
 .event-notice p + p { margin-top: 0.5rem; }
 .event-notice strong { font-weight: 600; }
+
+/* ── Program med två spår (anvandartraff-anmalan.html) ──────────────────
+   Huvudspåret är bredare eftersom det bär flest programpunkter. Spåren
+   staplas under varandra på smala skärmar. */
+.agenda { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 1.4rem; align-items: start; }
+.track { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.6rem 1.75rem; }
+.track-title { display: flex; align-items: center; gap: 0.6rem; font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; padding-bottom: 1rem; margin-bottom: 0.25rem; border-bottom: 1px solid var(--border); }
+.track-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.track-dot-brand { background: var(--evt-brand-text); }
+.track-dot-accent { background: var(--evt-accent-text); }
+
+.slots { display: flex; flex-direction: column; }
+.slot { display: grid; grid-template-columns: 3.6rem 1fr; gap: 1rem; padding: 1.1rem 0; border-bottom: 1px solid var(--border); }
+.slot:last-child { border-bottom: none; padding-bottom: 0.25rem; }
+.slot-time { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--evt-brand-text); padding-top: 0.05rem; font-variant-numeric: tabular-nums; }
+.track-tech .slot-time { color: var(--evt-accent-text); }
+.slot h4 { font-family: var(--font-display); font-size: 1.05rem; font-weight: 600; line-height: 1.4; color: var(--text); }
+.slot-sub { color: var(--text-muted); font-size: 0.93rem; line-height: 1.55; margin-top: 0.15rem; }
+
+/* Pauser, lunch och gemensamma pass tonas ned */
+.slot-break h4, .slot-shared h4 { font-size: 0.95rem; font-weight: 600; color: var(--text-muted); }
+.slot-break .slot-time, .slot-shared .slot-time, .track-tech .slot-break .slot-time, .track-tech .slot-shared .slot-time { color: var(--text-muted); }
+
+/* Programpunkt som inte är spikad än */
+.tbd-tag { display: inline-block; vertical-align: 0.1em; margin-left: 0.4rem; padding: 0.15rem 0.55rem; border-radius: 2rem; font-family: var(--font-body); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--evt-amber-text); border: 1px solid currentColor; }
+.slot-tbd .slot-sub { font-style: italic; }
+
+.speakers { margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.3rem; }
+.speakers li { position: relative; padding-left: 1.2rem; font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; }
+.speakers li::before { content: ''; position: absolute; left: 0; top: 0.6em; width: 6px; height: 6px; border-radius: 50%; border: 1.5px solid var(--evt-brand-text); }
+
+.talks { margin-top: 0.85rem; display: flex; flex-direction: column; gap: 0.6rem; }
+.talks li { padding: 0.7rem 0.95rem; border-left: 3px solid var(--evt-brand-text); background: var(--brand-dim); border-radius: 0 8px 8px 0; }
+.talks strong { display: block; font-size: 0.95rem; font-weight: 600; color: var(--text); line-height: 1.45; }
+.talks span { display: block; font-size: 0.86rem; color: var(--text-muted); margin-top: 0.15rem; }
+
+.tech-sessions { display: flex; flex-direction: column; gap: 1rem; }
+.tech-sessions h4 { display: flex; align-items: flex-start; gap: 0.55rem; }
+.session-num { flex-shrink: 0; width: 1.5rem; height: 1.5rem; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.78rem; font-weight: 700; background: var(--accent-dim); color: var(--evt-accent-text); margin-top: 0.1rem; }
+.tech-sessions .slot-sub { padding-left: 2.05rem; }
+
+.prep-box { margin-top: 1.25rem; padding: 1.1rem 1.2rem; border-radius: var(--radius-md); background: var(--accent-dim); border: 1px solid rgba(56,189,248,0.25); }
+.prep-box h4 { font-family: var(--font-display); font-size: 0.98rem; font-weight: 600; margin-bottom: 0.5rem; }
+.prep-box li { position: relative; padding-left: 1.2rem; font-size: 0.9rem; line-height: 1.55; color: var(--evt-callout-text); }
+.prep-box li + li { margin-top: 0.3rem; }
+.prep-box li::before { content: ''; position: absolute; left: 0; top: 0.6em; width: 6px; height: 6px; border-radius: 50%; background: var(--evt-accent-text); }
+
+@media (max-width: 900px) {
+    .agenda { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+    .track { padding: 1.3rem 1.15rem; }
+    .slot { grid-template-columns: 1fr; gap: 0.3rem; }
+    .tech-sessions .slot-sub { padding-left: 0; }
+}
