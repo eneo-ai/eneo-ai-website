@@ -67,10 +67,17 @@
 
 /* ── CTA-rad i hero ── */
 .hero-cta { margin-top: 2.25rem; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; }
-.deadline-note, .capacity-note { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: var(--text-muted); }
-.deadline-note strong, .capacity-note strong { color: var(--evt-amber-text); font-weight: 600; }
+.deadline-note { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: var(--text-muted); }
+.deadline-note strong { color: var(--evt-amber-text); font-weight: 600; }
 .deadline-note svg { color: var(--evt-amber-text); flex-shrink: 0; }
-.capacity-note svg { color: var(--evt-brand-text); flex-shrink: 0; }
+
+/* Sista anmälningsdag och antal platser (anvandartraff-anmalan.html):
+   samma neutrala ton som snabbfaktan, varumärkesblå ikon i stället för
+   varningsfärg. */
+.hero-meta { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
+.hero-meta li { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.92rem; color: var(--text-muted); }
+.hero-meta svg { color: var(--evt-brand-text); flex-shrink: 0; }
+.hero-meta strong { color: var(--text); font-weight: 600; }
 
 /* Knapp: minst 44px touch-target */
 .btn-cta { min-height: 3rem; padding: 0.95rem 2rem; font-size: 1rem; gap: 0.6rem; background: var(--evt-cta); }
@@ -202,6 +209,11 @@
 .event-notice p { color: var(--text); font-size: 0.95rem; line-height: 1.7; margin: 0; }
 .event-notice p + p { margin-top: 0.5rem; }
 .event-notice strong { font-weight: 600; }
+
+/* Målgruppsruta i hero (anvandartraff-anmalan.html) */
+.audience-notice { max-width: 62ch; }
+.audience-notice svg { color: var(--evt-brand-text); }
+.audience-notice p + p { color: var(--text-muted); }
 
 /* ── Program med två spår (anvandartraff-anmalan.html) ──────────────────
    Huvudspåret är bredare eftersom det bär flest programpunkter. Spåren
