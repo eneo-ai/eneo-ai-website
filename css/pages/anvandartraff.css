@@ -209,11 +209,16 @@
 .event-notice p { color: var(--text); font-size: 0.95rem; line-height: 1.7; margin: 0; }
 .event-notice p + p { margin-top: 0.5rem; }
 .event-notice strong { font-weight: 600; }
+.event-notice a { font-weight: 600; text-decoration: underline; text-underline-offset: 0.18em; }
+.event-notice a:hover, .event-notice a:focus-visible { text-decoration-thickness: 2px; }
 
 /* Målgruppsruta i hero (anvandartraff-anmalan.html) */
 .audience-notice { max-width: 62ch; }
 .audience-notice svg { color: var(--evt-brand-text); }
 .audience-notice p + p { color: var(--text-muted); }
+.interest-notice { max-width: 62ch; margin-top: 0.85rem; }
+.interest-notice svg { color: var(--evt-brand-text); }
+.interest-notice p + p { color: var(--text-muted); }
 
 /* ── Program med två spår (anvandartraff-anmalan.html) ──────────────────
    Huvudspåret är bredare eftersom det bär flest programpunkter. Spåren

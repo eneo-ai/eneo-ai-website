@@ -408,6 +408,15 @@
 .article-notice strong {
     font-weight: 600;
 }
+.article-notice a {
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+}
+.article-notice a:hover,
+.article-notice a:focus-visible {
+    text-decoration-thickness: 2px;
+}
 @media (prefers-color-scheme: light) {
     :root:not([data-theme="dark"]) .article-notice svg { color: var(--brand); }
 }
