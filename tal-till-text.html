@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tal till text och Flöden - Eneo.ai</title>
+    <meta name="description" content="Kommande i Eneo: tal till text på svenska som håller isär vem som sa vad och gör protokoll, sammanfattningar och dokument. Med flöden automatiseras hela processen.">
+
+    <!-- Dold sida: ska inte indexeras eller länkas i menyer ännu -->
+    <meta name="robots" content="noindex, nofollow">
+
+    <link rel="icon" type="image/x-icon" href="public/favicon.ico">
+
+    <!-- OG Meta Tags -->
+    <meta property="og:title" content="Tal till text och Flöden - Eneo.ai" />
+    <meta property="og:description" content="Kommande i Eneo: tal till text på svenska som håller isär vem som sa vad och gör protokoll, sammanfattningar och dokument. Med flöden automatiseras hela processen." />
+    <meta property="og:image" content="https://eneo.ai/public/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Eneo AI" />
+    <meta property="og:url" content="https://eneo.ai/tal-till-text.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Eneo.ai" />
+    <meta property="og:locale" content="sv_SE" />
+
+    <!-- Analytics -->
+    <script defer src="https://analytics.eneo.ai/script.js" data-website-id="50c055f0-8d28-4e1e-9d62-0d12a7c5dd57"></script>
+
+    <!-- Typsnitt (självhostade, förladdade) -->
+    <link rel="preload" href="public/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="public/fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/fonts.css?v=1">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/v2-variables.css?v=4">
+    <link rel="stylesheet" href="css/v2-base.css?v=2">
+    <link rel="stylesheet" href="css/v2-components.css?v=2">
+    <link rel="stylesheet" href="css/v2-layout.css?v=3">
+    <link rel="stylesheet" href="css/pages/tal-till-text.css?v=1">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Hoppa till huvudinnehåll</a>
+
+    <!-- NAV -->
+    <nav class="v2-nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo" aria-label="Eneo - till startsidan">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 172" style="height:30px;width:auto;shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;fill-rule:evenodd;clip-rule:evenodd;">
+                    <path fill="#1a7ad4" d="M 107.5,-0.5 C 114.833,-0.5 122.167,-0.5 129.5,-0.5C 176.816,9.15707 202.149,38.1571 205.5,86.5C 203.389,125.423 184.389,152.257 148.5,167C 142.419,168.71 136.419,170.21 130.5,171.5C 123.5,171.5 116.5,171.5 109.5,171.5C 93.3852,168.947 78.7185,162.781 65.5,153C 57.3188,144.986 49.3188,136.819 41.5,128.5C 61.6527,107.847 81.9861,87.3471 102.5,67C 111.582,60.8816 121.249,59.8816 131.5,64C 144.46,73.9171 146.96,86.0837 139,100.5C 131.833,107.667 124.667,114.833 117.5,122C 138.893,122.044 151.726,111.544 156,90.5C 156.442,68.8872 146.275,55.0539 125.5,49C 112.803,46.9218 101.803,50.2552 92.5,59C 86.6667,64.8333 80.8333,70.6667 75,76.5C 63.5,65 52,53.5 40.5,42C 50.2305,31.5999 60.5639,21.9333 71.5,13C 82.7423,6.20074 94.7423,1.70074 107.5,-0.5 Z"/>
+                    <path class="logo-text" d="M 649.5,76.5 C 649.5,82.1667 649.5,87.8333 649.5,93.5C 640.846,129.635 617.846,147.135 580.5,146C 552.923,141.09 535.59,125.09 528.5,98C 514.833,97.6667 501.167,97.3333 487.5,97C 480.994,93.8341 478.494,88.6674 480,81.5C 480.979,78.3749 482.813,75.8749 485.5,74C 498.401,72.538 511.401,72.038 524.5,72.5C 521.764,64.5453 516.764,58.3786 509.5,54C 488.763,45.1354 472.596,50.3021 461,69.5C 453.601,90.9824 459.767,107.149 479.5,118C 492.365,122.56 504.198,120.727 515,112.5C 519.225,119.939 523.725,127.272 528.5,134.5C 511.022,146.856 492.022,149.689 471.5,143C 466.51,141.335 462.01,138.835 458,135.5C 457.502,138.817 457.335,142.15 457.5,145.5C 448.833,145.5 440.167,145.5 431.5,145.5C 431.667,123.497 431.5,101.497 431,79.5C 426.715,61.265 415.215,51.265 396.5,49.5C 377.785,51.265 366.285,61.265 362,79.5C 361.5,101.497 361.333,123.497 361.5,145.5C 352.833,145.5 344.167,145.5 335.5,145.5C 335.5,129.5 335.5,113.5 335.5,97.5C 322.163,97.6666 308.829,97.4999 295.5,97C 287.991,92.8092 285.824,86.6426 289,78.5C 290.663,76.0833 292.829,74.25 295.5,73C 307.829,72.5001 320.162,72.3335 332.5,72.5C 327.027,58.2227 316.527,50.556 301,49.5C 282.085,51.1142 270.419,61.1142 266,79.5C 264.719,101.205 274.553,114.705 295.5,120C 303.532,121.06 311.032,119.56 318,115.5C 318.667,124.833 318.667,134.167 318,143.5C 289.265,150.965 266.265,142.631 249,118.5C 233.274,88.8088 237.108,61.9755 260.5,38C 285.142,19.8768 310.476,18.8768 336.5,35C 340.981,38.3143 344.981,42.1476 348.5,46.5C 369.825,23.1077 395.158,17.6077 424.5,30C 432.127,34.3166 438.794,39.8166 444.5,46.5C 465.825,23.1077 491.158,17.6077 520.5,30C 528.127,34.3166 534.794,39.8166 540.5,46.5C 561.825,23.1077 587.158,17.6077 616.5,30C 634.762,40.3615 645.762,55.8615 649.5,76.5 Z M 583.5,49.5 C 610.442,49.9416 623.609,63.6083 623,90.5C 619.82,107.013 609.987,116.846 593.5,120C 572.335,120.831 559.169,110.998 554,90.5C 552.92,68.7752 562.753,55.1085 583.5,49.5 Z"/>
+                    <path fill="#1a7ad4" d="M -0.5,87.5 C -0.5,85.8333 -0.5,84.1667 -0.5,82.5C 10.1734,71.9931 21.0067,61.6598 32,51.5C 43.9725,62.3055 55.4725,73.6388 66.5,85.5C 55.5,97.1667 44.1667,108.5 32.5,119.5C 21.4793,108.812 10.4793,98.1453 -0.5,87.5 Z"/>
+                </svg>
+            </a>
+            <ul class="nav-links">
+                <li><a href="om-eneo.html">Om</a></li>
+                <li><a href="anvandningsfall.html">Användningsfall</a></li>
+                <li><a href="utbildningar.html">Utbildningar</a></li>
+                <li><a href="tidslinje.html">Historik</a></li>
+                <li><a href="samarbetsforum.html">Samarbete</a></li>
+                <li><a href="docs.html">Docs</a></li>
+                <li><a href="versioner.html">Versioner</a></li>
+                <li><a href="roadmap.html">Roadmap</a></li>
+                <li><a href="nyheter.html">Nyheter</a></li>
+                <li><a href="vanliga-fragor.html">FAQ</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle" onclick="Eneo.toggleTheme()" aria-label="Byt tema">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <button id="mobile-menu-btn" class="mobile-menu-btn" aria-expanded="false" aria-controls="mobile-nav" aria-label="Meny" onclick="Eneo.toggleMobileMenu()">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-nav" class="mobile-nav" aria-label="Mobil navigation">
+            <a href="om-eneo.html">Om</a>
+            <a href="anvandningsfall.html">Användningsfall</a>
+            <a href="utbildningar.html">Utbildningar</a>
+            <a href="tidslinje.html">Historik</a>
+            <a href="samarbetsforum.html">Samarbete</a>
+            <a href="docs.html">Docs</a>
+            <a href="versioner.html">Versioner</a>
+            <a href="roadmap.html">Roadmap</a>
+            <a href="nyheter.html">Nyheter</a>
+            <a href="vanliga-fragor.html">FAQ</a>
+        </div>
+    </nav>
+
+    <!-- MAIN -->
+    <main id="main-content" class="ttt-page">
+
+        <!-- ============ HERO ============ -->
+        <section class="ttt-hero" aria-labelledby="ttt-title">
+            <div class="container ttt-hero-grid">
+                <div class="ttt-hero-text">
+                    <p class="ttt-badge"><span class="dot" aria-hidden="true"></span> Kommande funktion · Tal till text</p>
+                    <h1 id="ttt-title">Från möte till färdigt dokument. <em>Utan att någon skriver.</em></h1>
+                    <p class="ttt-lead">Spela in, ladda upp eller strömma. Eneo transkriberar på svenska, håller isär vem som sa vad och gör protokoll, sammanfattning eller beslutsunderlag – i ett flöde som din verksamhet själv bestämmer.</p>
+                    <div class="ttt-actions">
+                        <a href="#kom-igang" class="btn btn-primary"><span>Se hur det fungerar</span></a>
+                        <a href="#floden" class="ttt-btn-ghost">Automatisera hela processen <span aria-hidden="true">→</span></a>
+                    </div>
+                    <ul class="ttt-trust" aria-label="Kännetecken">
+                        <li>Öppen källkod (AGPL)</li>
+                        <li>Svenska språkmodeller</li>
+                        <li>Kör på egen infrastruktur</li>
+                    </ul>
+                </div>
+
+                <!-- Illustration: transkript och flödessteg -->
+                <figure class="ttt-hero-visual" aria-labelledby="ttt-demo-caption">
+                    <figcaption id="ttt-demo-caption" class="sr-only">Exempel: ett nämndmöte transkriberas live med talare, och flödet går vidare från transkribering till protokollutkast och Word-fil.</figcaption>
+                    <div class="ttt-transcript">
+                        <div class="ttt-transcript-head">
+                            <span class="ttt-transcript-title">Nämndmöte 14 oktober</span>
+                            <span class="ttt-live"><span class="ttt-live-dot" aria-hidden="true"></span>Strömmar live</span>
+                        </div>
+                        <dl class="ttt-lines">
+                            <div><dt class="speaker-a">Ordförande</dt><dd>Då går vi vidare till punkt fyra, förslaget om nya öppettider.</dd></div>
+                            <div><dt class="speaker-b">Ledamot 2</dt><dd>Jag yrkar bifall, men vill att konsekvenserna för biblioteket följs upp.</dd></div>
+                            <div><dt class="speaker-a">Ordförande</dt><dd class="is-typing">Noterat. Finns det fler yrkanden …</dd></div>
+                        </dl>
+                    </div>
+                    <ol class="ttt-pills" aria-label="Flödets steg">
+                        <li class="is-done">Transkriberat</li>
+                        <li class="is-done">Talare namngivna</li>
+                        <li class="is-active" aria-current="step">Protokollutkast skapas</li>
+                        <li class="is-next">Word-fil</li>
+                    </ol>
+                </figure>
+            </div>
+        </section>
+
+        <!-- ============ TRE SÄTT IN ============ -->
+        <section id="tal-till-text" class="ttt-section ttt-section-raised" aria-labelledby="ttt-ways-title">
+            <div class="container">
+                <header class="ttt-section-head">
+                    <p class="ttt-eyebrow">Tre sätt in</p>
+                    <h2 id="ttt-ways-title">Ljudet kommer in som det <em>passar dig</em></h2>
+                    <p>Samma flöde, oavsett om du sitter i mötet, har en fil från diktafonen eller vill se texten växa fram medan du pratar.</p>
+                </header>
+                <div class="ttt-grid-3">
+                    <article class="ttt-card">
+                        <div class="ttt-icon" aria-hidden="true">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 12h2M8 7v10M12 4v16M16 8v8M20 11v2"/></svg>
+                        </div>
+                        <h3>Strömma</h3>
+                        <p>Texten växer fram medan ni pratar. Bra när du vill läsa och lyssna samtidigt, eller snabbt kolla att allt uppfattas.</p>
+                    </article>
+                    <article class="ttt-card">
+                        <div class="ttt-icon" aria-hidden="true">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M9 21h6"/></svg>
+                        </div>
+                        <h3>Spela in</h3>
+                        <p>Direkt i webbläsaren, på dator eller mobil. Inspelningen sparas lokalt varannan sekund och raderas först när Eneo bekräftat att den är mottagen. Långa möten delas upp automatiskt.</p>
+                    </article>
+                    <article class="ttt-card">
+                        <div class="ttt-icon" aria-hidden="true">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V5M7 10l5-5 5 5M4 17v2a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-2"/></svg>
+                        </div>
+                        <h3>Ladda upp</h3>
+                        <p>Ljudfiler du redan har – från diktafon, telefon eller videomöte. Stora filer laddas upp i delar och fortsätter där de var om nätet hickar.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ DET DU FÅR UT ============ -->
+        <section class="ttt-section" aria-labelledby="ttt-output-title">
+            <div class="container">
+                <header class="ttt-section-head">
+                    <p class="ttt-eyebrow">Det du får ut</p>
+                    <h2 id="ttt-output-title">Mer än en <em>textfil</em></h2>
+                </header>
+                <div class="ttt-grid-2">
+                    <article class="ttt-card ttt-card-deep">
+                        <h3>Vem sa vad – med tidsstämpel</h3>
+                        <p>Talarna hålls isär genom hela inspelningen, även när mötet är uppdelat i flera filer. AI:n föreslår namn på talarna, du bekräftar.</p>
+                        <ul class="ttt-timestamps" aria-label="Exempel på tidsstämplar">
+                            <li><span class="ts">00:12</span><span><strong>Talare 1</strong> öppnar mötet</span></li>
+                            <li><span class="ts">03:41</span><span><strong>Talare 2</strong> yrkar bifall</span></li>
+                            <li><span class="ts">04:05</span><span><strong>Talare 1</strong> sammanfattar beslutet</span></li>
+                        </ul>
+                    </article>
+                    <article class="ttt-card">
+                        <h3>Klicka på ordet, hör vad som sades</h3>
+                        <p>Varje ord har en tidpunkt. Är något oklart hoppar du rakt till stället i ljudet i stället för att leta.</p>
+                    </article>
+                    <article class="ttt-card">
+                        <h3>Rätta – och låt resten göra om sig</h3>
+                        <p>Felhört namn eller fel talare? Rätta i texten, så körs sammanfattning och dokument om med den rättade versionen. Originalet finns alltid kvar.</p>
+                    </article>
+                    <article class="ttt-card ttt-card-accent">
+                        <h3>Färdiga dokument, inte råtext</h3>
+                        <p>Protokoll i er Word-mall, en PDF att diarieföra eller strukturerad data till ett verksamhetssystem. Flödet bestämmer formen.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ MÄNNISKAN BESTÄMMER ============ -->
+        <section class="ttt-section ttt-section-tight" aria-labelledby="ttt-human-title">
+            <div class="container">
+                <div class="ttt-human">
+                    <div class="ttt-human-text">
+                        <p class="ttt-eyebrow">Människan bestämmer</p>
+                        <h2 id="ttt-human-title">AI:n föreslår. <em>Ni godkänner.</em></h2>
+                        <p>Vilket steg som helst kan sättas på paus för granskning. Flödet väntar tills en person har läst, ändrat och godkänt – först då går det vidare. Inget lämnar Eneo som ingen har sett.</p>
+                    </div>
+                    <ol class="ttt-steps" aria-label="Exempel på flöde med granskning">
+                        <li>
+                            <span class="ttt-step-num" aria-hidden="true">1</span>
+                            <div><strong>Transkribera med talare</strong><span>Körs automatiskt</span></div>
+                        </li>
+                        <li class="is-pause">
+                            <span class="ttt-step-num" aria-hidden="true">2</span>
+                            <div><strong><span class="ttt-pause-tag">Paus</span> Vem är Talare 1 och 2?</strong><span>AI:n föreslår, sekreteraren bekräftar namnen</span></div>
+                        </li>
+                        <li>
+                            <span class="ttt-step-num" aria-hidden="true">3</span>
+                            <div><strong>Skriv protokollutkast</strong><span>Körs automatiskt med rätt namn</span></div>
+                        </li>
+                        <li class="is-pause">
+                            <span class="ttt-step-num" aria-hidden="true">4</span>
+                            <div><strong><span class="ttt-pause-tag">Paus</span> Läs och godkänn</strong><span>Redigera direkt i texten, godkänn – Word-filen skapas</span></div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ FLÖDEN ============ -->
+        <section id="floden" class="ttt-flows" aria-labelledby="ttt-flows-title">
+            <div class="container">
+                <header class="ttt-section-head">
+                    <p class="ttt-eyebrow">Eneo Flöden</p>
+                    <h2 id="ttt-flows-title">Det stannar inte <em>vid text.</em></h2>
+                    <p>Tal till text är ett steg. Ett flöde är en kedja av steg som ni själva sätter ihop – utan kod – där varje steg gör en avgränsad sak och lämnar över till nästa. Så automatiseras hela processen, inte bara skrivandet.</p>
+                </header>
+
+                <ol class="ttt-chain" aria-label="Exempel på ett flöde i fem steg">
+                    <li><span class="ttt-chain-num">Steg 1</span><strong>Transkribera</strong><span>Ljud in, text med talare ut</span></li>
+                    <li><span class="ttt-chain-num">Steg 2</span><strong>Sammanfatta</strong><span>Språkmodell med er instruktion</span></li>
+                    <li><span class="ttt-chain-num">Steg 3</span><strong>Granska</strong><span>En person läser och godkänner</span></li>
+                    <li><span class="ttt-chain-num">Steg 4</span><strong>Fyll er mall</strong><span>Word-mall med rätt rubriker</span></li>
+                    <li class="is-final"><span class="ttt-chain-num">Steg 5</span><strong>Skicka vidare</strong><span>Till ärendesystem eller e-post</span></li>
+                </ol>
+
+                <div class="ttt-grid-3 ttt-blocks">
+                    <article>
+                        <h3>Byggstenar som räcker långt</h3>
+                        <p>Transkribera, språkmodellssteg, talarmappning, sätt ihop text, fyll Word-mall, rendera PDF eller Word, skicka med HTTP. Varje steg väljer sin egen assistent och modell.</p>
+                    </article>
+                    <article>
+                        <h3>Bygg med AI-byggaren</h3>
+                        <p>Beskriv processen i ord, så föreslår Eneo ett flöde ni sedan justerar i editorn. Grafen visar stegen och vad som går mellan dem.</p>
+                    </article>
+                    <article>
+                        <h3>Publicera en version – kör den tusen gånger</h3>
+                        <p>Ett publicerat flöde fryses som en version. Alla som använder det får samma resultat, och ni ser i efterhand exakt vilken version som gjorde vad.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ ANVÄNDNINGSFALL ============ -->
+        <section class="ttt-section" aria-labelledby="ttt-cases-title">
+            <div class="container">
+                <header class="ttt-section-head">
+                    <p class="ttt-eyebrow">Vad man använder det till</p>
+                    <h2 id="ttt-cases-title">Samma motor, <em>olika flöden</em></h2>
+                    <p>Ett flöde per behov. Varje exempel nedan är en kedja av de byggstenar ni såg ovan.</p>
+                </header>
+                <div class="ttt-grid-3">
+                    <article class="ttt-card ttt-case">
+                        <p class="ttt-case-tag">Nämnder och styrelser</p>
+                        <h3>Protokollutkast samma dag</h3>
+                        <p>Spela in → talare → beslut per punkt → protokoll i er mall → sekreteraren godkänner.</p>
+                    </article>
+                    <article class="ttt-card ttt-case">
+                        <p class="ttt-case-tag">Socialtjänst och vård</p>
+                        <h3>Samtalet blir en journalanteckning</h3>
+                        <p>Diktera efter besöket → strukturerad anteckning enligt er rubrikmall → handläggaren godkänner.</p>
+                    </article>
+                    <article class="ttt-card ttt-case">
+                        <p class="ttt-case-tag">Utredning och tillsyn</p>
+                        <h3>Intervjuer till tematiserad rapport</h3>
+                        <p>Flera inspelningar → transkript per intervju → sammanställning per tema → PDF.</p>
+                    </article>
+                    <article class="ttt-card ttt-case">
+                        <p class="ttt-case-tag">Medborgarservice</p>
+                        <h3>Ärendeanteckning direkt efter samtalet</h3>
+                        <p>Kort inspelning → sammanfattning med nästa steg → skickas till ärendesystemet.</p>
+                    </article>
+                    <article class="ttt-card ttt-case">
+                        <p class="ttt-case-tag">Inkomna dokument</p>
+                        <h3>Från PDF till strukturerad data</h3>
+                        <p>Samma flödesmotor tar emot dokument, inte bara ljud: läs → extrahera fält som JSON → vidare till verksamhetssystemet.</p>
+                    </article>
+                    <article class="ttt-card ttt-case ttt-case-own">
+                        <p class="ttt-case-tag">Ert eget</p>
+                        <h3>Er process här</h3>
+                        <p>Börja med det ni gör för hand i dag. Beskriv det för AI-byggaren, publicera, prova.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SÄKERHET ============ -->
+        <section id="sakerhet" class="ttt-section ttt-section-raised" aria-labelledby="ttt-sec-title">
+            <div class="container ttt-sec">
+                <header class="ttt-section-head">
+                    <p class="ttt-eyebrow">Byggt för offentlig sektor</p>
+                    <h2 id="ttt-sec-title">Era data, era modeller, <em>er infrastruktur</em></h2>
+                    <p>Eneo är öppen källkod och utvecklas av och för svensk offentlig sektor. Allt kan köras där ni bestämmer.</p>
+                </header>
+                <div class="ttt-grid-2">
+                    <article class="ttt-card ttt-card-sm">
+                        <h3>Svenska språkmodeller</h3>
+                        <p>Transkription med KB-Whisper, tränad på svenska. Talarigenkänning och ordexakta tider i en egen tjänst på er GPU.</p>
+                    </article>
+                    <article class="ttt-card ttt-card-sm">
+                        <h3>Spårbart i varje led</h3>
+                        <p>Varje modellanrop, varje läsning av en körning och varje fillänk loggas. Publicerade flöden är frysta versioner.</p>
+                    </article>
+                    <article class="ttt-card ttt-card-sm">
+                        <h3>Inga genvägar ut</h3>
+                        <p>Flöden får inte anropa verktyg eller webben på egen hand. Det som lämnar Eneo går genom ett steg ni själva har lagt in.</p>
+                    </article>
+                    <article class="ttt-card ttt-card-sm">
+                        <h3>Inloggning via Eneo</h3>
+                        <p>Tal till text-appen har inga egna konton och sparar ingenting. Samma användare, samma behörigheter, samma space som i Eneo.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ KOM IGÅNG ============ -->
+        <section id="kom-igang" class="ttt-section" aria-labelledby="ttt-start-title">
+            <div class="container">
+                <header class="ttt-section-head ttt-center">
+                    <p class="ttt-eyebrow">Kom igång</p>
+                    <h2 id="ttt-start-title">Tre steg till <em>första körningen</em></h2>
+                </header>
+                <ol class="ttt-grid-3 ttt-start">
+                    <li class="ttt-card">
+                        <span class="ttt-start-num" aria-hidden="true">1</span>
+                        <h3>Bygg flödet i Eneo</h3>
+                        <p>Välj transkriptionsmodell, lägg till stegen, koppla er Word-mall. Eller beskriv processen för AI-byggaren.</p>
+                    </li>
+                    <li class="ttt-card">
+                        <span class="ttt-start-num" aria-hidden="true">2</span>
+                        <h3>Publicera</h3>
+                        <p>Eneo kontrollerar att allt hänger ihop och fryser flödet som en version.</p>
+                    </li>
+                    <li class="ttt-card">
+                        <span class="ttt-start-num" aria-hidden="true">3</span>
+                        <h3>Öppna Tal till text</h3>
+                        <p>Logga in med ditt vanliga Eneo-konto, välj flödet och tryck på spela in.</p>
+                    </li>
+                </ol>
+                <div class="ttt-actions ttt-center">
+                    <a href="https://github.com/eneo-ai/eneo" class="btn btn-primary" target="_blank" rel="noopener"><span>Koden på GitHub<span class="sr-only"> (öppnas i ny flik)</span></span></a>
+                    <a href="mailto:digitalisering@sundsvall.se" class="ttt-btn-ghost">Kontakta oss <span class="sr-only">via e-post till digitalisering@sundsvall.se</span></a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============ SAJTENS FOOTER ============ -->
+    <footer class="v2-footer">
+        <div class="container">
+            <div class="footer-intro">
+                <div class="footer-logo">
+                    <svg role="img" aria-label="Eneo logotyp" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 172" style="height:22px;width:auto;shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;fill-rule:evenodd;clip-rule:evenodd;">
+                        <path fill="#1a7ad4" d="M 107.5,-0.5 C 114.833,-0.5 122.167,-0.5 129.5,-0.5C 176.816,9.15707 202.149,38.1571 205.5,86.5C 203.389,125.423 184.389,152.257 148.5,167C 142.419,168.71 136.419,170.21 130.5,171.5C 123.5,171.5 116.5,171.5 109.5,171.5C 93.3852,168.947 78.7185,162.781 65.5,153C 57.3188,144.986 49.3188,136.819 41.5,128.5C 61.6527,107.847 81.9861,87.3471 102.5,67C 111.582,60.8816 121.249,59.8816 131.5,64C 144.46,73.9171 146.96,86.0837 139,100.5C 131.833,107.667 124.667,114.833 117.5,122C 138.893,122.044 151.726,111.544 156,90.5C 156.442,68.8872 146.275,55.0539 125.5,49C 112.803,46.9218 101.803,50.2552 92.5,59C 86.6667,64.8333 80.8333,70.6667 75,76.5C 63.5,65 52,53.5 40.5,42C 50.2305,31.5999 60.5639,21.9333 71.5,13C 82.7423,6.20074 94.7423,1.70074 107.5,-0.5 Z"/>
+                        <path class="logo-text" d="M 649.5,76.5 C 649.5,82.1667 649.5,87.8333 649.5,93.5C 640.846,129.635 617.846,147.135 580.5,146C 552.923,141.09 535.59,125.09 528.5,98C 514.833,97.6667 501.167,97.3333 487.5,97C 480.994,93.8341 478.494,88.6674 480,81.5C 480.979,78.3749 482.813,75.8749 485.5,74C 498.401,72.538 511.401,72.038 524.5,72.5C 521.764,64.5453 516.764,58.3786 509.5,54C 488.763,45.1354 472.596,50.3021 461,69.5C 453.601,90.9824 459.767,107.149 479.5,118C 492.365,122.56 504.198,120.727 515,112.5C 519.225,119.939 523.725,127.272 528.5,134.5C 511.022,146.856 492.022,149.689 471.5,143C 466.51,141.335 462.01,138.835 458,135.5C 457.502,138.817 457.335,142.15 457.5,145.5C 448.833,145.5 440.167,145.5 431.5,145.5C 431.667,123.497 431.5,101.497 431,79.5C 426.715,61.265 415.215,51.265 396.5,49.5C 377.785,51.265 366.285,61.265 362,79.5C 361.5,101.497 361.333,123.497 361.5,145.5C 352.833,145.5 344.167,145.5 335.5,145.5C 335.5,129.5 335.5,113.5 335.5,97.5C 322.163,97.6666 308.829,97.4999 295.5,97C 287.991,92.8092 285.824,86.6426 289,78.5C 290.663,76.0833 292.829,74.25 295.5,73C 307.829,72.5001 320.162,72.3335 332.5,72.5C 327.027,58.2227 316.527,50.556 301,49.5C 282.085,51.1142 270.419,61.1142 266,79.5C 264.719,101.205 274.553,114.705 295.5,120C 303.532,121.06 311.032,119.56 318,115.5C 318.667,124.833 318.667,134.167 318,143.5C 289.265,150.965 266.265,142.631 249,118.5C 233.274,88.8088 237.108,61.9755 260.5,38C 285.142,19.8768 310.476,18.8768 336.5,35C 340.981,38.3143 344.981,42.1476 348.5,46.5C 369.825,23.1077 395.158,17.6077 424.5,30C 432.127,34.3166 438.794,39.8166 444.5,46.5C 465.825,23.1077 491.158,17.6077 520.5,30C 528.127,34.3166 534.794,39.8166 540.5,46.5C 561.825,23.1077 587.158,17.6077 616.5,30C 634.762,40.3615 645.762,55.8615 649.5,76.5 Z M 583.5,49.5 C 610.442,49.9416 623.609,63.6083 623,90.5C 619.82,107.013 609.987,116.846 593.5,120C 572.335,120.831 559.169,110.998 554,90.5C 552.92,68.7752 562.753,55.1085 583.5,49.5 Z"/>
+                        <path fill="#1a7ad4" d="M -0.5,87.5 C -0.5,85.8333 -0.5,84.1667 -0.5,82.5C 10.1734,71.9931 21.0067,61.6598 32,51.5C 43.9725,62.3055 55.4725,73.6388 66.5,85.5C 55.5,97.1667 44.1667,108.5 32.5,119.5C 21.4793,108.812 10.4793,98.1453 -0.5,87.5 Z"/>
+                    </svg>
+                </div>
+                <p>Ett initiativ från Sundsvalls kommun och Ånge kommun för hela offentliga Sverige.</p>
+            </div>
+            <div class="footer-grid">
+                <div class="footer-box">
+                    <p class="footer-heading">Kontakt</p>
+                    <a href="mailto:digitalisering@sundsvall.se">digitalisering@sundsvall.se</a>
+                </div>
+                <div class="footer-box">
+                    <p class="footer-heading">Ladda ned</p>
+                    <a href="https://github.com/eneo-ai/eneo" target="_blank" rel="noopener">Källkod<span class="sr-only"> (öppnas i ny flik)</span></a>
+                </div>
+                <div class="footer-box">
+                    <p class="footer-heading">Tillgänglighet</p>
+                    <a href="tillganglighetsredogorelse.html">Tillgänglighetsredogörelse</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© Sundsvalls kommun och Ånge kommun</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js?v=4"></script>
+</body>
+</html>
