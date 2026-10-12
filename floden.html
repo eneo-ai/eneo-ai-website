@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flöden - Eneo.ai</title>
+    <meta name="description" content="Flöden i Eneo bearbetar underlag i steg med bestämd ordning: text, dokument och ljud in, text, JSON eller dokument ut. Granskning per steg, körningshistorik med bevisunderlag, säkerhetsklassificering, gallring och flödespaket.">
+    <link rel="icon" type="image/x-icon" href="public/favicon.ico">
+    <meta property="og:title" content="Flöden - Eneo.ai" />
+    <meta property="og:description" content="Flöden i Eneo bearbetar underlag i steg med bestämd ordning, med granskning per steg och körningshistorik som visar hur resultatet togs fram." />
+    <meta property="og:image" content="https://eneo.ai/public/logo-eneo.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://eneo.ai/floden.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Eneo.ai" />
+    <meta property="og:locale" content="sv_SE" />
+
+    <!-- Analytics -->
+    <script defer src="https://analytics.eneo.ai/script.js" data-website-id="50c055f0-8d28-4e1e-9d62-0d12a7c5dd57"></script>
+
+    <!-- External Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,500;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/v2-variables.css?v=2">
+    <link rel="stylesheet" href="css/v2-base.css?v=2">
+    <link rel="stylesheet" href="css/v2-components.css?v=2">
+    <link rel="stylesheet" href="css/v2-layout.css?v=2">
+    <link rel="stylesheet" href="css/pages/om-eneo.css?v=2">
+    <link rel="stylesheet" href="css/pages/floden.css?v=3">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Hoppa till huvudinnehåll</a>
+    <!-- NAV -->
+    <nav class="v2-nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo" aria-label="Eneo - till startsidan">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 172" style="height:30px;width:auto;shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;fill-rule:evenodd;clip-rule:evenodd;">
+                    <path fill="#1a7ad4" d="M 107.5,-0.5 C 114.833,-0.5 122.167,-0.5 129.5,-0.5C 176.816,9.15707 202.149,38.1571 205.5,86.5C 203.389,125.423 184.389,152.257 148.5,167C 142.419,168.71 136.419,170.21 130.5,171.5C 123.5,171.5 116.5,171.5 109.5,171.5C 93.3852,168.947 78.7185,162.781 65.5,153C 57.3188,144.986 49.3188,136.819 41.5,128.5C 61.6527,107.847 81.9861,87.3471 102.5,67C 111.582,60.8816 121.249,59.8816 131.5,64C 144.46,73.9171 146.96,86.0837 139,100.5C 131.833,107.667 124.667,114.833 117.5,122C 138.893,122.044 151.726,111.544 156,90.5C 156.442,68.8872 146.275,55.0539 125.5,49C 112.803,46.9218 101.803,50.2552 92.5,59C 86.6667,64.8333 80.8333,70.6667 75,76.5C 63.5,65 52,53.5 40.5,42C 50.2305,31.5999 60.5639,21.9333 71.5,13C 82.7423,6.20074 94.7423,1.70074 107.5,-0.5 Z"/>
+                    <path class="logo-text" d="M 649.5,76.5 C 649.5,82.1667 649.5,87.8333 649.5,93.5C 640.846,129.635 617.846,147.135 580.5,146C 552.923,141.09 535.59,125.09 528.5,98C 514.833,97.6667 501.167,97.3333 487.5,97C 480.994,93.8341 478.494,88.6674 480,81.5C 480.979,78.3749 482.813,75.8749 485.5,74C 498.401,72.538 511.401,72.038 524.5,72.5C 521.764,64.5453 516.764,58.3786 509.5,54C 488.763,45.1354 472.596,50.3021 461,69.5C 453.601,90.9824 459.767,107.149 479.5,118C 492.365,122.56 504.198,120.727 515,112.5C 519.225,119.939 523.725,127.272 528.5,134.5C 511.022,146.856 492.022,149.689 471.5,143C 466.51,141.335 462.01,138.835 458,135.5C 457.502,138.817 457.335,142.15 457.5,145.5C 448.833,145.5 440.167,145.5 431.5,145.5C 431.667,123.497 431.5,101.497 431,79.5C 426.715,61.265 415.215,51.265 396.5,49.5C 377.785,51.265 366.285,61.265 362,79.5C 361.5,101.497 361.333,123.497 361.5,145.5C 352.833,145.5 344.167,145.5 335.5,145.5C 335.5,129.5 335.5,113.5 335.5,97.5C 322.163,97.6666 308.829,97.4999 295.5,97C 287.991,92.8092 285.824,86.6426 289,78.5C 290.663,76.0833 292.829,74.25 295.5,73C 307.829,72.5001 320.162,72.3335 332.5,72.5C 327.027,58.2227 316.527,50.556 301,49.5C 282.085,51.1142 270.419,61.1142 266,79.5C 264.719,101.205 274.553,114.705 295.5,120C 303.532,121.06 311.032,119.56 318,115.5C 318.667,124.833 318.667,134.167 318,143.5C 289.265,150.965 266.265,142.631 249,118.5C 233.274,88.8088 237.108,61.9755 260.5,38C 285.142,19.8768 310.476,18.8768 336.5,35C 340.981,38.3143 344.981,42.1476 348.5,46.5C 369.825,23.1077 395.158,17.6077 424.5,30C 432.127,34.3166 438.794,39.8166 444.5,46.5C 465.825,23.1077 491.158,17.6077 520.5,30C 528.127,34.3166 534.794,39.8166 540.5,46.5C 561.825,23.1077 587.158,17.6077 616.5,30C 634.762,40.3615 645.762,55.8615 649.5,76.5 Z M 583.5,49.5 C 610.442,49.9416 623.609,63.6083 623,90.5C 619.82,107.013 609.987,116.846 593.5,120C 572.335,120.831 559.169,110.998 554,90.5C 552.92,68.7752 562.753,55.1085 583.5,49.5 Z"/>
+                    <path fill="#1a7ad4" d="M -0.5,87.5 C -0.5,85.8333 -0.5,84.1667 -0.5,82.5C 10.1734,71.9931 21.0067,61.6598 32,51.5C 43.9725,62.3055 55.4725,73.6388 66.5,85.5C 55.5,97.1667 44.1667,108.5 32.5,119.5C 21.4793,108.812 10.4793,98.1453 -0.5,87.5 Z"/>
+                </svg>
+            </a>
+            <ul class="nav-links">
+                <li><a href="om-eneo.html">Om</a></li>
+                <li><a href="anvandningsfall.html">Användningsfall</a></li>
+                <li><a href="floden.html" class="nav-active">Flöden</a></li>
+                <li><a href="utbildningar.html">Utbildningar</a></li>
+                <li><a href="tidslinje.html">Historik</a></li>
+                <li><a href="samarbetsforum.html">Samarbete</a></li>
+                <li><a href="docs.html">Docs</a></li>
+                <li><a href="versioner.html">Versioner</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle" onclick="Eneo.toggleTheme()" aria-label="Byt tema">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <button id="mobile-menu-btn" class="mobile-menu-btn" aria-expanded="false" aria-controls="mobile-nav" aria-label="Meny" onclick="Eneo.toggleMobileMenu()">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-nav" class="mobile-nav" aria-label="Mobil navigation">
+            <a href="om-eneo.html">Om</a>
+            <a href="anvandningsfall.html">Användningsfall</a>
+            <a href="floden.html">Flöden</a>
+            <a href="utbildningar.html">Utbildningar</a>
+            <a href="tidslinje.html">Historik</a>
+            <a href="samarbetsforum.html">Samarbete</a>
+            <a href="docs.html">Docs</a>
+            <a href="versioner.html">Versioner</a>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <!-- PAGE HERO -->
+        <section class="page-hero">
+            <div class="container">
+                <div class="label">Flöden</div>
+                <h1>Flöden kopplar ihop uppgifter <em>i fast ordning</em></h1>
+                <p class="hero-text">
+                    Ett flöde bearbetar underlag i en bestämd ordning. Det tar emot text, dokument
+                    och ljud och skapar text, JSON eller dokument. Ni bygger flödet manuellt eller
+                    med AI-byggaren, och varje steg kan pausa för granskning av en människa.
+                    Körningshistoriken visar hur resultatet togs fram.
+                </p>
+            </div>
+        </section>
+
+        <!-- INTRO -->
+        <section class="intro-bar">
+            <div class="container">
+                <p>
+                    Ett flöde kan transkribera ljudet från ett nämndmöte, bearbeta texten med ett
+                    regelverk som underlag, låta en handläggare granska noteringarna och skapa en
+                    PDF-rapport. Samma upplägg passar remissvar, beslutsunderlag och andra ärenden med
+                    fasta steg. Flödet körs i Eneo, AI-plattformen som tillhandahåller modellerna,
+                    kunskapskällorna och behörigheterna.
+                </p>
+            </div>
+        </section>
+
+        <!-- LAYERS -->
+        <section class="page-section" id="lager">
+            <div class="container">
+                <h2>Eneo, flöden och moduler</h2>
+                <p class="lead">
+                    Eneo är AI-plattformen. Ett flöde beskriver hur underlag bearbetas i steg med
+                    bestämd ordning. En modul är en separat webbapp som använder publicerade flöden
+                    och tillför gränssnittet för ett visst arbetsmoment.
+                </p>
+                <div class="layers">
+                    <div class="shell shell-modules" role="img" aria-label="Tre lager: moduler ytterst, flöden i mitten, Eneo i kärnan">
+                        <div class="shell-head">
+                            <span class="shell-name">Moduler</span>
+                            <span class="shell-role">Gränssnittet</span>
+                        </div>
+                        <div class="shell shell-flows">
+                            <div class="shell-head">
+                                <span class="shell-name">Flöden</span>
+                                <span class="shell-role">Bearbetningen</span>
+                            </div>
+                            <div class="shell shell-eneo">
+                                <span class="shell-name">Eneo</span>
+                                <span class="shell-role">AI-plattformen</span>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="layer-list">
+                        <li>
+                            <h3>Eneo, AI-plattformen</h3>
+                            <p>Modeller för språk och transkribering. Kunskapskällor. Ytor, det vill säga arbetsytor med egna medlemmar och behörigheter. Säkerhetsklasser, loggning och API.</p>
+                        </li>
+                        <li>
+                            <h3>Flöden, bearbetningen</h3>
+                            <p>Stegen, deras underlag och resultat, och granskningspunkterna. Publiceras i versioner och körs många gånger.</p>
+                        </li>
+                        <li>
+                            <h3>Moduler, gränssnittet</h3>
+                            <p>Användarens kontroller och resultatvyer för ett arbetsmoment. <a href="tal-till-text.html">Tal till text</a> tillför inspelning, strömning och visning av transkriberingar och dokument.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- STEP MODEL -->
+        <section class="page-section alt" id="steg">
+            <div class="container">
+                <h2>Flödets steg bearbetar underlag i fast ordning</h2>
+                <p class="lead">
+                    Ett flöde har ett steg eller tiotals steg, beroende på uppgiften. Varje steg anger
+                    var underlaget kommer från, hur det bearbetas och vilket resultat steget ger.
+                    Ordningen låses när flödet publiceras. Modellen ändrar den inte under körning.
+                </p>
+
+                <ol class="chain t-stagger" aria-label="Exempel på ett flöde, från ljud till PDF-rapport">
+                    <li class="chain-node chain-in t-stagger-line">
+                        <span class="chain-tag" aria-hidden="true">IN</span>
+                        <span><span class="chain-title">Ljud från nämndmötet</span><span class="chain-meta">Skickas in när flödet körs. Regelverket bifogades när flödet byggdes.</span></span>
+                    </li>
+                    <li class="chain-node t-stagger-line">
+                        <span class="chain-tag" aria-hidden="true">1</span>
+                        <span><span class="chain-title">Transkribera ljudet</span><span class="chain-meta">Läser ljudet · Ger text, med talare om talaridentifiering är ansluten</span></span>
+                    </li>
+                    <li class="chain-node t-stagger-line">
+                        <span class="chain-tag" aria-hidden="true">2</span>
+                        <span><span class="chain-title">Plocka ut beslut och åtgärder</span><span class="chain-meta">Läser steg 1 · Ger svar i fast format (JSON)</span></span>
+                    </li>
+                    <li class="chain-node chain-review t-stagger-line">
+                        <span class="chain-tag" aria-hidden="true">Paus</span>
+                        <span><span class="chain-title">Granskning</span><span class="chain-meta">Handläggaren läser underlag och svar, och godkänner, rättar eller avvisar innan flödet fortsätter.</span></span>
+                    </li>
+                    <li class="chain-node t-stagger-line">
+                        <span class="chain-tag" aria-hidden="true">3</span>
+                        <span><span class="chain-title">Skriv rapporttexten</span><span class="chain-meta">Läser steg 1 och 2, med regelverket som underlag · Ger text</span></span>
+                    </li>
+                    <li class="chain-node t-stagger-line">
+                        <span class="chain-tag" aria-hidden="true">4</span>
+                        <span><span class="chain-title">Skapa PDF</span><span class="chain-meta">Läser steg 3 · Ger ett PDF-dokument</span></span>
+                    </li>
+                    <li class="chain-node chain-out t-stagger-line">
+                        <span class="chain-tag" aria-hidden="true">UT</span>
+                        <span><span class="chain-title">PDF-rapport och transkribering</span><span class="chain-meta">Kommer ut ur varje körning.</span></span>
+                    </li>
+                </ol>
+                <p class="chain-caption">Ett exempel på hur ett flöde kan se ut. Vilka steg som ingår, och var flödet pausar för granskning, bestämmer den som bygger det.</p>
+
+                <table class="spec">
+                    <caption>Indata till flödet</caption>
+                    <thead>
+                        <tr><th scope="col">Indata</th><th scope="col">Beskrivning</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Formulärfält</td><td>Text, siffror, datum, enkelval, flerval och listor. Fälten fylls i när flödet körs.</td></tr>
+                        <tr><td>Dokument</td><td>PDF, Word (DOCX), PowerPoint (PPTX), Excel (XLSX), CSV, Markdown, textfiler, JSON och XML. Filer i de äldre formaten DOC och PPT avvisas; de behöver sparas som DOCX respektive PPTX.</td></tr>
+                        <tr><td>Ljud</td><td>MP3, M4A, WAV, OGG, WebM och MP4.</td></tr>
+                        <tr><td>Hämtning från API</td><td>Ett steg kan hämta sitt underlag med HTTP GET från ett API eller en webbadress innan det körs. Installationen bestämmer vilka adresser som får nås.</td></tr>
+                    </tbody>
+                </table>
+
+                <table class="spec">
+                    <caption>Vad ett steg gör</caption>
+                    <thead>
+                        <tr><th scope="col">Stegtyp</th><th scope="col">Beskrivning</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Modellsteg</td><td>En språkmodell med instruktion och valfri kunskapskälla. Modellen svarar med löpande text eller med JSON som senare steg kan läsa fält ur.</td></tr>
+                        <tr><td>Transkribering</td><td>Ljud blir text med installationens transkriberingsmodell. Om en tjänst för talaridentifiering är ansluten märks replikerna med talare.</td></tr>
+                        <tr><td>Talarmappning</td><td>Modellen föreslår vilken deltagare varje talare är. En person bekräftar eller rättar innan flödet fortsätter.</td></tr>
+                        <tr><td>Sammansättning</td><td>Text byggs ihop av tidigare steg och formulärsvar enligt en mall, utan modell.</td></tr>
+                        <tr><td>Dokument</td><td>Steget fyller i en Word-mall via mallens innehållskontroller, eller skapar ett dokument i PDF- eller DOCX-format av texten.</td></tr>
+                        <tr><td>Leverans</td><td>Steget skickar resultatet till ett annat system med HTTP POST. Leveransen kan upprepas, och varje försök registreras.</td></tr>
+                    </tbody>
+                </table>
+
+                <h3>Utdata</h3>
+                <p>Text i Markdown, svar i fast format (JSON), PDF, Word (DOCX) eller leverans till ett annat system.</p>
+
+                <div class="note">
+                    <p><strong>Avgränsningar.</strong> MCP-verktyg i flödessteg byggs nu och ingår inte än; tills dess används MCP-verktyg via assistenter i Eneo. Ett steg kan hämta underlag med HTTP GET och leverera resultat med HTTP POST, men HTTP POST stöds inte som källa för stegets indata. Bilder tas inte emot som underlag.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- HUMAN REVIEW -->
+        <section class="page-section" id="granskning">
+            <div class="container">
+                <h2>En människa kan granska varje steg</h2>
+                <p class="lead">
+                    Ett steg kan ställas in så att körningen pausar när steget är klart. Den som
+                    granskar ser stegets underlag och svar bredvid varandra och godkänner, ändrar
+                    eller avvisar svaret. Först då fortsätter eller avslutas körningen.
+                </p>
+                <ul class="facts">
+                    <li><strong>Granskning per steg, inte bara i slutet.</strong> Den som bygger flödet väljer vilka steg som ska granskas: alla, några eller inga. Ett flöde som transkriberar och sammanfattar kan pausa efter transkriberingen, efter sammanfattningen eller efter båda.</li>
+                    <li><strong>Ändringar förs vidare.</strong> Rättar granskaren svaret går den rättade versionen in i nästa steg. Talarmappning är ett sådant steg: modellen föreslår vem som sa vad, en person bekräftar, och transkriberingen skrivs om med namnen.</li>
+                    <li><strong>Beslutet dokumenteras.</strong> Varje granskning sparas med vem som beslutade, vad som ändrades och när. En körning som ingen granskar avbryts efter granskningsfönstret, som standard 14 dagar.</li>
+                    <li><strong>Mindre automation bias, högre kvalitet.</strong> Den som får ett färdigt dokument tenderar att godta det. Den som ser modellens svar bredvid underlaget, innan svaret används, upptäcker fel där de uppstår. Granskningen kostar tid i de steg som granskas, och ger i gengäld en leverans som verksamheten kan stå för.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- BUILDING -->
+        <section class="page-section alt" id="bygga">
+            <div class="container">
+                <h2>AI-byggaren föreslår ett flöde utifrån uppgiften</h2>
+                <p class="lead">
+                    Ett flöde byggs manuellt, steg för steg, eller med AI-byggaren. AI-byggaren är
+                    det rekommenderade sättet att börja. Den ställer frågor om uppgiften, visar sin
+                    tolkning och föreslår en plan. Flödesutkastet skapas när ni godkänner planen.
+                    Därefter kan utkastet ändras manuellt eller med AI-byggaren, och publiceras när
+                    det är klart.
+                </p>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-text">
+                            <span class="step-num" aria-hidden="true">1</span>
+                            <h3>Eneo förstår uppgiften</h3>
+                            <p>Ni beskriver uppgiften med egna ord och kan bifoga regler och styrdokument som underlag. AI-byggaren ställer en fråga i taget, med sitt förslag markerat; en fråga kan lämnas till Eneo att avgöra. Till sist visas tolkningen: syfte, indata, slutresultat och antaganden. Varje rad kan ändras.</p>
+                        </div>
+                        <figure class="step-shot">
+                            <img src="public/images/floden/05-ai-byggaren-fraga-alternativ.png" alt="AI-byggaren ställer fråga 1 med svarsalternativ; alternativet Strukturera materialet är markerat med Eneo föreslår, och Låt Eneo välja åt mig finns som länk" loading="lazy">
+                        </figure>
+                    </div>
+                    <div class="step">
+                        <div class="step-text">
+                            <span class="step-num" aria-hidden="true">2</span>
+                            <h3>Eneo utformar planen</h3>
+                            <p>Planen beskriver stegen, deras underlag och resultat, skälen till upplägget och flödets begränsningar. Ni kan begära en ändring i text, till exempel: "Lägg till en sammanfattning på första sidan."</p>
+                        </div>
+                        <figure class="step-shot">
+                            <img src="public/images/floden/07-ai-byggaren-utformar.png" alt="AI-byggaren i steget Eneo utformar planen: den bekräftade uppgiften Ljud till PDF-dokument visas, och planens steg fylls i" loading="lazy">
+                        </figure>
+                    </div>
+                    <div class="step">
+                        <div class="step-text">
+                            <span class="step-num" aria-hidden="true">3</span>
+                            <h3>Du granskar innan det skapas</h3>
+                            <p>Ni granskar planen som diagram eller i detalj. Godkännandet skapar utkastet. Ingenting körs.</p>
+                        </div>
+                        <figure class="step-shot">
+                            <img src="public/images/floden/08-ai-byggaren-plan.png" alt="Planvy i AI-byggaren: fem steg från Transkribera ljud till Rendera PDF, med indata ljud, utdata PDF-dokument och fältet Be om en ändring" loading="lazy">
+                            <figcaption>Exempel från AI-byggaren: uppgiften "Ljudfilen från ett nämndmöte ska transkriberas och bli en strukturerad PDF-rapport" gav en plan med fem steg.</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <h3>Ändra ett befintligt flöde</h3>
+                <p>AI-byggaren kan också öppnas på ett befintligt flöde. Vid redigering rekommenderar den att behålla befintliga val, men ni kan begära ändringar, och varje ändring visas innan den genomförs.</p>
+                <h3>Diagram över flödet</h3>
+                <p>Flödets steg, indata, utdata och kopplingar visas som ett diagram i redigeraren. Diagrammet kan laddas ner som bild, till exempel till en redovisning av hur ett ärende hanteras.</p>
+            </div>
+        </section>
+
+        <!-- HISTORY -->
+        <section class="page-section" id="historik">
+            <div class="container">
+                <h2>Körningshistoriken visar version, underlag och resultat</h2>
+                <p class="lead">
+                    Ett flöde publiceras som en oföränderlig version med kontrollsumma. Varje körning
+                    är knuten till den publicerade version som användes. Ändringar i utkastet efteråt
+                    påverkar inte körningen.
+                </p>
+                <ol class="track t-stagger" aria-label="Ett flödes livscykel">
+                    <li class="track-node t-stagger-line">
+                        <span class="track-kicker">1</span>
+                        <span class="track-title">Utkast</span>
+                        <span class="track-meta">Ändras manuellt eller med AI-byggaren.</span>
+                    </li>
+                    <li class="track-node t-stagger-line">
+                        <span class="track-kicker">2</span>
+                        <span class="track-title">Publicerad version</span>
+                        <span class="track-meta">Oföränderlig, med kontrollsumma. En ny ändring blir en ny version.</span>
+                    </li>
+                    <li class="track-node t-stagger-line">
+                        <span class="track-kicker">3</span>
+                        <span class="track-title">Körning</span>
+                        <span class="track-meta">Knuten till versionen. Kan pausa för granskning.</span>
+                    </li>
+                    <li class="track-node t-stagger-line">
+                        <span class="track-kicker">4</span>
+                        <span class="track-title">Historik</span>
+                        <span class="track-meta">Steg för steg, med bevisunderlag. Gallras enligt regel; en rättslig spärr stoppar.</span>
+                    </li>
+                </ol>
+                <ul class="facts">
+                    <li><strong>Historik.</strong> Historiken visar pågående och avslutade körningar med status, version, starttid och varaktighet.</li>
+                    <li><strong>Per steg.</strong> För varje steg visas den faktiska instruktionen, underlaget, svaret, använda modeller, antal försök och felsökningsuppgifter.</li>
+                    <li><strong>Token.</strong> Antalet token som skickats till och från modellen visas per steg och för hela körningen, enligt leverantörens rapportering. Saknad eller ofullständig uppgift märks ut.</li>
+                    <li><strong>Bevisunderlag.</strong> Bevisunderlaget är dokumentationen av körningens instruktioner, underlag och svar. Om flödet tillåter export kan det laddas ner som JSON, i rå eller maskerad form. Varje nedladdning loggas med angivet skäl.</li>
+                </ul>
+                <div class="note">
+                    <p>Underlaget visar hur resultatet togs fram, så att det kan granskas i efterhand och inte bara godtas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- GOVERNANCE -->
+        <section class="page-section alt" id="styrning">
+            <div class="container">
+                <h2>Säkerhetsklassificering, gallring och behörigheter</h2>
+                <ul class="facts">
+                    <li><strong>Säkerhetsklassificering.</strong> Organisationen definierar sina säkerhetsklasser. Ytan har en klass, och varje modell har en. Vid publicering kontrolleras att stegets modell uppfyller den klass som ytan, tidigare steg och kunskapskällor kräver. Ett steg kan ge sitt resultat en högre klass, aldrig en lägre. Klasserna visas med organisationens egna namn.</li>
+                    <li><strong>Gallring.</strong> Eneo får en gemensam gallringsmotor för chattar, appar och uppladdade filer. Flöden ansluts i nästa steg med samma regler. Verksamheten sätter lagringstiden per yta eller flöde, i dagar. Utan lagringstid gallras inget automatiskt. Varje natt raderas de körningar vars tid har gått ut, som en helhet: körningen med uppladdade filer, inspelningar och skapade dokument. Varje radering loggas som antal och regel, aldrig som innehåll.</li>
+                    <li><strong>Rättslig spärr.</strong> En rättslig spärr hindrar gallring av den körningshistorik den gäller, till exempel medan en begäran om utlämnande handläggs. För spärren registreras vem som lade den, skälet, tidpunkten, när den ska omprövas och hur länge den gäller.</li>
+                    <li><strong>Behörigheter.</strong> Särskilda behörigheter krävs för att hantera gallringsregler och rättsliga spärrar. Ändringar loggas med gammalt och nytt värde.</li>
+                </ul>
+                <h3>Så gallras en körning</h3>
+                <ol class="track t-stagger" aria-label="Gallring av en körning, från avslut till loggad radering">
+                    <li class="track-node t-stagger-line">
+                        <span class="track-kicker">Dag 0</span>
+                        <span class="track-title">Körningen avslutas</span>
+                        <span class="track-meta">Lagringstiden börjar räknas.</span>
+                    </li>
+                    <li class="track-node t-stagger-line">
+                        <span class="track-kicker">Till exempel dag 30</span>
+                        <span class="track-title">Lagringstiden går ut</span>
+                        <span class="track-meta">Verksamheten har satt tiden. Ingen tid, ingen gallring.</span>
+                    </li>
+                    <li class="track-node is-hold t-stagger-line">
+                        <span class="track-kicker">Natten därpå</span>
+                        <span class="track-title">Motorn prövar och raderar</span>
+                        <span class="track-meta">Regeln kontrolleras igen. Allt eller inget raderas. En rättslig spärr stoppar.</span>
+                    </li>
+                    <li class="track-node t-stagger-line">
+                        <span class="track-kicker">Efteråt</span>
+                        <span class="track-title">Loggat</span>
+                        <span class="track-meta">Antal och regel, aldrig innehåll.</span>
+                    </li>
+                </ol>
+                <div class="note note-status">
+                    <p><strong>Status.</strong> Gallringsmotorn byggs nu (<a href="https://github.com/eneo-ai/eneo/pull/1064" rel="noopener noreferrer">eneo-ai/eneo, pull request 1064</a>). Flödenas gallringsregler, granskningskö och rättsliga spärrar finns redan på flödesgrenen.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SHARING -->
+        <section class="page-section" id="dela">
+            <div class="container">
+                <h2>Flödespaket kan användas i andra Eneo-installationer</h2>
+                <p class="lead">
+                    Ett flöde kan exporteras som ett flödespaket i formatet .eneopkg och importeras
+                    i en annan Eneo-installation. Så delar en kommun ett flöde med en annan.
+                </p>
+                <ul class="facts">
+                    <li><strong>Ingår:</strong> stegens inställningar och instruktioner, formulärfälten, vilka modeller och kunskapskällor stegen kräver, och Word-mallar om avsändaren väljer det.</li>
+                    <li><strong>Ingår inte:</strong> körningshistorik, inloggningsuppgifter och de modeller och kunskapskällor som används lokalt. Vid import kopplar mottagaren flödet till sina egna modeller och kunskapskällor. Importen blir ett utkast som granskas och publiceras lokalt.</li>
+                </ul>
+                <div class="note note-plan">
+                    <p><strong>Planerat.</strong> En gemensam marknadsplats för flöden är planerad men ännu inte byggd (<a href="https://github.com/eneo-ai/eneo/issues/546" rel="noopener noreferrer">eneo-ai/eneo, issue 546</a>): en versionshanterad katalog där en organisation publicerar ett flöde och en annan installerar det efter sin egen administratörs godkännande.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TERMINOLOGY -->
+        <section class="page-section alt" id="begrepp">
+            <div class="container">
+                <h2>Fast ordning, varierande modellsvar</h2>
+                <p class="lead">
+                    Flödets steg körs i en bestämd ordning som modellen inte ändrar. Modellens svar
+                    kan däremot variera mellan körningar. Därför dokumenterar körningshistoriken
+                    bearbetningen, och steg kan ställas in för granskning. I litteraturen kallas
+                    mönstret <em>prompt chaining</em> (<a href="https://www.anthropic.com/research/building-effective-agents" rel="noopener noreferrer">Anthropic</a>)
+                    eller sekventiella agenter (<a href="https://adk.dev/agents/workflow-agents/sequential-agents/" rel="noopener noreferrer">Google ADK, SequentialAgent</a>).
+                    Eneo använder ordet flöden, eftersom modellen inte väljer ordningen under körningen.
+                </p>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="page-cta">
+            <div class="container">
+                <h2>Tal till text är en modul byggd på flöden</h2>
+                <p>Se hur ett flöde blir ett gränssnitt för mobiltelefon, surfplatta och dator.</p>
+                <div class="cta-actions">
+                    <a href="tal-till-text.html" class="btn btn-primary"><span>Läs om Tal till text <span aria-hidden="true">&rarr;</span></span></a>
+                    <a href="https://docs.eneo.ai/docs/flows" class="btn btn-ghost" rel="noopener noreferrer">Teknisk dokumentation</a>
+                    <a href="https://github.com/eneo-ai/eneo" class="btn btn-ghost" rel="noopener noreferrer">Källkod</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="v2-footer">
+        <div class="container">
+            <div class="footer-intro">
+                <div class="footer-logo">
+                    <svg role="img" aria-label="Eneo logotyp" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 172" style="height:22px;width:auto;shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;fill-rule:evenodd;clip-rule:evenodd;">
+                        <path fill="#1a7ad4" d="M 107.5,-0.5 C 114.833,-0.5 122.167,-0.5 129.5,-0.5C 176.816,9.15707 202.149,38.1571 205.5,86.5C 203.389,125.423 184.389,152.257 148.5,167C 142.419,168.71 136.419,170.21 130.5,171.5C 123.5,171.5 116.5,171.5 109.5,171.5C 93.3852,168.947 78.7185,162.781 65.5,153C 57.3188,144.986 49.3188,136.819 41.5,128.5C 61.6527,107.847 81.9861,87.3471 102.5,67C 111.582,60.8816 121.249,59.8816 131.5,64C 144.46,73.9171 146.96,86.0837 139,100.5C 131.833,107.667 124.667,114.833 117.5,122C 138.893,122.044 151.726,111.544 156,90.5C 156.442,68.8872 146.275,55.0539 125.5,49C 112.803,46.9218 101.803,50.2552 92.5,59C 86.6667,64.8333 80.8333,70.6667 75,76.5C 63.5,65 52,53.5 40.5,42C 50.2305,31.5999 60.5639,21.9333 71.5,13C 82.7423,6.20074 94.7423,1.70074 107.5,-0.5 Z"/>
+                        <path class="logo-text" d="M 649.5,76.5 C 649.5,82.1667 649.5,87.8333 649.5,93.5C 640.846,129.635 617.846,147.135 580.5,146C 552.923,141.09 535.59,125.09 528.5,98C 514.833,97.6667 501.167,97.3333 487.5,97C 480.994,93.8341 478.494,88.6674 480,81.5C 480.979,78.3749 482.813,75.8749 485.5,74C 498.401,72.538 511.401,72.038 524.5,72.5C 521.764,64.5453 516.764,58.3786 509.5,54C 488.763,45.1354 472.596,50.3021 461,69.5C 453.601,90.9824 459.767,107.149 479.5,118C 492.365,122.56 504.198,120.727 515,112.5C 519.225,119.939 523.725,127.272 528.5,134.5C 511.022,146.856 492.022,149.689 471.5,143C 466.51,141.335 462.01,138.835 458,135.5C 457.502,138.817 457.335,142.15 457.5,145.5C 448.833,145.5 440.167,145.5 431.5,145.5C 431.667,123.497 431.5,101.497 431,79.5C 426.715,61.265 415.215,51.265 396.5,49.5C 377.785,51.265 366.285,61.265 362,79.5C 361.5,101.497 361.333,123.497 361.5,145.5C 352.833,145.5 344.167,145.5 335.5,145.5C 335.5,129.5 335.5,113.5 335.5,97.5C 322.163,97.6666 308.829,97.4999 295.5,97C 287.991,92.8092 285.824,86.6426 289,78.5C 290.663,76.0833 292.829,74.25 295.5,73C 307.829,72.5001 320.162,72.3335 332.5,72.5C 327.027,58.2227 316.527,50.556 301,49.5C 282.085,51.1142 270.419,61.1142 266,79.5C 264.719,101.205 274.553,114.705 295.5,120C 303.532,121.06 311.032,119.56 318,115.5C 318.667,124.833 318.667,134.167 318,143.5C 289.265,150.965 266.265,142.631 249,118.5C 233.274,88.8088 237.108,61.9755 260.5,38C 285.142,19.8768 310.476,18.8768 336.5,35C 340.981,38.3143 344.981,42.1476 348.5,46.5C 369.825,23.1077 395.158,17.6077 424.5,30C 432.127,34.3166 438.794,39.8166 444.5,46.5C 465.825,23.1077 491.158,17.6077 520.5,30C 528.127,34.3166 534.794,39.8166 540.5,46.5C 561.825,23.1077 587.158,17.6077 616.5,30C 634.762,40.3615 645.762,55.8615 649.5,76.5 Z M 583.5,49.5 C 610.442,49.9416 623.609,63.6083 623,90.5C 619.82,107.013 609.987,116.846 593.5,120C 572.335,120.831 559.169,110.998 554,90.5C 552.92,68.7752 562.753,55.1085 583.5,49.5 Z"/>
+                        <path fill="#1a7ad4" d="M -0.5,87.5 C -0.5,85.8333 -0.5,84.1667 -0.5,82.5C 10.1734,71.9931 21.0067,61.6598 32,51.5C 43.9725,62.3055 55.4725,73.6388 66.5,85.5C 55.5,97.1667 44.1667,108.5 32.5,119.5C 21.4793,108.812 10.4793,98.1453 -0.5,87.5 Z"/>
+                    </svg>
+                </div>
+                <p>Ett initiativ från Sundsvalls kommun och Ånge kommun för hela offentliga Sverige.</p>
+            </div>
+            <div class="footer-grid">
+                <div class="footer-box">
+                    <p class="footer-heading">Kontakt</p>
+                    <a href="mailto:digitalisering@sundsvall.se">digitalisering@sundsvall.se</a>
+                </div>
+                <div class="footer-box">
+                    <p class="footer-heading">Ladda ned</p>
+                    <a href="https://github.com/eneo-ai/eneo">Källkod</a>
+                </div>
+                <div class="footer-box">
+                    <p class="footer-heading">Tillgänglighet</p>
+                    <a href="tillganglighetsredogorelse.html">Tillgänglighetsredogörelse</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© Sundsvalls kommun och Ånge kommun</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js?v=2"></script>
+    <script src="js/floden.js?v=1"></script>
+</body>
+</html>
