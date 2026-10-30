@@ -586,7 +586,7 @@
 
 /* Skärmbildsram (förenklat webbläsarfönster) */
 .tr-frame {
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-xl);
     overflow: hidden;
     background: #fff;
     border: 1px solid var(--border-hover);
@@ -595,7 +595,7 @@
 .tr-frame-bar {
     display: flex;
     gap: 6px;
-    padding: 0.55rem 0.75rem;
+    padding: 0.65rem 1.1rem;
     background: #eef1f5;
     border-bottom: 1px solid #dfe4ea;
 }
@@ -630,6 +630,10 @@
 .tr-float-live { left: -1.5rem; bottom: 0; flex-direction: column; align-items: flex-start; gap: 0.3rem; }
 .tr-float-text { color: var(--text); line-height: 1.45; }
 .tr-float-doc { right: -1rem; top: 0; }
+/* På bred skärm får hero-bilden växa ut i marginalen (hero klipper överskottet) */
+@media (min-width: 1280px) {
+    .tr-hero-visual { margin-right: -4rem; }
+}
 .tr-float-doc strong { display: block; font-size: 0.85rem; }
 .tr-float-doc small { display: block; font-size: 0.78rem; color: var(--green); font-weight: 600; }
 .tr-doc-ico {
@@ -643,27 +647,42 @@
     letter-spacing: 0.04em;
 }
 
-/* Tre sätt in: kort + skärmbild */
-.tr-split {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
-    gap: 2.5rem;
-    align-items: center;
+/* Produkttur: växlande rader. Listan är bredare än innehållsspalten så att
+   skärmbilderna går att läsa; bilden får alltid den breda kolumnen. */
+.tr-tour {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4.5rem;
+    margin-inline: min(0px, calc((100% - min(80rem, 100vw - 3rem)) / 2));
 }
-.tr-stack { display: flex; flex-direction: column; gap: 1rem; }
-.tr-card-row { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 1.1rem; align-items: start; padding: 1.4rem; }
-.tr-card-row .ttt-icon { margin-bottom: 0; }
-.tr-card-row h3 { font-size: 1.15rem; margin-bottom: 0.3rem; }
-
-/* Produkttur: växlande rader */
-.tr-tour { list-style: none; display: flex; flex-direction: column; gap: 4.5rem; }
 .tr-tour-row {
     display: grid;
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
     gap: 3rem;
     align-items: center;
 }
+.tr-tour-row:nth-child(even) { grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr); }
 .tr-tour-row:nth-child(even) .tr-tour-text { order: 2; }
+.tr-tour-row-portrait,
+.tr-tour-row-portrait:nth-child(even) { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.tr-tour .tr-shot-portrait { width: 100%; max-width: 30rem; justify-self: center; }
+.tr-tour-row-pair { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+.tr-tour-row-pair .tr-tour-text { max-width: 46rem; }
+.tr-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; align-items: start; }
+
+/* Skärmbilden öppnas i full storlek */
+.tr-zoom { display: block; border-radius: var(--radius-xl); cursor: zoom-in; }
+.tr-zoom .tr-frame { transition: box-shadow var(--transition-smooth); }
+.tr-zoom:hover .tr-frame { box-shadow: var(--shadow-brand), var(--shadow-lg); }
+
+/* Filmen: ingen ljudspår, pausknapp under ramen */
+.tr-frame video { display: block; width: 100%; height: auto; background: #f4f6fa; }
+.tr-video-toggle { margin-top: 1rem; font-family: inherit; cursor: pointer; }
+.tr-video-toggle[hidden] { display: none; }
+.tr-video-toggle .tr-ico-play,
+.tr-video-toggle.is-paused .tr-ico-pause { display: none; }
+.tr-video-toggle.is-paused .tr-ico-play { display: block; }
 .tr-tour-num {
     display: inline-flex;
     align-items: center;
@@ -678,7 +697,7 @@
     font-size: 1.3rem;
     font-weight: 700;
 }
-.tr-tour-text h3 { font-size: clamp(1.4rem, 2.6vw, 1.9rem); font-weight: 700; margin-bottom: 0.75rem; }
+.tr-tour-text h3 { font-size: clamp(1.4rem, 2.6vw, 1.9rem); font-weight: 700; margin-bottom: 0.75rem; text-wrap: balance; }
 .tr-tour-text p { font-size: 1.05rem; }
 
 .tr-small { margin-top: 1rem; font-size: 0.95rem; }
@@ -779,19 +798,26 @@
     .tr-hero-visual .tr-frame { transform: none; }
 }
 
-@media (max-width: 1023px) {
-    .tr-split,
+@media (max-width: 1099px) {
     .tr-tour-row,
-    .tr-layers { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+    .tr-tour-row:nth-child(even),
+    .tr-tour-row-portrait,
+    .tr-tour-row-portrait:nth-child(even) { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
     .tr-tour-row:nth-child(even) .tr-tour-text { order: 0; }
     .tr-tour { gap: 3.5rem; }
+    .tr-tour .tr-shot:not(.tr-shot-portrait) { width: 100%; max-width: 52rem; }
+}
+
+@media (max-width: 1023px) {
+    .tr-layers { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
     .tr-chain { grid-template-columns: minmax(0, 1fr); }
     .tr-hero-visual .tr-frame { transform: none; }
     .tr-float-live { left: 0.5rem; }
     .tr-float-doc { right: 0.5rem; }
 }
 @media (max-width: 767px) {
-    .tr-builder { grid-template-columns: minmax(0, 1fr); }
+    .tr-builder,
+    .tr-pair { grid-template-columns: minmax(0, 1fr); }
     .tr-float { position: static; margin-top: 0.75rem; max-width: none; }
     .tr-hero-visual { padding: 0; }
 }

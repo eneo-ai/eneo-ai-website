@@ -37,7 +37,7 @@
     <link rel="stylesheet" href="css/v2-base.css?v=2">
     <link rel="stylesheet" href="css/v2-components.css?v=2">
     <link rel="stylesheet" href="css/v2-layout.css?v=3">
-    <link rel="stylesheet" href="css/pages/tal-till-resultat.css?v=1">
+    <link rel="stylesheet" href="css/pages/tal-till-resultat.css?v=2">
 </head>
 <body>
     <a class="skip-link" href="#main-content">Hoppa till huvudinnehåll</a>
@@ -114,7 +114,7 @@
                 <figure class="tr-hero-visual">
                     <div class="tr-frame">
                         <div class="tr-frame-bar" aria-hidden="true"><span></span><span></span><span></span></div>
-                        <img src="public/images/floden/13-ttt-resultat.webp" width="1600" height="1307" alt="Tal till text: sidan Dokumentet är klart med förhandsvisning av mötesanteckningar, nedladdning som PDF och Word, och transkriberingen med talare och tidsstämplar">
+                        <img src="public/images/floden/13-ttt-resultat.webp" width="2000" height="1491" fetchpriority="high" alt="Tal till text: sidan Dokumentet är klart med en förhandsvisning av mötesanteckningarna, knappen Ladda ner Word och transkriberingen med talare och tidsstämplar bredvid">
                     </div>
                     <div class="tr-float tr-float-live" aria-hidden="true">
                         <span class="ttt-live"><span class="ttt-live-dot"></span>Strömmar live</span>
@@ -137,43 +137,28 @@
                     <h2 id="tr-ways-title">Ljudet kommer in som det <em>passar dig</em></h2>
                     <p>Samma flöde, oavsett om du sitter i mötet, har en fil från diktafonen eller vill se texten växa fram medan ni pratar. Tal till text fungerar på mobil, surfplatta och dator.</p>
                 </header>
-                <div class="tr-split">
-                    <div class="tr-stack">
-                        <article class="ttt-card tr-card-row">
-                            <div class="ttt-icon" aria-hidden="true">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 12h2M8 7v10M12 4v16M16 8v8M20 11v2"/></svg>
-                            </div>
-                            <div>
-                                <h3>Strömma</h3>
-                                <p>Texten växer fram medan ni pratar. Talare och den slutliga texten kommer när ni är klara.</p>
-                            </div>
-                        </article>
-                        <article class="ttt-card tr-card-row">
-                            <div class="ttt-icon" aria-hidden="true">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M9 21h6"/></svg>
-                            </div>
-                            <div>
-                                <h3>Spela in</h3>
-                                <p>Inspelningen sparas på enheten varannan sekund. Efter en krasch, omladdning eller ett inkommande samtal finns den kvar och kan fortsättas.</p>
-                            </div>
-                        </article>
-                        <article class="ttt-card tr-card-row">
-                            <div class="ttt-icon" aria-hidden="true">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V5M7 10l5-5 5 5M4 17v2a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-2"/></svg>
-                            </div>
-                            <div>
-                                <h3>Ladda upp</h3>
-                                <p>Ljudfiler ni redan har: MP3, M4A, WAV, OGG, WebM eller MP4. Vid nätverksfel görs uppladdningen om – utan att det blir dubbla körningar.</p>
-                            </div>
-                        </article>
-                    </div>
-                    <figure class="tr-shot">
-                        <div class="tr-frame">
-                            <div class="tr-frame-bar" aria-hidden="true"><span></span><span></span><span></span></div>
-                            <img src="public/images/floden/11-ttt-stromma.webp" width="1600" height="1496" loading="lazy" alt="Tal till text: valen Strömma, Spela in och Ladda upp, reglaget Märk upp talare, deltagarlista, mikrofontest med nivåmätare och knappen Starta strömning">
+                <div class="ttt-grid-3">
+                    <article class="ttt-card">
+                        <div class="ttt-icon" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 12h2M8 7v10M12 4v16M16 8v8M20 11v2"/></svg>
                         </div>
-                        <figcaption>Ange deltagare och testa mikrofonen innan ni börjar.</figcaption>
-                    </figure>
+                        <h3>Strömma</h3>
+                        <p>Texten växer fram medan ni pratar. Talare och den slutliga texten kommer när ni är klara.</p>
+                    </article>
+                    <article class="ttt-card">
+                        <div class="ttt-icon" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M9 21h6"/></svg>
+                        </div>
+                        <h3>Spela in</h3>
+                        <p>Inspelningen sparas på enheten varannan sekund. Efter en krasch, omladdning eller ett inkommande samtal finns den kvar och kan fortsättas.</p>
+                    </article>
+                    <article class="ttt-card">
+                        <div class="ttt-icon" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V5M7 10l5-5 5 5M4 17v2a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-2"/></svg>
+                        </div>
+                        <h3>Ladda upp</h3>
+                        <p>Ljudfiler ni redan har: MP3, M4A, WAV, OGG, WebM eller MP4. Vid nätverksfel görs uppladdningen om – utan att det blir dubbla körningar.</p>
+                    </article>
                 </div>
             </div>
         </section>
@@ -183,61 +168,138 @@
             <div class="container">
                 <header class="ttt-section-head">
                     <p class="ttt-eyebrow">Så funkar det</p>
-                    <h2 id="tr-tour-title">Från ljud till resultat <em>på fyra steg</em></h2>
-                    <p>Skärmbilderna kommer från Tal till text i en demomiljö.</p>
+                    <h2 id="tr-tour-title">Från ljud till resultat <em>på sju steg</em></h2>
+                    <p>Skärmbilderna kommer från Tal till text i en demomiljö. Klicka på en bild för att öppna den i full storlek.</p>
                 </header>
                 <ol class="tr-tour">
                     <li class="tr-tour-row tr-reveal">
                         <div class="tr-tour-text">
                             <span class="tr-tour-num" aria-hidden="true">1</span>
                             <h3>Välj ett flöde</h3>
-                            <p>Listan visar de publicerade flöden ni har tillgång till, ordnade efter yta. Varje flöde säger vad det skapar – till exempel ”Transkriberar mötet och skapar en PDF-rapport med beslut och sammanfattning”.</p>
+                            <p>Listan visar de publicerade flöden ni har tillgång till, ordnade efter yta. Varje flöde säger vad det skapar – här mötesanteckningar med talare som Word-dokument. Det flöde ni använde senast är märkt Senast använd.</p>
                         </div>
                         <figure class="tr-shot">
-                            <div class="tr-frame">
-                                <div class="tr-frame-bar" aria-hidden="true"><span></span><span></span><span></span></div>
-                                <img src="public/images/floden/09-ttt-valj-flode.webp" width="1600" height="1515" loading="lazy" alt="Tal till text: listan Välj ett flöde, grupperad under rubriker som Barn och utbildning och Kommunledningskontoret">
-                            </div>
+                            <a class="tr-zoom" href="public/images/floden/09-ttt-valj-flode.webp" target="_blank" rel="noopener">
+                                <div class="tr-frame">
+                                    <div class="tr-frame-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+                                    <img src="public/images/floden/09-ttt-valj-flode.webp" width="2000" height="580" loading="lazy" alt="Tal till text: sidan Välj ett flöde med flödet Generell mötesantecknare med talare, märkt Senast använd, och en beskrivning av vad flödet gör">
+                                </div>
+                                <span class="sr-only">Öppna i full storlek (öppnas i ny flik)</span>
+                            </a>
                         </figure>
                     </li>
                     <li class="tr-tour-row tr-reveal">
                         <div class="tr-tour-text">
                             <span class="tr-tour-num" aria-hidden="true">2</span>
-                            <h3>Prata – texten växer fram</h3>
-                            <p>Vid strömning syns en preliminär text medan ni pratar. Flödets säkerhetsklass visas hela tiden, med organisationens egen benämning, så att alla vet vilken information som får användas.</p>
+                            <h3>Lägg till ljudet</h3>
+                            <p>Spela in direkt eller ladda upp en ljudfil. Fyll i mötets namn, datum, deltagare och syfte – allt är valfritt. Deltagarnas namn används när talarna ska få namn.</p>
                         </div>
                         <figure class="tr-shot">
-                            <div class="tr-frame">
-                                <div class="tr-frame-bar" aria-hidden="true"><span></span><span></span><span></span></div>
-                                <img src="public/images/floden/12-ttt-livetext.webp" width="1600" height="1369" loading="lazy" alt="Tal till text under strömning: preliminär text visas medan inspelningen pågår, med knapparna Pausa och Stoppa">
-                            </div>
+                            <a class="tr-zoom" href="public/images/floden/10-ttt-lagg-till-ljud.webp" target="_blank" rel="noopener">
+                                <div class="tr-frame">
+                                    <div class="tr-frame-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+                                    <img src="public/images/floden/10-ttt-lagg-till-ljud.webp" width="2000" height="1560" loading="lazy" alt="Tal till text: valen Spela in och Ladda upp, en vald ljudfil, fälten Mötets namn, Datum, Deltagare och Dagordning eller syfte, Antal talare och knappen Skapa dokument">
+                                </div>
+                                <span class="sr-only">Öppna i full storlek (öppnas i ny flik)</span>
+                            </a>
                         </figure>
                     </li>
                     <li class="tr-tour-row tr-reveal">
                         <div class="tr-tour-text">
                             <span class="tr-tour-num" aria-hidden="true">3</span>
-                            <h3>Färdigt dokument – och vem sa vad</h3>
-                            <p>Dokumentet förhandsvisas och laddas ner som PDF eller Word. Bredvid finns transkriberingen replik för replik, med talare och tid. Sök, filtrera per talare och lyssna – texten följer uppspelningen.</p>
+                            <h3>Följ körningen</h3>
+                            <p>Körningen visar vilka steg som görs: transkribera ljudet, namnge talarna, skriva mötesanteckningar och skapa Word-dokumentet. Ni kan stänga sidan – körningen fortsätter i Eneo och finns bland körningarna i flödet.</p>
                         </div>
                         <figure class="tr-shot">
-                            <div class="tr-frame">
-                                <div class="tr-frame-bar" aria-hidden="true"><span></span><span></span><span></span></div>
-                                <img src="public/images/floden/13-ttt-resultat.webp" width="1600" height="1307" loading="lazy" alt="Tal till text: sidan Dokumentet är klart med förhandsvisning av mötesanteckningar, nedladdning som PDF och Word, och transkriberingen med talare och tidsstämplar">
-                            </div>
+                            <a class="tr-zoom" href="public/images/floden/11-ttt-folj-korningen.webp" target="_blank" rel="noopener">
+                                <div class="tr-frame">
+                                    <div class="tr-frame-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+                                    <img src="public/images/floden/11-ttt-folj-korningen.webp" width="2000" height="940" loading="lazy" alt="Tal till text: sidan Dokumentet skapas med fyra steg – Transkribera ljud pågår, Namnge talare, Skriv mötesanteckningar och Skapa Word-dokument väntar – och knappen Avbryt körningen">
+                                </div>
+                                <span class="sr-only">Öppna i full storlek (öppnas i ny flik)</span>
+                            </a>
                         </figure>
                     </li>
                     <li class="tr-tour-row tr-reveal">
                         <div class="tr-tour-text">
                             <span class="tr-tour-num" aria-hidden="true">4</span>
-                            <h3>Rätta – och låt dokumentet göra om sig</h3>
-                            <p>Felhört namn eller fel talare? Rätta direkt i transkriberingen. Varje rättning sparas, och dokumentet skapas igen från den rättade texten med ett klick.</p>
+                            <h3>Bekräfta vem som är vem</h3>
+                            <p>Flödet pausar för granskning. AI:n föreslår vilken deltagare varje talare är och säger varför. Ni lyssnar på ett exempel, bekräftar eller ändrar namnet och fortsätter. Det finns en sista tidpunkt – därefter avbryts körningen.</p>
                         </div>
                         <figure class="tr-shot">
+                            <a class="tr-zoom" href="public/images/floden/12-ttt-vem-ar-vem.webp" target="_blank" rel="noopener">
+                                <div class="tr-frame">
+                                    <div class="tr-frame-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+                                    <img src="public/images/floden/12-ttt-vem-ar-vem.webp" width="1396" height="938" loading="lazy" alt="Tal till text: dialogen Namnge talarna med Talare 1 föreslagen som Maria och Talare 2 som Gunnar, ett textexempel per talare, knappen Lyssna på exempel och länken Varför">
+                                </div>
+                                <span class="sr-only">Öppna i full storlek (öppnas i ny flik)</span>
+                            </a>
+                        </figure>
+                    </li>
+                    <li class="tr-tour-row tr-reveal">
+                        <div class="tr-tour-text">
+                            <span class="tr-tour-num" aria-hidden="true">5</span>
+                            <h3>Färdigt dokument – och vem sa vad</h3>
+                            <p>Dokumentet förhandsvisas och laddas ner som PDF eller Word. Bredvid finns transkriberingen replik för replik, med talare och tid. Sök i texten eller filtrera på en talare.</p>
+                        </div>
+                        <figure class="tr-shot">
+                            <a class="tr-zoom" href="public/images/floden/13-ttt-resultat.webp" target="_blank" rel="noopener">
+                                <div class="tr-frame">
+                                    <div class="tr-frame-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+                                    <img src="public/images/floden/13-ttt-resultat.webp" width="2000" height="1491" loading="lazy" alt="Tal till text: sidan Dokumentet är klart med en förhandsvisning av mötesanteckningarna, knappen Ladda ner Word och transkriberingen med talare och tidsstämplar bredvid">
+                                </div>
+                                <span class="sr-only">Öppna i full storlek (öppnas i ny flik)</span>
+                            </a>
+                        </figure>
+                    </li>
+                    <li class="tr-tour-row tr-reveal tr-tour-row-portrait">
+                        <div class="tr-tour-text">
+                            <span class="tr-tour-num" aria-hidden="true">6</span>
+                            <h3>Lyssna – texten följer med</h3>
+                            <p>Spela upp ljudet så följer markeringen med i texten, ord för ord. Klicka på en replik för att hoppa dit. Med tangentbordet spelar och pausar K, och J och L hoppar tio sekunder.</p>
+                        </div>
+                        <figure class="tr-shot tr-shot-portrait">
                             <div class="tr-frame">
                                 <div class="tr-frame-bar" aria-hidden="true"><span></span><span></span><span></span></div>
-                                <img src="public/images/floden/14-ttt-rattningar.webp" width="1600" height="1306" loading="lazy" alt="Tal till text: transkriberingen filtrerad på en talare, meddelandet Rättningar sparade, ljudspelare med tidslinje och knappen Skapa dokumentet igen med rättningarna">
+                                <video class="tr-video" width="864" height="1272" controls muted loop playsinline disablepictureinpicture preload="none" poster="public/images/floden/ttt-lyssna-poster.webp" aria-label="Skärminspelning utan ljud: transkriberingen följer uppspelningen med en markering som flyttar sig ord för ord, och ett klick på en replik hoppar dit i ljudet">
+                                    <source src="public/video/ttt-lyssna.mp4" type="video/mp4">
+                                </video>
                             </div>
+                            <button type="button" class="ttt-btn-ghost tr-video-toggle" hidden>
+                                <svg class="tr-ico-pause" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5v14M16 5v14"/></svg>
+                                <svg class="tr-ico-play" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4.5v15l12-7.5z"/></svg>
+                                <span class="tr-video-toggle-text">Pausa filmen</span>
+                            </button>
                         </figure>
+                    </li>
+                    <li class="tr-tour-row tr-reveal tr-tour-row-pair">
+                        <div class="tr-tour-text">
+                            <span class="tr-tour-num" aria-hidden="true">7</span>
+                            <h3>Rätta i efterhand</h3>
+                            <p>Felhört ord, fel talare eller fel namn? Rätta en replik direkt i transkriberingen, byt talare för en replik med Ändra talare eller namnge talarna på nytt med Namnge talare. Ändringarna sparas. Dokumentet skapas på nytt från den rättade texten med ett klick, och det tidigare finns kvar bland körningarna i flödet.</p>
+                        </div>
+                        <div class="tr-pair">
+                            <figure class="tr-shot">
+                                <a class="tr-zoom" href="public/images/floden/14-ttt-ratta-text.webp" target="_blank" rel="noopener">
+                                    <div class="tr-frame">
+                                        <div class="tr-frame-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+                                        <img src="public/images/floden/14-ttt-ratta-text.webp" width="1200" height="675" loading="lazy" alt="Tal till text: en replik i transkriberingen i redigeringsläge med ett textfält och knapparna Avbryt och Spara, under talarfilter och knappen Namnge talare">
+                                    </div>
+                                    <span class="sr-only">Öppna i full storlek (öppnas i ny flik)</span>
+                                </a>
+                                <figcaption>Rätta direkt i texten. Enter sparar, Esc avbryter.</figcaption>
+                            </figure>
+                            <figure class="tr-shot">
+                                <a class="tr-zoom" href="public/images/floden/15-ttt-skapa-igen.webp" target="_blank" rel="noopener">
+                                    <div class="tr-frame">
+                                        <div class="tr-frame-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+                                        <img src="public/images/floden/15-ttt-skapa-igen.webp" width="1440" height="810" loading="lazy" alt="Tal till text: notisen Dokumentet skapades före dina ändringar med knappen Skapa dokumentet igen, och Word-filen med knappen Ladda ner Word">
+                                    </div>
+                                    <span class="sr-only">Öppna i full storlek (öppnas i ny flik)</span>
+                                </a>
+                                <figcaption>Dokumentet skapas på nytt från den rättade texten.</figcaption>
+                            </figure>
+                        </div>
                     </li>
                 </ol>
             </div>
@@ -534,6 +596,38 @@
             });
         }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
         items.forEach(function (el) { io.observe(el); });
+    })();
+    </script>
+
+    <script>
+    // Filmen spelas bara medan den syns. Med reducerad rörelse startar den på
+    // begäran, och pausknappen finns alltid (WCAG 2.2.2). Utan JS används
+    // webbläsarens egna kontroller.
+    (function () {
+        var v = document.querySelector('.tr-video');
+        var b = document.querySelector('.tr-video-toggle');
+        if (!v || !b || !('IntersectionObserver' in window)) return;
+        var label = b.querySelector('.tr-video-toggle-text');
+        var visible = false;
+        var wantPlay = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        v.removeAttribute('controls');
+        b.hidden = false;
+        function sync() {
+            if (wantPlay && visible) {
+                var p = v.play();
+                if (p && p.catch) p.catch(function () { wantPlay = false; sync(); });
+            } else {
+                v.pause();
+            }
+            b.classList.toggle('is-paused', !wantPlay);
+            label.textContent = wantPlay ? 'Pausa filmen' : 'Spela upp filmen';
+        }
+        new IntersectionObserver(function (entries) {
+            visible = entries[0].isIntersecting;
+            sync();
+        }, { threshold: 0.4 }).observe(v);
+        b.addEventListener('click', function () { wantPlay = !wantPlay; sync(); });
+        sync();
     })();
     </script>
 
