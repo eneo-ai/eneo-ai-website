@@ -1,0 +1,101 @@
+/* Kostnadsgrafen i svaret "Vad har Eneo kostat?" (fragor-och-svar.html) */
+.kg { margin-top: 1.25rem; }
+.kg-card {
+    background: var(--bg-raised);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1.1rem 1.1rem 1.25rem;
+}
+.kg-card + .kg-card { margin-top: 0.85rem; }
+.faq-answer .kg-total {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--text);
+    font-variant-numeric: tabular-nums;
+}
+.faq-answer .kg-lead { font-size: 0.85rem; margin: 0.2rem 0 0; }
+.kg-facts { display: flex; flex-wrap: wrap; gap: 0.5rem 1.75rem; margin-top: 0.9rem; }
+.kg-facts b { display: block; color: var(--text); font-size: 1rem; font-variant-numeric: tabular-nums; }
+.kg-facts span { font-size: 0.8rem; line-height: 1.4; }
+
+.kg-controls { display: flex; flex-wrap: wrap; gap: 0.6rem 1rem; align-items: center; justify-content: space-between; }
+.kg-controls-left { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; }
+.kg-seg { display: inline-flex; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.kg-seg button {
+    min-height: 44px; min-width: 64px; padding: 0 1rem;
+    border: 0; background: transparent; color: var(--text-muted);
+    font: inherit; font-size: 0.9rem; cursor: pointer;
+}
+.kg-seg button + button { border-left: 1px solid var(--border); }
+.kg-seg button[aria-pressed="true"] { background: var(--brand); color: #fff; font-weight: 600; }
+.kg-seg button:hover { color: var(--text); }
+.kg-seg button[aria-pressed="true"]:hover { color: #fff; }
+.kg-seg button:focus-visible,
+.kg-year select:focus-visible,
+.kg-col:focus-visible,
+.kg-table summary:focus-visible { outline: 2px solid var(--brand-light); outline-offset: 2px; }
+.kg-year { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; }
+.kg-year[hidden] { display: none; }
+.kg-year select {
+    min-height: 44px; padding: 0 0.6rem;
+    font: inherit; font-size: 0.9rem;
+    border: 1px solid var(--border); border-radius: var(--radius);
+    background: var(--bg-card); color: var(--text);
+}
+.faq-answer .kg-hint { font-size: 0.8rem; }
+
+.kg-chart { margin-top: 1.6rem; display: grid; grid-template-columns: 3.4rem 1fr; grid-template-rows: 15rem auto; }
+.kg-yax { position: relative; }
+.kg-yax span { position: absolute; right: 0.6rem; transform: translateY(50%); font-size: 0.72rem; color: var(--text-muted); white-space: nowrap; line-height: 1; }
+.kg-plot { position: relative; border-bottom: 1px solid var(--text-muted); }
+.kg-gl { position: absolute; left: 0; right: 0; height: 1px; background: var(--border); }
+.kg-cols { position: absolute; inset: 0; display: flex; }
+.kg-col {
+    flex: 1 1 0; min-width: 0; position: relative;
+    display: flex; justify-content: center; align-items: flex-end;
+    border: 0; background: transparent; padding: 0; color: inherit; font: inherit;
+    border-radius: 6px 6px 0 0;
+}
+button.kg-col { cursor: pointer; }
+.kg-col:hover, button.kg-col:focus-visible { background: var(--brand-dim); }
+.kg-bar { display: block; width: min(2.5rem, calc(100% - 2px)); background: var(--brand-bright); border-radius: 4px 4px 0 0; }
+.is-monthly .kg-bar { width: min(1.5rem, calc(100% - 2px)); }
+.kg-col:hover .kg-bar { background: var(--brand); }
+.kg-cap {
+    position: absolute; left: 0; right: 0; margin-bottom: 0.25rem;
+    text-align: center; font-size: 0.8rem; font-weight: 600; color: var(--text);
+    white-space: nowrap; pointer-events: none; font-variant-numeric: tabular-nums;
+}
+.kg-xax { grid-column: 2; display: flex; padding-top: 0.4rem; }
+.kg-xax div { flex: 1 1 0; min-width: 0; text-align: center; font-size: 0.72rem; color: var(--text-muted); white-space: nowrap; line-height: 1.3; }
+.kg-xax span { display: block; }
+.kg-xax .kg-yr { font-weight: 600; color: var(--text); }
+@media (max-width: 700px) {
+    .is-monthly .kg-xax .kg-mn { display: none; }
+    .faq-answer .kg-total { font-size: 1.6rem; }
+}
+
+.kg-tip {
+    position: fixed; z-index: 50; pointer-events: none; max-width: 16rem;
+    background: var(--text); color: var(--bg);
+    font-size: 0.8rem; line-height: 1.45; padding: 0.5rem 0.65rem;
+    border-radius: var(--radius); box-shadow: 0 4px 14px rgba(0, 0, 0, .18);
+}
+.kg-tip[hidden] { display: none; }
+
+.kg-table { margin-top: 1rem; }
+.kg-table summary {
+    display: inline-flex; align-items: center; min-height: 44px;
+    cursor: pointer; color: var(--brand-light); font-size: 0.9rem;
+}
+.kg-tablewrap { overflow-x: auto; margin-top: 0.5rem; }
+.kg-tablewrap:focus-visible { outline: 2px solid var(--brand-light); outline-offset: 2px; }
+.kg-table table { width: 100%; border-collapse: collapse; font-size: 0.85rem; font-variant-numeric: tabular-nums; }
+.kg-table th, .kg-table td { padding: 0.4rem 0.6rem; border-bottom: 1px solid var(--border); text-align: right; white-space: nowrap; }
+.kg-table th:first-child { text-align: left; }
+.kg-table thead th { font-size: 0.75rem; color: var(--text-muted); font-weight: 600; }
+.kg-table tbody th { font-weight: 400; color: var(--text-muted); }
+.kg-table tfoot th, .kg-table tfoot td { font-weight: 700; color: var(--text); border-bottom: 0; border-top: 2px solid var(--text-muted); }
+.faq-answer .kg-note { font-size: 0.8rem; }
