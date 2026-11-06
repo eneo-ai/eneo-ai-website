@@ -105,12 +105,126 @@
     <section class="changelog" id="versionshistorik">
         <div class="container">
 
+            <!-- 2.3.0 -->
+            <div class="release" id="v2.3.0">
+                <div class="release-header">
+                    <button type="button" class="ver-tag" aria-expanded="true" aria-controls="v2.3.0-innehall">v2.3.0<svg class="ver-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+                    <a class="release-anchor" href="#v2.3.0" aria-label="Länk till v2.3.0" title="Länk till denna version"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+                    <span class="latest-badge">Senaste</span>
+                    <a href="https://github.com/eneo-ai/eneo/releases/tag/v2.3.0" class="release-link">Se på GitHub <span aria-hidden="true">→</span></a>
+                </div>
+                <div class="release-body" id="v2.3.0-innehall">
+                    <div class="warning-box">
+                        <p><strong>Viktig förändring – kräver åtgärd!</strong> Version 2.3 ändrar hur Eneo driftas. Standardstacken får två nya tjänster och alla images väljs ur ett gemensamt versionspaket:</p>
+                        <ul>
+                            <li><strong>Ingen <code>latest</code> i referensfilen:</strong> <code>docker-compose.yml</code> kräver <code>ENEO_VERSION</code> eller versionspaketet <code>release.env</code>. Hämta <code>release.env</code> och <code>release.json</code> från releasen, kör <code>python3 setup.py</code> och lägg till <code>--env-file .env --env-file release.env</code> på alla compose-kommandon. Egna compose-filer som pekar på <code>:latest</code> hamnar direkt på 2.3, så pinna dem till en version.</li>
+                            <li><strong>Ny tjänst <code>crawler-worker</code>:</strong> webbcrawling körs i en egen kö. Utan tjänsten körs inga crawls. Montera inte <code>eneo_temp_files</code> i den.</li>
+                            <li><strong>Ny tjänst <code>tool-runtime</code>:</strong> isolerad verktygsmiljö som kräver <code>TOOL_RUNTIME_TOKEN</code> (minst 32 tecken, skapas av <code>setup.py</code>). Kan väljas bort med <code>docker-compose.without-tools.yml</code>.</li>
+                            <li><strong>Signerade fillänkar</strong> pekar nu på <code>http://backend:8000</code>. MCP-servrar utanför Eneo som hämtar bifogade filer behöver att <code>FILE_REFERENCE_BASE_URL</code> sätts i <code>.env</code>.</li>
+                            <li><strong>MCP-servrar med token eller API-nyckel kräver <code>https://</code>.</strong></li>
+                            <li><strong>Sparade inloggningar till webbplatser</strong> binds till protokoll, värd och port. Webbplatser på <code>http://</code> med inloggning behöver uppgifterna igen.</li>
+                            <li><strong>Samlingar och webbplatser kan inte längre flyttas mellan ytor</strong>, och kunskap följer inte med när en assistent flyttas.</li>
+                            <li><strong>Striktare OIDC:</strong> inloggning nekas när IdP:n anger <code>email_verified=false</code>, och den måste slutföras i samma webbläsare och på samma publika adress som den startade i.</li>
+                            <li><strong>Gränser för uppladdningar i chatten:</strong> mycket stora dokument, PDF:er över 1&nbsp;000 sidor och filer som tar för lång tid att tolka avvisas nu enligt <code>FILE_EXTRACTION_*</code>.</li>
+                            <li><strong>Ingen rullande uppgradering:</strong> stoppa backend och worker, ta backup, kör <code>db-init</code> och starta allt tillsammans. Nedgradering till 2.2 kräver återställning från backup.</li>
+                            <li><strong>Sysadmin-API:t</strong> för crawlerinställningar svarar 422 på pensionerade nycklar, och frontend-imagen saknar npm, npx, corepack och yarn.</li>
+                        </ul>
+                        <p><strong>Rekommenderat efter uppgradering från 2.2:</strong> kör städkommandot för ersatta versioner en gång. På webbplatser som crawlas ofta kan sökdata för gamla versioner ha fyllt lagringskvoten.</p>
+                        <p>Se <a href="https://docs.eneo.ai/v2.3/guides/deployment#updating-eneo">uppdatera Eneo</a>, <a href="https://docs.eneo.ai/v2.3/guides/free-space-earlier-versions">frigör utrymme från tidigare versioner</a>, <a href="https://github.com/eneo-ai/eneo/blob/release/v2.3/docs/deployment/TOOL_RUNTIME.md">TOOL_RUNTIME.md</a> och avsnittet <em>För dig som driftar Eneo</em> nedan.</p>
+                    </div>
+                    <div class="change-cat cat-new">
+                        <span class="cat-label">Nya funktioner</span>
+                        <ul class="change-list">
+                            <li><strong>Skapa, redigera och återställ dokument:</strong> Assistenten skriver Word- och PDF-dokument, med diagram, i en sidopanel bredvid chatten. Du kan redigera texten, spara och jämföra versioner och återställa en tidigare version.</li>
+                            <li><strong>Dokumentmallar:</strong> Organisationen laddar upp sina Word-mallar under Administration › Verktyg › Funktioner. Genererade dokument följer mallens format, sidhuvud, sidfot och logotyp, och PDF:erna taggas för tillgänglighet.</li>
+                            <li><strong>Fråga om CSV- och Excel-filer:</strong> Fråga fil analyserar tabellfiler. Markera celler eller rader i förhandsvisningen och fråga om dem.</li>
+                            <li><strong>Beräkning och diagram:</strong> Beräkning räknar exakt på dina siffror och visar hur med Visa kod. Diagram ritar stapel-, linje-, cirkel- och punktdiagram som kan tas med i Word- och PDF-rapporter.</li>
+                            <li><strong>Inbyggd verktygsmiljö:</strong> Fråga fil, Skapa fil, Beräkning och Diagram körs i den isolerade tjänsten <code>tool-runtime</code>. Allt är avstängt tills administratören aktiverar det, och det slås på per yta och assistent.</li>
+                            <li><strong>Interaktiva verktygsvyer (MCP Apps):</strong> Godkända verktyg kan visa sorterbara tabeller och interaktiva diagram direkt i svaret eller i sidopanelen. Avstängt som standard.</li>
+                            <li><strong>Välj hur bifogade filer läses:</strong> För varje fil på en assistent väljs om den alltid ska tas med eller läsas vid behov.</li>
+                            <li><strong>SharePoint-kolumner som metadata:</strong> Bibliotekskolumner, som dokumenttyp eller verksamhet, följer med dokumenten och går att söka och filtrera på.</li>
+                            <li><strong>Ny crawler:</strong> Tydligt förlopp och begripliga felorsaker. En crawl kan stoppas och startas om, flera webbplatser kan hanteras samtidigt och oförändrade sidor bäddas inte in på nytt. Översikt under Administration › Crawler.</li>
+                            <li><strong>Utgående headers till självhostade modeller:</strong> vLLM-leverantörer kan skicka fasta headers eller SCIM-attribut som avdelning och kostnadsställe, så att en gateway kan styra, mäta eller begränsa trafiken.</li>
+                            <li><strong>Nyheter i appen:</strong> Under Nyheter i kontomenyn ser du vad som är nytt i varje version, och ”Visa mig” pekar ut funktionen. Du ser bara nyheter som din roll kan använda.</li>
+                            <li><strong>Ny app i beta (valfri):</strong> En ny webbapp kan köras bredvid den nuvarande med samma konton och data. Avstängd som standard.</li>
+                        </ul>
+                    </div>
+                    <div class="change-cat cat-improved">
+                        <span class="cat-label">Förbättringar</span>
+                        <ul class="change-list">
+                            <li><strong>Skicka direkt, även under uppladdning:</strong> Meddelandet visas så fort du skickar det, och en fil som redan skickats i konversationen laddas inte upp igen.</li>
+                            <li><strong>Tydligare fel:</strong> Chatten förklarar varför en AI-leverantör inte svarade och om ett nytt försök kan hjälpa, och uppladdningar säger vilken lagringskvot som är full.</li>
+                            <li><strong>Omgjord rollsida:</strong> Behörigheterna är grupperade per område och rollerna går att söka på namn eller behörighet.</li>
+                            <li><strong>Kunskap på assistenter:</strong> Kunskap och Organisationskunskap visas i var sin sektion, och alla valda källor går att ta bort.</li>
+                            <li><strong>Stora PDF:er:</strong> PDF:er på hundratals sidor går att bifoga och lägga in som kunskap.</li>
+                            <li><strong>Funktionssteg i chatten</strong> visas med ikon och leder direkt till resultatet.</li>
+                            <li><strong>Filtyper och storlekar:</strong> Uppladdningen visar vilka format och gränser som gäller.</li>
+                            <li><strong>Svenska datum och tal</strong> i Insikter, Användning och Granskningsloggen, med decimalkomma.</li>
+                            <li><strong>Bättre tillgänglighet:</strong> Gränssnittet bygger nu på shadcn-svelte, med bättre stöd för tangentbord och skärmläsare.</li>
+                        </ul>
+                    </div>
+                    <div class="change-cat cat-security">
+                        <span class="cat-label">Säkerhet &amp; stabilitet</span>
+                        <ul class="change-list">
+                            <li><strong>Explicit åtkomstkontroll:</strong> Varje HTTP- och WebSocket-endpoint måste deklarera hur den autentiseras och auktoriseras.</li>
+                            <li><strong>Striktare OIDC:</strong> Inloggningen är bunden till webbläsaren som startade den, och uttryckligen overifierad e-post nekas.</li>
+                            <li><strong>Inloggningar till webbplatser</strong> binds till sitt ursprung, och MCP-autentisering skickas bara över <code>https</code>.</li>
+                            <li><strong>OAuth-popupen</strong> för integrationer levererar bara till Eneos eget ursprung.</li>
+                            <li><strong>Organisationsytan</strong> följer den administratörsroll som gäller just nu. En återkallad roll tappar åtkomsten direkt.</li>
+                            <li><strong>Källhänvisningar</strong> länkar bara till <code>http(s)</code>-adresser, och Granskningsloggen visar HTML i metadata som text.</li>
+                            <li><strong>Dokumenterat felkontrakt:</strong> CORS-avvisningar och API-nyckelfel svarar i samma JSON-format som övriga fel.</li>
+                            <li><strong>Robust crawling:</strong> Crawls som avbrutits av omstarter, timeouts eller förlorade jobb repareras och fastnar inte längre.</li>
+                            <li><strong>Lagringskvoten:</strong> Sökdata för ersatta versioner tas bort, så gamla versioner fyller inte längre kvoten.</li>
+                            <li><strong>Uppdaterade körmiljöer och beroenden,</strong> bland annat Node 22, LiteLLM 1.104.2 och MCP SDK för Python 1.30.0 (CVE-2026-59951).</li>
+                        </ul>
+                    </div>
+                    <div class="change-cat cat-fix">
+                        <span class="cat-label">Buggfixar</span>
+                        <ul class="change-list">
+                            <li>Att spara en yta kunde radera assistenter med ogiltiga sparade modellinställningar, inklusive deras konversationshistorik</li>
+                            <li>Ändringar av organisationens modeller med en API-nyckel för administration kom inte med i granskningsloggen</li>
+                            <li>Inskrivna värden för temperatur och andra modellparametrar sparades inte, bara reglagen gällde</li>
+                            <li>En länk till en raderad konversation gav en felsida. Nu öppnas chatten med ett meddelande om att konversationen inte hittades</li>
+                        </ul>
+                    </div>
+                    <div class="change-cat cat-removed">
+                        <span class="cat-label">Borttaget</span>
+                        <ul class="change-list">
+                            <li>Flytt av samlingar och webbplatser mellan ytor, inklusive API-endpoints och eneo-js-anrop.</li>
+                            <li>Scrapy-crawlern och dess variabler, bland annat <code>TENANT_WORKER_CONCURRENCY_LIMIT</code>, <code>CRAWL_FEEDER_*</code> och <code>USING_CRAWL</code>. De ignoreras utan fel, så ta bort dem.</li>
+                            <li>Den oanvända databastabellen <code>widgets</code> och typen <code>Widget</code> i eneo-js.</li>
+                            <li>19 varumärkesikoner för mallar. Mallarna visar i stället sin initial.</li>
+                            <li>npm, npx, corepack och yarn i frontend-imagen.</li>
+                        </ul>
+                    </div>
+                    <div class="change-cat cat-ops">
+                        <span class="cat-label">För dig som driftar Eneo</span>
+                        <ul class="change-list">
+                            <li><strong>Versionspaket:</strong> Frontend, backend, workers och tool-runtime har samma version och pinnas via digest i <code>release.env</code>. Byt <code>release.env</code> och <code>release.json</code> samtidigt och spara de gamla för rollback. Image-taggarna saknar <code>v</code>-prefix.</li>
+                            <li><strong>Uppgraderingsordning:</strong> Lägg nya <code>docker-compose.yml</code> på plats, stoppa <code>backend</code>, <code>worker</code> och <code>crawler-worker</code>, ta backup med <code>pg_dump</code>, kör <code>pull</code>, <code>run --rm db-init</code> och <code>up -d</code>. Kontrollera <code>/api/healthz/crawler</code> innan crawls släpps på.</li>
+                            <li><strong>Databasmigreringar:</strong> 39 nya migreringar. Ifyllnaden av käll-URL för crawlade sidor kan ta några minuter på stora installationer.</li>
+                            <li><strong>PostgreSQL:</strong> Sätt <code>shm_size: 1gb</code> och <code>stop_grace_period: 2m</code> på <code>db</code> även i egna compose-filer, och kontrollera att <code>max_connections</code> räcker med den extra processen.</li>
+                            <li><strong>tool-runtime:</strong> Standardgränser 2 GiB minne, 2 CPU och 256 processer, skrivskyddat rotfilsystem och <code>cap_drop: ALL</code>. Jobb isoleras med Linux Landlock. Sätt <code>TOOL_RUNTIME_REQUIRE_CONFINEMENT=true</code> där känsliga filer hanteras.</li>
+                            <li><strong>Signerade fillänkar:</strong> <code>FILE_REFERENCE_BASE_URL</code> och <code>TOOL_RUNTIME_*</code> sätts i <code>.env</code>, inte i <code>env_backend.env</code>. Länkarna gäller nu 15 minuter i stället för 60. Se <a href="https://docs.eneo.ai/v2.3/guides/deployment#signed-file-references">signerade filreferenser</a>.</li>
+                            <li><strong>MCP Apps:</strong> Interaktiva tabeller och diagram kräver <code>MCP_APPS_ENABLED=true</code> och ett eget värdnamn i <code>MCP_APP_CONTENT_BASE_URL</code> på backend och worker. Utan det levereras diagram som PNG-bild.</li>
+                            <li><strong>crawler-worker:</strong> <code>WORKER_MAX_JOBS</code> gäller nu per process. <code>CRAWL_JOB_TENANT_CONCURRENCY_LIMIT</code> (standard 4) ersätter <code>TENANT_WORKER_CONCURRENCY_LIMIT</code>, och det finns nya inställningar för parallellitet, fördröjning och sidstorlek.</li>
+                            <li><strong>Filtolkning:</strong> Nya <code>FILE_EXTRACTION_*</code>-variabler för parallellitet, tid, CPU, minne, utdata, PDF-sidor och packade format. Starta om backend och workers efter ändringar.</li>
+                            <li><strong>Chunkning:</strong> <code>CHUNK_SIZE</code> gäller nu för uppladdning, SharePoint, Confluence och crawling.</li>
+                            <li><strong>Städa ersatta versioner</strong> en gång efter uppgradering från 2.2 med <code>python -m eneo.info_blobs.replaced_versions</code> i worker-imagen, följt av <code>VACUUM</code>. Eneo kan köra under tiden. Se <a href="https://docs.eneo.ai/v2.3/guides/free-space-earlier-versions">guiden</a>.</li>
+                            <li><strong>Utgående headers:</strong> Begränsa i fleranvändarmiljöer vart headers får skickas med <code>OUTBOUND_HEADERS_ALLOWED_DESTINATIONS</code>.</li>
+                            <li><strong>Omrankning (rerank):</strong> Teknisk grund. Rerank-modeller kan registreras och användas i semantisk sökning via API:t, ännu utan gränssnitt.</li>
+                            <li><strong>Next-beta (valfri):</strong> <code>docker-compose.web-next.yml</code> med <code>--profile web-next</code> och en egen <code>SESSION_SECRET</code>. Återanvänd aldrig <code>JWT_SECRET</code>.</li>
+                            <li><strong>Behörigheter vid uppgradering:</strong> Fråga fil och Skapa fil ges till User, AI Configurator och Owner, Diagram och Beräkning bara till Owner. Egna roller ändras inte, och inget syns förrän funktionen aktiverats.</li>
+                            <li><strong>Interna certifikat:</strong> Sätt <code>SSL_CERT_FILE</code> till en fil med publika rotcertifikat plus er CA för egna MCP-servrar.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
             <!-- 2.2.0 -->
             <div class="release" id="v2.2.0">
                 <div class="release-header">
                     <button type="button" class="ver-tag" aria-expanded="true" aria-controls="v2.2.0-innehall">v2.2.0<svg class="ver-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
                     <a class="release-anchor" href="#v2.2.0" aria-label="Länk till v2.2.0" title="Länk till denna version"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
-                    <span class="latest-badge">Senaste</span>
                     <a href="https://github.com/eneo-ai/eneo/releases/tag/v2.2.0" class="release-link">Se på GitHub <span aria-hidden="true">→</span></a>
                 </div>
                 <div class="release-body" id="v2.2.0-innehall">
