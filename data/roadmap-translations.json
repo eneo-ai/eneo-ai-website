@@ -7,9 +7,9 @@
       "summary": "Team kan skapa en Skill en gång och återanvända samma godkända instruktioner i Personlig chatt, Assistenter och Appar. Varje koppling ligger kvar på en exakt Skill-version tills en behörig användare väljer att uppdatera den.\n\nAdministratörer kan publicera organisationens Skills, se var varje version används, stoppa osäkra Skills och flytta befintliga kopplingar till en nyligen godkänd version. Assistenter kan ladda en Skill endast när den är relevant; Appar använder sina konfigurerade Skills vid varje körning."
     },
     "546": {
-      "hash": "b5f836c0ed2706df3c34c4a986805a2b889b236333e7398287d75ba9d9853255",
-      "title": "Eneo marknadsplats",
-      "summary": "Kommuner ska kunna upptäcka och dela styrda Eneo-lösningar utan att manuellt utbyta paketfiler. Detta epic levererar en centralt hostad Eneo Marketplace Hub samt en inbyggd marknadsplatsupplevelse i varje ansluten Eneo-installation.\n\nHubben styr bidragsgivare, granskning, oföränderliga versioner, målgrupper, registrerade instanser och revision. Varje Eneo-installation behåller kontrollen över sina användare, tenantadministratörer, lokala behörigheter, installationsplaner och installerade resurser. Installerat innehåll är en lokal kopia och fortsätter att fungera när hubben är otillgänglig."
+      "hash": "b2ff47827e00108a925adf4b7cb47a9e6333a2fdf0627d871c0ccceb4ed335f3",
+      "title": "Kommuner delar och installerar Flows, Skills, Assistants och Apps via Eneo Marketplace",
+      "summary": "Kommuner bygger användbara Flows, Skills, Assistants och Apps och delar dem idag manuellt, om de delas alls. Denna epic ger dem en Marketplace: en liten Hub som drivs av Sundsvalls kommun där godkända organisationer publicerar granskade och versionshanterade paket, och en Marketplace i Eneo där en användare bläddrar, läser vad ett paket gör och kräver, och installerar en kopia i ett personligt utrymme, ett delat utrymme eller organisationen. Prompter och konfiguration följer med; kunskap och autentiseringsuppgifter gör det aldrig. Hub:en kan aldrig ändra en Eneo-instans, och installerade kopior fortsätter att fungera när Hub:en är nere."
     },
     "549": {
       "hash": "fe6a2583fae91d17e2cfc43947b4cef1d9a18bf3dc588ffd78ea4122e973504f",
@@ -22,9 +22,9 @@
       "summary": "Utvecklare ska kunna starta, testa och felsöka Eneo lokalt utan att dolda konfigurationsluckor eller ordningsberoende databastillstånd leder till förvirrande fel. Den lokala uppsättningen ska tidigt identifiera saknade krav och ge ett tydligt nästa steg när en utvecklare når en berörd funktion.\n\nDetta minskar tiden för onboarding och felsökning samtidigt som den normala utvecklingsmiljön förblir enkel."
     },
     "660": {
-      "hash": "3da94bf0054643094a144e5446a1fa637307b6e7cab7282e202ea99d5736857a",
-      "title": "Låt Skills köra skript säkert",
-      "summary": "Skills kan använda Python-skript, referenser och mallar för återkommande arbete som beräkningar, validering, datatransformering och dokumentskapande. Eneo kör varje skript i en tillfällig isolerad miljö utan åtkomst till Eneos tjänster, distributionsuppgifter eller externa nätverk. Organisationer styr separat vem som får lägga till skript i Skills och vem som får köra dem. Befintliga Skills med enbart instruktioner fungerar som tidigare, och organisationspublicering förblir granskningssteget för att dela en exakt godkänd revision mellan Spaces."
+      "hash": "1ee448ca209bb30227974bd5604b2a07d446dcdbce36f6fe4c308142ef25fd2b",
+      "title": "Skills kan innehålla testade beräkningsskript som körs i Eneos isolerade körmiljö",
+      "summary": "En Skill kan i dag endast ge modellen instruktioner. När en Skill behöver en exakt beräkning skriver modellen ny kod varje gång, och resultatet kan skilja sig mellan olika svar. Denna epic låter en författare lägga in en testad JavaScript-beräkning i en Skill. Eneo håller den oförändrad, kör den i den slutna körmiljö som redan kör modellskriven JavaScript och registrerar vem som gjorde vad. Skills med enbart instruktioner förändras inte."
     },
     "716": {
       "hash": "d9bc38f5a627a6c4ad24d94472facfd410fb1feebbe41a0f0cf458d4df10624b",
@@ -60,6 +60,46 @@
       "hash": "5ad1ab06664765bd9ee87ea3ab0499801426a4e7dc29e6095a2c4666c84aa6d1",
       "title": "Låt användare granska delade kunskapskällor från chatten",
       "summary": "Användare ska kunna granska en källa som citeras i chatten när den kunskapen är tillgänglig via någon av deras ytor. Detta inkluderar centralt insamlad organisationskunskap, så att samma webbplats kan betjäna många användare utan dubblerad insamling."
+    },
+    "845": {
+      "hash": "d497298fbd791bce535a1fd3d09abde9ea9a59d0620b60d83866b80f2512b94b",
+      "title": "Inbäddningsbara widgetar",
+      "summary": "En kommun ska kunna publicera en Eneo-assistent som en chattwidget på sin egen offentliga webbplats med en enda skripttagg. Besökare får strömmade svar med källhänvisningar utan ett Eneo-konto; kommunen styr var widgeten får visas, hur mycket den får kosta per dag, hur länge konversationer sparas, och kan pausa den med ett klick. Beslutsunderlag: `docs/adr/embeddable-widgets/` (PR #844)."
+    },
+    "934": {
+      "hash": "c1982a277577e3b1aa99f9ca2abd67e79ee0c62c1f83d95bec2678e31002b63f",
+      "title": "Låt organisationsadministratörer överblicka alla delade ytor",
+      "summary": "Organisationsadministratörer behöver kunna se och ha uppsikt över varje delad yta i sin organisation — vilka assistenter som finns och hur de är konfigurerade, vem som har åtkomst, vad som kräver uppmärksamhet — utan att automatiskt få tillgång till dokumenten och konversationerna inuti. I dag ser en tenantadministratör ingenting av en yta som de inte är medlem i. Denna epic lägger till **Admin → Ytor** med tre tydligt åtskilda nivåer: *tillsyn* (inställningar, medlemmar och användningsmetadata, aldrig innehåll), *förvaltning* (justera medlemskap och publicera webbwidgetar, alltid granskningsloggat) och *innehåll* (endast genom att gå med i ytan med en roll och ett skriftligt skäl som ytans medlemmar kan se)."
+    },
+    "1041": {
+      "hash": "b54777eafccd05ac988b9fb543d3ad939ad8451e0c58633fb4fba7e31feb409e",
+      "title": "Använd SharePoint-biblioteksegenskaper i kunskap och import",
+      "summary": "Personer som importerar kunskap från SharePoint ska kunna hitta dokument via deras biblioteksegenskaper och förstå dessa egenskaper när en källa citeras. Detta epic dokumenterar backend, befintlig webbapplikation och dokumentation som levererats genom [PR #1010](https://github.com/eneo-ai/eneo/pull/1010)."
+    },
+    "1150": {
+      "hash": "8acb2ae76738f84fe905adcca435e94cd75ac681ca85d3b4d50afbe24d218742",
+      "title": "Låt assistenter rådfråga specialistassistenter i delade utrymmen",
+      "summary": "Låt en gruppchatt besvara frågor som kräver flera specialistassistenter. En orkestrerare väljer ut de relevanta assistenterna, ställer fokuserade frågor till dem, begär ytterligare underlag vid behov och producerar ett samlat svar med spårbara källor och tydligt angivna kunskapsluckor. Återanvänd samma delegeringsförmåga senare i standardassistenten för ett delat utrymme, så att människor kan ställa en fråga till utrymmet utan att veta vilken assistent som äger svaret.\n\nTill exempel kan en fråga om ett föreslaget inköp kräva både upphandlingsvägledning och information från en IT-assistent. Orkestreraren bör rådfråga båda, reda ut en saknad detalj med en följdfråga och förklara deras kombinerade svar."
+    },
+    "1158": {
+      "hash": "d3106a94911f75bfec233717345e8e0c6f9b22502539dd2bb41fc11ff4a81b63",
+      "title": "Gör navigering och felsökning av kunskapskällor enhetlig",
+      "summary": "Personer som hanterar kunskapskällor ska känna igen samma mönster för navigering och felsökning i integrationer och webbplatser som genomsöks av crawler. Börja med att ge webbplatser ett innehållsträd, sökbara indexerade resurser och en separat vy för genomsökningsproblem, och återanvänd den befintliga integrationspresentationen där interaktionerna stämmer överens."
+    },
+    "1168": {
+      "hash": "983582338cfee9bce4c283e81a19abf20aa6ba836b086b34d77781af2ca5b59e",
+      "title": "Kommunanställda kan prognostisera dagliga siffror från egna filer",
+      "summary": "Anställda som planerar utifrån dagliga siffror (ärenden, besök, bokningar, energiförbrukning) har inget sätt att fråga Eneo hur de kommande dagarna ser ut; de exporterar till kalkylblad och gissar. Med Forecast bifogar de filen i en chatt och får en prognos för varje dag med ett intervall av sannolika utfall, kontrollerad mot hur den skulle ha presterat de senaste dagarna. Modellen körs inom kommunens egen Eneo-driftsättning, så data stannar där."
+    },
+    "1181": {
+      "hash": "8de1155a01ce3c5b11327e0daded08000bf63dd21e67c4de3cc7fd16abce9a5b",
+      "title": "Användare kan forma sin personliga chatt med egna Skills",
+      "summary": "Många vill att deras personliga chatt ska följa deras egna preferenser, till exempel korta svar i punktform, utan att behöva bygga en assistent. I dag kör den personliga chatten endast de Skills som en administratör väljer för hela organisationen, och de flesta roller kan inte skapa Skills alls. Denna epic låter en person skapa Skills i sitt personliga utrymme och välja, per Skill, om den personliga chatten alltid ska använda den, vid behov eller inte alls. Organisationens egna Skills körs fortfarande först och kan inte stängas av av användaren."
+    },
+    "1311": {
+      "hash": "3abaaa8e2cb8ccd427bf272192d270bef6954ce68b45901bc6952e7b6c4eda23",
+      "title": "Konversationsinställningar som ägs av konversationen",
+      "summary": "Varje konversation äger sin modell, resonemangsnivå, verktygsval och inställning för verktygsgodkännande, och behåller dem vid omladdningar, mellan enheter och webbläsare utan att påverka någon annan konversation. Tidigare var dessa val uppdelade mellan webbläsarlagring, den personliga assistentens konfiguration och meddelandehistorik, vilket gjorde att en ändring i en chatt kunde påverka en annan, att en återöppnad chatt kunde återställa andra val och att ett byte av enhet innebar att de gick förlorade."
     }
   }
 }
