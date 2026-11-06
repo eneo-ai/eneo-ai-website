@@ -199,7 +199,7 @@ När Claude skapar en ny nyhet måste **alla** dessa steg genomföras:
 2. **Varje nyhet ska ha en illustrativ bild** (SVG i `public/images/nyheter/`) som visas både i artikeln (mellan header och content) och som thumb på nyhetskortet. Bilden ska ha beskrivande `aria-label` på `<svg>` och informativ `alt` på `<img>` i artikeln (dekorativ `alt=""` på kort-thumb). Meta `og:image` i artikeln ska peka på en **PNG-version** av bilden enligt den hårda regeln om delningsmetadata ovan (aldrig SVG; rendera PNG:n om den saknas).
    - **Återanvändbara bilder:** `public/images/nyheter/version-release.svg` används för alla nyheter om nya versioner. Skapa motsvarande generiska illustrationer för andra återkommande nyhetstyper (säkerhet, community, insikter, evenemang) innan du tar till engångsbilder.
 3. Lägg till ett nyhetskort på `nyheter.html` (överst i listan, som featured om det är den senaste)
-4. **Uppdatera startsidans nyhetslistning** (`index.html`, sektionen "Senaste nytt") med de 3 senaste nyheterna
+4. **Uppdatera startsidans nyheter** (`index.html`): den senaste nyheten ligger i hero-ytan (`.hero-news-card`, panelen "Senaste nytt"), och sektionen "Fler nyheter" visar de 3 närmast föregående
 5. Kör tillgänglighetstest på alla ändrade filer
 
 ## Performance Considerations

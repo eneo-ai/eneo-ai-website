@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="css/v2-base.css?v=2">
     <link rel="stylesheet" href="css/v2-components.css?v=2">
     <link rel="stylesheet" href="css/v2-layout.css?v=3">
-    <link rel="stylesheet" href="css/pages/home.css?v=4">
+    <link rel="stylesheet" href="css/pages/home.css?v=5">
     <link rel="stylesheet" href="css/pages/nyheter.css?v=7">
 
     <!-- OG Meta Tags -->
@@ -90,19 +90,38 @@
     <!-- Main Content -->
     <main id="main-content">
         <!-- Hero Section -->
-        <section class="hero">
-            <div class="container">
-                <div class="hero-badge"><span class="dot"></span> Öppen AI-plattform för offentlig sektor</div>
-                <h1>Generativ AI med <em>svensk datasuveränitet</em></h1>
-                <p class="hero-sub">
-                    Eneo är den öppna AI-plattformen som ger offentliga organisationer full kontroll
-                    över var data lagras, hur den behandlas och vem som har tillgång.
-                    Din data behöver aldrig lämna Sverige.
-                </p>
-                <div class="hero-actions">
-                    <a href="om-eneo.html" class="btn btn-primary">Läs mer om Eneo <span aria-hidden="true">&rarr;</span></a>
-                    <a href="docs.html" class="btn btn-ghost">Ladda ned</a>
+        <section class="hero hero-split">
+            <div class="container hero-split-grid">
+                <div class="hero-text">
+                    <div class="hero-badge"><span class="dot"></span> Öppen AI-plattform för offentlig sektor</div>
+                    <h1>Generativ AI med <em>svensk datasuveränitet</em></h1>
+                    <p class="hero-sub">
+                        Eneo är den öppna AI-plattformen som ger offentliga organisationer full kontroll
+                        över var data lagras, hur den behandlas och vem som har tillgång.
+                        Din data behöver aldrig lämna Sverige.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="om-eneo.html" class="btn btn-primary">Läs mer om Eneo <span aria-hidden="true">&rarr;</span></a>
+                        <a href="docs.html" class="btn btn-ghost">Ladda ned</a>
+                    </div>
                 </div>
+                <aside class="hero-news" aria-labelledby="hero-news-rubrik">
+                    <h2 id="hero-news-rubrik" class="hero-news-label"><span class="dot" aria-hidden="true"></span> Senaste nytt</h2>
+                    <a href="nyheter/2026-11-06-v2-3-0.html" class="hero-news-card">
+                        <div class="hero-news-img" aria-hidden="true">
+                            <img src="public/images/nyheter/version-release.svg" alt="">
+                        </div>
+                        <div class="hero-news-body">
+                            <div class="meta">
+                                <span class="tag tag-release">Release</span>
+                                <span class="date">6 november 2026</span>
+                            </div>
+                            <h3>Eneo v2.3.0</h3>
+                            <p>Assistenter, även den personliga assistenten, skapar Word- och PDF-dokument, analyserar Excel-filer, räknar och ritar diagram. Dessutom en ny crawler och nyheter i appen.</p>
+                            <span class="read-more">Läs nyheten <span aria-hidden="true">→</span></span>
+                        </div>
+                    </a>
+                </aside>
             </div>
         </section>
 
@@ -110,25 +129,7 @@
         <section class="section" style="padding-bottom:3rem;">
             <div class="container" style="max-width:1100px;">
                 <div class="section-center">
-                    <h2>Senaste nytt</h2>
-                </div>
-                <div class="home-featured">
-                    <a href="nyheter/2026-11-06-v2-3-0.html" class="featured-card">
-                        <div class="featured-img" aria-hidden="true">
-                            <img src="public/images/nyheter/version-release.svg" alt="" style="width:100%;height:100%;object-fit:cover;">
-                        </div>
-                        <div class="featured-body">
-                            <div class="meta">
-                                <span class="tag tag-release">Release</span>
-                                <span class="date">6 november 2026</span>
-                            </div>
-                            <h3>Eneo v2.3.0</h3>
-                            <p>
-                                Assistenter, även den personliga assistenten, skapar Word- och PDF-dokument, analyserar Excel-filer, räknar och ritar diagram. Dessutom en ny crawler och nyheter i appen.
-                            </p>
-                            <span class="read-more">Läs artikeln <span aria-hidden="true">→</span></span>
-                        </div>
-                    </a>
+                    <h2>Fler nyheter</h2>
                 </div>
                 <div class="news-grid" style="max-width:1100px;margin:0 auto;">
                     <a href="nyheter/2026-10-09-anvandartraff-anmalan.html" class="news-card">
