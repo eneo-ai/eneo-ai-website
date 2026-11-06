@@ -1,0 +1,138 @@
+/* ============================================
+   TEST: Lägre hero med senaste nyheten i blickfånget
+   Laddas bara av startsida-test.html.
+   ============================================ */
+
+.hero.hero-split {
+    min-height: auto;
+    padding: calc(var(--header-height) + 4rem) 0 3.5rem;
+}
+
+.hero-split-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    gap: 3.5rem;
+    align-items: center;
+}
+
+.hero-split .hero h1,
+.hero-split h1 {
+    font-size: clamp(2.2rem, 4.4vw, 3.3rem);
+}
+.hero-split .hero-sub {
+    margin-bottom: 2rem;
+}
+
+/* ── Senaste nyheten ── */
+/* Panelen runt nyheten: egen tonad bakgrund så att den läses som ett
+   eget kort, skilt från hero-ytan. Nyhetskortet ligger vitt ovanpå. */
+.hero-news {
+    position: relative;
+    padding: 1.25rem 1.25rem 1.4rem;
+    border-radius: 24px;
+    background:
+        radial-gradient(120% 80% at 100% 0%, rgba(56, 189, 248, 0.16) 0%, transparent 60%),
+        linear-gradient(160deg, rgba(5, 85, 148, 0.13) 0%, rgba(26, 122, 212, 0.07) 100%);
+    border: 1px solid var(--brand-glow);
+    box-shadow: 0 24px 60px -32px rgba(5, 60, 120, 0.45);
+    animation: fadeUp 0.7s 0.3s ease both;
+}
+.hero-news .hero-news-label {
+    color: var(--brand-light);
+    padding: 0 0.35rem;
+}
+.hero-news-label {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-family: var(--font-body, inherit);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin: 0 0 0.85rem;
+}
+.hero-news-label .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--green);
+}
+
+.hero-news-card {
+    display: block;
+    border-radius: 18px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--text);
+    box-shadow: 0 10px 28px -18px rgba(5, 40, 80, 0.35);
+    transition: border-color 0.3s, transform 0.3s;
+}
+.hero-news-card:hover,
+.hero-news-card:focus-visible {
+    border-color: var(--border-hover);
+    transform: translateY(-2px);
+}
+.hero-news-card:focus-visible {
+    outline: 3px solid var(--brand-light);
+    outline-offset: 3px;
+}
+.hero-news-card:hover .read-more,
+.hero-news-card:focus-visible .read-more {
+    gap: 0.65rem;
+}
+
+.hero-news-img {
+    aspect-ratio: 16 / 7;
+    overflow: hidden;
+}
+.hero-news-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-news-body {
+    padding: 1.5rem 1.75rem 1.75rem;
+}
+.hero-news-body .meta {
+    margin-bottom: 0.75rem;
+}
+.hero-news-body h3 {
+    font-family: var(--font-display);
+    font-size: 1.45rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.6rem;
+}
+.hero-news-body p {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    line-height: 1.65;
+    margin-bottom: 1.1rem;
+}
+
+@media (max-width: 1023px) {
+    .hero.hero-split {
+        padding: calc(var(--header-height) + 3rem) 0 3rem;
+    }
+    .hero-split-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    .hero-news {
+        max-width: 560px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-news { animation: none; }
+    .hero-news-card,
+    .hero-news-card:hover,
+    .hero-news-card:focus-visible { transition: none; transform: none; }
+}
