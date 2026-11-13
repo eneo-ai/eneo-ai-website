@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-13T06:40:37.320Z",
+  "generatedAt": "2026-11-13T19:39:04.343Z",
   "source": {
     "owner": "eneo-ai",
     "project": "5",
@@ -59,8 +59,8 @@
     {
       "number": 804,
       "url": "https://github.com/eneo-ai/eneo/issues/804",
-      "title": "Kräv MFA för konfidentiella delade utrymmen, inklusive tal-till-text",
-      "summary": "Personal som spelar in och transkriberar konfidentiella samtal behöver ett delat utrymme som endast kan öppnas av personer som är inloggade med MFA. Eneo kan inte kräva det idag, och en inspelning skulle ändå inte följa ett sådant krav, eftersom en fil tillhör den person som laddade upp den snarare än ett utrymme. Detta epic gör det möjligt för en organisation att kräva MFA på sina vanliga delade utrymmen, med hjälp av vad dess identitetsleverantör redan rapporterar, så att allt i ett sådant utrymme, inklusive tal-till-text, följer kravet.",
+      "title": "Kräv MFA för konfidentiella delade utrymmen, inklusive tal till text",
+      "summary": "Personal som spelar in och transkriberar konfidentiella samtal behöver ett delat utrymme som endast personer inloggade med MFA kan öppna. Eneo kan inte kräva detta idag, och en inspelning skulle ändå inte omfattas av ett sådant krav, eftersom en fil tillhör den person som laddade upp den snarare än ett utrymme. Detta epic gör det möjligt för en organisation att kräva MFA för sina vanliga delade utrymmen, utifrån vad dess identitetsleverantör (IdP) redan rapporterar, så att allt i ett sådant utrymme, inklusive tal till text, omfattas av kravet.",
       "status": "Todo",
       "roadmapVersion": "2.3",
       "area": "Security",

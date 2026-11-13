@@ -52,9 +52,9 @@
       "summary": "docs.eneo.ai driftsätts endast från `develop`, vilket innebär att den dokumenterar ej släppta funktioner för alla som kör en release, och en verifierad granskning (30 sidor) hittade 2 föråldrade sidor, 6 med allvarliga fel och 14 med mindre fel — påhittade miljövariabler, endpoints och kommandon från den ursprungliga grundstrukturen. Detta epic gör webbplatsen versionshanterad och automatisk, korrigerar innehållet mot koden och lägger till ett skydd så att pull requests håller den korrekt."
     },
     "804": {
-      "hash": "a826f1484808945d3251993c9ea3262c648bde8692c4dd8c802b98178ddefef4",
-      "title": "Kräv MFA för konfidentiella delade utrymmen, inklusive tal-till-text",
-      "summary": "Personal som spelar in och transkriberar konfidentiella samtal behöver ett delat utrymme som endast kan öppnas av personer som är inloggade med MFA. Eneo kan inte kräva det idag, och en inspelning skulle ändå inte följa ett sådant krav, eftersom en fil tillhör den person som laddade upp den snarare än ett utrymme. Detta epic gör det möjligt för en organisation att kräva MFA på sina vanliga delade utrymmen, med hjälp av vad dess identitetsleverantör redan rapporterar, så att allt i ett sådant utrymme, inklusive tal-till-text, följer kravet."
+      "hash": "212c27682a9abe6a8f4127a97cb8db0ce111fff697e2fae0dd6ab1de26b50129",
+      "title": "Kräv MFA för konfidentiella delade utrymmen, inklusive tal till text",
+      "summary": "Personal som spelar in och transkriberar konfidentiella samtal behöver ett delat utrymme som endast personer inloggade med MFA kan öppna. Eneo kan inte kräva detta idag, och en inspelning skulle ändå inte omfattas av ett sådant krav, eftersom en fil tillhör den person som laddade upp den snarare än ett utrymme. Detta epic gör det möjligt för en organisation att kräva MFA för sina vanliga delade utrymmen, utifrån vad dess identitetsleverantör (IdP) redan rapporterar, så att allt i ett sådant utrymme, inklusive tal till text, omfattas av kravet."
     },
     "819": {
       "hash": "5ad1ab06664765bd9ee87ea3ab0499801426a4e7dc29e6095a2c4666c84aa6d1",
