@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-12T15:09:58.875Z",
+  "generatedAt": "2026-11-13T06:40:37.320Z",
   "source": {
     "owner": "eneo-ai",
     "project": "5",
@@ -43,10 +43,24 @@
       "group": "next"
     },
     {
+      "number": 1425,
+      "url": "https://github.com/eneo-ai/eneo/issues/1425",
+      "title": "Ta bort flödeskörningar, steg och inspelningar när den valda lagringsperioden har löpt ut",
+      "summary": "Personal som spelar in och transkriberar möten med flöden behöver veta att inspelningen, transkriptionen och allt som skapats utifrån dem tas bort när den period som deras organisation valt har löpt ut, och att borttaget innehåll är oläsbart och inte kan återställas. Eneo tar redan bort konversationer på detta sätt, genom en lagringsmotor och en regel för den period som valts per nivå. Flöden omfattas inte av detta: en flödeskörning har en egen policy med lägen som aldrig tar bort något automatiskt, och en ytas period når inte dess flöden. Detta epic gör att flöden använder samma motor och samma regel, från organisationen ända ner till ett enskilt steg och inspelningen. Utan en period påbörjas ingen åldersbaserad borttagning; kvarvarande upprensning rensar fortfarande det som ingen kan använda, och en kopia vars källa redan tagits bort tas också bort.",
+      "status": "Todo",
+      "roadmapVersion": "2.3",
+      "area": "Backend",
+      "priority": "P1",
+      "startDate": "",
+      "targetDate": "",
+      "sponsor": "",
+      "group": "next"
+    },
+    {
       "number": 804,
       "url": "https://github.com/eneo-ai/eneo/issues/804",
-      "title": "Kräv godkänd MFA för konfidentiella delade utrymmen och moduler",
-      "summary": "Kommuner behöver kunna kräva en godkänd MFA-inloggning innan personal får åtkomst till ett delat utrymme som innehåller konfidentiell information. Administratörer konfigurerar vilka autentiseringsresultat som deras identitetsleverantör intygar som godtagbara, och utrymmesadministratörer kan kräva det skyddet. Eneo fattar samma åtkomstbeslut för sitt eget gränssnitt, API:er, interna verktyg och externa moduler, inklusive framtida publicerade Flow-applikationer.",
+      "title": "Kräv MFA för konfidentiella delade utrymmen, inklusive tal-till-text",
+      "summary": "Personal som spelar in och transkriberar konfidentiella samtal behöver ett delat utrymme som endast kan öppnas av personer som är inloggade med MFA. Eneo kan inte kräva det idag, och en inspelning skulle ändå inte följa ett sådant krav, eftersom en fil tillhör den person som laddade upp den snarare än ett utrymme. Detta epic gör det möjligt för en organisation att kräva MFA på sina vanliga delade utrymmen, med hjälp av vad dess identitetsleverantör redan rapporterar, så att allt i ett sådant utrymme, inklusive tal-till-text, följer kravet.",
       "status": "Todo",
       "roadmapVersion": "2.3",
       "area": "Security",

@@ -52,9 +52,9 @@
       "summary": "docs.eneo.ai driftsätts endast från `develop`, vilket innebär att den dokumenterar ej släppta funktioner för alla som kör en release, och en verifierad granskning (30 sidor) hittade 2 föråldrade sidor, 6 med allvarliga fel och 14 med mindre fel — påhittade miljövariabler, endpoints och kommandon från den ursprungliga grundstrukturen. Detta epic gör webbplatsen versionshanterad och automatisk, korrigerar innehållet mot koden och lägger till ett skydd så att pull requests håller den korrekt."
     },
     "804": {
-      "hash": "be70c22b73288c1664d34de441f5da6e2191e01680f7e3f4d96a8e9efde1e501",
-      "title": "Kräv godkänd MFA för konfidentiella delade utrymmen och moduler",
-      "summary": "Kommuner behöver kunna kräva en godkänd MFA-inloggning innan personal får åtkomst till ett delat utrymme som innehåller konfidentiell information. Administratörer konfigurerar vilka autentiseringsresultat som deras identitetsleverantör intygar som godtagbara, och utrymmesadministratörer kan kräva det skyddet. Eneo fattar samma åtkomstbeslut för sitt eget gränssnitt, API:er, interna verktyg och externa moduler, inklusive framtida publicerade Flow-applikationer."
+      "hash": "a826f1484808945d3251993c9ea3262c648bde8692c4dd8c802b98178ddefef4",
+      "title": "Kräv MFA för konfidentiella delade utrymmen, inklusive tal-till-text",
+      "summary": "Personal som spelar in och transkriberar konfidentiella samtal behöver ett delat utrymme som endast kan öppnas av personer som är inloggade med MFA. Eneo kan inte kräva det idag, och en inspelning skulle ändå inte följa ett sådant krav, eftersom en fil tillhör den person som laddade upp den snarare än ett utrymme. Detta epic gör det möjligt för en organisation att kräva MFA på sina vanliga delade utrymmen, med hjälp av vad dess identitetsleverantör redan rapporterar, så att allt i ett sådant utrymme, inklusive tal-till-text, följer kravet."
     },
     "819": {
       "hash": "5ad1ab06664765bd9ee87ea3ab0499801426a4e7dc29e6095a2c4666c84aa6d1",
@@ -100,6 +100,11 @@
       "hash": "3abaaa8e2cb8ccd427bf272192d270bef6954ce68b45901bc6952e7b6c4eda23",
       "title": "Konversationsinställningar som ägs av konversationen",
       "summary": "Varje konversation äger sin modell, resonemangsnivå, verktygsval och inställning för verktygsgodkännande, och behåller dem vid omladdningar, mellan enheter och webbläsare utan att påverka någon annan konversation. Tidigare var dessa val uppdelade mellan webbläsarlagring, den personliga assistentens konfiguration och meddelandehistorik, vilket gjorde att en ändring i en chatt kunde påverka en annan, att en återöppnad chatt kunde återställa andra val och att ett byte av enhet innebar att de gick förlorade."
+    },
+    "1425": {
+      "hash": "8eabd05563f8510fc1ab17806ef95b99cd5b14ac6f0c48f95d5ba50457147997",
+      "title": "Ta bort flödeskörningar, steg och inspelningar när den valda lagringsperioden har löpt ut",
+      "summary": "Personal som spelar in och transkriberar möten med flöden behöver veta att inspelningen, transkriptionen och allt som skapats utifrån dem tas bort när den period som deras organisation valt har löpt ut, och att borttaget innehåll är oläsbart och inte kan återställas. Eneo tar redan bort konversationer på detta sätt, genom en lagringsmotor och en regel för den period som valts per nivå. Flöden omfattas inte av detta: en flödeskörning har en egen policy med lägen som aldrig tar bort något automatiskt, och en ytas period når inte dess flöden. Detta epic gör att flöden använder samma motor och samma regel, från organisationen ända ner till ett enskilt steg och inspelningen. Utan en period påbörjas ingen åldersbaserad borttagning; kvarvarande upprensning rensar fortfarande det som ingen kan använda, och en kopia vars källa redan tagits bort tas också bort."
     }
   }
 }
