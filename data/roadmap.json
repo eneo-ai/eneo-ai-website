@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-21T07:02:35.773Z",
+  "generatedAt": "2026-11-21T19:12:13.053Z",
   "source": {
     "owner": "eneo-ai",
     "project": "5",
@@ -148,6 +148,20 @@
       "status": "Todo",
       "roadmapVersion": "Unscheduled",
       "area": "Backend",
+      "priority": "P2",
+      "startDate": "",
+      "targetDate": "",
+      "sponsor": "",
+      "group": "later"
+    },
+    {
+      "number": 1494,
+      "url": "https://github.com/eneo-ai/eneo/issues/1494",
+      "title": "Användare skapar och uppdaterar sina egna Skills med hjälp av personlig chatt",
+      "summary": "Att skriva en bra Skill för hand är svårt. Beskrivningen avgör när chatten använder den, och instruktionerna behöver typade länkar till andra Skills, funktioner och verktyg. De flesta kommer aldrig så långt. Detta epic lägger till **Skill-skaparen** i den personliga chatten. En person aktiverar den för en konversation och berättar vad de vill, till exempel \"skapa en Skill av hur vi skrev detta svar\". Chatten svarar med högst en fråga och visar hela Skillen på ett kort, och personen sparar den med ett klick. Chatten utformar och föreslår; endast personen sparar, med sina egna rättigheter och samma regler som i Skill-formuläret.",
+      "status": "Todo",
+      "roadmapVersion": "Unscheduled",
+      "area": "Frontend",
       "priority": "P2",
       "startDate": "",
       "targetDate": "",
