@@ -422,6 +422,35 @@
 }
 :root[data-theme="light"] .article-notice svg { color: var(--brand); }
 
+/* Ljusgul variant: evenemanget har redan ägt rum.
+   Samma utseende som .event-notice.past-notice i anvandartraff.css. */
+.article-notice.past-notice { --past-bg: rgba(250, 220, 110, 0.10); --past-border: rgba(250, 220, 110, 0.40); --past-icon: #f3d56b; }
+@media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) .article-notice.past-notice { --past-bg: #fff8d6; --past-border: #ecd98a; --past-icon: #7a5a00; }
+}
+:root[data-theme="light"] .article-notice.past-notice { --past-bg: #fff8d6; --past-border: #ecd98a; --past-icon: #7a5a00; }
+.article-notice.past-notice {
+    padding: 1.25rem 1.4rem;
+    border: 1px solid var(--past-border);
+    background: var(--past-bg);
+}
+.article-notice.past-notice svg,
+:root[data-theme="light"] .article-notice.past-notice svg {
+    color: var(--past-icon);
+    margin-top: 0.2rem;
+}
+@media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) .article-notice.past-notice svg { color: var(--past-icon); }
+}
+.article-notice.past-notice .past-notice-title {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    line-height: 1.3;
+}
+.article-notice.past-notice .past-notice-title strong {
+    font-weight: 700;
+}
+
 /* ── BILDER I ARTIKEL (fotografier med bildtext) ── */
 .article-figure {
     margin: 2rem 0;
