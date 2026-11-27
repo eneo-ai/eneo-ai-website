@@ -85,6 +85,13 @@
     line-height: 1.6;
     margin-bottom: 1rem;
 }
+.gov-main .gov-note {
+    padding: 0.85rem 1rem;
+    border-radius: 8px;
+    border-left: 3px solid var(--brand-light);
+    background: var(--brand-dim);
+    color: var(--text);
+}
 .gov-main .resp-label {
     font-size: 0.7rem;
     font-weight: 700;
